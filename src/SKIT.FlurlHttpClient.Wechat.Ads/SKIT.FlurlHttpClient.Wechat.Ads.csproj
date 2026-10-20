@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net462; netstandard2.0; net6.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0; net462; netcoreapp3.1; net6.0; net8.0; net10.0</TargetFrameworks>
         <LangVersion>10.0</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <NullableReferenceTypes>true</NullableReferenceTypes>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatAds WechatAdvertisting 微信 广告平台 微信广告平台 腾讯广告平台 广点通 微信广点通 腾讯广点通</PackageTags>
-        <Version>3.1.0</Version>
+        <Version>4.0.0-dev</Version>
         <Description>基于 Flurl.Http 的微信广告平台（广点通）API 客户端。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
@@ -30,13 +30,16 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
-		<None Include="README.md" Pack="true" PackagePath="/" />
+    <ItemGroup>
+        <None Include="../../LOGO.png" Pack="true" PackagePath="/" />
+        <None Include="README.md" Pack="true" PackagePath="/" />
+        <None Include="ModelsFixtures/**/*.json" />
 	</ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.1.1" />
+        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="4.0.0" />
+        <PackageReference Include="SKIT.JsonConv.NewtonsoftJson" Version="0.1.1" />
+        <PackageReference Include="SKIT.JsonConv.SystemTextJson" Version="0.1.1" />
     </ItemGroup>
 
 </Project>

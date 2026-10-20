@@ -96,9 +96,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// 获取或设置创建时间戳。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("created_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("created_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
                         public DateTimeOffset CreateTime { get; set; }
                     }
 
