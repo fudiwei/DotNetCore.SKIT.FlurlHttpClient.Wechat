@@ -13,6 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string MerchantId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
         /// 获取或设置回调通知地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]

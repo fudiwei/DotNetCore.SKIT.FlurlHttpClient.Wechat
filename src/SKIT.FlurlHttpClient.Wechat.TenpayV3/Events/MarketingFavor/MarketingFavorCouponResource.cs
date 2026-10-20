@@ -86,6 +86,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string CouponType { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置细分业务类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("business_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("business_type")]
+        public string? BusinessType { get; set; }
+
+        /// <summary>
         /// 获取或设置券状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
@@ -167,5 +174,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset CreateTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置核销用户的 OpenId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+        public string? OpenId { get; set; }
     }
 }
