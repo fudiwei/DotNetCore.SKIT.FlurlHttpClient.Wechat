@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         internal static class Converters
         {
-            internal class RequestPropertyEventTimeNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Common.FormattedDateTimeOffsetConverterBase
+            internal class RequestPropertyEventTimeNewtonsoftJsonConverter : SKIT.JsonConv.NewtonsoftJson.Converters.FormattableDateTimeOffsetConverterBase
             {
                 internal const string DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.fffzzz";
 
                 protected override string FormatString { get { return DATETIME_FORMAT; } }
             }
 
-            internal class RequestPropertyEventTimeSystemTextJsonConverter : System.Text.Json.Serialization.Common.FormattedDateTimeOffsetConverterBase
+            internal class RequestPropertyEventTimeSystemTextJsonConverter : SKIT.JsonConv.SystemTextJson.Converters.FormattableDateTimeOffsetConverterBase
             {
                 internal const string DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.fffzzz";
 

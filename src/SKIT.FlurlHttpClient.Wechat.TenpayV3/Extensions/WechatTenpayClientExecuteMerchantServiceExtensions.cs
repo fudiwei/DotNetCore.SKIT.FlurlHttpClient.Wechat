@@ -316,7 +316,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /{download_url} 接口。</para>
+        /// <para>异步调用 [GET] {download_url} 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012467251 ]]> <br/>
@@ -334,7 +334,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, request.DownloadUrl)
+                .CreateFlurlRequest(request, HttpMethod.Get)
                 .WithUrl(request.DownloadUrl);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DownloadMerchantServiceImageResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -57,18 +57,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// 获取或设置租赁起始日期。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("lease_period_start")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("lease_period_start")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
                                 public DateTimeOffset LeasePeriodStartDate { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置租赁截止日期。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("lease_period_end")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("lease_period_end")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
                                 public DateTimeOffset LeasePeriodEndDate { get; set; }
 
                                 /// <summary>

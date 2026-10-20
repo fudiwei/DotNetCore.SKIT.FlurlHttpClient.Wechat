@@ -181,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /{download_url} 接口。</para>
+        /// <para>异步调用 [GET] {download_url} 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286040 ]]> <br/>
@@ -203,7 +203,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, request.DownloadUrl)
+                .CreateFlurlRequest(request, HttpMethod.Get)
                 .WithUrl(request.DownloadUrl)
                 .SetQueryParam("mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
