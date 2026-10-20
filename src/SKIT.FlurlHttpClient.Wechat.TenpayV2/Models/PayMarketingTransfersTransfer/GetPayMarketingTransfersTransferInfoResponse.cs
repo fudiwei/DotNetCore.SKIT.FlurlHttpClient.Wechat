@@ -83,18 +83,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置转账时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
         public DateTimeOffset TransferTime { get; set; }
 
         /// <summary>
         /// 获取或设置付款成功时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("payment_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
         public DateTimeOffset? SuccessTime { get; set; }
 
         /// <summary>

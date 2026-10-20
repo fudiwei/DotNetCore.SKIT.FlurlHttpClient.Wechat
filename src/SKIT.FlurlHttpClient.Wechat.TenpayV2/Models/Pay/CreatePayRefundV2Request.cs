@@ -170,9 +170,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置商品信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
         public Types.Detail? Detail { get; set; }
     }
 }

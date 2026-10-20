@@ -91,9 +91,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// 获取或设置最后更新时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("modify_time_$n")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("modify_time_$n")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
                 public DateTimeOffset ModifyTime { get; set; }
 
                 /// <summary>
@@ -114,12 +114,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
+            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
             {
                 protected override PropertyInfo FlattenProperty => QueryMerchantCustomsCustomDeclarationResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
+            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
             {
                 protected override PropertyInfo FlattenProperty => QueryMerchantCustomsCustomDeclarationResponse._flattenProperty;
             }

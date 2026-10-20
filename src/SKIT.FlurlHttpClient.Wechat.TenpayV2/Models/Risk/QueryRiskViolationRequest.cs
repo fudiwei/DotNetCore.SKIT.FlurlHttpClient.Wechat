@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -25,18 +25,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置开始时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
         public DateTimeOffset BeginTime { get; set; }
 
         /// <summary>
         /// 获取或设置结束时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
         public DateTimeOffset EndTime { get; set; }
 
         /// <summary>

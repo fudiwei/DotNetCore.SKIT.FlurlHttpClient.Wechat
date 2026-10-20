@@ -99,9 +99,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置车牌号信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
         public Types.PlateNumberInfo? PlateNumberInfo { get; set; }
     }
 }

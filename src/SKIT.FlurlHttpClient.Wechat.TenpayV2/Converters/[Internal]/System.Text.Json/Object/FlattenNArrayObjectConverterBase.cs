@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace System.Text.Json.Serialization.Internal
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities;
 

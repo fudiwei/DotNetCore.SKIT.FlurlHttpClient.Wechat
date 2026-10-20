@@ -84,21 +84,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// 获取或设置退款成功时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_success_time_$n")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_success_time_$n")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
                 public DateTimeOffset? SuccessTime { get; set; }
             }
         }
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<GetPayRefundResponse, Types.Refund>
+            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<GetPayRefundResponse, Types.Refund>
             {
                 protected override PropertyInfo FlattenProperty => GetPayRefundResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<GetPayRefundResponse, Types.Refund>
+            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<GetPayRefundResponse, Types.Refund>
             {
                 protected override PropertyInfo FlattenProperty => GetPayRefundResponse._flattenProperty;
             }

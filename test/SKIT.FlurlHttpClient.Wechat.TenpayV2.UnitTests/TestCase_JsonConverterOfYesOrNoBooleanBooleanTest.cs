@@ -7,15 +7,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
         private sealed class MockObject
         {
             [Newtonsoft.Json.JsonProperty(Order = 1)]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Internal.YesOrNoBooleanConverter))]
+            [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJson.YesOrNoBooleanConverter))]
             [System.Text.Json.Serialization.JsonPropertyOrder(1)]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Internal.YesOrNoBooleanConverter))]
+            [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJson.YesOrNoBooleanConverter))]
             public bool Property { get; set; }
 
             [Newtonsoft.Json.JsonProperty(Order = 2)]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Internal.YesOrNoBooleanConverter))]
+            [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJson.YesOrNoBooleanConverter))]
             [System.Text.Json.Serialization.JsonPropertyOrder(2)]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Internal.YesOrNoBooleanConverter))]
+            [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJson.YesOrNoBooleanConverter))]
             public bool? NullableProperty { get; set; }
         }
 

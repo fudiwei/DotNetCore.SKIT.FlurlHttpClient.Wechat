@@ -2,10 +2,11 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 
-namespace Newtonsoft.Json.Converters.Internal
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities;
 

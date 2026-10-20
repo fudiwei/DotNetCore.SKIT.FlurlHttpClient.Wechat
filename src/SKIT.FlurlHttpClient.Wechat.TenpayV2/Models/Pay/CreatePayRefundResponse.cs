@@ -38,12 +38,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<CreatePayRefundResponse, Types.RefundCoupon>
+            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<CreatePayRefundResponse, Types.RefundCoupon>
             {
                 protected override PropertyInfo FlattenProperty => CreatePayRefundResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<CreatePayRefundResponse, Types.RefundCoupon>
+            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<CreatePayRefundResponse, Types.RefundCoupon>
             {
                 protected override PropertyInfo FlattenProperty => CreatePayRefundResponse._flattenProperty;
             }

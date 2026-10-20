@@ -1,4 +1,7 @@
-namespace System.Text.Json.Serialization.Internal
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 {
     internal sealed partial class YesOrNoBooleanConverter : JsonConverterFactory
     {

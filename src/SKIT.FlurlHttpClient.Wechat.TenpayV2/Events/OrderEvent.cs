@@ -39,12 +39,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 
         internal static class Converters
         {
-            internal class EventClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<OrderEvent, Types.Coupon>
+            internal class EventClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<OrderEvent, Types.Coupon>
             {
                 protected override PropertyInfo FlattenProperty => OrderEvent._flattenProperty;
             }
 
-            internal class EventClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<OrderEvent, Types.Coupon>
+            internal class EventClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<OrderEvent, Types.Coupon>
             {
                 protected override PropertyInfo FlattenProperty => OrderEvent._flattenProperty;
             }
@@ -84,9 +84,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// 获取或设置用户是否订阅该公众号标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_subscribe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Internal.YesOrNoBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(TenpayV2.Converters.NewtonsoftJson.YesOrNoBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Internal.YesOrNoBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(TenpayV2.Converters.SystemTextJson.YesOrNoBooleanConverter))]
         public bool? IsSubscribed { get; set; }
 
         /// <summary>
@@ -210,9 +210,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// 获取或设置支付完成时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("time_end")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("time_end")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
 
         /// <summary>

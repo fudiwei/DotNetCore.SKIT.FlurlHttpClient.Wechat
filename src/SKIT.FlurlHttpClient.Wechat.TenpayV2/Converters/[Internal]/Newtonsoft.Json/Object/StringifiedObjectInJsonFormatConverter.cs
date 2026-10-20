@@ -1,10 +1,11 @@
 using System;
+using Newtonsoft.Json;
 
-namespace Newtonsoft.Json.Converters.Internal
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 {
     internal sealed class StringifiedObjectInJsonFormatConverter : JsonConverter
     {
-        private readonly Common.StringifiedObjectInJsonFormatConverter _fallback = new Common.StringifiedObjectInJsonFormatConverter();
+        private readonly SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter _fallback = new SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter();
 
         public override bool CanRead
         {
