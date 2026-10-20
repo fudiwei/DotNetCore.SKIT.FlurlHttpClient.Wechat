@@ -1,5 +1,4 @@
 using System.Net.Http;
-using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {

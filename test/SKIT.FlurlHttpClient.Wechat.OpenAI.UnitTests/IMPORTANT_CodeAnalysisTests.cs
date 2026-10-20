@@ -1,8 +1,3 @@
-using System;
-using System.IO;
-using System.Linq;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 {
     using SKIT.FlurlHttpClient.Tools.CodeAnalyzer;

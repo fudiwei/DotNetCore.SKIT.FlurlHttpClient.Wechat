@@ -1,7 +1,3 @@
-using System;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
     public class TestCase_ApiExecutePayTests

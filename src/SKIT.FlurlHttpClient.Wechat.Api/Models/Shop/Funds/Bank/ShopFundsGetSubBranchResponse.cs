@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_alias")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_alias")]
-        public string BankAlias { get; set; }= default!;
+        public string BankAlias { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置银行别名编码。

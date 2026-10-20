@@ -1,9 +1,5 @@
-using System;
-using System.Xml.Linq;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
 {
-    using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Primitives;
 
     /// <summary>

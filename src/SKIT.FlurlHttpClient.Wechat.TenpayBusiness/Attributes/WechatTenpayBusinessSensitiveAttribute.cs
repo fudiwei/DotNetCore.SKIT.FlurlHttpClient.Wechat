@@ -1,5 +1,3 @@
-﻿using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]

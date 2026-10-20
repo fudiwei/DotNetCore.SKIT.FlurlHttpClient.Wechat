@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.InteropServices;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices

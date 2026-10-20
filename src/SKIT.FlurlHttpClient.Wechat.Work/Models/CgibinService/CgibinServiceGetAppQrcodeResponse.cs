@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>

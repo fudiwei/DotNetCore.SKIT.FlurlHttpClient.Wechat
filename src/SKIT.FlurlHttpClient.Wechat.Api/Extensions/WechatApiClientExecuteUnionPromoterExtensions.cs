@@ -1,10 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteUnionPromoterExtensions
@@ -510,7 +503,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("outOrderId", request.OutOrderId)
                 .SetQueryParam("outOrderIdList", request.OutOrderId is null ? null : string.Join(",", request.OutOrderId))
                 .SetQueryParam("tradeNo", request.TransactionId)
-                .SetQueryParam("transactionIdList", request.TransactionIdList is null ? null :string.Join(",", request.TransactionIdList))
+                .SetQueryParam("transactionIdList", request.TransactionIdList is null ? null : string.Join(",", request.TransactionIdList))
                 .SetQueryParam("startPayTime", request.StartPayTimestamp)
                 .SetQueryParam("endPayTime", request.EndPayTimestamp)
                 .SetQueryParam("commissionStatus", request.CommissionStatus)

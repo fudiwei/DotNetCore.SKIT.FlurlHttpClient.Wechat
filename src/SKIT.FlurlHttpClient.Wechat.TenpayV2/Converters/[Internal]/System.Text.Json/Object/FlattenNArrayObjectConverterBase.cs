@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 {
@@ -16,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
         where TFlattenElement : class, new()
     {
         public const string FLATTEN_PROPERTY_JSON_NAME = "#n";
-        
+
         private static bool TryMatchNArrayIndex(string key, out int index)
         {
             Regex regex = new Regex(@"_(\d+)$", RegexOptions.Compiled);

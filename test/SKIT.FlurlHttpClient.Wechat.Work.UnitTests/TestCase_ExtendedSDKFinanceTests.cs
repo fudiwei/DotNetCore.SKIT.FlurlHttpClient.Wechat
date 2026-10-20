@@ -1,6 +1,3 @@
-using System.Threading.Tasks;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
     using SKIT.FlurlHttpClient;
@@ -26,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             Assert.True(resGetChatRecords.IsSuccessful());
             Assert.NotEmpty(resGetChatRecords.RecordList);
-            
+
             foreach (var record in resGetChatRecords.RecordList)
             {
                 var reqDecryptChatRecord = new DecryptChatRecordRequest()

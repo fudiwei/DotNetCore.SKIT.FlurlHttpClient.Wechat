@@ -1,7 +1,5 @@
-using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {

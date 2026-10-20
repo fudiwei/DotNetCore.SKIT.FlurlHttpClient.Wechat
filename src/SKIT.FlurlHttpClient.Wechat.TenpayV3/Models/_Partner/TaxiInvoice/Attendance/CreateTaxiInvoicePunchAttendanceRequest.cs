@@ -1,6 +1,3 @@
-using System;
-using System.Globalization;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>

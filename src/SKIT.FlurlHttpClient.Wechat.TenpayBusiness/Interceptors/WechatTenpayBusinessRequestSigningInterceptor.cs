@@ -1,10 +1,3 @@
-using System;
-using System.Linq;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
 {
     using SKIT.FlurlHttpClient.Internal;
@@ -56,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
                         body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);
                     }
                 }
-                else if (method != "GET")
+                else if (!string.Equals(HttpMethod.Get.Method, method, StringComparison.OrdinalIgnoreCase))
                 {
                     HttpContent httpContent = context.FlurlCall.HttpRequestMessage.Content;
                     body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);

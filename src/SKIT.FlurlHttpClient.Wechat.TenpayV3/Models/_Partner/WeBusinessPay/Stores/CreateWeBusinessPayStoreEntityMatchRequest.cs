@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
@@ -53,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("match_details")]
         [System.Text.Json.Serialization.JsonPropertyName("match_details")]
-        public IList<Types.MatchDetail>? MatchDetailList { get; set; } 
+        public IList<Types.MatchDetail>? MatchDetailList { get; set; }
     }
 }

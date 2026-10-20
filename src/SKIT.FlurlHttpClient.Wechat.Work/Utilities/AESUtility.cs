@@ -1,4 +1,3 @@
-using System;
 using System.Security.Cryptography;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -92,7 +91,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
                 if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
                     throw new NotSupportedException();
 
+#if NET8_0_OR_GREATER
+                using (AesGcm aes = new AesGcm(keyBytes, TAG_LENGTH_BYTE))
+#else
                 using (AesGcm aes = new AesGcm(keyBytes))
+#endif
                 {
                     byte[] cipherWithoutTagBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
                     byte[] tagBytes = new byte[TAG_LENGTH_BYTE];

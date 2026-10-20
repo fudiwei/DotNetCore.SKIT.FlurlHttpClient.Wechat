@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>

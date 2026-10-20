@@ -1,6 +1,3 @@
-using System;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.UnitTests
 {
     public class TestCase_ToolsSM3UtilityTests

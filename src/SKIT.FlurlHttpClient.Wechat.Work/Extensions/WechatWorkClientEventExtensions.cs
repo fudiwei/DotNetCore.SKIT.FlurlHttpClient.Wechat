@@ -1,4 +1,3 @@
-using System;
 using System.Xml.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work

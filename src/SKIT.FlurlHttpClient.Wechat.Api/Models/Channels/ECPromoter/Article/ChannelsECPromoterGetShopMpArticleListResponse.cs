@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class ProductInfo 
+                    public class ProductInfo
                     {
                         /// <summary>
                         /// 获取或设置商品 ID。

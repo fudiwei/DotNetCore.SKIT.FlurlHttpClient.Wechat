@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
     public class TestCase_ToolsWxMsgCryptorTests

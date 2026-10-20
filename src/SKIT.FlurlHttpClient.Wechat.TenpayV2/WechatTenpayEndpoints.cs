@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
     /// <summary>

@@ -2,9 +2,7 @@
 
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0; net462; netcoreapp3.1; net6.0; net8.0; net10.0</TargetFrameworks>
-        <LangVersion>10.0</LangVersion>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
     </PropertyGroup>
 
     <PropertyGroup>

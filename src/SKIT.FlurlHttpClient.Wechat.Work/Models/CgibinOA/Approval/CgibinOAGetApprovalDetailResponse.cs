@@ -1153,7 +1153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("comments")]
                 [System.Text.Json.Serialization.JsonPropertyName("comments")]
                 public Types.Comment[] CommentList { get; set; } = default!;
-                
+
                 /// <summary>
                 /// 获取或设置审批流程信息。
                 /// </summary>

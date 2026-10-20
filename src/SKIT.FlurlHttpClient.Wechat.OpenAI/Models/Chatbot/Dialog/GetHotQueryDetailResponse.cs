@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
 {
     /// <summary>
@@ -66,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 [Newtonsoft.Json.JsonProperty("totalPages")]
                 [System.Text.Json.Serialization.JsonPropertyName("totalPages")]
                 public int TotalPageCount { get; set; }
-                    
+
                 /// <summary>
                 /// 获取或设置热问列表。
                 /// </summary>

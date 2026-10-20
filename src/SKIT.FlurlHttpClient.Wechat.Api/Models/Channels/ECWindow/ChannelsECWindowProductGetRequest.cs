@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("need_cps_product")]
         [System.Text.Json.Serialization.JsonPropertyName("need_cps_product")]
-        public bool? RequireCPSProduct { get; set; } 
+        public bool? RequireCPSProduct { get; set; }
     }
 }

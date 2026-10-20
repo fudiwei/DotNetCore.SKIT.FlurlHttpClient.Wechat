@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
@@ -69,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         [Newtonsoft.Json.JsonProperty("discount_remarks")]
                                         [System.Text.Json.Serialization.JsonPropertyName("discount_remarks")]
                                         public string? DiscountRemarks { get; set; }
-                                    }   
+                                    }
                                 }
 
                                 /// <summary>

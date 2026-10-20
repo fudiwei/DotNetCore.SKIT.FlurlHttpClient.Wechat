@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
@@ -70,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public IList<string>? UserIdList { get; set; } 
+                        public IList<string>? UserIdList { get; set; }
                     }
                 }
 

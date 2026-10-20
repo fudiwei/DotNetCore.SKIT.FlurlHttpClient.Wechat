@@ -1,5 +1,3 @@
-using System;
-using System.Net.Http;
 using System.Net.Security;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;

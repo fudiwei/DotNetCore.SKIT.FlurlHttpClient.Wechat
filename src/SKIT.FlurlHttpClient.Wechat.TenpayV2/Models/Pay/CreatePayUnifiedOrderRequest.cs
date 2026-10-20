@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
@@ -123,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         [System.Text.Json.Serialization.JsonPropertyName("address")]
                         public string? Address { get; set; }
                     }
-                    
+
                     public class H5Info
                     {
                         /// <summary>

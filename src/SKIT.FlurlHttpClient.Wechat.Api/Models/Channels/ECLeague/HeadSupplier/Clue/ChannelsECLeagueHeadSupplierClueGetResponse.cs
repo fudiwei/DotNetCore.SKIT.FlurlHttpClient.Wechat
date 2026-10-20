@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("product_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("product_id")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                public long ProductId { get; set; } 
+                                public long ProductId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置缩略图 URL。

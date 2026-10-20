@@ -1,5 +1,4 @@
-﻿using System.Xml.Linq;
-using Xunit;
+using System.Xml.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {

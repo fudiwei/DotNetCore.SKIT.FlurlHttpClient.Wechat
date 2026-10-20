@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Settings
 {
     public sealed class Credentials

@@ -1,7 +1,4 @@
-using System;
-using System.Linq;
 using System.Reflection;
-using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
@@ -12,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 
     internal abstract class FlattenNArrayObjectConverterBase<TModelContainer, TFlattenElement> : JsonConverter
         where TModelContainer : class, new()
-        where TFlattenElement: class, new()
+        where TFlattenElement : class, new()
     {
         public const string FLATTEN_PROPERTY_JSON_NAME = "#n";
 
@@ -186,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                 object? propertyValue = jsonProperty.ValueProvider?.GetValue(inputObj);
                 if (propertyValue is null)
                 {
-                    if (serializer.NullValueHandling == NullValueHandling.Include)
+                    if (serializer.NullValueHandling == Newtonsoft.Json.NullValueHandling.Include)
                     {
                         writer.WritePropertyName(propertyName);
                         writer.WriteNull();
@@ -223,7 +220,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                             string propertyName = jProp.Name.Replace("$n", index.ToString());
                             if (jProp.Value is null || jProp.Value.Type == JTokenType.Null)
                             {
-                                if (serializer.NullValueHandling == NullValueHandling.Include)
+                                if (serializer.NullValueHandling == Newtonsoft.Json.NullValueHandling.Include)
                                 {
                                     writer.WritePropertyName(propertyName);
                                     writer.WriteNull();
@@ -246,7 +243,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 
         private JsonSerializer CopyJsonSerializer(JsonSerializer serializer, params JsonConverter?[] customConverters)
         {
-            JsonSerializer serializerCopy = JsonSerializer.Create(serializer.ExtractSerializerSettings());
+            JsonSerializerSettings serializerSettings = SKIT.JsonConv.NewtonsoftJson.NewtonsoftJsonSerializerExtensions.ExtractSerializerSettings(serializer);
+            JsonSerializer serializerCopy = JsonSerializer.Create(serializerSettings);
             serializerCopy.Converters.Remove(this);
 
             foreach (JsonConverter? converter in customConverters)

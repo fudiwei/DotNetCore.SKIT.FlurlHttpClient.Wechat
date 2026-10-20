@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{DFA229FF-0A4B-411E-9A11-681BA55DFBAE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -85,8 +84,14 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="SKIT.FlurlHttpClient.Common, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SKIT.FlurlHttpClient.Common.3.1.1\lib\net462\SKIT.FlurlHttpClient.Common.dll</HintPath>
+    <Reference Include="SKIT.FlurlHttpClient.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SKIT.FlurlHttpClient.Common.4.0.0\lib\net462\SKIT.FlurlHttpClient.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SKIT.JsonConv.NewtonsoftJson, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SKIT.JsonConv.NewtonsoftJson.0.1.1\lib\net462\SKIT.JsonConv.NewtonsoftJson.dll</HintPath>
+    </Reference>
+    <Reference Include="SKIT.JsonConv.SystemTextJson, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SKIT.JsonConv.SystemTextJson.0.1.1\lib\net462\SKIT.JsonConv.SystemTextJson.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">

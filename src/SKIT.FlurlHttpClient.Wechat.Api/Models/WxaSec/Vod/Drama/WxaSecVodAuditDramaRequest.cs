@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -17,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("old")]
                 [System.Text.Json.Serialization.JsonPropertyName("old")]
                 public long OldMediaId { get; set; }
-                
+
                 /// <summary>
                 /// 获取或设置新媒资文件 ID。
                 /// </summary>
@@ -67,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string Profile { get; set; } = string.Empty;
             }
         }
-    
+
         /// <summary>
         /// 获取或设置剧目 ID。
         /// </summary>
@@ -179,7 +177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("cost_of_production")]
         [System.Text.Json.Serialization.JsonPropertyName("cost_of_production")]
         public int? CostOfProduction { get; set; }
-        
+
         /// <summary>
         /// 获取或设置剧目备案号。
         /// </summary>

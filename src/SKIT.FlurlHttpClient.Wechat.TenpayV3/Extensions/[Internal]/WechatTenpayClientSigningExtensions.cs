@@ -1,8 +1,3 @@
-using System;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Primitives;

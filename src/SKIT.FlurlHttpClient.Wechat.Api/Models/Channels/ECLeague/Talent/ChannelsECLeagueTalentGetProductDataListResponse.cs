@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("spu_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("spu_id")]
-                public long ProductId { get; set; } 
+                public long ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品数据。

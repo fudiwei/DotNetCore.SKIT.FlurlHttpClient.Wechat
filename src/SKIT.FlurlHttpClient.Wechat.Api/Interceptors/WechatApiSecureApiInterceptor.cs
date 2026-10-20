@@ -1,16 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
-using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
 {
@@ -457,7 +447,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
 
             string relativeUrl = absoluteUrl.Substring(_baseUrl.TrimEnd('/').Length);
             if (!SIGN_REQUIRED_URLS.Contains(relativeUrl))
-            { 
+            {
                 if (_customRequestPathMatcher is not null)
                     return _customRequestPathMatcher(relativeUrl);
                 return false;

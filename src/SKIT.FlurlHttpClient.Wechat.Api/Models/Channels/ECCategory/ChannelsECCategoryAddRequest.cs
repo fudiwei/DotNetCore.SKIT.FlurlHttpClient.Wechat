@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -122,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("level3")]
                 [System.Text.Json.Serialization.JsonPropertyName("level3")]
                 public long? ThirdCategoryId { get; set; }
-                
+
                 /// <summary>
                 /// 获取或设置新版分类列表。
                 /// </summary>

@@ -1,4 +1,3 @@
-using System;
 using System.Security.Cryptography;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities

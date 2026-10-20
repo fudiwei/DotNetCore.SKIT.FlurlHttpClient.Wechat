@@ -1,4 +1,3 @@
-using System;
 using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson

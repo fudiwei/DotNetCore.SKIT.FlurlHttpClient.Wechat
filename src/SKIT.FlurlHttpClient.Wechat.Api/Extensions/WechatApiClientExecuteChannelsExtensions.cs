@@ -1,10 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteChannelsExtensions
@@ -8622,7 +8615,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECWecomGetWecomIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
-         
+
         #region ECWindow
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/window/product/add 接口。</para>

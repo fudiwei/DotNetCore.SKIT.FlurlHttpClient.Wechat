@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
 {
     public class TestCase_ToolsHashUtilityTests

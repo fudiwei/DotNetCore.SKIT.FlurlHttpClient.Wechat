@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models

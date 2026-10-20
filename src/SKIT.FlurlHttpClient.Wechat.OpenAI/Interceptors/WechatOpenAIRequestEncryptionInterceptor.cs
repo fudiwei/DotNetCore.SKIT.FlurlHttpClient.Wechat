@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
 {
     using SKIT.FlurlHttpClient.Internal;
@@ -139,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
 
             string relativeUrl = absoluteUrl.Substring(_baseUrl.TrimEnd('/').Length);
             if (!ENCRYPT_REQUIRED_URLS.Contains(relativeUrl))
-            { 
+            {
                 if (_customEncryptedRequestPathMatcher is not null)
                     return _customEncryptedRequestPathMatcher(relativeUrl);
                 return false;

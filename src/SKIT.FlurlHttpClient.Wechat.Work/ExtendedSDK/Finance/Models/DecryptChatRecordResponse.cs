@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
 {
     /// <summary>

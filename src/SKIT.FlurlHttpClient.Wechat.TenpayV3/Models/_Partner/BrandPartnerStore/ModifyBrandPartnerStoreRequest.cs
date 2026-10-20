@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_basics")]
         [System.Text.Json.Serialization.JsonPropertyName("store_basics")]
-        public Types.Basic? Basic { get; set; } 
+        public Types.Basic? Basic { get; set; }
 
         /// <summary>
         /// 获取或设置门店地址信息。

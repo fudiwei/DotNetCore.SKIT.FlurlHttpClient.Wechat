@@ -2,8 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <NullableReferenceTypes>true</NullableReferenceTypes>
 		<RootNamespace>SKIT.FlurlHttpClient.Wechat.Api.Sample</RootNamespace>
     </PropertyGroup>
 

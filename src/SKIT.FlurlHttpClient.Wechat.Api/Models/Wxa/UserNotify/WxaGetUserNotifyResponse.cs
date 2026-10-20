@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code_expire_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("code_expire_time")]
-                public long CodeExpireTimestamp { get; set; } 
+                public long CodeExpireTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡片状态与状态相关字段 JSON 数据。

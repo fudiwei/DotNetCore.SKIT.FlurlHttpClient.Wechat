@@ -1,10 +1,3 @@
-using System;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Interceptors
 {
     internal class WechatAdsRequestAgencyTokenInterceptor : HttpInterceptor

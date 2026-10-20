@@ -1,12 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
-using Flurl;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
     using SKIT.FlurlHttpClient;
@@ -35,13 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.FileContentType is null)
                 request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
+            fileContent.Headers.ContentType = request.FileContentType is null ? null : MediaTypeHeaderValue.Parse(request.FileContentType);
+            fileContent.Headers.ContentLength = request.FileBytes is null ? null : request.FileBytes.Length;
+
+            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"file\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
-            fileContent.Headers.ContentLength = request.FileBytes?.Length;
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "images", "add")
                 .SetQueryParam("access_token", request.AccessToken);

@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Settings
 {
     public sealed class Credentials

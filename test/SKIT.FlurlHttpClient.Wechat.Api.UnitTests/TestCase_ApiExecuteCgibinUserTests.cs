@@ -1,7 +1,3 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
     public class TestCase_ApiExecuteCgibinUserTests

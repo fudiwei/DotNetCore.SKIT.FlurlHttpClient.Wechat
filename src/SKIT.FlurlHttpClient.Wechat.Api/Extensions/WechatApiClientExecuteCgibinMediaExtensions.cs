@@ -1,11 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     using SKIT.FlurlHttpClient;

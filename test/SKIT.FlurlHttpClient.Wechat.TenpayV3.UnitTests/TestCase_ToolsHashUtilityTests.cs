@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
     public class TestCase_ToolsHashUtilityTests

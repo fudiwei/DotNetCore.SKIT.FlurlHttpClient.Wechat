@@ -1,13 +1,5 @@
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    using SKIT.FlurlHttpClient.Primitives;
-
     public static class WechatTenpayClientExecuteTransactionBlockExtensions
     {
         /// <summary>

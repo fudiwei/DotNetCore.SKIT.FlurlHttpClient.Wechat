@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
     using SKIT.FlurlHttpClient.Primitives;

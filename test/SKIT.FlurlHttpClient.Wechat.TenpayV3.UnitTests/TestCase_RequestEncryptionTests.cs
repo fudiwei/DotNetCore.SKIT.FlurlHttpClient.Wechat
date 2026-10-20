@@ -1,12 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl.Http.Configuration;
-using Xunit;
-using Flurl.Http;
+using System.Net.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {

@@ -1,7 +1,3 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
     public interface IWechatWorkFinanceClient : IDisposable

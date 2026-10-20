@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -13,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
         }
-    
+
         /// <summary>
         /// 获取或设置剧目 ID。
         /// </summary>

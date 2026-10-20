@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;

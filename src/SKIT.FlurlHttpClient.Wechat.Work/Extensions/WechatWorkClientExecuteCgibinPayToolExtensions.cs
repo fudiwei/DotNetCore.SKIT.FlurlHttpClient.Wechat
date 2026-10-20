@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
 using Newtonsoft.Json.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
@@ -125,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                             break;
 
                         case JTokenType.Object:
-                            { 
+                            {
                                 foreach (JProperty prop in ((JObject)token).Properties())
                                 {
                                     results.AddRange(flatten(prop.Name, prop.Value));

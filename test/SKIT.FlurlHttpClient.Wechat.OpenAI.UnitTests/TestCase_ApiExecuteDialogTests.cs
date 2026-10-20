@@ -1,6 +1,3 @@
-using System.Threading.Tasks;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 {
     public class TestCase_ApiExecuteDialogTests

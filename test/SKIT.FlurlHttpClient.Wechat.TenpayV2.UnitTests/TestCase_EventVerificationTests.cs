@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
     public class TestCase_EventVerificationTests

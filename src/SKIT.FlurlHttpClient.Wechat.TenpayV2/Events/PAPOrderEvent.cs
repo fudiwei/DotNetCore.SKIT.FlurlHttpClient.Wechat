@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events

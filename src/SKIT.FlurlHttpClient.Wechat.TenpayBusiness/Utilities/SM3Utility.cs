@@ -1,4 +1,3 @@
-using System;
 using Org.BouncyCastle.Crypto.Digests;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities

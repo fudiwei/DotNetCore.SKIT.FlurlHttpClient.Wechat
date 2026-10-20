@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
@@ -208,7 +205,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置医保下单时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("med_ins_order_create_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("med_ins_order_create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
         public DateTimeOffset? MedicalInsuranceOrderCreateTime { get; set; }

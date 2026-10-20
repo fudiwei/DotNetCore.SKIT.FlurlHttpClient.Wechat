@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
@@ -303,6 +301,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("edition_info")]
         [System.Text.Json.Serialization.JsonPropertyName("edition_info")]
-        public Types.Edition? Edition { get;set; }
+        public Types.Edition? Edition { get; set; }
     }
 }

@@ -1,6 +1,4 @@
-using System;
 using System.Text;
-using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {

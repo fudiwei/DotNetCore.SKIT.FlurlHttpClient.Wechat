@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Primitives;

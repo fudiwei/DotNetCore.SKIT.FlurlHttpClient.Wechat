@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
     public static class WechatTenpayGlobalClientParameterExtensions

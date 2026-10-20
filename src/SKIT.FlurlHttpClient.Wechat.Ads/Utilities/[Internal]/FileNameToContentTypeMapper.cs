@@ -1,5 +1,3 @@
-﻿using System.IO;
-
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Utilities
 {
     internal static class FileNameToContentTypeMapper

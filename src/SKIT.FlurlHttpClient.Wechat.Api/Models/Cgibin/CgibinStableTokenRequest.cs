@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("secret")]
         [System.Text.Json.Serialization.JsonPropertyName("secret")]
         public string? AppSecret { get; set; }
-        
+
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>
         /// </summary>

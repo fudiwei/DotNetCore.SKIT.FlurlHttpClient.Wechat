@@ -1,6 +1,3 @@
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
     public static class WechatTenpayGlobalClientRequestEncryptionExtensions

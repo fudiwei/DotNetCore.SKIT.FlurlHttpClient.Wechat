@@ -1,13 +1,7 @@
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
-    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
+    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
 
     /// <summary>
     /// 一个微信支付 Global API HTTP 客户端。

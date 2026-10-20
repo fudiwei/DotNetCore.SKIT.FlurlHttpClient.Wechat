@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -13,5 +11,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("openid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("openid_list")]
         public IList<string> OpenIdList { get; set; } = new List<string>();
-}
+    }
 }

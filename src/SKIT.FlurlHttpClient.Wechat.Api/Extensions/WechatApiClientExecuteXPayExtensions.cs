@@ -1,10 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteXPayExtensions
@@ -233,19 +226,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static async Task<Models.XPayRefundOrderResponse> ExecuteXPayRefundOrderAsync(this WechatApiClient client, Models.XPayRefundOrderRequest request, CancellationToken cancellationToken = default)
-            {
-                if (client is null) throw new ArgumentNullException(nameof(client));
-                if (request is null) throw new ArgumentNullException(nameof(request));
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
 
-                PreprocessRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
-                IFlurlRequest flurlReq = client
-                    .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "refund_order")
-                    .SetQueryParam("access_token", request.AccessToken)
-                    .SetQueryParam("pay_sig", request.PaySign);
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "refund_order")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
 
-                return await client.SendFlurlRequestAsJsonAsync<Models.XPayRefundOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-            }
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayRefundOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
 
         /// <summary>
         /// <para>异步调用 [POST] /xpay/create_withdraw_order 接口。</para>

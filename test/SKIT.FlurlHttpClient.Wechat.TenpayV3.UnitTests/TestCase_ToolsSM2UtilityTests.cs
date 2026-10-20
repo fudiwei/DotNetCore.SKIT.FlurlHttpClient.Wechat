@@ -1,6 +1,4 @@
-using System;
 using System.Text;
-using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
@@ -91,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             string msgText = "SM2WithSM3SignTest";
             string signText = "MEUCIQCDzgpF2Z//sbFzASVQnwme2phm4ho5cr8/1Pz0+MONTwIgeQvhoWOTk1rngYRSlHeqqwtNFVD/vf3qtgl9mecvERI=";
-            
+
             Assert.True(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, (EncodedString)signText));
             Assert.False(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, (EncodedString)"FAKE SIGN"));
             Assert.True(Utilities.SM2Utility.VerifyWithSM3ByCertificate(SM2_PEM_CERTIFICATE, msgText, (EncodedString)signText));

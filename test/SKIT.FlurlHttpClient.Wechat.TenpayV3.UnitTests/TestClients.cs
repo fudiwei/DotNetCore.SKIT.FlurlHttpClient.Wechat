@@ -1,6 +1,3 @@
-using System;
-using System.Threading.Tasks;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
     internal class TestClients

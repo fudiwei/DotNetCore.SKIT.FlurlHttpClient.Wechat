@@ -1,5 +1,3 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
 {
     public static class WechatWorkAIBotClientDecryptionExtensions
@@ -21,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
                     throw new WechatWorkAIBotException("Failed to decrypt file data, because the push encoding AES key is empty.");
 
                 string key = client.Credentials.PushEncodingAESKey!;
-                key = key.PadRight(key.Length + (4 - key.Length %4), '=');
+                key = key.PadRight(key.Length + (4 - key.Length % 4), '=');
 
                 byte[] keyBytes = Convert.FromBase64String(key);
                 byte[] ivBytes = new byte[16];

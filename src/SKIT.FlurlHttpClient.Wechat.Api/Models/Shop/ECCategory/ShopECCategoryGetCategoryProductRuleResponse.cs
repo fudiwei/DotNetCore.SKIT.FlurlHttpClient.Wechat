@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("check_field")]
                                 [System.Text.Json.Serialization.JsonPropertyName("check_field")]
-                                public int CheckField { get; set; } 
+                                public int CheckField { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置操作类型。

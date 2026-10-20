@@ -1,6 +1,3 @@
-using System;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
     public class TestCase_CertificateManagerTests
@@ -13,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         private const string CERT_SM2_SN = "e5a81b02429d8d08";
         private const string CERT_SM2_START_DATE = "2022-11-09 21:12:20";
         private const string CERT_SM2_END_DATE = "2023-11-09 21:12:20";
-        
+
         [Fact(DisplayName = "测试用例：`CertificateEntry` 序列化")]
         public void TestCertificateEntrySerialization()
         {

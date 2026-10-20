@@ -1,9 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using Flurl.Http;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     public static class WechatTenpayClientExecutePlatformSolutionExtensions
@@ -625,7 +619,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceBankTransferRechargeByOutRechargeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-        
+
         #region EcommerceRecharge/Employee
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/ecommerce/recharge-employees 接口。</para>

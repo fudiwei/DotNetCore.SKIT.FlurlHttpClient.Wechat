@@ -1,6 +1,3 @@
-using System;
-using Xunit;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
     using SKIT.FlurlHttpClient.Primitives;

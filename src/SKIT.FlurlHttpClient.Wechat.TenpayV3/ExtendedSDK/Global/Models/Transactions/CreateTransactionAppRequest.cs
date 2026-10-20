@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
 {
     using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Models
 {
     /// <summary>

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     using SKIT.FlurlHttpClient.Primitives;

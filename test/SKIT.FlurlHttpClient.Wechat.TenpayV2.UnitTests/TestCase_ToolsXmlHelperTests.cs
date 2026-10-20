@@ -1,5 +1,4 @@
 using Newtonsoft.Json.Linq;
-using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {

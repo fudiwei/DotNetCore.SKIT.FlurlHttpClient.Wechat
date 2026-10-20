@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("OldOrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("OldOrderId")]
         [System.Xml.Serialization.XmlElement("OldOrderId")]
-        public string OldOrderId { get; set; }= default!;
+        public string OldOrderId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置新订单 ID。
@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("NewOrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("NewOrderId")]
         [System.Xml.Serialization.XmlElement("NewOrderId")]
-        public string NewOrderId { get; set; }= default!;
+        public string NewOrderId { get; set; } = default!;
     }
 }

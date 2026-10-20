@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using System.Xml;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
