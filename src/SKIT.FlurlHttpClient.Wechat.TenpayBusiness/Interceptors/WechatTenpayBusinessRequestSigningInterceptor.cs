@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
             {
                 if (context.FlurlCall.HttpRequestMessage.Content is MultipartFormDataContent multipartFormData)
                 {
-                    HttpContent httpContent = multipartFormData.SingleOrDefault(e => FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
+                    HttpContent? httpContent = multipartFormData.SingleOrDefault(e => FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
                     if (httpContent is not null)
                     {
                         body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);

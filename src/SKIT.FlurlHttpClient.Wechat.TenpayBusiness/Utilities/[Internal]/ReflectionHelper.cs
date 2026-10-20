@@ -116,7 +116,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (currentObj is IDictionary)
             {
                 IDictionary currentObjAsDictionary = (IDictionary)currentObj;
+#pragma warning disable CS8605
                 foreach (DictionaryEntry entry in currentObjAsDictionary)
+#pragma warning restore CS8605
                 {
                     object? entryValue = entry.Value;
                     if (entryValue is null)

@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /{download_url} 接口的请求。</para>
+    /// <para>表示 [GET] {download_url} 接口的请求。</para>
     /// </summary>
     public class DownloadBillFileRequest : WechatTenpayBusinessRequest
     {

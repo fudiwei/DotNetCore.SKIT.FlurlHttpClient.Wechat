@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /{download_url} 接口。</para>
+        /// <para>异步调用 [GET] {download_url} 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E8%B5%84%E9%87%91%E8%B4%A6%E5%8D%95%E4%B8%8B%E8%BD%BD ]]> <br/>
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, request.DownloadUrl)
+                .CreateFlurlRequest(request, HttpMethod.Get)
                 .WithUrl(request.DownloadUrl);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DownloadBillFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
