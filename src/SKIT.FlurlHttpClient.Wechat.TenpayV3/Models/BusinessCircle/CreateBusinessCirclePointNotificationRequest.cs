@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /businesscircle/points/notify 接口的请求。</para>
     /// </summary>
-    public class NotifyBusinessCirclePointsRequest : WechatTenpayRequest
+    public class CreateBusinessCirclePointNotificationRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置子商户号。
