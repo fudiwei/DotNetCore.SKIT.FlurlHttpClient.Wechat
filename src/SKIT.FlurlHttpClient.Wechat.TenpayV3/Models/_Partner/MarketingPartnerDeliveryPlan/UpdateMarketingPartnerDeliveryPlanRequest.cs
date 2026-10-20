@@ -11,7 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         {
             public class ModifyContent
             {
-
                 /// <summary>
                 /// 获取或设置投放计划名称。
                 /// </summary>

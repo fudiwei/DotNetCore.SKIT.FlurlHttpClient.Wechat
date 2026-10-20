@@ -15,6 +15,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutRequestNumber { get; set; }
 
         /// <summary>
+        /// 获取或设置投放计划名称。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("plan_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("plan_name")]
+        public string? PlanName { get; set; }
+
+        /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
@@ -33,21 +40,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = string.Empty;
+        public string? StockId { get; set; }
 
         /// <summary>
-        /// 获取或设置是否复用商品券和批次信。
+        /// 获取或设置商品券批次组 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("stock_bundle_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("stock_bundle_id")]
+        public string? StockBundleId { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品券使用模式。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("usage_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("usage_mode")]
+        public string? UsageMode { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否复用商品券和批次信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reuse_coupon_config")]
         [System.Text.Json.Serialization.JsonPropertyName("reuse_coupon_config")]
         public bool IsReuseCouponConfig { get; set; }
-
-        /// <summary>
-        /// 获取或设置投放计划名称。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("plan_name")]
-        [System.Text.Json.Serialization.JsonPropertyName("plan_name")]
-        public string? PlanName { get; set; }
 
         /// <summary>
         /// 获取或设置总库存数量。
@@ -69,6 +83,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("daily_limit")]
         [System.Text.Json.Serialization.JsonPropertyName("daily_limit")]
         public int? DailyLimitCount { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否过期券不占用领取次数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("exclude_expired_coupon_from_limit")]
+        [System.Text.Json.Serialization.JsonPropertyName("exclude_expired_coupon_from_limit")]
+        public bool? IsExcludeExpiredCouponFromLimit { get; set; }
 
         /// <summary>
         /// 获取或设置开始时间。
