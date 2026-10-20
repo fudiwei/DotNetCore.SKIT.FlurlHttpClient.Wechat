@@ -36,9 +36,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// 获取或设置相似度。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("threshold")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("threshold")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
                 public decimal Threshold { get; set; }
 
                 /// <summary>

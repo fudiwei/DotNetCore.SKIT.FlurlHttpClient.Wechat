@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net462; netstandard2.0; net6.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0; net462; netcoreapp3.1; net6.0; net8.0; net10.0</TargetFrameworks>
         <LangVersion>10.0</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <NullableReferenceTypes>true</NullableReferenceTypes>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatAI WechatOpenAI WexinAI WeixinOpenAI 微信 微信智能对话 微信对话开放平台 微信智能对话开放平台 智能对话平台</PackageTags>
-        <Version>3.2.0</Version>
+        <Version>4.0.0-dev</Version>
         <Description>基于 Flurl.Http 的微信对话开放平台（微信智能对话） API 客户端，支持机器人配置、机器人对话、客服消息收发等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
@@ -33,10 +33,14 @@
 	<ItemGroup>
 		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
 		<None Include="README.md" Pack="true" PackagePath="/" />
+        <None Include="ModelsFixtures/**/*.json" />
+        <None Include="EventsFixtures/**/*.xml" />
 	</ItemGroup>
 
     <ItemGroup>
-		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.1.1" />
+		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="4.0.0" />
+        <PackageReference Include="SKIT.JsonConv.NewtonsoftJson" Version="0.1.1" />
+        <PackageReference Include="SKIT.JsonConv.SystemTextJson" Version="0.1.1" />
 	</ItemGroup>
 
 </Project>
