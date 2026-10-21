@@ -1,6 +1,6 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayV2
 
-基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) HTTP API SDK。
+基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/)（微信支付）API v2 客户端 SDK。
 
 本模块仅支持微信支付 v2 版 API，如需接入微信支付 v3 版 API，请移步 [`SKIT.FlurlHttpClient.Wechant.TenpayV3`](../WechatTenpayV3/README.md) 模块。
 
@@ -8,7 +8,7 @@
 
 ## 功能
 
-- 基于微信支付 v2 版 API 封装。
+- 封装微信支付 v2 版 API。
 - 支持普通商户、境内服务商、银行服务商、跨境支付四种模式，同时支持企业微信的企业支付相关功能。
 - 请求时自动生成签名，无需开发者手动干预。
 - 提供了微信支付所需的 AES、MD5、HMAC-SHA-256 等算法工具类。

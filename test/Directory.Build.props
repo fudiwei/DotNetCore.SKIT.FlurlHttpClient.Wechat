@@ -1,0 +1,22 @@
+<Project>
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" Condition="'' != $([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+    <Import Project="$(MSBuildThisFileDirectory)Directory.Build.props.user" Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.props.user')" />
+
+    <PropertyGroup>
+        <UseLocalCodeAnalyzer Condition="'$(UseLocalCodeAnalyzer)' == ''">false</UseLocalCodeAnalyzer>
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(UseLocalCodeAnalyzer)' == 'true'">
+            <ItemGroup>
+                <ProjectReference Include="$(LocalCodeAnalyzerRoot)\SKIT.FlurlHttpClient.Tools.CodeAnalyzer.csproj" />
+            </ItemGroup>
+        </When>
+        <Otherwise>
+            <ItemGroup>
+                <PackageReference Include="SKIT.FlurlHttpClient.Tools.CodeAnalyzer" Version="0.4.0-preview.1" />
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
+</Project>

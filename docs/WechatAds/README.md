@@ -1,6 +1,6 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.Ads
 
-基于 `Flurl.Http` 的[微信广告平台](https://ad.weixin.qq.com/) HTTP API SDK。
+基于 `Flurl.Http` 的[微信广告平台](https://ad.weixin.qq.com/)（广点通）API 客户端 SDK。
 
 需要注意的是，微信广告平台是腾讯广点通的独立业务，请开发者阅读相关文档时注意与广点通本身的 API 区分。
 
@@ -8,7 +8,7 @@
 
 ## 功能
 
-- 基于微信广告平台 API 封装。
+- 封装微信广告平台 API。
 - 请求时自动生成服务商身份令牌，无需开发者手动干预。
 - 提供了微信广告平台所需的 MD5 等算法工具类。
 

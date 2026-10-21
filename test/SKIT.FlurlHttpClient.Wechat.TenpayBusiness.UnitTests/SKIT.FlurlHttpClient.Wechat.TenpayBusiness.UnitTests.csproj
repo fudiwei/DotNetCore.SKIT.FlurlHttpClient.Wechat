@@ -1,47 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
+    <PropertyGroup>
         <TargetFrameworks>net472; net10.0</TargetFrameworks>
         <IsPackable>false</IsPackable>
-	</PropertyGroup>
-
-    <PropertyGroup>
-        <UseDebuggingCodeAnalyzer Condition="'$(UseDebuggingCodeAnalyzer)' == ''">false</UseDebuggingCodeAnalyzer>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
 	<ItemGroup>
 		<None Remove=".gitignore" />
-		<Content Include="appsettings.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-		</Content>
-		<Content Include="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
-		</Content>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
 	</ItemGroup>
 
-    <ItemGroup>
+	<ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
         <PackageReference Include="xunit" Version="2.6.6" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-    </ItemGroup>
-
-    <Choose>
-        <When Condition="'$(UseDebuggingCodeAnalyzer)' == 'true'">
-            <ItemGroup>
-                <ProjectReference Include="$(DebuggingCodeAnalyzerRoot)\SKIT.FlurlHttpClient.Tools.CodeAnalyzer.csproj" />
-            </ItemGroup>
-        </When>
-        <Otherwise>
-            <ItemGroup>
-                <PackageReference Include="SKIT.FlurlHttpClient.Tools.CodeAnalyzer" Version="0.4.0-preview.1" />
-            </ItemGroup>
-        </Otherwise>
-    </Choose>
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat.TenpayBusiness\SKIT.FlurlHttpClient.Wechat.TenpayBusiness.csproj" />

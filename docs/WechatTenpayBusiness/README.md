@@ -1,12 +1,12 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
-基于 `Flurl.Http` 的[微企付](https://businesspay.qq.com/p/mse-pay/) HTTP API SDK。
+基于 `Flurl.Http` 的[微企付](https://businesspay.qq.com/p/mse-pay/) API 客户端 SDK。
 
 ---
 
 ## 功能
 
-- 基于微企付 API 封装。
+- 封装微企付 API。
 - 请求时自动生成签名，无需开发者手动干预。
 - 提供了微企付所需的 RSA、SM3、SM4、SHA-256 等算法工具类。
 - 提供了解析回调通知事件等扩展方法。
