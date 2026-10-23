@@ -41,7 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "material", "add_material")

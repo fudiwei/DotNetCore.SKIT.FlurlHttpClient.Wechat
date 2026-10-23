@@ -89,13 +89,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
-
-            if (request.FileHash is null)
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            {
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
+
+            if (request.FileHash is null)
+            {
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "account", "cancel-applications", "media");
@@ -1275,14 +1281,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.CombineMerchantId is not null)
+            {
                 request.CombineMerchantId = client.Credentials.MerchantId;
+            }
 
             if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
                     if (subOrder.MerchantId is null)
+                    {
                         subOrder.MerchantId = request.CombineMerchantId;
+                    }
                 }
             }
 
@@ -1313,7 +1323,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 foreach (var subOrder in request.SubOrderList)
                 {
                     if (subOrder.MerchantId is null)
+                    {
                         subOrder.MerchantId = client.Credentials.MerchantId;
+                    }
                 }
             }
 

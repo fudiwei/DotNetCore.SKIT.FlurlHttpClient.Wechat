@@ -19,7 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.Timestamp is null)
+            {
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "card", "invoice", "getauthurl")
@@ -187,10 +189,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             if (request.CardExtra is not null && request.CardExtra.Nonce is null)
+            {
                 request.CardExtra.Nonce = Guid.NewGuid().ToString("N");
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "card", "invoice", "insert")

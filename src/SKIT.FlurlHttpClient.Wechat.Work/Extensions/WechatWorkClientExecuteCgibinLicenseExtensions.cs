@@ -206,7 +206,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.SuiteId is null)
+            {
                 request.SuiteId = client.Credentials.SuiteId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_app_license_info")

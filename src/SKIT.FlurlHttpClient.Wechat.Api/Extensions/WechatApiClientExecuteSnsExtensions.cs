@@ -155,7 +155,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "sns", "component", "jscode2session")
@@ -185,7 +187,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "access_token")
@@ -215,7 +219,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "refresh_token")

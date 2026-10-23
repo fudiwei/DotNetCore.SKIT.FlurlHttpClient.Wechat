@@ -777,10 +777,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
+            {
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "qualification", "upload")
@@ -1457,7 +1461,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.FileName is null)
             {
                 if ("image".Equals(request.FileType))
-                    request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
+                    request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
                 else if ("video".Equals(request.FileType))
                     request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".mp4";
                 else
@@ -4331,10 +4335,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
+            {
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "open", "upload")

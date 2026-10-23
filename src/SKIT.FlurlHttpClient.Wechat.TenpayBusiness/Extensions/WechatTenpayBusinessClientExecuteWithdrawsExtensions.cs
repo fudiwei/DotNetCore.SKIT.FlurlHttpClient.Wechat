@@ -19,7 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.EnterpriseId is null)
+            {
                 request.EnterpriseId = client.Credentials.EnterpriseId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "withdraws");

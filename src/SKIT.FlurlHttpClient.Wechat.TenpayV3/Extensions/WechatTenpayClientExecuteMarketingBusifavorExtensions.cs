@@ -349,7 +349,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "busifavor", "callbacks")
@@ -376,7 +378,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "busifavor", "callbacks");
@@ -402,10 +406,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.PayerMerchantId is null)
+            {
                 request.PayerMerchantId = client.Credentials.MerchantId;
+            }
 
             if (request.PayeeMerchantId is null)
+            {
                 request.PayeeMerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "busifavor", "subsidy", "pay-receipts");
@@ -480,10 +488,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.PayerMerchantId is null)
+            {
                 request.PayerMerchantId = client.Credentials.MerchantId;
+            }
 
             if (request.PayeeMerchantId is null)
+            {
                 request.PayeeMerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "busifavor", "subsidy", "return-receipts");

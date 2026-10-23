@@ -21,7 +21,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "agent", "get")
@@ -73,7 +75,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set")
@@ -100,7 +104,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set_scope")
@@ -197,7 +203,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set_workbench_template")
@@ -224,7 +232,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "get_workbench_template")
@@ -251,7 +261,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set_workbench_data")
@@ -278,7 +290,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AgentId is null)
+            {
                 request.AgentId = client.Credentials.AgentId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "batch_set_workbench_data")

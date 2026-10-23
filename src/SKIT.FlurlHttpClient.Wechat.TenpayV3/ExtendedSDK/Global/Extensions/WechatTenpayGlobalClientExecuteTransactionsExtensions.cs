@@ -19,7 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "transactions", "app");
@@ -44,7 +46,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "transactions", "mweb");
@@ -70,7 +74,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "transactions", "jsapi");
@@ -95,7 +101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "transactions", "native");
@@ -120,7 +128,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "micropay", "transactions", "pay");
@@ -150,7 +160,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client.ProxyClient
                 .CreateFlurlRequest(request, HttpMethod.Get, "transactions", "out-trade-no", request.OutTradeNumber)
@@ -181,7 +193,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client.ProxyClient
                 .CreateFlurlRequest(request, HttpMethod.Get, "transactions", "id", request.TransactionId)
@@ -211,7 +225,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client.ProxyClient
                 .CreateFlurlRequest(request, HttpMethod.Post, "transactions", "out-trade-no", request.OutTradeNumber, "close");
@@ -236,7 +252,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client.ProxyClient
                 .CreateFlurlRequest(request, HttpMethod.Post, "transactions", "out-trade-no", request.OutTradeNumber, "reverse")

@@ -24,7 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "setdefaultamsinfo")
@@ -52,7 +54,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "getdefaultamsinfo")
@@ -1108,10 +1112,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower();
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "uploadmedia")
@@ -1401,7 +1409,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 string ext = string.Empty;
                 if (TYPE_IMAGE.Equals(request.Type))
-                    ext = ".png";
+                    ext = ".jpg";
                 else if (TYPE_VIDEO.Equals(request.Type))
                     ext = ".mp4";
 
@@ -1409,7 +1417,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "icp", "upload_icp_media")

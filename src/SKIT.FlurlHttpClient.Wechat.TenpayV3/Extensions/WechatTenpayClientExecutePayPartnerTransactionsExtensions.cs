@@ -20,7 +20,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "app");
@@ -48,7 +50,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "jsapi");
@@ -74,7 +78,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "h5");
@@ -100,7 +106,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "native");
@@ -125,7 +133,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "codepay");
@@ -150,7 +160,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "scannedpos");
@@ -180,7 +192,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber)
@@ -212,7 +226,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "pay", "partner", "transactions", "id", request.TransactionId)
@@ -244,7 +260,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber, "close");
@@ -269,7 +287,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber, "reverse");
@@ -295,7 +315,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "exposure");

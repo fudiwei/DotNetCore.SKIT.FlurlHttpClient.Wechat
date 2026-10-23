@@ -18,13 +18,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower();
+            }
 
             if (request.FileHash is null)
+            {
                 request.FileHash = EncodedString.ToHexString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!;
+            }
 
             if (request.FileContentType is null)
+            {
                 request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "images", "add")

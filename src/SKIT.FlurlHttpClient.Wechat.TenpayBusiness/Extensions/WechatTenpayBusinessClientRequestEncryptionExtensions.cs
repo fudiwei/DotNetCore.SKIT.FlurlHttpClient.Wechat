@@ -25,7 +25,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                     return request;
 
                 if (request.WechatpayEncryption is null)
+                {
                     request.WechatpayEncryption = new WechatTenpayBusinessRequestEncryption() { Algorithm = client.Credentials.SensitivePropertyEncryptionAlgorithm };
+                }
 
                 if (Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC.Equals(request.WechatpayEncryption.Algorithm))
                 {

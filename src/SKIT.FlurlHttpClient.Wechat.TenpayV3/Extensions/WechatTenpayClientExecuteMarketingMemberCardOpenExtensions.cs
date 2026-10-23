@@ -522,7 +522,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "bonus", "prepare");
@@ -547,7 +549,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "bonus", "commit");

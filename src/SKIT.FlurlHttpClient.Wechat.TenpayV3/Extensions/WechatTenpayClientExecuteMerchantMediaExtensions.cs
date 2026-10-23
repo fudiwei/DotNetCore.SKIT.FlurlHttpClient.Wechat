@@ -25,14 +25,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() +
-                    ((request.FileBytes.Length >= 5 && request.FileBytes[0] == 0x25 && request.FileBytes[1] == 0x50 && request.FileBytes[2] == 0x44 && request.FileBytes[3] == 0x46 && request.FileBytes[4] == 0x2D) ? ".pdf" : ".png");
-
-            if (request.FileHash is null)
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                    ((request.FileBytes.Length >= 5 && request.FileBytes[0] == 0x25 && request.FileBytes[1] == 0x50 && request.FileBytes[2] == 0x44 && request.FileBytes[3] == 0x46 && request.FileBytes[4] == 0x2D) ? ".pdf" : ".jpg");
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
+
+            if (request.FileHash is null)
+            {
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "upload");
@@ -62,13 +68,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
-
-            if (request.FileHash is null)
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            {
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
+
+            if (request.FileHash is null)
+            {
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "upload");
@@ -94,13 +106,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".mp4";
-
-            if (request.FileHash is null)
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
+
+            if (request.FileHash is null)
+            {
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "video_upload");

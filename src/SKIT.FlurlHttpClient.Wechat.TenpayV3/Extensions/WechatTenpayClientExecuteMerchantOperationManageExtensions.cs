@@ -67,13 +67,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
 
             if (request.FileName is null)
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
-
-            if (request.FileHash is null)
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToUpper();
+            {
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
+
+            if (request.FileHash is null)
+            {
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToUpper();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId, "upload");

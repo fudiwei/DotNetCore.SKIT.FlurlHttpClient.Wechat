@@ -19,7 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "customs", "orders");
@@ -44,7 +46,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "customs", "orders")
@@ -76,7 +80,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "customs", "redeclare");
@@ -101,7 +107,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "customs", "orders");
@@ -126,7 +134,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "customs", "verify-certificate");

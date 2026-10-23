@@ -19,14 +19,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.CombineMerchantId is null)
+            {
                 request.CombineMerchantId = client.Credentials.MerchantId;
+            }
 
             if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
                     if (subOrder.MerchantId is null)
+                    {
                         subOrder.MerchantId = request.CombineMerchantId;
+                    }
                 }
             }
 
