@@ -77,25 +77,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 {
                     case PlatformAuthScheme.Certificate:
                         {
-                            if (client.PlatformCertificateManager is not ICertificateManagerAsync)
-                            {
-                                // 降级为同步调用
-                                return EncryptRequestSensitivePropertyUseCertificateManager(client.PlatformCertificateManager, client.Credentials.SignScheme, request);
-                            }
-
                             await WechatTenpayClientRequestSerialNumberExtensions._EnsureRequestWechatpaySerialNumberIsSetAsync(client, request, cancellationToken).ConfigureAwait(false);
+
+                            // 降级为同步调用
+                            if (client.PlatformCertificateManager is not ICertificateManagerAsync)
+                                return EncryptRequestSensitivePropertyUseCertificateManager(client.PlatformCertificateManager, client.Credentials.SignScheme, request);
+
                             return await EncryptRequestSensitivePropertyUseCertificateManagerAsync<TRequest>((ICertificateManagerAsync)client.PlatformCertificateManager, client.Credentials.SignScheme, request, cancellationToken).ConfigureAwait(false);
                         }
 
                     case PlatformAuthScheme.PublicKey:
                         {
-                            if (client.PlatformPublicKeyManager is not IPublicKeyManagerAsync)
-                            {
-                                // 降级为同步调用
-                                return EncryptRequestSensitivePropertyUsePublicKeyManager(client.PlatformPublicKeyManager, client.Credentials.SignScheme, request);
-                            }
-
                             await WechatTenpayClientRequestSerialNumberExtensions._EnsureRequestWechatpaySerialNumberIsSetAsync(client, request, cancellationToken).ConfigureAwait(false);
+
+                            // 降级为同步调用
+                            if (client.PlatformPublicKeyManager is not IPublicKeyManagerAsync)
+                                return EncryptRequestSensitivePropertyUsePublicKeyManager(client.PlatformPublicKeyManager, client.Credentials.SignScheme, request);
+
                             return await EncryptRequestSensitivePropertyUsePublicKeyManagerAsync<TRequest>((IPublicKeyManagerAsync)client.PlatformPublicKeyManager, client.Credentials.SignScheme, request, cancellationToken).ConfigureAwait(false);
                         }
 
@@ -119,7 +117,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (manager is null)
                 throw new NullReferenceException("The platform certificate manager is not configured.");
 
-            CertificateEntry? entry = manager.GetEntry(request.WechatpaySerialNumber!);
+            if (request.WechatpaySerialNumber is null)
+                throw new WechatTenpayException("Failed to encrypt request, because the \"WechatpaySerialNumber\" of the request is unset."); 
+
+            CertificateEntry ? entry = manager.GetEntry(request.WechatpaySerialNumber);
             if (!entry.HasValue)
                 throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
 
@@ -132,7 +133,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (manager is null)
                 throw new NullReferenceException("The platform certificate manager is not configured.");
 
-            CertificateEntry? entry = await manager.GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
+            if (request.WechatpaySerialNumber is null)
+                throw new WechatTenpayException("Failed to encrypt request, because the \"WechatpaySerialNumber\" of the request is unset.");
+
+            CertificateEntry? entry = await manager.GetEntryAsync(request.WechatpaySerialNumber, cancellationToken).ConfigureAwait(false);
             if (!entry.HasValue)
                 throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
 
@@ -145,7 +149,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (manager is null)
                 throw new NullReferenceException("The platform public key manager is not configured.");
 
-            PublicKeyEntry? entry = manager.GetEntry(request.WechatpaySerialNumber!);
+            if (request.WechatpaySerialNumber is null)
+                throw new WechatTenpayException("Failed to encrypt request, because the \"WechatpaySerialNumber\" of the request is unset.");
+
+            PublicKeyEntry? entry = manager.GetEntry(request.WechatpaySerialNumber);
             if (!entry.HasValue)
                 throw new WechatTenpayException($"Failed to encrypt request, because the platform public key manager does not contain a key matched the serial number \"{request.WechatpaySerialNumber}\".");
 
@@ -158,7 +165,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (manager is null)
                 throw new NullReferenceException("The platform public key manager is not configured.");
 
-            PublicKeyEntry? entry = await manager.GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
+            if (request.WechatpaySerialNumber is null)
+                throw new WechatTenpayException("Failed to encrypt request, because the \"WechatpaySerialNumber\" of the request is unset.");
+
+            PublicKeyEntry? entry = await manager.GetEntryAsync(request.WechatpaySerialNumber, cancellationToken).ConfigureAwait(false);
             if (!entry.HasValue)
                 throw new WechatTenpayException($"Failed to encrypt request, because the platform public key manager does not contain a key matched the serial number \"{request.WechatpaySerialNumber}\".");
 
