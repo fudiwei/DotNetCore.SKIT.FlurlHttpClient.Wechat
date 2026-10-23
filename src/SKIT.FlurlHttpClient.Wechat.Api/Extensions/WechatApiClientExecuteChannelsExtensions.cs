@@ -754,7 +754,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                         .SetQueryParam("height", request.Height)
                         .SetQueryParam("width", request.Width);
 
-                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "media");
                 return await client.SendFlurlRequestAsync<Models.ChannelsECBasicsImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -883,7 +883,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("video_upload_key", request.VideoUploadKey)
                 .SetQueryParam("partnum", request.PartNumber);
 
-            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: null, fileBytes: request.FileBytes!, fileContentType: null, formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: null, fileBytes: request.FileBytes, fileContentType: null, formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.ChannelsECBasicsVideoUploadPartResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -1473,9 +1473,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "commkf", "cosupload")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, formDataName: "file");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "file");
             httpContent.Add(new StringContent(request.FileType), "msg_type");
             httpContent.Add(new StringContent(request.OpenId), "open_id");
+
             return await client.SendFlurlRequestAsync<Models.ChannelsECCommonKfCosUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -4341,7 +4342,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (request.UploadType == 0)
             {
-                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, formDataName: "file");
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "file");
                 return await client.SendFlurlRequestAsync<Models.ChannelsECOpenUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
             else

@@ -105,6 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request), formDataName: "submission_file");
             httpContent.Add(new StringContent(request.ItemId), "item_id");
+
             return await client.SendFlurlRequestAsync<Models.UploadMerchantManageSubmissionFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

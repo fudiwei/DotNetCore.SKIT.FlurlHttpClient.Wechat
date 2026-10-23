@@ -183,6 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             using var httpContent = new ByteArrayContent(request.VoiceBytes ?? Array.Empty<byte>());
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("audio/mp3");
+            httpContent.Headers.ContentLength = request.VoiceBytes?.Length;
 
             return await client.SendFlurlRequestAsync<Models.CgibinMediaVoiceAddVoiceToRecognitionForTextResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -236,6 +237,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             using var httpContent = new ByteArrayContent(request.VoiceBytes ?? Array.Empty<byte>());
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("audio/mp3");
+            httpContent.Headers.ContentLength = request.VoiceBytes?.Length;
 
             return await client.SendFlurlRequestAsync<Models.CgibinMediaVoiceTranslateContentResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

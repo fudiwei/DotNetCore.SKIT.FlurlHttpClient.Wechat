@@ -75,20 +75,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            string filename = "file.zip";
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "custom_audience_files", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
+            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/zip");
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
+
+            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(new StringContent(request.CustomAudienceId.ToString()), "audience_id");
             httpContent.Add(new StringContent(request.UserIdType), "user_id_type");
             httpContent.Add(new StringContent(request.OperationType), "operation_type");
-            httpContent.Add(fileContent, "\"file\"", $"\"{filename}\"");
+            httpContent.Add(fileContent, "\"file\"", $"\"file.zip\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/zip");
-            fileContent.Headers.ContentLength = request.FileBytes?.Length;
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "custom_audience_files", "add")
-                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsync<Models.CustomAudienceFilesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
