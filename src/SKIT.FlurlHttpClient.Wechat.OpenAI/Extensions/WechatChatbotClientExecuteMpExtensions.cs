@@ -121,6 +121,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 .CreateFlurlRequest(request, HttpMethod.Post, "assetsupload", client.Credentials.Token!);
 
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
+            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
+
             using var paramContent = new StringContent(
                 Utilities.WxMsgCryptor.AESEncrypt(
                     plainText: Utilities.XmlHelper.ConvertFromJson(client.JsonSerializer.Serialize(request)),
@@ -128,12 +131,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     appId: client.Credentials.AppId!
                 ),
                 Encoding.UTF8
-            ); ;
+            );
+
             using var httpContent = new MultipartFormDataContent();
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Add(paramContent, "\"encrypt\"");
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
-            fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
             return await client.SendFlurlRequestAsync<Models.AssetsUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
     internal static class HttpContentBuilder
     {
-        public static MultipartFormDataContent BuildWithFile(string? fileName, byte[] fileBytes, string? fileContentType, string formDataName, Action<HttpContent>? configureFileHttpContent = null)
+        public static MultipartFormDataContent BuildWithFile(string? fileName, byte[]? fileBytes, string? fileContentType, string formDataName, Action<HttpContent>? configureFileHttpContent = null)
         {
             if (formDataName is null) throw new ArgumentNullException(nameof(formDataName));
 

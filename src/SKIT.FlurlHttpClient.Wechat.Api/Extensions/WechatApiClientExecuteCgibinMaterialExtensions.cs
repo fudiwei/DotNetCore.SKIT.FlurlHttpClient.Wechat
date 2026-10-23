@@ -53,6 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 httpContent.Add(new StringContent(client.JsonSerializer.Serialize(request), Encoding.UTF8), "\"description\"");
             }
+
             return await client.SendFlurlRequestAsync<Models.CgibinMaterialAddMaterialResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

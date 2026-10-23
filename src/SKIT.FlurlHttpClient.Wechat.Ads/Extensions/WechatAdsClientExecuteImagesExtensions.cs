@@ -26,17 +26,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.FileContentType is null)
                 request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "images", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             fileContent.Headers.ContentType = request.FileContentType is null ? null : MediaTypeHeaderValue.Parse(request.FileContentType);
-            fileContent.Headers.ContentLength = request.FileBytes is null ? null : request.FileBytes.Length;
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"file\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "images", "add")
-                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

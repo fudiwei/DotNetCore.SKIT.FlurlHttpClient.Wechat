@@ -1,15 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 {
     using SKIT.FlurlHttpClient;
+    using SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Constants;
 
     internal static class HttpContentBuilder
     {
-        public static MultipartFormDataContent BuildWithFile(string fileName, byte[] fileBytes, string fileContentType, string fileMetaJson, string formDataName = "file", Action<HttpContent>? configureMetaHttpContent = null, Action<HttpContent>? configureFileHttpContent = null)
+        public static MultipartFormDataContent BuildWithFile(string? fileName, byte[]? fileBytes, string? fileContentType, string fileMetaJson, string formDataName = "file", Action<HttpContent>? configureMetaHttpContent = null, Action<HttpContent>? configureFileHttpContent = null)
         {
-            if (fileName is null) throw new ArgumentNullException(nameof(fileName));
             if (fileMetaJson is null) throw new ArgumentNullException(nameof(fileMetaJson));
             if (formDataName is null) throw new ArgumentNullException(nameof(formDataName));
 
+            fileName = fileName?.Replace("\"", string.Empty) ?? string.Empty;
             fileBytes = fileBytes ?? Array.Empty<byte>();
             fileContentType = string.IsNullOrEmpty(fileContentType) ? MimeTypes.Binary : fileContentType;
             formDataName = formDataName.Replace("\"", string.Empty);
@@ -24,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             MultipartFormDataContent httpContent = new MultipartFormDataContent(boundary);
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse($"{MimeTypes.FormData}; boundary={boundary}");
-            httpContent.Add(metaContent, $"\"{Constants.FormDataFields.FORMDATA_META}\"");
+            httpContent.Add(metaContent, $"\"{FormDataFields.FORMDATA_META}\"");
             httpContent.Add(fileContent, $"\"{formDataName}\"", $"\"{HttpUtility.UrlEncode(fileName)}\"");
             return httpContent;
         }

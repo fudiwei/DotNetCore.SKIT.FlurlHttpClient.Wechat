@@ -664,6 +664,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.CoverType is not null) httpContent.Add(new StringContent(request.CoverType), "cover_type");
             if (request.CoverFileBytes is not null) httpContent.Add(new ByteArrayContent(request.CoverFileBytes), "cover_data");
             if (request.SourceContext is not null) httpContent.Add(new StringContent(request.SourceContext), "source_context");
+
             return await client.SendFlurlRequestAsync<Models.WxaSecVodSingleFileUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -760,6 +761,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             httpContent.Add(new StringContent(request.UploadId), "upload_id");
             httpContent.Add(new StringContent(request.PartNumber.ToString()), "part_number");
             httpContent.Add(new StringContent(request.FileType.ToString()), "resource_type");
+
             return await client.SendFlurlRequestAsync<Models.WxaSecVodUploadPartResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
