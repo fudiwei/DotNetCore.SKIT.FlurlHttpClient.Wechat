@@ -104,7 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     throw new Exception("The platform certificate manager is empty. Please make sure you have downloaded platform (NOT merchant) certificates first.");
 
                 CertificateEntry entry = entries.First();
-                request.WechatpaySerialNumber = entry.SerialNumber;
+                request.WithWechatpaySerialNumber(entry.SerialNumber);
             }
 
             return request;
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     throw new Exception("The platform certificate manager is empty. Please make sure you have downloaded platform (NOT merchant) certificates first.");
 
                 CertificateEntry entry = entries.First();
-                request.WechatpaySerialNumber = entry.SerialNumber;
+                request.WithWechatpaySerialNumber(entry.SerialNumber);
             }
 
             return request;
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     throw new Exception("The platform public key manager is empty. Perhaps you forget to add one?");
 
                 PublicKeyEntry entry = entries.First();
-                request.WechatpaySerialNumber = entry.SerialNumber;
+                request.WithWechatpaySerialNumber(entry.SerialNumber);
             }
             return request;
         }
@@ -163,7 +163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     throw new Exception("The platform public key manager is empty. Perhaps you forget to add one?");
 
                 PublicKeyEntry entry = entries.First();
-                request.WechatpaySerialNumber = entry.SerialNumber;
+                request.WithWechatpaySerialNumber(entry.SerialNumber);
             }
             return request;
         }
