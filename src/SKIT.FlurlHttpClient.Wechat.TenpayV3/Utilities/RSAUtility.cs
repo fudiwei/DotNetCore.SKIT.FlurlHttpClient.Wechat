@@ -408,7 +408,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
-#if NET5_0_OR_GREATER
+#if NET9_0_OR_GREATER
+            using (System.Security.Cryptography.X509Certificates.X509Certificate2 x509cert = System.Security.Cryptography.X509Certificates.X509CertificateLoader.LoadCertificate(ConvertCertificatePemToByteArray(certificate)))
+            {
+                return x509cert.SerialNumber;
+            }
+#elif NET5_0_OR_GREATER
             using (System.Security.Cryptography.X509Certificates.X509Certificate2 x509cert = new System.Security.Cryptography.X509Certificates.X509Certificate2(ConvertCertificatePemToByteArray(certificate)))
             {
                 return x509cert.SerialNumber;
@@ -428,7 +433,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
-#if NET5_0_OR_GREATER
+#if NET9_0_OR_GREATER
+            using (System.Security.Cryptography.X509Certificates.X509Certificate2 x509cert = System.Security.Cryptography.X509Certificates.X509CertificateLoader.LoadCertificate(ConvertCertificatePemToByteArray(certificate)))
+            {
+                return new DateTimeOffset(x509cert.NotBefore);
+            }
+#elif NET5_0_OR_GREATER
             using (System.Security.Cryptography.X509Certificates.X509Certificate2 x509cert = new System.Security.Cryptography.X509Certificates.X509Certificate2(ConvertCertificatePemToByteArray(certificate)))
             {
                 return new DateTimeOffset(x509cert.NotBefore);
@@ -448,7 +458,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
-#if NET5_0_OR_GREATER
+#if NET9_0_OR_GREATER
+            using (System.Security.Cryptography.X509Certificates.X509Certificate2 x509cert = System.Security.Cryptography.X509Certificates.X509CertificateLoader.LoadCertificate(ConvertCertificatePemToByteArray(certificate)))
+            {
+                return new DateTimeOffset(x509cert.NotAfter);
+            }
+#elif NET5_0_OR_GREATER
             using (System.Security.Cryptography.X509Certificates.X509Certificate2 x509cert = new System.Security.Cryptography.X509Certificates.X509Certificate2(ConvertCertificatePemToByteArray(certificate)))
             {
                 return new DateTimeOffset(x509cert.NotAfter);
