@@ -21,10 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileHash is null)
+            {
                 request.FileHash = EncodedString.ToHexString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!.ToLower();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "secapi", "mch", "uploadmedia");

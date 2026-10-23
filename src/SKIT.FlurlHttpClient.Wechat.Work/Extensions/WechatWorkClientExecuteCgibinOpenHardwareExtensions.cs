@@ -19,10 +19,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ModelId is null)
+            {
                 request.ModelId = client.Credentials.ModelId;
+            }
 
             if (request.ModelSecret is null)
+            {
                 request.ModelSecret = client.Credentials.ModelSecret;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "openhw", "get_model_token");

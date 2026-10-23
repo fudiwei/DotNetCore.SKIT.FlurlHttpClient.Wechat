@@ -19,7 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.Timestamp is null)
+            {
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "papay", "partner", "preentrustweb");

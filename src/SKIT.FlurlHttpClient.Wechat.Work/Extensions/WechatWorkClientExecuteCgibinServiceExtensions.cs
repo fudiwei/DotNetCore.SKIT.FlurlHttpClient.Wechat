@@ -20,10 +20,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.CorpId is null)
+            {
                 request.CorpId = client.Credentials.CorpId;
+            }
 
             if (request.ProviderSecret is null)
+            {
                 request.ProviderSecret = client.Credentials.ProviderSecret;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_provider_token");
@@ -49,10 +53,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.SuiteId is null)
+            {
                 request.SuiteId = client.Credentials.SuiteId;
+            }
 
             if (request.SuiteSecret is null)
+            {
                 request.SuiteSecret = client.Credentials.SuiteSecret;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_suite_token");
@@ -347,7 +355,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             {
                 string ext = string.Empty;
                 if (TYPE_IMAGE.Equals(request.Type))
-                    ext = ".png";
+                    ext = ".jpg";
                 else if (TYPE_VOICE.Equals(request.Type))
                     ext = ".mp3";
                 else if (TYPE_VIDEO.Equals(request.Type))
@@ -357,7 +365,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             }
 
             if (request.FileContentType is null)
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "service", "media", "upload")

@@ -265,10 +265,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "user-confirm-authorization", "out-authorization-no", request.OutAuthorizationNumber);
-
-            if (request.IsDisplayAuthorization is not null)
-                flurlReq.SetQueryParam("is_display_authorization", request.IsDisplayAuthorization.Value ? "true" : "false");
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "user-confirm-authorization", "out-authorization-no", request.OutAuthorizationNumber)
+                .SetQueryParam("is_display_authorization", request.IsDisplayAuthorization?.ToString()?.ToLower());
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -406,7 +404,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-out-batches", request.OutBatchNumber)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail)
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail.ToString().ToLower())
                 .SetQueryParam("detail_state", request.DetailState);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -430,7 +428,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail)
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail.ToString().ToLower())
                 .SetQueryParam("detail_state", request.DetailState);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchByBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

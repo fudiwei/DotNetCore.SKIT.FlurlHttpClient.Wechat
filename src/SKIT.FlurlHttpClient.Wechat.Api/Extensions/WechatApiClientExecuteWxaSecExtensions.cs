@@ -278,7 +278,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "order", "is_trade_managed")
@@ -304,7 +306,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "order", "is_trade_management_confirmation_completed")

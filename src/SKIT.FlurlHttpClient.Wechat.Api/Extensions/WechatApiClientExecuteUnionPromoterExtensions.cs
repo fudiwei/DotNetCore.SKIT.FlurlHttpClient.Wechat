@@ -192,8 +192,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("category", request.CategoryIdList is null ? null : string.Join(",", request.CategoryIdList))
                 .SetQueryParam("noCategory", request.CategoryIdBlackList is null ? null : string.Join(",", request.CategoryIdBlackList))
                 .SetQueryParam("productId", request.ProductIdList is null ? null : string.Join(",", request.ProductIdList))
-                .SetQueryParam("shippingMethods", client.JsonSerializer.Serialize(request.ShippingMethods))
-                .SetQueryParam("addressList", client.JsonSerializer.Serialize(request.AddressList))
+                .SetQueryParam("shippingMethods", request.ShippingMethods is null ? null : client.JsonSerializer.Serialize(request.ShippingMethods))
+                .SetQueryParam("addressList", request.AddressList is null ? null : client.JsonSerializer.Serialize(request.AddressList))
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 

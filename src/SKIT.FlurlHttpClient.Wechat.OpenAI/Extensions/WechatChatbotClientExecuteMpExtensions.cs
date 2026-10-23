@@ -112,10 +112,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+            }
 
             if (request.FileContentType is null)
+            {
                 request.FileContentType = "image/jpeg";
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "assetsupload", client.Credentials.Token!);

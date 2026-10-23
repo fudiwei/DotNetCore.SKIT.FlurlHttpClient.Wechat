@@ -19,7 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "sendmsg", client.Credentials.Token!);
@@ -44,7 +46,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "kefustate", "get", client.Credentials.Token!);
@@ -69,7 +73,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.AppId is null)
+            {
                 request.AppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "kefustate", "change", client.Credentials.Token!);

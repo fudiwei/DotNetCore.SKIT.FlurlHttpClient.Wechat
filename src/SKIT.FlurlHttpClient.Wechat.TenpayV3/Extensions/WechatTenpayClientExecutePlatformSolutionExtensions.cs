@@ -799,7 +799,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "batches", "out-batch-no", request.OutBatchNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false")
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail.ToString().ToLower())
                 .SetQueryParam("detail_state", request.DetailState)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
@@ -826,7 +826,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "batches", "batch-id", request.BatchId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false")
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail.ToString().ToLower())
                 .SetQueryParam("detail_state", request.DetailState)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);

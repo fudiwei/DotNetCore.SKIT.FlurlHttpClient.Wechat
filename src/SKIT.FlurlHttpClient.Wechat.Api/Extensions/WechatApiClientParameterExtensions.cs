@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("response_type", "code")
                 .SetQueryParam("scope", scope)
                 .SetQueryParam("state", state)
-                .SetQueryParam("forcePopup", forcePopup.HasValue ? forcePopup.Value ? "true" : "false" : null)
+                .SetQueryParam("forcePopup", forcePopup?.ToString()?.ToLower())
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
@@ -156,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("response_type", "code")
                 .SetQueryParam("scope", scope)
                 .SetQueryParam("state", state)
-                .SetQueryParam("forcePopup", forcePopup.HasValue ? forcePopup.Value ? "true" : "false" : null)
+                .SetQueryParam("forcePopup", forcePopup?.ToString()?.ToLower())
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
@@ -186,7 +186,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("auth_type", authType)
                 .SetQueryParam("biz_appid", businessAppId)
-                .SetQueryParam("category_id_list", categoryIdList.Any() ? string.Join("|", categoryIdList) : null)
+                .SetQueryParam("category_id_list", categoryIdList is null ? null : string.Join("|", categoryIdList))
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
@@ -214,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("auth_type", authType)
                 .SetQueryParam("biz_appid", businessAppId)
-                .SetQueryParam("category_id_list", categoryIdList.Any() ? string.Join("|", categoryIdList) : null)
+                .SetQueryParam("category_id_list", categoryIdList is null ? null : string.Join("|", categoryIdList))
                 .ToString();
         }
     }

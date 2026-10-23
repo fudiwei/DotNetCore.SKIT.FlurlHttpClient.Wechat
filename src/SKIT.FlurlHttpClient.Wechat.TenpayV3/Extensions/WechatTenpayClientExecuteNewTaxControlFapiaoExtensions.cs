@@ -194,7 +194,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.MerchantId is null)
+            {
                 request.MerchantId = client.Credentials.MerchantId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get)
@@ -296,7 +298,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("operation_type", request.OperationType)
                 .SetQueryParam("operate_user", request.OperateUser)
                 .SetQueryParam("fapiao_mode", request.FapiaoMode)
-                .SetQueryParam("fapiao_ability_type_list", request.FapiaoAbilityTypeList is not null ? string.Join(",", request.FapiaoAbilityTypeList) : null)
+                .SetQueryParam("fapiao_ability_type_list", request.FapiaoAbilityTypeList is null ? null : string.Join(",", request.FapiaoAbilityTypeList))
                 .SetQueryParam("invite_channel", request.InviteChannel)
                 .SetQueryParam("invite_code", request.InviteCode)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
@@ -322,8 +324,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiaomerchant", "listspinvitemchinfo")
-                .SetQueryParam("query_time_start", request.QueryStartTime.HasValue ? request.QueryStartTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz") : null)
-                .SetQueryParam("query_time_end", request.QueryEndTime.HasValue ? request.QueryEndTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz") : null)
+                .SetQueryParam("query_time_start", request.QueryStartTime?.ToString("yyyy-MM-dd'T'HH:mm:sszzz"))
+                .SetQueryParam("query_time_end", request.QueryEndTime?.ToString("yyyy-MM-dd'T'HH:mm:sszzz") )
                 .SetQueryParam("invite_code", request.InviteCode)
                 .SetQueryParam("mch_invite_status", request.InviteCode)
                 .SetQueryParam("offset", request.Offset)
@@ -505,10 +507,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("openid", request.OpenId)
                 .SetQueryParam("seller_name", request.SellerName)
-                .SetQueryParam("show_phone_cell", request.RequireShowMobileCell.HasValue ? request.RequireShowMobileCell.Value ? "true" : "false" : null)
-                .SetQueryParam("must_input_phone", request.RequireMustInputMobile.HasValue ? request.RequireMustInputMobile.Value ? "true" : "false" : null)
-                .SetQueryParam("show_email_cell", request.RequireShowEmailCell.HasValue ? request.RequireShowEmailCell.Value ? "true" : "false" : null)
-                .SetQueryParam("must_input_email", request.RequireMustInputEmail.HasValue ? request.RequireMustInputEmail.Value ? "true" : "false" : null);
+                .SetQueryParam("show_phone_cell", request.RequireShowMobileCell?.ToString()?.ToLower())
+                .SetQueryParam("must_input_phone", request.RequireMustInputMobile?.ToString()?.ToLower())
+                .SetQueryParam("show_email_cell", request.RequireShowEmailCell?.ToString()?.ToLower())
+                .SetQueryParam("must_input_email", request.RequireMustInputEmail?.ToString()?.ToLower());
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoUserTitleUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

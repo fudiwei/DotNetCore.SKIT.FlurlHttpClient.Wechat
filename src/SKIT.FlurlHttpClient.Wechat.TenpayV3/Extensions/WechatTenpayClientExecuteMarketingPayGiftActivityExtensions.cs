@@ -70,8 +70,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("activity_name", request.ActivityName)
                 .SetQueryParam("activity_status", request.ActivityStatus)
                 .SetQueryParam("award_type", request.AwardType)
-                .SetQueryParam("limit", request.Limit.ToString())
-                .SetQueryParam("offset", request.Offset.ToString());
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPayGiftActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

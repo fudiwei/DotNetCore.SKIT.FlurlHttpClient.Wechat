@@ -19,10 +19,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             if (request.ComponentSecret is null)
+            {
                 request.ComponentSecret = client.Credentials.AppSecret;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_start_push_ticket");
@@ -47,10 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             if (request.ComponentSecret is null)
+            {
                 request.ComponentSecret = client.Credentials.AppSecret;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_component_token");
@@ -75,7 +83,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_create_preauthcode")
@@ -101,7 +111,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_query_auth")
@@ -127,7 +139,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_authorizer_token")
@@ -153,7 +167,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_info")
@@ -179,7 +195,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_list")
@@ -414,10 +432,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
+            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".txt";
+            }
 
             if (request.FileContentType is null)
+            {
                 request.FileContentType = "text/plain";
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "uploadprivacyextfile")
@@ -444,10 +466,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.ComponentAppId is null)
+            {
                 request.ComponentAppId = client.Credentials.AppId;
+            }
 
             if (request.ComponentAppSecret is null)
+            {
                 request.ComponentAppSecret = client.Credentials.AppSecret;
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "clear_quota", "v2");
