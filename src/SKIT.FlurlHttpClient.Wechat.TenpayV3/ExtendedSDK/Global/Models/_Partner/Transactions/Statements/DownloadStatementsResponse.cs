@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     {
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && GetRawBytes().Any();
+            return base.IsSuccessful() && GetRawHeaders().ContainsKey(HttpHeaders.ContentDisposition);
         }
     }
 }

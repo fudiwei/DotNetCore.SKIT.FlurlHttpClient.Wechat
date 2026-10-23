@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && GetRawBytes().Any();
+            return base.IsSuccessful() && (GetRawHeaders().ContainsKey(HttpHeaders.ContentDisposition) || QrcodeUrl is not null);
         }
     }
 }
