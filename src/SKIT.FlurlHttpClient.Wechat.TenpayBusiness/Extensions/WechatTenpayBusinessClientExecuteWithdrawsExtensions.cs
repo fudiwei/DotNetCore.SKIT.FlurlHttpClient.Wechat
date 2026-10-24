@@ -41,6 +41,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.WithdrawId, "withdraw_id");
+
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "withdraws", request.WithdrawId);
 
@@ -58,6 +60,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutWithdrawId, "out_withdraw_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "withdraws", "out-withdraw-id", request.OutWithdrawId);

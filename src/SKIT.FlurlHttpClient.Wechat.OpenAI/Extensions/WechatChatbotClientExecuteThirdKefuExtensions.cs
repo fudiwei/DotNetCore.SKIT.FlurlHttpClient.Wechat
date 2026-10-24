@@ -18,6 +18,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.PathParameterGuard.
+
             if (request.AppId is null)
             {
                 request.AppId = client.Credentials.AppId;

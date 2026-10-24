@@ -20,6 +20,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
+
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId, "representative");
 
@@ -41,6 +43,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId, "representatives")
@@ -66,6 +70,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
+
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId, "representative");
 
@@ -89,6 +95,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "materials");
@@ -114,6 +122,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
+
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores")
                 .SetQueryParam("offset", request.Offset)
@@ -138,6 +148,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StoreCode, "store_code");
+
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores", request.StoreCode);
 
@@ -160,6 +173,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
+
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores");
 
@@ -181,6 +196,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores");

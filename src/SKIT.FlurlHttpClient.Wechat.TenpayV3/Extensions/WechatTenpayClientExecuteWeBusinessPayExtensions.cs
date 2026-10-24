@@ -75,6 +75,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.EmployeeId, "employee_id");
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -101,6 +103,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.EmployeeId, "employee_id");
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutCardNumber, "out_card_no");
 
             if (request.MerchantId is null)
             {
@@ -131,6 +136,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.EmployeeId, "employee_id");
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardNumber, "card_no");
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -160,6 +168,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.EmployeeId, "employee_id");
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -187,6 +197,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.EmployeeId, "employee_id");
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardNumber, "card_no");
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -213,6 +226,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.EmployeeId, "employee_id");
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardNumber, "card_no");
 
             if (request.MerchantId is null)
             {
@@ -273,6 +289,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BatchId, "batch_id");
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -303,6 +321,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.UserId, "user_id");
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -331,6 +351,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.UserId, "user_id");
 
             if (request.MerchantId is null)
             {

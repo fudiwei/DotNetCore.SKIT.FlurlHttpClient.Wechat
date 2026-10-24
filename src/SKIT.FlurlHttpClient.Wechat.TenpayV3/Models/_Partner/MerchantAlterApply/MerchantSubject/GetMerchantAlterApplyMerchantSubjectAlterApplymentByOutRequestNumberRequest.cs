@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no} 接口的请求。</para>
+    /// <para>表示 [GET] /mchalterapply/mchsubjectalterapplyment/merchant/{sub_mchid}/out-request-no/{out_request_no} 接口的请求。</para>
     /// </summary>
     public class GetMerchantAlterApplyMerchantSubjectAlterApplymentByOutRequestNumberRequest : WechatTenpayRequest
     {
