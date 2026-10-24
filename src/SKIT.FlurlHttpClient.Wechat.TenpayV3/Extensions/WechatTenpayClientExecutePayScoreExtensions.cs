@@ -373,31 +373,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        [Obsolete("请使用 ExecuteCompletePayScoreServiceOrderAsync 方法代替。")]
-        public static async Task<Models.SetPayScoreServiceOrderCompleteResponse> ExecuteSetPayScoreServiceOrderCompleteAsync(this WechatTenpayClient client, Models.SetPayScoreServiceOrderCompleteRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "serviceorder", request.OutOrderNumber, "complete");
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScoreServiceOrderCompleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /payscore/serviceorder/{out_order_no}/complete 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012587955 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
         public static async Task<Models.CompletePayScoreServiceOrderResponse> ExecuteCompletePayScoreServiceOrderAsync(this WechatTenpayClient client, Models.CompletePayScoreServiceOrderRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -422,31 +397,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        [Obsolete("请使用 ExecuteCreatePayScoreServiceOrderPayAsync 方法代替。")]
-        public static async Task<Models.SetPayScoreServiceOrderPayResponse> ExecuteSetPayScoreServiceOrderPayAsync(this WechatTenpayClient client, Models.SetPayScoreServiceOrderPayRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "serviceorder", request.OutOrderNumber, "pay");
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScoreServiceOrderPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /payscore/serviceorder/{out_order_no}/pay 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013394596 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
         public static async Task<Models.CreatePayScoreServiceOrderPayResponse> ExecuteCreatePayScoreServiceOrderPayAsync(this WechatTenpayClient client, Models.CreatePayScoreServiceOrderPayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -458,31 +408,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "serviceorder", request.OutOrderNumber, "pay");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayScoreServiceOrderPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /payscore/serviceorder/{out_order_no}/sync 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012587962 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        [Obsolete("请使用 ExecuteSyncPayScoreServiceOrderAsync 方法代替。")]
-        public static async Task<Models.SetPayScoreServiceOrderSyncResponse> ExecuteSetPayScoreServiceOrderSyncAsync(this WechatTenpayClient client, Models.SetPayScoreServiceOrderSyncRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "serviceorder", request.OutOrderNumber, "sync");
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScoreServiceOrderSyncResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
