@@ -25,8 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
-#pragma warning disable CS8765
-        public override string SignType { get; set; } = Constants.SignTypes.MD5;
-#pragma warning restore CS8765
+        public override string? SignType { get; set; } = Constants.SignTypes.MD5;
     }
 }

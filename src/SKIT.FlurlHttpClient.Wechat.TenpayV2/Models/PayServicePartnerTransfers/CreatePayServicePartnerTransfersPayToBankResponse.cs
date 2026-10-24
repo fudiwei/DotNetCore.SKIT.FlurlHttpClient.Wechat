@@ -10,11 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-#pragma warning disable CS8618
-#pragma warning disable CS8765
-        public override string MerchantId { get; set; }
-#pragma warning restore CS8765
-#pragma warning restore CS8618
+        public override string? MerchantId { get; set; }
 
         /// <summary>
         /// <i>（冗余字段，请忽略）</i>
