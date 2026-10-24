@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /deposit/orderquery 接口的请求。</para>
@@ -53,8 +53,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
-#pragma warning disable CS8765
-        public override string SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
-#pragma warning restore CS8765
+        public override string? SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
     }
 }

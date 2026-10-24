@@ -25,9 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
-#pragma warning disable CS8765
-        public override string SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
-#pragma warning restore CS8765
+        public override string? SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
 
         /// <summary>
         /// 获取或设置商户订单号。与字段 <see cref="TransactionId"/> 二选一。
