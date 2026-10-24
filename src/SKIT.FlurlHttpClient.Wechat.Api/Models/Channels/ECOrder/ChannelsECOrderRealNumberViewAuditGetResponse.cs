@@ -28,14 +28,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string ApplyReason { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置申请时间毫秒级时间戳。
-        /// </summary>
-        [Obsolete("请使用 ApplyTimestampMilli 属性代替。")]
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public long ApplyTimeMilliseconds { get { return ApplyTimestampMilli; } set { ApplyTimestampMilli = value; } }
-
-        /// <summary>
         /// 获取或设置申请时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_time")]
