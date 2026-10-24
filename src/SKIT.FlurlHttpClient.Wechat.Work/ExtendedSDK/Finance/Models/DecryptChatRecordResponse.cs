@@ -155,14 +155,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         public string? RoomId { get; set; }
 
         /// <summary>
-        /// 获取或设置消息发送毫秒级时间戳。
-        /// </summary>
-        [Obsolete("请使用 MessageTimestampMilli 属性代替。")]
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public long MessageTimeMilliseconds { get { return MessageTimestampMilli; } set { MessageTimestampMilli = value; } }
-
-        /// <summary>
         /// 获取或设置消息发送时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtime")]

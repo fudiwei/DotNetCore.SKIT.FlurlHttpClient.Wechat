@@ -64,14 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         public string UserId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置毫秒级时间戳。
-        /// </summary>
-        [Obsolete("请使用 AgreeTimestampMilli 属性代替。")]
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public long AgreeTimeMilliseconds { get { return AgreeTimestampMilli; } set { AgreeTimestampMilli = value; } }
-
-        /// <summary>
         /// 获取或设置时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("agree_time")]
