@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<IHttpActionResult> CreateRefund([FromBody] Models.CreateRefundRequest requestModel, CancellationToken cancellationToken)
+        public async Task<IHttpActionResult> CreateRefund([FromBody] DTOs.CreateRefundRequest requestModel, CancellationToken cancellationToken)
         {
             if (requestModel == null)
                 return BadRequest();

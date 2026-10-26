@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.DTOs
 {
     public class CreateRefundRequest
     {

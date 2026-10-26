@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> CreateRefund([FromBody] Models.CreateRefundRequest requestModel)
+        public async Task<IActionResult> CreateRefund([FromBody] DTOs.CreateRefundRequest requestModel)
         {
             var client = _wechatTenpayClientFactory.Create(requestModel.MerchantId);
             var request = new CreateRefundDomesticRefundRequest()

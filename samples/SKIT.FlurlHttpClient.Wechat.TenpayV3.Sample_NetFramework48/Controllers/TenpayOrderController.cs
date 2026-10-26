@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 
         [HttpPost]
         [Route("jsapi")]
-        public async Task<IHttpActionResult> CreateOrderByJsapi([FromBody] Models.CreateOrderByJsapiRequest requestModel, CancellationToken cancellationToken)
+        public async Task<IHttpActionResult> CreateOrderByJsapi([FromBody] DTOs.CreateOrderByJsapiRequest requestModel, CancellationToken cancellationToken)
         {
             if (requestModel == null)
                 return BadRequest();

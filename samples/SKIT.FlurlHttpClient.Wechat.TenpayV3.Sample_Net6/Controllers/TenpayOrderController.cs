@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 
         [HttpPost]
         [Route("jsapi")]
-        public async Task<IActionResult> CreateOrderByJsapi([FromBody] Models.CreateOrderByJsapiRequest requestModel)
+        public async Task<IActionResult> CreateOrderByJsapi([FromBody] DTOs.CreateOrderByJsapiRequest requestModel)
         {
             var client = _wechatTenpayClientFactory.Create(requestModel.MerchantId);
             var request = new CreatePayTransactionJsapiRequest()
