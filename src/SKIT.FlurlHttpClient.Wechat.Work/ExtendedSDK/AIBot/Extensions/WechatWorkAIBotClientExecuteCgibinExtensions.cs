@@ -17,11 +17,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
-            if (!Uri.TryCreate(request.ResponseUrl, UriKind.Absolute, out _)) throw new ArgumentException("Invalid parameter of the response URL.", nameof(request));
+
+            Utilities.HttpRequestGuard.AgainstEmptyUrl(request.ResponseUrl);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "aibot", "response")
-                .WithUrl(request.ResponseUrl);
+                .WithUrl(request.ResponseUrl!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinAIBotResponseResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

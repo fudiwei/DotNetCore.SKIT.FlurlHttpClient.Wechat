@@ -116,7 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId!, "reverse");
@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId!)
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId!, "fapiao-files")
@@ -199,6 +199,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            Utilities.HttpRequestGuard.AgainstEmptyUrl(request.DownloadUrl);
+
             if (request.MerchantId is null)
             {
                 request.MerchantId = client.Credentials.MerchantId;
@@ -206,7 +208,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get)
-                .WithUrl(request.DownloadUrl)
+                .WithUrl(request.DownloadUrl!)
                 .SetQueryParam("mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("openid", request.OpenId)
@@ -278,7 +280,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.FapiaoApplyId, "fapiao_apply_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId!, "insert-cards");
@@ -363,7 +365,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "merchant", request.SubMerchantId!, "check");
@@ -387,7 +389,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "merchant", request.SubMerchantId!, "check-status");

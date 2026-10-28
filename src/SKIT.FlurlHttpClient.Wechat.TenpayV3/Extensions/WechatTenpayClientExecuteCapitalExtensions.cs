@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BankAliasCode, "bank_alias_code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.BankAliasCode, "bank_alias_code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", request.BankAliasCode!, "branches")
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ProvinceCode, "province_code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ProvinceCode, "province_code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "areas", "provinces", request.ProvinceCode, "cities");

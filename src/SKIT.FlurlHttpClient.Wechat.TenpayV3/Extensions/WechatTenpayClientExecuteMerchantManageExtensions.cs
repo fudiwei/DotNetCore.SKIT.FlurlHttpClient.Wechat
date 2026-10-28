@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mch-manage", "mch-manage-records", "sub-mchid", request.SubMerchantId!)
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ManageRecordId, "manage_record_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ManageRecordId, "manage_record_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mch-manage", "mch-manage-records", request.ManageRecordId!)
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ManageRecordId, "manage_record_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ManageRecordId, "manage_record_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mch-manage", "mch-manage-records", request.ManageRecordId!, "mch-manage-submissions");
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.SubMerchantId, "sub_mchid");
 
             if (request.FileName is null)
             {

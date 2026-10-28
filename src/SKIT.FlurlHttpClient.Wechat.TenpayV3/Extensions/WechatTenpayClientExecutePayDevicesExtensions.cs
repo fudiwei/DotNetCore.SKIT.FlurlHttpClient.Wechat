@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DeviceId, "device_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.DeviceId, "device_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay-devices", "printers", request.DeviceId!, "print-orders");
@@ -35,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DeviceId, "device_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PrintOrderNumber, "print_order_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.DeviceId, "device_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.PrintOrderNumber, "print_order_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "pay-devices", "printers", request.DeviceId!, "print-orders", request.PrintOrderNumber!);

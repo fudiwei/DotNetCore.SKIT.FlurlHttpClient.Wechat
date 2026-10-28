@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "upgrade");
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId!);
@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!);
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "membercard-open", "cards", request.CardId!);
@@ -165,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", "deposit");
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "users", "import");
@@ -213,7 +213,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "phone-membercard", "import");
@@ -237,8 +237,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "unavailable");
@@ -262,8 +262,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!);
@@ -313,8 +313,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!);
@@ -386,7 +386,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "qrcode");
@@ -410,7 +410,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "permission-tokens");
@@ -434,7 +434,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId!, "decrypt-code")
@@ -460,7 +460,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivateTicket, "activate_ticket");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ActivateTicket, "activate_ticket");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "activate-informations", request.ActivateTicket!);
@@ -484,8 +484,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "activate");
@@ -511,7 +511,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "rights");
@@ -535,8 +535,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "rights");
@@ -560,8 +560,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             if (request.MerchantId is null)
             {
@@ -590,8 +590,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
 
             if (request.MerchantId is null)
             {

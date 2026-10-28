@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "merchant-limitations", "sub-mchid", request.SubMerchantId!);
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DueDiligenceId, "due_diligence_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.DueDiligenceId, "due_diligence_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId!, "submit");
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DueDiligenceId, "due_diligence_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.DueDiligenceId, "due_diligence_id");
 
             if (request.FileName is null)
             {
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DueDiligenceId, "due_diligence_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.DueDiligenceId, "due_diligence_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId!)

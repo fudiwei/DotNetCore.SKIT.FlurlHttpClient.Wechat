@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "application_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ApplymentId, "application_id");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant-settlement", "merchant-settle-rule-applications", request.ApplymentId!);

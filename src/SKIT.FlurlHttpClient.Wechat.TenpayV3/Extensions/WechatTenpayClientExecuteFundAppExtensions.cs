@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBillNumber, "out_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBillNumber, "out_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "elecsign", "out-bill-no", request.OutBillNumber!);
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransferBillNumber, "transfer_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.TransferBillNumber, "transfer_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "elecsign", "transfer-bill-no", request.TransferBillNumber!);
@@ -136,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBillNumber, "out_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBillNumber, "out_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "transfer-bills", "out-bill-no", request.OutBillNumber!, "cancel");
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBillNumber, "out_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBillNumber, "out_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "transfer-bills", "out-bill-no", request.OutBillNumber!);
@@ -184,7 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransferBillNumber, "transfer_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.TransferBillNumber, "transfer_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "transfer-bills", "transfer-bill-no", request.TransferBillNumber!);
@@ -274,7 +274,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutAuthorizationNumber, "out_authorization_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutAuthorizationNumber, "out_authorization_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "user-confirm-authorization", "out-authorization-no", request.OutAuthorizationNumber!)
@@ -299,7 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutAuthorizationNumber, "out_authorization_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutAuthorizationNumber, "out_authorization_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "user-confirm-authorization", "out-authorization-no", request.OutAuthorizationNumber!, "close");
@@ -347,7 +347,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBillNumber, "out_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBillNumber, "out_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "transfer-to-qq-wallet-bills", request.OutBillNumber!, "cancel");
@@ -371,7 +371,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBillNumber, "out_bill_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBillNumber, "out_bill_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "transfer-to-qq-wallet-bills", request.OutBillNumber!);
@@ -420,7 +420,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBatchNumber, "out_batch_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBatchNumber, "out_batch_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-out-batches", request.OutBatchNumber!)
@@ -446,7 +446,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BatchNumber, "batch_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.BatchNumber, "batch_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber!)
@@ -472,8 +472,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBatchNumber, "out_batch_no");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutDetailNumber, "out_detail_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutBatchNumber, "out_batch_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutDetailNumber, "out_detail_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-out-batches", request.OutBatchNumber!, "out-details", request.OutDetailNumber!);
@@ -497,8 +497,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BatchNumber, "batch_no");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DetailNumber, "detail_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.BatchNumber, "batch_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.DetailNumber, "detail_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber!, "details", request.DetailNumber!);

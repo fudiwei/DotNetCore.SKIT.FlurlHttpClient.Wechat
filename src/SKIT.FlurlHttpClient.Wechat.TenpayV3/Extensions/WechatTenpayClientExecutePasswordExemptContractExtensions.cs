@@ -106,8 +106,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ServiceId, "service_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ServiceId, "service_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "password-exempt-contract", "contracts", "service-id", request.ServiceId!, "out-contract-code", request.OutContractCode!);
@@ -131,8 +131,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ServiceId, "service_id");
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.ServiceId, "service_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "password-exempt-contract", "contracts", "service-id", request.ServiceId!, "out-contract-code", request.OutContractCode!, "terminate");

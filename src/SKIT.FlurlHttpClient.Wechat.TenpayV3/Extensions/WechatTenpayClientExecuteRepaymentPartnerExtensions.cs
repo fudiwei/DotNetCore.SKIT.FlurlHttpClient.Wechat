@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CombineOutTradeNumber, "combine_out_trade_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CombineOutTradeNumber, "combine_out_trade_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "repayment", "combine-transactions", "partner", "out-trade-no", request.CombineOutTradeNumber!);
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CombineOutTradeNumber, "combine_out_trade_no");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CombineOutTradeNumber, "combine_out_trade_no");
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "repayment", "combine-transactions", "partner", "out-trade-no", request.CombineOutTradeNumber!, "close");
