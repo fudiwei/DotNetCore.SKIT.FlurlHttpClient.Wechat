@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string MediaId { get; set; } = string.Empty;
+        public string? MediaId { get; set; }
     }
 }

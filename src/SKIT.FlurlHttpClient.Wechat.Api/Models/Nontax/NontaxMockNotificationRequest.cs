@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string NotifyUrl { get; set; } = string.Empty;
+        public string? NotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置协议版本号。

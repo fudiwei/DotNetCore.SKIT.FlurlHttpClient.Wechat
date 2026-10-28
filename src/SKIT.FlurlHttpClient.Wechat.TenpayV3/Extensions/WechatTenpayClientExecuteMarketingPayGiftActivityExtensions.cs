@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingPayGiftActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminateMarketingPayGiftActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants", "add");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId!, "merchants", "add");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AddMarketingPayGiftActivityMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -148,7 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId!, "merchants")
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants", "delete");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId!, "merchants", "delete");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DeleteMarketingPayGiftActivityMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "goods")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId!, "goods")
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 

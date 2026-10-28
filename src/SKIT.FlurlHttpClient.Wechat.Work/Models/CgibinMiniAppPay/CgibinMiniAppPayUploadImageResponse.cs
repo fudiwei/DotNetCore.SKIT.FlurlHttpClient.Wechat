@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_wx_pay_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("open_wx_pay_media_id")]
-        public string MediaId { get; set; } = default!;
+        public string? MediaId { get; set; }
     }
 }

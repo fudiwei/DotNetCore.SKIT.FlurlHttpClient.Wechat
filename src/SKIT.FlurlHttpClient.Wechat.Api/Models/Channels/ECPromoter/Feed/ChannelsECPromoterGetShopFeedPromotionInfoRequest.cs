@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
-        public string ShopAppId { get; set; } = string.Empty;
+        public string? ShopAppId { get; set; }
 
         /// <summary>
         /// 获取或设置推客 AppId。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promoter_id")]
         [System.Text.Json.Serialization.JsonPropertyName("promoter_id")]
-        public string PromoterId { get; set; } = string.Empty;
+        public string? PromoterId { get; set; }
 
         /// <summary>
         /// 获取或设置关联账号类型。
@@ -45,13 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mini_program_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("mini_program_appid")]
-        public string MiniProgramAppId { get; set; } = string.Empty;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置短视频列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feed_list")]
         [System.Text.Json.Serialization.JsonPropertyName("feed_list")]
-        public IList<Types.Feed> FeedList { get; set; } = new List<Types.Feed>();
+        public List<Types.Feed>? FeedList { get; set; }
     }
 }

@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_kfid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]
-        public string OpenKfId { get; set; } = string.Empty;
+        public string? OpenKfId { get; set; }
 
         /// <summary>
         /// 获取或设置客服名称。

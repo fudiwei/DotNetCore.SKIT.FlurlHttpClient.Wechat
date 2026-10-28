@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("drama_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("drama_ids")]
-        public IList<long> DramaIdList { get; set; } = new List<long>();
+        public List<long>? DramaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置授权类型。

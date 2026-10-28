@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("semantics_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("semantics_list")]
-                public IList<int>? SemanticsList { get; set; }
+                public List<int>? SemanticsList { get; set; }
             }
         }
 
@@ -27,21 +27,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_id")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
-        public string RuleId { get; set; } = string.Empty;
+        public string? RuleId { get; set; }
 
         /// <summary>
         /// 获取或设置规则名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_name")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_name")]
-        public string RuleName { get; set; } = string.Empty;
+        public string? RuleName { get; set; }
 
         /// <summary>
         /// 获取或设置敏感词列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("word_list")]
         [System.Text.Json.Serialization.JsonPropertyName("word_list")]
-        public IList<string> WordList { get; set; } = new List<string>();
+        public List<string>? WordList { get; set; }
 
         /// <summary>
         /// 获取或设置额外规则信息。

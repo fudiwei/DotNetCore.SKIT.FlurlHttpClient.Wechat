@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("brand_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                        public string BrandName { get; set; } = string.Empty;
+                        public string? BrandName { get; set; }
 
                         /// <summary>
                         /// 获取或设置品牌类型。
@@ -39,21 +39,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ec_platform_proof_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("ec_platform_proof_list")]
-                        public IList<string>? ECPlatformProofMediaIdList { get; set; }
+                        public List<string>? ECPlatformProofMediaIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置其他补充说明材料 MediaId 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("other_material_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("other_material_list")]
-                        public IList<string>? OtherMaterialMediaIdList { get; set; }
+                        public List<string>? OtherMaterialMediaIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置有关部门认定的驰名商标佐证材料 MediaId 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("authority_certified_proof_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("authority_certified_proof_list")]
-                        public IList<string>? AuthorityCertifiedProofMediaIdList { get; set; }
+                        public List<string>? AuthorityCertifiedProofMediaIdList { get; set; }
                     }
                 }
 
@@ -78,6 +78,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Application")]
         [System.Text.Json.Serialization.JsonPropertyName("Application")]
-        public Types.Application Application { get; set; } = new Types.Application();
+        public Types.Application? Application { get; set; }
     }
 }

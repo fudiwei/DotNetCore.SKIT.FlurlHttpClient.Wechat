@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("export_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("export_id")]
-                public string ExportId { get; set; } = default!;
+                public string? ExportId { get; set; }
 
                 /// <summary>
                 /// 获取或设置开播时间戳。
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.LiveData[] LiveDataList { get; set; } = default!;
+        public List<Types.LiveData>? LiveDataList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

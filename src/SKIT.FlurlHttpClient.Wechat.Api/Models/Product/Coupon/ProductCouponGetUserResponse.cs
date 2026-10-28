@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置有效开始时间。
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ext_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
-                public Types.Extra Extra { get; set; } = default!;
+                public Types.Extra? Extra { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间。
@@ -102,6 +102,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_coupon_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_coupon_list")]
-        public Types.Coupon[] CouponList { get; set; } = default!;
+        public List<Types.Coupon>? CouponList { get; set; }
     }
 }

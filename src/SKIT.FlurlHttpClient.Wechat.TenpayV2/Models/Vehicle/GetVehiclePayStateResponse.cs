@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("plate_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-                        public string PlateNumber { get; set; } = default!;
+                        public string? PlateNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置车牌通道标识。
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plate_number_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("plate_number_info")]
-                public Types.Data[] Data { get; set; } = default!;
+                public List<Types.Data>? Data { get; set; }
             }
         }
 
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_state")]
         [System.Text.Json.Serialization.JsonPropertyName("user_state")]
-        public string UserState { get; set; } = default!;
+        public string? UserState { get; set; }
 
         /// <summary>
         /// 获取或设置发起扣费方式。

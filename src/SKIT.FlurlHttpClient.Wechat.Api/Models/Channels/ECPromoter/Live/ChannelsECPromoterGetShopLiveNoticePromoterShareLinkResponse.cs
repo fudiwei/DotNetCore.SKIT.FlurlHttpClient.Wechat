@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promoter_share_link")]
         [System.Text.Json.Serialization.JsonPropertyName("promoter_share_link")]
-        public string PromoterShareLink { get; set; } = default!;
+        public string? PromoterShareLink { get; set; }
     }
 }

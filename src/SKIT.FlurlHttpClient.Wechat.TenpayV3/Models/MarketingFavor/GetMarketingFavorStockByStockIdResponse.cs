@@ -76,14 +76,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_tag")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
-                public string[]? GoodsTagList { get; set; }
+                public List<string>? GoodsTagList { get; set; }
 
                 /// <summary>
                 /// 获取或设置指定支付方式列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-                public string[]? TradeTypeList { get; set; }
+                public List<string>? TradeTypeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否可叠加其他优惠。
@@ -117,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置国家。
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("district")]
                 [System.Text.Json.Serialization.JsonPropertyName("district")]
-                public string? District { get; set; } = default!;
+                public string? District { get; set; }
             }
         }
 
@@ -154,42 +154,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = default!;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置批次名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_name")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_name")]
-        public string StockName { get; set; } = default!;
+        public string? StockName { get; set; }
 
         /// <summary>
         /// 获取或设置批次类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_type")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_type")]
-        public string StockType { get; set; } = default!;
+        public string? StockType { get; set; }
 
         /// <summary>
         /// 获取或设置创建批次的商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_creator_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_creator_mchid")]
-        public string StockCreatorMerchantId { get; set; } = default!;
+        public string? StockCreatorMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置批次状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置使用说明。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置可用开始时间。
@@ -214,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_use_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_use_rule")]
-        public Types.StockUseRule StockUseRule { get; set; } = default!;
+        public Types.StockUseRule? StockUseRule { get; set; }
 
         /// <summary>
         /// 获取或设置已发券数量。
@@ -281,14 +281,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("available_region_list")]
         [System.Text.Json.Serialization.JsonPropertyName("available_region_list")]
-        public Types.AvailableRegion[]? AvailableRegionList { get; set; }
+        public List<Types.AvailableRegion>? AvailableRegionList { get; set; }
 
         /// <summary>
         /// 获取或设置消费金可用行业列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("available_industry_list")]
         [System.Text.Json.Serialization.JsonPropertyName("available_industry_list")]
-        public string[]? AvailableIndustryList { get; set; }
+        public List<string>? AvailableIndustryList { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间。

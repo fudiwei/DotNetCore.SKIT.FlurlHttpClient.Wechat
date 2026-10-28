@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
             }
 
             public class CategoryAttribute
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置属性类型。
@@ -55,14 +55,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Obsolete("相关接口或字段于 2023-06-03 下线。")]
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置新版属性类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type_v2")]
                         [System.Text.Json.Serialization.JsonPropertyName("type_v2")]
-                        public string TypeV2 { get; set; } = default!;
+                        public string? TypeV2 { get; set; }
 
                         /// <summary>
                         /// 获取或设置属性值。
@@ -176,35 +176,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置单位。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("unit")]
                                 [System.Text.Json.Serialization.JsonPropertyName("unit")]
-                                public string Unit { get; set; } = default!;
+                                public string? Unit { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置属性值的类型。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = default!;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置属性值的填写格式。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("format")]
                                 [System.Text.Json.Serialization.JsonPropertyName("format")]
-                                public string Format { get; set; } = default!;
+                                public string? Format { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置属性值的限制。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("limit")]
                                 [System.Text.Json.Serialization.JsonPropertyName("limit")]
-                                public string Limit { get; set; } = default!;
+                                public string? Limit { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否必填。
@@ -227,7 +227,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("item_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("item_list")]
-                        public Types.Item[]? ItemList { get; set; }
+                        public List<Types.Item>? ItemList { get; set; }
                     }
                 }
 
@@ -271,21 +271,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_list")]
-                public Types.Brand[]? BrandList { get; set; }
+                public List<Types.Brand>? BrandList { get; set; }
 
                 /// <summary>
                 /// 获取或设置产品属性列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_attr_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_attr_list")]
-                public Types.ProductAttribute[]? ProductAttributeList { get; set; }
+                public List<Types.ProductAttribute>? ProductAttributeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置销售属性列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sale_attr_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("sale_attr_list")]
-                public Types.SaleAttribute[]? SaleAttributeList { get; set; }
+                public List<Types.SaleAttribute>? SaleAttributeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置交易佣金信息。
@@ -322,7 +322,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("confirm_receipt_days")]
                 [System.Text.Json.Serialization.JsonPropertyName("confirm_receipt_days")]
-                public string[]? ConfirmReceiptDays { get; set; }
+                public List<string>? ConfirmReceiptDays { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品编辑要求信息。
@@ -356,20 +356,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.CategoryInfo CategoryInfo { get; set; } = default!;
+        public Types.CategoryInfo? CategoryInfo { get; set; }
 
         /// <summary>
         /// 获取或设置类目属性信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attr")]
         [System.Text.Json.Serialization.JsonPropertyName("attr")]
-        public Types.CategoryAttribute CategoryAttribute { get; set; } = default!;
+        public Types.CategoryAttribute? CategoryAttribute { get; set; }
 
         /// <summary>
         /// 获取或设置商品资质列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_qua_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_qua_list")]
-        public Types.Qualification[]? ProductQualificationList { get; set; }
+        public List<Types.Qualification>? ProductQualificationList { get; set; }
     }
 }

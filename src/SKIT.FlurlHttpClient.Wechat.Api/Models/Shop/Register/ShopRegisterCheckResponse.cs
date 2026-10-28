@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置审核项目状态。
@@ -190,7 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置审核状态。
@@ -211,7 +211,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("scene_group_ext_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("scene_group_ext_list")]
-                        public Types.SceneGroupExtra[] SceneGroupExtraList { get; set; } = default!;
+                        public List<Types.SceneGroupExtra>? SceneGroupExtraList { get; set; }
                     }
                 }
 
@@ -234,7 +234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene_group_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_group_list")]
-                public Types.SceneGroup[]? SceneGroupList { get; set; }
+                public List<Types.SceneGroup>? SceneGroupList { get; set; }
             }
         }
 
@@ -243,6 +243,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

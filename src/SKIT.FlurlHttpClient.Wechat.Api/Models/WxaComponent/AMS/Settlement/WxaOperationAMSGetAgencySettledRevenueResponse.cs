@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("slot_revenue")]
                 [System.Text.Json.Serialization.JsonPropertyName("slot_revenue")]
-                public new Types.SlotRevenue[] SlotRevenueList { get; set; } = default!;
+                public new List<Types.SlotRevenue>? SlotRevenueList { get; set; }
             }
         }
 
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settlement_list")]
         [System.Text.Json.Serialization.JsonPropertyName("settlement_list")]
-        public Types.Settlement[] SettlementList { get; set; } = default!;
+        public List<Types.Settlement>? SettlementList { get; set; }
 
         /// <summary>
         /// 获取或设置结算数据总数量。

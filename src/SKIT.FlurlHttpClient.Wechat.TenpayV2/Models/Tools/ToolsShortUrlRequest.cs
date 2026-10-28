@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("long_url")]
         [System.Text.Json.Serialization.JsonPropertyName("long_url")]
-        public string LongUrl { get; set; } = string.Empty;
+        public string? LongUrl { get; set; }
     }
 }

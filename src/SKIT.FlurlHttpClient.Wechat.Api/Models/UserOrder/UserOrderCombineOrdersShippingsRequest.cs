@@ -25,21 +25,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-                public OrderKey OrderKey { get; set; } = new OrderKey();
+                public OrderKey? OrderKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置物流信息列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shipping_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("shipping_list")]
-                public IList<Types.Shipping> ShippingList { get; set; } = new List<Types.Shipping>();
+                public List<Types.Shipping>? ShippingList { get; set; }
 
                 /// <summary>
                 /// 获取或设置发货模式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_mode")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_mode")]
-                public string DeliveryMode { get; set; } = string.Empty;
+                public string? DeliveryMode { get; set; }
             }
 
             public class Payer : UserOrderOrdersShippingsRequest.Types.Payer
@@ -52,21 +52,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_key")]
         [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-        public Types.OrderKey OrderKey { get; set; } = new Types.OrderKey();
+        public Types.OrderKey? OrderKey { get; set; }
 
         /// <summary>
         /// 获取或设置子单购物详情列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置上传时间。

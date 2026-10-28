@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("thirdNo")]
         [System.Text.Json.Serialization.JsonPropertyName("thirdNo")]
-        public string ThirdPartyApprovalNumber { get; set; } = string.Empty;
+        public string? ThirdPartyApprovalNumber { get; set; }
     }
 }

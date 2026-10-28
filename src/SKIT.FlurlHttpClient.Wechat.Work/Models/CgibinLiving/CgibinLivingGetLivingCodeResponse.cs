@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("living_code")]
         [System.Text.Json.Serialization.JsonPropertyName("living_code")]
-        public string LivingCode { get; set; } = default!;
+        public string? LivingCode { get; set; }
     }
 }

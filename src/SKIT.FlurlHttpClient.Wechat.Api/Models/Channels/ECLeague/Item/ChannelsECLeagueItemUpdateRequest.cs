@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Obsolete("相关接口或字段于 2026-06-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("add_finder_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("add_finder_ids")]
-                public IList<string>? AddFinderIdList { get; set; }
+                public List<string>? AddFinderIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置删除的视频号 ID 列表。
@@ -23,21 +23,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Obsolete("相关接口或字段于 2026-06-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("del_finder_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("del_finder_ids")]
-                public IList<string>? DeleteFinderIdList { get; set; }
+                public List<string>? DeleteFinderIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置新增的带货达人 AppId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("add_talent_appids")]
                 [System.Text.Json.Serialization.JsonPropertyName("add_talent_appids")]
-                public IList<string>? AddTalentAppIdList { get; set; }
+                public List<string>? AddTalentAppIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置删除的带货达人 AppId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("del_talent_appids")]
                 [System.Text.Json.Serialization.JsonPropertyName("del_talent_appids")]
-                public IList<string>? DeleteTalentAppIdList { get; set; }
+                public List<string>? DeleteTalentAppIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置推广开始时间戳。

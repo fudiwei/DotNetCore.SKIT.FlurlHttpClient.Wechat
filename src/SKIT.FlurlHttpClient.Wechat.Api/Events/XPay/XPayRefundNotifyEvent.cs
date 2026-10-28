@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OpenId")]
         [System.Text.Json.Serialization.JsonPropertyName("OpenId")]
         [System.Xml.Serialization.XmlElement("OpenId")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置商户退款单号。
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("MchRefundId")]
         [System.Text.Json.Serialization.JsonPropertyName("MchRefundId")]
         [System.Xml.Serialization.XmlElement("MchRefundId")]
-        public string MerchantRefundId { get; set; } = default!;
+        public string? MerchantRefundId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付退款单号。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("WxRefundId")]
         [System.Text.Json.Serialization.JsonPropertyName("WxRefundId")]
         [System.Xml.Serialization.XmlElement("WxRefundId")]
-        public string WechatpayRefundId { get; set; } = default!;
+        public string? WechatpayRefundId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("MchOrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("MchOrderId")]
         [System.Xml.Serialization.XmlElement("MchOrderId")]
-        public string MerchantOrderId { get; set; } = default!;
+        public string? MerchantOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("WxOrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("WxOrderId")]
         [System.Xml.Serialization.XmlElement("WxOrderId")]
-        public string WechatpayTransactionId { get; set; } = default!;
+        public string? WechatpayTransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置退款单的微信支付单号。

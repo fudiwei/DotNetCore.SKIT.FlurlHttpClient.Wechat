@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string RequestNumber { get; set; } = string.Empty;
+        public string? RequestNumber { get; set; }
     }
 }

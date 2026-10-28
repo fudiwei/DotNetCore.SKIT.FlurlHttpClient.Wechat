@@ -18,6 +18,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_status")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_status")]
-        public string MessageStatus { get; set; } = default!;
+        public string? MessageStatus { get; set; }
     }
 }

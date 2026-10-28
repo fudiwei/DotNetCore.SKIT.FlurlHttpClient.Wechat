@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/kf/servicer/add 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errmsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("result_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verify_result")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_result")]
-        public string VerifyResult { get; set; } = string.Empty;
+        public string? VerifyResult { get; set; }
     }
 }

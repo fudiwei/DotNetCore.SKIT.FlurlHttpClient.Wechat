@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/funds/scanorderflow 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家所得金额（单位：分）。
@@ -93,6 +93,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_flow")]
         [System.Text.Json.Serialization.JsonPropertyName("order_flow")]
-        public Types.OrderFlow[] OrderFlowList { get; set; } = default!;
+        public List<Types.OrderFlow>? OrderFlowList { get; set; }
     }
 }

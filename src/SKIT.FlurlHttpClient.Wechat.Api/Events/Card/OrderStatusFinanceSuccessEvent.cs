@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("OrderId")]
         [System.Xml.Serialization.XmlElement("OrderId")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置订单类型。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OrderType")]
         [System.Text.Json.Serialization.JsonPropertyName("OrderType")]
         [System.Xml.Serialization.XmlElement("OrderType")]
-        public string OrderType { get; set; } = default!;
+        public string? OrderType { get; set; }
 
         /// <summary>
         /// 获取或设置订单状态。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Status")]
         [System.Text.Json.Serialization.JsonPropertyName("Status")]
         [System.Xml.Serialization.XmlElement("Status")]
-        public string OrderStatus { get; set; } = default!;
+        public string? OrderStatus { get; set; }
 
         /// <summary>
         /// 获取或设置订单生成时间戳。

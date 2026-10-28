@@ -16,28 +16,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户公司名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-        public string CompanyName { get; set; } = default!;
+        public string? CompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置商户违约处理通知 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record_id")]
         [System.Text.Json.Serialization.JsonPropertyName("record_id")]
-        public string RecordId { get; set; } = default!;
+        public string? RecordId { get; set; }
 
         /// <summary>
         /// 获取或设置处罚方案。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("punish_plan")]
         [System.Text.Json.Serialization.JsonPropertyName("punish_plan")]
-        public string PunishPlan { get; set; } = default!;
+        public string? PunishPlan { get; set; }
 
         /// <summary>
         /// 获取或设置处罚时间。
@@ -53,20 +53,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("punish_description")]
         [System.Text.Json.Serialization.JsonPropertyName("punish_description")]
-        public string PunishDescription { get; set; } = default!;
+        public string? PunishDescription { get; set; }
 
         /// <summary>
         /// 获取或设置风险类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("risk_type")]
         [System.Text.Json.Serialization.JsonPropertyName("risk_type")]
-        public string RiskType { get; set; } = default!;
+        public string? RiskType { get; set; }
 
         /// <summary>
         /// 获取或设置风险描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("risk_description")]
         [System.Text.Json.Serialization.JsonPropertyName("risk_description")]
-        public string RiskDescription { get; set; } = default!;
+        public string? RiskDescription { get; set; }
     }
 }

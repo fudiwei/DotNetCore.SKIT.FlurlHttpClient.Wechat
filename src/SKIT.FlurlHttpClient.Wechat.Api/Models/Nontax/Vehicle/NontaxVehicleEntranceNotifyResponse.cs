@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_state")]
         [System.Text.Json.Serialization.JsonPropertyName("user_state")]
-        public string UserState { get; set; } = default!;
+        public string? UserState { get; set; }
     }
 }

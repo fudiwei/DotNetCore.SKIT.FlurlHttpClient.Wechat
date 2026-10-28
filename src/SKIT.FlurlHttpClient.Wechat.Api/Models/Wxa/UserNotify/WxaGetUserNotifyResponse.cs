@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_info")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_info")]
-        public Types.NotifyInfo NotifyInfo { get; set; } = default!;
+        public Types.NotifyInfo? NotifyInfo { get; set; }
     }
 }

@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_type")]
-                public string CardType { get; set; } = string.Empty;
+                public string? CardType { get; set; }
 
                 /// <summary>
                 /// 获取或设置个人身份 ID 摘要（需使用平台公钥/证书加密）。
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("id_digest")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdDigest { get; set; } = string.Empty;
+                public string? IdDigest { get; set; }
             }
 
             public class Relative : Payer
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cash_add_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("cash_add_type")]
-                public string CashAddType { get; set; } = string.Empty;
+                public string? CashAddType { get; set; }
 
                 /// <summary>
                 /// 获取或设置现金补充金额（单位：分）。
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cash_reduce_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("cash_reduce_type")]
-                public string CashReduceType { get; set; } = string.Empty;
+                public string? CashReduceType { get; set; }
 
                 /// <summary>
                 /// 获取或设置现金减免金额（单位：分）。
@@ -87,21 +87,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mix_pay_type")]
         [System.Text.Json.Serialization.JsonPropertyName("mix_pay_type")]
-        public string MixPayType { get; set; } = string.Empty;
+        public string? MixPayType { get; set; }
 
         /// <summary>
         /// 获取或设置订单类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_type")]
         [System.Text.Json.Serialization.JsonPropertyName("order_type")]
-        public string OrderType { get; set; } = string.Empty;
+        public string? OrderType { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -129,7 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置是否代亲属支付。
@@ -150,14 +150,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置医疗机构订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("serial_no")]
         [System.Text.Json.Serialization.JsonPropertyName("serial_no")]
-        public string SerialNumber { get; set; } = string.Empty;
+        public string? SerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置医保局返回的支付单 ID。
@@ -185,21 +185,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("city_id")]
         [System.Text.Json.Serialization.JsonPropertyName("city_id")]
-        public string CityId { get; set; } = string.Empty;
+        public string? CityId { get; set; }
 
         /// <summary>
         /// 获取或设置医疗机构名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("med_inst_name")]
         [System.Text.Json.Serialization.JsonPropertyName("med_inst_name")]
-        public string MedicalInstitutionName { get; set; } = string.Empty;
+        public string? MedicalInstitutionName { get; set; }
 
         /// <summary>
         /// 获取或设置医疗机构编码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("med_inst_no")]
         [System.Text.Json.Serialization.JsonPropertyName("med_inst_no")]
-        public string MedicalInstitutionNo { get; set; } = string.Empty;
+        public string? MedicalInstitutionNo { get; set; }
 
         /// <summary>
         /// 获取或设置医保下单时间。
@@ -257,14 +257,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cash_add_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("cash_add_detail")]
-        public IList<Types.CashAddDetail>? CashAddDetailList { get; set; }
+        public List<Types.CashAddDetail>? CashAddDetailList { get; set; }
 
         /// <summary>
         /// 获取或设置现金减免列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cash_reduce_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("cash_reduce_detail")]
-        public IList<Types.CashReduceDetail>? CashReduceDetailList { get; set; }
+        public List<Types.CashReduceDetail>? CashReduceDetailList { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。

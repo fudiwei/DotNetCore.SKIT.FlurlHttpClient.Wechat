@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_appid")]
-        public string MiniProgramAppId { get; set; } = string.Empty;
+        public string? MiniProgramAppId { get; set; }
     }
 }

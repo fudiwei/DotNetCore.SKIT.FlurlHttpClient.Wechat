@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成任务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string TaskId { get; set; } = string.Empty;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成类型。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ImageGenerationType { get; set; } = string.Empty;
+        public string? ImageGenerationType { get; set; }
     }
 }

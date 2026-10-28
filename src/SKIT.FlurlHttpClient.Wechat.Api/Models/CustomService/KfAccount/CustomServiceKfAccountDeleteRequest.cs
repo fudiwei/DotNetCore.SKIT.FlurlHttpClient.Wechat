@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_account")]
         [System.Text.Json.Serialization.JsonPropertyName("kf_account")]
-        public string KfAccount { get; set; } = string.Empty;
+        public string? KfAccount { get; set; }
     }
 }

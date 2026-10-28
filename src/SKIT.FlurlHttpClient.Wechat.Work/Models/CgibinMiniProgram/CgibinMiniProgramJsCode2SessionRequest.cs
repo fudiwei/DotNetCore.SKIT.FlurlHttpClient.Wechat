@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string GrantType { get; set; } = "authorization_code";
+        public string? GrantType { get; set; } = "authorization_code";
 
         /// <summary>
         /// 获取或设置登录时获取的 Code。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string JsCode { get; set; } = string.Empty;
+        public string? JsCode { get; set; }
     }
 }

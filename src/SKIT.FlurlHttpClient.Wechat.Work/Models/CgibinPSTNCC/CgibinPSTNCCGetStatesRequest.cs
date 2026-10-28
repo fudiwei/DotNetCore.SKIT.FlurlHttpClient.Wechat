@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("callee_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("callee_userid")]
-        public string CalleeUserId { get; set; } = string.Empty;
+        public string? CalleeUserId { get; set; }
 
         /// <summary>
         /// 获取或设置呼叫 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("callid")]
         [System.Text.Json.Serialization.JsonPropertyName("callid")]
-        public string CallId { get; set; } = string.Empty;
+        public string? CallId { get; set; }
     }
 }

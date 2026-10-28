@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("key")]
                 [System.Text.Json.Serialization.JsonPropertyName("key")]
-                public string FileKey { get; set; } = default!;
+                public string? FileKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件的 MD5 值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("md5")]
                 [System.Text.Json.Serialization.JsonPropertyName("md5")]
-                public string FileMd5 { get; set; } = default!;
+                public string? FileMd5 { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件大小（单位：字节）。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contents")]
         [System.Text.Json.Serialization.JsonPropertyName("contents")]
-        public Types.File[] FileList { get; set; } = default!;
+        public List<Types.File>? FileList { get; set; }
 
         /// <summary>
         /// 获取或设置内容是否被截断。

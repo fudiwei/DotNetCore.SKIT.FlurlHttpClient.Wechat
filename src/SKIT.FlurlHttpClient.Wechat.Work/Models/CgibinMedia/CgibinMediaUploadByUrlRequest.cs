@@ -17,21 +17,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置文件 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string FileUrl { get; set; } = string.Empty;
+        public string? FileUrl { get; set; }
 
         /// <summary>
         /// 获取或设置文件名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filename")]
         [System.Text.Json.Serialization.JsonPropertyName("filename")]
-        public string FileName { get; set; } = string.Empty;
+        public string? FileName { get; set; }
 
         /// <summary>
         /// 获取或设置文件 MD5 哈希值。

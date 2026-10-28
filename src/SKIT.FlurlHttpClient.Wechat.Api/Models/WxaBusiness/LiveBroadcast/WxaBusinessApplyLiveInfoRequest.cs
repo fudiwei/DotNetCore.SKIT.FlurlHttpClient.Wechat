@@ -11,6 +11,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "apply";
+        public string? Action { get; set; } = "apply";
     }
 }

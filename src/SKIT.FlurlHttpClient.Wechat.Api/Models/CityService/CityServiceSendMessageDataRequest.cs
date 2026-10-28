@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置城市服务分配的模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("biz_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_template_id")]
-        public string BusinessTemplateId { get; set; } = string.Empty;
+        public string? BusinessTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置结果页样式 ID。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("order_no")]
-        public string OrderNumber { get; set; } = string.Empty;
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置跳转链接 URL。
@@ -66,6 +66,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public IDictionary<string, Types.DataItem>? Data { get; set; }
+        public Dictionary<string, Types.DataItem>? Data { get; set; }
     }
 }

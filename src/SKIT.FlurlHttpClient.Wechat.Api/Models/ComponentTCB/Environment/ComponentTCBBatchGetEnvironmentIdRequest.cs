@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置 AppId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appids")]
         [System.Text.Json.Serialization.JsonPropertyName("appids")]
-        public IList<string> AppIdList { get; set; } = new List<string>();
+        public List<string>? AppIdList { get; set; }
     }
 }

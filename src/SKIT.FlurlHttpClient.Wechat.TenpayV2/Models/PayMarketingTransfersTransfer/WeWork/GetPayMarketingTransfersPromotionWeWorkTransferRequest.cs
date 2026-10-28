@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
-        public string PartnerTradeNumber { get; set; } = string.Empty;
+        public string? PartnerTradeNumber { get; set; }
     }
 }

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_no")]
-                public string OrderNumber { get; set; } = default!;
+                public string? OrderNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置游戏业务单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置下单玩家 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置下单金额（单位：分）。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("zone_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("zone_id")]
-                public string MidasZoneId { get; set; } = default!;
+                public string? MidasZoneId { get; set; }
 
                 /// <summary>
                 /// 获取或设置米大师环境。
@@ -79,6 +79,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payfororder")]
         [System.Text.Json.Serialization.JsonPropertyName("payfororder")]
-        public Types.PayForOrder PayForOrder { get; set; } = default!;
+        public Types.PayForOrder? PayForOrder { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_account_name")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_account_name")]
-        public string TransferAccountName { get; set; } = string.Empty;
+        public string? TransferAccountName { get; set; }
 
         /// <summary>
         /// 获取或设置充值账户服务商账号 ID。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("request_id")]
         [System.Text.Json.Serialization.JsonPropertyName("request_id")]
-        public string RequestId { get; set; } = string.Empty;
+        public string? RequestId { get; set; }
 
         /// <summary>
         /// 获取或设置结算周期开始时间戳。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /advertiser/get 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wechat_account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("wechat_account_name")]
-                public string WechatAccountNickname { get; set; } = default!;
+                public string? WechatAccountNickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置系统状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("system_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("system_status")]
-                public string SystemStatus { get; set; } = default!;
+                public string? SystemStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置行业 ID。
@@ -35,14 +35,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_person")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_person")]
-                public string ContactPerson { get; set; } = default!;
+                public string? ContactPerson { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系人电话号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_person_telephone")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_person_telephone")]
-                public string ContactTeleNumber { get; set; } = default!;
+                public string? ContactTeleNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置经营性质类型。
@@ -65,6 +65,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置虚拟支付环境。
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wx_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("wx_order_id")]
-                public string WxOrderId { get; set; } = default!;
+                public string? WxOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置渠道单号。
@@ -163,6 +163,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

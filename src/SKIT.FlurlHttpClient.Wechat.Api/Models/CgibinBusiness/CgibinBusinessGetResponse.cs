@@ -21,21 +21,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-                public string AccountName { get; set; } = default!;
+                public string? AccountName { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("icon_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("icon_url")]
-                public string IconUrl { get; set; } = default!;
+                public string? IconUrl { get; set; }
             }
         }
 
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_info")]
         [System.Text.Json.Serialization.JsonPropertyName("business_info")]
-        public Types.BusinessInfo BusinessInfo { get; set; } = default!;
+        public Types.BusinessInfo? BusinessInfo { get; set; }
     }
 }

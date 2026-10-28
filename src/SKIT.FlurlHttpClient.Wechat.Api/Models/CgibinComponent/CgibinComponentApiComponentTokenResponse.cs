@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("component_access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("component_access_token")]
-        public string ComponentAccessToken { get; set; } = default!;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置第三方平台 AccessToken 有效期（单位：秒）。

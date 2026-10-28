@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prefix")]
         [System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public string Prefix { get; set; } = string.Empty;
+        public string? Prefix { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置公众号名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置公众号头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("headimg")]
                 [System.Text.Json.Serialization.JsonPropertyName("headimg")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("biz_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_info_list")]
-        public Types.MediaPlatform[] MediaPlatformList { get; set; } = default!;
+        public List<Types.MediaPlatform>? MediaPlatformList { get; set; }
 
         /// <summary>
         /// 获取或设置公众号总数量。

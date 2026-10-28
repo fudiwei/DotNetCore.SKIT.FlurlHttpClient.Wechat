@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_tagid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("external_tagid_list")]
-        public IList<string> ExternalTagIdList { get; set; } = new List<string>();
+        public List<string>? ExternalTagIdList { get; set; }
     }
 }

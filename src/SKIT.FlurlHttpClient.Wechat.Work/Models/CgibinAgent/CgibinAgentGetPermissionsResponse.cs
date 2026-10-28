@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("app_permissions")]
         [System.Text.Json.Serialization.JsonPropertyName("app_permissions")]
-        public string[] AppPermissionList { get; set; } = default!;
+        public List<string>? AppPermissionList { get; set; }
     }
 }

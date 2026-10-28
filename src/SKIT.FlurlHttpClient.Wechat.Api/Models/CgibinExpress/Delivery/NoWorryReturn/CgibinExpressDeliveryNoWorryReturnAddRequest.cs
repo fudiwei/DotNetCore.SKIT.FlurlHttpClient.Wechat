@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_order_id")]
-        public string? ShopOrderId { get; set; } = string.Empty;
+        public string? ShopOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置商家退货地址信息。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置订单中心页面路径。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goods_list")]
         [System.Text.Json.Serialization.JsonPropertyName("goods_list")]
-        public IList<Types.Goods>? GoodsList { get; set; }
+        public List<Types.Goods>? GoodsList { get; set; }
 
         /// <summary>
         /// 获取或设置退货订单价格（单位：分）。

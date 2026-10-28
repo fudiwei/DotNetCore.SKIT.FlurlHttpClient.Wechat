@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransactionId, "transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "transactions", request.TransactionId, "available_abroad_amounts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "transactions", request.TransactionId!, "available_abroad_amounts")
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderId, "out_order_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "orders", request.OutOrderId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "orders", request.OutOrderId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("transaction_id", request.TransactionId);
 
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutReturnNumber, "out_return_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "return", "return-orders", "out-return-no", request.OutReturnNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "return", "return-orders", "out-return-no", request.OutReturnNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaReturnOrderByOutReturnNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

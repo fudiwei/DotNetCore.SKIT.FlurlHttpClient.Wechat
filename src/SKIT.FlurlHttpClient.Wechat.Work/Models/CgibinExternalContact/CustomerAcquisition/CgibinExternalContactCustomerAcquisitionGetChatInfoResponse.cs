@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("link_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("link_id")]
-                public string LinkId { get; set; } = default!;
+                public string? LinkId { get; set; }
 
                 /// <summary>
                 /// 获取或设置添加客户的自定义参数。
@@ -37,20 +37,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置外部成员 UserId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-        public string ExternalUserId { get; set; } = default!;
+        public string? ExternalUserId { get; set; }
 
         /// <summary>
         /// 获取或设置多次会话信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_info")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_info")]
-        public Types.Chat Chat { get; set; } = default!;
+        public Types.Chat? Chat { get; set; }
     }
 }

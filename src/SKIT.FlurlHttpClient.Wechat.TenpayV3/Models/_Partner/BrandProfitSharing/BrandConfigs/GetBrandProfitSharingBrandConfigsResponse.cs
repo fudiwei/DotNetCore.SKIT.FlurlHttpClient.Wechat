@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_mchid")]
-        public string BrandMerchantId { get; set; } = default!;
+        public string? BrandMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置最大分账比例（单位：万分比）。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置预约类型。
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("record_list")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

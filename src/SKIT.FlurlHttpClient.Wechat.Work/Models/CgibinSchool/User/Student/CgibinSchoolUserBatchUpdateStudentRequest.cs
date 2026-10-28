@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("student_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("student_userid")]
-                public string StudentUserId { get; set; } = string.Empty;
+                public string? StudentUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置新的学生账号。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department")]
                 [System.Text.Json.Serialization.JsonPropertyName("department")]
-                public IList<long>? DepartmentIdList { get; set; }
+                public List<long>? DepartmentIdList { get; set; }
             }
         }
 
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("students")]
         [System.Text.Json.Serialization.JsonPropertyName("students")]
-        public IList<Types.Student> StudentList { get; set; } = new List<Types.Student>();
+        public List<Types.Student>? StudentList { get; set; }
     }
 }

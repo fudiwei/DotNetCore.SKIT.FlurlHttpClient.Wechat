@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/address/update 接口的请求。</para>
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("address_detail")]
-        public Types.AddressDetail AddressDetail { get; set; } = new Types.AddressDetail();
+        public Types.AddressDetail? AddressDetail { get; set; }
     }
 }

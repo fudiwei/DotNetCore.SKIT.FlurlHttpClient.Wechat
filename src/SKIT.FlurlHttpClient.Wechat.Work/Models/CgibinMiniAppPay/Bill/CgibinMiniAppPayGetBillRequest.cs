@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string MerchantId { get; set; } = string.Empty;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置账单日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BillDateString { get; set; } = string.Empty;
+        public string? BillDateString { get; set; }
 
         /// <summary>
         /// 获取或设置账单类型。

@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("audit_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_id")]
                 [System.Xml.Serialization.XmlElement("audit_id")]
-                public string AuditId { get; set; } = default!;
+                public string? AuditId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核单类型。
@@ -53,6 +53,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("QualificationAuditResult")]
         [System.Text.Json.Serialization.JsonPropertyName("QualificationAuditResult")]
         [System.Xml.Serialization.XmlElement("QualificationAuditResult")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("TemplateId")]
                         [System.Text.Json.Serialization.JsonPropertyName("TemplateId")]
                         [System.Xml.Serialization.XmlElement("TemplateId")]
-                        public string TemplateId { get; set; } = default!;
+                        public string? TemplateId { get; set; }
 
                         /// <summary>
                         /// 获取或设置消息 ID。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("ErrorStatus")]
                         [System.Text.Json.Serialization.JsonPropertyName("ErrorStatus")]
                         [System.Xml.Serialization.XmlElement("ErrorStatus")]
-                        public string ErrorMessage { get; set; } = default!;
+                        public string? ErrorMessage { get; set; }
                     }
                 }
 
@@ -57,11 +57,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("List", typeof(Types.EventItem))]
-                public Types.EventItem[] EventList { get; set; } = default!;
+                public List<Types.EventItem>? EventList { get; set; }
             }
         }
-
-        private readonly object _lockObj = new object();
 
         /// <summary>
         /// 获取或设置事件数据。
@@ -69,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("SubscribeMsgSentEvent")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
 
         /// <summary>
         /// 获取或设置发送订阅通知数据列表。
@@ -78,22 +76,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("List")]
         [System.Text.Json.Serialization.JsonPropertyName("List")]
         [System.Xml.Serialization.XmlIgnore]
-        public Types.EventData.Types.EventItem[]? EventDataList
+        public List<Types.EventData.Types.EventItem>? EventDataList
         {
-            get { return this.EventData?.EventList; }
+            get
+            {
+                return this.EventData?.EventList;
+            }
             set
             {
-                if (this.EventData is null)
-                {
-                    lock (_lockObj)
-                    {
-                        if (this.EventData is null)
-                        {
-                            this.EventData = new Types.EventData();
-                        }
-                    }
-                }
-
+                this.EventData ??= new Types.EventData();
                 this.EventData.EventList = value!;
             }
         }

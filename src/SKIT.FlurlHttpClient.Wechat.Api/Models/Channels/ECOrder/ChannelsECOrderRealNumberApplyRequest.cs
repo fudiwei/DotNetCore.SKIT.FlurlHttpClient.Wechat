@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置申请原因。
@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_reason")]
-        public string ApplyReason { get; set; } = string.Empty;
+        public string? ApplyReason { get; set; }
 
         /// <summary>
         /// 获取或设置申请原因图片 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pic_media_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("pic_media_ids")]
-        public IList<string> PictureMediaIdList { get; set; } = new List<string>();
+        public List<string>? PictureMediaIdList { get; set; }
     }
 }

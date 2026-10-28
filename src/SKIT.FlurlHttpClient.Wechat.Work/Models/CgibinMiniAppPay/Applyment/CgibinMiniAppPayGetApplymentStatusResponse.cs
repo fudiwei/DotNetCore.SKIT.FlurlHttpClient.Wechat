@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("param_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("param_name")]
-                        public string ParameterName { get; set; } = default!;
+                        public string? ParameterName { get; set; }
 
                         /// <summary>
                         /// 获取或设置驳回理由。
@@ -35,35 +35,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("account_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-                        public string AccountName { get; set; } = default!;
+                        public string? AccountName { get; set; }
 
                         /// <summary>
                         /// 获取或设置付款卡号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("account_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("account_no")]
-                        public string AccountNumber { get; set; } = default!;
+                        public string? AccountNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置收款开户银行。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("destination_account_bank")]
                         [System.Text.Json.Serialization.JsonPropertyName("destination_account_bank")]
-                        public string DestinationAccountBank { get; set; } = default!;
+                        public string? DestinationAccountBank { get; set; }
 
                         /// <summary>
                         /// 获取或设置收款户名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("destination_account_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("destination_account_name")]
-                        public string DestinationAccountName { get; set; } = default!;
+                        public string? DestinationAccountName { get; set; }
 
                         /// <summary>
                         /// 获取或设置收款卡号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("destination_account_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("destination_account_number")]
-                        public string DestinationAccountNumber { get; set; } = default!;
+                        public string? DestinationAccountNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置付款金额（单位：分）。
@@ -77,14 +77,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("remark")]
                         [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                        public string Remark { get; set; } = default!;
+                        public string? Remark { get; set; }
 
                         /// <summary>
                         /// 获取或设置汇款截止时间字符串。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("deadline")]
                         [System.Text.Json.Serialization.JsonPropertyName("deadline")]
-                        public string DeadlineString { get; set; } = default!;
+                        public string? DeadlineString { get; set; }
                     }
                 }
 
@@ -93,21 +93,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applyment_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("applyment_state")]
-                public string ApplymentState { get; set; } = default!;
+                public string? ApplymentState { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请状态描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applyment_state_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("applyment_state_desc")]
-                public string ApplymentStateDescription { get; set; } = default!;
+                public string? ApplymentStateDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置签约状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sign_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("sign_state")]
-                public string SignState { get; set; } = default!;
+                public string? SignState { get; set; }
 
                 /// <summary>
                 /// 获取或设置签约链接。
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
-                public Types.AuditDetail[]? AuditDetailList { get; set; }
+                public List<Types.AuditDetail>? AuditDetailList { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇款账户验证信息。
@@ -151,7 +151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public Types.Applyment Applyment { get; set; } = default!;
+        public Types.Applyment? Applyment { get; set; }
 
         /// <summary>
         /// 获取或设置申请单当前所处阶段。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/sharer/bind 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置邀请结果代码。
@@ -37,27 +37,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_list")]
         [System.Text.Json.Serialization.JsonPropertyName("success_list")]
-        public string[] SuccessOpenIdList { get; set; } = default!;
+        public List<string>? SuccessOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置绑定失败的分享员 OpenId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public string[] FailOpenIdList { get; set; } = default!;
+        public List<string>? FailOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置绑定拒绝的分享员 OpenId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refuse_list")]
         [System.Text.Json.Serialization.JsonPropertyName("refuse_list")]
-        public string[] RefuseOpenIdList { get; set; } = default!;
+        public List<string>? RefuseOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置绑定结果列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("result_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

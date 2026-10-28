@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("oper_id")]
         [System.Text.Json.Serialization.JsonPropertyName("oper_id")]
-        public string OperationId { get; set; } = string.Empty;
+        public string? OperationId { get; set; }
 
         /// <summary>
         /// 获取或设置识别结果错误码。

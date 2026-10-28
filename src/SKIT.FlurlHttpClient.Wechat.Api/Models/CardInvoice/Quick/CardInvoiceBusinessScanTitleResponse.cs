@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置税号。

@@ -30,21 +30,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置服务商 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = default!;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置分层版本。
@@ -72,6 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("quotas")]
         [System.Text.Json.Serialization.JsonPropertyName("quotas")]
-        public Types.Quota[] QuotaList { get; set; } = default!;
+        public List<Types.Quota>? QuotaList { get; set; }
     }
 }

@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("last_login_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("last_login_userid")]
-        public string LastLoginUserId { get; set; } = string.Empty;
+        public string? LastLoginUserId { get; set; }
     }
 }

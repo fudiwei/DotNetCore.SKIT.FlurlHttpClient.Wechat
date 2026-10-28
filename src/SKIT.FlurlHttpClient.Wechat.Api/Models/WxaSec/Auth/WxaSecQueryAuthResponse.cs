@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置打回重填原因。

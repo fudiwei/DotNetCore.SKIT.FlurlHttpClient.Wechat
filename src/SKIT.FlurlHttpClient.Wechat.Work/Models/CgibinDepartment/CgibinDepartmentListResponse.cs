@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/department/list 接口的响应。</para>
@@ -49,7 +49,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_leader")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_leader")]
-                public string[]? LeaderUserIdList { get; set; }
+                public List<string>? LeaderUserIdList { get; set; }
             }
         }
 
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department")]
         [System.Text.Json.Serialization.JsonPropertyName("department")]
-        public Types.Department[] DepartmentList { get; set; } = default!;
+        public List<Types.Department>? DepartmentList { get; set; }
     }
 }

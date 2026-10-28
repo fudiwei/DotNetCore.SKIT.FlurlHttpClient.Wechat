@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("groupname")]
                                 [System.Text.Json.Serialization.JsonPropertyName("groupname")]
-                                public string GroupName { get; set; } = default!;
+                                public string? GroupName { get; set; }
                             }
                         }
 
@@ -45,35 +45,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("acctid")]
                         [System.Text.Json.Serialization.JsonPropertyName("acctid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡人姓名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡人别名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name_ex")]
                         [System.Text.Json.Serialization.JsonPropertyName("name_ex")]
-                        public string Alias { get; set; } = default!;
+                        public string? Alias { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡人所在部门。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("departs_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("departs_name")]
-                        public string DepartmentsName { get; set; } = default!;
+                        public string? DepartmentsName { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡规则信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rule_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("rule_info")]
-                        public Types.CheckinGroup CheckinGroup { get; set; } = default!;
+                        public Types.CheckinGroup? CheckinGroup { get; set; }
                     }
 
                     public class Summary
@@ -201,28 +201,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇总信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("summary_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("summary_info")]
-                public Types.Summary Summary { get; set; } = default!;
+                public Types.Summary? Summary { get; set; }
 
                 /// <summary>
                 /// 获取或设置假勤信息列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sp_items")]
                 [System.Text.Json.Serialization.JsonPropertyName("sp_items")]
-                public Types.Vacation[]? VacationList { get; set; }
+                public List<Types.Vacation>? VacationList { get; set; }
 
                 /// <summary>
                 /// 获取或设置异常信息列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exception_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("exception_infos")]
-                public Types.Exception[]? ExceptionList { get; set; }
+                public List<Types.Exception>? ExceptionList { get; set; }
 
                 /// <summary>
                 /// 获取或设置加班信息。
@@ -238,6 +238,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("datas")]
         [System.Text.Json.Serialization.JsonPropertyName("datas")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

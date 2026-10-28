@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("open_template_id")]
-        public string OpenTemplateId { get; set; } = string.Empty;
+        public string? OpenTemplateId { get; set; }
     }
 }

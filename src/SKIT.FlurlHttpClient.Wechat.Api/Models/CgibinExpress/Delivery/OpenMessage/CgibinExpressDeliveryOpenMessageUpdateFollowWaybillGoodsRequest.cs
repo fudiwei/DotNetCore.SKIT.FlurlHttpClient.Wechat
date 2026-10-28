@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_list")]
-                public IList<Types.Detail> DetailList { get; set; } = new List<Types.Detail>();
+                public List<Types.Detail>? DetailList { get; set; }
             }
         }
 
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置微信订单查询 Token。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_token")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_token")]
-        public string WaybillToken { get; set; } = string.Empty;
+        public string? WaybillToken { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。

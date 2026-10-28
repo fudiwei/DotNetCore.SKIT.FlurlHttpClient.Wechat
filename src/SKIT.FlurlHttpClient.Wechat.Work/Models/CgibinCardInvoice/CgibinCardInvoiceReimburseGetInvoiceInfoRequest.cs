@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置经过加密的发票卡券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encrypt_code")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypt_code")]
-        public string EncryptedCardCode { get; set; } = string.Empty;
+        public string? EncryptedCardCode { get; set; }
     }
 }

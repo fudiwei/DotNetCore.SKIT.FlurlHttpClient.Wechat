@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguideacctconfig 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("values")]
                 [System.Text.Json.Serialization.JsonPropertyName("values")]
-                public string[] Values { get; set; } = default!;
+                public List<string>? Values { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。

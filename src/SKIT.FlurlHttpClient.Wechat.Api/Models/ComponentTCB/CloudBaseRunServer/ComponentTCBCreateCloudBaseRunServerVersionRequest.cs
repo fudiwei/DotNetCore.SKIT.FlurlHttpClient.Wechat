@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nfs_volumes")]
                 [System.Text.Json.Serialization.JsonPropertyName("nfs_volumes")]
-                public IList<Types.NFSVolumeSource>? NFSVolumes { get; set; }
+                public List<Types.NFSVolumeSource>? NFSVolumes { get; set; }
             }
 
             public class ServiceVolume
@@ -352,7 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("volume_mount_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("volume_mount_infos")]
-                public IList<Types.VolumeMount>? VolumeMountList { get; set; }
+                public List<Types.VolumeMount>? VolumeMountList { get; set; }
             }
 
             public class SecurityContext
@@ -366,14 +366,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("add")]
                         [System.Text.Json.Serialization.JsonPropertyName("add")]
-                        public IList<string>? AddList { get; set; }
+                        public List<string>? AddList { get; set; }
 
                         /// <summary>
                         /// 获取或设置禁用安全能力向列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("drop")]
                         [System.Text.Json.Serialization.JsonPropertyName("drop")]
-                        public IList<string>? DropList { get; set; }
+                        public List<string>? DropList { get; set; }
                     }
                 }
 
@@ -408,21 +408,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env_id")]
         [System.Text.Json.Serialization.JsonPropertyName("env_id")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置上传类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_type")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_type")]
-        public string UploadType { get; set; } = string.Empty;
+        public string? UploadType { get; set; }
 
         /// <summary>
         /// 获取或设置流量占比（范围：0～100）。
@@ -464,7 +464,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_type")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_type")]
-        public string PolicyType { get; set; } = string.Empty;
+        public string? PolicyType { get; set; }
 
         /// <summary>
         /// 获取或设置策略阈值。
@@ -485,7 +485,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("server_name")]
         [System.Text.Json.Serialization.JsonPropertyName("server_name")]
-        public string ServerName { get; set; } = string.Empty;
+        public string? ServerName { get; set; }
 
         /// <summary>
         /// 获取或设置仓库类型。
@@ -597,7 +597,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mount_volume_info")]
         [System.Text.Json.Serialization.JsonPropertyName("mount_volume_info")]
-        public IList<Types.VolumeMount>? VolumeMountList { get; set; }
+        public List<Types.VolumeMount>? VolumeMountList { get; set; }
 
         /// <summary>
         /// 获取或设置访问类型。
@@ -632,7 +632,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sidecar_specs")]
         [System.Text.Json.Serialization.JsonPropertyName("sidecar_specs")]
-        public IList<Types.SidecarSpecification>? SidecarSpecificationList { get; set; }
+        public List<Types.SidecarSpecification>? SidecarSpecificationList { get; set; }
 
         /// <summary>
         /// 获取或设置安全特性信息。
@@ -646,14 +646,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_volumes")]
         [System.Text.Json.Serialization.JsonPropertyName("service_volumes")]
-        public IList<Types.ServiceVolume>? ServiceVolumeList { get; set; }
+        public List<Types.ServiceVolume>? ServiceVolumeList { get; set; }
 
         /// <summary>
         /// 获取或设置数据卷挂载列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_volume_mounts")]
         [System.Text.Json.Serialization.JsonPropertyName("service_volume_mounts")]
-        public IList<Types.ServiceVolumeMount>? ServiceVolumeMountList { get; set; }
+        public List<Types.ServiceVolumeMount>? ServiceVolumeMountList { get; set; }
 
         /// <summary>
         /// 获取或设置 JnsGw 创建状态。
@@ -702,6 +702,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_detail")]
-        public IList<Types.HPAPolicy>? HPAPolicyList { get; set; }
+        public List<Types.HPAPolicy>? HPAPolicyList { get; set; }
     }
 }

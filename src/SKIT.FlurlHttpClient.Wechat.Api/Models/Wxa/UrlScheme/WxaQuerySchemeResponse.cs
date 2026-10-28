@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string Path { get; set; } = default!;
+                public string? Path { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面参数。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("env_version")]
-                public string EnvironmentVersion { get; set; } = default!;
+                public string? EnvironmentVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置过期时间戳。
@@ -68,13 +68,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scheme_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scheme_info")]
-        public Types.UrlScheme UrlScheme { get; set; } = default!;
+        public Types.UrlScheme? UrlScheme { get; set; }
 
         /// <summary>
         /// 获取或设置配额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("quota_info")]
         [System.Text.Json.Serialization.JsonPropertyName("quota_info")]
-        public Types.Quota Quota { get; set; } = default!;
+        public Types.Quota? Quota { get; set; }
     }
 }

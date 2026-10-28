@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DueDiligenceId { get; set; } = string.Empty;
+        public string? DueDiligenceId { get; set; }
 
         /// <summary>
         /// 获取或设置文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? FileBytes { get; set; }
 
         /// <summary>
         /// 获取或设置文件名。如果不指定将由系统自动生成。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置资料项 ID。

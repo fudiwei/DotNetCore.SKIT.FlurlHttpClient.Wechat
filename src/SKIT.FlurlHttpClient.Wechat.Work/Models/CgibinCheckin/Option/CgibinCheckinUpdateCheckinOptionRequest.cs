@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group")]
         [System.Text.Json.Serialization.JsonPropertyName("group")]
-        public Types.CheckinGroup CheckinGroup { get; set; } = new Types.CheckinGroup();
+        public Types.CheckinGroup? CheckinGroup { get; set; }
     }
 }

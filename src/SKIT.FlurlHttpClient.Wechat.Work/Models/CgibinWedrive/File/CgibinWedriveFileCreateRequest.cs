@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置上级文件 ID 或空间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fatherid")]
         [System.Text.Json.Serialization.JsonPropertyName("fatherid")]
-        public string ParentFileOrSpaceId { get; set; } = string.Empty;
+        public string? ParentFileOrSpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置文件类型。
@@ -31,6 +31,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_name")]
         [System.Text.Json.Serialization.JsonPropertyName("file_name")]
-        public string FileName { get; set; } = string.Empty;
+        public string? FileName { get; set; }
     }
 }

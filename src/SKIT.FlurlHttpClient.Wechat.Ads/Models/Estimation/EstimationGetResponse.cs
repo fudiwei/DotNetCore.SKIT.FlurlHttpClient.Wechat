@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [POST] /estimation/get 接口的响应。</para>
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

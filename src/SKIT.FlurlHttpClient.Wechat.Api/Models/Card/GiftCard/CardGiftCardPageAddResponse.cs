@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("page_id")]
         [System.Text.Json.Serialization.JsonPropertyName("page_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string PageId { get; set; } = default!;
+        public string? PageId { get; set; }
     }
 }

@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置家长账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parent_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
-                public string ParentUserId { get; set; } = default!;
+                public string? ParentUserId { get; set; }
             }
         }
 
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parents")]
         [System.Text.Json.Serialization.JsonPropertyName("parents")]
-        public Types.Parent[]? ParentList { get; set; }
+        public List<Types.Parent>? ParentList { get; set; }
     }
 }

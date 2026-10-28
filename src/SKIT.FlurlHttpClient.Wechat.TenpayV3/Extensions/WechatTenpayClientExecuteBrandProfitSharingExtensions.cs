@@ -162,7 +162,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransactionId, "transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "profitsharing", "orders", request.TransactionId, "amounts");
+                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "profitsharing", "orders", request.TransactionId!, "amounts");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBrandProfitSharingOrderAmountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -186,7 +186,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandMerchantId, "brand_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "profitsharing", "brand-configs", request.BrandMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "profitsharing", "brand-configs", request.BrandMerchantId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBrandProfitSharingBrandConfigsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

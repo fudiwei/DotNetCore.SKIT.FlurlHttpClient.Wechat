@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_state")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_state")]
-        public string AuthState { get; set; } = default!;
+        public string? AuthState { get; set; }
 
         /// <summary>
         /// 获取或设置个人收款方受理授权 ID。

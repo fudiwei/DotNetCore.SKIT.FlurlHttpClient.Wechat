@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-        public string MessageId { get; set; } = string.Empty;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置反馈结果。

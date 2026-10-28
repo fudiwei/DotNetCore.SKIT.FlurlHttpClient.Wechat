@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jobids")]
         [System.Text.Json.Serialization.JsonPropertyName("jobids")]
-        public string[] ReportJobIdList { get; set; } = default!;
+        public List<string>? ReportJobIdList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页是否结束。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scan_text")]
         [System.Text.Json.Serialization.JsonPropertyName("scan_text")]
-        public string ScanText { get; set; } = string.Empty;
+        public string? ScanText { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/add 接口的请求。</para>
@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序商品详情页路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string PagePath { get; set; } = string.Empty;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品封面图 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coverImgUrl")]
                 [System.Text.Json.Serialization.JsonPropertyName("coverImgUrl")]
-                public string CoverImageMediaId { get; set; } = string.Empty;
+                public string? CoverImageMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置价格类型。
@@ -65,6 +65,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goodsInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("goodsInfo")]
-        public Types.Goods Goods { get; set; } = new Types.Goods();
+        public Types.Goods? Goods { get; set; }
     }
 }

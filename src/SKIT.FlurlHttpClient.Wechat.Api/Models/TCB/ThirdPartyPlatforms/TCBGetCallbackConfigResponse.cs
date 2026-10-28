@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/getcallbackconfig 接口的响应。</para>
@@ -36,7 +36,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("callbacks")]
                         [System.Text.Json.Serialization.JsonPropertyName("callbacks")]
-                        public Types.Callback[]? CallbackList { get; set; }
+                        public List<Types.Callback>? CallbackList { get; set; }
                     }
                 }
 
@@ -45,14 +45,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("container_config")]
                 [System.Text.Json.Serialization.JsonPropertyName("container_config")]
-                public Types.ContainerConfig Type { get; set; } = default!;
+                public Types.ContainerConfig? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置云函数配置信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("function_config")]
                 [System.Text.Json.Serialization.JsonPropertyName("function_config")]
-                public Types.FunctionConfig FunctionConfig { get; set; } = default!;
+                public Types.FunctionConfig? FunctionConfig { get; set; }
             }
         }
 
@@ -61,6 +61,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

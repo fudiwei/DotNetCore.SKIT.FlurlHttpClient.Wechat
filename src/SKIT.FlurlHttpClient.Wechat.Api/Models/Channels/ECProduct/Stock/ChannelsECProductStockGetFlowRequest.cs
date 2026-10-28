@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("op_type_list")]
         [System.Text.Json.Serialization.JsonPropertyName("op_type_list")]
-        public IList<int>? OperateTypeList { get; set; }
+        public List<int>? OperateTypeList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

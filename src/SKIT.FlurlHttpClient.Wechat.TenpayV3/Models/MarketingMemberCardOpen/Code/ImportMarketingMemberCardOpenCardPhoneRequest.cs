@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置用户手机号码（需使用平台公钥/证书加密）。
@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("encrypted_phone_number")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-        public string MobileNumber { get; set; } = string.Empty;
+        public string? MobileNumber { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Code。
@@ -34,6 +34,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
     }
 }

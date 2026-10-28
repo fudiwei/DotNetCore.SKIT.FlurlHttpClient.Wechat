@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("payorder_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("payorder_id")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                        public string PayOrderId { get; set; } = default!;
+                        public string? PayOrderId { get; set; }
 
                         /// <summary>
                         /// 获取或设置充值金额（单位：分）。
@@ -63,21 +63,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_trans_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_trans_id")]
-                public string ServiceTransId { get; set; } = default!;
+                public string? ServiceTransId { get; set; }
 
                 /// <summary>
                 /// 获取或设置运力名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_trans_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_trans_name")]
-                public string ServiceTransName { get; set; } = default!;
+                public string? ServiceTransName { get; set; }
 
                 /// <summary>
                 /// 获取或设置充值订单列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-                public Types.Order[]? OrderList { get; set; }
+                public List<Types.Order>? OrderList { get; set; }
             }
         }
 
@@ -86,14 +86,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_store_id")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_store_id")]
-        public string StoreId { get; set; } = default!;
+        public string? StoreId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置总余额（单位：分）。
@@ -107,6 +107,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("balance_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("balance_detail")]
-        public Types.BalanceDetail[] BalanceDetailList { get; set; } = default!;
+        public List<Types.BalanceDetail>? BalanceDetailList { get; set; }
     }
 }

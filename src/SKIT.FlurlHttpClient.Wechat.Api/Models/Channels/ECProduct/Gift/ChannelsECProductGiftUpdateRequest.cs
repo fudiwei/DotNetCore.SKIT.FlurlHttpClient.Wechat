@@ -97,35 +97,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置主图 URL 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_imgs")]
         [System.Text.Json.Serialization.JsonPropertyName("head_imgs")]
-        public IList<string> HeadImageUrlList { get; set; } = new List<string>();
+        public List<string>? HeadImageUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品详情信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc_info")]
         [System.Text.Json.Serialization.JsonPropertyName("desc_info")]
-        public Types.Detail Detail { get; set; } = new Types.Detail();
+        public Types.Detail? Detail { get; set; }
 
         /// <summary>
         /// 获取或设置新版商品类目列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cats_v2")]
         [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
-        public IList<Types.Category>? CategoryV2List { get; set; }
+        public List<Types.Category>? CategoryV2List { get; set; }
 
         /// <summary>
         /// 获取或设置商品属性列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attrs")]
         [System.Text.Json.Serialization.JsonPropertyName("attrs")]
-        public IList<Types.Attribute>? AttributeList { get; set; }
+        public List<Types.Attribute>? AttributeList { get; set; }
 
         /// <summary>
         /// 获取或设置商品编码。
@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("skus")]
         [System.Text.Json.Serialization.JsonPropertyName("skus")]
-        public IList<Types.SKU>? SKUList { get; set; }
+        public List<Types.SKU>? SKUList { get; set; }
 
         /// <summary>
         /// 获取或设置更新后是否立即上架。

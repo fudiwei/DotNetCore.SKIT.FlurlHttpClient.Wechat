@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-        public string ActivityId { get; set; } = default!;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置过期时间戳。

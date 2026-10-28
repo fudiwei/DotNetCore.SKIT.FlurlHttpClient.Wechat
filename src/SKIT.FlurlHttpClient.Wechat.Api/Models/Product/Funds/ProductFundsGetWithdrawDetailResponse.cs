@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = default!;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置提现状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置提现金额（单位：分）。
@@ -45,14 +45,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_num")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_num")]
-        public string BankAccountNumber { get; set; } = default!;
+        public string? BankAccountNumber { get; set; }
 
         /// <summary>
         /// 获取或设置银行名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_name")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-        public string BankName { get; set; } = default!;
+        public string? BankName { get; set; }
 
         /// <summary>
         /// 获取或设置银行附言。

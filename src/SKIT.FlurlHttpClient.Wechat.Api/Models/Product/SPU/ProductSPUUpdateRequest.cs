@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("valid_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("valid_info")]
-                public new Types.Validity Validity { get; set; } = new Types.Validity();
+                public new Types.Validity? Validity { get; set; }
             }
         }
 
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置商品副标题。
@@ -81,14 +81,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_img")]
         [System.Text.Json.Serialization.JsonPropertyName("head_img")]
-        public IList<string> HeadImageUrlList { get; set; } = new List<string>();
+        public List<string>? HeadImageUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品详情信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc_info")]
         [System.Text.Json.Serialization.JsonPropertyName("desc_info")]
-        public Types.Description Description { get; set; } = new Types.Description();
+        public Types.Description? Description { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
@@ -102,14 +102,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cats")]
         [System.Text.Json.Serialization.JsonPropertyName("cats")]
-        public IList<Types.Category> CategoryList { get; set; } = new List<Types.Category>();
+        public List<Types.Category>? CategoryList { get; set; }
 
         /// <summary>
         /// 获取或设置商品属性列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attrs")]
         [System.Text.Json.Serialization.JsonPropertyName("attrs")]
-        public IList<Types.Attribute> AttributeList { get; set; } = new List<Types.Attribute>();
+        public List<Types.Attribute>? AttributeList { get; set; }
 
         /// <summary>
         /// 获取或设置型号。
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("express_info")]
         [System.Text.Json.Serialization.JsonPropertyName("express_info")]
-        public Types.Express Express { get; set; } = new Types.Express();
+        public Types.Express? Express { get; set; }
 
         /// <summary>
         /// 获取或设置券码信息。

@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("algorithm")]
                         [System.Text.Json.Serialization.JsonPropertyName("algorithm")]
-                        public string Algorithm { get; set; } = default!;
+                        public string? Algorithm { get; set; }
 
                         /// <summary>
                         /// 获取或设置加密使用的附加数据。
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nonce")]
                         [System.Text.Json.Serialization.JsonPropertyName("nonce")]
-                        public string Nonce { get; set; } = default!;
+                        public string? Nonce { get; set; }
 
                         /// <summary>
                         /// 获取或设置 Base64 编码后的密文（需使用商户 API v3 密钥解密）。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [System.Text.Json.Serialization.JsonPropertyName("ciphertext")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.AEAD_AES_256_GCM)]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.AEAD_SM4_128_GCM)]
-                        public string CipherText { get; set; } = default!;
+                        public string? CipherText { get; set; }
                     }
                 }
 
@@ -69,14 +69,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("serial_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("serial_no")]
-                public string SerialNumber { get; set; } = default!;
+                public string? SerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置证书信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_certificate")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_certificate")]
-                public Types.EncryptCertificate EncryptCertificate { get; set; } = default!;
+                public Types.EncryptCertificate? EncryptCertificate { get; set; }
             }
         }
 
@@ -85,6 +85,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Certificate[] CertificateList { get; set; } = default!;
+        public List<Types.Certificate>? CertificateList { get; set; }
     }
 }

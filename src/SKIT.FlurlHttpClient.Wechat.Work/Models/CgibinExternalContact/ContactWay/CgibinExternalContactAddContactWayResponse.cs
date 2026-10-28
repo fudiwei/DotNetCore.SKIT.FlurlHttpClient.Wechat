@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config_id")]
         [System.Text.Json.Serialization.JsonPropertyName("config_id")]
-        public string ConfigId { get; set; } = default!;
+        public string? ConfigId { get; set; }
 
         /// <summary>
         /// 获取或设置联系我的二维码链接。

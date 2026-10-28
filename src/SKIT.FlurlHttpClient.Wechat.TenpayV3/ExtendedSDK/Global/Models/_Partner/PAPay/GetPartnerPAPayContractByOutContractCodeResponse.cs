@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public override string MerchantId { get; set; } = default!;
+        public override string? MerchantId { get; set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public override string AppId { get; set; } = default!;
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。

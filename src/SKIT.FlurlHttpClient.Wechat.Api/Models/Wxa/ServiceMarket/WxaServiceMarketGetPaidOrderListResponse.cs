@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/servicemarket/get_paid_order_list 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("specification_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("specification_id")]
-                public string SpecificationId { get; set; } = default!;
+                public string? SpecificationId { get; set; }
 
                 /// <summary>
                 /// 获取或设置生效时间戳。
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
     }
 }

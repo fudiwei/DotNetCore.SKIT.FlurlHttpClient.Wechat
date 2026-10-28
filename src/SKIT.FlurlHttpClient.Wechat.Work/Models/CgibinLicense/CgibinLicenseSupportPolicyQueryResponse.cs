@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unsatisfied_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("unsatisfied_reason")]
-        public int[]? UnsatisfiedReasonCodeList { get; set; }
+        public List<int>? UnsatisfiedReasonCodeList { get; set; }
     }
 }

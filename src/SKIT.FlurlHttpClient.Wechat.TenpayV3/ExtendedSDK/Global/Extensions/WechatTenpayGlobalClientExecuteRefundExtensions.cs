@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "refunds", "out-refund-no", request.OutRefundNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "refunds", "out-refund-no", request.OutRefundNumber!)
                 .SetQueryParam("mchid", request.MerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "refunds", "id", request.RefundId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "refunds", "id", request.RefundId!)
                 .SetQueryParam("mchid", request.MerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

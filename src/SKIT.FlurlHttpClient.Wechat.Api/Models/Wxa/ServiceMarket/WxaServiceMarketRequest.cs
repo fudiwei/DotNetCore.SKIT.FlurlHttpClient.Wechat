@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service")]
         [System.Text.Json.Serialization.JsonPropertyName("service")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置接口名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("api")]
         [System.Text.Json.Serialization.JsonPropertyName("api")]
-        public string API { get; set; } = string.Empty;
+        public string? API { get; set; }
 
         /// <summary>
         /// 获取或设置是否是异步 API。
@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("client_msg_id")]
         [System.Text.Json.Serialization.JsonPropertyName("client_msg_id")]
-        public string ClientMessageId { get; set; } = string.Empty;
+        public string? ClientMessageId { get; set; }
     }
 }

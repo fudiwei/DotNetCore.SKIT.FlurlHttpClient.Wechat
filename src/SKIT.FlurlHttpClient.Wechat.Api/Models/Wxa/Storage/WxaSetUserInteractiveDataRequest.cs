@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("key")]
                 [System.Text.Json.Serialization.JsonPropertyName("key")]
-                public string Key { get; set; } = string.Empty;
+                public string? Key { get; set; }
 
                 /// <summary>
                 /// 获取或设置数据的值。
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户登录态签名。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Signature { get; set; } = string.Empty;
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 获取或设置用户登录态签名的哈希方法。
@@ -45,13 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SignMethod { get; set; } = "hmac_sha256";
+        public string? SignMethod { get; set; } = "hmac_sha256";
 
         /// <summary>
         /// 获取或设置要上报的数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kv_list")]
         [System.Text.Json.Serialization.JsonPropertyName("kv_list")]
-        public IList<Types.KeyValue> KeyValueList { get; set; } = new List<Types.KeyValue>();
+        public List<Types.KeyValue>? KeyValueList { get; set; }
     }
 }

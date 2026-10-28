@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_name")]
         [System.Text.Json.Serialization.JsonPropertyName("product_name")]
-        public string ProductName { get; set; } = string.Empty;
+        public string? ProductName { get; set; }
 
         /// <summary>
         /// 获取或设置商品三级类目 ID。
@@ -73,14 +73,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_imgs")]
         [System.Text.Json.Serialization.JsonPropertyName("head_imgs")]
-        public IList<string> HeadImageUrlList { get; set; } = new List<string>();
+        public List<string>? HeadImageUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品资质列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_qua_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("product_qua_infos")]
-        public IList<Types.Qualification>? ProductQualificationList { get; set; }
+        public List<Types.Qualification>? ProductQualificationList { get; set; }
 
         /// <summary>
         /// 获取或设置核销跳转出口小程序页面信息。
@@ -108,13 +108,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attr_kv_map")]
         [System.Text.Json.Serialization.JsonPropertyName("attr_kv_map")]
-        public IDictionary<string, string> AttributeKeyValueMap { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string>? AttributeKeyValueMap { get; set; }
 
         /// <summary>
         /// 获取或设置 SKU 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("skus")]
         [System.Text.Json.Serialization.JsonPropertyName("skus")]
-        public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+        public List<Types.SKU>? SKUList { get; set; }
     }
 }

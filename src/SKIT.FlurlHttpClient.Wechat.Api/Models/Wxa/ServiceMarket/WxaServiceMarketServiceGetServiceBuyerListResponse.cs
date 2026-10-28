@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("specification_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("specification_id")]
-                        public string SpecificationId { get; set; } = default!;
+                        public string? SpecificationId { get; set; }
 
                         /// <summary>
                         /// 获取或设置过期时间戳。
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务 ID。
@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("service_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string ServiceId { get; set; } = default!;
+                public string? ServiceId { get; set; }
 
                 /// <summary>
                 /// 获取或设置规格列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("spec_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("spec_list")]
-                public Types.Specification[]? SpecificationList { get; set; }
+                public List<Types.Specification>? SpecificationList { get; set; }
             }
         }
 
@@ -58,6 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_list")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_list")]
-        public Types.Buyer[] BuyerList { get; set; } = default!;
+        public List<Types.Buyer>? BuyerList { get; set; }
     }
 }

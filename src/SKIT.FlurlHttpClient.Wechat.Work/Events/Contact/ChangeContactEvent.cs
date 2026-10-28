@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("Name")]
                         [System.Text.Json.Serialization.JsonPropertyName("Name")]
                         [System.Xml.Serialization.XmlElement("Name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置文本属性值。
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("Value")]
                         [System.Text.Json.Serialization.JsonPropertyName("Value")]
                         [System.Xml.Serialization.XmlElement("Value")]
-                        public string Value { get; set; } = default!;
+                        public string? Value { get; set; }
                     }
 
                     public class WebAttribute
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("Title")]
                         [System.Text.Json.Serialization.JsonPropertyName("Title")]
                         [System.Xml.Serialization.XmlElement("Title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置网页 URL。
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("Url")]
                         [System.Text.Json.Serialization.JsonPropertyName("Url")]
                         [System.Xml.Serialization.XmlElement("Url")]
-                        public string Url { get; set; } = default!;
+                        public string? Url { get; set; }
                     }
                 }
 
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("Item")]
                 [System.Text.Json.Serialization.JsonPropertyName("Item")]
                 [System.Xml.Serialization.XmlElement("Item", Type = typeof(Types.Attribute))]
-                public Types.Attribute[] AttributeList { get; set; } = default!;
+                public List<Types.Attribute>? AttributeList { get; set; }
             }
         }
 
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChangeType")]
         [System.Text.Json.Serialization.JsonPropertyName("ChangeType")]
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置成员、部门或标签名称。
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Name")]
         [System.Text.Json.Serialization.JsonPropertyName("Name")]
         [System.Xml.Serialization.XmlElement("Name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置用户成员账号。

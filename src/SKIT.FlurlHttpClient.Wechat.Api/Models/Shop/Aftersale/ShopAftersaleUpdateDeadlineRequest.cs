@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
-        public string OutOrderId { get; set; } = string.Empty;
+        public string? OutOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置售后截止时间戳。

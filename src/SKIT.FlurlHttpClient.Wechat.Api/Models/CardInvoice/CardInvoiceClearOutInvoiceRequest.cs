@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/invoice/clearoutinvoice 接口的请求。</para>
@@ -14,42 +14,42 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wxopenid")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxopenid")]
-                public string OpenId { get; set; } = string.Empty;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票请求流水号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fpqqlsh")]
                 [System.Text.Json.Serialization.JsonPropertyName("fpqqlsh")]
-                public string InvoiceSerialNumber { get; set; } = string.Empty;
+                public string? InvoiceSerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人识别码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrsbh")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrsbh")]
-                public string SellerTaxNumber { get; set; } = string.Empty;
+                public string? SellerTaxNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrmc")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrmc")]
-                public string SellerName { get; set; } = string.Empty;
+                public string? SellerName { get; set; }
 
                 /// <summary>
                 /// 获取或设置原发票代码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("yfpdm")]
                 [System.Text.Json.Serialization.JsonPropertyName("yfpdm")]
-                public string OriginalInvoiceCode { get; set; } = string.Empty;
+                public string? OriginalInvoiceCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置原发票号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("yfphm")]
                 [System.Text.Json.Serialization.JsonPropertyName("yfphm")]
-                public string OriginalInvoiceNumber { get; set; } = string.Empty;
+                public string? OriginalInvoiceNumber { get; set; }
             }
         }
 
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoiceinfo")]
         [System.Text.Json.Serialization.JsonPropertyName("invoiceinfo")]
-        public Types.Invoice Invoice { get; set; } = new Types.Invoice();
+        public Types.Invoice? Invoice { get; set; }
     }
 }

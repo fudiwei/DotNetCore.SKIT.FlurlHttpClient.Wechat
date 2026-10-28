@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置待签约支付分计划 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_plan_id")]
-        public string SignPlanId { get; set; } = string.Empty;
+        public string? SignPlanId { get; set; }
 
         /// <summary>
         /// 获取或设置签约计划明细序号。
@@ -42,28 +42,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置服务信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_introduction")]
         [System.Text.Json.Serialization.JsonPropertyName("service_introduction")]
-        public string ServiceInstruction { get; set; } = string.Empty;
+        public string? ServiceInstruction { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("time_range")]
         [System.Text.Json.Serialization.JsonPropertyName("time_range")]
-        public Types.TimeRange TimeRange { get; set; } = new Types.TimeRange();
+        public Types.TimeRange? TimeRange { get; set; }
 
         /// <summary>
         /// 获取或设置服务位置信息。

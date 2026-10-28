@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("option_list")]
-                public IList<Types.Option>? OptionList { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置审批类型。
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("question_list")]
         [System.Text.Json.Serialization.JsonPropertyName("question_list")]
-        public IList<Types.Question>? QuestionList { get; set; }
+        public List<Types.Question>? QuestionList { get; set; }
 
         /// <summary>
         /// 获取或设置是否本企业成员无需报名。

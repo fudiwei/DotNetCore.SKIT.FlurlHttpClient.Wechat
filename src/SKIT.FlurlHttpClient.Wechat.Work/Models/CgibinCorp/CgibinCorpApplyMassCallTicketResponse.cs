@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mass_call_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("mass_call_ticket")]
-        public string MassCallTicket { get; set; } = default!;
+        public string? MassCallTicket { get; set; }
     }
 }

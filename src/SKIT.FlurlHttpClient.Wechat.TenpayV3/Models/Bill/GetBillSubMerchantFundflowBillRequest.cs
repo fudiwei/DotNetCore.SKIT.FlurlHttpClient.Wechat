@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置加密算法。
@@ -18,6 +18,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Algorithm { get; set; } = Constants.EncryptionAlgorithms.AEAD_AES_256_GCM;
+        public string? Algorithm { get; set; } = Constants.EncryptionAlgorithms.AEAD_AES_256_GCM;
     }
 }

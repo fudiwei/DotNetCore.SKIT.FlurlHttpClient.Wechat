@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/license/create_renew_order_job 接口的响应。</para>
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置续期账号类型。
@@ -44,13 +44,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jobid")]
         [System.Text.Json.Serialization.JsonPropertyName("jobid")]
-        public string JobId { get; set; } = default!;
+        public string? JobId { get; set; }
 
         /// <summary>
         /// 获取或设置无效的账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_account_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_account_list")]
-        public Types.Account[] InvalidAccountList { get; set; } = default!;
+        public List<Types.Account>? InvalidAccountList { get; set; }
     }
 }

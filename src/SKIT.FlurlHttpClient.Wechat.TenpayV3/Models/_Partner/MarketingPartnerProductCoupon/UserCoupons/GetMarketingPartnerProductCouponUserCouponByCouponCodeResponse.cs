@@ -37,21 +37,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_code")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_code")]
-        public string CouponCode { get; set; } = default!;
+        public string? CouponCode { get; set; }
 
         /// <summary>
         /// 获取或设置券状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_state")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_state")]
-        public string CouponState { get; set; } = default!;
+        public string? CouponState { get; set; }
 
         /// <summary>
         /// 获取或设置有效期开始时间。
@@ -85,14 +85,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("send_request_no")]
-        public string SendOutRequestNumber { get; set; } = default!;
+        public string? SendOutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置发券渠道。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_channel")]
         [System.Text.Json.Serialization.JsonPropertyName("send_channel")]
-        public string SendChannel { get; set; } = default!;
+        public string? SendChannel { get; set; }
 
         /// <summary>
         /// 获取或设置确认请求单号。
@@ -152,14 +152,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_coupon")]
         [System.Text.Json.Serialization.JsonPropertyName("product_coupon")]
-        public Types.ProductCouponInfo ProductCouponInfo { get; set; } = default!;
+        public Types.ProductCouponInfo? ProductCouponInfo { get; set; }
 
         /// <summary>
         /// 获取或设置批次信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock")]
         [System.Text.Json.Serialization.JsonPropertyName("stock")]
-        public Types.StockInfo StockInfo { get; set; } = default!;
+        public Types.StockInfo? StockInfo { get; set; }
 
         /// <summary>
         /// 获取或设置附加信息。

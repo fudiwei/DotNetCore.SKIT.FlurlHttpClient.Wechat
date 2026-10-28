@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用 SessionKey 对空字符串签名得到的结果。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Signature { get; set; } = string.Empty;
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 获取或设置签名方法。
@@ -25,6 +25,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SignMethod { get; set; } = "hmac_sha256";
+        public string? SignMethod { get; set; } = "hmac_sha256";
     }
 }

@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start_month")]
         [System.Text.Json.Serialization.JsonPropertyName("start_month")]
-        public string StartMonthString { get; set; } = string.Empty;
+        public string? StartMonthString { get; set; }
 
         /// <summary>
         /// 获取或设置结束月份字符串（格式：yyyyMM）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_month")]
         [System.Text.Json.Serialization.JsonPropertyName("end_month")]
-        public string EndMonthString { get; set; } = string.Empty;
+        public string? EndMonthString { get; set; }
 
         protected internal override string GetRequestPath()
         {

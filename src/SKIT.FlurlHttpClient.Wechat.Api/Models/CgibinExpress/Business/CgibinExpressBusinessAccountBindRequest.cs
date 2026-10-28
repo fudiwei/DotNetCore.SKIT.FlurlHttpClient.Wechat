@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Action { get; set; } = string.Empty;
+        public string? Action { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户编码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("biz_id")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_id")]
-        public string BusinessId { get; set; } = string.Empty;
+        public string? BusinessId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户密码。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedoc/get_doc_base_info 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("docid")]
                 [System.Text.Json.Serialization.JsonPropertyName("docid")]
-                public string DocumentId { get; set; } = default!;
+                public string? DocumentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置文档类型。
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("doc_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("doc_name")]
-                public string DocumentName { get; set; } = default!;
+                public string? DocumentName { get; set; }
 
                 /// <summary>
                 /// 获取或设置文档创建时间戳。
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("doc_base_info")]
         [System.Text.Json.Serialization.JsonPropertyName("doc_base_info")]
-        public Types.Document Document { get; set; } = default!;
+        public Types.Document? Document { get; set; }
     }
 }

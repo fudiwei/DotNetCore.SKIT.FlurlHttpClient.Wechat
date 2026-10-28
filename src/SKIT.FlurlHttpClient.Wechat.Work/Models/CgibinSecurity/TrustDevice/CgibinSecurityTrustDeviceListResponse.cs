@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_code")]
-                public string DeviceCode { get; set; } = default!;
+                public string? DeviceCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备系统。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("system")]
                 [System.Text.Json.Serialization.JsonPropertyName("system")]
-                public string System { get; set; } = default!;
+                public string? System { get; set; }
 
                 /// <summary>
                 /// 获取或设置 MAC 地址列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mac_addr")]
                 [System.Text.Json.Serialization.JsonPropertyName("mac_addr")]
-                public string[]? MacAddressList { get; set; }
+                public List<string>? MacAddressList { get; set; }
 
                 /// <summary>
                 /// 获取或设置主板 UUID。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("harddisk_uuid")]
                 [System.Text.Json.Serialization.JsonPropertyName("harddisk_uuid")]
-                public string[]? HarddistUUIDList { get; set; }
+                public List<string>? HarddistUUIDList { get; set; }
 
                 /// <summary>
                 /// 获取或设置域名。
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_list")]
-        public Types.Device[] DeviceList { get; set; } = default!;
+        public List<Types.Device>? DeviceList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

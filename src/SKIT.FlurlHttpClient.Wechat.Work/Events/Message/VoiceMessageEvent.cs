@@ -27,12 +27,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// 获取或设置语音格式。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Format")]
-        public string Format { get; set; } = default!;
+        public string? Format { get; set; }
 
         /// <summary>
         /// 获取或设置语音消息 MediaId。
         /// </summary>
         [System.Xml.Serialization.XmlElement("MediaId")]
-        public string MediaId { get; set; } = default!;
+        public string? MediaId { get; set; }
     }
 }

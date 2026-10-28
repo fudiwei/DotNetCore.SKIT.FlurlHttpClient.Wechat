@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string Environment { get; set; } = "online";
+        public string? Environment { get; set; } = "online";
     }
 }

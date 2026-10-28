@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置排班日期（格式：d）。
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public IList<Types.Schedule> ScheduleList { get; set; } = new List<Types.Schedule>();
+        public List<Types.Schedule>? ScheduleList { get; set; }
     }
 }

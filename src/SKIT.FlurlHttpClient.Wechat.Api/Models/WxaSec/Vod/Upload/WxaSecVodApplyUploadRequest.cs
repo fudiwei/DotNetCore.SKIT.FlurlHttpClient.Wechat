@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_name")]
         [System.Text.Json.Serialization.JsonPropertyName("media_name")]
-        public string MediaName { get; set; } = string.Empty;
+        public string? MediaName { get; set; }
 
         /// <summary>
         /// 获取或设置视频格式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_type")]
         [System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        public string MediaType { get; set; } = string.Empty;
+        public string? MediaType { get; set; }
 
         /// <summary>
         /// 获取或设置视频封面图片格式。

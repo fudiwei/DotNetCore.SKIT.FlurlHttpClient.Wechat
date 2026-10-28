@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡规则 ID。
@@ -28,21 +28,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("groupname")]
                 [System.Text.Json.Serialization.JsonPropertyName("groupname")]
-                public string GroupName { get; set; } = default!;
+                public string? GroupName { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("checkin_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("checkin_type")]
-                public string CheckinType { get; set; } = default!;
+                public string? CheckinType { get; set; }
 
                 /// <summary>
                 /// 获取或设置异常类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exception_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("exception_type")]
-                public string ExceptionType { get; set; } = default!;
+                public string? ExceptionType { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡时间戳。
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mediaids")]
                 [System.Text.Json.Serialization.JsonPropertyName("mediaids")]
-                public string[]? MediaIdList { get; set; }
+                public List<string>? MediaIdList { get; set; }
             }
         }
 
@@ -142,6 +142,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("checkindata")]
         [System.Text.Json.Serialization.JsonPropertyName("checkindata")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
     }
 }

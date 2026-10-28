@@ -23,14 +23,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_termination_mode")]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_termination_mode")]
-                public string TerminationMode { get; set; } = default!;
+                public string? TerminationMode { get; set; }
 
                 /// <summary>
                 /// 获取或设置解约备注。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_termination_remark")]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_termination_remark")]
-                public string TerminationRemark { get; set; } = default!;
+                public string? TerminationRemark { get; set; }
             }
         }
 
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
@@ -60,35 +60,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = default!;
+        public string? OutContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置用户账户展示名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string UserDisplayName { get; set; } = default!;
+        public string? UserDisplayName { get; set; }
 
         /// <summary>
         /// 获取或设置协议状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_state")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_state")]
-        public string ContractState { get; set; } = default!;
+        public string? ContractState { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置签署时间。

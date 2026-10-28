@@ -62,14 +62,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("match_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("match_id")]
-                public string MatchId { get; set; } = default!;
+                public string? MatchId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("app_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("app_id")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置打开状态。
@@ -115,6 +115,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("match_rule_list")]
         [System.Text.Json.Serialization.JsonPropertyName("match_rule_list")]
-        public Types.MatchRule[]? MatchRuleList { get; set; } = default!;
+        public List<Types.MatchRule>? MatchRuleList { get; set; }
     }
 }

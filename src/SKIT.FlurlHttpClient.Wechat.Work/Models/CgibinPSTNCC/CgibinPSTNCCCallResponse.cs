@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/pstncc/call 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置呼叫 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("callid")]
                 [System.Text.Json.Serialization.JsonPropertyName("callid")]
-                public string CallId { get; set; } = default!;
+                public string? CallId { get; set; }
 
                 /// <summary>
                 /// 获取或设置呼叫结果状态。
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("states")]
         [System.Text.Json.Serialization.JsonPropertyName("states")]
-        public Types.CallState[] CallStateList { get; set; } = default!;
+        public List<Types.CallState>? CallStateList { get; set; }
     }
 }

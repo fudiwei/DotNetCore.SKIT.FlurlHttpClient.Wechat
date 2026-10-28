@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                public IList<string>? UserIdList { get; set; }
+                public List<string>? UserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用范围的部门 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                public IList<long>? DepartmentId { get; set; }
+                public List<long>? DepartmentId { get; set; }
             }
         }
 
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置会议室容纳人数。
@@ -96,6 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("equipment")]
         [System.Text.Json.Serialization.JsonPropertyName("equipment")]
-        public IList<int>? EquipmentIdList { get; set; }
+        public List<int>? EquipmentIdList { get; set; }
     }
 }

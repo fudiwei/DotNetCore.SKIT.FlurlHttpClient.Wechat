@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payment_scene")]
                 [System.Text.Json.Serialization.JsonPropertyName("payment_scene")]
-                public string PaymentScene { get; set; } = default!;
+                public string? PaymentScene { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信商户号。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid_list")]
-                public string[]? AppIdList { get; set; }
+                public List<string>? AppIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务 ID。
@@ -44,14 +44,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置已生效连接列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("active_link_list")]
         [System.Text.Json.Serialization.JsonPropertyName("active_link_list")]
-        public Types.Link[] ActiveLinkList { get; set; } = default!;
+        public List<Types.Link>? ActiveLinkList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ww_share_code")]
         [System.Text.Json.Serialization.JsonPropertyName("ww_share_code")]
-        public string ShareCode { get; set; } = string.Empty;
+        public string? ShareCode { get; set; }
     }
 }

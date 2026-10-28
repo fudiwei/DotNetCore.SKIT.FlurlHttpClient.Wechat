@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_entrustweb_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_entrustweb_id")]
-        public string PresignSessionId { get; set; } = default!;
+        public string? PresignSessionId { get; set; }
 
         /// <summary>
         /// 获取或设置跳转小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_mp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_mp_appid")]
-        public string MiniProgramAppId { get; set; } = default!;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置跳转小程序页面路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_mp_path")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_mp_path")]
-        public string MiniProgramPagePath { get; set; } = default!;
+        public string? MiniProgramPagePath { get; set; }
 
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -47,13 +47,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string ServiceId { get; set; } = default!;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置商户签约协议号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = default!;
+        public string? OutContractCode { get; set; }
     }
 }

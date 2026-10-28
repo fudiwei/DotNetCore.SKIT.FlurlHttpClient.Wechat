@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置跳转时的 Ticket。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("code_ticket")]
-        public string CodeTicket { get; set; } = string.Empty;
+        public string? CodeTicket { get; set; }
     }
 }

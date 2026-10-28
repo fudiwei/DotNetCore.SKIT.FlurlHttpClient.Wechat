@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("grid_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-                                public string GridId { get; set; } = default!;
+                                public string? GridId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置宫格类型。
@@ -66,14 +66,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("layout_template_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("layout_template_id")]
-                        public string LayoutTemplateId { get; set; } = default!;
+                        public string? LayoutTemplateId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户座次列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_seat_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_seat_list")]
-                        public Types.UserSeat[] UserSeatList { get; set; } = default!;
+                        public List<Types.UserSeat>? UserSeatList { get; set; }
                     }
                 }
 
@@ -82,14 +82,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("layout_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("layout_id")]
-                public string LayoutId { get; set; } = default!;
+                public string? LayoutId { get; set; }
 
                 /// <summary>
                 /// 获取或设置布局单页列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_list")]
-                public Types.Page[] PageList { get; set; } = default!;
+                public List<Types.Page>? PageList { get; set; }
             }
         }
 
@@ -98,13 +98,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("selected_layout_id")]
         [System.Text.Json.Serialization.JsonPropertyName("selected_layout_id")]
-        public string SelectedLayoutId { get; set; } = default!;
+        public string? SelectedLayoutId { get; set; }
 
         /// <summary>
         /// 获取或设置布局列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("layout_list")]
         [System.Text.Json.Serialization.JsonPropertyName("layout_list")]
-        public Types.Layout[] LayoutList { get; set; } = default!;
+        public List<Types.Layout>? LayoutList { get; set; }
     }
 }

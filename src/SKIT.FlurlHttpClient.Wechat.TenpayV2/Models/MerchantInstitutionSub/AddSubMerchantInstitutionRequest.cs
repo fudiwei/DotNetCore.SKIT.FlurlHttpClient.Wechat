@@ -31,28 +31,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_name")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-        public string MerchantName { get; set; } = string.Empty;
+        public string? MerchantName { get; set; }
 
         /// <summary>
         /// 获取或设置子商户简称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_shortname")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_shortname")]
-        public string MerchantShortName { get; set; } = string.Empty;
+        public string? MerchantShortName { get; set; }
 
         /// <summary>
         /// 获取或设置子商户备注信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_remark")]
-        public string MerchantRemark { get; set; } = string.Empty;
+        public string? MerchantRemark { get; set; }
 
         /// <summary>
         /// 获取或设置商户类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_type")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_type")]
-        public string MerchantType { get; set; } = string.Empty;
+        public string? MerchantType { get; set; }
 
         /// <summary>
         /// 获取或设置业务类目编码。
@@ -66,28 +66,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mcc")]
         [System.Text.Json.Serialization.JsonPropertyName("mcc")]
-        public string MerchantCategoryCode { get; set; } = string.Empty;
+        public string? MerchantCategoryCode { get; set; }
 
         /// <summary>
         /// 获取或设置注册国家或地区代码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_country_code")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_country_code")]
-        public string CountryCode { get; set; } = string.Empty;
+        public string? CountryCode { get; set; }
 
         /// <summary>
         /// 获取或设置公司注册文件编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("registration_certificate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("registration_certificate_number")]
-        public string RegistrationCertificateNumber { get; set; } = string.Empty;
+        public string? RegistrationCertificateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置公司注册文件过期时间字符串（格式：yyyy-MM-dd / PERMANENT）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("registration_certificate_date")]
         [System.Text.Json.Serialization.JsonPropertyName("registration_certificate_date")]
-        public string RegistrationCertificateDateString { get; set; } = string.Empty;
+        public string? RegistrationCertificateDateString { get; set; }
 
         /// <summary>
         /// 获取或设置公司注册文件照片 MediaId。
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_type")]
         [System.Text.Json.Serialization.JsonPropertyName("business_type")]
-        public string BusinessType { get; set; } = string.Empty;
+        public string? BusinessType { get; set; }
 
         /// <summary>
         /// 获取或设置 App 下载链接。
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("store_photos")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public IList<string>? StorePhotoMediaIdList { get; set; }
+        public List<string>? StorePhotoMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置董事姓名。

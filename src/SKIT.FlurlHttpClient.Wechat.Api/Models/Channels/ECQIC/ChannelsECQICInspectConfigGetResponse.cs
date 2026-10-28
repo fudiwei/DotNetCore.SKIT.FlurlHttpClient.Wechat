@@ -18,42 +18,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province")]
                         [System.Text.Json.Serialization.JsonPropertyName("province")]
-                        public string Province { get; set; } = default!;
+                        public string? Province { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city")]
                         [System.Text.Json.Serialization.JsonPropertyName("city")]
-                        public string City { get; set; } = default!;
+                        public string? City { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("county")]
                         [System.Text.Json.Serialization.JsonPropertyName("county")]
-                        public string District { get; set; } = default!;
+                        public string? District { get; set; }
 
                         /// <summary>
                         /// 获取或设置详细地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("detail")]
                         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                        public string Detail { get; set; } = default!;
+                        public string? Detail { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系人。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
-                        public string ContactName { get; set; } = default!;
+                        public string? ContactName { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_phone")]
-                        public string ContactPhoneNumber { get; set; } = default!;
+                        public string? ContactPhoneNumber { get; set; }
                     }
                 }
 
@@ -62,35 +62,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("warehouse_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("warehouse_id")]
-                public string WarehouseId { get; set; } = default!;
+                public string? WarehouseId { get; set; }
 
                 /// <summary>
                 /// 获取或设置质检仓名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("warehouse_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("warehouse_name")]
-                public string WarehouseName { get; set; } = default!;
+                public string? WarehouseName { get; set; }
 
                 /// <summary>
                 /// 获取或设置质检仓地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("warehouse_addr")]
                 [System.Text.Json.Serialization.JsonPropertyName("warehouse_addr")]
-                public string WarehouseAddress { get; set; } = default!;
+                public string? WarehouseAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置发货地址信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_address")]
-                public Types.Address DeliveryReceiver { get; set; } = default!;
+                public Types.Address? DeliveryReceiver { get; set; }
 
                 /// <summary>
                 /// 获取或设置退货地址信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("return_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("return_address")]
-                public Types.Address ReturnAddress { get; set; } = default!;
+                public Types.Address? ReturnAddress { get; set; }
             }
         }
 
@@ -99,6 +99,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("inspect_config")]
         [System.Text.Json.Serialization.JsonPropertyName("inspect_config")]
-        public Types.InspectConfig InspectConfig { get; set; } = default!;
+        public Types.InspectConfig? InspectConfig { get; set; }
     }
 }

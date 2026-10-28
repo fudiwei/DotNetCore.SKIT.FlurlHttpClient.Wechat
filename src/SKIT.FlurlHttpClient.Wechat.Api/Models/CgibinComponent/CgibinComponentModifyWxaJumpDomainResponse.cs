@@ -9,27 +9,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置目前生效的全网发布版第三方平台小程序业务域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("published_wxa_jump_h5_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringArrayWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("published_wxa_jump_h5_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringArrayWithSemicolonSplitConverter))]
-        public string[]? PublishedWxaJumpH5DomainList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
+        public List<string>? PublishedWxaJumpH5DomainList { get; set; }
 
         /// <summary>
         /// 获取或设置目前生效的测试版第三方平台小程序业务域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("testing_wxa_jump_h5_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringArrayWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("testing_wxa_jump_h5_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringArrayWithSemicolonSplitConverter))]
-        public string[]? TestingWxaJumpH5DomainList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
+        public List<string>? TestingWxaJumpH5DomainList { get; set; }
 
         /// <summary>
         /// 获取或设置未通过验证的第三方平台小程序业务域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_wxa_jump_h5_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringArrayWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_wxa_jump_h5_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringArrayWithSemicolonSplitConverter))]
-        public string[]? InvalidWxaJumpH5DomainList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
+        public List<string>? InvalidWxaJumpH5DomainList { get; set; }
     }
 }

@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string EncryptedRandomKey { get; set; } = string.Empty;
+        public string? EncryptedRandomKey { get; set; }
 
         /// <summary>
         /// 获取或设置经过加密的聊天内容。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string EncryptedChatMessage { get; set; } = string.Empty;
+        public string? EncryptedChatMessage { get; set; }
     }
 }

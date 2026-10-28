@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
-        public string OutCouponId { get; set; } = string.Empty;
+        public string? OutCouponId { get; set; }
     }
 }

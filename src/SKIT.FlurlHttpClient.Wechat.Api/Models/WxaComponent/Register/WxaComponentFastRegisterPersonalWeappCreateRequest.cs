@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置个人用户名字。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("idname")]
         [System.Text.Json.Serialization.JsonPropertyName("idname")]
-        public string IdName { get; set; } = string.Empty;
+        public string? IdName { get; set; }
 
         /// <summary>
         /// 获取或设置个人用户微信号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxuser")]
         [System.Text.Json.Serialization.JsonPropertyName("wxuser")]
-        public string Wxname { get; set; } = string.Empty;
+        public string? Wxname { get; set; }
 
         /// <summary>
         /// 获取或设置第三方联系电话。

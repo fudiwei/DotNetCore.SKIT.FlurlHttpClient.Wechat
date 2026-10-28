@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user")]
         [System.Text.Json.Serialization.JsonPropertyName("user")]
-        public IList<string>? UserIdList { get; set; }
+        public List<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("party")]
         [System.Text.Json.Serialization.JsonPropertyName("party")]
-        public IList<long>? DepartmentIdList { get; set; }
+        public List<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag")]
         [System.Text.Json.Serialization.JsonPropertyName("tag")]
-        public IList<int>? TagIdList { get; set; }
+        public List<int>? TagIdList { get; set; }
     }
 }

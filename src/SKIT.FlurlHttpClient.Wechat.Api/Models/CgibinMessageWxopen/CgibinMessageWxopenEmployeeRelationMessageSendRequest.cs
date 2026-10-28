@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = string.Empty;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        public string ToUserOpenId { get; set; } = string.Empty;
+        public string? ToUserOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page")]
         [System.Text.Json.Serialization.JsonPropertyName("page")]
-        public string PagePath { get; set; } = string.Empty;
+        public string? PagePath { get; set; }
 
         /// <summary>
         /// 获取或设置推送数据 JSON 字符串。

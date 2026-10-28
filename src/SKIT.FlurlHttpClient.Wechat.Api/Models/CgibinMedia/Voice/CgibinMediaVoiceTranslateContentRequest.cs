@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] VoiceBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? VoiceBytes { get; set; }
 
         /// <summary>
         /// 获取或设置源语言。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string FromLanguage { get; set; } = string.Empty;
+        public string? FromLanguage { get; set; }
 
         /// <summary>
         /// 获取或设置目标语言。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ToLanguage { get; set; } = string.Empty;
+        public string? ToLanguage { get; set; }
     }
 }

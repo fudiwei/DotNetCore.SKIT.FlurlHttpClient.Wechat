@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -33,14 +33,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置商户签约协议号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = string.Empty;
+        public string? OutContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
@@ -61,13 +61,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string ContractDisplayAccount { get; set; } = string.Empty;
+        public string? ContractDisplayAccount { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public string NotifyUrl { get; set; } = string.Empty;
+        public string? NotifyUrl { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-        public string MessageId { get; set; } = default!;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置发送失败的外部联系人账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public string[]? FailedExternalUserIdList { get; set; }
+        public List<string>? FailedExternalUserIdList { get; set; }
     }
 }

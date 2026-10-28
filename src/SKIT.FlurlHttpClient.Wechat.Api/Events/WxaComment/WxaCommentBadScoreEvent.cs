@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("comment_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("comment_id")]
                 [System.Xml.Serialization.XmlElement("comment_id")]
-                public string CommentId { get; set; } = default!;
+                public string? CommentId { get; set; }
             }
         }
 
@@ -29,6 +29,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
         [System.Xml.Serialization.XmlElement("result")]
-        public Types.Result Result { get; set; } = default!;
+        public Types.Result? Result { get; set; }
     }
 }

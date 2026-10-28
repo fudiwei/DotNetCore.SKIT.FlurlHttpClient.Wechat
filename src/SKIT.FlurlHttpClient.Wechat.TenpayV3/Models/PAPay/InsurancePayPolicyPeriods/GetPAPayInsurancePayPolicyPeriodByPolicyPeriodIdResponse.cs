@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_period_id")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_period_id")]
-        public int PolicyPeriodId { get; set; } = default!;
+        public int PolicyPeriodId { get; set; }
 
         /// <summary>
         /// 获取或设置当前扣费周期的状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_period_state")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_period_state")]
-        public string PolicyPeriodState { get; set; } = default!;
+        public string? PolicyPeriodState { get; set; }
 
         /// <summary>
         /// 获取或设置可扣费开始日期字符串（格式：yyyy-MM-dd）。

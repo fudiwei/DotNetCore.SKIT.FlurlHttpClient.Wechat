@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "businesscircle", "user-authorizations", request.OpenId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "businesscircle", "user-authorizations", request.OpenId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId);
 
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "businesscircle", "users", request.OpenId, "points", "commit_status")
+                .CreateFlurlRequest(request, HttpMethod.Get, "businesscircle", "users", request.OpenId!, "points", "commit_status")
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("brandid", request.BrandId);

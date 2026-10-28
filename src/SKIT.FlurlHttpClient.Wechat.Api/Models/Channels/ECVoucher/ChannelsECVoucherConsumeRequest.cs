@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("consume_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("consume_request_no")]
-        public string ConsumeRequestNumber { get; set; } = string.Empty;
+        public string? ConsumeRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置核销门店名称。
@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encrypted_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypted_codes")]
-        public IList<string>? EncryptedCodeList { get; set; }
+        public List<string>? EncryptedCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置券码列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("codes")]
         [System.Text.Json.Serialization.JsonPropertyName("codes")]
-        public IList<string>? CodeList { get; set; }
+        public List<string>? CodeList { get; set; }
 
         /// <summary>
         /// 获取或设置 SKU ID。

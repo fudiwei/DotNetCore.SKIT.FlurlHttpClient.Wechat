@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-        public string PlateNumber { get; set; } = string.Empty;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置停车状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string ParkingState { get; set; } = string.Empty;
+        public string? ParkingState { get; set; }
 
         /// <summary>
         /// 获取或设置停车时间。

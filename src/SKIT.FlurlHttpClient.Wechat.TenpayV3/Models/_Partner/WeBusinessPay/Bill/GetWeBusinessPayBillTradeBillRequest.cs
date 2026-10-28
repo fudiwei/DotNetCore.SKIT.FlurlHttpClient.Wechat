@@ -17,20 +17,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置账单日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string BillDateString { get; set; } = string.Empty;
+        public string? BillDateString { get; set; }
 
         /// <summary>
         /// 获取或设置账单类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string BillType { get; set; } = string.Empty;
+        public string? BillType { get; set; }
     }
 }

@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("field_group")]
         [System.Text.Json.Serialization.JsonPropertyName("field_group")]
-        public Types.FieldGroup FieldGroup { get; set; } = default!;
+        public Types.FieldGroup? FieldGroup { get; set; }
     }
 }

@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_code")]
         [System.Text.Json.Serialization.JsonPropertyName("register_code")]
-        public string RegisterCode { get; set; } = default!;
+        public string? RegisterCode { get; set; }
 
         /// <summary>
         /// 获取或设置注册码有效期（单位：秒）。

@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。
@@ -21,6 +21,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_size")]
         [System.Text.Json.Serialization.JsonPropertyName("page_size")]

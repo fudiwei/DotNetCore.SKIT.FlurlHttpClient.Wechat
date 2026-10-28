@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("live_record_list")]
-        public Types.LiveNoticeRecord[] LiveNoticeRecordList { get; set; } = default!;
+        public List<Types.LiveNoticeRecord>? LiveNoticeRecordList { get; set; }
     }
 }

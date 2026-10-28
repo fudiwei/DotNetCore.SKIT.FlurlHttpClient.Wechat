@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "upgrade");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "upgrade");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpgradeMarketingMemberCardOpenCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingMemberCardOpenCardByCardIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -118,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingMemberCardOpenCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "membercard-open", "cards", request.CardId);
+                .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "membercard-open", "cards", request.CardId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DeleteMarketingMemberCardOpenCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -168,7 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", "deposit");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", "deposit");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DepositMarketingMemberCardOpenCardCodesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -192,7 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "users", "import");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "users", "import");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ImportMarketingMemberCardOpenCardUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "phone-membercard", "import");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "phone-membercard", "import");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ImportMarketingMemberCardOpenCardPhoneResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "unavailable");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "unavailable");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetMarketingMemberCardOpenCardCodeUnavailableResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -266,7 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingMemberCardOpenCardCodeByCardIdAndCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -317,7 +317,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingMemberCardOpenCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -389,7 +389,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "qrcode");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "qrcode");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateMarketingMemberCardOpenCardQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -413,7 +413,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "permission-tokens");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "permission-tokens");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateMarketingMemberCardOpenCardPermissionTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -437,7 +437,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId, "decrypt-code")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "cards", request.CardId!, "decrypt-code")
                 .SetQueryParam("card_id", request.CardId)
                 .SetQueryParam("encrypt_code", request.EncryptedCode);
 
@@ -463,7 +463,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivateTicket, "activate_ticket");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "activate-informations", request.ActivateTicket);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-open", "activate-informations", request.ActivateTicket!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingMemberCardOpenActivateInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -488,7 +488,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "activate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "activate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ActivateMarketingMemberCardOpenCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -514,7 +514,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CardId, "card_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId, "rights");
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "rights");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingMemberCardOpenCardRightsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -539,7 +539,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.Code, "code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "rights");
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "rights");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingMemberCardOpenCardCodeRightsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -569,7 +569,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "bonus", "prepare");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "bonus", "prepare");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.PrepareMarketingMemberCardOpenCardCodeBonusResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -599,7 +599,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "bonus", "commit");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "bonus", "commit");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CommitMarketingMemberCardOpenCardCodeBonusResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

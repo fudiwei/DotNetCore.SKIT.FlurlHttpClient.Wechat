@@ -10,17 +10,17 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AccountType { get; set; } = string.Empty;
+        public string? AccountType { get; set; }
 
         /// <summary>
         /// 获取或设置日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -28,6 +28,7 @@
 
         /// <summary>
         /// 获取或设置分页大小。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

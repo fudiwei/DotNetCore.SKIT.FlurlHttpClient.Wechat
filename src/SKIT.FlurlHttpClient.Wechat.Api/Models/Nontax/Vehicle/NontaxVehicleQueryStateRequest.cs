@@ -38,14 +38,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("region_code")]
         [System.Text.Json.Serialization.JsonPropertyName("region_code")]
-        public string RegionCode { get; set; } = string.Empty;
+        public string? RegionCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣的交易场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = string.Empty;
+        public string? TradeScene { get; set; }
 
         /// <summary>
         /// 获取或设置商户跳转的业务场景。

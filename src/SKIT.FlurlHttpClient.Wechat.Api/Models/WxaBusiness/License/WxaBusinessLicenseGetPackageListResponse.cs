@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pkg_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("pkg_id")]
-                public string PackageId { get; set; } = default!;
+                public string? PackageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置资源包类型。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pkg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("pkg_list")]
-        public Types.Package[] PackageList { get; set; } = default!;
+        public List<Types.Package>? PackageList { get; set; }
 
         /// <summary>
         /// 获取或设置最大激活码序号。

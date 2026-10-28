@@ -32,28 +32,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string CustomAudienceFileName { get; set; } = default!;
+                        public string? CustomAudienceFileName { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户 ID 类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_id_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_id_type")]
-                        public string UserIdType { get; set; } = default!;
+                        public string? UserIdType { get; set; }
 
                         /// <summary>
                         /// 获取或设置文件操作类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("operation_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("operation_type")]
-                        public string OperationType { get; set; } = default!;
+                        public string? OperationType { get; set; }
 
                         /// <summary>
                         /// 获取或设置处理状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("process_status")]
                         [System.Text.Json.Serialization.JsonPropertyName("process_status")]
-                        public string ProcessStatus { get; set; } = default!;
+                        public string? ProcessStatus { get; set; }
 
                         /// <summary>
                         /// 获取或设置错误码。
@@ -110,14 +110,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.CustomAudienceFile[] CustomAudienceFileList { get; set; } = default!;
+                public List<Types.CustomAudienceFile>? CustomAudienceFileList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Types.Pagination Pagination { get; set; } = default!;
+                public Types.Pagination? Pagination { get; set; }
             }
         }
 
@@ -126,6 +126,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

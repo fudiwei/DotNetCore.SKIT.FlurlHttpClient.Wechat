@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置新创建小程序的授权码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_code")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_code")]
-        public string AuthCode { get; set; } = default!;
+        public string? AuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置是否小程序微信认证成功。

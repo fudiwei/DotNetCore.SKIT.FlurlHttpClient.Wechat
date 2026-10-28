@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单类型。
@@ -70,28 +70,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_order_id")]
-                public string SubOrderId { get; set; } = default!;
+                public string? SubOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号个数信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_count")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_count")]
-                public Types.AccountCount AccountCount { get; set; } = default!;
+                public Types.AccountCount? AccountCount { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号时长信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_duration")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_duration")]
-                public Types.AccountDuration AccountDuration { get; set; } = default!;
+                public Types.AccountDuration? AccountDuration { get; set; }
             }
         }
 
@@ -100,14 +100,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
 
         /// <summary>
         /// 获取或设置多企业购买信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buy_list")]
         [System.Text.Json.Serialization.JsonPropertyName("buy_list")]
-        public Types.Buy[] BuyList { get; set; } = default!;
+        public List<Types.Buy>? BuyList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

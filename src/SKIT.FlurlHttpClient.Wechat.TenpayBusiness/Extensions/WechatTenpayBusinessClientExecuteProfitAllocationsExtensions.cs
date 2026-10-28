@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.AllocationId, "allocation_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.AllocationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.AllocationId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutAllocationId, "out_allocation_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "out-allocation-id", request.OutAllocationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "out-allocation-id", request.OutAllocationId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByOutAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PaymentId, "payment_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.PaymentId, "amounts");
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.PaymentId!, "amounts");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationAmountByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -204,7 +204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplicationId, "application_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", request.ApplicationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", request.ApplicationId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -228,7 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutApplicationId, "out_application_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", "out_application_id", request.OutApplicationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", "out_application_id", request.OutApplicationId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByOutApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

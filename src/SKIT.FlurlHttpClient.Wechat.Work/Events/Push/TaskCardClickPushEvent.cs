@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("EventKey")]
         [System.Text.Json.Serialization.JsonPropertyName("EventKey")]
         [System.Xml.Serialization.XmlElement("EventKey")]
-        public string EventKey { get; set; } = default!;
+        public string? EventKey { get; set; }
 
         /// <summary>
         /// 获取或设置任务 ID。
@@ -33,6 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("TaskId")]
         [System.Text.Json.Serialization.JsonPropertyName("TaskId")]
         [System.Xml.Serialization.XmlElement("TaskId")]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
     }
 }

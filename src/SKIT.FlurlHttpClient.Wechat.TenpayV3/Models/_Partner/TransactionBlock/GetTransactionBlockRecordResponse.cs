@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("block_record_id")]
         [System.Text.Json.Serialization.JsonPropertyName("block_record_id")]
-        public string BlockRecordId { get; set; } = default!;
+        public string? BlockRecordId { get; set; }
 
         /// <summary>
         /// 获取或设置拦截时间。
@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("block_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("block_reason")]
-        public string BlockReason { get; set; } = default!;
+        public string? BlockReason { get; set; }
 
         /// <summary>
         /// 获取或设置拦截笔数。

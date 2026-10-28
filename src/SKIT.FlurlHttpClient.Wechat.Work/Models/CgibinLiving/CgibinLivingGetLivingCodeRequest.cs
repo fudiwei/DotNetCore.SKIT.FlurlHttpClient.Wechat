@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("livingid")]
         [System.Text.Json.Serialization.JsonPropertyName("livingid")]
-        public string LivingId { get; set; } = string.Empty;
+        public string? LivingId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
     }
 }

@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("gray_release_plan")]
         [System.Text.Json.Serialization.JsonPropertyName("gray_release_plan")]
-        public Types.GrayRelease GrayRelease { get; set; } = default!;
+        public Types.GrayRelease? GrayRelease { get; set; }
     }
 }

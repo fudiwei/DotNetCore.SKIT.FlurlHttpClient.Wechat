@@ -7,11 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     {
         /// <summary>
         /// 获取或设置接口版本号。
-        /// <para>默认值：3.0</para>
+        /// <para>默认值："3.0"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public string Version { get; set; } = "3.0";
+        public string? Version { get; set; } = "3.0";
 
         /// <summary>
         /// <inheritdoc/>
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = string.Empty;
+        public string? TradeScene { get; set; }
 
         /// <summary>
         /// 获取或设置跳转场景。

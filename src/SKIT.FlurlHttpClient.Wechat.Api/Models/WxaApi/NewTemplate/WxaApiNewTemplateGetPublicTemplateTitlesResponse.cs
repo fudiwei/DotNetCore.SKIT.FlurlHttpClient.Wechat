@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板类型。
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.TemplateTitle[] TemplateTitleList { get; set; } = default!;
+        public List<Types.TemplateTitle>? TemplateTitleList { get; set; }
 
         /// <summary>
         /// 获取或设置模板标题数量。

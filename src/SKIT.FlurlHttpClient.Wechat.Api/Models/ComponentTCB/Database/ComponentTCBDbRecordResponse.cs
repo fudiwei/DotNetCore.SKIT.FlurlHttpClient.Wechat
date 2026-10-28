@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-        public string[]? IdList { get; set; }
+        public List<string>? IdList { get; set; }
 
         /// <summary>
         /// 获取或设置查询分页信息。
@@ -51,7 +51,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public string[]? Data { get; set; }
+        public List<string>? Data { get; set; }
 
         /// <summary>
         /// 获取或设置修改记录数。

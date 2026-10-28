@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string Currency { get; set; } = "CNY";
+                public string? Currency { get; set; } = "CNY";
             }
         }
 
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ContractId { get; set; } = string.Empty;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
@@ -45,13 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置预计扣费金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("estimated_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("estimated_amount")]
-        public Types.Amount EstimatedAmount { get; set; } = new Types.Amount();
+        public Types.Amount? EstimatedAmount { get; set; }
     }
 }

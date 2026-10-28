@@ -18,28 +18,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("legal_person")]
                         [System.Text.Json.Serialization.JsonPropertyName("legal_person")]
-                        public string LegalPerson { get; set; } = default!;
+                        public string? LegalPerson { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("merchant_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-                        public string MerchantName { get; set; } = default!;
+                        public string? MerchantName { get; set; }
 
                         /// <summary>
                         /// 获取或设置营业执照编号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_license_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_license_number")]
-                        public string BusinessLicenseNumber { get; set; } = default!;
+                        public string? BusinessLicenseNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置营业执照图片 MediaId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_license_copy")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_license_copy")]
-                        public string BusinessLicenseCopyMediaId { get; set; } = default!;
+                        public string? BusinessLicenseCopyMediaId { get; set; }
                     }
 
                     public class IdCard
@@ -49,35 +49,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_card_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_card_name")]
-                        public string IdCardName { get; set; } = default!;
+                        public string? IdCardName { get; set; }
 
                         /// <summary>
                         /// 获取或设置身份证号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_card_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
-                        public string IdCardNumber { get; set; } = default!;
+                        public string? IdCardNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置身份证有效期字符串（格式：yyyy-MM-dd / "长期"）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_card_valid_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_card_valid_time")]
-                        public string IdCardValidDateString { get; set; } = default!;
+                        public string? IdCardValidDateString { get; set; }
 
                         /// <summary>
                         /// 获取或设置身份证人像面图片 MediaId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_card_copy")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_card_copy")]
-                        public string IdCardFrontCopyMediaId { get; set; } = default!;
+                        public string? IdCardFrontCopyMediaId { get; set; }
 
                         /// <summary>
                         /// 获取或设置身份证国徽面图片 MediaId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_card_national")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_card_national")]
-                        public string IdCardBackCopyMediaId { get; set; } = default!;
+                        public string? IdCardBackCopyMediaId { get; set; }
                     }
 
                     public class IdDocument
@@ -87,28 +87,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_doc_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_doc_name")]
-                        public string IdDocumentName { get; set; } = default!;
+                        public string? IdDocumentName { get; set; }
 
                         /// <summary>
                         /// 获取或设置证件号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_doc_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_doc_number")]
-                        public string IdDocumentNumber { get; set; } = default!;
+                        public string? IdDocumentNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置证件有效期结束时间字符串（格式：yyyy-MM-dd / "长期"）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("doc_period_end")]
                         [System.Text.Json.Serialization.JsonPropertyName("doc_period_end")]
-                        public string IdDocumentPeriodEndDateString { get; set; } = default!;
+                        public string? IdDocumentPeriodEndDateString { get; set; }
 
                         /// <summary>
                         /// 获取或设置证件图片 MediaId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_doc_copy")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_doc_copy")]
-                        public string IdDocumentCopyMediaId { get; set; } = default!;
+                        public string? IdDocumentCopyMediaId { get; set; }
 
                     }
 
@@ -119,35 +119,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_type")]
-                        public string ContactType { get; set; } = default!;
+                        public string? ContactType { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系人姓名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
-                        public string UserName { get; set; } = default!;
+                        public string? UserName { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系人身份证号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
-                        public string IdCardNumber { get; set; } = default!;
+                        public string? IdCardNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置电子邮箱。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_email")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_email")]
-                        public string Email { get; set; } = default!;
+                        public string? Email { get; set; }
 
                         /// <summary>
                         /// 获取或设置手机号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mobile_phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
-                        public string MobileNumber { get; set; } = default!;
+                        public string? MobileNumber { get; set; }
                     }
 
                     public class SaleScene
@@ -180,7 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_request_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-                public string OutRequestNumber { get; set; } = default!;
+                public string? OutRequestNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置主体类型。
@@ -194,14 +194,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_license_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_license_info")]
-                public Types.BusinessLicense BusinessLicense { get; set; } = new Types.BusinessLicense();
+                public Types.BusinessLicense? BusinessLicense { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_doc_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_type")]
-                public string IdentityType { get; set; } = default!;
+                public string? IdentityType { get; set; }
 
                 /// <summary>
                 /// 获取或设置身份证信息。
@@ -222,7 +222,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_info")]
-                public Types.Contact Contact { get; set; } = default!;
+                public Types.Contact? Contact { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户简称。
@@ -257,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("account_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-                        public string AccountName { get; set; } = default!;
+                        public string? AccountName { get; set; }
 
                         /// <summary>
                         /// 获取或设置付款卡号。
@@ -278,35 +278,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("destination_account_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("destination_account_name")]
-                        public string DestinationAccountName { get; set; } = default!;
+                        public string? DestinationAccountName { get; set; }
 
                         /// <summary>
                         /// 获取或设置收款卡号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("destination_account_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("destination_account_number")]
-                        public string DestinationAccountNumber { get; set; } = default!;
+                        public string? DestinationAccountNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置收款开户银行。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("destination_account_bank")]
                         [System.Text.Json.Serialization.JsonPropertyName("destination_account_bank")]
-                        public string DestinationAccountBank { get; set; } = default!;
+                        public string? DestinationAccountBank { get; set; }
 
                         /// <summary>
                         /// 获取或设置收款省市信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city")]
                         [System.Text.Json.Serialization.JsonPropertyName("city")]
-                        public string DestinationAccountCity { get; set; } = default!;
+                        public string? DestinationAccountCity { get; set; }
 
                         /// <summary>
                         /// 获取或设置备注信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("remark")]
                         [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                        public string Remark { get; set; } = default!;
+                        public string? Remark { get; set; }
 
                         /// <summary>
                         /// 获取或设置汇款截止时间。
@@ -325,14 +325,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("param_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("param_name")]
-                        public string ParameterName { get; set; } = default!;
+                        public string? ParameterName { get; set; }
 
                         /// <summary>
                         /// 获取或设置驳回原因。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reject_reason")]
                         [System.Text.Json.Serialization.JsonPropertyName("reject_reason")]
-                        public string RejectReason { get; set; } = default!;
+                        public string? RejectReason { get; set; }
                     }
                 }
 
@@ -341,7 +341,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_request_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-                public string OutRequestNumber { get; set; } = default!;
+                public string? OutRequestNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请单编号。
@@ -355,14 +355,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applyment_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("applyment_state")]
-                public string ApplymentState { get; set; } = default!;
+                public string? ApplymentState { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请单状态描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applyment_state_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("applyment_state_desc")]
-                public string ApplymentStateDescription { get; set; } = default!;
+                public string? ApplymentStateDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信二级商户号。
@@ -404,7 +404,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
-                public Types.AuditDetail[]? AuditList { get; set; }
+                public List<Types.AuditDetail>? AuditList { get; set; }
             }
         }
 
@@ -413,13 +413,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_req")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_req")]
-        public Types.PayRequest PayRequest { get; set; } = default!;
+        public Types.PayRequest? PayRequest { get; set; }
 
         /// <summary>
         /// 获取或设置进件状态信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_resp")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_resp")]
-        public Types.PayResponse PayResponse { get; set; } = default!;
+        public Types.PayResponse? PayResponse { get; set; }
     }
 }

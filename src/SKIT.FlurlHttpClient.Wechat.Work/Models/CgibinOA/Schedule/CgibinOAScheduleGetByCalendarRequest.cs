@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cal_id")]
         [System.Text.Json.Serialization.JsonPropertyName("cal_id")]
-        public string CalendarId { get; set; } = string.Empty;
+        public string? CalendarId { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

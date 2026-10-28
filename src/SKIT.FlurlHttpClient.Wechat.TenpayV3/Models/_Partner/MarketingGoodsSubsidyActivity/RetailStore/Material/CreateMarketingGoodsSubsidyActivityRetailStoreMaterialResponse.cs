@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("material_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("material_id")]
-                public string MaterialId { get; set; } = default!;
+                public string? MaterialId { get; set; }
 
                 /// <summary>
                 /// 获取或设置物料码 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("material_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("material_url")]
-                public string MaterialUrl { get; set; } = default!;
+                public string? MaterialUrl { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("material_list")]
         [System.Text.Json.Serialization.JsonPropertyName("material_list")]
-        public Types.Material[] MaterialList { get; set; } = default!;
+        public List<Types.Material>? MaterialList { get; set; }
     }
 }

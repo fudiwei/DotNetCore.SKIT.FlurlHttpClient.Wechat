@@ -44,14 +44,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string NodeName { get; set; } = default!;
+                public string? NodeName { get; set; }
 
                 /// <summary>
                 /// 获取或设置子节点列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("node_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("node_list")]
-                public IdentityTreeNode[]? NodeList { get; set; }
+                public List<IdentityTreeNode>? NodeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置根节点信息。
@@ -74,6 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("identity_tree_list")]
         [System.Text.Json.Serialization.JsonPropertyName("identity_tree_list")]
-        public Types.IdentityTreeNode[] IdentityTreeList { get; set; } = default!;
+        public List<Types.IdentityTreeNode>? IdentityTreeList { get; set; }
     }
 }

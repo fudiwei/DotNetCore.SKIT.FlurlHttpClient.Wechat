@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_country_code")]
                         [System.Text.Json.Serialization.JsonPropertyName("value_country_code")]
-                        public string CountryCode { get; set; } = default!;
+                        public string? CountryCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置手机号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_mobile")]
                         [System.Text.Json.Serialization.JsonPropertyName("value_mobile")]
-                        public string MobileNumber { get; set; } = default!;
+                        public string? MobileNumber { get; set; }
                     }
 
                     public class FileValue
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string[] MediaIdList { get; set; } = default!;
+                        public List<string>? MediaIdList { get; set; }
                     }
                 }
 
@@ -123,6 +123,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("field_info")]
         [System.Text.Json.Serialization.JsonPropertyName("field_info")]
-        public Types.Field[] FieldList { get; set; } = default!;
+        public List<Types.Field>? FieldList { get; set; }
     }
 }

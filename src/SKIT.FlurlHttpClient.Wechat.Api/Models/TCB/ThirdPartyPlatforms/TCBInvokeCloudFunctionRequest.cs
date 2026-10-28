@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置函数名。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string FunctionName { get; set; } = string.Empty;
+        public string? FunctionName { get; set; }
 
         /// <summary>
         /// 获取或设置函数传入参数。

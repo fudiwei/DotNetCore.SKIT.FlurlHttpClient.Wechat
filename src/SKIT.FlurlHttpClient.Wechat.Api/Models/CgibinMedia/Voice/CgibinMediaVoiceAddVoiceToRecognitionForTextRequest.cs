@@ -11,21 +11,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Format { get; set; } = "mp3";
+        public string? Format { get; set; } = "mp3";
 
         /// <summary>
         /// 获取或设置语音唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string VoiceId { get; set; } = string.Empty;
+        public string? VoiceId { get; set; }
 
         /// <summary>
         /// 获取或设置语音文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] VoiceBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? VoiceBytes { get; set; }
 
         /// <summary>
         /// 获取或设置语言。

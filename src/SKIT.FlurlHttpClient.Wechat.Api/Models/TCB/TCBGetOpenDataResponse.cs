@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cloud_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cloud_id")]
-                public string CloudId { get; set; } = default!;
+                public string? CloudId { get; set; }
 
                 /// <summary>
                 /// 获取或设置开放数据。
@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data_list")]
         [System.Text.Json.Serialization.JsonPropertyName("data_list")]
-        public Types.OpenData[] OpenDataList { get; set; } = default!;
+        public List<Types.OpenData>? OpenDataList { get; set; }
     }
 }

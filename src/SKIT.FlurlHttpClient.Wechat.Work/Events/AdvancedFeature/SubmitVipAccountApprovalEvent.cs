@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ApplyId")]
         [System.Text.Json.Serialization.JsonPropertyName("ApplyId")]
         [System.Xml.Serialization.XmlElement("ApplyId")]
-        public string ApplyId { get; set; } = default!;
+        public string? ApplyId { get; set; }
 
         /// <summary>
         /// 获取或设置申请原因。
@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ApplyReason")]
         [System.Text.Json.Serialization.JsonPropertyName("ApplyReason")]
         [System.Xml.Serialization.XmlElement("ApplyReason")]
-        public string ApplyReason { get; set; } = default!;
+        public string? ApplyReason { get; set; }
     }
 }

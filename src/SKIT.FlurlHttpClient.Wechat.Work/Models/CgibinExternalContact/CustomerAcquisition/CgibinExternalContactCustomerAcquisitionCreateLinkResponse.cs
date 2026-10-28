@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link")]
         [System.Text.Json.Serialization.JsonPropertyName("link")]
-        public Types.Link Link { get; set; } = default!;
+        public Types.Link? Link { get; set; }
     }
 }

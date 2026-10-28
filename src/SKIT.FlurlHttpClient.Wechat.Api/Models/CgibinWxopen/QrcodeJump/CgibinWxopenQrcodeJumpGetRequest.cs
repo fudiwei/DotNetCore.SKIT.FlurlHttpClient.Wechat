@@ -24,10 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prefix_list")]
         [System.Text.Json.Serialization.JsonPropertyName("prefix_list")]
-        public IList<string>? PrefixList { get; set; }
+        public List<string>? PrefixList { get; set; }
 
         /// <summary>
-        /// 获取或设置分页页数（从 1 开始）。
+        /// 获取或设置分页页数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_num")]
         [System.Text.Json.Serialization.JsonPropertyName("page_num")]

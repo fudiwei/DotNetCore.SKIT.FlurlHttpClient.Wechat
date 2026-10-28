@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("identity")]
                 [System.Text.Json.Serialization.JsonPropertyName("identity")]
-                public string Identity { get; set; } = string.Empty;
+                public string? Identity { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户会员 ID。
@@ -30,20 +30,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("session_id")]
         [System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public string SessionId { get; set; } = string.Empty;
+        public string? SessionId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序用户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.UserInfo UserInfo { get; set; } = new Types.UserInfo();
+        public Types.UserInfo? UserInfo { get; set; }
     }
 }

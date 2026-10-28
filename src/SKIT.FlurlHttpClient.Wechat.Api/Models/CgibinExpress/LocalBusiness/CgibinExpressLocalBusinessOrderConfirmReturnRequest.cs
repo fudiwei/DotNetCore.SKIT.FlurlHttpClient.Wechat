@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_no")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_no")]
-        public string ShopNumber { get; set; } = string.Empty;
+        public string? ShopNumber { get; set; }
 
         /// <summary>
         /// 获取或设置配送单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置备注。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_order_id")]
-        public string RefundOrderId { get; set; } = default!;
+        public string? RefundOrderId { get; set; }
     }
 }

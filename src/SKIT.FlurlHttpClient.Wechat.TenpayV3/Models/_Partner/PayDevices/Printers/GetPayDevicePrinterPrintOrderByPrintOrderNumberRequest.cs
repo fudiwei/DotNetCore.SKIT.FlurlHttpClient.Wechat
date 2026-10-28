@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DeviceId { get; set; } = string.Empty;
+        public string? DeviceId { get; set; }
 
         /// <summary>
         /// 获取或设置打印单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string PrintOrderNumber { get; set; } = string.Empty;
+        public string? PrintOrderNumber { get; set; }
     }
 }

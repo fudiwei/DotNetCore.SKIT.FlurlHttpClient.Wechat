@@ -24,20 +24,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_user")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_user")]
-        public IList<string>? AllowedUserIdList { get; set; }
+        public List<string>? AllowedUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置可见部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_party")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_party")]
-        public IList<long>? AllowedDepartmentIdList { get; set; }
+        public List<long>? AllowedDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置可见标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_tag")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_tag")]
-        public IList<int>? AllowedTagIdList { get; set; }
+        public List<int>? AllowedTagIdList { get; set; }
     }
 }

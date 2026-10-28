@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BillDateString { get; set; } = string.Empty;
+        public string? BillDateString { get; set; }
 
         /// <summary>
         /// 获取或设置资金账户类型。
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AccountType { get; set; } = "ALL";
+        public string? AccountType { get; set; } = "ALL";
 
         /// <summary>
         /// 获取或设置压缩类型。
@@ -33,6 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Algorithm { get; set; } = Constants.EncryptionAlgorithms.AEAD_AES_256_GCM;
+        public string? Algorithm { get; set; } = Constants.EncryptionAlgorithms.AEAD_AES_256_GCM;
     }
 }

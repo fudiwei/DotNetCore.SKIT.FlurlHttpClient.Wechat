@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedoc/doc_get_auth 接口的响应。</para>
@@ -70,7 +70,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text")]
                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                        public string Text { get; set; } = default!;
+                        public string? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置水印类型。
@@ -161,27 +161,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("access_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("access_rule")]
-        public Types.AccessRule AccessRule { get; set; } = default!;
+        public Types.AccessRule? AccessRule { get; set; }
 
         /// <summary>
         /// 获取或设置安全配置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("secure_setting")]
         [System.Text.Json.Serialization.JsonPropertyName("secure_setting")]
-        public Types.SecureSettings SecureSettings { get; set; } = default!;
+        public Types.SecureSettings? SecureSettings { get; set; }
 
         /// <summary>
         /// 获取或设置文档成员授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("doc_member_list")]
         [System.Text.Json.Serialization.JsonPropertyName("doc_member_list")]
-        public Types.Authority[]? DocumentMemberAuthorityList { get; set; }
+        public List<Types.Authority>? DocumentMemberAuthorityList { get; set; }
 
         /// <summary>
         /// 获取或设置文档查看者授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("co_auth_list")]
         [System.Text.Json.Serialization.JsonPropertyName("co_auth_list")]
-        public Types.Authority[]? DocumentCollaboratorAuthorityList { get; set; }
+        public List<Types.Authority>? DocumentCollaboratorAuthorityList { get; set; }
     }
 }

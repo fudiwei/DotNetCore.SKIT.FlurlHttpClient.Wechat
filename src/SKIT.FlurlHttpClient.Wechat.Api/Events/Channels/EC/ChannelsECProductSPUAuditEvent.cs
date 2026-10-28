@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ProductSpuAudit")]
         [System.Text.Json.Serialization.JsonPropertyName("ProductSpuAudit")]
         [System.Xml.Serialization.XmlElement("ProductSpuAudit")]
-        public Types.Product Product { get; set; } = default!;
+        public Types.Product? Product { get; set; }
     }
 }

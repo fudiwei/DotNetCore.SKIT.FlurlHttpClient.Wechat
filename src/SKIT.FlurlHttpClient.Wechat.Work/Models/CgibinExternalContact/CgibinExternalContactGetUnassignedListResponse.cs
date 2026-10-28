@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_unassigned_list 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("handover_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("handover_userid")]
-                public string HandoverUserId { get; set; } = default!;
+                public string? HandoverUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                public string ExternalUserId { get; set; } = default!;
+                public string? ExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置离职时间戳。
@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.DismissedUser[] DismissedUserList { get; set; } = default!;
+        public List<Types.DismissedUser>? DismissedUserList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页是否结束。

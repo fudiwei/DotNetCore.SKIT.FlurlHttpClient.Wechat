@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("actor")]
                 [System.Text.Json.Serialization.JsonPropertyName("actor")]
-                public IList<ActorItem> Items { get; set; } = new List<ActorItem>();
+                public List<ActorItem>? Items { get; set; }
             }
 
             public class ActorItem
@@ -41,28 +41,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置演员照片 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("photo_material_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("photo_material_id")]
-                public string PhotoMediaId { get; set; } = string.Empty;
+                public string? PhotoMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置饰演角色。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("role")]
                 [System.Text.Json.Serialization.JsonPropertyName("role")]
-                public string Role { get; set; } = string.Empty;
+                public string? Role { get; set; }
 
                 /// <summary>
                 /// 获取或设置演员简介。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("profile")]
                 [System.Text.Json.Serialization.JsonPropertyName("profile")]
-                public string Profile { get; set; } = string.Empty;
+                public string? Profile { get; set; }
             }
         }
 
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
-        public IList<long>? MediaIdList { get; set; }
+        public List<long>? MediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置剧目推荐语。
@@ -220,6 +220,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("replace_media_list")]
         [System.Text.Json.Serialization.JsonPropertyName("replace_media_list")]
-        public IList<Types.ReplaceMedia>? ReplaceMediaList { get; set; }
+        public List<Types.ReplaceMedia>? ReplaceMediaList { get; set; }
     }
 }

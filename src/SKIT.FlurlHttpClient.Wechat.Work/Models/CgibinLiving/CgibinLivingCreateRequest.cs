@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_list")]
-                public IList<string>? ImageMediaIdList { get; set; }
+                public List<string>? ImageMediaIdList { get; set; }
             }
         }
 
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("anchor_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("anchor_userid")]
-        public string AnchorUserId { get; set; } = string.Empty;
+        public string? AnchorUserId { get; set; }
 
         /// <summary>
         /// 获取或设置直播标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("theme")]
         [System.Text.Json.Serialization.JsonPropertyName("theme")]
-        public string Theme { get; set; } = string.Empty;
+        public string? Theme { get; set; }
 
         /// <summary>
         /// 获取或设置直播开始时间戳。

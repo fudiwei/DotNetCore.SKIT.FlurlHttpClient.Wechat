@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/sharer/get_sharer_list 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置分享员昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置邀请时间戳。
@@ -44,7 +44,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sharers")]
         [System.Text.Json.Serialization.JsonPropertyName("sharers")]
-        public Types.Sharer[] SharerList { get; set; } = default!;
+        public List<Types.Sharer>? SharerList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

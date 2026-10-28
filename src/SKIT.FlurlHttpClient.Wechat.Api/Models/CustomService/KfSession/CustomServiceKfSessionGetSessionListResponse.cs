@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /customservice/kfsession/getsessionlist 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置会话接入的时间戳。
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sessionlist")]
         [System.Text.Json.Serialization.JsonPropertyName("sessionlist")]
-        public Types.Session[] SessionList { get; set; } = default!;
+        public List<Types.Session>? SessionList { get; set; }
     }
 }

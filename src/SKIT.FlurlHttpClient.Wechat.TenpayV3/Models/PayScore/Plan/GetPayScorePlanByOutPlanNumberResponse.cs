@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plan_detail_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_detail_no")]
-                public int DetailNumber { get; set; } = default!;
+                public int DetailNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置明细名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plan_detail_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_detail_name")]
-                public string DetailName { get; set; } = default!;
+                public string? DetailName { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠说明。
@@ -51,42 +51,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户计划号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_plan_no")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_plan_no")]
-        public string OutPlanNumber { get; set; } = default!;
+        public string? OutPlanNumber { get; set; }
 
         /// <summary>
         /// 获取或设置支付分计划 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-        public string PlanId { get; set; } = default!;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = default!;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置计划名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_name")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_name")]
-        public string PlanName { get; set; } = default!;
+        public string? PlanName { get; set; }
 
         /// <summary>
         /// 获取或设置计划有效期（单位：天）。
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_state")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_state")]
-        public string PlanState { get; set; } = default!;
+        public string? PlanState { get; set; }
 
         /// <summary>
         /// 获取或设置扣费次数。
@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_detail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_detail_list")]
-        public Types.PlanDetail[]? PlanDetailList { get; set; }
+        public List<Types.PlanDetail>? PlanDetailList { get; set; }
 
         /// <summary>
         /// 获取或设置终止方商户号。

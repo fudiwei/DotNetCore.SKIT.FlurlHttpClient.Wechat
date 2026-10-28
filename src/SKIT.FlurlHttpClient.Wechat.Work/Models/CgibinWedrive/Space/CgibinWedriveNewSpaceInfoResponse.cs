@@ -70,14 +70,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_list")]
-                public new Types.ACL ACL { get; set; } = default!;
+                public new Types.ACL? ACL { get; set; }
 
                 /// <summary>
                 /// 获取或设置安全设置信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("secure_setting")]
                 [System.Text.Json.Serialization.JsonPropertyName("secure_setting")]
-                public Types.SecureSettings SecureSettings { get; set; } = default!;
+                public Types.SecureSettings? SecureSettings { get; set; }
             }
         }
 
@@ -86,6 +86,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("space_info")]
         [System.Text.Json.Serialization.JsonPropertyName("space_info")]
-        public Types.Space Space { get; set; } = default!;
+        public Types.Space? Space { get; set; }
     }
 }

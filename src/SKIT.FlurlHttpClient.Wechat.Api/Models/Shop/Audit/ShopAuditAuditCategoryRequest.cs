@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("certificate")]
                         [System.Text.Json.Serialization.JsonPropertyName("certificate")]
-                        public IList<string>? CertificateUrlList { get; set; }
+                        public List<string>? CertificateUrlList { get; set; }
                     }
                 }
 
@@ -48,21 +48,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("license")]
                 [System.Text.Json.Serialization.JsonPropertyName("license")]
-                public string LicenseUrl { get; set; } = string.Empty;
+                public string? LicenseUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_info")]
-                public Types.Category Category { get; set; } = new Types.Category();
+                public Types.Category? Category { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品使用场景 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene_group_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_group_list")]
-                public IList<int>? SceneGroupIdList { get; set; }
+                public List<int>? SceneGroupIdList { get; set; }
             }
         }
 
@@ -71,6 +71,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("audit_req")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_req")]
-        public Types.Audit Audit { get; set; } = new Types.Audit();
+        public Types.Audit? Audit { get; set; }
     }
 }

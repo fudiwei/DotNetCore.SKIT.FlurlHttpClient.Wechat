@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户分账单号。与字段 <see cref="OrderId"/> 二选一。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_return_no")]
-        public string OutReturnNumber { get; set; } = string.Empty;
+        public string? OutReturnNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("return_mchid")]
-        public string ReturnMerchantId { get; set; } = string.Empty;
+        public string? ReturnMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置回退金额（单位：分）。
@@ -59,6 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
     }
 }

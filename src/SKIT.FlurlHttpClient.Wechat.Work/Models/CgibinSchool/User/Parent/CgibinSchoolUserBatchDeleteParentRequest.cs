@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("useridlist")]
         [System.Text.Json.Serialization.JsonPropertyName("useridlist")]
-        public IList<string> ParentUserIdList { get; set; } = new List<string>();
+        public List<string>? ParentUserIdList { get; set; }
     }
 }

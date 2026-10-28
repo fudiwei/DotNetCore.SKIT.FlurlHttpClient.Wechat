@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string GuideId { get; set; } = string.Empty;
+        public string? GuideId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_name")]
-                public string ReceiverName { get; set; } = string.Empty;
+                public string? ReceiverName { get; set; }
 
                 /// <summary>
                 /// 获取或设置国家。
@@ -49,14 +49,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detailed_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("detailed_address")]
-                public string Detail { get; set; } = string.Empty;
+                public string? Detail { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系电话。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                public string TelNumber { get; set; } = string.Empty;
+                public string? TelNumber { get; set; }
             }
         }
 
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_agent_type")]
         [System.Text.Json.Serialization.JsonPropertyName("service_agent_type")]
-        public IList<int>? ServiceAgentTypeList { get; set; }
+        public List<int>? ServiceAgentTypeList { get; set; }
 
         /// <summary>
         /// 获取或设置默认退货地址。

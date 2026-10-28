@@ -21,21 +21,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_type")]
-                public string ReceiverType { get; set; } = default!;
+                public string? ReceiverType { get; set; }
 
                 /// <summary>
                 /// 获取或设置平台接收方名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_receiver_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_receiver_name")]
-                public string OutReceiverName { get; set; } = default!;
+                public string? OutReceiverName { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-                public string MerchantName { get; set; } = default!;
+                public string? MerchantName { get; set; }
 
                 /// <summary>
                 /// 获取或设置个人身份证号掩码。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("failed_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("failed_type")]
-                public string FailedType { get; set; } = default!;
+                public string? FailedType { get; set; }
 
                 /// <summary>
                 /// 获取或设置失败原因详情。
@@ -75,28 +75,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_application_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_application_id")]
-        public string OutApplicationId { get; set; } = default!;
+        public string? OutApplicationId { get; set; }
 
         /// <summary>
         /// 获取或设置微企付申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("application_id")]
         [System.Text.Json.Serialization.JsonPropertyName("application_id")]
-        public string ApplicationId { get; set; } = default!;
+        public string? ApplicationId { get; set; }
 
         /// <summary>
         /// 获取或设置申请状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置企业商户 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ent_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ent_id")]
-        public string EnterpriseId { get; set; } = default!;
+        public string? EnterpriseId { get; set; }
 
         /// <summary>
         /// 获取或设置接收方信息。

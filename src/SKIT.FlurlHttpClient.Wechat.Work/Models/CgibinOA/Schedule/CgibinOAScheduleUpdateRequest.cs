@@ -25,14 +25,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("schedule_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("schedule_id")]
-                public string ScheduleId { get; set; } = string.Empty;
+                public string? ScheduleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置管理员成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("admins")]
                 [System.Text.Json.Serialization.JsonPropertyName("admins")]
-                public IList<string>? AdminUserIdList { get; set; }
+                public List<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程开始时间戳。
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attendees")]
                 [System.Text.Json.Serialization.JsonPropertyName("attendees")]
-                public IList<Types.Attendee>? AttendeeList { get; set; }
+                public List<Types.Attendee>? AttendeeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否允许非参与人主动加入日程。
@@ -138,6 +138,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        public Types.Schedule Schedule { get; set; } = new Types.Schedule();
+        public Types.Schedule? Schedule { get; set; }
     }
 }

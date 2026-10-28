@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_results")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_results")]
-                public Types.AuditResult[] AuditResultList { get; set; } = default!;
+                public List<Types.AuditResult>? AuditResultList { get; set; }
             }
         }
 
@@ -50,6 +50,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resp")]
         [System.Text.Json.Serialization.JsonPropertyName("resp")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

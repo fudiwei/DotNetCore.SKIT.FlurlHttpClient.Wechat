@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_notice_id")]
         [System.Text.Json.Serialization.JsonPropertyName("live_notice_id")]
-        public string NoticeId { get; set; } = string.Empty;
+        public string? NoticeId { get; set; }
     }
 }

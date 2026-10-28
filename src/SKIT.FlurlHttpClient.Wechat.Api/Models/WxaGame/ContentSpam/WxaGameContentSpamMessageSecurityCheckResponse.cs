@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("replaced_content")]
                 [System.Text.Json.Serialization.JsonPropertyName("replaced_content")]
-                public string ReplacedContent { get; set; } = default!;
+                public string? ReplacedContent { get; set; }
             }
 
             public class Detail : WxaMessageSecurityCheckResponse.Types.Detail
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trace_id")]
         [System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        public string TraceId { get; set; } = default!;
+        public string? TraceId { get; set; }
 
         /// <summary>
         /// 获取或设置综合结果信息。
@@ -41,6 +41,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail")]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public Types.Detail[]? DetailList { get; set; }
+        public List<Types.Detail>? DetailList { get; set; }
     }
 }

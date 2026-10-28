@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin_list")]
         [System.Text.Json.Serialization.JsonPropertyName("admin_list")]
-        public IList<string>? AdminUserIdList { get; set; }
+        public List<string>? AdminUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置权限信息。
@@ -49,13 +49,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("range_add")]
         [System.Text.Json.Serialization.JsonPropertyName("range_add")]
-        public IList<Types.Range>? AddRangeList { get; set; }
+        public List<Types.Range>? AddRangeList { get; set; }
 
         /// <summary>
         /// 获取或设置要删除的规则组范围列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("range_del")]
         [System.Text.Json.Serialization.JsonPropertyName("range_del")]
-        public IList<Types.Range>? DeleteRangeList { get; set; }
+        public List<Types.Range>? DeleteRangeList { get; set; }
     }
 }

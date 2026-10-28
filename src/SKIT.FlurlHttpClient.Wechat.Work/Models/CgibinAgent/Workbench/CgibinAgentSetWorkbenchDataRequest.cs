@@ -36,14 +36,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置模版类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置关键数据型模版数据。

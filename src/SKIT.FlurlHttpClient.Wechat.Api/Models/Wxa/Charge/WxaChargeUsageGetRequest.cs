@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SPUId { get; set; } = string.Empty;
+        public string? SPUId { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

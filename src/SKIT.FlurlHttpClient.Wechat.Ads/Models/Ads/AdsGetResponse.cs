@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ad_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("ad_name")]
-                        public string AdName { get; set; } = default!;
+                        public string? AdName { get; set; }
 
                         /// <summary>
                         /// 获取或设置广告组 ID。
@@ -53,21 +53,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("adcreative")]
                         [System.Text.Json.Serialization.JsonPropertyName("adcreative")]
-                        public Types.AdCreative AdCreative { get; set; } = default!;
+                        public Types.AdCreative? AdCreative { get; set; }
 
                         /// <summary>
                         /// 获取或设置广告状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("configured_status")]
                         [System.Text.Json.Serialization.JsonPropertyName("configured_status")]
-                        public string ConfiguredStatus { get; set; } = default!;
+                        public string? ConfiguredStatus { get; set; }
 
                         /// <summary>
                         /// 获取或设置系统状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("system_status")]
                         [System.Text.Json.Serialization.JsonPropertyName("system_status")]
-                        public string SystemStatus { get; set; } = default!;
+                        public string? SystemStatus { get; set; }
 
                         /// <summary>
                         /// 获取或设置审核拒绝原因。
@@ -101,14 +101,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.Ad[] AdList { get; set; } = default!;
+                public List<Types.Ad>? AdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Types.Pagination Pagination { get; set; } = default!;
+                public Types.Pagination? Pagination { get; set; }
             }
         }
 
@@ -117,6 +117,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

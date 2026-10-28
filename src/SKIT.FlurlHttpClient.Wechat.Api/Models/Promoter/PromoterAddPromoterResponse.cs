@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置角色 ID。
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

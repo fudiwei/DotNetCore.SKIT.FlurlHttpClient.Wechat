@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /capital/capitallhh/banks/search-banks-by-bank-account 接口的响应。</para>
@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_alias")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_alias")]
-                public string BankAlias { get; set; } = default!;
+                public string? BankAlias { get; set; }
 
                 /// <summary>
                 /// 获取或设置银行别名编码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_alias_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_alias_code")]
-                public string BankAliasCode { get; set; } = default!;
+                public string? BankAliasCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户银行。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_bank")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
-                public string AccountBank { get; set; } = default!;
+                public string? AccountBank { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户银行编码。
@@ -51,7 +51,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Bank[] BankList { get; set; } = default!;
+        public List<Types.Bank>? BankList { get; set; }
 
         /// <summary>
         /// 获取或设置数据总条数。

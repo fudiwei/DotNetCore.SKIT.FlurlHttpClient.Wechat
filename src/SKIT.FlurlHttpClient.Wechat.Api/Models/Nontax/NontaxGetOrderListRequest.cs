@@ -31,13 +31,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_code")]
         [System.Text.Json.Serialization.JsonPropertyName("department_code")]
-        public string DepartmentCode { get; set; } = string.Empty;
+        public string? DepartmentCode { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("region_code")]
         [System.Text.Json.Serialization.JsonPropertyName("region_code")]
-        public string RegionCode { get; set; } = string.Empty;
+        public string? RegionCode { get; set; }
     }
 }

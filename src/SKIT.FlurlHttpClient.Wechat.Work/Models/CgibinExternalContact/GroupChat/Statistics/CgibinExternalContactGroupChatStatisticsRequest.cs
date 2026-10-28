@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid_list")]
-                public IList<string>? UserIdList { get; set; }
+                public List<string>? UserIdList { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("owner_filter")]
         [System.Text.Json.Serialization.JsonPropertyName("owner_filter")]
-        public Types.OwnerFilter Owner { get; set; } = new Types.OwnerFilter();
+        public Types.OwnerFilter? Owner { get; set; }
 
         /// <summary>
         /// 获取或设置排序方式。

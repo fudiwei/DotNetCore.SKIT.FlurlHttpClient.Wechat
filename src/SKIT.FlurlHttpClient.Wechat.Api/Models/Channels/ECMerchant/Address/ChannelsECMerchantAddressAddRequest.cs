@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                public Types.Address Address { get; set; } = new Types.Address();
+                public Types.Address? Address { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址类型信息。
@@ -128,6 +128,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("address_detail")]
-        public Types.AddressDetail AddressDetail { get; set; } = new Types.AddressDetail();
+        public Types.AddressDetail? AddressDetail { get; set; }
     }
 }

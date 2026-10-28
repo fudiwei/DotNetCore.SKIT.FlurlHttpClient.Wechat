@@ -11,14 +11,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("event_type")]
         [System.Text.Json.Serialization.JsonPropertyName("event_type")]
-        public string EventType { get; set; } = default!;
+        public string? EventType { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Code。
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户统一标识。

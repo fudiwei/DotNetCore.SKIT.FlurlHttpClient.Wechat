@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ProductOrderStatusUpdate")]
         [System.Text.Json.Serialization.JsonPropertyName("ProductOrderStatusUpdate")]
         [System.Xml.Serialization.XmlElement("ProductOrderStatusUpdate")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_return_no")]
-        public string OutReturnNumber { get; set; } = string.Empty;
+        public string? OutReturnNumber { get; set; }
 
         /// <summary>
         /// 获取或设置回退商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("return_mchid")]
-        public string ReturnMerchantId { get; set; } = string.Empty;
+        public string? ReturnMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置回退金额（单位：分）。
@@ -52,6 +52,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
     }
 }

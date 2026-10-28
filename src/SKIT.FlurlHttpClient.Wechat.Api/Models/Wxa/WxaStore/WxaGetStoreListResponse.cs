@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_list")]
         [System.Text.Json.Serialization.JsonPropertyName("business_list")]
-        public Types.POI[] POIList { get; set; } = default!;
+        public List<Types.POI>? POIList { get; set; }
 
         /// <summary>
         /// 获取或设置门店总数量。

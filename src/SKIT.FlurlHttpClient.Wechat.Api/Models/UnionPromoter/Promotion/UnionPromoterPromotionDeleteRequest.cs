@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotionSourcePid")]
         [System.Text.Json.Serialization.JsonPropertyName("promotionSourcePid")]
-        public string PromotionId { get; set; } = string.Empty;
+        public string? PromotionId { get; set; }
 
         /// <summary>
         /// 获取或设置推广位名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotionSourceName")]
         [System.Text.Json.Serialization.JsonPropertyName("promotionSourceName")]
-        public string SourceName { get; set; } = string.Empty;
+        public string? SourceName { get; set; }
     }
 }

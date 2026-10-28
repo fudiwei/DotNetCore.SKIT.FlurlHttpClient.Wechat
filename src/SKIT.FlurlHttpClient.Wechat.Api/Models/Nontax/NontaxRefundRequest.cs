@@ -17,14 +17,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置退款原因。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reason")]
         [System.Text.Json.Serialization.JsonPropertyName("reason")]
-        public string OrderOutId { get; set; } = string.Empty;
+        public string? OrderOutId { get; set; }
 
         /// <summary>
         /// 获取或设置退款金额（单位：分）。

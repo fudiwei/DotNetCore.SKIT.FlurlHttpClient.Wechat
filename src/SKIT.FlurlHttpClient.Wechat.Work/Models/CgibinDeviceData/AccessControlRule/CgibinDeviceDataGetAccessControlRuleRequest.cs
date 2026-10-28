@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_sn")]
         [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-        public string DeviceSerialNumberList { get; set; } = string.Empty;
+        public string? DeviceSerialNumberList { get; set; }
     }
 }

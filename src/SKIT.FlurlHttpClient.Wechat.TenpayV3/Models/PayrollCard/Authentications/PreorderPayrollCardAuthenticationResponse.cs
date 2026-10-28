@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -24,21 +24,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置商家核身单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_number")]
-        public string AuthenticateNumber { get; set; } = default!;
+        public string? AuthenticateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置核身 Token。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("token")]
         [System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string Token { get; set; } = default!;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置核身 Token 有效期（单位：秒）。

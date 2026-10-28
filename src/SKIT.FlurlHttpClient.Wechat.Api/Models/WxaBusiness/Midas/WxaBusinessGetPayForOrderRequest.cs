@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("order_no")]
-        public string OrderNumber { get; set; } = string.Empty;
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置游戏业务单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
     }
 }

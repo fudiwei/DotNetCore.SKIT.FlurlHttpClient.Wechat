@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encrypt_code")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypt_code")]
-        public string EncryptedCardCode { get; set; } = string.Empty;
+        public string? EncryptedCardCode { get; set; }
     }
 }

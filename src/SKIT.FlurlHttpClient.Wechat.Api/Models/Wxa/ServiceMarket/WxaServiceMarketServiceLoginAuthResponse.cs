@@ -33,20 +33,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-        public string ServiceId { get; set; } = default!;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置购买的 SKU ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sku_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-        public string SKUId { get; set; } = default!;
+        public string? SKUId { get; set; }
 
         /// <summary>
         /// 获取或设置购买的规格 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spec_id")]
         [System.Text.Json.Serialization.JsonPropertyName("spec_id")]
-        public string SpecificationId { get; set; } = default!;
+        public string? SpecificationId { get; set; }
     }
 }

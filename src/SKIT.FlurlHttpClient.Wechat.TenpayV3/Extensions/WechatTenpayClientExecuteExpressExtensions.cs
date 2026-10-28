@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "express", "users", request.OpenId, "transform");
+                .CreateFlurlRequest(request, HttpMethod.Post, "express", "users", request.OpenId!, "transform");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TransformExpressUserOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

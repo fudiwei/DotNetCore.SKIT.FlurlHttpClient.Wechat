@@ -19,14 +19,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账接收方账户。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account")]
                 [System.Text.Json.Serialization.JsonPropertyName("account")]
-                public string Account { get; set; } = default!;
+                public string? Account { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账金额（单位：分）。
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
         }
 
@@ -49,35 +49,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置商户分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
-        public string OutOrderNumber { get; set; } = default!;
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置分账接收方信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-        public Types.Receiver Receiver { get; set; } = default!;
+        public Types.Receiver? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置成功时间。

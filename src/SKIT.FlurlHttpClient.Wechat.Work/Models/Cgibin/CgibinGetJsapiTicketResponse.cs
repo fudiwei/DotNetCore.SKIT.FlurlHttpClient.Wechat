@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("ticket")]
-        public string Ticket { get; set; } = default!;
+        public string? Ticket { get; set; }
 
         /// <summary>
         /// 获取或设置票据有效期（单位：秒）。

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置合作方 AppId。
@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_type")]
-                        public string BusinessType { get; set; } = default!;
+                        public string? BusinessType { get; set; }
 
                         /// <summary>
                         /// 获取或设置授权场景列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("scenarios")]
                         [System.Text.Json.Serialization.JsonPropertyName("scenarios")]
-                        public string[]? Scenarios { get; set; }
+                        public List<string>? Scenarios { get; set; }
 
                         /// <summary>
                         /// 获取或设置授权批次 ID。
@@ -65,21 +65,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partner")]
                 [System.Text.Json.Serialization.JsonPropertyName("partner")]
-                public Types.Partner Partner { get; set; } = default!;
+                public Types.Partner? Partner { get; set; }
 
                 /// <summary>
                 /// 获取或设置被授权数据。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorized_data")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorized_data")]
-                public Types.AuthorizedData AuthorizedData { get; set; } = default!;
+                public Types.AuthorizedData? AuthorizedData { get; set; }
 
                 /// <summary>
                 /// 获取或设置合作状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("state")]
                 [System.Text.Json.Serialization.JsonPropertyName("state")]
-                public string State { get; set; } = default!;
+                public string? State { get; set; }
 
                 /// <summary>
                 /// 获取或设置建立合作关系时间。
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Partnership[] PartnershipList { get; set; } = default!;
+        public List<Types.Partnership>? PartnershipList { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -134,7 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

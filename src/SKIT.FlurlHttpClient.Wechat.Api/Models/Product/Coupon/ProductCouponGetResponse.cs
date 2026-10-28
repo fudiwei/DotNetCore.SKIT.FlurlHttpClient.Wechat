@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("product_ids")]
                                         [System.Text.Json.Serialization.JsonPropertyName("product_ids")]
-                                        public long[]? ProductIdList { get; set; }
+                                        public List<long>? ProductIdList { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置商品价格（单位：分）。
@@ -107,14 +107,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("customize_channel")]
                                 [System.Text.Json.Serialization.JsonPropertyName("customize_channel")]
-                                public string CustomizeChannel { get; set; } = default!;
+                                public string? CustomizeChannel { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置推广类型。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("promote_type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("promote_type")]
-                                public string PromoteType { get; set; } = default!;
+                                public string? PromoteType { get; set; }
                             }
 
                             public class Reception
@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("valid_type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("valid_type")]
-                                public string ValidType { get; set; } = default!;
+                                public string? ValidType { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置相对生效天数。
@@ -193,14 +193,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置优惠信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("discount_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("discount_info")]
-                        public Types.Discount Discount { get; set; } = default!;
+                        public Types.Discount? Discount { get; set; }
 
                         /// <summary>
                         /// 获取或设置扩展信息。
@@ -228,7 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("valid_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("valid_info")]
-                        public Types.Validity Validity { get; set; } = default!;
+                        public Types.Validity? Validity { get; set; }
                     }
 
                     public class StockInfo
@@ -282,14 +282,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_info")]
-                public Types.CouponInfo CouponInfo { get; set; } = default!;
+                public Types.CouponInfo? CouponInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠券库存信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_info")]
-                public Types.StockInfo StockInfo { get; set; } = default!;
+                public Types.StockInfo? StockInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间。
@@ -316,6 +316,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon")]
-        public Types.Coupon Coupon { get; set; } = default!;
+        public Types.Coupon? Coupon { get; set; }
     }
 }

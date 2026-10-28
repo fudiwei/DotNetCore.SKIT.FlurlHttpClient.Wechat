@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cargo_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("cargo_name")]
-                public string CargoName { get; set; } = string.Empty;
+                public string? CargoName { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品类型。
@@ -51,21 +51,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_store_id")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_store_id")]
-        public string StoreId { get; set; } = string.Empty;
+        public string? StoreId { get; set; }
 
         /// <summary>
         /// 获取或设置收件人姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-        public string UserName { get; set; } = string.Empty;
+        public string? UserName { get; set; }
 
         /// <summary>
         /// 获取或设置收件人手机号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("user_phone")]
-        public string UserPhoneNumber { get; set; } = string.Empty;
+        public string? UserPhoneNumber { get; set; }
 
         /// <summary>
         /// 获取或设置收件用户位置经度。
@@ -86,14 +86,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_address")]
         [System.Text.Json.Serialization.JsonPropertyName("user_address")]
-        public string UserAddress { get; set; } = string.Empty;
+        public string? UserAddress { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cargo")]
         [System.Text.Json.Serialization.JsonPropertyName("cargo")]
-        public Types.CargoInfo CargoInfo { get; set; } = new Types.CargoInfo();
+        public Types.CargoInfo? CargoInfo { get; set; }
 
         /// <summary>
         /// 获取或设置是否使用沙箱。

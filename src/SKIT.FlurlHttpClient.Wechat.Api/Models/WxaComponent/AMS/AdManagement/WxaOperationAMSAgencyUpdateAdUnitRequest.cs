@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ad_unit_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ad_unit_id")]
-        public string AdUnitId { get; set; } = string.Empty;
+        public string? AdUnitId { get; set; }
 
         /// <summary>
         /// 获取或设置广告单元名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置广告单元开关状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = string.Empty;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置广告展示时长最小值（单位：秒）。

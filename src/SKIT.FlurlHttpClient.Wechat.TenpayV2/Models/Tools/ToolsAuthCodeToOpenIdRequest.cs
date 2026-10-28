@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_code")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_code")]
-        public string AuthCode { get; set; } = string.Empty;
+        public string? AuthCode { get; set; }
     }
 }

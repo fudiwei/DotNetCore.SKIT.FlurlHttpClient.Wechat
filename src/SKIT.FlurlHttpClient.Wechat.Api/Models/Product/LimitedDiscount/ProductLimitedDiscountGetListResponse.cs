@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/limiteddiscount/get_list 接口的响应。</para>
@@ -49,7 +49,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("limited_discount_sku_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("limited_discount_sku_list")]
-                public Types.SKU[] SKUList { get; set; } = default!;
+                public List<Types.SKU>? SKUList { get; set; }
 
                 /// <summary>
                 /// 获取或设置抢购任务状态。
@@ -72,6 +72,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limited_discount_list")]
         [System.Text.Json.Serialization.JsonPropertyName("limited_discount_list")]
-        public Types.Task[] TaskList { get; set; } = default!;
+        public List<Types.Task>? TaskList { get; set; }
     }
 }

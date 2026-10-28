@@ -37,35 +37,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_mchid")]
-        public string CombineMerchantId { get; set; } = default!;
+        public string? CombineMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置合单微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_appid")]
-        public string CombineAppId { get; set; } = default!;
+        public string? CombineAppId { get; set; }
 
         /// <summary>
         /// 获取或设置合单商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_out_trade_no")]
-        public string CombineOutTradeNumber { get; set; } = default!;
+        public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置合单微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_transaction_id")]
-        public string CombineTransactionId { get; set; } = default!;
+        public string? CombineTransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置子单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public Types.SubOrder[]? SubOrderList { get; set; }
+        public List<Types.SubOrder>? SubOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。

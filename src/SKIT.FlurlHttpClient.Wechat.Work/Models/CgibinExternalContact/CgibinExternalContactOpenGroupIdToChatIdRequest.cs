@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("opengid")]
         [System.Text.Json.Serialization.JsonPropertyName("opengid")]
-        public string OpenGroupId { get; set; } = string.Empty;
+        public string? OpenGroupId { get; set; }
     }
 }

@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_billno")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_billno")]
-        public string MerchantBillNumber { get; set; } = string.Empty;
+        public string? MerchantBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置接受红包的用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("re_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("re_openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置红包发送者名称。
@@ -85,10 +85,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         /// <summary>
         /// 获取或设置通知用户形式。
-        /// <para>默认值：MINI_PROGRAM_JSAPI</para>
+        /// <para>默认值："MINI_PROGRAM_JSAPI"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_way")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_way")]
-        public string NotifyWay { get; set; } = "MINI_PROGRAM_JSAPI";
+        public string? NotifyWay { get; set; } = "MINI_PROGRAM_JSAPI";
     }
 }

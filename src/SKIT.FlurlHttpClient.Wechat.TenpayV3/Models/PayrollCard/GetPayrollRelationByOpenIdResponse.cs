@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置授权状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorize_state")]
         [System.Text.Json.Serialization.JsonPropertyName("authorize_state")]
-        public string AuthorizeState { get; set; } = default!;
+        public string? AuthorizeState { get; set; }
 
         /// <summary>
         /// 获取或设置授权时间。
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_state")]
         [System.Text.Json.Serialization.JsonPropertyName("register_state")]
-        public string RegisterState { get; set; } = default!;
+        public string? RegisterState { get; set; }
 
         /// <summary>
         /// 获取或设置开通时间。

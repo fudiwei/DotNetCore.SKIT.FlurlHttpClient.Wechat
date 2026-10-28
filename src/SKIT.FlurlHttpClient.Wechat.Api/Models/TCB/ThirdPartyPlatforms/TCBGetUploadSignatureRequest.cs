@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hashed_payload")]
         [System.Text.Json.Serialization.JsonPropertyName("hashed_payload")]
-        public string HashedPayload { get; set; } = string.Empty;
+        public string? HashedPayload { get; set; }
     }
 }

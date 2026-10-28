@@ -10,27 +10,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("order_no")]
-        public string OrderNumber { get; set; } = string.Empty;
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置退款运单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_delivery_no")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_delivery_no")]
-        public string RefundDeliveryNumber { get; set; } = string.Empty;
+        public string? RefundDeliveryNumber { get; set; }
 
         /// <summary>
         /// 获取或设置退货快递公司。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_company")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_company")]
-        public string RefundDeliveryCompany { get; set; } = string.Empty;
+        public string? RefundDeliveryCompany { get; set; }
     }
 }

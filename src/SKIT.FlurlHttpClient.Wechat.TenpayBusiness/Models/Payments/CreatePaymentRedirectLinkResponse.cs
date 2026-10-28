@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
 
             public class QrcodeData
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("static_qrcode")]
                 [System.Text.Json.Serialization.JsonPropertyName("static_qrcode")]
-                public string QrcodeUrl { get; set; } = default!;
+                public string? QrcodeUrl { get; set; }
             }
 
             public class H5Data
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wx_h5")]
                 [System.Text.Json.Serialization.JsonPropertyName("wx_h5")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
 
             public class AppData
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("app_h5")]
                 [System.Text.Json.Serialization.JsonPropertyName("app_h5")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
 
             public class WecomData
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
 
             public class MiniProgramData
@@ -64,21 +64,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mp_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mp_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("mp_path")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序原始 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mp_username")]
                 [System.Text.Json.Serialization.JsonPropertyName("mp_username")]
-                public string Username { get; set; } = default!;
+                public string? Username { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序版本。

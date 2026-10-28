@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                        public string OpenUserId { get; set; } = string.Empty;
+                        public string? OpenUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置成员类型。
@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rule_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-                public IList<string> RuleList { get; set; } = new List<string>();
+                public List<string>? RuleList { get; set; }
 
                 /// <summary>
                 /// 获取或设置生效成员列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("effect_open_userid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("effect_open_userid_list")]
-                public IList<Types.EffectUser> EffectUserList { get; set; } = new List<Types.EffectUser>();
+                public List<Types.EffectUser>? EffectUserList { get; set; }
             }
         }
 
@@ -50,14 +50,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_name")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_name")]
-        public string RuleName { get; set; } = string.Empty;
+        public string? RuleName { get; set; }
 
         /// <summary>
         /// 获取或设置设备序列号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_sn_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_sn_list")]
-        public IList<string> DeviceSerialNumberList { get; set; } = new List<string>();
+        public List<string>? DeviceSerialNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置门禁规则。

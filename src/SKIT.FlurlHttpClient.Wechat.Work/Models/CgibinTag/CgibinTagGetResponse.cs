@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/tag/get 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员名称。
@@ -30,20 +30,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagname")]
         [System.Text.Json.Serialization.JsonPropertyName("tagname")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置标签中包含的成员列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userlist")]
         [System.Text.Json.Serialization.JsonPropertyName("userlist")]
-        public Types.User[] UserList { get; set; } = default!;
+        public List<Types.User>? UserList { get; set; }
 
         /// <summary>
         /// 获取或设置标签中包含的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partylist")]
         [System.Text.Json.Serialization.JsonPropertyName("partylist")]
-        public long[] DepartmentIdList { get; set; } = default!;
+        public List<long>? DepartmentIdList { get; set; }
     }
 }

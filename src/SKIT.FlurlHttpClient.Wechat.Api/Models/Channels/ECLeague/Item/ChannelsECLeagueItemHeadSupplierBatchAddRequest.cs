@@ -37,14 +37,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("headsupplier_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("headsupplier_appid")]
-        public string HeadSupplierAppId { get; set; } = string.Empty;
+        public string? HeadSupplierAppId { get; set; }
 
         /// <summary>
         /// 获取或设置联盟商品列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public IList<Types.Item> ItemList { get; set; } = new List<Types.Item>();
+        public List<Types.Item>? ItemList { get; set; }
 
         /// <summary>
         /// 获取或设置推广开始时间戳。

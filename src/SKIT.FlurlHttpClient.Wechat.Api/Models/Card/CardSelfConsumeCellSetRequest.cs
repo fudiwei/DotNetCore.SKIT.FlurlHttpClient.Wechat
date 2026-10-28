@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启自助核销功能。

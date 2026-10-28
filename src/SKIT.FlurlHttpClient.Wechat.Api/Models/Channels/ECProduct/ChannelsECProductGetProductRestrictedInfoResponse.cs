@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("scene_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-                        public Types.SceneInfo[] SceneInfoList { get; set; } = default!;
+                        public List<Types.SceneInfo>? SceneInfoList { get; set; }
                     }
                 }
 
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("restricted_info_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("restricted_info_list")]
-                public Types.RestrictedInfo[] RestrictedInfoList { get; set; } = default!;
+                public List<Types.RestrictedInfo>? RestrictedInfoList { get; set; }
             }
         }
 
@@ -63,6 +63,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

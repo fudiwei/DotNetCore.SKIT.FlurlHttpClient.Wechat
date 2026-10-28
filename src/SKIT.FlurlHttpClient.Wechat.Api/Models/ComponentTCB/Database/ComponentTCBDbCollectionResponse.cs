@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string CollectionName { get; set; } = default!;
+                public string? CollectionName { get; set; }
 
                 /// <summary>
                 /// 获取或设置数量。
@@ -51,7 +51,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("collections")]
         [System.Text.Json.Serialization.JsonPropertyName("collections")]
-        public Types.Collection[]? CollectionList { get; set; }
+        public List<Types.Collection>? CollectionList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_feature")]
         [System.Text.Json.Serialization.JsonPropertyName("device_feature")]
-        public string DeviceFeature { get; set; } = default!;
+        public string? DeviceFeature { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string PlanId { get; set; } = string.Empty;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户在子商户下的唯一标识。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

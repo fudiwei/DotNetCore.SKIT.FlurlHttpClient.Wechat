@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("mac_addr")]
                                 [System.Text.Json.Serialization.JsonPropertyName("mac_addr")]
-                                public string[]? MacAddressList { get; set; }
+                                public List<string>? MacAddressList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置主板 UUID。
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("harddisk_uuid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("harddisk_uuid")]
-                                public string[]? HardDiskUUIDList { get; set; }
+                                public List<string>? HardDiskUUIDList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置域名。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("mac_addr")]
                                 [System.Text.Json.Serialization.JsonPropertyName("mac_addr")]
-                                public string[]? MacAddressList { get; set; }
+                                public List<string>? MacAddressList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置序列号。
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作者部门 ID。
@@ -158,7 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("screen_shot_content")]
                 [System.Text.Json.Serialization.JsonPropertyName("screen_shot_content")]
-                public string ScreenshotContent { get; set; } = default!;
+                public string? ScreenshotContent { get; set; }
 
                 /// <summary>
                 /// 获取或设置时间戳。
@@ -195,7 +195,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("record_list")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

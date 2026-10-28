@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_recipient")]
         [System.Text.Json.Serialization.JsonPropertyName("store_recipient")]
-        public IList<Types.Recipient> RecipientList { get; set; } = new List<Types.Recipient>();
+        public List<Types.Recipient>? RecipientList { get; set; }
     }
 }

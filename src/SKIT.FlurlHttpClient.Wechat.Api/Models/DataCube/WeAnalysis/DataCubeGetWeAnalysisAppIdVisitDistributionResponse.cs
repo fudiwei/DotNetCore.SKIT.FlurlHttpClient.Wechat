@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /datacube/getweanalysisappidvisitdistribution 接口的响应。</para>
@@ -34,14 +34,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("index")]
                 [System.Text.Json.Serialization.JsonPropertyName("index")]
-                public string Index { get; set; } = default!;
+                public string? Index { get; set; }
 
                 /// <summary>
                 /// 获取或设置分布数据列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_list")]
-                public Types.Item[] ItemList { get; set; } = default!;
+                public List<Types.Item>? ItemList { get; set; }
             }
         }
 
@@ -50,13 +50,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ref_date")]
         [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-        public virtual string RefDateString { get; set; } = default!;
+        public virtual string? RefDateString { get; set; }
 
         /// <summary>
         /// 获取或设置用户访问分布数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

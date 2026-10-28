@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mail_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("mail_id")]
-                public string MailId { get; set; } = default!;
+                public string? MailId { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("mail_list")]
-        public Types.Mail[] MailList { get; set; } = default!;
+        public List<Types.Mail>? MailList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

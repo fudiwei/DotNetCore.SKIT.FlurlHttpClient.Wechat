@@ -2,24 +2,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteCVExtensions
     {
-        private static HttpContent CreateRequestHttpContent(byte[]? fileBytes = null)
-        {
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            var httpContent = new MultipartFormDataContent(boundary);
-
-            if (fileBytes is not null && fileBytes.Any())
-            {
-                var fileContent = new ByteArrayContent(fileBytes ?? Array.Empty<byte>());
-                httpContent.Add(fileContent, "\"img\"", "\"image.png\"");
-                fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-                fileContent.Headers.ContentLength = fileBytes?.Length;
-            }
-
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-
-            return httpContent;
-        }
-
         #region Image
         /// <summary>
         /// <para>异步调用 [POST] /cv/img/qrcode 接口。</para>
@@ -50,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVImageQrcodeResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -84,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVImageSuperResolutionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -118,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVImageAICropResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -155,7 +137,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRIdCardResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -190,7 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRBankCardResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -225,7 +207,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRDrivingResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -260,7 +242,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRDrivingLicenseResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -295,7 +277,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRBusinessLicenseResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -329,7 +311,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRCommonResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
@@ -362,7 +344,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             else
             {
-                using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
                 return await client.SendFlurlRequestAsync<Models.CVOCRPlateNumberResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }

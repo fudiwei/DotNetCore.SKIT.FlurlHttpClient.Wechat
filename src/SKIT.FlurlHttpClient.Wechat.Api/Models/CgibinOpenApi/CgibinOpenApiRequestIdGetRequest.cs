@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rid")]
         [System.Text.Json.Serialization.JsonPropertyName("rid")]
-        public string RequestId { get; set; } = string.Empty;
+        public string? RequestId { get; set; }
     }
 }

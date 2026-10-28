@@ -48,13 +48,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
 
         /// <summary>
         /// 获取或设置开发者的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
     }
 }

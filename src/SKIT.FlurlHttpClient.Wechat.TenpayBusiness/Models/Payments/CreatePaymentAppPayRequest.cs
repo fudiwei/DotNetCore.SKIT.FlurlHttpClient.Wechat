@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ent_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_id")]
-                public string EnterpriseId { get; set; } = string.Empty;
+                public string? EnterpriseId { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业名称（需使用微企付公钥加密）。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 [Newtonsoft.Json.JsonProperty("ent_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_name")]
                 [WechatTenpayBusinessSensitiveProperty]
-                public string EnterpriseName { get; set; } = string.Empty;
+                public string? EnterpriseName { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业账户 ID。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 [Newtonsoft.Json.JsonProperty("bank_account_numbers")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_account_numbers")]
                 [WechatTenpayBusinessSensitiveProperty]
-                public IList<string>? BankAccountNumberList { get; set; }
+                public List<string>? BankAccountNumberList { get; set; }
             }
 
             public class Goods
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("good_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("good_name")]
-                public string GoodsName { get; set; } = string.Empty;
+                public string? GoodsName { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品数量。
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("server_notify_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("server_notify_url")]
-                public string ServerNotifyUrl { get; set; } = string.Empty;
+                public string? ServerNotifyUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置前端回跳信息。
@@ -223,14 +223,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("purchaser_type")]
         [System.Text.Json.Serialization.JsonPropertyName("purchaser_type")]
-        public string PurchaserType { get; set; } = string.Empty;
+        public string? PurchaserType { get; set; }
 
         /// <summary>
         /// 获取或设置平台支付单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_payment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_payment_id")]
-        public string OutPaymentId { get; set; } = string.Empty;
+        public string? OutPaymentId { get; set; }
 
         /// <summary>
         /// 获取或设置支付金额（单位：分）。
@@ -245,7 +245,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("currency")]
         [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        public string Currency { get; set; } = "CNY";
+        public string? Currency { get; set; } = "CNY";
 
         /// <summary>
         /// 获取或设置过期时间。
@@ -261,7 +261,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payee")]
         [System.Text.Json.Serialization.JsonPropertyName("payee")]
-        public Types.Payee Payee { get; set; } = new Types.Payee();
+        public Types.Payee? Payee { get; set; }
 
         /// <summary>
         /// 获取或设置付款方信息。
@@ -282,7 +282,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goods")]
         [System.Text.Json.Serialization.JsonPropertyName("goods")]
-        public IList<Types.Goods>? GoodsList { get; set; }
+        public List<Types.Goods>? GoodsList { get; set; }
 
         /// <summary>
         /// 获取或设置附加信息。
@@ -303,7 +303,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public Types.NotifyConfig NotifyConfig { get; set; } = new Types.NotifyConfig();
+        public Types.NotifyConfig? NotifyConfig { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。

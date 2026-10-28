@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.VerificationId, "verification_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "compliance", "inactive-merchant-identity-verification", "merchants", request.SubMerchantId, "verifications", request.VerificationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "compliance", "inactive-merchant-identity-verification", "merchants", request.SubMerchantId!, "verifications", request.VerificationId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetComplianceInactiveMerchantIdentityVerificationByVerificationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

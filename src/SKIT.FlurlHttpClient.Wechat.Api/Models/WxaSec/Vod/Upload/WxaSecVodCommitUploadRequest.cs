@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("etag")]
                 [System.Text.Json.Serialization.JsonPropertyName("etag")]
-                public string ETag { get; set; } = string.Empty;
+                public string? ETag { get; set; }
             }
         }
 
@@ -30,20 +30,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_id")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_id")]
-        public string UploadId { get; set; } = string.Empty;
+        public string? UploadId { get; set; }
 
         /// <summary>
         /// 获取或设置视频文件分片信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_part_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("media_part_infos")]
-        public IList<Types.PartInfo> MediaPartInfo { get; set; } = new List<Types.PartInfo>();
+        public List<Types.PartInfo>? MediaPartInfo { get; set; }
 
         /// <summary>
         /// 获取或设置视频封面图片文件分片信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cover_part_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("cover_part_infos")]
-        public IList<Types.PartInfo>? CoverPartInfo { get; set; }
+        public List<Types.PartInfo>? CoverPartInfo { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("part_sha")]
                 [System.Text.Json.Serialization.JsonPropertyName("part_sha")]
-                public string PartSha { get; set; } = string.Empty;
+                public string? PartSha { get; set; }
             }
         }
 
@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("video_upload_key")]
         [System.Text.Json.Serialization.JsonPropertyName("video_upload_key")]
-        public string VideoUploadKey { get; set; } = string.Empty;
+        public string? VideoUploadKey { get; set; }
 
         /// <summary>
         /// 获取或设置上传场景类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finish_parts")]
         [System.Text.Json.Serialization.JsonPropertyName("finish_parts")]
-        public IList<Types.Part> PartList { get; set; } = new List<Types.Part>();
+        public List<Types.Part>? PartList { get; set; }
     }
 }

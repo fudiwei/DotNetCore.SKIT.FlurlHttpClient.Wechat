@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_big")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_big")]
-        public string BigSizeQrcodeUrl { get; set; } = default!;
+        public string? BigSizeQrcodeUrl { get; set; }
 
         /// <summary>
         /// 获取或设置中尺寸二维码 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_middle")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_middle")]
-        public string MiddleSizeQrcodeUrl { get; set; } = default!;
+        public string? MiddleSizeQrcodeUrl { get; set; }
 
         /// <summary>
         /// 获取或设置小尺寸二维码 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_thumb")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_thumb")]
-        public string SmallSizeQrcodeUrl { get; set; } = default!;
+        public string? SmallSizeQrcodeUrl { get; set; }
     }
 }

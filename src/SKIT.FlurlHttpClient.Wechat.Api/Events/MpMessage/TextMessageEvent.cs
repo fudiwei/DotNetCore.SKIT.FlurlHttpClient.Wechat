@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Content")]
         [System.Text.Json.Serialization.JsonPropertyName("Content")]
         [System.Xml.Serialization.XmlElement("Content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
 
         /// <summary>
         /// 获取或设置消息数据 ID。

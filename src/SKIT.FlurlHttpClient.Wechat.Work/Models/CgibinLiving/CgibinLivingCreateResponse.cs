@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("livingid")]
         [System.Text.Json.Serialization.JsonPropertyName("livingid")]
-        public string LivingId { get; set; } = default!;
+        public string? LivingId { get; set; }
     }
 }

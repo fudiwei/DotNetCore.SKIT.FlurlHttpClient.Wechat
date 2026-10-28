@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置环境别名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("alias")]
         [System.Text.Json.Serialization.JsonPropertyName("alias")]
-        public string Alias { get; set; } = string.Empty;
+        public string? Alias { get; set; }
     }
 }

@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_name")]
-                public string ActivityName { get; set; } = default!;
+                public string? ActivityName { get; set; }
 
                 /// <summary>
                 /// 获取或设置活动结束时间戳。
@@ -95,6 +95,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_activity_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_activity_list")]
-        public Types.ProductActivity[]? ProductActivityList { get; set; }
+        public List<Types.ProductActivity>? ProductActivityList { get; set; }
     }
 }

@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-        public string MobileNumber { get; set; } = string.Empty;
+        public string? MobileNumber { get; set; }
 
         /// <summary>
         /// 获取或设置短信验证码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verify_code")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_code")]
-        public string VerifyCode { get; set; } = string.Empty;
+        public string? VerifyCode { get; set; }
 
         /// <summary>
         /// 获取或设置小店成员的微信号。

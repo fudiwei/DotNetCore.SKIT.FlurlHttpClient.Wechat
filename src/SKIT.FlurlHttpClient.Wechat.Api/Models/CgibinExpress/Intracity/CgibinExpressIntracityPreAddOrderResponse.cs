@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_trans_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_trans_id")]
-        public string ServiceTransId { get; set; } = default!;
+        public string? ServiceTransId { get; set; }
 
         /// <summary>
         /// 获取或设置配送距离（单位：米）。

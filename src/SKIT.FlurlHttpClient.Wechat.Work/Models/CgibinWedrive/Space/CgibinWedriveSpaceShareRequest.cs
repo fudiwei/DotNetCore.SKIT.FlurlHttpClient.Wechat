@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
     }
 }

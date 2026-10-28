@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userids")]
         [System.Text.Json.Serialization.JsonPropertyName("userids")]
-        public IList<string>? UserIdList { get; set; }
+        public List<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置任务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-        public string TaskId { get; set; } = string.Empty;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置应用 ID。如果不指定将使用构造 <see cref="WechatWorkClient"/> 时的 <see cref="WechatWorkClientOptions.AgentId"/> 参数。
@@ -38,6 +38,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("replace_name")]
         [System.Text.Json.Serialization.JsonPropertyName("replace_name")]
-        public string ReplacementText { get; set; } = string.Empty;
+        public string? ReplacementText { get; set; }
     }
 }

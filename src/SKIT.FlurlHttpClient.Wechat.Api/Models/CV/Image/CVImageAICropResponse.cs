@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cv/img/aicrop 接口的响应。</para>
@@ -48,13 +48,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("results")]
         [System.Text.Json.Serialization.JsonPropertyName("results")]
-        public Types.ImageResult[] ResultList { get; set; } = default!;
+        public List<Types.ImageResult>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置图片大小信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_size")]
         [System.Text.Json.Serialization.JsonPropertyName("img_size")]
-        public Types.ImageSize ImageSize { get; set; } = default!;
+        public Types.ImageSize? ImageSize { get; set; }
     }
 }

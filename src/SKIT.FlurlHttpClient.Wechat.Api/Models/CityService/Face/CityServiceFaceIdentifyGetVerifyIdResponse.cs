@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verify_id")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_id")]
-        public string VerifyId { get; set; } = default!;
+        public string? VerifyId { get; set; }
 
         /// <summary>
         /// 获取或设置人脸核身会话唯一标识有效期（单位：秒）。

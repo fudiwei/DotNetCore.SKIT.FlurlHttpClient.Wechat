@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置服务商 AppId。
@@ -45,49 +45,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]
-        public string OutBatchNumber { get; set; } = default!;
+        public string? OutBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
-        public string BatchId { get; set; } = default!;
+        public string? BatchId { get; set; }
 
         /// <summary>
         /// 获取或设置批次状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_status")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_status")]
-        public string BatchStatus { get; set; } = default!;
+        public string? BatchStatus { get; set; }
 
         /// <summary>
         /// 获取或设置批次类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_type")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_type")]
-        public string BatchType { get; set; } = default!;
+        public string? BatchType { get; set; }
 
         /// <summary>
         /// 获取或设置子商户授权类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_type")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_type")]
-        public string AuthorizationType { get; set; } = default!;
+        public string? AuthorizationType { get; set; }
 
         /// <summary>
         /// 获取或设置批次名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_name")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_name")]
-        public string BatchName { get; set; } = default!;
+        public string? BatchName { get; set; }
 
         /// <summary>
         /// 获取或设置批次备注。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_remark")]
-        public string BatchRemark { get; set; } = default!;
+        public string? BatchRemark { get; set; }
 
         /// <summary>
         /// 获取或设置批次关闭原因。
@@ -168,6 +168,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_detail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_detail_list")]
-        public Types.TransferDetail[]? TransferDetailList { get; set; }
+        public List<Types.TransferDetail>? TransferDetailList { get; set; }
     }
 }

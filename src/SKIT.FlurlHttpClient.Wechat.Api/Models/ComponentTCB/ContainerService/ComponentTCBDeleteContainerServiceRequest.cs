@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置服务名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_name")]
         [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-        public string ServiceName { get; set; } = string.Empty;
+        public string? ServiceName { get; set; }
     }
 }

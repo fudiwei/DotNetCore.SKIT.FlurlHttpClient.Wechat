@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdraw_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_ids")]
-        public string[] WithdrawIdList { get; set; } = default!;
+        public List<string>? WithdrawIdList { get; set; }
 
         /// <summary>
         /// 获取或设置提现单总数量。

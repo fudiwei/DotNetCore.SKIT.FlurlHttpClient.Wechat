@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("skus")]
         [System.Text.Json.Serialization.JsonPropertyName("skus")]
-        public IList<Types.SKU>? SKUList { get; set; } = new List<Types.SKU>();
+        public List<Types.SKU>? SKUList { get; set; }
 
         /// <summary>
         /// 获取或设置发货方式。

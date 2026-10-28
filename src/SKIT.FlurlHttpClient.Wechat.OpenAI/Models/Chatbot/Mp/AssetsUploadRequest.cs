@@ -11,14 +11,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? FileBytes { get; set; }
 
         /// <summary>
         /// 获取或设置文件名。如果不指定将由系统自动生成。

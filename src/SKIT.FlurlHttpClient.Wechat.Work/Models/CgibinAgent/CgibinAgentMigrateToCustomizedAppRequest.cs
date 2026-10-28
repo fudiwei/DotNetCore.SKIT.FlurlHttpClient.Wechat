@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("suite_access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("suite_access_token")]
-        public string SuiteAccessToken { get; set; } = string.Empty;
+        public string? SuiteAccessToken { get; set; }
     }
 }

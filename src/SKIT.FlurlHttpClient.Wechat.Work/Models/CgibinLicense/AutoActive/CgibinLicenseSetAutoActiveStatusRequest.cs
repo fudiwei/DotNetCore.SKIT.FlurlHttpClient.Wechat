@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置企业 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = string.Empty;
+        public string? CorpId { get; set; }
 
         /// <summary>
         /// 获取或设置许可自动激活状态。

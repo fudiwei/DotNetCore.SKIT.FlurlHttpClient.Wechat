@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置交易场景类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_scene")]
-        public string PaymentScene { get; set; } = default!;
+        public string? PaymentScene { get; set; }
 
         /// <summary>
         /// 获取或设置微信商户号。

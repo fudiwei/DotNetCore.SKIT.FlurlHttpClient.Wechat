@@ -17,21 +17,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_parking_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_parking_no")]
-        public string OutParkingNumber { get; set; } = string.Empty;
+        public string? OutParkingNumber { get; set; }
 
         /// <summary>
         /// 获取或设置车牌号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-        public string PlateNumber { get; set; } = string.Empty;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置车牌颜色。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_color")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_color")]
-        public string PlateColor { get; set; } = string.Empty;
+        public string? PlateColor { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parking_name")]
         [System.Text.Json.Serialization.JsonPropertyName("parking_name")]
-        public string ParkingName { get; set; } = string.Empty;
+        public string? ParkingName { get; set; }
 
         /// <summary>
         /// 获取或设置免费时长（单位：秒）。

@@ -74,6 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_info")]
         [System.Text.Json.Serialization.JsonPropertyName("task_info")]
-        public Types.Task Task { get; set; } = default!;
+        public Types.Task? Task { get; set; }
     }
 }

@@ -17,20 +17,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("docid")]
         [System.Text.Json.Serialization.JsonPropertyName("docid")]
-        public string DocumentId { get; set; } = string.Empty;
+        public string? DocumentId { get; set; }
 
         /// <summary>
         /// 获取或设置新增的文档成员授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("update_file_member_list")]
         [System.Text.Json.Serialization.JsonPropertyName("update_file_member_list")]
-        public IList<Types.Authority>? AddedMemberAuthorityList { get; set; }
+        public List<Types.Authority>? AddedMemberAuthorityList { get; set; }
 
         /// <summary>
         /// 获取或设置删除的文档成员授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("del_file_member_list")]
         [System.Text.Json.Serialization.JsonPropertyName("del_file_member_list")]
-        public IList<Types.Authority>? DeletedMemberAuthorityList { get; set; }
+        public List<Types.Authority>? DeletedMemberAuthorityList { get; set; }
     }
 }

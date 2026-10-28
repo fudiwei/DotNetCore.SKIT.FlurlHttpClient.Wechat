@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/draft/batchget 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("news_item")]
                         [System.Text.Json.Serialization.JsonPropertyName("news_item")]
-                        public Types.Article[] ArticleList { get; set; } = default!;
+                        public List<Types.Article>? ArticleList { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                public string MediaId { get; set; } = default!;
+                public string? MediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置草稿内容。
@@ -57,20 +57,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.Item[] List { get; set; } = default!;
+        public List<Types.Item>? List { get; set; }
 
         /// <summary>
         /// 获取或设置本次数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item_count")]
         [System.Text.Json.Serialization.JsonPropertyName("item_count")]
-        public int Count { get; set; } = default!;
+        public int Count { get; set; }
 
         /// <summary>
         /// 获取或设置草稿总数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_count")]
         [System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int TotalCount { get; set; } = default!;
+        public int TotalCount { get; set; }
     }
 }

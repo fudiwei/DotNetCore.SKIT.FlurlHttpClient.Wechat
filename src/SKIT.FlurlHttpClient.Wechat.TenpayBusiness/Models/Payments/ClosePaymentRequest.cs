@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string PaymentId { get; set; } = string.Empty;
+        public string? PaymentId { get; set; }
 
         /// <summary>
         /// 获取或设置关闭原因。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("close_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("close_reason")]
-        public string CloseReason { get; set; } = string.Empty;
+        public string? CloseReason { get; set; }
     }
 }

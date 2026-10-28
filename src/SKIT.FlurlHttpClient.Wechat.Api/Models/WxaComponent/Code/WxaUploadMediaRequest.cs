@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? FileBytes { get; set; }
 
         /// <summary>
         /// 获取或设置文件名。如果不指定将由系统自动生成。

@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Type { get; set; } = "jsapi";
+        public string? Type { get; set; } = "jsapi";
     }
 }

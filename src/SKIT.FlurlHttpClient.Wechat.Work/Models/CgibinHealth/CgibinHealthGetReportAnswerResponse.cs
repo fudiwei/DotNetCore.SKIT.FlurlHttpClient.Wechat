@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/health/get_report_answer 接口的响应。</para>
@@ -32,7 +32,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("multi_choice")]
                         [System.Text.Json.Serialization.JsonPropertyName("multi_choice")]
-                        public int[]? MultipleChoice { get; set; }
+                        public List<int>? MultipleChoice { get; set; }
 
                         /// <summary>
                         /// 获取或设置填空题答案内容。
@@ -46,7 +46,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("fileid")]
                         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                        public string[]? FileIdList { get; set; }
+                        public List<string>? FileIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置行程卡类型。
@@ -97,7 +97,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("report_values")]
                 [System.Text.Json.Serialization.JsonPropertyName("report_values")]
-                public Types.ReportValue[] ReportValueList { get; set; } = default!;
+                public List<Types.ReportValue>? ReportValueList { get; set; }
 
                 /// <summary>
                 /// 获取或设置报告时间戳。
@@ -113,6 +113,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("answers")]
         [System.Text.Json.Serialization.JsonPropertyName("answers")]
-        public Types.Answer[] AnswerList { get; set; } = default!;
+        public List<Types.Answer>? AnswerList { get; set; }
     }
 }

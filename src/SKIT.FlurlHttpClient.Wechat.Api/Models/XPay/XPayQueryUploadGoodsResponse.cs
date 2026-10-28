@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public string Id { get; set; } = default!;
+                public string? Id { get; set; }
 
                 /// <summary>
                 /// 获取或设置道具名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置道具单价（单位：分）。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_item")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_item")]
-        public Types.UploadItem[] UploadItemList { get; set; } = default!;
+        public List<Types.UploadItem>? UploadItemList { get; set; }
 
         /// <summary>
         /// 获取或设置上传状态。

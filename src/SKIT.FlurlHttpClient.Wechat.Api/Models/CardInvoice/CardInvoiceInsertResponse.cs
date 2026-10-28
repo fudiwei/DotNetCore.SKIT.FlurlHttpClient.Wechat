@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string CardCode { get; set; } = default!;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置获得发票的用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置获得发票的用户 UnionId。

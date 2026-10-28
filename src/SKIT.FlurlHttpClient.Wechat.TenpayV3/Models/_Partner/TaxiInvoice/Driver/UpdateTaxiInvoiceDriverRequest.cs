@@ -19,14 +19,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("hash_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("hash_type")]
-                        public string HashType { get; set; } = string.Empty;
+                        public string? HashType { get; set; }
 
                         /// <summary>
                         /// 获取或设置哈希值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("hash_value")]
                         [System.Text.Json.Serialization.JsonPropertyName("hash_value")]
-                        public string HashValue { get; set; } = string.Empty;
+                        public string? HashValue { get; set; }
                     }
                 }
 
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("photo_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("photo_type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置照片信息摘要信息。
@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string CompanyMerchantId { get; set; } = string.Empty;
+        public string? CompanyMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置公司名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-        public string CompanyName { get; set; } = string.Empty;
+        public string? CompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置司机姓名（需使用平台公钥/证书加密）。
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("driver_name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-        public string DriverName { get; set; } = string.Empty;
+        public string? DriverName { get; set; }
 
         /// <summary>
         /// 获取或设置司机身份证号（需使用平台公钥/证书加密）。
@@ -90,21 +90,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-        public string DriverIdCardNumber { get; set; } = string.Empty;
+        public string? DriverIdCardNumber { get; set; }
 
         /// <summary>
         /// 获取或设置司机资格证号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("driver_license")]
         [System.Text.Json.Serialization.JsonPropertyName("driver_license")]
-        public string DriverLicenseNumber { get; set; } = string.Empty;
+        public string? DriverLicenseNumber { get; set; }
 
         /// <summary>
         /// 获取或设置司机类别。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("driver_category")]
         [System.Text.Json.Serialization.JsonPropertyName("driver_category")]
-        public string DriverCategory { get; set; } = string.Empty;
+        public string? DriverCategory { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。

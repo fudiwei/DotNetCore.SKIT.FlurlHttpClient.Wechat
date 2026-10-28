@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("service_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-                        public string ServiceName { get; set; } = default!;
+                        public string? ServiceName { get; set; }
                     }
                 }
 
@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递公司名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_name")]
-                public string DeliveryName { get; set; } = default!;
+                public string? DeliveryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持散单。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_type")]
-                public Types.Service[]? ServiceList { get; set; }
+                public List<Types.Service>? ServiceList { get; set; }
             }
         }
 
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.DeliveryCompany[] DeliveryCompanyList { get; set; } = default!;
+        public List<Types.DeliveryCompany>? DeliveryCompanyList { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司数量。

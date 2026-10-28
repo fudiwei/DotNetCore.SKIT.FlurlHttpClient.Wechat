@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/devicedata/get_accesscontrol_rule 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public Types.PassRuleItem[] Items { get; set; } = default!;
+                public List<Types.PassRuleItem>? Items { get; set; }
             }
 
             public class PassRuleItem
@@ -28,7 +28,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                        public string OpenUserId { get; set; } = default!;
+                        public string? OpenUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置成员类型。
@@ -44,28 +44,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rule_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
-                public string RuleId { get; set; } = default!;
+                public string? RuleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置门禁规则名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string RuleName { get; set; } = default!;
+                public string? RuleName { get; set; }
 
                 /// <summary>
                 /// 获取或设置门禁放行规则列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rule_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-                public string[] RuleList { get; set; } = default!;
+                public List<string>? RuleList { get; set; }
 
                 /// <summary>
                 /// 获取或设置生效成员列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("effect_open_userid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("effect_open_userid_list")]
-                public Types.EffectUser[] EffectUserList { get; set; } = default!;
+                public List<Types.EffectUser>? EffectUserList { get; set; }
 
                 /// <summary>
                 /// 获取或设置门禁生效时间戳。

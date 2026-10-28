@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置审核状态。
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_reason")]
-        public string ApplyReason { get; set; } = default!;
+        public string? ApplyReason { get; set; }
 
         /// <summary>
         /// 获取或设置申请时间戳。

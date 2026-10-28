@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("certicates")]
         [System.Text.Json.Serialization.JsonPropertyName("certicates")]
-        public IList<Types.Qualification> QualificationList { get; set; } = new List<Types.Qualification>();
+        public List<Types.Qualification>? QualificationList { get; set; }
     }
 }

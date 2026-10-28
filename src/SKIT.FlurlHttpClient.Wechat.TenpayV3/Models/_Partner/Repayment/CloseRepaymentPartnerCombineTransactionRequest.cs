@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = string.Empty;
+                public string? OutTradeNumber { get; set; }
             }
         }
 
@@ -37,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CombineOutTradeNumber { get; set; } = string.Empty;
+        public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置子单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
     }
 }

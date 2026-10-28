@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         [System.Xml.Serialization.XmlElement("openid")]
-        public string SharerOpenId { get; set; } = default!;
+        public string? SharerOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置分享者的 OpenId。
@@ -61,6 +61,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("promoter")]
         [System.Text.Json.Serialization.JsonPropertyName("promoter")]
         [System.Xml.Serialization.XmlElement("promoter")]
-        public Types.Promoter Promoter { get; set; } = default!;
+        public Types.Promoter? Promoter { get; set; }
     }
 }

@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order")]
-        public Types.AftersaleOrder AftersaleOrder { get; set; } = default!;
+        public Types.AftersaleOrder? AftersaleOrder { get; set; }
     }
 }

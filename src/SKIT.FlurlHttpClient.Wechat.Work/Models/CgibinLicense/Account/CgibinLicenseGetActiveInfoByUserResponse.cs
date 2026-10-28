@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/license/get_active_info_by_user 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("active_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("active_code")]
-                public string ActiveCode { get; set; } = default!;
+                public string? ActiveCode { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("active_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("active_info_list")]
-        public Types.Account[] AccountList { get; set; } = default!;
+        public List<Types.Account>? AccountList { get; set; }
     }
 }

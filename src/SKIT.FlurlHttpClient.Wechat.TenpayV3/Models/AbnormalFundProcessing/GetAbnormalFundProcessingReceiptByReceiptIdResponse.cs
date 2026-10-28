@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("operator")]
                         [System.Text.Json.Serialization.JsonPropertyName("operator")]
-                        public string Operator { get; set; } = default!;
+                        public string? Operator { get; set; }
 
                         /// <summary>
                         /// 获取或设置微信商户号。
@@ -82,14 +82,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commander")]
                 [System.Text.Json.Serialization.JsonPropertyName("commander")]
-                public Types.Commander Commander { get; set; } = default!;
+                public Types.Commander? Commander { get; set; }
 
                 /// <summary>
                 /// 获取或设置付款方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transfer_mode")]
                 [System.Text.Json.Serialization.JsonPropertyName("transfer_mode")]
-                public string TransferMode { get; set; } = default!;
+                public string? TransferMode { get; set; }
 
                 /// <summary>
                 /// 获取或设置入账用户信息。
@@ -114,35 +114,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_name")]
         [System.Text.Json.Serialization.JsonPropertyName("product_name")]
-        public string ProductName { get; set; } = default!;
+        public string? ProductName { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付在途异常资金付款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receipt_id")]
         [System.Text.Json.Serialization.JsonPropertyName("receipt_id")]
-        public string ReceiptId { get; set; } = default!;
+        public string? ReceiptId { get; set; }
 
         /// <summary>
         /// 获取或设置付款金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_amount")]
-        public Types.Amount Amount { get; set; } = default!;
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置付款指令信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("instruction")]
         [System.Text.Json.Serialization.JsonPropertyName("instruction")]
-        public Types.Instruction Instruction { get; set; } = default!;
+        public Types.Instruction? Instruction { get; set; }
 
         /// <summary>
         /// 获取或设置付款状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receipt_state")]
         [System.Text.Json.Serialization.JsonPropertyName("receipt_state")]
-        public string ReceiptState { get; set; } = default!;
+        public string? ReceiptState { get; set; }
 
         /// <summary>
         /// 获取或设置单据创建时间。

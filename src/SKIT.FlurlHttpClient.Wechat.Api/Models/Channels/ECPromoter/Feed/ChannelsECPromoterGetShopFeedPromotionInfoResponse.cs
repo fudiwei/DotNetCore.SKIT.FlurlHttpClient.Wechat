@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feed_list")]
         [System.Text.Json.Serialization.JsonPropertyName("feed_list")]
-        public Types.Feed[] List { get; set; } = default!;
+        public List<Types.Feed>? List { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chatid")]
                 [System.Text.Json.Serialization.JsonPropertyName("chatid")]
-                public string GroupChatId { get; set; } = default!;
+                public string? GroupChatId { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_list")]
-        public Types.GroupChat[] GroupChatList { get; set; } = default!;
+        public List<Types.GroupChat>? GroupChatList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

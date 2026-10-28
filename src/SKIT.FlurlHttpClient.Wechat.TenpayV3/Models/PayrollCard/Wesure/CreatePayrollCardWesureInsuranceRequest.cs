@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = string.Empty;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -24,21 +24,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wesure_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("wesure_order_no")]
-        public string WesureOrderNumber { get; set; } = string.Empty;
+        public string? WesureOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置保险公司保单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insurance_company_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("insurance_company_order_no")]
-        public string InsuranceCompanyOrderNumber { get; set; } = string.Empty;
+        public string? InsuranceCompanyOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置保险公司名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insurance_company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("insurance_company_name")]
-        public string InsuranceCompanyName { get; set; } = string.Empty;
+        public string? InsuranceCompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置授权 Token。
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置投保状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insure_state")]
         [System.Text.Json.Serialization.JsonPropertyName("insure_state")]
-        public string InsureState { get; set; } = string.Empty;
+        public string? InsureState { get; set; }
 
         /// <summary>
         /// 获取或设置保障生效时间。

@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = "RULE_TYPE_PAY_MEMBER_CARD";
+        public string? Type { get; set; } = "RULE_TYPE_PAY_MEMBER_CARD";
 
         /// <summary>
         /// 获取或设置是否仅查询生效的规则。
@@ -29,6 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("count")]
         [System.Text.Json.Serialization.JsonPropertyName("count")]

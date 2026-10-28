@@ -14,7 +14,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_order_id")]
-        public string ShopOrderId { get; set; } = string.Empty;
+        public string? ShopOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置校验串。如果不指定将由系统自动生成。

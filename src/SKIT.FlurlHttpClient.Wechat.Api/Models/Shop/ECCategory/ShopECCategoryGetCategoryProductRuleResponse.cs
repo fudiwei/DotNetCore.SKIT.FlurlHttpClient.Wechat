@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
             }
 
             public class Brand
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ch_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ch_name")]
-                public string ChineseName { get; set; } = default!;
+                public string? ChineseName { get; set; }
 
                 /// <summary>
                 /// 获取或设置品牌英文名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("en_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("en_name")]
-                public string EnglishName { get; set; } = default!;
+                public string? EnglishName { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否在当前类目品牌池内。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_brand_authorized")]
                 [System.Text.Json.Serialization.JsonPropertyName("is_brand_authorized")]
-                public bool IsBrandAuthorized { get; set; } = default!;
+                public bool IsBrandAuthorized { get; set; }
             }
 
             public class RestrictedBrand
@@ -78,14 +78,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ch_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ch_name")]
-                public string ChineseName { get; set; } = default!;
+                public string? ChineseName { get; set; }
 
                 /// <summary>
                 /// 获取或设置品牌英文名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("en_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("en_name")]
-                public string EnglishName { get; set; } = default!;
+                public string? EnglishName { get; set; }
             }
 
             public class ProductAttribute : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductAttribute
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("and_combinators")]
                                 [System.Text.Json.Serialization.JsonPropertyName("and_combinators")]
-                                public Types.AndCombinator[]? AndCombinatorList { get; set; }
+                                public List<Types.AndCombinator>? AndCombinatorList { get; set; }
                             }
 
                             public class AndCombinator
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("text_conditions")]
                                 [System.Text.Json.Serialization.JsonPropertyName("text_conditions")]
-                                public Types.TextCondition[]? TextConditionList { get; set; }
+                                public List<Types.TextCondition>? TextConditionList { get; set; }
                             }
 
                             public class TextCondition
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("keywords")]
                                 [System.Text.Json.Serialization.JsonPropertyName("keywords")]
-                                public string[]? Keywords { get; set; }
+                                public List<string>? Keywords { get; set; }
                             }
                         }
 
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("or_combinators")]
                         [System.Text.Json.Serialization.JsonPropertyName("or_combinators")]
-                        public Types.OrCombinator[]? OrCombinatorList { get; set; }
+                        public List<Types.OrCombinator>? OrCombinatorList { get; set; }
                     }
                 }
 
@@ -203,7 +203,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置资质描述信息。
@@ -235,14 +235,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extra_service_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("extra_service_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置额外服务参数类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extra_service_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("extra_service_type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置额外服务参数值。
@@ -333,7 +333,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.Category Category { get; set; } = default!;
+        public Types.Category? Category { get; set; }
 
         /// <summary>
         /// 获取或设置是否为定向类目。
@@ -354,28 +354,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("restricted_brand_list")]
         [System.Text.Json.Serialization.JsonPropertyName("restricted_brand_list")]
-        public Types.RestrictedBrand[]? RestrictedBrandList { get; set; }
+        public List<Types.RestrictedBrand>? RestrictedBrandList { get; set; }
 
         /// <summary>
         /// 获取或设置商品属性列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_attr_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_attr_list")]
-        public Types.ProductAttribute[]? ProductAttributeList { get; set; }
+        public List<Types.ProductAttribute>? ProductAttributeList { get; set; }
 
         /// <summary>
         /// 获取或设置销售属性列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sale_attr_list")]
         [System.Text.Json.Serialization.JsonPropertyName("sale_attr_list")]
-        public Types.SaleAttribute[]? SaleAttributeList { get; set; }
+        public List<Types.SaleAttribute>? SaleAttributeList { get; set; }
 
         /// <summary>
         /// 获取或设置商品资质列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_qua_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_qua_list")]
-        public Types.ProductQualification[]? ProductQualificationList { get; set; }
+        public List<Types.ProductQualification>? ProductQualificationList { get; set; }
 
         /// <summary>
         /// 获取或设置价格下限（单位：分）。
@@ -403,7 +403,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("extra_service_list")]
         [System.Text.Json.Serialization.JsonPropertyName("extra_service_list")]
-        public Types.ExtraService[]? ExtraServiceList { get; set; }
+        public List<Types.ExtraService>? ExtraServiceList { get; set; }
 
         /// <summary>
         /// 获取或设置是否必填 SKU 条形码。

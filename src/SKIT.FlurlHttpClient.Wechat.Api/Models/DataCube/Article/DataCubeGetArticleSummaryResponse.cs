@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /datacube/getarticlesummary 接口的响应。</para>
@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ref_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-                public string RefDateString { get; set; } = default!;
+                public string? RefDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息 ID 及消息次序索引。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageIdAndIndex { get; set; } = default!;
+                public string? MessageIdAndIndex { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息的标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文页的阅读人数。
@@ -93,6 +93,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

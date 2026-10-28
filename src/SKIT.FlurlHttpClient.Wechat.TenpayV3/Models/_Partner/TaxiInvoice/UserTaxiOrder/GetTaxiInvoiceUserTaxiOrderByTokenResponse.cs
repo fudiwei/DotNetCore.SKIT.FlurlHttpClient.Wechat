@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-        public string PlateNumber { get; set; } = default!;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置司机资格证号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("driver_license")]
         [System.Text.Json.Serialization.JsonPropertyName("driver_license")]
-        public string DriverLicenseNumber { get; set; } = default!;
+        public string? DriverLicenseNumber { get; set; }
 
         /// <summary>
         /// 获取或设置上车时间。
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("source")]
         [System.Text.Json.Serialization.JsonPropertyName("source")]
-        public string Source { get; set; } = default!;
+        public string? Source { get; set; }
 
         /// <summary>
         /// 获取或设置付款时间。

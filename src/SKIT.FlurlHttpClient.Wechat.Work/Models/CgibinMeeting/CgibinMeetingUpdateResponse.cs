@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("excess_users")]
         [System.Text.Json.Serialization.JsonPropertyName("excess_users")]
-        public string[]? ExcessUserIdList { get; set; }
+        public List<string>? ExcessUserIdList { get; set; }
     }
 }

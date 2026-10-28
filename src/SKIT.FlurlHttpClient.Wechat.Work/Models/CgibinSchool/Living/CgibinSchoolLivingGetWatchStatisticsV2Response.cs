@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("student_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("student_userid")]
-                        public string StudentUserId { get; set; } = default!;
+                        public string? StudentUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置学生所在的部门 ID（即班级）列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("partyids")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyids")]
-                        public long[] DepartmentIdList { get; set; } = default!;
+                        public List<long>? DepartmentIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置观看时长（单位：秒）。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("parent_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
-                        public string ParentUserId { get; set; } = default!;
+                        public string? ParentUserId { get; set; }
                     }
 
                     public class Visitor
@@ -114,21 +114,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("students")]
                 [System.Text.Json.Serialization.JsonPropertyName("students")]
-                public Types.Student[] StudentList { get; set; } = default!;
+                public List<Types.Student>? StudentList { get; set; }
 
                 /// <summary>
                 /// 获取或设置家长列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parents")]
                 [System.Text.Json.Serialization.JsonPropertyName("parents")]
-                public Types.Parent[] ParentList { get; set; } = default!;
+                public List<Types.Parent>? ParentList { get; set; }
 
                 /// <summary>
                 /// 获取或设置观众列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("visitors")]
                 [System.Text.Json.Serialization.JsonPropertyName("visitors")]
-                public Types.Visitor[] VisitorList { get; set; } = default!;
+                public List<Types.Visitor>? VisitorList { get; set; }
             }
         }
 
@@ -137,7 +137,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stat_info")]
         [System.Text.Json.Serialization.JsonPropertyName("stat_info")]
-        public Types.Statistics Statistics { get; set; } = default!;
+        public Types.Statistics? Statistics { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

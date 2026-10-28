@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("rule_id")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string RuleId { get; set; } = default!;
+        public string? RuleId { get; set; }
     }
 }

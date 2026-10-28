@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("violation_records")]
                 [System.Text.Json.Serialization.JsonPropertyName("violation_records")]
-                public ViolationItem[] Items { get; set; } = default!;
+                public List<ViolationItem>? Items { get; set; }
 
                 /// <summary>
                 /// 获取或设置违规记录总数量。
@@ -31,35 +31,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_mch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
-                public string SubMerchantId { get; set; } = default!;
+                public string? SubMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置公司名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("company_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-                public string CompanyName { get; set; } = default!;
+                public string? CompanyName { get; set; }
 
                 /// <summary>
                 /// 获取或设置违规类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("illegal_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("illegal_type")]
-                public string IllegalType { get; set; } = default!;
+                public string? IllegalType { get; set; }
 
                 /// <summary>
                 /// 获取或设置处理方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("handle_method")]
                 [System.Text.Json.Serialization.JsonPropertyName("handle_method")]
-                public string HandleMethod { get; set; } = default!;
+                public string? HandleMethod { get; set; }
 
                 /// <summary>
                 /// 获取或设置处理状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("handle_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("handle_state")]
-                public string HandleState { get; set; } = default!;
+                public string? HandleState { get; set; }
 
                 /// <summary>
                 /// 获取或设置处罚时间。
@@ -93,6 +93,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("violation_records")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public Types.ViolationList ViolationList { get; set; } = default!;
+        public Types.ViolationList? ViolationList { get; set; }
     }
 }

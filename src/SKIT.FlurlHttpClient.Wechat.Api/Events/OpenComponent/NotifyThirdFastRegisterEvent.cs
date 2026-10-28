@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
                 [System.Xml.Serialization.XmlElement("code", IsNullable = true)]
-                public string? LicenseNumber { get; set; } = default!;
+                public string? LicenseNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人姓名。
@@ -102,7 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
         [System.Xml.Serialization.XmlElement("info")]
-        public Types.InfoData InfoData { get; set; } = default!;
+        public Types.InfoData? InfoData { get; set; }
 
         /// <summary>
         /// 获取或设置错误码。

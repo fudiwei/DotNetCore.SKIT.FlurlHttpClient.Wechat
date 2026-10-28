@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_code")]
-                public string AuthCode { get; set; } = string.Empty;
+                public string? AuthCode { get; set; }
             }
 
             public class Amount : CreatePayTransactionAppRequest.Types.Amount
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("merchant_goods_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("merchant_goods_id")]
-                        public string MerchantGoodsId { get; set; } = string.Empty;
+                        public string? MerchantGoodsId { get; set; }
 
                         /// <summary>
                         /// 获取或设置微信侧商品编码。
@@ -120,14 +120,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。
@@ -155,14 +155,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public Types.Amount Amount { get; set; } = new Types.Amount();
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。

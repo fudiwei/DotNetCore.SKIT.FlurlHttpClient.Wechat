@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
-                public string Mobilephone { get; set; } = default!;
+                public string? Mobilephone { get; set; }
 
                 /// <summary>
                 /// 获取或设置营业执照注册号。
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("failure_record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("failure_record_list")]
-        public Types.Failure[]? FailureList { get; set; }
+        public List<Types.Failure>? FailureList { get; set; }
     }
 }

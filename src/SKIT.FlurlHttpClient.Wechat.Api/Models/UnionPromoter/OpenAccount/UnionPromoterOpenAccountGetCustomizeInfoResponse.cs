@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customizeInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("customizeInfo")]
-        public string CustomizeInfo { get; set; } = default!;
+        public string? CustomizeInfo { get; set; }
     }
 }

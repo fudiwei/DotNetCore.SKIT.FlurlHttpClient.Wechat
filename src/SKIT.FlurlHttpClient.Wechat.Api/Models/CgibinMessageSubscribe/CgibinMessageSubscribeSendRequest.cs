@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -23,14 +23,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        public string ToUserOpenId { get; set; } = string.Empty;
+        public string? ToUserOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置订阅消息模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = string.Empty;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面路径。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public IDictionary<string, Types.DataItem> Data { get; set; } = new Dictionary<string, Types.DataItem>();
+        public Dictionary<string, Types.DataItem>? Data { get; set; }
 
         /// <summary>
         /// 获取或设置进入小程序的语言类型。

@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BatchId { get; set; } = string.Empty;
+        public string? BatchId { get; set; }
 
         /// <summary>
         /// 获取或设置是否查询转账明细单。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public bool RequireQueryDetail { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

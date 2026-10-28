@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 {
-    internal sealed partial class YesOrNoBooleanConverter : JsonConverterFactory
+    public sealed partial class YesOrNoBooleanConverter : JsonConverterFactory
     {
         public override bool CanConvert(Type typeToConvert)
         {

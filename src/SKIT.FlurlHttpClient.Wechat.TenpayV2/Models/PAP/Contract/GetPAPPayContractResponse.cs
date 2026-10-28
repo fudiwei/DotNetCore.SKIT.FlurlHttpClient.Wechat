@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户在子商户下的 OpenId。
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_code")]
-        public string Contract { get; set; } = default!;
+        public string? Contract { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置请求序列号。
@@ -66,14 +66,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string ContractDisplayAccount { get; set; } = default!;
+        public string? ContractDisplayAccount { get; set; }
 
         /// <summary>
         /// 获取或设置协议状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_state")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_state")]
-        public string ContractState { get; set; } = default!;
+        public string? ContractState { get; set; }
 
         /// <summary>
         /// 获取或设置协议签署时间。
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("contract_signed_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
-        public DateTimeOffset ContractSignTime { get; set; } = default!;
+        public DateTimeOffset ContractSignTime { get; set; }
 
         /// <summary>
         /// 获取或设置协议到期时间。
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("contract_expired_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601DateTimeOffsetConverter))]
-        public DateTimeOffset ContractExpireTime { get; set; } = default!;
+        public DateTimeOffset ContractExpireTime { get; set; }
 
         /// <summary>
         /// 获取或设置协议解约方式。

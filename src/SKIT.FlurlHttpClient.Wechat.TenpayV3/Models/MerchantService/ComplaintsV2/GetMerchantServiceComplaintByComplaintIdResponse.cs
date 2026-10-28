@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                public string TransactionId { get; set; } = default!;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单金额（单位：分）。
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_type")]
-                public string MediaType { get; set; } = default!;
+                public string? MediaType { get; set; }
 
                 /// <summary>
                 /// 获取或设置媒体文件 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_url")]
-                public string[] MediaUrlList { get; set; } = default!;
+                public List<string>? MediaUrlList { get; set; }
             }
 
             public class ServiceOrder
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置共享充电宝投诉相关信息。
@@ -156,21 +156,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_id")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
-        public string ComplaintId { get; set; } = default!;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置投诉详情。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_detail")]
-        public string ComplaintDetail { get; set; } = default!;
+        public string? ComplaintDetail { get; set; }
 
         /// <summary>
         /// 获取或设置投诉单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_state")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_state")]
-        public string ComplaintState { get; set; } = default!;
+        public string? ComplaintState { get; set; }
 
         /// <summary>
         /// 获取或设置投诉时间。
@@ -210,14 +210,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_order_info")]
-        public Types.ComplaintOrder[] ComplaintOrderList { get; set; } = default!;
+        public List<Types.ComplaintOrder>? ComplaintOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置投诉资料列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_media_list")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
-        public Types.ComplaintMedia[] ComplaintMediaList { get; set; } = default!;
+        public List<Types.ComplaintMedia>? ComplaintMediaList { get; set; }
 
         /// <summary>
         /// 获取或设置问题类型。
@@ -231,7 +231,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("problem_description")]
         [System.Text.Json.Serialization.JsonPropertyName("problem_description")]
-        public string ProblemDescription { get; set; } = default!;
+        public string? ProblemDescription { get; set; }
 
         /// <summary>
         /// 获取或设置申请退款金额（单位：分）。
@@ -266,14 +266,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_tag_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_tag_list")]
-        public string[]? UserTagList { get; set; }
+        public List<string>? UserTagList { get; set; }
 
         /// <summary>
         /// 获取或设置关联服务单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("service_order_info")]
-        public Types.ServiceOrder[]? ServiceOrderList { get; set; }
+        public List<Types.ServiceOrder>? ServiceOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置补充信息。

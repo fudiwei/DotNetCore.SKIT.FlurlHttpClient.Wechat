@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidemassendjob 接口的响应。</para>
@@ -63,7 +63,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("openid")]
                         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置消息发送状态。
@@ -86,7 +86,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("task_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("task_name")]
-                public string TaskName { get; set; } = default!;
+                public string? TaskName { get; set; }
 
                 /// <summary>
                 /// 获取或设置任务备注。
@@ -107,14 +107,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("material")]
                 [System.Text.Json.Serialization.JsonPropertyName("material")]
-                public Types.Material[] MaterialList { get; set; } = default!;
+                public List<Types.Material>? MaterialList { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("buyer_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("buyer_info")]
-                public Types.Buyer[] BuyerList { get; set; } = default!;
+                public List<Types.Buyer>? BuyerList { get; set; }
 
                 /// <summary>
                 /// 获取或设置任务下发时间戳。
@@ -151,6 +151,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("job")]
         [System.Text.Json.Serialization.JsonPropertyName("job")]
-        public Types.Job Job { get; set; } = default!;
+        public Types.Job? Job { get; set; }
     }
 }

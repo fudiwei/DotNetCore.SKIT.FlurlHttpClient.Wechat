@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("internal_attribute_value")]
         [System.Text.Json.Serialization.JsonPropertyName("internal_attribute_value")]
-        public string[]? InternalAttributeValueList { get; set; }
+        public List<string>? InternalAttributeValueList { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_warehouse_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_warehouse_id")]
-                        public string OutWarehouseId { get; set; } = default!;
+                        public string? OutWarehouseId { get; set; }
 
                         /// <summary>
                         /// 获取或设置库存数量。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("warehouse_stocks")]
                 [System.Text.Json.Serialization.JsonPropertyName("warehouse_stocks")]
-                public Types.WarehouseStock[] WarehouseStock { get; set; } = default!;
+                public List<Types.WarehouseStock>? WarehouseStock { get; set; }
 
                 /// <summary>
                 /// 获取或设置库存总量。
@@ -72,6 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

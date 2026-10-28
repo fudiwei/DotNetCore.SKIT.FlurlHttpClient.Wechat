@@ -10,10 +10,11 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "dev_apply_list";
+        public string? Action { get; set; } = "dev_apply_list";
 
         /// <summary>
-        /// 获取或设置分页页数（从 1 开始）。
+        /// 获取或设置分页页数。
+        /// <para>默认值：1</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page")]
         [System.Text.Json.Serialization.JsonPropertyName("page")]
@@ -21,6 +22,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("num")]
         [System.Text.Json.Serialization.JsonPropertyName("num")]

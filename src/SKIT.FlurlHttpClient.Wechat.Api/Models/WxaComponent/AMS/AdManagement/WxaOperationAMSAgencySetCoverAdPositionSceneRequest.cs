@@ -12,6 +12,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("cover_scene_list")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberListWithCommaSplitConverter))]
-        public IList<int> CoverSceneList { get; set; } = new List<int>();
+        public List<int>? CoverSceneList { get; set; }
     }
 }

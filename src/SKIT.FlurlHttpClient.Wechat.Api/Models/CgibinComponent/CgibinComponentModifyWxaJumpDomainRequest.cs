@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置操作类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = string.Empty;
+        public string? Action { get; set; }
 
         /// <summary>
         /// 获取或设置是否同时修改全网发布版本的值。
@@ -33,6 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_jump_h5_domain")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
-        public IList<string>? WxaJumpH5DomainList { get; set; }
+        public List<string>? WxaJumpH5DomainList { get; set; }
     }
 }

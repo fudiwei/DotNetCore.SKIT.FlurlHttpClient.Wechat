@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("admin_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string AdminName { get; set; } = string.Empty;
+                public string? AdminName { get; set; }
 
                 /// <summary>
                 /// 获取或设置管理员证件类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_doc_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_type")]
-                public string IdentityType { get; set; } = string.Empty;
+                public string? IdentityType { get; set; }
 
                 /// <summary>
                 /// 获取或设置管理员证件号码（需使用平台公钥/证书加密）。
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdCardNumber { get; set; } = string.Empty;
+                public string? IdCardNumber { get; set; }
             }
 
             public class Subject
@@ -43,21 +43,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subject_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("subject_type")]
-                public string SubjectType { get; set; } = string.Empty;
+                public string? SubjectType { get; set; }
 
                 /// <summary>
                 /// 获取或设置主体名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subject_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("subject_name")]
-                public string SubjectName { get; set; } = string.Empty;
+                public string? SubjectName { get; set; }
 
                 /// <summary>
                 /// 获取或设置统一社会信用代码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("unified_social_credit_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("unified_social_credit_code")]
-                public string UnifiedSocialCreditCode { get; set; } = string.Empty;
+                public string? UnifiedSocialCreditCode { get; set; }
             }
 
             public class BrandBasic
@@ -67,14 +67,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                public string BrandName { get; set; } = string.Empty;
+                public string? BrandName { get; set; }
 
                 /// <summary>
                 /// 获取或设置品牌 Logo MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_logo")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_logo")]
-                public string BrandLogoMediaId { get; set; } = string.Empty;
+                public string? BrandLogoMediaId { get; set; }
             }
 
             public class Trademark
@@ -95,21 +95,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("certificate_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("certificate_list")]
-                        public IList<string>? CertificateMediaIdList { get; set; }
+                        public List<string>? CertificateMediaIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标注册号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("number")]
                         [System.Text.Json.Serialization.JsonPropertyName("number")]
-                        public string Number { get; set; } = string.Empty;
+                        public string? Number { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标有效期开始日期字符串（格式：yyyy-MM-dd）。
@@ -130,14 +130,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("international_class")]
                         [System.Text.Json.Serialization.JsonPropertyName("international_class")]
-                        public string InternationalClass { get; set; } = string.Empty;
+                        public string? InternationalClass { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标持有人。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("holder")]
                         [System.Text.Json.Serialization.JsonPropertyName("holder")]
-                        public string Holder { get; set; } = string.Empty;
+                        public string? Holder { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标授权许可使用授权书 MediaId。
@@ -151,7 +151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("license_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("license_list")]
-                        public IList<string>? AuthorizationLicenseMediaIdList { get; set; }
+                        public List<string>? AuthorizationLicenseMediaIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标授权有效期开始日期字符串（格式：yyyy-MM-dd）。
@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trademark_exists")]
                 [System.Text.Json.Serialization.JsonPropertyName("trademark_exists")]
-                public string TrademarkExistsType { get; set; } = string.Empty;
+                public string? TrademarkExistsType { get; set; }
 
                 /// <summary>
                 /// 获取或设置无商标额外证明材料 MediaId。
@@ -202,7 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("no_trademark_addition_prove_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("no_trademark_addition_prove_list")]
-                public IList<string>? NoTrademarkAdditionalProveMediaIdList { get; set; }
+                public List<string>? NoTrademarkAdditionalProveMediaIdList { get; set; }
             }
         }
 
@@ -211,34 +211,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_code")]
         [System.Text.Json.Serialization.JsonPropertyName("business_code")]
-        public string BusinessCode { get; set; } = string.Empty;
+        public string? BusinessCode { get; set; }
 
         /// <summary>
         /// 获取或设置管理员信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin_info")]
         [System.Text.Json.Serialization.JsonPropertyName("admin_info")]
-        public Types.Administrator Administrator { get; set; } = new Types.Administrator();
+        public Types.Administrator? Administrator { get; set; }
 
         /// <summary>
         /// 获取或设置主体信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("subject_info")]
         [System.Text.Json.Serialization.JsonPropertyName("subject_info")]
-        public Types.Subject Subject { get; set; } = new Types.Subject();
+        public Types.Subject? Subject { get; set; }
 
         /// <summary>
         /// 获取或设置品牌基础信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_basic_info")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_basic_info")]
-        public Types.BrandBasic BrandBasic { get; set; } = new Types.BrandBasic();
+        public Types.BrandBasic? BrandBasic { get; set; }
 
         /// <summary>
         /// 获取或设置品牌商标资料信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trademark")]
         [System.Text.Json.Serialization.JsonPropertyName("trademark")]
-        public Types.Trademark Trademark { get; set; } = new Types.Trademark();
+        public Types.Trademark? Trademark { get; set; }
     }
 }

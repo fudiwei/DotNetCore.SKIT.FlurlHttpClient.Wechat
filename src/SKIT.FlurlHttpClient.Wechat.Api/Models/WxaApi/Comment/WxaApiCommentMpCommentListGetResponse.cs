@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("busiOrderId")]
                         [System.Text.Json.Serialization.JsonPropertyName("busiOrderId")]
-                        public string BusinessOrderId { get; set; } = default!;
+                        public string? BusinessOrderId { get; set; }
                     }
 
                     public class UserInfo
@@ -28,21 +28,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("openid")]
                         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户的昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickName")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickName")]
-                        public string Nickname { get; set; } = default!;
+                        public string? Nickname { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户的头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("headImg")]
                         [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-                        public string HeadImageUrl { get; set; } = default!;
+                        public string? HeadImageUrl { get; set; }
                     }
 
                     public class BusinessInfo
@@ -52,21 +52,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序的昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickName")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickName")]
-                        public string Nickname { get; set; } = default!;
+                        public string? Nickname { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序的头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("headImg")]
                         [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-                        public string HeadImageUrl { get; set; } = default!;
+                        public string? HeadImageUrl { get; set; }
                     }
 
                     public class ContentInfo
@@ -117,14 +117,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("txt")]
                         [System.Text.Json.Serialization.JsonPropertyName("txt")]
-                        public string Text { get; set; } = default!;
+                        public string? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置媒体文件列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media")]
                         [System.Text.Json.Serialization.JsonPropertyName("media")]
-                        public Types.Media[]? MediaList { get; set; }
+                        public List<Types.Media>? MediaList { get; set; }
                     }
 
                     public class ExtraInfo
@@ -148,14 +148,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置商品图片 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("picUrl")]
                                 [System.Text.Json.Serialization.JsonPropertyName("picUrl")]
-                                public string PictureUrl { get; set; } = default!;
+                                public string? PictureUrl { get; set; }
                             }
                         }
 
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("productList")]
                         [System.Text.Json.Serialization.JsonPropertyName("productList")]
-                        public Types.Product[] ProductList { get; set; } = default!;
+                        public List<Types.Product>? ProductList { get; set; }
                     }
                 }
 
@@ -173,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commentId")]
                 [System.Text.Json.Serialization.JsonPropertyName("commentId")]
-                public string CommentId { get; set; } = default!;
+                public string? CommentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置金额（单位：分）。
@@ -187,14 +187,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("orderId")]
                 [System.Text.Json.Serialization.JsonPropertyName("orderId")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wxPayId")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxPayId")]
-                public string WechatpayTransactionId { get; set; } = default!;
+                public string? WechatpayTransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付时间戳。
@@ -224,7 +224,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("productInfo")]
-                public Types.ProductInfo ProductInfo { get; set; } = default!;
+                public Types.ProductInfo? ProductInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家订单信息。
@@ -252,7 +252,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public Types.ContentInfo ContentInfo { get; set; } = default!;
+                public Types.ContentInfo? ContentInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置评价额外信息。
@@ -268,7 +268,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("commentList")]
         [System.Text.Json.Serialization.JsonPropertyName("commentList")]
-        public Types.Comment[] CommentList { get; set; } = default!;
+        public List<Types.Comment>? CommentList { get; set; }
 
         /// <summary>
         /// 获取或设置评价总数量。

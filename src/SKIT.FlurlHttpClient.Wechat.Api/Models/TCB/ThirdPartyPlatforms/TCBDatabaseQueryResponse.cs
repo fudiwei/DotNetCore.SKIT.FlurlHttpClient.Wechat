@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/databasequery 接口的响应。</para>
@@ -17,13 +17,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public string[] Data { get; set; } = default!;
+        public List<string>? Data { get; set; }
 
         /// <summary>
         /// 获取或设置查询分页信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pager")]
         [System.Text.Json.Serialization.JsonPropertyName("pager")]
-        public Types.Pagination Pagination { get; set; } = default!;
+        public Types.Pagination? Pagination { get; set; }
     }
 }

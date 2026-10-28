@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BatchId { get; set; } = string.Empty;
+        public string? BatchId { get; set; }
 
         /// <summary>
         /// 获取或设置微信明细单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DetailId { get; set; } = string.Empty;
+        public string? DetailId { get; set; }
     }
 }

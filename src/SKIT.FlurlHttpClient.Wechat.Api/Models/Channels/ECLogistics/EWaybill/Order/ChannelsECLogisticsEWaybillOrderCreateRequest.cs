@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("vas_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("vas_type")]
-                public string VasType { get; set; } = string.Empty;
+                public string? VasType { get; set; }
 
                 /// <summary>
                 /// 获取或设置增值服务描述。
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonExtensionData]
                 [System.Text.Json.Serialization.JsonExtensionData]
-                public IDictionary<string, object>? ExtensionData { get; set; }
+                public Dictionary<string, object?>? ExtensionData { get; set; }
             }
 
             public class DeliveryInfo
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subpackage_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("subpackage_list")]
-                public IList<Types.SubPackage>? SubPackageList { get; set; }
+                public List<Types.SubPackage>? SubPackageList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家额外信息。
@@ -216,14 +216,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置电子面单 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ewaybill_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_id")]
-        public string EWaybillOrderId { get; set; } = string.Empty;
+        public string? EWaybillOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置网点编码。
@@ -237,14 +237,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_id")]
-        public string ShopId { get; set; } = string.Empty;
+        public string? ShopId { get; set; }
 
         /// <summary>
         /// 获取或设置电子面单账号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ewaybill_acct_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ewaybill_acct_id")]
-        public string EWaybillAccountId { get; set; } = string.Empty;
+        public string? EWaybillAccountId { get; set; }
 
         /// <summary>
         /// 获取或设置面单模板 ID。
@@ -258,14 +258,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sender")]
         [System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public Types.Address Sender { get; set; } = new Types.Address();
+        public Types.Address? Sender { get; set; }
 
         /// <summary>
         /// 获取或设置收件人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-        public Types.Address Receiver { get; set; } = new Types.Address();
+        public Types.Address? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置退货地址信息。
@@ -279,7 +279,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ec_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ec_order_list")]
-        public IList<Types.Order> OrderList { get; set; } = new List<Types.Order>();
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置备注。
@@ -300,7 +300,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_vas_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_vas_list")]
-        public IList<Types.OrderVas>? OrderVasList { get; set; }
+        public List<Types.OrderVas>? OrderVasList { get; set; }
 
         /// <summary>
         /// 获取或设置面单补充信息。

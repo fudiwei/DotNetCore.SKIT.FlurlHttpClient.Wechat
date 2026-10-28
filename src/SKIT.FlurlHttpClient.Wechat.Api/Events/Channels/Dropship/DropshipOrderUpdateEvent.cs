@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ds_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ds_order_id")]
         [System.Xml.Serialization.XmlElement("ds_order_id")]
-        public string DropshipOrderId { get; set; } = default!;
+        public string? DropshipOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置更新时间戳。

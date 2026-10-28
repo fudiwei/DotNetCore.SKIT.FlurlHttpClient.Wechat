@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                public IList<string>? UserIdList { get; set; }
+                public List<string>? UserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用范围的部门 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                public IList<long>? DepartmentId { get; set; }
+                public List<long>? DepartmentId { get; set; }
             }
 
             public class PriorityOption
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("priority_userid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("priority_userid_list")]
-                public IList<string>? PriorityUserIdList { get; set; }
+                public List<string>? PriorityUserIdList { get; set; }
             }
         }
 
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link_name")]
         [System.Text.Json.Serialization.JsonPropertyName("link_name")]
-        public string LinkName { get; set; } = string.Empty;
+        public string? LinkName { get; set; }
 
         /// <summary>
         /// 获取或设置使用范围信息。

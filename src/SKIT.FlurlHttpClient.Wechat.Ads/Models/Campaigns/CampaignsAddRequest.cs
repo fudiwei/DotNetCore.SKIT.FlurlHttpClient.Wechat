@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("campaign_name")]
         [System.Text.Json.Serialization.JsonPropertyName("campaign_name")]
-        public string CampaignName { get; set; } = string.Empty;
+        public string? CampaignName { get; set; }
 
         /// <summary>
         /// 获取或设置推广计划类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("campaign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("campaign_type")]
-        public string CampaignType { get; set; } = string.Empty;
+        public string? CampaignType { get; set; }
 
         /// <summary>
         /// 获取或设置推广标的物类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_type")]
         [System.Text.Json.Serialization.JsonPropertyName("product_type")]
-        public string ProductType { get; set; } = string.Empty;
+        public string? ProductType { get; set; }
 
         /// <summary>
         /// 获取或设置广告状态。

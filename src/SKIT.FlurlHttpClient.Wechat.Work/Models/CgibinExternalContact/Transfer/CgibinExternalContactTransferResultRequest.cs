@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("handover_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("handover_userid")]
-        public string HandoverUserId { get; set; } = string.Empty;
+        public string? HandoverUserId { get; set; }
 
         /// <summary>
         /// 获取或设置接替成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("takeover_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("takeover_userid")]
-        public string TakeoverUserId { get; set; } = string.Empty;
+        public string? TakeoverUserId { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置卡券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string CardCode { get; set; } = string.Empty;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置礼品卡背景图 URL。

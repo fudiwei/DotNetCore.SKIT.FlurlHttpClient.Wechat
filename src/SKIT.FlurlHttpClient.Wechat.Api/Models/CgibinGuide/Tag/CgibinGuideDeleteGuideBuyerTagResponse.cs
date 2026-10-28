@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_resp")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_resp")]
-        public Types.BuyerResponse[]? BuyerResponseList { get; set; }
+        public List<Types.BuyerResponse>? BuyerResponseList { get; set; }
     }
 }

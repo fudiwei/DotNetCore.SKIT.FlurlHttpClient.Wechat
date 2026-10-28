@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("public_key")]
         [System.Text.Json.Serialization.JsonPropertyName("public_key")]
-        public string PublicKey { get; set; } = string.Empty;
+        public string? PublicKey { get; set; }
 
         /// <summary>
         /// 获取或设置公钥版本。

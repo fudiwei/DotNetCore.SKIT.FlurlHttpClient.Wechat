@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "multiuse", "stocks", request.StockId, "refund-flow");
+                .CreateFlurlRequest(request, HttpMethod.Get, "multiuse", "stocks", request.StockId!, "refund-flow");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMultiuseStockRefundFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "multiuse", "stocks", request.StockId, "send-flow");
+                .CreateFlurlRequest(request, HttpMethod.Get, "multiuse", "stocks", request.StockId!, "send-flow");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMultiuseStockSendFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "multiuse", "stocks", request.StockId, "use-flow");
+                .CreateFlurlRequest(request, HttpMethod.Get, "multiuse", "stocks", request.StockId!, "use-flow");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMultiuseStockUseFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "multiuse", "users", request.OpenId, "coupons");
+                .CreateFlurlRequest(request, HttpMethod.Post, "multiuse", "users", request.OpenId!, "coupons");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SendMultiuseUserCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

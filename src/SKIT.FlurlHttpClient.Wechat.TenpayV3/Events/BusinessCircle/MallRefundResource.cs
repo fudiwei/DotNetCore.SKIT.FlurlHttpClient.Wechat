@@ -15,56 +15,56 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商圈商户名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_name")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-        public string MerchantName { get; set; } = default!;
+        public string? MerchantName { get; set; }
 
         /// <summary>
         /// 获取或设置门店名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_name")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_name")]
-        public string ShopName { get; set; } = default!;
+        public string? ShopName { get; set; }
 
         /// <summary>
         /// 获取或设置门店编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_number")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_number")]
-        public string ShopNumber { get; set; } = default!;
+        public string? ShopNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付退款号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
-        public string RefundId { get; set; } = default!;
+        public string? RefundId { get; set; }
 
         /// <summary>
         /// 获取或设置消费金额（单位：分）。

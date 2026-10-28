@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("secret_key")]
                         [System.Text.Json.Serialization.JsonPropertyName("secret_key")]
-                        public string SecretKey { get; set; } = string.Empty;
+                        public string? SecretKey { get; set; }
                     }
                 }
 
@@ -27,14 +27,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = string.Empty;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置加密信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_info")]
-                public Types.EncryptInfo EncryptInfo { get; set; } = new Types.EncryptInfo();
+                public Types.EncryptInfo? EncryptInfo { get; set; }
             }
         }
 
@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_list")]
-        public IList<Types.Message> MessageList { get; set; } = new List<Types.Message>();
+        public List<Types.Message>? MessageList { get; set; }
     }
 }

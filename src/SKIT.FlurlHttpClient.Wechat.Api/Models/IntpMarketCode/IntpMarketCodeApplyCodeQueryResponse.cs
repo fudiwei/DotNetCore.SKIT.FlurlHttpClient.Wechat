@@ -37,21 +37,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("isv_application_id")]
         [System.Text.Json.Serialization.JsonPropertyName("isv_application_id")]
-        public string ISVApplicationId { get; set; } = default!;
+        public string? ISVApplicationId { get; set; }
 
         /// <summary>
         /// 获取或设置申请单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置号段生成列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code_generate_list")]
         [System.Text.Json.Serialization.JsonPropertyName("code_generate_list")]
-        public Types.CodeGeneration[]? CodeGenerationList { get; set; }
+        public List<Types.CodeGeneration>? CodeGenerationList { get; set; }
 
         /// <summary>
         /// 获取或设置更新时间戳。

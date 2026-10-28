@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        public string ToUserOpenId { get; set; } = string.Empty;
+        public string? ToUserOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置输入状态。
@@ -18,6 +18,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("command")]
         [System.Text.Json.Serialization.JsonPropertyName("command")]
-        public string Command { get; set; } = "Typing";
+        public string? Command { get; set; } = "Typing";
     }
 }

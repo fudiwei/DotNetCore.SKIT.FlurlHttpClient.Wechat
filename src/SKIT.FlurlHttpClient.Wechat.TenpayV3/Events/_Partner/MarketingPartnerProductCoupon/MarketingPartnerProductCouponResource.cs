@@ -15,28 +15,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_code")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_code")]
-        public string CouponCode { get; set; } = default!;
+        public string? CouponCode { get; set; }
 
         /// <summary>
         /// 获取或设置商品券 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("product_coupon_id")]
-        public string ProductCouponId { get; set; } = default!;
+        public string? ProductCouponId { get; set; }
 
         /// <summary>
         /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = default!;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置批次组 ID。
@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 UnionId。
@@ -105,14 +105,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("send_request_no")]
-        public string SendOutRequestNumber { get; set; } = default!;
+        public string? SendOutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置发券渠道。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_channel")]
         [System.Text.Json.Serialization.JsonPropertyName("send_channel")]
-        public string SendChannel { get; set; } = default!;
+        public string? SendChannel { get; set; }
 
         /// <summary>
         /// 获取或设置领券手机国际区号。

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置参与者与会状态。
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tmp_external_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("tmp_external_userid")]
-                        public string TempExternalUserId { get; set; } = default!;
+                        public string? TempExternalUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置外部联系人与会状态。
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("device_sn")]
                         [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-                        public string DeviceSerialNumber { get; set; } = default!;
+                        public string? DeviceSerialNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置设备与会状态。
@@ -124,21 +124,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member")]
                 [System.Text.Json.Serialization.JsonPropertyName("member")]
-                public Types.User[] UserList { get; set; } = default!;
+                public List<Types.User>? UserList { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tmp_external_user")]
                 [System.Text.Json.Serialization.JsonPropertyName("tmp_external_user")]
-                public Types.ExternalUser[] ExternalUserList { get; set; } = default!;
+                public List<Types.ExternalUser>? ExternalUserList { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device")]
                 [System.Text.Json.Serialization.JsonPropertyName("device")]
-                public Types.Device[] DeviceList { get; set; } = default!;
+                public List<Types.Device>? DeviceList { get; set; }
             }
 
             public class Guest
@@ -148,14 +148,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("area")]
                 [System.Text.Json.Serialization.JsonPropertyName("area")]
-                public string AreaCode { get; set; } = default!;
+                public string? AreaCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置电话号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议嘉宾姓名。
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string[]? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
                     }
 
                     public class RingUser
@@ -186,7 +186,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string[]? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
                     }
                 }
 
@@ -265,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auto_record_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("auto_record_type")]
-                public string AutoRecordType { get; set; } = default!;
+                public string? AutoRecordType { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否当有参会成员入会时立即开启云录制。
@@ -412,21 +412,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("repeat_day_of_week")]
                 [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_week")]
-                public int[]? RepeatDaysOfWeek { get; set; }
+                public List<int>? RepeatDaysOfWeek { get; set; }
 
                 /// <summary>
                 /// 获取或设置每月哪几天重复。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("repeat_day_of_month")]
                 [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_month")]
-                public int[]? RepeatDaysOfMonth { get; set; }
+                public List<int>? RepeatDaysOfMonth { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议开始前多久提醒（单位：秒）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("remind_before")]
                 [System.Text.Json.Serialization.JsonPropertyName("remind_before")]
-                public int[]? RemindBeforeEventTimeList { get; set; }
+                public List<int>? RemindBeforeEventTimeList { get; set; }
             }
 
             public class SubMeeting
@@ -436,14 +436,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_meetingid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_meetingid")]
-                public string SubMeetingId { get; set; } = default!;
+                public string? SubMeetingId { get; set; }
 
                 /// <summary>
                 /// 获取或设置标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置状态。
@@ -481,7 +481,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("repeat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("repeat_id")]
-                public string RepeatId { get; set; } = default!;
+                public string? RepeatId { get; set; }
 
                 /// <summary>
                 /// 获取或设置重复类型。
@@ -511,14 +511,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("repeat_day_of_week")]
                 [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_week")]
-                public int[]? RepeatDayOfWeekList { get; set; }
+                public List<int>? RepeatDayOfWeekList { get; set; }
 
                 /// <summary>
                 /// 获取或设置每周重复日序号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("repeat_day_of_month")]
                 [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_month")]
-                public int[]? RepeatDayOfMonthList { get; set; }
+                public List<int>? RepeatDayOfMonthList { get; set; }
 
                 /// <summary>
                 /// 获取或设置周期性会议结束类型。
@@ -548,14 +548,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = default!;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置管理员成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("admin_userid")]
-        public string AdminUserId { get; set; } = default!;
+        public string? AdminUserId { get; set; }
 
         /// <summary>
         /// 获取或设置发起者所在主部门 ID。
@@ -569,7 +569,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置会议开始时间戳。
@@ -604,7 +604,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置会议地点。
@@ -625,21 +625,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attendees")]
         [System.Text.Json.Serialization.JsonPropertyName("attendees")]
-        public Types.Attendee Attendee { get; set; } = default!;
+        public Types.Attendee? Attendee { get; set; }
 
         /// <summary>
         /// 获取或设置会议嘉宾列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guests")]
         [System.Text.Json.Serialization.JsonPropertyName("guests")]
-        public Types.Guest[]? GuestList { get; set; }
+        public List<Types.Guest>? GuestList { get; set; }
 
         /// <summary>
         /// 获取或设置会议设置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settings")]
         [System.Text.Json.Serialization.JsonPropertyName("settings")]
-        public Types.Settings Settings { get; set; } = default!;
+        public Types.Settings? Settings { get; set; }
 
         /// <summary>
         /// 获取或设置会议提醒信息。
@@ -653,14 +653,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_code")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
-        public string MeetingCode { get; set; } = default!;
+        public string? MeetingCode { get; set; }
 
         /// <summary>
         /// 获取或设置会议链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_link")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_link")]
-        public string MeetingLink { get; set; } = default!;
+        public string? MeetingLink { get; set; }
 
         /// <summary>
         /// 获取或设置是否有投票。
@@ -674,7 +674,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_meetings")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_meetings")]
-        public Types.SubMeeting[]? SubMeetingList { get; set; }
+        public List<Types.SubMeeting>? SubMeetingList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多子会议特例。
@@ -704,6 +704,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_repeat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_repeat_list")]
-        public Types.SubRepeat[]? SubRepeatList { get; set; }
+        public List<Types.SubRepeat>? SubRepeatList { get; set; }
     }
 }

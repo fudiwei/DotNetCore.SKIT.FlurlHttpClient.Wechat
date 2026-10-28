@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("shopid")]
         [System.Text.Json.Serialization.JsonPropertyName("shopid")]
         [System.Xml.Serialization.XmlElement("shopid")]
-        public string ShopId { get; set; } = default!;
+        public string? ShopId { get; set; }
 
         /// <summary>
         /// 获取或设置发起授权的商户小程序 AppId。
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("wx_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_appid")]
         [System.Xml.Serialization.XmlElement("wx_appid")]
-        public string MiniProgramAppId { get; set; } = default!;
+        public string? MiniProgramAppId { get; set; }
     }
 }

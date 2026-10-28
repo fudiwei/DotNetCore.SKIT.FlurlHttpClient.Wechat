@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/delivery/update_freight_template 接口的请求。</para>
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("freight_template")]
         [System.Text.Json.Serialization.JsonPropertyName("freight_template")]
-        public Types.FreightTemplate FreightTemplate { get; set; } = new Types.FreightTemplate();
+        public Types.FreightTemplate? FreightTemplate { get; set; }
     }
 }

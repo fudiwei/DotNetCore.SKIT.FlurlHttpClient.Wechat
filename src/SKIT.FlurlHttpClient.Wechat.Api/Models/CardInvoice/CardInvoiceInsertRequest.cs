@@ -26,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("name")]
                                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public string Name { get; set; } = string.Empty;
+                                        public string? Name { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置计量单位。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("unit")]
                                         [System.Text.Json.Serialization.JsonPropertyName("unit")]
-                                        public string Unit { get; set; } = string.Empty;
+                                        public string? Unit { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置项目数量。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("title")]
                                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public string Title { get; set; } = string.Empty;
+                                public string? Title { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置不含税金额（单位：分）。
@@ -84,14 +84,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("billing_no")]
                                 [System.Text.Json.Serialization.JsonPropertyName("billing_no")]
-                                public string InvoiceNumber { get; set; } = string.Empty;
+                                public string? InvoiceNumber { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置发票代码。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("billing_code")]
                                 [System.Text.Json.Serialization.JsonPropertyName("billing_code")]
-                                public string InvoiceCode { get; set; } = string.Empty;
+                                public string? InvoiceCode { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置开票时间戳。
@@ -105,21 +105,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("info")]
-                                public IList<Types.InvoiceItem> InvoiceItemList { get; set; } = new List<Types.InvoiceItem>();
+                                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置校验码。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("check_code")]
                                 [System.Text.Json.Serialization.JsonPropertyName("check_code")]
-                                public string CheckCode { get; set; } = string.Empty;
+                                public string? CheckCode { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置发票文件标识。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("s_pdf_media_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("s_pdf_media_id")]
-                                public string PdfSpMediaId { get; set; } = string.Empty;
+                                public string? PdfSpMediaId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置其它消费附件文件标识。
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("buyer_number")]
                                 [System.Text.Json.Serialization.JsonPropertyName("buyer_number")]
-                                public string BuyerTaxNumber { get; set; } = string.Empty;
+                                public string? BuyerTaxNumber { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置购买方地址、电话。
@@ -198,7 +198,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("invoice_user_data")]
                         [System.Text.Json.Serialization.JsonPropertyName("invoice_user_data")]
-                        public Types.Invoice Invoice { get; set; } = new Types.Invoice();
+                        public Types.Invoice? Invoice { get; set; }
                     }
                 }
 
@@ -214,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_card")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_card")]
-                public Types.InvoiceCard InvoiceCard { get; set; } = new Types.InvoiceCard();
+                public Types.InvoiceCard? InvoiceCard { get; set; }
             }
         }
 
@@ -223,7 +223,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppId"/> 参数。
@@ -237,13 +237,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置发票扩展信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_ext")]
         [System.Text.Json.Serialization.JsonPropertyName("card_ext")]
-        public Types.CardExtra CardExtra { get; set; } = new Types.CardExtra();
+        public Types.CardExtra? CardExtra { get; set; }
     }
 }

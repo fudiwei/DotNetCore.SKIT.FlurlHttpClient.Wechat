@@ -29,7 +29,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupid")]
         [System.Text.Json.Serialization.JsonPropertyName("groupid")]
-        public string GroupId { get; set; } = string.Empty;
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// 获取或设置邮件群组名称。

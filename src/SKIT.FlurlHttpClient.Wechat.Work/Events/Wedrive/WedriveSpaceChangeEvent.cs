@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChangeType")]
         [System.Text.Json.Serialization.JsonPropertyName("ChangeType")]
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置空间 ID 列表。
@@ -26,6 +26,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("SpaceId")]
         [System.Text.Json.Serialization.JsonPropertyName("SpaceId")]
         [System.Xml.Serialization.XmlElement("SpaceId", Type = typeof(string))]
-        public string[] SpaceIdList { get; set; } = default!;
+        public List<string>? SpaceIdList { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("level_1")]
                         [System.Text.Json.Serialization.JsonPropertyName("level_1")]
-                        public Level1ClassificationTreeNode[] Level1Nodes { get; set; } = default!;
+                        public List<Level1ClassificationTreeNode>? Level1Nodes { get; set; }
                     }
 
                     public abstract class ClassificationTreeNode
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否在用户端展示。
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("level_2")]
                         [System.Text.Json.Serialization.JsonPropertyName("level_2")]
-                        public Level2ClassificationTreeNode[] Level2Nodes { get; set; } = default!;
+                        public List<Level2ClassificationTreeNode>? Level2Nodes { get; set; }
                     }
 
                     public class Level2ClassificationTreeNode : ClassificationTreeNode
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tree")]
                 [System.Text.Json.Serialization.JsonPropertyName("tree")]
-                public Types.ClassificationTree ClassificationTree { get; set; } = default!;
+                public Types.ClassificationTree? ClassificationTree { get; set; }
             }
         }
 
@@ -83,6 +83,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resp")]
         [System.Text.Json.Serialization.JsonPropertyName("resp")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

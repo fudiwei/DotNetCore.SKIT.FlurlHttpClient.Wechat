@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/code/get 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                public string CardId { get; set; } = default!;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券 Code。
@@ -69,28 +69,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card")]
         [System.Text.Json.Serialization.JsonPropertyName("card")]
-        public Types.Card Card { get; set; } = default!;
+        public Types.Card? Card { get; set; }
 
         /// <summary>
         /// 获取或设置卡券状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_card_status")]
         [System.Text.Json.Serialization.JsonPropertyName("user_card_status")]
-        public string CardStatus { get; set; } = default!;
+        public string? CardStatus { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-        public string Nickname { get; set; } = default!;
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡编号。

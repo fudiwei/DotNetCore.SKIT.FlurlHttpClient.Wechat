@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cv/img/qrcode 接口的响应。</para>
@@ -38,28 +38,28 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("left_top")]
                         [System.Text.Json.Serialization.JsonPropertyName("left_top")]
-                        public Types.Point LeftTop { get; set; } = default!;
+                        public Types.Point? LeftTop { get; set; }
 
                         /// <summary>
                         /// 获取或设置右上角坐标信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("right_top")]
                         [System.Text.Json.Serialization.JsonPropertyName("right_top")]
-                        public Types.Point RightTop { get; set; } = default!;
+                        public Types.Point? RightTop { get; set; }
 
                         /// <summary>
                         /// 获取或设置右下角坐标信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("right_bottom")]
                         [System.Text.Json.Serialization.JsonPropertyName("right_bottom")]
-                        public Types.Point RightBottom { get; set; } = default!;
+                        public Types.Point? RightBottom { get; set; }
 
                         /// <summary>
                         /// 获取或设置左下角坐标信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("left_bottom")]
                         [System.Text.Json.Serialization.JsonPropertyName("left_bottom")]
-                        public Types.Point LeftBottom { get; set; } = default!;
+                        public Types.Point? LeftBottom { get; set; }
                     }
                 }
 
@@ -68,7 +68,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("type_name")]
-                public string TypeName { get; set; } = default!;
+                public string? TypeName { get; set; }
 
                 /// <summary>
                 /// 获取或设置识别内容。
@@ -108,13 +108,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code_results")]
         [System.Text.Json.Serialization.JsonPropertyName("code_results")]
-        public Types.CodeResult[] ResultList { get; set; } = default!;
+        public List<Types.CodeResult>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置图片大小信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_size")]
         [System.Text.Json.Serialization.JsonPropertyName("img_size")]
-        public Types.ImageSize ImageSize { get; set; } = default!;
+        public Types.ImageSize? ImageSize { get; set; }
     }
 }

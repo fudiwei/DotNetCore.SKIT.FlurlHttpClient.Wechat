@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序用户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.UserInfo UserInfo { get; set; } = new Types.UserInfo();
+        public Types.UserInfo? UserInfo { get; set; }
     }
 }

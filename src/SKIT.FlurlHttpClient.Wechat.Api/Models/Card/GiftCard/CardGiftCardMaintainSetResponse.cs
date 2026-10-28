@@ -19,21 +19,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("page_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("page_id")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                        public string PageId { get; set; } = default!;
+                        public string? PageId { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户控制的货架状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("page_control_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("page_control_type")]
-                        public string PageControlType { get; set; } = default!;
+                        public string? PageControlType { get; set; }
 
                         /// <summary>
                         /// 获取或设置系统控制的货架状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("system_page_control_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("system_page_control_type")]
-                        public string SystemPageControlType { get; set; } = default!;
+                        public string? SystemPageControlType { get; set; }
                     }
                 }
 
@@ -42,21 +42,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("biz_control_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("biz_control_type")]
-                public string BusinessControlType { get; set; } = default!;
+                public string? BusinessControlType { get; set; }
 
                 /// <summary>
                 /// 获取或设置系统控制的所有货架的状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("system_biz_control_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("system_biz_control_type")]
-                public string SystemBusinessControlType { get; set; } = default!;
+                public string? SystemBusinessControlType { get; set; }
 
                 /// <summary>
                 /// 获取或设置货架列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.Page[] PageList { get; set; } = default!;
+                public List<Types.Page>? PageList { get; set; }
             }
         }
 
@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("control_info")]
         [System.Text.Json.Serialization.JsonPropertyName("control_info")]
-        public Types.Control Control { get; set; } = default!;
+        public Types.Control? Control { get; set; }
     }
 }

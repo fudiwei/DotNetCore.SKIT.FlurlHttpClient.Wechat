@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_corpid")]
-        public string AuthorizerCorpId { get; set; } = string.Empty;
+        public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置授权方安装的应用 AgentId。

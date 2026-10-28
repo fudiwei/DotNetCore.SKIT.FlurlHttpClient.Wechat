@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("api_whitelist")]
         [System.Text.Json.Serialization.JsonPropertyName("api_whitelist")]
-        public string[]? ApiWhiteList { get; set; }
+        public List<string>? ApiWhiteList { get; set; }
 
         /// <summary>
         /// 获取或设置版本号。

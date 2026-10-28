@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                public FileItem[] Items { get; set; } = default!;
+                public List<FileItem>? Items { get; set; }
             }
 
             public class FileItem
@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fileid")]
                 [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                public string FileId { get; set; } = default!;
+                public string? FileId { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("file_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("file_name")]
-                public string FileName { get; set; } = default!;
+                public string? FileName { get; set; }
 
                 /// <summary>
                 /// 获取或设置空间 ID。
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_list")]
         [System.Text.Json.Serialization.JsonPropertyName("file_list")]
-        public Types.FileList FileList { get; set; } = default!;
+        public Types.FileList? FileList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

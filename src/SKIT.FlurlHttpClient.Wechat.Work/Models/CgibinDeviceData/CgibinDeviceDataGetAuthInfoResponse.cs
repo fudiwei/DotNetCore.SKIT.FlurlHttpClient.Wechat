@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/devicedata/get_auth_info 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                public DeviceItem[] Items { get; set; } = default!;
+                public List<DeviceItem>? Items { get; set; }
             }
 
             public class DeviceItem
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-                public string DeviceSerialNumber { get; set; } = default!;
+                public string? DeviceSerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备出厂型号。
@@ -61,6 +61,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_list")]
-        public Types.DeviceList DeviceList { get; set; } = default!;
+        public Types.DeviceList? DeviceList { get; set; }
     }
 }

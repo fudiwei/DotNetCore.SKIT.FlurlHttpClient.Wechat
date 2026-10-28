@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_id")]
-                public string FapiaoId { get; set; } = default!;
+                public string? FapiaoId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string FapiaoStatus { get; set; } = default!;
+                public string? FapiaoStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票文件下载地址。
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fapiao_download_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fapiao_download_info_list")]
-        public Types.FapiaoFile[] FapiaoFile { get; set; } = default!;
+        public List<Types.FapiaoFile>? FapiaoFile { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public new Types.Amount Amount { get; set; } = new Types.Amount();
+                public new Types.Amount? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算信息。
@@ -48,27 +48,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_appid")]
-        public string CombineAppId { get; set; } = string.Empty;
+        public string? CombineAppId { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = string.Empty;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置合单商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_out_trade_no")]
-        public string CombineOutTradeNumber { get; set; } = string.Empty;
+        public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置子单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
     }
 }

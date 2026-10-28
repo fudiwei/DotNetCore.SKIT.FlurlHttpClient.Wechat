@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("userid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                                public string UserId { get; set; } = default!;
+                                public string? UserId { get; set; }
                             }
                         }
 
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置外部联系人 UnionId。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("join_scene")]
                         [System.Text.Json.Serialization.JsonPropertyName("join_scene")]
-                        public int JoinScene { get; set; } = default!;
+                        public int JoinScene { get; set; }
 
                         /// <summary>
                         /// 获取或设置入群时间戳。
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
                     }
                 }
 
@@ -106,42 +106,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("chat_id")]
-                public string GroupChatId { get; set; } = default!;
+                public string? GroupChatId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户群名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置群主成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("owner")]
                 [System.Text.Json.Serialization.JsonPropertyName("owner")]
-                public string OwnerUserId { get; set; } = default!;
+                public string? OwnerUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置群公告。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("notice")]
                 [System.Text.Json.Serialization.JsonPropertyName("notice")]
-                public string Notice { get; set; } = default!;
+                public string? Notice { get; set; }
 
                 /// <summary>
                 /// 获取或设置群成员列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("member_list")]
-                public Types.Member[] MemberList { get; set; } = default!;
+                public List<Types.Member>? MemberList { get; set; }
 
                 /// <summary>
                 /// 获取或设置群管理员列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("admin_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("admin_list")]
-                public Types.Administrator[] AdministratorList { get; set; } = default!;
+                public List<Types.Administrator>? AdministratorList { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("member_version")]
-                public string MemberVersion { get; set; } = default!;
+                public string? MemberVersion { get; set; }
             }
         }
 
@@ -164,6 +164,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_chat")]
         [System.Text.Json.Serialization.JsonPropertyName("group_chat")]
-        public Types.GroupChat GroupChat { get; set; } = default!;
+        public Types.GroupChat? GroupChat { get; set; }
     }
 }

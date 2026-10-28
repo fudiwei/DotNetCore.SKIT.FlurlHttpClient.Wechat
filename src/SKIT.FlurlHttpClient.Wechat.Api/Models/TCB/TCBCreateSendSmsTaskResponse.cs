@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query_id")]
         [System.Text.Json.Serialization.JsonPropertyName("query_id")]
-        public string QueryId { get; set; } = default!;
+        public string? QueryId { get; set; }
     }
 }

@@ -15,13 +15,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_id")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
-        public string ComplaintId { get; set; } = default!;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置动作类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_type")]
         [System.Text.Json.Serialization.JsonPropertyName("action_type")]
-        public string ActionType { get; set; } = default!;
+        public string? ActionType { get; set; }
     }
 }

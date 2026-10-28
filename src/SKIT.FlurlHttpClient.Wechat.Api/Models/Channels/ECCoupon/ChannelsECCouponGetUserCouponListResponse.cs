@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_coupon_id")]
-                public string UserCouponId { get; set; } = default!;
+                public string? UserCouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠券 ID。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_coupon_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_coupon_list")]
-        public Types.UserCoupon[] UserCouponList { get; set; } = default!;
+        public List<Types.UserCoupon>? UserCouponList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

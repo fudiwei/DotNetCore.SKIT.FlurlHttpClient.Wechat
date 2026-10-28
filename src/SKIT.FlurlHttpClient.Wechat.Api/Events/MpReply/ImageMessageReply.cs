@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("MediaId")]
                 [System.Text.Json.Serialization.JsonPropertyName("MediaId")]
                 [System.Xml.Serialization.XmlElement("MediaId")]
-                public string MediaId { get; set; } = default!;
+                public string? MediaId { get; set; }
             }
         }
 
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Image")]
         [System.Text.Json.Serialization.JsonPropertyName("Image")]
         [System.Xml.Serialization.XmlElement("Image")]
-        public Types.Image Image { get; set; } = default!;
+        public Types.Image Image { get; set; }
 
         public ImageMessageReply()
         {

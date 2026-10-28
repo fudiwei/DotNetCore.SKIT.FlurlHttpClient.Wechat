@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("access_token")]
                 [System.Text.Json.Serialization.JsonPropertyName("access_token")]
-                public string AccessToken { get; set; } = default!;
+                public string? AccessToken { get; set; }
 
                 /// <summary>
                 /// 获取或设置通讯录迁移凭证有效期（单位：秒）。
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
             }
         }
 
@@ -40,7 +40,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = default!;
+        public string? CorpId { get; set; }
 
         /// <summary>
         /// 获取或设置通讯录迁移信息。
@@ -61,7 +61,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = default!;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置自定义渠道参数。

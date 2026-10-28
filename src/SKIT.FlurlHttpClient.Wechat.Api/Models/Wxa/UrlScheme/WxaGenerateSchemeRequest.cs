@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/generatescheme 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string Path { get; set; } = string.Empty;
+                public string? Path { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面参数。
@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jump_wxa")]
         [System.Text.Json.Serialization.JsonPropertyName("jump_wxa")]
-        public Types.MiniProgram MiniProgram { get; set; } = new Types.MiniProgram();
+        public Types.MiniProgram? MiniProgram { get; set; }
 
         /// <summary>
         /// 获取或设置是否到期失效。

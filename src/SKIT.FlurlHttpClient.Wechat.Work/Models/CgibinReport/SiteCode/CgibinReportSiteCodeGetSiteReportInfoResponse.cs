@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_text")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_text")]
-                        public string OptionText { get; set; } = default!;
+                        public string? OptionText { get; set; }
                     }
                 }
 
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否必填。
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("option_list")]
-                public Types.Option[]? OptionList { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 
@@ -73,6 +73,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("question_templates")]
         [System.Text.Json.Serialization.JsonPropertyName("question_templates")]
-        public Types.QuestionTemplate[] QuestionTemplateList { get; set; } = default!;
+        public List<Types.QuestionTemplate>? QuestionTemplateList { get; set; }
     }
 }

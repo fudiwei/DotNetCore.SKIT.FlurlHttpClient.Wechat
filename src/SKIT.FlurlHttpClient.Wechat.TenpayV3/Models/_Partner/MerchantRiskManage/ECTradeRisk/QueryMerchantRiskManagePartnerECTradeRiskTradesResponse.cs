@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sp_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                public string SubMerchantId { get; set; } = default!;
+                public string? SubMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置风险类型。
@@ -67,6 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("risk_trade_list")]
         [System.Text.Json.Serialization.JsonPropertyName("risk_trade_list")]
-        public Types.RiskTrade[] RiskTradeList { get; set; } = default!;
+        public List<Types.RiskTrade>? RiskTradeList { get; set; }
     }
 }

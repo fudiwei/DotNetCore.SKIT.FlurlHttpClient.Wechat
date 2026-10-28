@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ewaybill_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_id")]
-        public string EWaybillOrderId { get; set; } = string.Empty;
+        public string? EWaybillOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = string.Empty;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置子单的物流单号。

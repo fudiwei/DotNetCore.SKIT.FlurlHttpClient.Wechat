@@ -18,21 +18,21 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ans_node_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("ans_node_name")]
-                        public string AnswerNodeName { get; set; } = default!;
+                        public string? AnswerNodeName { get; set; }
 
                         /// <summary>
                         /// 获取或设置推荐标准问题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置推荐回答。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("answer")]
                         [System.Text.Json.Serialization.JsonPropertyName("answer")]
-                        public string Answer { get; set; } = default!;
+                        public string? Answer { get; set; }
 
                         /// <summary>
                         /// 获取或设置推荐信息指数。
@@ -49,14 +49,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置槽位值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string Value { get; set; } = default!;
+                        public string? Value { get; set; }
 
                         /// <summary>
                         /// 获取或设置归一化的值。
@@ -72,28 +72,28 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answer_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("answer_type")]
-                public string AnswerType { get; set; } = default!;
+                public string? AnswerType { get; set; }
 
                 /// <summary>
                 /// 获取或设置命中的回答。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answer")]
                 [System.Text.Json.Serialization.JsonPropertyName("answer")]
-                public string Answer { get; set; } = default!;
+                public string? Answer { get; set; }
 
                 /// <summary>
                 /// 获取或设置机器人回复状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msg_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("msg_id")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置技能名称。
@@ -114,14 +114,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("options")]
                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public Types.Option[]? OptionList { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
 
                 /// <summary>
                 /// 获取或设置槽位数据列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("slots")]
                 [System.Text.Json.Serialization.JsonPropertyName("slots")]
-                public Types.Slot[]? SlotList { get; set; }
+                public List<Types.Slot>? SlotList { get; set; }
             }
         }
     }

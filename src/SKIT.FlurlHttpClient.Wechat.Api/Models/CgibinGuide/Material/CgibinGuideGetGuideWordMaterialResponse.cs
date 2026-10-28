@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("word")]
                 [System.Text.Json.Serialization.JsonPropertyName("word")]
-                public string Word { get; set; } = default!;
+                public string? Word { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("word_list")]
         [System.Text.Json.Serialization.JsonPropertyName("word_list")]
-        public Types.WordMaterial[] WordList { get; set; } = default!;
+        public List<Types.WordMaterial>? WordList { get; set; }
 
         /// <summary>
         /// 获取或设置图片素材总数。

@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账接收方账户。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_account")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_account")]
-                public string Account { get; set; } = string.Empty;
+                public string? Account { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账个人姓名（需使用平台公钥/证书加密）。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
             }
         }
 
@@ -54,35 +54,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置电商平台 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置微信订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = string.Empty;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置商户分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
-        public string OutOrderNumber { get; set; } = string.Empty;
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置分账接收方列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receivers")]
         [System.Text.Json.Serialization.JsonPropertyName("receivers")]
-        public IList<Types.Receiver> ReceiverList { get; set; } = new List<Types.Receiver>();
+        public List<Types.Receiver>? ReceiverList { get; set; }
 
         /// <summary>
         /// 获取或设置是否分账完成。

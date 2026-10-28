@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chapter_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chapter_id_list")]
-        public string[] ChapterIdList { get; set; } = default!;
+        public List<string>? ChapterIdList { get; set; }
 
         /// <summary>
         /// 获取或设置冲突的提供方章节唯一标识列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("conflict_original_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("conflict_original_id_list")]
-        public string[]? ConflictOriginalIdList { get; set; }
+        public List<string>? ConflictOriginalIdList { get; set; }
     }
 }

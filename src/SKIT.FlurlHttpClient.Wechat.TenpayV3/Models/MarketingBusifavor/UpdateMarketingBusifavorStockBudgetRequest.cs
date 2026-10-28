@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string StockId { get; set; } = string.Empty;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置目标批次最大发放个数。与字段 <see cref="TargetMaxCouponsPerDay"/> 二选一。
@@ -45,6 +45,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("modify_budget_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("modify_budget_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
     }
 }

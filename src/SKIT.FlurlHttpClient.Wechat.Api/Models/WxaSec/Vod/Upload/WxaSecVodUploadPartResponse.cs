@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("etag")]
         [System.Text.Json.Serialization.JsonPropertyName("etag")]
-        public string ETag { get; set; } = default!;
+        public string? ETag { get; set; }
     }
 }

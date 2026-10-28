@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config_id")]
         [System.Text.Json.Serialization.JsonPropertyName("config_id")]
-        public string ConfigId { get; set; } = string.Empty;
+        public string? ConfigId { get; set; }
 
         /// <summary>
         /// 获取或设置控件样式。
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user")]
         [System.Text.Json.Serialization.JsonPropertyName("user")]
-        public IList<string>? UserIdList { get; set; }
+        public List<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置使用该联系方式的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("party")]
         [System.Text.Json.Serialization.JsonPropertyName("party")]
-        public IList<long>? DepartmentIdList { get; set; }
+        public List<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否临时会话模式。

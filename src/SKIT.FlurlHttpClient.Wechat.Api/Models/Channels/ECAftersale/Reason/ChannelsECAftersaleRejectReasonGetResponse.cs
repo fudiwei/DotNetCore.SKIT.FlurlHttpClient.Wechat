@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reject_reason_type_text")]
                 [System.Text.Json.Serialization.JsonPropertyName("reject_reason_type_text")]
-                public string RejectReasonText { get; set; } = default!;
+                public string? RejectReasonText { get; set; }
 
                 /// <summary>
                 /// 获取或设置售后拒绝原因默认描述。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reason_list")]
         [System.Text.Json.Serialization.JsonPropertyName("reason_list")]
-        public Types.RejectReason[] RejectReasonList { get; set; } = default!;
+        public List<Types.RejectReason>? RejectReasonList { get; set; }
     }
 }

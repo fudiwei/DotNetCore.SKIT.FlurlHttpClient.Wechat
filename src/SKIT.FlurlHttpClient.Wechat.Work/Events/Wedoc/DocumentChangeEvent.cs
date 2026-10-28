@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChangeType")]
         [System.Text.Json.Serialization.JsonPropertyName("ChangeType")]
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置文档 ID 列表。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("DocId")]
         [System.Text.Json.Serialization.JsonPropertyName("DocId")]
         [System.Xml.Serialization.XmlElement("DocId", Type = typeof(string), IsNullable = true)]
-        public string[]? DocumentIdList { get; set; }
+        public List<string>? DocumentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置收集表 ID 列表。
@@ -35,6 +35,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("FormId")]
         [System.Text.Json.Serialization.JsonPropertyName("FormId")]
         [System.Xml.Serialization.XmlElement("FormId", Type = typeof(string), IsNullable = true)]
-        public string[]? FormIdList { get; set; }
+        public List<string>? FormIdList { get; set; }
     }
 }

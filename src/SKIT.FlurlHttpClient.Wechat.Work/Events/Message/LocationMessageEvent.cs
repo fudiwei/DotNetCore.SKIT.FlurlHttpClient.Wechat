@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Label")]
         [System.Text.Json.Serialization.JsonPropertyName("Label")]
         [System.Xml.Serialization.XmlElement("Label")]
-        public string Label { get; set; } = default!;
+        public string? Label { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/sharer/get_sharer_live_summary_list 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("live_export_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("live_export_id")]
-                public string LiveExportId { get; set; } = default!;
+                public string? LiveExportId { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播间昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("live_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("live_nickname")]
-                public string LiveNickname { get; set; } = default!;
+                public string? LiveNickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播开始时间戳。
@@ -72,7 +72,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("lives")]
         [System.Text.Json.Serialization.JsonPropertyName("lives")]
-        public Types.Live[] LiveList { get; set; } = default!;
+        public List<Types.Live>? LiveList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置空间标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("space_name")]
         [System.Text.Json.Serialization.JsonPropertyName("space_name")]
-        public string SpaceName { get; set; } = string.Empty;
+        public string? SpaceName { get; set; }
     }
 }

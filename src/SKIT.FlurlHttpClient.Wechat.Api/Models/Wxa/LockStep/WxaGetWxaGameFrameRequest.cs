@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AccessInformation { get; set; } = string.Empty;
+        public string? AccessInformation { get; set; }
 
         /// <summary>
         /// 获取或设置待获取帧的起始帧编号。

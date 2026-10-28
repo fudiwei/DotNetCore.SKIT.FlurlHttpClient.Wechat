@@ -55,35 +55,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("book_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("book_id")]
-                public string BookId { get; set; } = default!;
+                public string? BookId { get; set; }
 
                 /// <summary>
                 /// 获取或设置作品名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置作品简介。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("intro")]
                 [System.Text.Json.Serialization.JsonPropertyName("intro")]
-                public string Introduction { get; set; } = default!;
+                public string? Introduction { get; set; }
 
                 /// <summary>
                 /// 获取或设置封面图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cover_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("cover_url")]
-                public string CoverUrl { get; set; } = default!;
+                public string? CoverUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置作者名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("author")]
                 [System.Text.Json.Serialization.JsonPropertyName("author")]
-                public string Author { get; set; } = default!;
+                public string? Author { get; set; }
 
                 /// <summary>
                 /// 获取或设置一级类型 ID。
@@ -183,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("book_list")]
         [System.Text.Json.Serialization.JsonPropertyName("book_list")]
-        public Types.Book[] BookList { get; set; } = default!;
+        public List<Types.Book>? BookList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

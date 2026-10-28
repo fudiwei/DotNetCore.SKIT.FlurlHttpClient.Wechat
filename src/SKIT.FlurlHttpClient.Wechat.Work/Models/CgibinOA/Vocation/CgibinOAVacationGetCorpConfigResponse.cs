@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                public QuotaRuleItem[] Items { get; set; } = default!;
+                                public List<QuotaRuleItem>? Items { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否根据实际入职时间计算假期。
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("quota_rules")]
                         [System.Text.Json.Serialization.JsonPropertyName("quota_rules")]
-                        public Types.QuotaRuleList QuotaRuleList { get; set; } = default!;
+                        public Types.QuotaRuleList? QuotaRuleList { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否按照入职日期发放假期。
@@ -195,7 +195,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置时长计算类型。
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("quota_attr")]
                 [System.Text.Json.Serialization.JsonPropertyName("quota_attr")]
-                public Types.Quota Quota { get; set; } = default!;
+                public Types.Quota? Quota { get; set; }
 
                 /// <summary>
                 /// 获取或设置一天对应的秒数。
@@ -255,6 +255,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("lists")]
         [System.Text.Json.Serialization.JsonPropertyName("lists")]
-        public Types.Vacation[] VacationList { get; set; } = default!;
+        public List<Types.Vacation>? VacationList { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env_id")]
         [System.Text.Json.Serialization.JsonPropertyName("env_id")]
-        public string EnvironmentId { get; set; } = default!;
+        public string? EnvironmentId { get; set; }
     }
 }

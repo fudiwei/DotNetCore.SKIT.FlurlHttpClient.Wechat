@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/school/agent/get_allow_scope 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
                     }
                 }
 
@@ -27,14 +27,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("students")]
                 [System.Text.Json.Serialization.JsonPropertyName("students")]
-                public Types.Student[] StudentList { get; set; } = default!;
+                public List<Types.Student>? StudentList { get; set; }
 
                 /// <summary>
                 /// 获取或设置可使用的部门 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("departments")]
                 [System.Text.Json.Serialization.JsonPropertyName("departments")]
-                public long[] DepartmentIdList { get; set; } = default!;
+                public List<long>? DepartmentIdList { get; set; }
             }
         }
 
@@ -43,6 +43,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_scope")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_scope")]
-        public Types.Scope AllowScope { get; set; } = default!;
+        public Types.Scope? AllowScope { get; set; }
     }
 }

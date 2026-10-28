@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /user-order/shoppinginfo/verify 接口的请求。</para>
@@ -21,13 +21,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_key")]
         [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-        public Types.OrderKey OrderKey { get; set; } = new Types.OrderKey();
+        public Types.OrderKey? OrderKey { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/get_category 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("first_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("first_class")]
-                public string FirstCategoryName { get; set; } = default!;
+                public string? FirstCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目 ID。
@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("second_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("second_class")]
-                public string SecondCategoryName { get; set; } = default!;
+                public string? SecondCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置三级类目 ID。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("category_list")]
         [System.Text.Json.Serialization.JsonPropertyName("category_list")]
-        public Types.Category[] CategoryList { get; set; } = default!;
+        public List<Types.Category>? CategoryList { get; set; }
     }
 }

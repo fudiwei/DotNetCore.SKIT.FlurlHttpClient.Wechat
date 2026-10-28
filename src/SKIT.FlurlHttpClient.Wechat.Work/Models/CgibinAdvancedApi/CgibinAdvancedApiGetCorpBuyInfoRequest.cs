@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置购买的高级接口类型。
@@ -25,6 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("custom_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("custom_corpid")]
-        public string CustomCorpId { get; set; } = string.Empty;
+        public string? CustomCorpId { get; set; }
     }
 }

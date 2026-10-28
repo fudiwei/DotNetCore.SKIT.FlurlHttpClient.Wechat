@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/batch_to_external_userid 接口的响应。</para>
@@ -51,13 +51,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_list")]
         [System.Text.Json.Serialization.JsonPropertyName("success_list")]
-        public Types.Result[] SuccessResultList { get; set; } = default!;
+        public List<Types.Result>? SuccessResultList { get; set; }
 
         /// <summary>
         /// 获取或设置转换失败结果列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public Types.Result[] FailResultList { get; set; } = default!;
+        public List<Types.Result>? FailResultList { get; set; }
     }
 }

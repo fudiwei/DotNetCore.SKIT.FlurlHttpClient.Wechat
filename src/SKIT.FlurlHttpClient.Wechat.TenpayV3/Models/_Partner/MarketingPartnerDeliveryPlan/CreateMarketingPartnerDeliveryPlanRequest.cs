@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置商品券 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("product_coupon_id")]
-        public string ProductCouponId { get; set; } = string.Empty;
+        public string? ProductCouponId { get; set; }
 
         /// <summary>
         /// 获取或设置商品券批次 ID。

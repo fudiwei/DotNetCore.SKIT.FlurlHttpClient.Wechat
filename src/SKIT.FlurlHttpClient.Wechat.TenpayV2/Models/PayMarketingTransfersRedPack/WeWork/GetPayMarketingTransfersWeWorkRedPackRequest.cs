@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_billno")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_billno")]
-        public string MerchantBillNumber { get; set; } = string.Empty;
+        public string? MerchantBillNumber { get; set; }
     }
 }

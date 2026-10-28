@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pub_key")]
         [System.Text.Json.Serialization.JsonPropertyName("pub_key")]
-        public string PublicKey { get; set; } = default!;
+        public string? PublicKey { get; set; }
     }
 }

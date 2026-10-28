@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ActivateTicket { get; set; } = string.Empty;
+        public string? ActivateTicket { get; set; }
     }
 }

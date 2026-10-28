@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品副标题。
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("headImg")]
                         [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-                        public string[] HeadImageUrlList { get; set; } = default!;
+                        public List<string>? HeadImageUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置 SKU 最低价格（单位：分）。
@@ -87,21 +87,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appId")]
                         [System.Text.Json.Serialization.JsonPropertyName("appId")]
-                        public string AppId { get; set; } = default!;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("path")]
                         [System.Text.Json.Serialization.JsonPropertyName("path")]
-                        public string PagePath { get; set; } = default!;
+                        public string? PagePath { get; set; }
 
                         /// <summary>
                         /// 获取或设置经过 Base64 编码的小程序码图片。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("wxaCode")]
                         [System.Text.Json.Serialization.JsonPropertyName("wxaCode")]
-                        public string EncodingWxaCode { get; set; } = default!;
+                        public string? EncodingWxaCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置推广商品文案。
@@ -138,14 +138,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pid")]
                 [System.Text.Json.Serialization.JsonPropertyName("pid")]
-                public string PromotionId { get; set; } = default!;
+                public string? PromotionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("productInfo")]
-                public Types.Product Product { get; set; } = default!;
+                public Types.Product? Product { get; set; }
 
                 /// <summary>
                 /// 获取或设置推广相关信息。
@@ -161,6 +161,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.ProductPromotion[] ProductPromotionList { get; set; } = default!;
+        public List<Types.ProductPromotion>? ProductPromotionList { get; set; }
     }
 }

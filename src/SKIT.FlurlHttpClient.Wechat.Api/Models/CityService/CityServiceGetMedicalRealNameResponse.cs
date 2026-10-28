@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("app_id")]
         [System.Text.Json.Serialization.JsonPropertyName("app_id")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_id")]
         [System.Text.Json.Serialization.JsonPropertyName("open_id")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置实名信息加密密钥版本号。
@@ -31,13 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cipher_real_name")]
         [System.Text.Json.Serialization.JsonPropertyName("cipher_real_name")]
-        public string CipherRealName { get; set; } = default!;
+        public string? CipherRealName { get; set; }
 
         /// <summary>
         /// 获取或设置加密算法。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cipher_algorithm")]
         [System.Text.Json.Serialization.JsonPropertyName("cipher_algorithm")]
-        public string CipherAlgorithm { get; set; } = default!;
+        public string? CipherAlgorithm { get; set; }
     }
 }

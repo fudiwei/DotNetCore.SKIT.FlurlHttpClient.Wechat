@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/report/resident/category_statistic 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dashboard_list")]
         [System.Text.Json.Serialization.JsonPropertyName("dashboard_list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

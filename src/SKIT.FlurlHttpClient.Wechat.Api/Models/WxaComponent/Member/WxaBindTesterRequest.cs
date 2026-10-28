@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wechatid")]
         [System.Text.Json.Serialization.JsonPropertyName("wechatid")]
-        public string Wxname { get; set; } = string.Empty;
+        public string? Wxname { get; set; }
     }
 }

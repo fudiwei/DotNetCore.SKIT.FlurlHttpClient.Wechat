@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/get_list 接口的响应。</para>
@@ -42,14 +42,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_coupon_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
-                        public string OutCouponId { get; set; } = default!;
+                        public string? OutCouponId { get; set; }
 
                         /// <summary>
                         /// 获取或设置库存信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("stock_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("stock_info")]
-                        public Types.Stock Stock { get; set; } = default!;
+                        public Types.Stock? Stock { get; set; }
 
                         /// <summary>
                         /// 获取或设置更新时间戳。
@@ -72,14 +72,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon")]
-                public Types.Coupon Coupon { get; set; } = default!;
+                public Types.Coupon? Coupon { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠券库存信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_stock")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_stock")]
-                public Types.CouponStock CouponStock { get; set; } = default!;
+                public Types.CouponStock? CouponStock { get; set; }
             }
         }
 
@@ -88,7 +88,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("result_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

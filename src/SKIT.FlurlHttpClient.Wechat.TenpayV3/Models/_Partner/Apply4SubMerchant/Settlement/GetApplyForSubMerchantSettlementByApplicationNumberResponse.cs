@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_type")]
         [System.Text.Json.Serialization.JsonPropertyName("account_type")]
-        public string AccountType { get; set; } = default!;
+        public string? AccountType { get; set; }
 
         /// <summary>
         /// 获取或设置开户名称（掩码显示）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_name")]
         [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-        public string AccountName { get; set; } = default!;
+        public string? AccountName { get; set; }
 
         /// <summary>
         /// 获取或设置银行账号（掩码显示）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_number")]
         [System.Text.Json.Serialization.JsonPropertyName("account_number")]
-        public string AccountNumber { get; set; } = default!;
+        public string? AccountNumber { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_bank")]
         [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
-        public string AccountBank { get; set; } = default!;
+        public string? AccountBank { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行省市编码。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verify_result")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_result")]
-        public string VerifyResult { get; set; } = default!;
+        public string? VerifyResult { get; set; }
 
         /// <summary>
         /// 获取或设置汇款验证失败原因。

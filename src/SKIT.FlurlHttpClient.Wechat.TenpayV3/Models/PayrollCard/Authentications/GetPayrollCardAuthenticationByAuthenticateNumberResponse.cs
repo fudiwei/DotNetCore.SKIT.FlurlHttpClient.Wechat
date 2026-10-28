@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -24,56 +24,56 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置商家核身单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_number")]
-        public string AuthenticateNumber { get; set; } = default!;
+        public string? AuthenticateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置核身渠道。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_scene")]
-        public string AuthenticateScene { get; set; } = default!;
+        public string? AuthenticateScene { get; set; }
 
         /// <summary>
         /// 获取或设置核身渠道标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_source")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_source")]
-        public string AuthenticateSource { get; set; } = default!;
+        public string? AuthenticateSource { get; set; }
 
         /// <summary>
         /// 获取或设置项目名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("project_name")]
         [System.Text.Json.Serialization.JsonPropertyName("project_name")]
-        public string ProjectName { get; set; } = default!;
+        public string? ProjectName { get; set; }
 
         /// <summary>
         /// 获取或设置单位名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employer_name")]
         [System.Text.Json.Serialization.JsonPropertyName("employer_name")]
-        public string EmployerName { get; set; } = default!;
+        public string? EmployerName { get; set; }
 
         /// <summary>
         /// 获取或设置核身类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_type")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_type")]
-        public string AuthenticateType { get; set; } = default!;
+        public string? AuthenticateType { get; set; }
 
         /// <summary>
         /// 获取或设置核身状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_state")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_state")]
-        public string AuthenticateState { get; set; } = default!;
+        public string? AuthenticateState { get; set; }
 
         /// <summary>
         /// 获取或设置核身时间。

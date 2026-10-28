@@ -60,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finder_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-                public string FinderId { get; set; } = default!;
+                public string? FinderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频号昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finder_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("finder_nickname")]
-                public string FinderNickname { get; set; } = default!;
+                public string? FinderNickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置达人号 ID。
@@ -102,7 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                public Types.Data Data { get; set; } = default!;
+                public Types.Data? Data { get; set; }
             }
         }
 
@@ -111,6 +111,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_list")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_list")]
-        public Types.Finder[] FinderList { get; set; } = default!;
+        public List<Types.Finder>? FinderList { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境别名。
@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_net_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_net_ids")]
-        public IList<string>? SubNetIdList { get; set; }
+        public List<string>? SubNetIdList { get; set; }
     }
 }

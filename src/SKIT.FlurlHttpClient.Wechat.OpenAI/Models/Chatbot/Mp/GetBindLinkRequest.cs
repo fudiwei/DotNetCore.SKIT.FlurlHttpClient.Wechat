@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("redirectlink")]
         [System.Text.Json.Serialization.JsonPropertyName("redirectlink")]
-        public string RedirectUrl { get; set; } = string.Empty;
+        public string? RedirectUrl { get; set; }
     }
 }

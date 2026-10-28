@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string PagePath { get; set; } = default!;
+        public string? PagePath { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面参数字符串。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query_string")]
         [System.Text.Json.Serialization.JsonPropertyName("query_string")]
-        public string PageQueryString { get; set; } = default!;
+        public string? PageQueryString { get; set; }
 
         /// <summary>
         /// 获取或设置业务类型。

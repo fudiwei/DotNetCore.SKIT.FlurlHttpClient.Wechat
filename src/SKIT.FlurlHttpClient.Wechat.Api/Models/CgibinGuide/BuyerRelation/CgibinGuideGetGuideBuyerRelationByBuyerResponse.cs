@@ -24,14 +24,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string BuyerOpenId { get; set; } = default!;
+        public string? BuyerOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置客户微信昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_nickname")]
-        public string BuyerNickname { get; set; } = default!;
+        public string? BuyerNickname { get; set; }
 
         /// <summary>
         /// 获取或设置绑定时间戳。

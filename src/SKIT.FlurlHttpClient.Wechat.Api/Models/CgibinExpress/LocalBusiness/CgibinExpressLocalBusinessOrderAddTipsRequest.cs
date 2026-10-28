@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_no")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_no")]
-        public string ShopNumber { get; set; } = string.Empty;
+        public string? ShopNumber { get; set; }
 
         /// <summary>
         /// 获取或设置配送单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置下单用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置小费金额（单位：元）。
@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("remark")]
         [System.Text.Json.Serialization.JsonPropertyName("remark")]
-        public string Remark { get; set; } = string.Empty;
+        public string? Remark { get; set; }
     }
 }

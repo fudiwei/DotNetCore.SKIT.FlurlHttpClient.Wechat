@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prepay_id")]
         [System.Text.Json.Serialization.JsonPropertyName("prepay_id")]
-        public string PrepayId { get; set; } = default!;
+        public string? PrepayId { get; set; }
     }
 }

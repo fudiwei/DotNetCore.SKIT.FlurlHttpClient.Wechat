@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /capital/capitallhh/areas/provinces/{province_code}/cities 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                public string CityName { get; set; } = default!;
+                public string? CityName { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市编码。
@@ -30,7 +30,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.City[] CityList { get; set; } = default!;
+        public List<Types.City>? CityList { get; set; }
 
         /// <summary>
         /// 获取或设置数据总条数。

@@ -24,28 +24,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualification_list")]
         [System.Text.Json.Serialization.JsonPropertyName("qualification_list")]
-        public IList<string>? QualificationMediaIdList { get; set; }
+        public List<string>? QualificationMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置门店小程序的昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-        public string Nickname { get; set; } = string.Empty;
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置门店小程序的介绍。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("intro")]
         [System.Text.Json.Serialization.JsonPropertyName("intro")]
-        public string Introduction { get; set; } = string.Empty;
+        public string? Introduction { get; set; }
 
         /// <summary>
         /// 获取或设置门店小程序的头像媒体文件标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("headimg_mediaid")]
         [System.Text.Json.Serialization.JsonPropertyName("headimg_mediaid")]
-        public string HeadImageMediaId { get; set; } = string.Empty;
+        public string? HeadImageMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置营业执照图片媒体文件标识。
@@ -59,6 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("other_files")]
         [System.Text.Json.Serialization.JsonPropertyName("other_files")]
-        public IList<string>? OtherFileMediaIdList { get; set; }
+        public List<string>? OtherFileMediaIdList { get; set; }
     }
 }

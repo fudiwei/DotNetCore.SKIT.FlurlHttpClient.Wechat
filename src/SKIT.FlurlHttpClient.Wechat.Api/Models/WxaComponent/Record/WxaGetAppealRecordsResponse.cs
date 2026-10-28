@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/getappealrecords 接口的响应。</para>
@@ -35,14 +35,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content")]
                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string Content { get; set; } = default!;
+                        public string? Content { get; set; }
 
                         /// <summary>
                         /// 获取或设置违规链接。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("content_url")]
-                        public string ContentUrl { get; set; } = default!;
+                        public string? ContentUrl { get; set; }
                     }
 
                     public class AppealMaterial
@@ -52,14 +52,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reason")]
                         [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                        public string Reason { get; set; } = default!;
+                        public string? Reason { get; set; }
 
                         /// <summary>
                         /// 获取或设置证明材料 MediaId 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("proof_material_ids")]
                         [System.Text.Json.Serialization.JsonPropertyName("proof_material_ids")]
-                        public string[] ProofMediaIdList { get; set; } = default!;
+                        public List<string>? ProofMediaIdList { get; set; }
                     }
                 }
 
@@ -68,7 +68,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appeal_record_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("appeal_record_id")]
-                public long AppealRecordId { get; set; } = default!;
+                public long AppealRecordId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申诉次数。
@@ -96,7 +96,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("materials")]
                 [System.Text.Json.Serialization.JsonPropertyName("materials")]
-                public Types.Material[]? MaterialList { get; set; }
+                public List<Types.Material>? MaterialList { get; set; }
 
                 /// <summary>
                 /// 获取或设置处罚原因描述。
@@ -126,6 +126,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("records")]
         [System.Text.Json.Serialization.JsonPropertyName("records")]
-        public Types.AppealRecord[] AppealRecordList { get; set; } = default!;
+        public List<Types.AppealRecord>? AppealRecordList { get; set; }
     }
 }

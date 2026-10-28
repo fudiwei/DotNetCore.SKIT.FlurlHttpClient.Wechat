@@ -24,7 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!;
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.MD5Utility.Hash(request.FileBytes)).Value!;
+                }
             }
 
             if (request.FileContentType is null)

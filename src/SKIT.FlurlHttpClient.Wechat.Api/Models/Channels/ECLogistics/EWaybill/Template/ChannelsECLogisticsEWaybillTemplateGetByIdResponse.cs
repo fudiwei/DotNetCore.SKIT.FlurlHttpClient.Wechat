@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_info")]
         [System.Text.Json.Serialization.JsonPropertyName("template_info")]
-        public Types.Template Template { get; set; } = default!;
+        public Types.Template? Template { get; set; }
     }
 }

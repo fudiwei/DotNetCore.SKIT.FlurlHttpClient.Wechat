@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("Item")]
                 [System.Text.Json.Serialization.JsonPropertyName("Item")]
                 [System.Xml.Serialization.XmlElement("Item")]
-                public string[] Items { get; set; } = default!;
+                public List<string>? Items { get; set; }
             }
         }
 
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChangeType")]
         [System.Text.Json.Serialization.JsonPropertyName("ChangeType")]
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置客户群 ID。

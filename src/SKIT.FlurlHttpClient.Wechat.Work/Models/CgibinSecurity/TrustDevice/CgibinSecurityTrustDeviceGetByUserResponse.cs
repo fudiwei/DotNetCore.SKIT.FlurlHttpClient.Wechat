@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_list")]
-        public Types.Device[] DeviceList { get; set; } = default!;
+        public List<Types.Device>? DeviceList { get; set; }
     }
 }

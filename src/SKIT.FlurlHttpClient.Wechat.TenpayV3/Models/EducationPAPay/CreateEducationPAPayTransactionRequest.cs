@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -55,21 +55,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = string.Empty;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商品描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("body")]
         [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。
@@ -98,14 +98,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = "EDUCATION_PERIOD";
+        public string? TradeScene { get; set; } = "EDUCATION_PERIOD";
 
         /// <summary>
         /// 获取或设置金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public Types.Amount Amount { get; set; } = new Types.Amount();
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置设备信息。

@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultmsg")]
         [System.Text.Json.Serialization.JsonPropertyName("resultmsg")]
-        public string ResultMessage { get; set; } = default!;
+        public string? ResultMessage { get; set; }
 
         public override bool IsSuccessful()
         {

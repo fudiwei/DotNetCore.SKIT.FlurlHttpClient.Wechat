@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errmsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_resp")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_resp")]
-        public Types.BuyerResponse[]? BuyerResponseList { get; set; }
+        public List<Types.BuyerResponse>? BuyerResponseList { get; set; }
     }
 }

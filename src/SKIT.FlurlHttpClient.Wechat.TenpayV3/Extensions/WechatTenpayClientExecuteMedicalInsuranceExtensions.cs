@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutTradeNumber, "out_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "med-ins", "orders", "out-trade-no", request.OutTradeNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "med-ins", "orders", "out-trade-no", request.OutTradeNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMedicalInsuranceOrderByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.MixTradeNumber, "mix_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "med-ins", "orders", "mix-trade-no", request.MixTradeNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "med-ins", "orders", "mix-trade-no", request.MixTradeNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMedicalInsuranceOrderByMixTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

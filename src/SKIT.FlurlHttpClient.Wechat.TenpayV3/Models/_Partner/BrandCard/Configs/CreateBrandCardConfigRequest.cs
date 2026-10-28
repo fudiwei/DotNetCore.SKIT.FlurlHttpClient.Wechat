@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = string.Empty;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序默认跳转路径。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("customer_service_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("customer_service_type")]
-                public string CustomerServiceType { get; set; } = string.Empty;
+                public string? CustomerServiceType { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服电话。
@@ -69,21 +69,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_classify_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_classify_name")]
-                public string ServiceClassifyName { get; set; } = string.Empty;
+                public string? ServiceClassifyName { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-                public string ServiceName { get; set; } = string.Empty;
+                public string? ServiceName { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务跳转类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_jump_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_jump_type")]
-                public string JumpType { get; set; } = string.Empty;
+                public string? JumpType { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务小程序 AppId。
@@ -106,34 +106,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_code")]
         [System.Text.Json.Serialization.JsonPropertyName("business_code")]
-        public string BusinessCode { get; set; } = string.Empty;
+        public string? BusinessCode { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置品牌小程序信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_mini_program_info")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_mini_program_info")]
-        public Types.MiniProgram MiniProgram { get; set; } = new Types.MiniProgram();
+        public Types.MiniProgram? MiniProgram { get; set; }
 
         /// <summary>
         /// 获取或设置品牌客服信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_customer_service")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_customer_service")]
-        public Types.CustomerService CustomerService { get; set; } = new Types.CustomerService();
+        public Types.CustomerService? CustomerService { get; set; }
 
         /// <summary>
         /// 获取或设置服务列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_list")]
         [System.Text.Json.Serialization.JsonPropertyName("service_list")]
-        public IList<Types.Service>? ServiceList { get; set; }
+        public List<Types.Service>? ServiceList { get; set; }
     }
 }

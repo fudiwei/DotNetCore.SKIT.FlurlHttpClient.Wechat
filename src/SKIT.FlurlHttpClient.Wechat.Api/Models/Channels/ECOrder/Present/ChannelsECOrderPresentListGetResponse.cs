@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("present_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string PresentOrderId { get; set; } = default!;
+                public string? PresentOrderId { get; set; }
             }
         }
 
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("present_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("present_order_list")]
-        public Types.PresentOrder[] PresentOrderList { get; set; } = default!;
+        public List<Types.PresentOrder>? PresentOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

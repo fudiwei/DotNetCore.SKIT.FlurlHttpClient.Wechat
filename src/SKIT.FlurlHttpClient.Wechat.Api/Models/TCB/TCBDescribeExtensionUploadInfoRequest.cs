@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("FileType")]
                         [System.Text.Json.Serialization.JsonPropertyName("FileType")]
-                        public string FileType { get; set; } = string.Empty;
+                        public string? FileType { get; set; }
 
                         /// <summary>
                         /// 获取或设置文件名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("FileName")]
                         [System.Text.Json.Serialization.JsonPropertyName("FileName")]
-                        public string FileName { get; set; } = string.Empty;
+                        public string? FileName { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ExtensionFiles")]
                 [System.Text.Json.Serialization.JsonPropertyName("ExtensionFiles")]
-                public IList<Types.ExtensionFile> ExtensionFileList { get; set; } = new List<Types.ExtensionFile>();
+                public List<Types.ExtensionFile>? ExtensionFileList { get; set; }
             }
         }
 
@@ -43,6 +43,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("PostData")]
         [System.Text.Json.Serialization.JsonPropertyName("PostData")]
-        public Types.Data Data { get; set; } = new Types.Data();
+        public Types.Data? Data { get; set; }
     }
 }

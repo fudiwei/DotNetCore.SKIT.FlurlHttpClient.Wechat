@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /funds/get 接口的响应。</para>
@@ -45,7 +45,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("fund_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("fund_type")]
-                        public string FundType { get; set; } = default!;
+                        public string? FundType { get; set; }
 
                         /// <summary>
                         /// 获取或设置资金余额（单位：分）。
@@ -68,7 +68,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.Fund[] FundList { get; set; } = default!;
+                public List<Types.Fund>? FundList { get; set; }
             }
         }
 
@@ -77,6 +77,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

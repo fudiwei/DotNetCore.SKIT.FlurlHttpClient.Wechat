@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("parent_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
-                        public string ParentUserId { get; set; } = default!;
+                        public string? ParentUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置手机号码。
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("relation")]
                         [System.Text.Json.Serialization.JsonPropertyName("relation")]
-                        public string Relation { get; set; } = default!;
+                        public string? Relation { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否关注了“学校通知”。
@@ -57,28 +57,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("student_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("student_userid")]
-                public string StudentUserId { get; set; } = default!;
+                public string? StudentUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置学生姓名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置学生所在的部门 ID（即班级）列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department")]
                 [System.Text.Json.Serialization.JsonPropertyName("department")]
-                public long[] DepartmentIdList { get; set; } = default!;
+                public List<long>? DepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置学生的家长列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parents")]
                 [System.Text.Json.Serialization.JsonPropertyName("parents")]
-                public Types.Parent[] Parents { get; set; } = default!;
+                public List<Types.Parent>? Parents { get; set; }
             }
 
             public class Parent
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("student_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("student_userid")]
-                        public string StudentUserId { get; set; } = default!;
+                        public string? StudentUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置学生姓名。
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("relation")]
                         [System.Text.Json.Serialization.JsonPropertyName("relation")]
-                        public string Relation { get; set; } = default!;
+                        public string? Relation { get; set; }
                     }
                 }
 
@@ -115,21 +115,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parent_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
-                public string ParentUserId { get; set; } = default!;
+                public string? ParentUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置手机号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-                public string MobileNumber { get; set; } = default!;
+                public string? MobileNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置家长的孩子列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("children")]
                 [System.Text.Json.Serialization.JsonPropertyName("children")]
-                public Types.Child[] Children { get; set; } = default!;
+                public List<Types.Child>? Children { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否关注了“学校通知”。

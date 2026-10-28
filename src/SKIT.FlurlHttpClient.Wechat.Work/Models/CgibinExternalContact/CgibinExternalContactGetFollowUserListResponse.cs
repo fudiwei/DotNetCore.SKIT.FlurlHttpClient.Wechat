@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/externalcontact/get_follow_user_list 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("follow_user")]
         [System.Text.Json.Serialization.JsonPropertyName("follow_user")]
-        public string[] FollowUserIdList { get; set; } = default!;
+        public List<string>? FollowUserIdList { get; set; }
     }
 }

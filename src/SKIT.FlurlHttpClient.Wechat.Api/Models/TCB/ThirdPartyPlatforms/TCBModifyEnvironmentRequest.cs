@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
     }
 }

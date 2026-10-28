@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ReplaceName")]
                 [System.Text.Json.Serialization.JsonPropertyName("ReplaceName")]
                 [System.Xml.Serialization.XmlElement("ReplaceName")]
-                public string ReplacementText { get; set; } = string.Empty;
+                public string? ReplacementText { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Button")]
         [System.Text.Json.Serialization.JsonPropertyName("Button")]
         [System.Xml.Serialization.XmlElement("Button")]
-        public Types.Button Button { get; set; } = new Types.Button();
+        public Types.Button Button { get; set; }
 
         public UpdateButtonReply()
         {

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string EnvironmentId { get; set; } = default!;
+                public string? EnvironmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置环境别名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("alias")]
                 [System.Text.Json.Serialization.JsonPropertyName("alias")]
-                public string Alias { get; set; } = default!;
+                public string? Alias { get; set; }
 
                 /// <summary>
                 /// 获取或设置环境状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置产品套餐 ID。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset UpdateTime { get; set; } = default!;
+                public DateTimeOffset UpdateTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset CreateTime { get; set; } = default!;
+                public DateTimeOffset CreateTime { get; set; }
             }
         }
 
@@ -69,6 +69,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("info_list")]
-        public Types.Environment[] EnvironmentList { get; set; } = default!;
+        public List<Types.Environment>? EnvironmentList { get; set; }
     }
 }

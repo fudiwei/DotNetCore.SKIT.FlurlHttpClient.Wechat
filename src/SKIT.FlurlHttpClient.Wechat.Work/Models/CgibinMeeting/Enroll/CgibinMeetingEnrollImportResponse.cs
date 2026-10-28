@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("enroll_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("enroll_id")]
-                public string EnrollId { get; set; } = default!;
+                public string? EnrollId { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员账号。
@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enroll_list")]
         [System.Text.Json.Serialization.JsonPropertyName("enroll_list")]
-        public Types.Enroll[] EnrollList { get; set; } = default!;
+        public List<Types.Enroll>? EnrollList { get; set; }
     }
 }

@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置同业过滤标签值列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("advertising_industry_filters")]
         [System.Text.Json.Serialization.JsonPropertyName("advertising_industry_filters")]
-        public IList<string> AdvertisingIndustryFilterList { get; set; } = new List<string>();
+        public List<string>? AdvertisingIndustryFilterList { get; set; }
     }
 }

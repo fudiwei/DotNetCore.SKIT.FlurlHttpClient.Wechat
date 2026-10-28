@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string KfAccount { get; set; } = string.Empty;
+        public string? KfAccount { get; set; }
 
         /// <summary>
         /// 获取或设置客服头像图片文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] HeadImageFileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? HeadImageFileBytes { get; set; }
     }
 }

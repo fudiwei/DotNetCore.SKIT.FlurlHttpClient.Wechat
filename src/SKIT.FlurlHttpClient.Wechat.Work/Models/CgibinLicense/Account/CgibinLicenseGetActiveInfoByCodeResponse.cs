@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/license/get_active_info_by_code 接口的响应。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("to_active_code")]
                         [System.Text.Json.Serialization.JsonPropertyName("to_active_code")]
-                        public string ToActiveCode { get; set; } = default!;
+                        public string? ToActiveCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置原激活码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("from_active_code")]
                         [System.Text.Json.Serialization.JsonPropertyName("from_active_code")]
-                        public string FromActiveCode { get; set; } = default!;
+                        public string? FromActiveCode { get; set; }
                     }
 
                     public class ShareInfo
@@ -35,14 +35,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("to_corpid")]
                         [System.Text.Json.Serialization.JsonPropertyName("to_corpid")]
-                        public string ToCorpId { get; set; } = default!;
+                        public string? ToCorpId { get; set; }
 
                         /// <summary>
                         /// 获取或设置原企业 ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("from_corpid")]
                         [System.Text.Json.Serialization.JsonPropertyName("from_corpid")]
-                        public string FromCorpId { get; set; } = default!;
+                        public string? FromCorpId { get; set; }
                     }
                 }
 
@@ -51,7 +51,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("active_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("active_code")]
-                public string ActiveCode { get; set; } = default!;
+                public string? ActiveCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号类型。
@@ -116,6 +116,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("active_info")]
         [System.Text.Json.Serialization.JsonPropertyName("active_info")]
-        public Types.ActiveInfo ActiveInfo { get; set; } = default!;
+        public Types.ActiveInfo? ActiveInfo { get; set; }
     }
 }

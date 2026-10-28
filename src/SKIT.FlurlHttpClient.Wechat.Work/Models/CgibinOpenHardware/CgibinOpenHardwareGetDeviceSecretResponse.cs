@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_secret")]
         [System.Text.Json.Serialization.JsonPropertyName("device_secret")]
-        public string DeviceSecret { get; set; } = default!;
+        public string? DeviceSecret { get; set; }
 
         /// <summary>
         /// 获取或设置设备接口调用凭证。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("device_access_token")]
-        public string DeviceAccessToken { get; set; } = default!;
+        public string? DeviceAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置设备接口调用凭证有效期（单位：秒）。

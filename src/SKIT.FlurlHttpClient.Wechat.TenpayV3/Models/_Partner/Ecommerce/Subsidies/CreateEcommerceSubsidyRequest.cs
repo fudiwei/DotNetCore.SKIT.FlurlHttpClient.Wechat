@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = string.Empty;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置微信退款单号。
@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_subsidy_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_subsidy_no")]
-        public string OutSubsidyNumber { get; set; } = string.Empty;
+        public string? OutSubsidyNumber { get; set; }
 
         /// <summary>
         /// 获取或设置补差描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置补差金额（单位：分）。

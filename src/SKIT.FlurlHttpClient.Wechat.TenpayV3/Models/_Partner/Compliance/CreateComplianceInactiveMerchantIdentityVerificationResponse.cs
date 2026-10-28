@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verification_id")]
         [System.Text.Json.Serialization.JsonPropertyName("verification_id")]
-        public string VerificationId { get; set; } = default!;
+        public string? VerificationId { get; set; }
     }
 }

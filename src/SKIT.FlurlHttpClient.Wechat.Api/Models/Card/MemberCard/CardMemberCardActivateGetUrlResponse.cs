@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; }
 
         public IDictionary<string, string> GetUrlParameters()
         {

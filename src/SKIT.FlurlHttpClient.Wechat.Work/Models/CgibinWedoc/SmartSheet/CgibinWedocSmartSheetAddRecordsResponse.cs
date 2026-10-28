@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("record_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("record_id")]
-                public string RecordId { get; set; } = default!;
+                public string? RecordId { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("records")]
         [System.Text.Json.Serialization.JsonPropertyName("records")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
     }
 }

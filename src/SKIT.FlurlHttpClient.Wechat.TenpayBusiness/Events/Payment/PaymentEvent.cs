@@ -16,14 +16,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_payment_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_payment_id")]
-                public string OutPaymentId { get; set; } = default!;
+                public string? OutPaymentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置微企付支付单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payment_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("payment_id")]
-                public string PaymentId { get; set; } = default!;
+                public string? PaymentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付金额（单位：分）。
@@ -37,21 +37,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("purchaser_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("purchaser_id")]
-                public string PurchaserId { get; set; } = default!;
+                public string? PurchaserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置收款方企业 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bargainor_ent_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("bargainor_ent_id")]
-                public string BargainorEnterpriseId { get; set; } = default!;
+                public string? BargainorEnterpriseId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置失败原因。

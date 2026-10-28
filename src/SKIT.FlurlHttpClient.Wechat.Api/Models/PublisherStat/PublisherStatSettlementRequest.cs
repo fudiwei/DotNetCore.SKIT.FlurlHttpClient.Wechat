@@ -6,7 +6,8 @@
     public class PublisherStatSettlementRequest : WechatApiRequest, IInferable<PublisherStatSettlementRequest, PublisherStatSettlementResponse>
     {
         /// <summary>
-        /// 获取或设置分页页数（从 1 开始）。
+        /// 获取或设置分页页数。
+        /// <para>默认值：1</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -14,6 +15,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -24,13 +26,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string StartDateString { get; set; } = string.Empty;
+        public string? StartDateString { get; set; }
 
         /// <summary>
         /// 获取或设置获取数据的结束时间（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string EndDateString { get; set; } = string.Empty;
+        public string? EndDateString { get; set; }
     }
 }

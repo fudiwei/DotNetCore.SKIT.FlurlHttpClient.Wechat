@@ -31,13 +31,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fee_type")]
         [System.Text.Json.Serialization.JsonPropertyName("fee_type")]
-        public string FeeType { get; set; } = string.Empty;
+        public string? FeeType { get; set; }
 
         /// <summary>
         /// 获取或设置汇率日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
     }
 }

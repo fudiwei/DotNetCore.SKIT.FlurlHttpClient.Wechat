@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/externalcontact/list 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-        public string[] ExternalUserIdList { get; set; } = default!;
+        public List<string>? ExternalUserIdList { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxaapi/log/get_client_version 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("client_version_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("client_version_list")]
-                public string[] ClientVersionList { get; set; } = default!;
+                public List<string>? ClientVersionList { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cvlist")]
         [System.Text.Json.Serialization.JsonPropertyName("cvlist")]
-        public Types.ClientVersionData[] ClientVersionDataList { get; set; } = default!;
+        public List<Types.ClientVersionData>? ClientVersionDataList { get; set; }
     }
 }

@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public override string Version { get; set; } = "v1.1";
+        public override string? Version { get; set; } = "v1.1";
     }
 }

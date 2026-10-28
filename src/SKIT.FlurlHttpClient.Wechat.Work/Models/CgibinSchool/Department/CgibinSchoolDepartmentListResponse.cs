@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置管理员类型。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门类型。
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_admins")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_admins")]
-                public Types.Administrator[] AdministratorList { get; set; } = default!;
+                public List<Types.Administrator>? AdministratorList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否已毕业。
@@ -125,6 +125,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("departments")]
         [System.Text.Json.Serialization.JsonPropertyName("departments")]
-        public Types.Department[] DepartmentList { get; set; } = default!;
+        public List<Types.Department>? DepartmentList { get; set; }
     }
 }

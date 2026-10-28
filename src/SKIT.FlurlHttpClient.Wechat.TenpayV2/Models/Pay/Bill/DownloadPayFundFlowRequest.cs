@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_date")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_date")]
-        public string BillDateString { get; set; } = string.Empty;
+        public string? BillDateString { get; set; }
 
         /// <summary>
         /// 获取或设置资金账户类型。

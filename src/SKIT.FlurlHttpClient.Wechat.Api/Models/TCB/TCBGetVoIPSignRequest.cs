@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置游戏房间的标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_id")]
         [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-        public string GroupId { get; set; } = string.Empty;
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// 获取或设置随机字符串。如果不指定将由系统自动生成。

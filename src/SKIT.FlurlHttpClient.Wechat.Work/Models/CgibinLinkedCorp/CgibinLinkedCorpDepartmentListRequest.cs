@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_id")]
         [System.Text.Json.Serialization.JsonPropertyName("department_id")]
-        public string LinkedDepartmentId { get; set; } = string.Empty;
+        public string? LinkedDepartmentId { get; set; }
     }
 }

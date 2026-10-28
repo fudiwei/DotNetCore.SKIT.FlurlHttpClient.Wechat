@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面主图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image")]
                 [System.Text.Json.Serialization.JsonPropertyName("image")]
-                public string ImageUrl { get; set; } = default!;
+                public string? ImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面摘要。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string Path { get; set; } = default!;
+                public string? Path { get; set; }
             }
         }
 
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置是否有下一页。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_page_info")]
         [System.Text.Json.Serialization.JsonPropertyName("next_page_info")]
-        public string NextPageParameter { get; set; } = default!;
+        public string? NextPageParameter { get; set; }
 
         /// <summary>
         /// 获取或设置估算索引文档数。

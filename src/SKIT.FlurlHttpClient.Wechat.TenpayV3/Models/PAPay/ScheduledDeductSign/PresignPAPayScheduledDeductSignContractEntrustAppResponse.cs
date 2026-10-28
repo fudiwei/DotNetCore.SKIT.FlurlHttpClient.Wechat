@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_entrustweb_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_entrustweb_id")]
-        public string PresignSessionId { get; set; } = default!;
+        public string? PresignSessionId { get; set; }
 
         /// <summary>
         /// 获取或设置跳转签约小程序的账号。

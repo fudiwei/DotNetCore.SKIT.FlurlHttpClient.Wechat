@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("record_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("record_id")]
-                public string RecordId { get; set; } = default!;
+                public string? RecordId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建者名字。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("creator_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("creator_name")]
-                public string CreatorName { get; set; } = default!;
+                public string? CreatorName { get; set; }
 
                 /// <summary>
                 /// 获取或设置最后编辑者名字。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("updater_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("updater_name")]
-                public string UpdaterName { get; set; } = default!;
+                public string? UpdaterName { get; set; }
 
                 /// <summary>
                 /// 获取或设置单元格值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("values")]
                 [System.Text.Json.Serialization.JsonPropertyName("values")]
-                public IDictionary<string, object> Values { get; set; } = default!;
+                public Dictionary<string, object>? Values { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("records")]
         [System.Text.Json.Serialization.JsonPropertyName("records")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

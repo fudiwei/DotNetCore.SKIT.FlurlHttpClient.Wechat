@@ -53,35 +53,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-        public string CouponId { get; set; } = default!;
+        public string? CouponId { get; set; }
 
         /// <summary>
         /// 获取或设置批次号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = default!;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置创建批次的商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_creator_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_creator_mchid")]
-        public string StockCreatorMerchantId { get; set; } = default!;
+        public string? StockCreatorMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置代金券名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_name")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_name")]
-        public string CouponName { get; set; } = default!;
+        public string? CouponName { get; set; }
 
         /// <summary>
         /// 获取或设置券类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_type")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_type")]
-        public string CouponType { get; set; } = default!;
+        public string? CouponType { get; set; }
 
         /// <summary>
         /// 获取或设置细分业务类型。
@@ -95,14 +95,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置使用说明。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置可用开始时间。

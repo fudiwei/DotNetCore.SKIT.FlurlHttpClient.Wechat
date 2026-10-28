@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("appkey")]
         [System.Text.Json.Serialization.JsonPropertyName("appkey")]
         [System.Xml.Serialization.XmlElement("appkey")]
-        public string AppKey { get; set; } = default!;
+        public string AppKey { get; set; }
 
         /// <summary>
         /// 获取或设置帐号类型。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("account")]
         [System.Text.Json.Serialization.JsonPropertyName("account")]
         [System.Xml.Serialization.XmlElement("account")]
-        public string Account { get; set; } = default!;
+        public string Account { get; set; }
 
         public GetAuthInfoReply()
         {

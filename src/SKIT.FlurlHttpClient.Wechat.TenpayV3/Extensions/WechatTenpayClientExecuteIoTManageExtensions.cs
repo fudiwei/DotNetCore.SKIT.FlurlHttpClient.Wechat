@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DeviceSerialNumber, "device_sn");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "iotmanage", "device-inspections", request.DeviceSerialNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "iotmanage", "device-inspections", request.DeviceSerialNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetIoTManageDeviceInspectionByDeviceSerialNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

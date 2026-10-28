@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置是否启用水印。

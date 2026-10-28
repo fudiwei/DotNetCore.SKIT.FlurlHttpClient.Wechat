@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("token")]
         [System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string Token { get; set; } = default!;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置预授权 Token 过期时间。

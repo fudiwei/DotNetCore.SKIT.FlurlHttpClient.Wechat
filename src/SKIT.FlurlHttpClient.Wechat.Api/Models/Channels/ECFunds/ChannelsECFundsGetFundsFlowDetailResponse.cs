@@ -61,10 +61,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置群送礼关联订单号 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("group_present_sub_order_id_list")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringArrayWithCommaSplitConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithCommaSplitConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("group_present_sub_order_id_list")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringArrayWithCommaSplitConverter))]
-                        public string[]? GroupPresentSubOrderIdList { get; set; }
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithCommaSplitConverter))]
+                        public List<string>? GroupPresentSubOrderIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置同城配送门店 ID。
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flow_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("flow_id")]
-                public string FlowId { get; set; } = default!;
+                public string? FlowId { get; set; }
 
                 /// <summary>
                 /// 获取或设置资金类型。
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("funds_type_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("funds_type_desc")]
-                public string FundsTypeDescription { get; set; } = default!;
+                public string? FundsTypeDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置流水类型。
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("related_info_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("related_info_list")]
-                public Types.RelatedInfo[] RelatedInfoList { get; set; } = default!;
+                public List<Types.RelatedInfo>? RelatedInfoList { get; set; }
 
                 /// <summary>
                 /// 获取或设置备注。
@@ -147,6 +147,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("funds_flow")]
         [System.Text.Json.Serialization.JsonPropertyName("funds_flow")]
-        public Types.FundsFlow FundsFlow { get; set; } = default!;
+        public Types.FundsFlow? FundsFlow { get; set; }
     }
 }

@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("layout_template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("layout_template_id")]
-                public string LayoutTemplateId { get; set; } = default!;
+                public string? LayoutTemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置缩略图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumbnail_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumbnail_url")]
-                public string ThumbnailUrl { get; set; } = default!;
+                public string? ThumbnailUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置布局图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("picture_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("picture_url")]
-                public string PictureUrl { get; set; } = default!;
+                public string? PictureUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置渲染规则（JSON 格式）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("render_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("render_rule")]
-                public string RenderRuleJson { get; set; } = default!;
+                public string? RenderRuleJson { get; set; }
             }
         }
 
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("layout_template_list")]
         [System.Text.Json.Serialization.JsonPropertyName("layout_template_list")]
-        public Types.LayoutTemplate[] LayoutTemplateList { get; set; } = default!;
+        public List<Types.LayoutTemplate>? LayoutTemplateList { get; set; }
     }
 }

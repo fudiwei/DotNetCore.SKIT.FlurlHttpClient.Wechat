@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_url")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_url")]
-        public string QrcodeUrl { get; set; } = default!;
+        public string? QrcodeUrl { get; set; }
 
         /// <summary>
         /// 获取或设置二维码有效期（单位：秒）。

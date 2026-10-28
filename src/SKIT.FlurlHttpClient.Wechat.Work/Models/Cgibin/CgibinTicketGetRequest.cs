@@ -7,10 +7,10 @@
     {
         /// <summary>
         /// 获取或设置票据类型。
-        /// <para>默认值：agent_config</para>
+        /// <para>默认值："agent_config"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Type { get; set; } = "agent_config";
+        public string? Type { get; set; } = "agent_config";
     }
 }

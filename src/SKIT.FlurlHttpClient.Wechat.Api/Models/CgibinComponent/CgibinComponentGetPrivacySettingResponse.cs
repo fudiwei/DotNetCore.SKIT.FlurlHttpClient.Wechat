@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_label")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_label")]
-                public string PrivacyLabel { get; set; } = default!;
+                public string? PrivacyLabel { get; set; }
             }
 
             public class PrivacyDescriptionList
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_desc_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_desc_list")]
-                public PrivacyDescriptionItem[] Items { get; set; } = default!;
+                public List<PrivacyDescriptionItem>? Items { get; set; }
             }
 
             public class PrivacyDescriptionItem
@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_key")]
-                public string PrivacyKey { get; set; } = default!;
+                public string? PrivacyKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户信息类型的中文描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_desc")]
-                public string PrivacyDescription { get; set; } = default!;
+                public string? PrivacyDescription { get; set; }
             }
         }
 
@@ -70,14 +70,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("privacy_list")]
         [System.Text.Json.Serialization.JsonPropertyName("privacy_list")]
-        public string[]? PrivacyKeyList { get; set; }
+        public List<string>? PrivacyKeyList { get; set; }
 
         /// <summary>
         /// 获取或设置要收集的用户信息配置列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("setting_list")]
         [System.Text.Json.Serialization.JsonPropertyName("setting_list")]
-        public Types.PrivacySetting[]? PrivacySettingList { get; set; }
+        public List<Types.PrivacySetting>? PrivacySettingList { get; set; }
 
         /// <summary>
         /// 获取或设置用户信息类型对应的中英文描述信息。

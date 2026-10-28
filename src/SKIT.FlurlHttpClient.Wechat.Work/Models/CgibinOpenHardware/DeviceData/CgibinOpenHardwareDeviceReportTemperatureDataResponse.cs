@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public Types.TemperatureData[]? FailedTemperatureDataList { get; set; }
+        public List<Types.TemperatureData>? FailedTemperatureDataList { get; set; }
     }
 }

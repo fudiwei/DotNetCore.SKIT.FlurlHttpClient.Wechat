@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_corpid")]
-        public string AuthorizerCorpId { get; set; } = string.Empty;
+        public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置永久授权码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("permanent_code")]
         [System.Text.Json.Serialization.JsonPropertyName("permanent_code")]
-        public string PermanentAuthCode { get; set; } = string.Empty;
+        public string? PermanentAuthCode { get; set; }
     }
 }

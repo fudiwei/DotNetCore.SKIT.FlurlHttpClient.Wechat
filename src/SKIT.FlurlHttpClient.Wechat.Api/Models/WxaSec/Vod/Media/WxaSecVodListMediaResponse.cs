@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("evidence_material_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("evidence_material_id_list")]
-                        public string[]? EvidenceMaterialMediaIdList { get; set; }
+                        public List<string>? EvidenceMaterialMediaIdList { get; set; }
                     }
                 }
 
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string MediaName { get; set; } = default!;
+                public string? MediaName { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件大小（单位：字节）。
@@ -151,6 +151,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("media_info_list")]
-        public Types.MediaInfo[] MediaInfoList { get; set; } = default!;
+        public List<Types.MediaInfo>? MediaInfoList { get; set; }
     }
 }

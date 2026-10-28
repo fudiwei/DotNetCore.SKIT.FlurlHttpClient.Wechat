@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string MerchantId { get; set; } = string.Empty;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付商户号全称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_name")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-        public string MerchantName { get; set; } = string.Empty;
+        public string? MerchantName { get; set; }
     }
 }

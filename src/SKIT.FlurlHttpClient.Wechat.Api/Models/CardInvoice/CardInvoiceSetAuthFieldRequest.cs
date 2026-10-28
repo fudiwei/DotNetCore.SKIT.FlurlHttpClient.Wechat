@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("custom_field")]
                         [System.Text.Json.Serialization.JsonPropertyName("custom_field")]
-                        public IList<CustomField>? CustomFieldList { get; set; }
+                        public List<CustomField>? CustomFieldList { get; set; }
                     }
 
                     public class BusinessField
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("custom_field")]
                         [System.Text.Json.Serialization.JsonPropertyName("custom_field")]
-                        public IList<CustomField>? CustomFieldList { get; set; }
+                        public List<CustomField>? CustomFieldList { get; set; }
                     }
 
                     public class CustomField
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("key")]
                         [System.Text.Json.Serialization.JsonPropertyName("key")]
-                        public string Key { get; set; } = string.Empty;
+                        public string? Key { get; set; }
                     }
                 }
 
@@ -144,6 +144,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_field")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_field")]
-        public Types.AuthField AuthField { get; set; } = new Types.AuthField();
+        public Types.AuthField? AuthField { get; set; }
     }
 }

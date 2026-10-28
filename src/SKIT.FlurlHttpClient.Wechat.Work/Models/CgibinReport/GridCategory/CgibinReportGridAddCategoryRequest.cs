@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("category_name")]
         [System.Text.Json.Serialization.JsonPropertyName("category_name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置分类层级。

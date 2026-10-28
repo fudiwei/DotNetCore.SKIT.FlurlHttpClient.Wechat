@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("edition_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("edition_list")]
-                public Types.EditionInfo[] EditionList { get; set; } = default!;
+                public List<Types.EditionInfo>? EditionList { get; set; }
             }
         }
 
@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_archive_api_buy_info")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_archive_api_buy_info")]
-        public Types.ChatArchivApiBuyInfo ChatArchivApiBuyInfo { get; set; } = default!;
+        public Types.ChatArchivApiBuyInfo? ChatArchivApiBuyInfo { get; set; }
     }
 }

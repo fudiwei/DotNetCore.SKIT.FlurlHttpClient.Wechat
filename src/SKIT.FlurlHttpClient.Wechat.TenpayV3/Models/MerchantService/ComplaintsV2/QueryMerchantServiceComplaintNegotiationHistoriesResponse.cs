@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("log_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("log_id")]
-                public string LogId { get; set; } = default!;
+                public string? LogId { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作人。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("operator")]
                 [System.Text.Json.Serialization.JsonPropertyName("operator")]
-                public string Operator { get; set; } = default!;
+                public string? Operator { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作时间。
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("operate_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("operate_type")]
-                public string OperateType { get; set; } = default!;
+                public string? OperateType { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作内容。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_list")]
-                public string[]? ImageUrlList { get; set; }
+                public List<string>? ImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉资料列表。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyNegotiationHistoryItemComplaintMediaListNewtonsoftJsonConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyNegotiationHistoryItemComplaintMediaListSystemTextJsonConverter))]
-                public Types.ComplaintMedia[]? ComplaintMediaList { get; set; }
+                public List<Types.ComplaintMedia>? ComplaintMediaList { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户申请平台协助原因。
@@ -87,14 +87,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         internal static class Converters
         {
-            internal class ResponsePropertyNegotiationHistoryItemComplaintMediaListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.NegotiationHistory.Types.ComplaintMedia[]?>
+            internal class ResponsePropertyNegotiationHistoryItemComplaintMediaListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<List<Types.NegotiationHistory.Types.ComplaintMedia>?>
             {
                 public override bool CanWrite
                 {
                     get { return false; }
                 }
 
-                public override Types.NegotiationHistory.Types.ComplaintMedia[]? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.NegotiationHistory.Types.ComplaintMedia[]? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+                public override List<Types.NegotiationHistory.Types.ComplaintMedia>? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, List<Types.NegotiationHistory.Types.ComplaintMedia>? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
                 {
                     /*
                      * NOTICE:
@@ -112,29 +112,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
                         case Newtonsoft.Json.JsonToken.StartArray:
                             {
-                                return serializer.Deserialize<Types.NegotiationHistory.Types.ComplaintMedia[]>(reader);
+                                return serializer.Deserialize<List<Types.NegotiationHistory.Types.ComplaintMedia>>(reader);
                             }
 
                         case Newtonsoft.Json.JsonToken.StartObject:
                             {
-                                Types.NegotiationHistory.Types.ComplaintMedia[] array = new Types.NegotiationHistory.Types.ComplaintMedia[1];
-                                array[0] = serializer.Deserialize<Types.NegotiationHistory.Types.ComplaintMedia>(reader)!;
-                                return array;
+                                List<Types.NegotiationHistory.Types.ComplaintMedia> list = new();
+                                list.Add(serializer.Deserialize<Types.NegotiationHistory.Types.ComplaintMedia>(reader)!);
+                                return list;
                             }
                     }
 
                     throw new Newtonsoft.Json.JsonException();
                 }
 
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.NegotiationHistory.Types.ComplaintMedia[]? value, Newtonsoft.Json.JsonSerializer serializer)
+                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, List<Types.NegotiationHistory.Types.ComplaintMedia>? value, Newtonsoft.Json.JsonSerializer serializer)
                 {
                     throw new NotImplementedException();
                 }
             }
 
-            internal class ResponsePropertyNegotiationHistoryItemComplaintMediaListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.NegotiationHistory.Types.ComplaintMedia[]?>
+            internal class ResponsePropertyNegotiationHistoryItemComplaintMediaListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<List<Types.NegotiationHistory.Types.ComplaintMedia>?>
             {
-                public override Types.NegotiationHistory.Types.ComplaintMedia[]? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+                public override List<Types.NegotiationHistory.Types.ComplaintMedia>? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
                     /*
                      * NOTICE:
@@ -152,23 +152,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
                         case System.Text.Json.JsonTokenType.StartArray:
                             {
-                                return System.Text.Json.JsonSerializer.Deserialize<Types.NegotiationHistory.Types.ComplaintMedia[]>(ref reader, options);
+                                return System.Text.Json.JsonSerializer.Deserialize<List<Types.NegotiationHistory.Types.ComplaintMedia>>(ref reader, options);
                             }
 
                         case System.Text.Json.JsonTokenType.StartObject:
                             {
-                                Types.NegotiationHistory.Types.ComplaintMedia[] array = new Types.NegotiationHistory.Types.ComplaintMedia[1];
-                                array[0] = System.Text.Json.JsonSerializer.Deserialize<Types.NegotiationHistory.Types.ComplaintMedia>(ref reader, options)!;
-                                return array;
+                                List<Types.NegotiationHistory.Types.ComplaintMedia> list = new();
+                                list.Add(System.Text.Json.JsonSerializer.Deserialize<Types.NegotiationHistory.Types.ComplaintMedia>(ref reader, options)!);
+                                return list;
                             }
                     }
 
                     throw new System.Text.Json.JsonException();
                 }
 
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.NegotiationHistory.Types.ComplaintMedia[]? value, System.Text.Json.JsonSerializerOptions options)
+                public override void Write(System.Text.Json.Utf8JsonWriter writer, List<Types.NegotiationHistory.Types.ComplaintMedia>? value, System.Text.Json.JsonSerializerOptions options)
                 {
-                    writer.WriteRawValue(System.Text.Json.JsonSerializer.Serialize(value, typeof(Types.NegotiationHistory.Types.ComplaintMedia[]), options));
+                    writer.WriteRawValue(System.Text.Json.JsonSerializer.Serialize(value, typeof(List<Types.NegotiationHistory.Types.ComplaintMedia>), options));
                 }
             }
         }
@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.NegotiationHistory[] NegotiationHistoryList { get; set; } = default!;
+        public List<Types.NegotiationHistory>? NegotiationHistoryList { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -188,7 +188,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

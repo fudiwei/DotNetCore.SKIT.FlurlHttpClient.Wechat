@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string Currency { get; set; } = "CNY";
+                public string? Currency { get; set; } = "CNY";
             }
 
             public class Highway
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plate_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-                public string PlateNumber { get; set; } = string.Empty;
+                public string? PlateNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置入站时间。
@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("channel_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("channel_type")]
-                public string ChannelType { get; set; } = string.Empty;
+                public string? ChannelType { get; set; }
 
                 /// <summary>
                 /// 获取或设置车辆类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("car_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("car_type")]
-                public string CarType { get; set; } = string.Empty;
+                public string? CarType { get; set; }
 
                 /// <summary>
                 /// 获取或设置入口名称。
@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -139,21 +139,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置 ETC 扣费授权协议号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = string.Empty;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置附加信息。
@@ -174,14 +174,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public Types.Amount Amount { get; set; } = new Types.Amount();
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置高速信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("highway_info")]
         [System.Text.Json.Serialization.JsonPropertyName("highway_info")]
-        public Types.Highway Highway { get; set; } = new Types.Highway();
+        public Types.Highway? Highway { get; set; }
 
         /// <summary>
         /// 获取或设置设备信息。

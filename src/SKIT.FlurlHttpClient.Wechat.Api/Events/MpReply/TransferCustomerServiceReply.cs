@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("KfAccount")]
                 [System.Text.Json.Serialization.JsonPropertyName("KfAccount")]
                 [System.Xml.Serialization.XmlElement("KfAccount")]
-                public string KfAccount { get; set; } = default!;
+                public string? KfAccount { get; set; }
             }
         }
 

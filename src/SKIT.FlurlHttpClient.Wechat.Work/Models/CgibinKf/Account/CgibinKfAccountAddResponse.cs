@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_kfid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]
-        public string OpenKfId { get; set; } = default!;
+        public string? OpenKfId { get; set; }
     }
 }

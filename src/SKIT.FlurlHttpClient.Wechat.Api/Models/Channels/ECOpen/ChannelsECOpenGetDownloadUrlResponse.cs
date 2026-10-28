@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string DownloadUrl { get; set; } = default!;
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 获取或设置链接到期时间戳。

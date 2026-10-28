@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutOrderNumber { get; set; } = string.Empty;
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
@@ -24,7 +24,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置取消原因。

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_url")]
         [System.Text.Json.Serialization.JsonPropertyName("img_url")]
-        public string ImageUrl { get; set; } = string.Empty;
+        public string? ImageUrl { get; set; }
     }
 }

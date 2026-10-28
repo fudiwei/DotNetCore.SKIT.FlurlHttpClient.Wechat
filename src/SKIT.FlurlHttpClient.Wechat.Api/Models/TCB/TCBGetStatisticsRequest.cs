@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = string.Empty;
+        public string? Action { get; set; }
 
         /// <summary>
         /// 获取或设置开始时间戳。

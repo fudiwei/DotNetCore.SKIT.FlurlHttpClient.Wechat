@@ -26,28 +26,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("control")]
                                 [System.Text.Json.Serialization.JsonPropertyName("control")]
-                                public string Control { get; set; } = string.Empty;
+                                public string? Control { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置控件 ID。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string ControlId { get; set; } = string.Empty;
+                                public string? ControlId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置控件名称。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("title")]
                                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public IList<MultiLangText>? Title { get; set; }
+                                public List<MultiLangText>? Title { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置控件说明。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("placeholder")]
                                 [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
-                                public IList<MultiLangText>? Placeholder { get; set; }
+                                public List<MultiLangText>? Placeholder { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否为必填项。
@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = string.Empty;
+                                public string? Type { get; set; }
                             }
 
                             public class SelectorControlConfig
@@ -169,14 +169,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("key")]
                                         [System.Text.Json.Serialization.JsonPropertyName("key")]
-                                        public string Key { get; set; } = string.Empty;
+                                        public string? Key { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置选项值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("value")]
                                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                        public IList<MultiLangText> Value { get; set; } = new List<MultiLangText>();
+                                        public List<MultiLangText>? Value { get; set; }
                                     }
                                 }
 
@@ -185,14 +185,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = string.Empty;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置选择列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("options")]
                                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                                public IList<Types.Option> OptionList { get; set; } = new List<Types.Option>();
+                                public List<Types.Option>? OptionList { get; set; }
                             }
 
                             public class ContactControlConfig
@@ -202,14 +202,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = string.Empty;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置选择对象。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("mode")]
                                 [System.Text.Json.Serialization.JsonPropertyName("mode")]
-                                public string Mode { get; set; } = string.Empty;
+                                public string? Mode { get; set; }
                             }
 
                             public class TipsControlConfig
@@ -239,7 +239,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                                         /// </summary>
                                                                         [Newtonsoft.Json.JsonProperty("content")]
                                                                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                                                                        public string Content { get; set; } = string.Empty;
+                                                                        public string? Content { get; set; }
                                                                     }
 
                                                                     public class Link
@@ -249,14 +249,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                                         /// </summary>
                                                                         [Newtonsoft.Json.JsonProperty("title")]
                                                                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                                                        public string Title { get; set; } = string.Empty;
+                                                                        public string? Title { get; set; }
 
                                                                         /// <summary>
                                                                         /// 获取或设置链接 URL。
                                                                         /// </summary>
                                                                         [Newtonsoft.Json.JsonProperty("url")]
                                                                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                                                                        public string URL { get; set; } = string.Empty;
+                                                                        public string? URL { get; set; }
                                                                     }
                                                                 }
 
@@ -288,7 +288,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                         /// </summary>
                                                         [Newtonsoft.Json.JsonProperty("content")]
                                                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                                                        public Types.Content Content { get; set; } = new Types.Content();
+                                                        public Types.Content? Content { get; set; }
                                                     }
                                                 }
 
@@ -297,7 +297,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("sub_text")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("sub_text")]
-                                                public IList<Types.SubText> SubTextList { get; set; } = new List<Types.SubText>();
+                                                public List<Types.SubText>? SubTextList { get; set; }
                                             }
                                         }
 
@@ -306,14 +306,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("lang")]
                                         [System.Text.Json.Serialization.JsonPropertyName("lang")]
-                                        public string Language { get; set; } = string.Empty;
+                                        public string? Language { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置说明文字信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("text")]
                                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                                        public Types.Text Text { get; set; } = new Types.Text();
+                                        public Types.Text? Text { get; set; }
                                     }
                                 }
 
@@ -322,7 +322,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("tips_content")]
                                 [System.Text.Json.Serialization.JsonPropertyName("tips_content")]
-                                public IList<Types.TipsContent> TipsList { get; set; } = new List<Types.TipsContent>();
+                                public List<Types.TipsContent>? TipsList { get; set; }
                             }
 
                             public class FileControlConfig
@@ -351,7 +351,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("children")]
                                 [System.Text.Json.Serialization.JsonPropertyName("children")]
-                                public IList<Control> Children { get; set; } = new List<Control>();
+                                public List<Control>? Children { get; set; }
                             }
 
                             public class AttendanceControlConfig
@@ -375,7 +375,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("date_range")]
                                 [System.Text.Json.Serialization.JsonPropertyName("date_range")]
-                                public Types.DateRange DateRange { get; set; } = new Types.DateRange();
+                                public Types.DateRange? DateRange { get; set; }
                             }
 
                             public class VacationControlConfig
@@ -396,7 +396,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("name")]
                                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public IList<MultiLangText> Name { get; set; } = new List<MultiLangText>();
+                                        public List<MultiLangText>? Name { get; set; }
                                     }
                                 }
 
@@ -405,7 +405,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("item")]
                                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                                public IList<Types.Vacation> VacationList { get; set; } = new List<Types.Vacation>();
+                                public List<Types.Vacation>? VacationList { get; set; }
                             }
 
                             public class DateRangeControlConfig
@@ -415,7 +415,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = string.Empty;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置自然日或工作日。
@@ -449,7 +449,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("template_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                                public IList<string> TemplateIdList { get; set; } = new List<string>();
+                                public List<string>? TemplateIdList { get; set; }
                             }
                         }
 
@@ -458,7 +458,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("property")]
                         [System.Text.Json.Serialization.JsonPropertyName("property")]
-                        public Types.Property Property { get; set; } = new Types.Property();
+                        public Types.Property? Property { get; set; }
 
                         /// <summary>
                         /// 获取或设置模板控件配置。
@@ -474,7 +474,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("controls")]
                 [System.Text.Json.Serialization.JsonPropertyName("controls")]
-                public IList<Types.Control> ControlList { get; set; } = new List<Types.Control>();
+                public List<Types.Control>? ControlList { get; set; }
             }
         }
 
@@ -483,13 +483,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_name")]
         [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-        public IList<Types.MultiLangText> TemplateName { get; set; } = new List<Types.MultiLangText>();
+        public List<Types.MultiLangText>? TemplateName { get; set; }
 
         /// <summary>
         /// 获取或设置模板内容信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_content")]
         [System.Text.Json.Serialization.JsonPropertyName("template_content")]
-        public Types.TemplateContent TemplateContent { get; set; } = new Types.TemplateContent();
+        public Types.TemplateContent? TemplateContent { get; set; }
     }
 }

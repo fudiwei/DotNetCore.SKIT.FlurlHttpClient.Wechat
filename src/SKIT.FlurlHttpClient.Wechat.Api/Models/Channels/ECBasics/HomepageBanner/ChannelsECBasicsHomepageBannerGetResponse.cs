@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("banner")]
                 [System.Text.Json.Serialization.JsonPropertyName("banner")]
-                public ApplyBanner[] BannerList { get; set; } = default!;
+                public List<ApplyBanner>? BannerList { get; set; }
             }
 
             public class ApplyBanner
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("banner")]
                 [System.Text.Json.Serialization.JsonPropertyName("banner")]
-                public BannerItem Banner { get; set; } = default!;
+                public BannerItem? Banner { get; set; }
             }
 
             public class BannerList
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("banner")]
                 [System.Text.Json.Serialization.JsonPropertyName("banner")]
-                public BannerItem[] Items { get; set; } = default!;
+                public List<BannerItem>? Items { get; set; }
             }
 
             public class BannerItem
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("banner")]
                 [System.Text.Json.Serialization.JsonPropertyName("banner")]
-                public Types.Banner Banner { get; set; } = default!;
+                public Types.Banner? Banner { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品信息。
@@ -143,7 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("banner")]
         [System.Text.Json.Serialization.JsonPropertyName("banner")]
-        public Types.BannerList BannerList { get; set; } = default!;
+        public Types.BannerList? BannerList { get; set; }
 
         /// <summary>
         /// 获取或设置最近一次申请信息。

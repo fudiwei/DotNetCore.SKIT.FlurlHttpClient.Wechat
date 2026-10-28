@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置字段 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = string.Empty;
+                public string? Url { get; set; }
             }
 
             public class Form
@@ -35,21 +35,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = string.Empty;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("values")]
                         [System.Text.Json.Serialization.JsonPropertyName("values")]
-                        public IList<string> Values { get; set; } = new List<string>();
+                        public List<string>? Values { get; set; }
                     }
                 }
 
@@ -65,21 +65,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rich_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("rich_field_list")]
-                public IList<Types.RichField>? RichFieldList { get; set; }
+                public List<Types.RichField>? RichFieldList { get; set; }
 
                 /// <summary>
                 /// 获取或设置内置字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_id_list")]
-                public IList<string>? CommonFieldList { get; set; }
+                public List<string>? CommonFieldList { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
-                public IList<string>? CustomFieldList { get; set; }
+                public List<string>? CustomFieldList { get; set; }
             }
         }
 
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置服务声明信息。

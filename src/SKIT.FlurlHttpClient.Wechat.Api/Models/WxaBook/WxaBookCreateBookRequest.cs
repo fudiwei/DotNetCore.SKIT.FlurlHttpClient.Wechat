@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置作品简介。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("intro")]
         [System.Text.Json.Serialization.JsonPropertyName("intro")]
-        public string Introduction { get; set; } = string.Empty;
+        public string? Introduction { get; set; }
 
         /// <summary>
         /// 获取或设置封面图 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cover_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("cover_media_id")]
-        public string CoverMediaId { get; set; } = string.Empty;
+        public string? CoverMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置作者名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("author")]
         [System.Text.Json.Serialization.JsonPropertyName("author")]
-        public string Author { get; set; } = string.Empty;
+        public string? Author { get; set; }
 
         /// <summary>
         /// 获取或设置一级类型 ID。
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keyword_list")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword_list")]
-        public IList<string>? KeywordList { get; set; }
+        public List<string>? KeywordList { get; set; }
 
         /// <summary>
         /// 获取或设置精彩片段。

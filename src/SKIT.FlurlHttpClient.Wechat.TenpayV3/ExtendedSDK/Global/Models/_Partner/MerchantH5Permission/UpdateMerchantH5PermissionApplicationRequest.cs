@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("domains")]
         [System.Text.Json.Serialization.JsonPropertyName("domains")]
-        public IList<string> DomainList { get; set; } = new List<string>();
+        public List<string>? DomainList { get; set; }
 
         /// <summary>
         /// 获取或设置公司注册文件编号。
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("website_business_page_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("website_business_page_pics")]
-        public IList<string>? WebsiteBusinessPagePictureMediaIdList { get; set; }
+        public List<string>? WebsiteBusinessPagePictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置网站首页截图 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("website_homepage_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("website_homepage_pics")]
-        public IList<string>? WebsiteHomePagePictureMediaIdList { get; set; }
+        public List<string>? WebsiteHomePagePictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置网站状态。

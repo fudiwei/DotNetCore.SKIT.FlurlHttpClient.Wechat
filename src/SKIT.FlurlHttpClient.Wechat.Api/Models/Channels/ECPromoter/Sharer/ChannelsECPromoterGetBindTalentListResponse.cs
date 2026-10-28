@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("talent_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]
-                public string TalentAppId { get; set; } = default!;
+                public string? TalentAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置达人平台昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("talent_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("talent_nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置达人平台头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("talent_head_img")]
                 [System.Text.Json.Serialization.JsonPropertyName("talent_head_img")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置绑定时间戳。
@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("related_finder_exportname_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("related_finder_exportname_list")]
-                public string[] RelatedFinderExportUserameList { get; set; } = default!;
+                public List<string>? RelatedFinderExportUserameList { get; set; }
 
                 /// <summary>
                 /// 获取或设置关联的公众号 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("related_mp_biz_appid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("related_mp_biz_appid_list")]
-                public string[] RelatedMpAppIdList { get; set; } = default!;
+                public List<string>? RelatedMpAppIdList { get; set; }
             }
         }
 
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("talent_list")]
         [System.Text.Json.Serialization.JsonPropertyName("talent_list")]
-        public Types.Talent[] TalentList { get; set; } = default!;
+        public List<Types.Talent>? TalentList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

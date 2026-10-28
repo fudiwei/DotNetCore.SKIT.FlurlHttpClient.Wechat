@@ -48,28 +48,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_desc")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板信息选项。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("options")]
                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public IList<Types.Option> Options { get; set; } = new List<Types.Option>();
+                public List<Types.Option>? Options { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否为该快递公司默认模板。
@@ -85,13 +85,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置模板信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.Template Template { get; set; } = new Types.Template();
+        public Types.Template? Template { get; set; }
     }
 }

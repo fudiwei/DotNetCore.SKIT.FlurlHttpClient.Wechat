@@ -26,28 +26,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成任务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成任务状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_state")]
         [System.Text.Json.Serialization.JsonPropertyName("task_state")]
-        public string TaskState { get; set; } = default!;
+        public string? TaskState { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("image_generation_type")]
         [System.Text.Json.Serialization.JsonPropertyName("image_generation_type")]
-        public string ImageGenerationType { get; set; } = default!;
+        public string? ImageGenerationType { get; set; }
 
         /// <summary>
         /// 获取或设置拼图结果。

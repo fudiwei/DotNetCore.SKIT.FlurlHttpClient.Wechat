@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string DownloadUrl { get; set; } = default!;
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 获取或设置校验码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("checksum")]
         [System.Text.Json.Serialization.JsonPropertyName("checksum")]
-        public string Checksum { get; set; } = default!;
+        public string? Checksum { get; set; }
     }
 }

@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户管理记录 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("manage_record_id")]
         [System.Text.Json.Serialization.JsonPropertyName("manage_record_id")]
-        public string ManageRecordId { get; set; } = default!;
+        public string? ManageRecordId { get; set; }
 
         /// <summary>
         /// 获取或设置商户管理记录类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("manage_record_type")]
         [System.Text.Json.Serialization.JsonPropertyName("manage_record_type")]
-        public string ManageRecordType { get; set; } = default!;
+        public string? ManageRecordType { get; set; }
 
         /// <summary>
         /// 获取或设置商户管理记录状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("manage_record_state")]
         [System.Text.Json.Serialization.JsonPropertyName("manage_record_state")]
-        public string ManageRecordState { get; set; } = default!;
+        public string? ManageRecordState { get; set; }
 
         /// <summary>
         /// 获取或设置管控时间。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("manage_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("manage_reason")]
-        public string ManageReason { get; set; } = default!;
+        public string? ManageReason { get; set; }
 
         /// <summary>
         /// 获取或设置限制功能。

@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "contracts", request.ContractId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "contracts", request.ContractId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayContractByContractIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "contracts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId!, "contracts")
                 .SetQueryParam("plan_id", request.PlanId)
                 .SetQueryParam("contract_status", request.ContractStatus)
                 .SetQueryParam("limit", request.Limit)
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "eduschoolpay", "contracts", request.ContractId, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "eduschoolpay", "contracts", request.ContractId!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminateEducationSchoolPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutTradeNumber, "out_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "out-trade-no", request.OutTradeNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "out-trade-no", request.OutTradeNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransactionId, "transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "id", request.TransactionId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "id", request.TransactionId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "debt-state");
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId!, "debt-state");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayUserDebtStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -17,20 +17,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置发票报销状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reimburse_status")]
         [System.Text.Json.Serialization.JsonPropertyName("reimburse_status")]
-        public string ReimburseStatus { get; set; } = string.Empty;
+        public string? ReimburseStatus { get; set; }
 
         /// <summary>
         /// 获取或设置发票卡券列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_list")]
-        public IList<Types.InvoiceCard> InvoiceCardList { get; set; } = new List<Types.InvoiceCard>();
+        public List<Types.InvoiceCard>? InvoiceCardList { get; set; }
     }
 }

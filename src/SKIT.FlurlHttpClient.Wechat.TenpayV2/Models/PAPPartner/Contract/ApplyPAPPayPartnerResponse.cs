@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。

@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户预约单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_reservation_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_reservation_no")]
-        public string OutReservationNumber { get; set; } = default!;
+        public string? OutReservationNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信预约单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reservation_id")]
         [System.Text.Json.Serialization.JsonPropertyName("reservation_id")]
-        public string ReservationId { get; set; } = default!;
+        public string? ReservationId { get; set; }
 
         /// <summary>
         /// 获取或设置预约记录状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置预约受理时间。

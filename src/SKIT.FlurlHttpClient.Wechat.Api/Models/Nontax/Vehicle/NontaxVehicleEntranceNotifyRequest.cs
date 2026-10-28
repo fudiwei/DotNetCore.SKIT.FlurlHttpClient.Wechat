@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/vehicle/entrancenotify 接口的请求。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plate_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-                public string PlateNumber { get; set; } = string.Empty;
+                public string? PlateNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置车辆类型。
@@ -93,20 +93,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("region_code")]
         [System.Text.Json.Serialization.JsonPropertyName("region_code")]
-        public string RegionCode { get; set; } = string.Empty;
+        public string? RegionCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣的交易场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = string.Empty;
+        public string? TradeScene { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        public Types.Scene Scene { get; set; } = new Types.Scene();
+        public Types.Scene? Scene { get; set; }
     }
 }

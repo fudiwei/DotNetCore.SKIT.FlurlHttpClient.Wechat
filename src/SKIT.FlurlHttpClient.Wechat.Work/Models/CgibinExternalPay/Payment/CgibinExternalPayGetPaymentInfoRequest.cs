@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_id")]
-        public string PaymentId { get; set; } = string.Empty;
+        public string? PaymentId { get; set; }
     }
 }

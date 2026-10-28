@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("component_verify_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("component_verify_ticket")]
-        public string ComponentVerifyTicket { get; set; } = string.Empty;
+        public string? ComponentVerifyTicket { get; set; }
     }
 }

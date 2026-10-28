@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = default!;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付提现单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdraw_id")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_id")]
-        public string WithdrawId { get; set; } = default!;
+        public string? WithdrawId { get; set; }
 
         /// <summary>
         /// 获取或设置提现单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置提现金额（单位：分）。
@@ -52,21 +52,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_type")]
         [System.Text.Json.Serialization.JsonPropertyName("account_type")]
-        public string AccountType { get; set; } = default!;
+        public string? AccountType { get; set; }
 
         /// <summary>
         /// 获取或设置银行账号（掩码显示）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_number")]
         [System.Text.Json.Serialization.JsonPropertyName("account_number")]
-        public string AccountNumber { get; set; } = default!;
+        public string? AccountNumber { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_bank")]
         [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
-        public string AccountBank { get; set; } = default!;
+        public string? AccountBank { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行全称（含支行）。

@@ -25,21 +25,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_id")]
-                public string FapiaoId { get; set; } = default!;
+                public string? FapiaoId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_status")]
-                public string FapiaoStatus { get; set; } = default!;
+                public string? FapiaoStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡包状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_status")]
-                public string CardStatus { get; set; } = default!;
+                public string? CardStatus { get; set; }
             }
         }
 
@@ -48,14 +48,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置发票申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fapiao_apply_id")]
         [System.Text.Json.Serialization.JsonPropertyName("fapiao_apply_id")]
-        public string FapiaoApplyId { get; set; } = default!;
+        public string? FapiaoApplyId { get; set; }
 
         /// <summary>
         /// 获取或设置用户填写时间。
@@ -71,6 +71,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fapiao_information")]
         [System.Text.Json.Serialization.JsonPropertyName("fapiao_information")]
-        public Types.Fapiao[]? FapiaoList { get; set; }
+        public List<Types.Fapiao>? FapiaoList { get; set; }
     }
 }

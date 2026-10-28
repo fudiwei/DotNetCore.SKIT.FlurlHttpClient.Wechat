@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id_key")]
         [System.Text.Json.Serialization.JsonPropertyName("user_id_key")]
-        public string UserIdKey { get; set; } = default!;
+        public string? UserIdKey { get; set; }
 
         /// <summary>
         /// 获取或设置后台交互凭证有效期（单位：秒）。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ActivityId { get; set; } = string.Empty;
+        public string? ActivityId { get; set; }
     }
 }

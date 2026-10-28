@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/code/checkcode 接口的响应。</para>
@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("exist_code")]
         [System.Text.Json.Serialization.JsonPropertyName("exist_code")]
-        public string[] ExistingCodeList { get; set; } = default!;
+        public List<string>? ExistingCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置没有存入的卡券 Code 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("not_exist_code")]
         [System.Text.Json.Serialization.JsonPropertyName("not_exist_code")]
-        public string[] NonExistingCodeList { get; set; } = default!;
+        public List<string>? NonExistingCodeList { get; set; }
     }
 }

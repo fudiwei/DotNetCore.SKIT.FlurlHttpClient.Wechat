@@ -44,13 +44,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置报名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enroll_list")]
         [System.Text.Json.Serialization.JsonPropertyName("enroll_list")]
-        public IList<Types.Enroll> EnrollList { get; set; } = new List<Types.Enroll>();
+        public List<Types.Enroll>? EnrollList { get; set; }
     }
 }

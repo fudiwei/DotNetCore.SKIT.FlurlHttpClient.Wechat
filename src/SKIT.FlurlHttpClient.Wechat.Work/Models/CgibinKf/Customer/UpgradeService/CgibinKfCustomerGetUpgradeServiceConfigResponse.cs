@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid_list")]
-                public string[]? UserIdList { get; set; }
+                public List<string>? UserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置专员的部门 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_id_list")]
-                public long[]? DepartmentIdList { get; set; }
+                public List<long>? DepartmentIdList { get; set; }
             }
 
             public class GroupChatRange
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chat_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("chat_id_list")]
-                public string[]? GroupChatIdList { get; set; }
+                public List<string>? GroupChatIdList { get; set; }
             }
         }
 

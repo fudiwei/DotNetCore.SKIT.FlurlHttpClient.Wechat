@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                 [System.Xml.Serialization.XmlElement("ewaybill_order_id")]
-                public string EWaybillOrderId { get; set; } = default!;
+                public string? EWaybillOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递单号。
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
                 [System.Xml.Serialization.XmlElement("waybill_id")]
-                public string WaybillId { get; set; } = default!;
+                public string? WaybillId { get; set; }
 
                 /// <summary>
                 /// 获取或设置轨迹状态。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("desc")]
                 [System.Xml.Serialization.XmlElement("desc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
@@ -64,6 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("waybill_info")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_info")]
         [System.Xml.Serialization.XmlElement("waybill_info")]
-        public Types.Waybill Waybill { get; set; } = default!;
+        public Types.Waybill? Waybill { get; set; }
     }
 }

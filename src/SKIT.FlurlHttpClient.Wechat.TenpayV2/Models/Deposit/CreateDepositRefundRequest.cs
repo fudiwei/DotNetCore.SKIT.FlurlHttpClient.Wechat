@@ -38,21 +38,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = string.Empty;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置商户退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_refund_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
-        public string OutRefundNumber { get; set; } = string.Empty;
+        public string? OutRefundNumber { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。

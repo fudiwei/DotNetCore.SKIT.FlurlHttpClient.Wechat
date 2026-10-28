@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/getwxagameroominfo 接口的响应。</para>
@@ -67,7 +67,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("member_ext_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("member_ext_info")]
-                        public string MemberExtra { get; set; } = default!;
+                        public string? MemberExtra { get; set; }
                     }
                 }
 
@@ -76,7 +76,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("room_id_str")]
                 [System.Text.Json.Serialization.JsonPropertyName("room_id_str")]
-                public string RoomId { get; set; } = default!;
+                public string? RoomId { get; set; }
 
                 /// <summary>
                 /// 获取或设置房间状态。
@@ -132,28 +132,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
-                public string AccessInformation { get; set; } = default!;
+                public string? AccessInformation { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方自定义的房间信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("room_ext_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("room_ext_info")]
-                public string RoomExtra { get; set; } = default!;
+                public string? RoomExtra { get; set; }
 
                 /// <summary>
                 /// 获取或设置游戏随机种子。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("seed")]
                 [System.Text.Json.Serialization.JsonPropertyName("seed")]
-                public string Seed { get; set; } = default!;
+                public string? Seed { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("member_list")]
-                public Types.Member[] MemberList { get; set; } = default!;
+                public List<Types.Member>? MemberList { get; set; }
 
                 /// <summary>
                 /// 获取或设置最近更新时间戳。
@@ -176,6 +176,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

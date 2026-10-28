@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule_id")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule_id")]
-        public string ScheduleId { get; set; } = default!;
+        public string? ScheduleId { get; set; }
     }
 }

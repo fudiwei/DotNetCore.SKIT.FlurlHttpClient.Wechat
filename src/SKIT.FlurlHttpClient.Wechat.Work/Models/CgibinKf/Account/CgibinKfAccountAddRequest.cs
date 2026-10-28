@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置头像的 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-        public string AvatarMediaId { get; set; } = string.Empty;
+        public string? AvatarMediaId { get; set; }
     }
 }

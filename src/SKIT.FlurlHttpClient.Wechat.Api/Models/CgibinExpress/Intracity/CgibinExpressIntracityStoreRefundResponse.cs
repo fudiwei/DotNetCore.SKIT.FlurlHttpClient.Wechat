@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_store_id")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_store_id")]
-        public string StoreId { get; set; } = default!;
+        public string? StoreId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置退款金额（单位：分）。

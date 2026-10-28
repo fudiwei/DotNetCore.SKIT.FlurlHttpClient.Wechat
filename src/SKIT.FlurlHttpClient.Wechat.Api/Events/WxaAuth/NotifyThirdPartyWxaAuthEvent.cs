@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("provider")]
                 [System.Text.Json.Serialization.JsonPropertyName("provider")]
                 [System.Xml.Serialization.XmlElement("provider")]
-                public string Provider { get; set; } = default!;
+                public string? Provider { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核机构联系方式。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("contact")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact")]
                 [System.Xml.Serialization.XmlElement("contact")]
-                public string Contact { get; set; } = default!;
+                public string? Contact { get; set; }
 
                 /// <summary>
                 /// 获取或设置派单时间戳。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         [System.Xml.Serialization.XmlElement("appid")]
-        public string AuthorizerAppId { get; set; } = default!;
+        public string? AuthorizerAppId { get; set; }
 
         /// <summary>
         /// 获取或设置认证任务 ID。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("taskid")]
         [System.Text.Json.Serialization.JsonPropertyName("taskid")]
         [System.Xml.Serialization.XmlElement("taskid")]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置认证任务状态。

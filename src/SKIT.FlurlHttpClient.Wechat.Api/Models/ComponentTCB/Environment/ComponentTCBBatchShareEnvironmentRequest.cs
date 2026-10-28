@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string EnvironmentId { get; set; } = string.Empty;
+                public string? EnvironmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置 AppId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appids")]
                 [System.Text.Json.Serialization.JsonPropertyName("appids")]
-                public IList<string> AppIdList { get; set; } = new List<string>();
+                public List<string>? AppIdList { get; set; }
             }
         }
 
@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public IList<Types.Data> DataList { get; set; } = new List<Types.Data>();
+        public List<Types.Data>? DataList { get; set; }
     }
 }

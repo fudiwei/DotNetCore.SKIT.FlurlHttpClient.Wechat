@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/plugin?action=list 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置插件状态。
@@ -28,14 +28,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置插件头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("headimgurl")]
                 [System.Text.Json.Serialization.JsonPropertyName("headimgurl")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
             }
         }
 
@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plugin_list")]
         [System.Text.Json.Serialization.JsonPropertyName("plugin_list")]
-        public Types.Plugin[] PluginList { get; set; } = default!;
+        public List<Types.Plugin>? PluginList { get; set; }
     }
 }

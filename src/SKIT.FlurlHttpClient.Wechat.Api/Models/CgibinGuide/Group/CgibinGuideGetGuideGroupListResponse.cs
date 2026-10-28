@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidegrouplist 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string GroupName { get; set; } = default!;
+                public string? GroupName { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_list")]
         [System.Text.Json.Serialization.JsonPropertyName("group_list")]
-        public Types.Group[] GroupList { get; set; } = default!;
+        public List<Types.Group>? GroupList { get; set; }
     }
 }

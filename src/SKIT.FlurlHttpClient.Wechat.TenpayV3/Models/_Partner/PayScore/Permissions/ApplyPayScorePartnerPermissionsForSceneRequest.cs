@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                public string MerchantId { get; set; } = string.Empty;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-                public string SubMerchantId { get; set; } = string.Empty;
+                public string? SubMerchantId { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public string Scene { get; set; } = string.Empty;
+        public string? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付交易中授权附带的参数信息。

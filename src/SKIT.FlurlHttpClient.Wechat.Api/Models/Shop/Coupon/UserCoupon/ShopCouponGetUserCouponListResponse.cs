@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/get_usercoupon_list 接口的响应。</para>
@@ -27,21 +27,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家侧用户优惠券 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_user_coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_user_coupon_id")]
-                public string OutUserCouponId { get; set; } = default!;
+                public string? OutUserCouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家侧优惠券 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
-                public string OutCouponId { get; set; } = default!;
+                public string? OutCouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置状态。
@@ -55,7 +55,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ext_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
-                public Types.Extra Extra { get; set; } = default!;
+                public Types.Extra? Extra { get; set; }
 
                 /// <summary>
                 /// 获取或设置有效开始时间。
@@ -92,7 +92,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("result_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_url")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_url")]
-        public string AuthUrl { get; set; } = default!;
+        public string? AuthUrl { get; set; }
 
         /// <summary>
         /// 获取或设置授权链接有效期（单位：秒）。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatid")]
         [System.Text.Json.Serialization.JsonPropertyName("chatid")]
-        public string ChatId { get; set; } = default!;
+        public string? ChatId { get; set; }
     }
 }

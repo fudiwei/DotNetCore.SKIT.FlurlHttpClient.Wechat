@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置激活类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activate_type")]
         [System.Text.Json.Serialization.JsonPropertyName("activate_type")]
-        public string ActivateType { get; set; } = string.Empty;
+        public string? ActivateType { get; set; }
 
         /// <summary>
         /// 获取或设置是否在用户在开卡完成后返回拉起开卡组件的商家页面。
@@ -45,7 +45,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activate_path")]
         [System.Text.Json.Serialization.JsonPropertyName("activate_path")]
-        public string ActivateMiniProgramPath { get; set; } = string.Empty;
+        public string? ActivateMiniProgramPath { get; set; }
 
         /// <summary>
         /// 获取或设置自定义场景值。

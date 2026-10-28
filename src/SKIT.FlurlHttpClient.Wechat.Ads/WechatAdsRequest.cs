@@ -20,6 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public virtual string Version { get; set; } = "v1.0";
+        public virtual string? Version { get; set; } = "v1.0";
     }
 }

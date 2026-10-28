@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("flow_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("flow_ids")]
-        public string[] FundsFlowIdList { get; set; } = default!;
+        public List<string>? FundsFlowIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

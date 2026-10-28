@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/getbalance 接口的响应。</para>
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("balance_info")]
         [System.Text.Json.Serialization.JsonPropertyName("balance_info")]
-        public Types.Balance Balance { get; set; } = default!;
+        public Types.Balance? Balance { get; set; }
     }
 }

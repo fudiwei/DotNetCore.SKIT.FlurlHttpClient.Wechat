@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cats")]
                 [System.Text.Json.Serialization.JsonPropertyName("cats")]
-                public CategoryItem[] Items { get; set; } = default!;
+                public List<CategoryItem>? Items { get; set; }
             }
 
             public class CategoryItem
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cat_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("cat_info")]
-                public Types.Category Category { get; set; } = default!;
+                public Types.Category? Category { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否有该类目的权限。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("categories")]
         [System.Text.Json.Serialization.JsonPropertyName("categories")]
-        public Types.CategoryList[] CategoryList { get; set; } = default!;
+        public List<Types.CategoryList>? CategoryList { get; set; }
 
         /// <summary>
         /// 获取或设置是否类目错放。

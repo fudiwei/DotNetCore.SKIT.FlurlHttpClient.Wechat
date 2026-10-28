@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
 
                 /// <summary>
                 /// 获取或设置状态。
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prefetch_dns_domain")]
         [System.Text.Json.Serialization.JsonPropertyName("prefetch_dns_domain")]
-        public Types.PrefetchDNSDomain[] PrefetchDNSDomainList { get; set; } = default!;
+        public List<Types.PrefetchDNSDomain>? PrefetchDNSDomainList { get; set; }
 
         /// <summary>
         /// 获取或设置总共可配置域名个数。

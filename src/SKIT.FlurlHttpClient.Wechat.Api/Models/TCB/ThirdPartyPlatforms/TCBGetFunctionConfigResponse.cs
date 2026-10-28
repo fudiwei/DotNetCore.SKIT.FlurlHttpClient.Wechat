@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config")]
         [System.Text.Json.Serialization.JsonPropertyName("config")]
-        public string JsonConfig { get; set; } = default!;
+        public string? JsonConfig { get; set; }
     }
 }

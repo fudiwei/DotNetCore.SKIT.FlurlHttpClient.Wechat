@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("violation_records_format")]
         [System.Text.Json.Serialization.JsonPropertyName("violation_records_format")]
-        public string Format { get; set; } = "json";
+        public string? Format { get; set; } = "json";
 
         /// <summary>
         /// <inheritdoc/>

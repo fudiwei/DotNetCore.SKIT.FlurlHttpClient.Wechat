@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("MchOrderNo")]
                 [System.Text.Json.Serialization.JsonPropertyName("MchOrderNo")]
                 [System.Xml.Serialization.XmlElement("MchOrderNo")]
-                public string MerchantOrderNumber { get; set; } = default!;
+                public string? MerchantOrderNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付订单号。
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("TransactionId")]
                 [System.Text.Json.Serialization.JsonPropertyName("TransactionId")]
                 [System.Xml.Serialization.XmlElement("TransactionId")]
-                public string TransactionId { get; set; } = default!;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付时间戳。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ProductId")]
                 [System.Text.Json.Serialization.JsonPropertyName("ProductId")]
                 [System.Xml.Serialization.XmlElement("ProductId")]
-                public string ProductId { get; set; } = default!;
+                public string? ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置数量。
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ActivityId")]
                 [System.Text.Json.Serialization.JsonPropertyName("ActivityId")]
                 [System.Xml.Serialization.XmlElement("ActivityId")]
-                public string ActivityId { get; set; } = default!;
+                public string? ActivityId { get; set; }
 
                 /// <summary>
                 /// 获取或设置拼团 ID。
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("TeamId")]
                 [System.Text.Json.Serialization.JsonPropertyName("TeamId")]
                 [System.Xml.Serialization.XmlElement("TeamId")]
-                public string TeamId { get; set; } = default!;
+                public string? TeamId { get; set; }
 
                 /// <summary>
                 /// 获取或设置拼团类型。
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("OriginalTransactionId")]
                 [System.Text.Json.Serialization.JsonPropertyName("OriginalTransactionId")]
                 [System.Xml.Serialization.XmlElement("OriginalTransactionId")]
-                public string OriginalTransactionId { get; set; } = default!;
+                public string? OriginalTransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置自动续费状态。
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OpenId")]
         [System.Text.Json.Serialization.JsonPropertyName("OpenId")]
         [System.Xml.Serialization.XmlElement("OpenId")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置业务订单号。
@@ -168,7 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OutTradeNo")]
         [System.Text.Json.Serialization.JsonPropertyName("OutTradeNo")]
         [System.Xml.Serialization.XmlElement("OutTradeNo")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置虚拟支付环境。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<UserOptionItem> Items { get; set; } = new List<UserOptionItem>();
+                public List<UserOptionItem>? Items { get; set; }
             }
 
             public class UserOptionItem
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -47,6 +47,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("option")]
         [System.Text.Json.Serialization.JsonPropertyName("option")]
-        public Types.UserOptionList UserOptionList { get; set; } = new Types.UserOptionList();
+        public Types.UserOptionList? UserOptionList { get; set; }
     }
 }

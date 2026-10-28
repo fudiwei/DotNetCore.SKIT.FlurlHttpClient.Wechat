@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /datacube/getgameanalysisdata 接口的响应。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("label")]
                         [System.Text.Json.Serialization.JsonPropertyName("label")]
-                        public string Label { get; set; } = default!;
+                        public string? Label { get; set; }
 
                         /// <summary>
                         /// 获取或设置维度取值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string Value { get; set; } = default!;
+                        public string? Value { get; set; }
                     }
                 }
 
@@ -41,21 +41,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("time_label")]
                 [System.Text.Json.Serialization.JsonPropertyName("time_label")]
-                public string TimeLabel { get; set; } = default!;
+                public string? TimeLabel { get; set; }
 
                 /// <summary>
                 /// 获取或设置维度取值分布列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_dimension_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_dimension_list")]
-                public Types.GroupDimension[]? GroupDimensionList { get; set; }
+                public List<Types.GroupDimension>? GroupDimensionList { get; set; }
 
                 /// <summary>
                 /// 获取或设置指标数值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("metric_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("metric_value")]
-                public decimal MetricValue { get; set; } = default!;
+                public decimal MetricValue { get; set; }
             }
         }
 
@@ -64,6 +64,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data_list")]
         [System.Text.Json.Serialization.JsonPropertyName("data_list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

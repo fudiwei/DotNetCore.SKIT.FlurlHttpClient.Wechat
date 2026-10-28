@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_code")]
-                public string CouponCode { get; set; } = default!;
+                public string? CouponCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置上传失败错误码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
-                public string ErrorCode { get; set; } = default!;
+                public string? ErrorCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置上传失败错误信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("message")]
                 [System.Text.Json.Serialization.JsonPropertyName("message")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = default!;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置去重后上传 Code 总数。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("success_codes")]
-        public string[]? SuccessCodeList { get; set; }
+        public List<string>? SuccessCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置上传成功时间。
@@ -81,20 +81,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_codes")]
-        public Types.FailCode[]? FailCodeList { get; set; }
+        public List<Types.FailCode>? FailCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置已存在的 Code 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("exist_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("exist_codes")]
-        public string[]? ExistedCodeList { get; set; }
+        public List<string>? ExistedCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置本次请求中重复的 Code 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("duplicate_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("duplicate_codes")]
-        public string[]? DuplicateCodeList { get; set; }
+        public List<string>? DuplicateCodeList { get; set; }
     }
 }

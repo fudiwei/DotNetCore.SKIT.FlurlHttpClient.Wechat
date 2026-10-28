@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bill_date")]
                         [System.Text.Json.Serialization.JsonPropertyName("bill_date")]
-                        public string BillDateString { get; set; } = default!;
+                        public string? BillDateString { get; set; }
 
                         /// <summary>
                         /// 获取或设置账单开始时间戳。
@@ -66,14 +66,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.CreditBill[] CreditBillList { get; set; } = default!;
+                public List<Types.CreditBill>? CreditBillList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Types.Pagination Pagination { get; set; } = default!;
+                public Types.Pagination? Pagination { get; set; }
             }
         }
 
@@ -82,6 +82,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "contracts", "out-contract-code", request.OutContractCode)
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "contracts", "out-contract-code", request.OutContractCode!)
                 .SetQueryParam("sp_appid", request.AppId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("sub_appid", request.SubAppId)
@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "contracts", request.ContractId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "contracts", request.ContractId!)
                 .SetQueryParam("sp_appid", request.AppId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("sub_appid", request.SubAppId);
@@ -186,7 +186,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "contracts", request.ContractId, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "contracts", request.ContractId!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminatePartnerPAPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -232,7 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutTradeNumber, "out_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "transactions", "out-trade-no", request.OutTradeNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "transactions", "out-trade-no", request.OutTradeNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPartnerPAPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -257,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransactionId, "transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "transactions", request.TransactionId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "transactions", request.TransactionId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPartnerPAPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -282,7 +282,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutTradeNumber, "out_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "transactions", "out-trade-no", request.OutTradeNumber, "reverse");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "transactions", "out-trade-no", request.OutTradeNumber!, "reverse");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ReversePartnerPAPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

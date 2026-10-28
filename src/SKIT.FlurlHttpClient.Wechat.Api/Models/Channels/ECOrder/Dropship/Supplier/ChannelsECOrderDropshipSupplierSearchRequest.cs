@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("search_condition")]
         [System.Text.Json.Serialization.JsonPropertyName("search_condition")]
-        public Types.SearchCondition SearchCondition { get; set; } = new Types.SearchCondition();
+        public Types.SearchCondition? SearchCondition { get; set; }
 
         /// <summary>
         /// 获取或设置分页信息。

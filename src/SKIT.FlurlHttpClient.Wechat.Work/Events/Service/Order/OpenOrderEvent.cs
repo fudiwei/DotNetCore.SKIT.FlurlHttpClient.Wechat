@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("SuiteId")]
         [System.Text.Json.Serialization.JsonPropertyName("SuiteId")]
         [System.Xml.Serialization.XmlElement("SuiteId")]
-        public string SuiteId { get; set; } = default!;
+        public string? SuiteId { get; set; }
 
         /// <summary>
         /// 获取或设置购买方 CorpId。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("PaidCorpId")]
         [System.Text.Json.Serialization.JsonPropertyName("PaidCorpId")]
         [System.Xml.Serialization.XmlElement("PaidCorpId")]
-        public string PayerCorpId { get; set; } = default!;
+        public string? PayerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置订单 ID。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("OrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("OrderId")]
         [System.Xml.Serialization.XmlElement("OrderId")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置操作员 ID。

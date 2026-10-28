@@ -53,21 +53,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        public IList<string>? ToCorpUserIdList { get; set; }
+        public List<string>? ToCorpUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的互联企业部门 ID（格式："LinkedId/DepartmentId"）列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("toparty")]
         [System.Text.Json.Serialization.JsonPropertyName("toparty")]
-        public IList<string>? ToLinkedDepartmentIdList { get; set; }
+        public List<string>? ToLinkedDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totag")]
         [System.Text.Json.Serialization.JsonPropertyName("totag")]
-        public IList<int>? ToTagIdList { get; set; }
+        public List<int>? ToTagIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否发送给应用可见范围内的所有人，包括互联企业的成员。
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。

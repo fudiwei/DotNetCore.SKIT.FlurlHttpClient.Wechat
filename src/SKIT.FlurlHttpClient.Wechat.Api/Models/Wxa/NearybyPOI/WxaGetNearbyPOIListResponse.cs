@@ -23,21 +23,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("poi_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("poi_id")]
                                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                                public string POIId { get; set; } = default!;
+                                public string? POIId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置资质证件地址。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("qualification_address")]
                                 [System.Text.Json.Serialization.JsonPropertyName("qualification_address")]
-                                public string QualificationAddress { get; set; } = default!;
+                                public string? QualificationAddress { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置资质证件证件号。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("qualification_num")]
                                 [System.Text.Json.Serialization.JsonPropertyName("qualification_num")]
-                                public string QualificationNumber { get; set; } = default!;
+                                public string? QualificationNumber { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置地点审核状态。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("poi_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("poi_list")]
-                        public Types.POIItem[] POIList { get; set; } = default!;
+                        public List<Types.POIItem>? POIList { get; set; }
                     }
                 }
 
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Convertes.NewtonsoftJsonPOIConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(Convertes.SystemTextJsonPOIConverter))]
-                public Types.POI POI { get; set; } = default!;
+                public Types.POI? POI { get; set; }
             }
         }
 
@@ -173,6 +173,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

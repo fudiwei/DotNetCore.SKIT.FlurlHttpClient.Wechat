@@ -68,13 +68,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_settings")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_settings")]
-        public Types.MeetingSettings MeetingSettings { get; set; } = default!;
+        public Types.MeetingSettings? MeetingSettings { get; set; }
 
         /// <summary>
         /// 获取或设置录制配置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record_settings")]
         [System.Text.Json.Serialization.JsonPropertyName("record_settings")]
-        public Types.RecordSettings RecordSettings { get; set; } = default!;
+        public Types.RecordSettings? RecordSettings { get; set; }
     }
 }

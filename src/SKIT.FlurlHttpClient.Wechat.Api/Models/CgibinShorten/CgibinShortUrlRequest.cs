@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "long2short";
+        public string? Action { get; set; } = "long2short";
 
         /// <summary>
         /// 获取或设置需要转换的长链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("long_url")]
         [System.Text.Json.Serialization.JsonPropertyName("long_url")]
-        public string LongUrl { get; set; } = string.Empty;
+        public string? LongUrl { get; set; }
     }
 }

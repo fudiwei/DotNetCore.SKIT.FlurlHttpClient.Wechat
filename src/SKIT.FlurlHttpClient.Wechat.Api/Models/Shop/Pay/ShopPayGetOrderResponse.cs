@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("refund_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("refund_no")]
-                        public string OutRefundNumber { get; set; } = default!;
+                        public string? OutRefundNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置微信支付退款单号。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("result")]
                         [System.Text.Json.Serialization.JsonPropertyName("result")]
-                        public string Status { get; set; } = default!;
+                        public string? Status { get; set; }
                     }
 
                     public class ProfitSharing
@@ -63,21 +63,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mchid")]
                         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                        public string MerchantId { get; set; } = default!;
+                        public string? MerchantId { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户分账单号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("profit_sharing_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("profit_sharing_no")]
-                        public string OutProfitSharingNumber { get; set; } = default!;
+                        public string? OutProfitSharingNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置微信分账单号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("profit_sharing_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("profit_sharing_id")]
-                        public string ProfitSharingId { get; set; } = default!;
+                        public string? ProfitSharingId { get; set; }
 
                         /// <summary>
                         /// 获取或设置分账金额（单位：分）。
@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("result")]
                         [System.Text.Json.Serialization.JsonPropertyName("result")]
-                        public string Status { get; set; } = default!;
+                        public string? Status { get; set; }
                     }
                 }
 
@@ -114,21 +114,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置合单商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("combine_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("combine_trade_no")]
-                public string CombineOutTradeNumber { get; set; } = default!;
+                public string? CombineOutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付交易单号。
@@ -177,21 +177,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_list")]
-                public Types.Refund[]? RefundList { get; set; }
+                public List<Types.Refund>? RefundList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("profit_sharing_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("profit_sharing_list")]
-                public Types.ProfitSharing[]? ProfitSharingList { get; set; }
+                public List<Types.ProfitSharing>? ProfitSharingList { get; set; }
 
                 /// <summary>
                 /// 获取或设置账期（单位：天）。
@@ -216,6 +216,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

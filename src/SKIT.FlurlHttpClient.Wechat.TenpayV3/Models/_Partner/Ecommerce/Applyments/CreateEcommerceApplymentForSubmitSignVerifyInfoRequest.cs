@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("verify_identity_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("verify_identity_type")]
-                public string VerifyIdentityType { get; set; } = string.Empty;
+                public string? VerifyIdentityType { get; set; }
 
                 /// <summary>
                 /// 获取或设置核身结果。

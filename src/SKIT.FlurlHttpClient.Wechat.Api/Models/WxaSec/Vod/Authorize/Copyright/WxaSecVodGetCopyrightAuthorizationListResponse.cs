@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorizer_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
-                public string AuthorizerAppId { get; set; } = default!;
+                public string? AuthorizerAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权类型。
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.DramaCopyright[] DramaCopyrightList { get; set; } = default!;
+        public List<Types.DramaCopyright>? DramaCopyrightList { get; set; }
 
         /// <summary>
         /// 获取或设置记录总数。

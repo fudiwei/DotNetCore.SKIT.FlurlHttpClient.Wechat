@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/complaint/get_list 接口的响应。</para>
@@ -35,14 +35,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户电话号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置状态。
@@ -93,7 +93,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("orders")]
         [System.Text.Json.Serialization.JsonPropertyName("orders")]
-        public Types.ComplaintOrder[] ComplaintList { get; set; } = default!;
+        public List<Types.ComplaintOrder>? ComplaintList { get; set; }
 
         /// <summary>
         /// 获取或设置售后单总数量。

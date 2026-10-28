@@ -66,14 +66,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_key")]
-                public string PrivacyKey { get; set; } = string.Empty;
+                public string? PrivacyKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置收集该信息的用途。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_text")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_text")]
-                public string PrivacyText { get; set; } = string.Empty;
+                public string? PrivacyText { get; set; }
             }
         }
 
@@ -89,13 +89,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("owner_setting")]
         [System.Text.Json.Serialization.JsonPropertyName("owner_setting")]
-        public Types.OwnerSetting OwnerSetting { get; set; } = new Types.OwnerSetting();
+        public Types.OwnerSetting? OwnerSetting { get; set; }
 
         /// <summary>
         /// 获取或设置要收集的用户信息配置列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("setting_list")]
         [System.Text.Json.Serialization.JsonPropertyName("setting_list")]
-        public IList<Types.PrivacySetting>? PrivacySettingList { get; set; }
+        public List<Types.PrivacySetting>? PrivacySettingList { get; set; }
     }
 }

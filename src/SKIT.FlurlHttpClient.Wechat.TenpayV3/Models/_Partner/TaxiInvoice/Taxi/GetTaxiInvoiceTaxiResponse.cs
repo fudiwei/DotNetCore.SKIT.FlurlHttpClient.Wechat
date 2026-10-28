@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("company_mchid")]
-        public string CompanyMerchantId { get; set; } = default!;
+        public string? CompanyMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置公司名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-        public string CompanyName { get; set; } = default!;
+        public string? CompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置车牌号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-        public string PlateNumber { get; set; } = default!;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置主班司机资格证号。

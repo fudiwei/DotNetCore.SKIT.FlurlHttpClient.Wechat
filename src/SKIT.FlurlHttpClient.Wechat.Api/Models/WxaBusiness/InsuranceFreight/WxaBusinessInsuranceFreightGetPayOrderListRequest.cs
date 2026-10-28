@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status_list")]
         [System.Text.Json.Serialization.JsonPropertyName("status_list")]
-        public IList<int>? StatusList { get; set; }
+        public List<int>? StatusList { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

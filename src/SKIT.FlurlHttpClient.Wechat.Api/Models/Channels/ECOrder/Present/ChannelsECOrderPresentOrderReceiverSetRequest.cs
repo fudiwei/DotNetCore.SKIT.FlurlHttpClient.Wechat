@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = string.Empty;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置收礼者 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = string.Empty;
+                public string? OpenId { get; set; }
             }
         }
 
@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("present_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
-        public string PresentOrderId { get; set; } = string.Empty;
+        public string? PresentOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置子单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_order_list")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
     }
 }

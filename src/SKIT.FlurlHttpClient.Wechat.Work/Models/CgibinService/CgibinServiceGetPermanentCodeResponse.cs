@@ -63,14 +63,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("register_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("register_code")]
-                public string Code { get; set; } = default!;
+                public string? Code { get; set; }
 
                 /// <summary>
                 /// 获取或设置推广包 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public string TemplateId { get; set; } = default!;
+                public string? TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义渠道参数。
@@ -98,14 +98,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("edition_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("edition_id")]
-                        public string EditionId { get; set; } = default!;
+                        public string? EditionId { get; set; }
 
                         /// <summary>
                         /// 获取或设置版本名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("edition_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("edition_name")]
-                        public string EditionName { get; set; } = default!;
+                        public string? EditionName { get; set; }
 
                         /// <summary>
                         /// 获取或设置应用状态。
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("agent")]
                 [System.Text.Json.Serialization.JsonPropertyName("agent")]
-                public Types.Agent[] AgentList { get; set; } = default!;
+                public List<Types.Agent>? AgentList { get; set; }
             }
         }
 
@@ -158,14 +158,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("permanent_code")]
         [System.Text.Json.Serialization.JsonPropertyName("permanent_code")]
-        public string PermanentAuthCode { get; set; } = default!;
+        public string? PermanentAuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置授权方凭证。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("access_token")]
-        public string AccessToken { get; set; } = default!;
+        public string? AccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置授权方凭证有效期（单位：秒）。

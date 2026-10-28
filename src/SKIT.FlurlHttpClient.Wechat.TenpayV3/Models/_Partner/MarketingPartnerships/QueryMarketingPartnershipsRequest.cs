@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /marketing/partnerships 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置合作方 AppId。与字段 <see cref="MerchantId"/> 二选一。
@@ -38,7 +38,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_type")]
-                public string BusinessType { get; set; } = string.Empty;
+                public string? BusinessType { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权场景。
@@ -61,14 +61,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public Types.Partner Partner { get; set; } = new Types.Partner();
+        public Types.Partner? Partner { get; set; }
 
         /// <summary>
         /// 获取或设置被授权数据。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public Types.AuthorizedData AuthorizedData { get; set; } = new Types.AuthorizedData();
+        public Types.AuthorizedData? AuthorizedData { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -78,7 +78,7 @@
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

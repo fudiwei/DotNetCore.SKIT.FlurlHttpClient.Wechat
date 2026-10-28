@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ProductId")]
                 [System.Text.Json.Serialization.JsonPropertyName("ProductId")]
                 [System.Xml.Serialization.XmlElement("ProductId")]
-                public string ProductId { get; set; } = default!;
+                public string? ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置签约成功时间戳。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OpenId")]
         [System.Text.Json.Serialization.JsonPropertyName("OpenId")]
         [System.Xml.Serialization.XmlElement("OpenId")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置透传信息。

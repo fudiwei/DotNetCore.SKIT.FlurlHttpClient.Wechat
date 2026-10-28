@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置 URL Link。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url_link")]
         [System.Text.Json.Serialization.JsonPropertyName("url_link")]
-        public string UrlLink { get; set; } = string.Empty;
+        public string? UrlLink { get; set; }
 
         /// <summary>
         /// 获取或设置模版 ID。
@@ -31,13 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_param_list")]
         [System.Text.Json.Serialization.JsonPropertyName("template_param_list")]
-        public IList<string>? TemplatePatameterList { get; set; }
+        public List<string>? TemplatePatameterList { get; set; }
 
         /// <summary>
         /// 获取或设置手机号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("phone_number_list")]
         [System.Text.Json.Serialization.JsonPropertyName("phone_number_list")]
-        public IList<string> MobileNumberList { get; set; } = new List<string>();
+        public List<string>? MobileNumberList { get; set; }
     }
 }

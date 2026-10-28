@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("old")]
                 [System.Text.Json.Serialization.JsonPropertyName("old")]
-                public Types.Delivery OldDelivery { get; set; } = new Types.Delivery();
+                public Types.Delivery? OldDelivery { get; set; }
 
                 /// <summary>
                 /// 获取或设置新快递信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("new")]
                 [System.Text.Json.Serialization.JsonPropertyName("new")]
-                public Types.Delivery NewDelivery { get; set; } = new Types.Delivery();
+                public Types.Delivery? NewDelivery { get; set; }
             }
         }
 
@@ -37,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ds_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ds_order_id")]
-        public string DropshipOrderId { get; set; } = string.Empty;
+        public string? DropshipOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置快递修改信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("change_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("change_infos")]
-        public IList<Types.ChangeInfo> ChangeInfoList { get; set; } = new List<Types.ChangeInfo>();
+        public List<Types.ChangeInfo>? ChangeInfoList { get; set; }
     }
 }

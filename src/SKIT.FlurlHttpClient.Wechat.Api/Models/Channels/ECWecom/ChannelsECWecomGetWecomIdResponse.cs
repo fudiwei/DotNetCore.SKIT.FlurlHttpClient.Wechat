@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wecom_corp_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("wecom_corp_id")]
-                public string WecomAppId { get; set; } = default!;
+                public string? WecomAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业微信账号 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wecom_user_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("wecom_user_id")]
-                public string WecomUserId { get; set; } = default!;
+                public string? WecomUserId { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

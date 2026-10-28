@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BankAliasCode, "bank_alias_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", request.BankAliasCode, "branches")
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", request.BankAliasCode!, "branches")
                 .SetQueryParam("city_code", request.CityCode)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);

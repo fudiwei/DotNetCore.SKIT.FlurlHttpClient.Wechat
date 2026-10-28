@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tag_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
-                        public string[]? TagId { get; set; }
+                        public List<string>? TagId { get; set; }
 
                         /// <summary>
                         /// 获取或设置学校为家长设置的备注。
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("remark_mobiles")]
                         [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
-                        public string[]? RemarkMobileNumberList { get; set; }
+                        public List<string>? RemarkMobileNumberList { get; set; }
                     }
 
                     public class ExternalProfile : CgibinUserGetResponse.Types.ExternalProfile
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                public string ExternalUserId { get; set; } = default!;
+                public string? ExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置由企业或服务商在导入家长时指定的关键字。
@@ -193,14 +193,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员对外部联系人的备注。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("remark")]
                 [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                public string Remark { get; set; } = default!;
+                public string? Remark { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员对外部联系人的备注企业名称。
@@ -214,28 +214,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("remark_mobiles")]
                 [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
-                public string[]? RemarkMobileNumberList { get; set; }
+                public List<string>? RemarkMobileNumberList { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员对外部联系人的描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员添加外部联系人所打企业标签列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tags")]
                 [System.Text.Json.Serialization.JsonPropertyName("tags")]
-                public Types.Tag[]? TagList { get; set; }
+                public List<Types.Tag>? TagList { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员添加外部联系人所打企业标签 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tag_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
-                public string[]? TagIdList { get; set; }
+                public List<string>? TagIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员添加外部联系人的来源。
@@ -279,14 +279,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_contact")]
         [System.Text.Json.Serialization.JsonPropertyName("external_contact")]
-        public Types.ExternalContact ExternalContact { get; set; } = default!;
+        public Types.ExternalContact? ExternalContact { get; set; }
 
         /// <summary>
         /// 获取或设置添加了此外部联系人的企业成员列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("follow_user")]
         [System.Text.Json.Serialization.JsonPropertyName("follow_user")]
-        public Types.FollowUser[] FollowUserList { get; set; } = default!;
+        public List<Types.FollowUser>? FollowUserList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

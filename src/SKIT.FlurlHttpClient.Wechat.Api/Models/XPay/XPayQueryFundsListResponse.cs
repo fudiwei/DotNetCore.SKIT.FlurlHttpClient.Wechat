@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("bill_id")]
-                public string BillId { get; set; } = default!;
+                public string? BillId { get; set; }
 
                 /// <summary>
                 /// 获取或设置充值时间。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fund_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("fund_id")]
-                public string FundId { get; set; } = default!;
+                public string? FundId { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算周期开始时间戳。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transfer_account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("transfer_account_name")]
-                public string TransferAccountName { get; set; } = default!;
+                public string? TransferAccountName { get; set; }
 
                 /// <summary>
                 /// 获取或设置充值金额（单位：分）。
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_list")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_list")]
-        public Types.Bill[] BillList { get; set; } = default!;
+        public List<Types.Bill>? BillList { get; set; }
 
         /// <summary>
         /// 获取或设置总页数。

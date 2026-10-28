@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]
-        public string MediaPlatformAppId { get; set; } = string.Empty;
+        public string? MediaPlatformAppId { get; set; }
 
         /// <summary>
         /// 获取或设置公众号管理员授权成功后推送的票据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("ticket")]
-        public string IsSameAdmin { get; set; } = string.Empty;
+        public string? IsSameAdmin { get; set; }
     }
 }

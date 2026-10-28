@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
-                public string ComplaintId { get; set; } = default!;
+                public string? ComplaintId { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店 ID。
@@ -50,14 +50,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_detail")]
-                public string ComplaintDetail { get; set; } = default!;
+                public string? ComplaintDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_state")]
-                public string ComplaintState { get; set; } = default!;
+                public string? ComplaintState { get; set; }
 
                 /// <summary>
                 /// 获取或设置被诉商户号。
@@ -88,14 +88,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_media_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
-                public Types.ComplaintMedia[] ComplaintMediaList { get; set; } = default!;
+                public List<Types.ComplaintMedia>? ComplaintMediaList { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉单关联订单列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_order_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_order_info")]
-                public Types.ComplaintOrder[] ComplaintOrderList { get; set; } = default!;
+                public List<Types.ComplaintOrder>? ComplaintOrderList { get; set; }
 
                 /// <summary>
                 /// 获取或设置问题类型。
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("problem_description")]
                 [System.Text.Json.Serialization.JsonPropertyName("problem_description")]
-                public string ProblemDescription { get; set; } = default!;
+                public string? ProblemDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请退款金额（单位：分）。
@@ -144,14 +144,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_tag_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_tag_list")]
-                public string[]? UserTagList { get; set; }
+                public List<string>? UserTagList { get; set; }
 
                 /// <summary>
                 /// 获取或设置关联服务单列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_order_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_order_info")]
-                public Types.ServiceOrder[]? ServiceOrderList { get; set; }
+                public List<Types.ServiceOrder>? ServiceOrderList { get; set; }
 
                 /// <summary>
                 /// 获取或设置补充信息。
@@ -181,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Complaint[] ComplaintList { get; set; } = default!;
+        public List<Types.Complaint>? ComplaintList { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

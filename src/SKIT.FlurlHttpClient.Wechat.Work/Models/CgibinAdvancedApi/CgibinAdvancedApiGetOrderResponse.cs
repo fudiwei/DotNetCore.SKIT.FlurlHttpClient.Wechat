@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置购买的高级接口类型。
@@ -76,14 +76,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_corpid")]
-                public string CustomCorpId { get; set; } = default!;
+                public string? CustomCorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置下单人成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("buyer_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("buyer_userid")]
-                public string BuyerUserId { get; set; } = default!;
+                public string? BuyerUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单类型。
@@ -127,6 +127,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

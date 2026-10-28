@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("complaint_info")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_info")]
         [System.Xml.Serialization.XmlElement("complaint_info")]
-        public Types.ComplaintOrder ComplaintOrder { get; set; } = default!;
+        public Types.ComplaintOrder? ComplaintOrder { get; set; }
     }
 }

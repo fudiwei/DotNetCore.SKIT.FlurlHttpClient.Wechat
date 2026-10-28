@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-                public string SubMerchantId { get; set; } = default!;
+                public string? SubMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户简称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_shortname")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_shortname")]
-                public string MerchantShortName { get; set; } = default!;
+                public string? MerchantShortName { get; set; }
 
                 /// <summary>
                 /// 获取或设置签约时间。
@@ -39,10 +39,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.SubMerchant[] SubMerchantList { get; set; } = default!;
+        public List<Types.SubMerchant>? SubMerchantList { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

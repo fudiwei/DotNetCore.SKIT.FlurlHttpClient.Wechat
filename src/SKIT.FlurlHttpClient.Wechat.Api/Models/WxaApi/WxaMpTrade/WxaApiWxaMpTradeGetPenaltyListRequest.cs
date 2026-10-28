@@ -7,11 +7,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置分页起始位置。
-        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public int Offset { get; set; } = 0;
+        public int Offset { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

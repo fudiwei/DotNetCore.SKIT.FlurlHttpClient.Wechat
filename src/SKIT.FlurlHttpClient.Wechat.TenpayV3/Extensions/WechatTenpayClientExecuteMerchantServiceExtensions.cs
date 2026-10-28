@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ComplaintId, "complaint_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantServiceComplaintByComplaintIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ComplaintId, "complaint_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId, "negotiation-historys")
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId!, "negotiation-historys")
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "response");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId!, "response");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantServiceComplaintResponseResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "complete");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId!, "complete");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CompleteMerchantServiceComplaintResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -165,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ComplaintId, "complaint_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "update-refund-progress");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId!, "update-refund-progress");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMerchantServiceComplaintRefundProgressResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -291,7 +291,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                }
             }
 
             IFlurlRequest flurlReq = client

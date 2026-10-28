@@ -11,13 +11,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("page_id")]
         [System.Text.Json.Serialization.JsonPropertyName("page_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string PageId { get; set; } = default!;
+        public string? PageId { get; set; }
 
         /// <summary>
         /// 获取或设置货架链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string PageUrl { get; set; } = default!;
+        public string? PageUrl { get; set; }
     }
 }

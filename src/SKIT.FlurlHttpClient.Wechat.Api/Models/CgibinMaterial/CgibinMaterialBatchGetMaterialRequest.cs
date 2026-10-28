@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。
@@ -21,6 +21,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("count")]
         [System.Text.Json.Serialization.JsonPropertyName("count")]

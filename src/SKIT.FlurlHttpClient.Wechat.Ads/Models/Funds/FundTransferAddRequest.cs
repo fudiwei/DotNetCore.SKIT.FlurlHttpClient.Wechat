@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fund_type")]
         [System.Text.Json.Serialization.JsonPropertyName("fund_type")]
-        public string FundType { get; set; } = string.Empty;
+        public string? FundType { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。

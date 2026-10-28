@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]
-        public string OutBatchNumber { get; set; } = default!;
+        public string? OutBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
-        public string BatchId { get; set; } = default!;
+        public string? BatchId { get; set; }
 
         /// <summary>
         /// 获取或设置批次创建时间。

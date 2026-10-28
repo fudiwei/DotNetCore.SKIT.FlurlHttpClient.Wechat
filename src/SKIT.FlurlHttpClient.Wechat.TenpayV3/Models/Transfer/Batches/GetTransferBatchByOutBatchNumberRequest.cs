@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutBatchNumber { get; set; } = string.Empty;
+        public string? OutBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置是否查询转账明细单。
@@ -20,7 +20,7 @@
         public bool RequireQueryDetail { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

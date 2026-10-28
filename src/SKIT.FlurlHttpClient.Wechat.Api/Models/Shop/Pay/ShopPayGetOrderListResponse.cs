@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/pay/getorderlist 接口的响应。</para>
@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_no_list")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_no_list")]
-        public string[] OutTradeNumeberList { get; set; } = default!;
+        public List<string>? OutTradeNumeberList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有下一页。

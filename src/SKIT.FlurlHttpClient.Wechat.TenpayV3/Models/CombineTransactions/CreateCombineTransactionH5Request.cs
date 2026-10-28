@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("h5_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("h5_info")]
-                public Types.H5Info H5Info { get; set; } = new Types.H5Info();
+                public Types.H5Info? H5Info { get; set; }
             }
         }
 
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_appid")]
-        public string CombineAppId { get; set; } = string.Empty;
+        public string? CombineAppId { get; set; }
 
         /// <summary>
         /// 获取或设置合单发起方的微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_out_trade_no")]
-        public string CombineOutTradeNumber { get; set; } = string.Empty;
+        public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置交易起始时间。
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedrive/file_info 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_info")]
         [System.Text.Json.Serialization.JsonPropertyName("file_info")]
-        public Types.File File { get; set; } = default!;
+        public Types.File? File { get; set; }
     }
 }

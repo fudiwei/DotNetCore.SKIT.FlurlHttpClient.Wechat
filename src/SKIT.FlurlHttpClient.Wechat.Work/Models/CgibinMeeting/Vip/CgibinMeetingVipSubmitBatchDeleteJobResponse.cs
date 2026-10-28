@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jobid")]
         [System.Text.Json.Serialization.JsonPropertyName("jobid")]
-        public string JobId { get; set; } = default!;
+        public string? JobId { get; set; }
 
         /// <summary>
         /// 获取或设置无效的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_userid_list")]
-        public string[]? InvalidUserIdList { get; set; }
+        public List<string>? InvalidUserIdList { get; set; }
     }
 }

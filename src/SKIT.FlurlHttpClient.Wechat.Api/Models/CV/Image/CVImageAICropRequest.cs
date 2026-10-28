@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<decimal>? RatioList { get; set; }
+        public List<decimal>? RatioList { get; set; }
     }
 }

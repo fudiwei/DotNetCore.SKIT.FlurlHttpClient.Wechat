@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("hash_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("hash_type")]
-                        public string HashType { get; set; } = default!;
+                        public string? HashType { get; set; }
 
                         /// <summary>
                         /// 获取或设置哈希值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("hash_value")]
                         [System.Text.Json.Serialization.JsonPropertyName("hash_value")]
-                        public string HashValue { get; set; } = default!;
+                        public string? HashValue { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("photo_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("photo_type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置照片信息摘要信息。
@@ -64,35 +64,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("company_mchid")]
-        public string CompanyMerchantId { get; set; } = default!;
+        public string? CompanyMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置公司名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-        public string CompanyName { get; set; } = default!;
+        public string? CompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置司机姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("driver_name")]
         [System.Text.Json.Serialization.JsonPropertyName("driver_name")]
-        public string DriverName { get; set; } = default!;
+        public string? DriverName { get; set; }
 
         /// <summary>
         /// 获取或设置司机资格证号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("driver_license")]
         [System.Text.Json.Serialization.JsonPropertyName("driver_license")]
-        public string DriverLicenseNumber { get; set; } = default!;
+        public string? DriverLicenseNumber { get; set; }
 
         /// <summary>
         /// 获取或设置司机类别。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("driver_category")]
         [System.Text.Json.Serialization.JsonPropertyName("driver_category")]
-        public string DriverCategory { get; set; } = default!;
+        public string? DriverCategory { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。

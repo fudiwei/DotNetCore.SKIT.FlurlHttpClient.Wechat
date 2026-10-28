@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.LeadsData[] LeadsDataList { get; set; } = default!;
+        public List<Types.LeadsData>? LeadsDataList { get; set; }
     }
 }

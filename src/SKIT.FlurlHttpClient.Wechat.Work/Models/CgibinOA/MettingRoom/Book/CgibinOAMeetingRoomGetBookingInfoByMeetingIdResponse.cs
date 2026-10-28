@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/meetingroom/get_booking_info_by_meeting_id 接口的响应。</para>
@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        public Types.Schedule Schedule { get; set; } = default!;
+        public Types.Schedule? Schedule { get; set; }
     }
 }

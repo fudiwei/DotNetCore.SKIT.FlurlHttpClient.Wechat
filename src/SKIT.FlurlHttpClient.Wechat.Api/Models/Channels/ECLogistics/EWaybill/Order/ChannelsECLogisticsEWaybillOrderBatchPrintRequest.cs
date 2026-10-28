@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = string.Empty;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置电子面单 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ewaybill_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_id")]
-                public string EWaybillOrderId { get; set; } = string.Empty;
+                public string? EWaybillOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-                public string WaybillId { get; set; } = string.Empty;
+                public string? WaybillId { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否是补打单。
@@ -46,6 +46,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("req_list")]
         [System.Text.Json.Serialization.JsonPropertyName("req_list")]
-        public IList<Types.PrintRequest> PrintRequestList { get; set; } = new List<Types.PrintRequest>();
+        public List<Types.PrintRequest>? PrintRequestList { get; set; }
     }
 }

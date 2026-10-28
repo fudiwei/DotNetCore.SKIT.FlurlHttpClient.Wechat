@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_corpid")]
-        public string OpenCorpId { get; set; } = default!;
+        public string? OpenCorpId { get; set; }
     }
 }

@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 {
-    internal sealed partial class YesOrNoBooleanConverter : JsonConverter
+    public sealed partial class YesOrNoBooleanConverter : JsonConverter
     {
         private readonly JsonConverter<bool?> _converter = new InternalYesOrNoBooleanConverter();
 

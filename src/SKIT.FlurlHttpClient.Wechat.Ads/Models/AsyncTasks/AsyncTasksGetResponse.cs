@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("md5")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("md5")]
-                                                public string FileHash { get; set; } = default!;
+                                                public string? FileHash { get; set; }
                                             }
                                         }
 
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("file_info_list")]
                                         [System.Text.Json.Serialization.JsonPropertyName("file_info_list")]
-                                        public Types.File[] FileList { get; set; } = default!;
+                                        public List<Types.File>? FileList { get; set; }
                                     }
                                 }
 
@@ -78,28 +78,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("task_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-                        public int TaskId { get; set; } = default!;
+                        public int TaskId { get; set; }
 
                         /// <summary>
                         /// 获取或设置任务名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("task_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("task_name")]
-                        public string TaskName { get; set; } = default!;
+                        public string? TaskName { get; set; }
 
                         /// <summary>
                         /// 获取或设置任务类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("task_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("task_type")]
-                        public string TaskType { get; set; } = default!;
+                        public string? TaskType { get; set; }
 
                         /// <summary>
                         /// 获取或设置任务状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
-                        public string Status { get; set; } = default!;
+                        public string? Status { get; set; }
 
                         /// <summary>
                         /// 获取或设置任务结果信息。
@@ -126,14 +126,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.Task[] TaskList { get; set; } = default!;
+                public List<Types.Task>? TaskList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Types.Pagination Pagination { get; set; } = default!;
+                public Types.Pagination? Pagination { get; set; }
             }
         }
 
@@ -142,6 +142,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

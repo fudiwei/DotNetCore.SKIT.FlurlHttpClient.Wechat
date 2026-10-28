@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/getinfo 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pid")]
                 [System.Text.Json.Serialization.JsonPropertyName("pid")]
-                public string ProductId { get; set; } = string.Empty;
+                public string? ProductId { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product")]
         [System.Text.Json.Serialization.JsonPropertyName("product")]
-        public Types.Product Product { get; set; } = new Types.Product();
+        public Types.Product? Product { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promoter_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("promoter_id")]
-                public string PromoterId { get; set; } = default!;
+                public string? PromoterId { get; set; }
 
                 /// <summary>
                 /// 获取或设置关联账号类型。
@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promoter_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("promoter_name")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置关联账号头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("avatar_image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("avatar_image_url")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
             }
         }
 
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promoter_list")]
         [System.Text.Json.Serialization.JsonPropertyName("promoter_list")]
-        public Types.Promoter[] PromoterList { get; set; } = default!;
+        public List<Types.Promoter>? PromoterList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 {
-    internal sealed class StringifiedObjectInJsonFormatConverter : JsonConverter
+    public sealed class StringifiedObjectInJsonFormatConverter : JsonConverter
     {
         private readonly SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter _fallback = new SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter();
 

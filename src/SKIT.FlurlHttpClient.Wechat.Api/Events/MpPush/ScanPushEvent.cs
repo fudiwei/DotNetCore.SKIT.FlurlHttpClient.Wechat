@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("EventKey")]
         [System.Text.Json.Serialization.JsonPropertyName("EventKey")]
         [System.Xml.Serialization.XmlElement("EventKey")]
-        public string EventKey { get; set; } = default!;
+        public string? EventKey { get; set; }
 
         /// <summary>
         /// 获取或设置二维码的 Ticket。
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("Ticket")]
         [System.Xml.Serialization.XmlElement("Ticket")]
-        public string Ticket { get; set; } = default!;
+        public string? Ticket { get; set; }
     }
 }

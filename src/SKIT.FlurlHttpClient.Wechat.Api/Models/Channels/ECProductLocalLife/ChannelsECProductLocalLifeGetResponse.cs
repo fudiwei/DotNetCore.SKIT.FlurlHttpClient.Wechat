@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = default!;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("path")]
                         [System.Text.Json.Serialization.JsonPropertyName("path")]
-                        public string PagePath { get; set; } = default!;
+                        public string? PagePath { get; set; }
                     }
 
                     public class AuditResult
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku_attr_map")]
                         [System.Text.Json.Serialization.JsonPropertyName("sku_attr_map")]
-                        public IDictionary<string, string>? AttributeKeyValueMap { get; set; }
+                        public Dictionary<string, string>? AttributeKeyValueMap { get; set; }
                     }
 
                 }
@@ -110,14 +110,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_name")]
-                public string ProductName { get; set; } = default!;
+                public string? ProductName { get; set; }
 
                 /// <summary>
                 /// 获取或设置主图 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_imgs")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_imgs")]
-                public string[] HeadImageUrlList { get; set; } = default!;
+                public List<string>? HeadImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品三级类目 ID。
@@ -154,7 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_qua_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_qua_infos")]
-                public Types.Qualification[]? QualificationList { get; set; }
+                public List<Types.Qualification>? QualificationList { get; set; }
 
                 /// <summary>
                 /// 获取或设置核销跳转出口小程序页面信息。
@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attr_kv_map")]
                 [System.Text.Json.Serialization.JsonPropertyName("attr_kv_map")]
-                public IDictionary<string, string> AttributeKeyValueMap { get; set; } = default!;
+                public Dictionary<string, string>? AttributeKeyValueMap { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核结果信息。
@@ -196,7 +196,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("skus")]
                 [System.Text.Json.Serialization.JsonPropertyName("skus")]
-                public Types.SKU[] SKUList { get; set; } = default!;
+                public List<Types.SKU>? SKUList { get; set; }
             }
         }
 

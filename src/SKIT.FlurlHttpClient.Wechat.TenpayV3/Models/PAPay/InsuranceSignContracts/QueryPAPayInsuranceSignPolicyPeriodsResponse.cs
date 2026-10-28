@@ -28,21 +28,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_date")]
-                public string EstimatedDeductDateString { get; set; } = default!;
+                public string? EstimatedDeductDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置预计扣费金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
-                public Types.Amount EstimatedDeductAmount { get; set; } = default!;
+                public Types.Amount? EstimatedDeductAmount { get; set; }
 
                 /// <summary>
                 /// 获取或设置扣费周期预约状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("policy_period_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("policy_period_state")]
-                public string PolicyPeriodState { get; set; } = default!;
+                public string? PolicyPeriodState { get; set; }
 
                 /// <summary>
                 /// 获取或设置已预约的扣费金额信息。
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.PolicyPeriod[] PolicyPeriodList { get; set; } = default!;
+        public List<Types.PolicyPeriod>? PolicyPeriodList { get; set; }
 
         /// <summary>
         /// 获取或设置记录总数。
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

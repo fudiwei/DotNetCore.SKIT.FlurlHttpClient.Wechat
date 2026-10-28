@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("env")]
                         [System.Text.Json.Serialization.JsonPropertyName("env")]
-                        public string EnvironmentId { get; set; } = default!;
+                        public string? EnvironmentId { get; set; }
 
                         /// <summary>
                         /// 获取或设置静态网站自定义域名。
@@ -55,14 +55,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string Path { get; set; } = default!;
+                public string? Path { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面参数。
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("env_version")]
-                public string EnvironmentVersion { get; set; } = default!;
+                public string? EnvironmentVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置过期时间戳。
@@ -116,13 +116,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url_link_info")]
         [System.Text.Json.Serialization.JsonPropertyName("url_link_info")]
-        public Types.UrlLink UrlLink { get; set; } = default!;
+        public Types.UrlLink? UrlLink { get; set; }
 
         /// <summary>
         /// 获取或设置配额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("quota_info")]
         [System.Text.Json.Serialization.JsonPropertyName("quota_info")]
-        public Types.Quota Quota { get; set; } = default!;
+        public Types.Quota? Quota { get; set; }
     }
 }

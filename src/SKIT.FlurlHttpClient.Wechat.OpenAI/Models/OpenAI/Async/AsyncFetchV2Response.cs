@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
                     }
 
                     public class FailedSkill
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
                     }
 
                     public class SucceededSkill : FailedSkill
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("intents")]
                         [System.Text.Json.Serialization.JsonPropertyName("intents")]
-                        public Types.Intent[] IntentList { get; set; } = default!;
+                        public List<Types.Intent>? IntentList { get; set; }
                     }
                 }
 
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fail_skill_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_skill_info")]
-                public Types.FailedSkill[]? FailedSkillList { get; set; }
+                public List<Types.FailedSkill>? FailedSkillList { get; set; }
 
                 /// <summary>
                 /// 获取或设置导入成功的数量。
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("success_skill_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("success_skill_info")]
-                public Types.SucceededSkill[]? SucceededSkillList { get; set; }
+                public List<Types.SucceededSkill>? SucceededSkillList { get; set; }
             }
         }
     }

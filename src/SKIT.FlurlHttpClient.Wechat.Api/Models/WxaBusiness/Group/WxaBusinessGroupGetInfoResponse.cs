@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("model_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("model_id")]
-                public string ModelId { get; set; } = default!;
+                public string? ModelId { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备序列号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("sn")]
-                public string SerialNumber { get; set; } = default!;
+                public string? SerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -37,27 +37,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_id")]
         [System.Text.Json.Serialization.JsonPropertyName("model_id")]
-        public string ModelId { get; set; } = default!;
+        public string? ModelId { get; set; }
 
         /// <summary>
         /// 获取或设置设备类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_type")]
         [System.Text.Json.Serialization.JsonPropertyName("model_type")]
-        public string ModelType { get; set; } = default!;
+        public string? ModelType { get; set; }
 
         /// <summary>
         /// 获取或设置设备组名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_name")]
         [System.Text.Json.Serialization.JsonPropertyName("group_name")]
-        public string GroupName { get; set; } = default!;
+        public string? GroupName { get; set; }
 
         /// <summary>
         /// 获取或设置设备列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_list")]
-        public Types.Device[] DeviceList { get; set; } = default!;
+        public List<Types.Device>? DeviceList { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("preopen_id")]
         [System.Text.Json.Serialization.JsonPropertyName("preopen_id")]
-        public string PreopenId { get; set; } = default!;
+        public string? PreopenId { get; set; }
     }
 }

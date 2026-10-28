@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = string.Empty;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string PagePath { get; set; } = string.Empty;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string Text { get; set; } = string.Empty;
+                public string? Text { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComplaintId { get; set; } = string.Empty;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置被诉商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
@@ -51,14 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("response_content")]
         [System.Text.Json.Serialization.JsonPropertyName("response_content")]
-        public string ResponseContent { get; set; } = string.Empty;
+        public string? ResponseContent { get; set; }
 
         /// <summary>
         /// 获取或设置回复图片 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("response_images")]
         [System.Text.Json.Serialization.JsonPropertyName("response_images")]
-        public IList<string>? ResponseMediaIdList { get; set; }
+        public List<string>? ResponseMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置跳转链接。

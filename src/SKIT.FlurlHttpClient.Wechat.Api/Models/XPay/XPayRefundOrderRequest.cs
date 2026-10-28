@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_order_id")]
-        public string RefundOrderId { get; set; } = string.Empty;
+        public string? RefundOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置退款金额（单位：分）。

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置群主 UserId。
@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userlist")]
         [System.Text.Json.Serialization.JsonPropertyName("userlist")]
-        public IList<string> MemberUserIdList { get; set; } = new List<string>();
+        public List<string>? MemberUserIdList { get; set; }
     }
 }

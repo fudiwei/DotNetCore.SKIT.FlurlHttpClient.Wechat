@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/report/grid/list 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grid_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-                public string GridId { get; set; } = default!;
+                public string? GridId { get; set; }
 
                 /// <summary>
                 /// 获取或设置网格名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grid_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("grid_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置上级网格 ID。
@@ -35,14 +35,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grid_admin")]
                 [System.Text.Json.Serialization.JsonPropertyName("grid_admin")]
-                public string[] AdministratorUserIdList { get; set; } = default!;
+                public List<string>? AdministratorUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置网格成员 UserId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grid_member")]
                 [System.Text.Json.Serialization.JsonPropertyName("grid_member")]
-                public string[] MemberUserIdList { get; set; } = default!;
+                public List<string>? MemberUserIdList { get; set; }
             }
         }
 
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_list")]
-        public Types.Grid[] GridList { get; set; } = default!;
+        public List<Types.Grid>? GridList { get; set; }
     }
 }

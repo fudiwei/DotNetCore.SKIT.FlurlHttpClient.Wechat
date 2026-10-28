@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
                 [System.Xml.Serialization.XmlElement("appid")]
-                public string MiniProgramAppId { get; set; } = default!;
+                public string? MiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置公众号 AppId。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("mp_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]
                 [System.Xml.Serialization.XmlElement("mp_appid")]
-                public string MediaPlatformAppId { get; set; } = default!;
+                public string? MediaPlatformAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作时间字符串（格式：yyyy-MM-dd HH:mm）。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("operation_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("operation_time")]
                 [System.Xml.Serialization.XmlElement("operation_time")]
-                public string OperateTimeString { get; set; } = default!;
+                public string? OperateTimeString { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -61,6 +61,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ApplyAuthorizationInfoNoitfy")]
         [System.Text.Json.Serialization.JsonPropertyName("ApplyAuthorizationInfoNoitfy")]
         [System.Xml.Serialization.XmlElement("ApplyAuthorizationInfoNoitfy")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

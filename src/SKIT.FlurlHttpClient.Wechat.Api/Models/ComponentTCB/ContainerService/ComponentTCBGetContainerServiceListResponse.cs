@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("server_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("server_name")]
-                public string ServiceName { get; set; } = default!;
+                public string? ServiceName { get; set; }
 
                 /// <summary>
                 /// 获取或设置 VPC 唯一标识。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("vpcid")]
                 [System.Text.Json.Serialization.JsonPropertyName("vpcid")]
-                public string VPCId { get; set; } = default!;
+                public string? VPCId { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置镜像地址。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cslist")]
         [System.Text.Json.Serialization.JsonPropertyName("cslist")]
-        public Types.ContainerService[] ContainerServiceList { get; set; } = default!;
+        public List<Types.ContainerService>? ContainerServiceList { get; set; }
 
         /// <summary>
         /// 获取或设置云函数总数量。

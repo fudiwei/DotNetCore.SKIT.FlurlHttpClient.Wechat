@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fileid")]
                 [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                public string FileId { get; set; } = string.Empty;
+                public string? FileId { get; set; }
 
                 /// <summary>
                 /// 获取或设置下载链接有效期（单位：秒）。
@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置文件列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_list")]
         [System.Text.Json.Serialization.JsonPropertyName("file_list")]
-        public IList<Types.File> FileList { get; set; } = new List<Types.File>();
+        public List<Types.File>? FileList { get; set; }
     }
 }

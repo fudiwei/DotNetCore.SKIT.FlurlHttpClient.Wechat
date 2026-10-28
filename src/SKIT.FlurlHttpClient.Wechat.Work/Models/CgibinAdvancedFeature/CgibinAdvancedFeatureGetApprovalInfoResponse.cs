@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("apply_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("apply_id")]
-                public string ApplyId { get; set; } = default!;
+                public string? ApplyId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审批 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("approval_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("approval_id")]
-                public string ApprovalId { get; set; } = default!;
+                public string? ApprovalId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审批类型。
@@ -49,21 +49,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("approval_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("approval_url")]
-                public string ApprovalUrl { get; set; } = default!;
+                public string? ApprovalUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请人成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applicant")]
                 [System.Text.Json.Serialization.JsonPropertyName("applicant")]
-                public string ApplicantUserId { get; set; } = default!;
+                public string? ApplicantUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请原因。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("request_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("request_reason")]
-                public string ApplyReason { get; set; } = default!;
+                public string? ApplyReason { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -79,6 +79,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("approval_info")]
         [System.Text.Json.Serialization.JsonPropertyName("approval_info")]
-        public Types.Approval Approval { get; set; } = default!;
+        public Types.Approval? Approval { get; set; }
     }
 }

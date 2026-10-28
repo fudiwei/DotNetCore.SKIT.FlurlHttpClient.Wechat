@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/offline/update_same_city_template 接口的请求。</para>
@@ -101,21 +101,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("same_city_valuation")]
                 [System.Text.Json.Serialization.JsonPropertyName("same_city_valuation")]
-                public Types.Valuation Valuation { get; set; } = new Types.Valuation();
+                public Types.Valuation? Valuation { get; set; }
 
                 /// <summary>
                 /// 获取或设置特殊时段计价方式信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("special_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("special_time")]
-                public Types.SpecialTimeValuation SpecialTimeValuation { get; set; } = new Types.SpecialTimeValuation();
+                public Types.SpecialTimeValuation? SpecialTimeValuation { get; set; }
 
                 /// <summary>
                 /// 获取或设置配送时间信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_time")]
-                public Types.DeliveryTime DeliveryTime { get; set; } = new Types.DeliveryTime();
+                public Types.DeliveryTime? DeliveryTime { get; set; }
             }
         }
 
@@ -124,6 +124,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("same_city_template")]
         [System.Text.Json.Serialization.JsonPropertyName("same_city_template")]
-        public Types.Template Template { get; set; } = new Types.Template();
+        public Types.Template? Template { get; set; }
     }
 }

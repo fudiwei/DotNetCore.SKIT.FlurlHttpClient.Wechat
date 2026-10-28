@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("productList")]
         [System.Text.Json.Serialization.JsonPropertyName("productList")]
 
-        public Types.Product[] ProductList { get; set; } = default!;
+        public List<Types.Product>? ProductList { get; set; }
 
         /// <summary>
         /// 获取或设置商品总数量。

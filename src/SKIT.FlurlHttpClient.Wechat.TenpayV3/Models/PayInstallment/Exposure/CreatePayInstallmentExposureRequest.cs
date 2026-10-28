@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 ID 类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id_type")]
         [System.Text.Json.Serialization.JsonPropertyName("user_id_type")]
-        public string UserIdType { get; set; } = string.Empty;
+        public string? UserIdType { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。

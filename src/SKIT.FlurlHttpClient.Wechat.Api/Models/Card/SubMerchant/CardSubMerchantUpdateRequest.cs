@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/update 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
-                public string MerchantId { get; set; } = string.Empty;
+                public string? MerchantId { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.SubMerchant SubMerchant { get; set; } = new Types.SubMerchant();
+        public Types.SubMerchant? SubMerchant { get; set; }
     }
 }

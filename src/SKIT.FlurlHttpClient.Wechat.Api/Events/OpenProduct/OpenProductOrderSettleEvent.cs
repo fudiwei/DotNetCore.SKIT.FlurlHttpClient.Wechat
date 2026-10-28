@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
                 [System.Xml.Serialization.XmlElement("out_order_id")]
-                public string OutOrderId { get; set; } = default!;
+                public string? OutOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单号。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("settle_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_no")]
                 [System.Xml.Serialization.XmlElement("settle_no")]
-                public string SettleNumber { get; set; } = default!;
+                public string? SettleNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算金额（单位：分）。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("settle_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_time")]
                 [System.Xml.Serialization.XmlElement("settle_time")]
-                public string SettleTimeString { get; set; } = default!;
+                public string? SettleTimeString { get; set; }
             }
         }
 
@@ -61,6 +61,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
         [System.Xml.Serialization.XmlElement("order_info")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

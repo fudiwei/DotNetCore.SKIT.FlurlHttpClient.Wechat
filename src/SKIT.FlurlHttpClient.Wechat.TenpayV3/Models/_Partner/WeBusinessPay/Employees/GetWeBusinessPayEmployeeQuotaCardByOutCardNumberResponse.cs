@@ -10,56 +10,56 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信授权关系 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employee_id")]
         [System.Text.Json.Serialization.JsonPropertyName("employee_id")]
-        public string EmployeeId { get; set; } = default!;
+        public string? EmployeeId { get; set; }
 
         /// <summary>
         /// 获取或设置商户卡号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_card_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_card_no")]
-        public string OutCardNumber { get; set; } = default!;
+        public string? OutCardNumber { get; set; }
 
         /// <summary>
         /// 获取或设置企业支付额度卡卡号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_no")]
         [System.Text.Json.Serialization.JsonPropertyName("card_no")]
-        public string CardNumber { get; set; } = default!;
+        public string? CardNumber { get; set; }
 
         /// <summary>
         /// 获取或设置企业支付卡模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_template_id")]
-        public string CardTemplateId { get; set; } = default!;
+        public string? CardTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置使用规则。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("card_rule")]
-        public string CardRule { get; set; } = default!;
+        public string? CardRule { get; set; }
 
         /// <summary>
         /// 获取或设置退款规则。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_rule")]
-        public string RefundRule { get; set; } = default!;
+        public string? RefundRule { get; set; }
 
         /// <summary>
         /// 获取或设置总金额（单位：分）。
@@ -98,14 +98,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_state")]
         [System.Text.Json.Serialization.JsonPropertyName("card_state")]
-        public string CardState { get; set; } = default!;
+        public string? CardState { get; set; }
 
         /// <summary>
         /// 获取或设置卡片名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_name")]
         [System.Text.Json.Serialization.JsonPropertyName("card_name")]
-        public string CardName { get; set; } = default!;
+        public string? CardName { get; set; }
 
         /// <summary>
         /// 获取或设置卡片备注。

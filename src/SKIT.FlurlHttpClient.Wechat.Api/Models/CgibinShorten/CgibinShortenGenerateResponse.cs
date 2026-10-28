@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("short_key")]
         [System.Text.Json.Serialization.JsonPropertyName("short_key")]
-        public string ShortKey { get; set; } = default!;
+        public string? ShortKey { get; set; }
     }
 }

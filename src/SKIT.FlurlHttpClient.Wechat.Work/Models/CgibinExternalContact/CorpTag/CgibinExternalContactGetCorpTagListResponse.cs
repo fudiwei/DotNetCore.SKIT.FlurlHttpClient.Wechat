@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_corp_tag_list 接口的响应。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string TagId { get; set; } = default!;
+                        public string? TagId { get; set; }
 
                         /// <summary>
                         /// 获取或设置企业标签名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置次序值。
@@ -55,14 +55,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                public string TagGroupId { get; set; } = default!;
+                public string? TagGroupId { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业标签分组名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置次序值。
@@ -76,7 +76,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tag")]
                 [System.Text.Json.Serialization.JsonPropertyName("tag")]
-                public Types.Tag[] TagList { get; set; } = default!;
+                public List<Types.Tag>? TagList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否已经被删除。
@@ -99,6 +99,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_group")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_group")]
-        public Types.TagGroup[] TagGroupList { get; set; } = default!;
+        public List<Types.TagGroup>? TagGroupList { get; set; }
     }
 }

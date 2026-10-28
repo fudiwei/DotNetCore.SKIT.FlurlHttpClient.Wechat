@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户的公众号 AppId。
@@ -29,21 +29,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                public string BrandName { get; set; } = default!;
+                public string? BrandName { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户 Logo Url。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("logo_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-                public string LogoUrl { get; set; } = default!;
+                public string? LogoUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权函有效期开始时间戳。
@@ -94,6 +94,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.SubMerchant SubMerchant { get; set; } = default!;
+        public Types.SubMerchant? SubMerchant { get; set; }
     }
 }

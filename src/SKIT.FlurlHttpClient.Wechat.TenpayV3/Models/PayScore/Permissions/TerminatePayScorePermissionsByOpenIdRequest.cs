@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string AppId { get; set; } = string.Empty;
+        public virtual string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
@@ -24,7 +24,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置撤销原因。

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                public string TransactionId { get; set; } = string.Empty;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户结算单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_settle_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_settle_no")]
-                public string OutSettleNumber { get; set; } = string.Empty;
+                public string? OutSettleNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算明细单列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_detail_info_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_detail_info_list")]
-                public IList<SettleDetailInfo> SettleDetailInfoList { get; set; } = new List<SettleDetailInfo>();
+                public List<SettleDetailInfo>? SettleDetailInfoList { get; set; }
             }
 
             public class SettleDetailInfo
@@ -58,14 +58,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_settle_detail_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_settle_detail_no")]
-                public string OutSettleDetailNumber { get; set; } = string.Empty;
+                public string? OutSettleDetailNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_type")]
-                public string SettleType { get; set; } = string.Empty;
+                public string? SettleType { get; set; }
 
                 /// <summary>
                 /// 获取或设置接收方类型。
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public Types.Amount Amount { get; set; } = new Types.Amount();
+                public Types.Amount? Amount { get; set; }
             }
         }
 
@@ -109,14 +109,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_settle_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_settle_batch_no")]
-        public string OutSettleBatchNumber { get; set; } = string.Empty;
+        public string? OutSettleBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置结算信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settle_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("settle_info_list")]
-        public IList<Types.SettleInfo> SettleInfoList { get; set; } = new List<Types.SettleInfo>();
+        public List<Types.SettleInfo>? SettleInfoList { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置交易场景。

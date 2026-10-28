@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户微信昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("buyer_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("buyer_nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置绑定时间戳。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Buyer[]? BuyerList { get; set; }
+        public List<Types.Buyer>? BuyerList { get; set; }
 
         /// <summary>
         /// 获取或设置客户总数量。

@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("long_data")]
         [System.Text.Json.Serialization.JsonPropertyName("long_data")]
-        public string LongData { get; set; } = default!;
+        public string? LongData { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间戳。

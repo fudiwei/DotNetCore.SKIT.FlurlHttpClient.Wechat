@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver_acct_id")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver_acct_id")]
-        public string ReceiverAccountId { get; set; } = string.Empty;
+        public string? ReceiverAccountId { get; set; }
 
         /// <summary>
         /// 获取或设置平台提现单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_withdraw_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_withdraw_id")]
-        public string OutWithdrawId { get; set; } = string.Empty;
+        public string? OutWithdrawId { get; set; }
 
         /// <summary>
         /// 获取或设置提现金额（单位：分）。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("server_notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("server_notify_url")]
-        public string ServerNotifyUrl { get; set; } = string.Empty;
+        public string? ServerNotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置提现原因描述。

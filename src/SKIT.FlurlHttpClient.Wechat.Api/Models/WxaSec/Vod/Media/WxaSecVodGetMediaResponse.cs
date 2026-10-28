@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_info")]
         [System.Text.Json.Serialization.JsonPropertyName("media_info")]
-        public Types.MediaInfo MediaInfo { get; set; } = default!;
+        public Types.MediaInfo? MediaInfo { get; set; }
     }
 }

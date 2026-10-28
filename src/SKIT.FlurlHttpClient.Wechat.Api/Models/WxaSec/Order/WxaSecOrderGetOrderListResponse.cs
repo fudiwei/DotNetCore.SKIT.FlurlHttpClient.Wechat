@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("shipping_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("shipping_list")]
-                        public Types.Shipping[] ShippingList { get; set; } = default!;
+                        public List<Types.Shipping>? ShippingList { get; set; }
                     }
                 }
 
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付下单商户的子商户号。
@@ -137,7 +137,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置原支付交易的微信订单号。
@@ -151,14 +151,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付者的 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置实付金额（单位：分）。
@@ -209,7 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有下一页。

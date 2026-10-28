@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_id")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
-        public string RuleId { get; set; } = default!;
+        public string? RuleId { get; set; }
 
         /// <summary>
         /// 获取或设置非法的 OpenUserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_list")]
-        public string[]? InvalidOpenUserIdList { get; set; }
+        public List<string>? InvalidOpenUserIdList { get; set; }
     }
 }

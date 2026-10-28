@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/getwxagameidentityinfo 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_id")]
-                        public string FrameId { get; set; } = default!;
+                        public string? FrameId { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("info_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("info_list")]
-                public Types.Identity[] IdentityList { get; set; } = default!;
+                public List<Types.Identity>? IdentityList { get; set; }
             }
         }
 
@@ -43,6 +43,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

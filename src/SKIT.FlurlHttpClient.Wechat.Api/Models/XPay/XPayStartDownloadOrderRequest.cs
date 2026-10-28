@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("begin_ds")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string BeginDateString { get; set; } = string.Empty;
+        public string? BeginDateString { get; set; }
 
         /// <summary>
         /// 获取或设置截止日期字符串（格式：yyyyMMdd）。
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("end_ds")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string EndDateString { get; set; } = string.Empty;
+        public string? EndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置订单类型。

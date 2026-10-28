@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = string.Empty;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户微信昵称。
@@ -58,6 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_list")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_list")]
-        public IList<Types.Buyer>? BuyerList { get; set; }
+        public List<Types.Buyer>? BuyerList { get; set; }
     }
 }

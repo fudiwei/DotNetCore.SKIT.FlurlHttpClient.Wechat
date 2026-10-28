@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
@@ -46,21 +46,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customs")]
         [System.Text.Json.Serialization.JsonPropertyName("customs")]
-        public string Customs { get; set; } = string.Empty;
+        public string? Customs { get; set; }
 
         /// <summary>
         /// 获取或设置商户海关备案号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_customs_no")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_customs_no")]
-        public string MerchantCustomsNumber { get; set; } = string.Empty;
+        public string? MerchantCustomsNumber { get; set; }
 
         /// <summary>
         /// 获取或设置证件类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("certificate_type")]
         [System.Text.Json.Serialization.JsonPropertyName("certificate_type")]
-        public string CertificateType { get; set; } = string.Empty;
+        public string? CertificateType { get; set; }
 
         /// <summary>
         /// 获取或设置证件号码（需使用平台公钥/证书加密）。
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         [Newtonsoft.Json.JsonProperty("certificate_id")]
         [System.Text.Json.Serialization.JsonPropertyName("certificate_id")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
-        public string CertificateId { get; set; } = string.Empty;
+        public string? CertificateId { get; set; }
 
         /// <summary>
         /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
@@ -76,6 +76,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         [Newtonsoft.Json.JsonProperty("certificate_name")]
         [System.Text.Json.Serialization.JsonPropertyName("certificate_name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
-        public string CertificateName { get; set; } = string.Empty;
+        public string? CertificateName { get; set; }
     }
 }

@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户授权查询 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_studentcheck_code")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_studentcheck_code")]
-        public string CheckCode { get; set; } = string.Empty;
+        public string? CheckCode { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("industry_id1")]
         [System.Text.Json.Serialization.JsonPropertyName("industry_id1")]
-        public string PrimaryIndustryId { get; set; } = string.Empty;
+        public string? PrimaryIndustryId { get; set; }
 
         /// <summary>
         /// 获取或设置副行业编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("industry_id2")]
         [System.Text.Json.Serialization.JsonPropertyName("industry_id2")]
-        public string SecondaryIndustryId { get; set; } = string.Empty;
+        public string? SecondaryIndustryId { get; set; }
     }
 }

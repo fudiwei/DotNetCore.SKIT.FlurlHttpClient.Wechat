@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errorMsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errorMsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误信息 MD5 值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errorMsgMd5")]
                 [System.Text.Json.Serialization.JsonPropertyName("errorMsgMd5")]
-                public string ErrorMessageMd5 { get; set; } = default!;
+                public string? ErrorMessageMd5 { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误堆栈信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errorStack")]
                 [System.Text.Json.Serialization.JsonPropertyName("errorStack")]
-                public string ErrorStack { get; set; } = default!;
+                public string? ErrorStack { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误堆栈信息 MD5 值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errorStackMd5")]
                 [System.Text.Json.Serialization.JsonPropertyName("errorStackMd5")]
-                public string ErrorStackMd5 { get; set; } = default!;
+                public string? ErrorStackMd5 { get; set; }
 
                 /// <summary>
                 /// 获取或设置发生错误用户数。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("uvPercent")]
                 [System.Text.Json.Serialization.JsonPropertyName("uvPercent")]
-                public string UVPercentageString { get; set; } = default!;
+                public string? UVPercentageString { get; set; }
 
                 /// <summary>
                 /// 获取或设置发生错误次数。
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pvPercent")]
                 [System.Text.Json.Serialization.JsonPropertyName("pvPercent")]
-                public string PVPercentageString { get; set; } = default!;
+                public string? PVPercentageString { get; set; }
             }
         }
 
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.JsError[] JsErrorList { get; set; } = default!;
+        public List<Types.JsError>? JsErrorList { get; set; }
 
         /// <summary>
         /// 获取或设置错误总条数。

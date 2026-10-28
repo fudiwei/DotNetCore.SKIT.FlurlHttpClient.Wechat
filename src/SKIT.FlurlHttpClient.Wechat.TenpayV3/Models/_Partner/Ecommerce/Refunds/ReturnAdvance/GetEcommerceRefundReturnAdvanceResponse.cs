@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
-        public string RefundId { get; set; } = default!;
+        public string? RefundId { get; set; }
 
         /// <summary>
         /// 获取或设置微信回补单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("advance_return_id")]
         [System.Text.Json.Serialization.JsonPropertyName("advance_return_id")]
-        public string AdvanceReturnId { get; set; } = default!;
+        public string? AdvanceReturnId { get; set; }
 
         /// <summary>
         /// 获取或设置垫付回补金额（单位：分）。
@@ -31,35 +31,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("payer_mchid")]
-        public string PayerMerchantId { get; set; } = default!;
+        public string? PayerMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置出款方账户。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer_account")]
         [System.Text.Json.Serialization.JsonPropertyName("payer_account")]
-        public string PayerAccount { get; set; } = default!;
+        public string? PayerAccount { get; set; }
 
         /// <summary>
         /// 获取或设置入账方商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payee_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("payee_mchid")]
-        public string PayeeMerchantId { get; set; } = default!;
+        public string? PayeeMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置入账方账户。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payee_account")]
         [System.Text.Json.Serialization.JsonPropertyName("payee_account")]
-        public string PayeeAccount { get; set; } = default!;
+        public string? PayeeAccount { get; set; }
 
         /// <summary>
         /// 获取或设置垫付回补结果。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string Result { get; set; } = default!;
+        public string? Result { get; set; }
 
         /// <summary>
         /// 获取或设置垫付回补完成时间。

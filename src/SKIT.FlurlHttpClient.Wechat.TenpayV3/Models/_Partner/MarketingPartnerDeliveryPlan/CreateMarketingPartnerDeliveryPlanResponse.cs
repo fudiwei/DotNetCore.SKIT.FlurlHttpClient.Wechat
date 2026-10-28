@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan")]
         [System.Text.Json.Serialization.JsonPropertyName("plan")]
-        public Types.Plan Plan { get; set; } = default!;
+        public Types.Plan? Plan { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/user/getcardlist 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                public string CardId { get; set; } = default!;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券 Code。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
-                public string CardCode { get; set; } = default!;
+                public string? CardCode { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_list")]
         [System.Text.Json.Serialization.JsonPropertyName("card_list")]
-        public Types.Card[] CardList { get; set; } = default!;
+        public List<Types.Card>? CardList { get; set; }
 
         /// <summary>
         /// 获取或设置是否有可用的朋友的券。

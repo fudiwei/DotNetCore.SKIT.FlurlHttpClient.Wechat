@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Title")]
         [System.Text.Json.Serialization.JsonPropertyName("Title")]
         [System.Xml.Serialization.XmlElement("Title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置描述。
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Description")]
         [System.Text.Json.Serialization.JsonPropertyName("Description")]
         [System.Xml.Serialization.XmlElement("Description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置跳转链接 URL。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Url")]
         [System.Text.Json.Serialization.JsonPropertyName("Url")]
         [System.Xml.Serialization.XmlElement("Url")]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; }
 
         /// <summary>
         /// 获取或设置封面图片 URL。
@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("PicUrl")]
         [System.Text.Json.Serialization.JsonPropertyName("PicUrl")]
         [System.Xml.Serialization.XmlElement("PicUrl")]
-        public string PictureUrl { get; set; } = default!;
+        public string? PictureUrl { get; set; }
     }
 }

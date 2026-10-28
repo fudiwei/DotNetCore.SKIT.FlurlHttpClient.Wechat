@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
@@ -39,21 +39,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = default!;
+        public string? OutContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣签约协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置协议状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_state")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_state")]
-        public string ContractState { get; set; } = default!;
+        public string? ContractState { get; set; }
 
         /// <summary>
         /// 获取或设置签署时间。
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insured_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("insured_display_name")]
-        public string InsuredDisplayAccount { get; set; } = default!;
+        public string? InsuredDisplayAccount { get; set; }
 
         /// <summary>
         /// 获取或设置商户侧用户标识。

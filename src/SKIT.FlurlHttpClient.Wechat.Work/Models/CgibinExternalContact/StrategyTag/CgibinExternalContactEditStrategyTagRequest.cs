@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id")]
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string TagOrGroupId { get; set; } = string.Empty;
+        public string? TagOrGroupId { get; set; }
 
         /// <summary>
         /// 获取或设置企业标签或标签分组名称。

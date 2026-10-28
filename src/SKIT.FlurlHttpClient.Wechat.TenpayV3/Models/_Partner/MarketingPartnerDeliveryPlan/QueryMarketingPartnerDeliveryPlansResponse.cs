@@ -14,35 +14,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plan_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-                public string PlanId { get; set; } = default!;
+                public string? PlanId { get; set; }
 
                 /// <summary>
                 /// 获取或设置投放计划名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plan_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_name")]
-                public string PlanName { get; set; } = default!;
+                public string? PlanName { get; set; }
 
                 /// <summary>
                 /// 获取或设置投放计划状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plan_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_state")]
-                public string PlanState { get; set; } = default!;
+                public string? PlanState { get; set; }
 
                 /// <summary>
                 /// 获取或设置品牌 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-                public string BrandId { get; set; } = default!;
+                public string? BrandId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品券 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_coupon_id")]
-                public string ProductCouponId { get; set; } = default!;
+                public string? ProductCouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品券批次 ID。
@@ -139,6 +139,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_list")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_list")]
-        public Types.Plan[] PlanList { get; set; } = default!;
+        public List<Types.Plan>? PlanList { get; set; }
     }
 }

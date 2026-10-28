@@ -60,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置优惠信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("discount_info")]
         [System.Text.Json.Serialization.JsonPropertyName("discount_info")]
-        public Types.Discount Discount { get; set; } = new Types.Discount();
+        public Types.Discount? Discount { get; set; }
 
         /// <summary>
         /// 获取或设置扩展信息。
@@ -95,6 +95,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("valid_info")]
         [System.Text.Json.Serialization.JsonPropertyName("valid_info")]
-        public Types.Validity Validity { get; set; } = new Types.Validity();
+        public Types.Validity? Validity { get; set; }
     }
 }

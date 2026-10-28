@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("branch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("branch_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string BranchId { get; set; } = default!;
+                public string? BranchId { get; set; }
 
                 /// <summary>
                 /// 获取或设置支行名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("branch_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("branch_name")]
-                public string BranchName { get; set; } = default!;
+                public string? BranchName { get; set; }
             }
         }
 
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_bank")]
         [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
-        public string AccountBank { get; set; } = default!;
+        public string? AccountBank { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行编码。
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("account_bank_code")]
         [System.Text.Json.Serialization.JsonPropertyName("account_bank_code")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-        public string AccountBankCode { get; set; } = default!;
+        public string? AccountBankCode { get; set; }
 
         /// <summary>
         /// 获取或设置银行别名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_alias")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_alias")]
-        public string BankAlias { get; set; } = default!;
+        public string? BankAlias { get; set; }
 
         /// <summary>
         /// 获取或设置银行别名编码。
@@ -54,14 +54,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("bank_alias_code")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_alias_code")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-        public string BankAliasCode { get; set; } = default!;
+        public string? BankAliasCode { get; set; }
 
         /// <summary>
         /// 获取或设置支行列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Branch[] BranchList { get; set; } = default!;
+        public List<Types.Branch>? BranchList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

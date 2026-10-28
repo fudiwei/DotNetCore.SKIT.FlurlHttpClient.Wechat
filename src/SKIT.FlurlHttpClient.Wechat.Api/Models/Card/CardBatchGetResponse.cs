@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id_list")]
-        public string[] CardIdList { get; set; } = default!;
+        public List<string>? CardIdList { get; set; }
 
         /// <summary>
         /// 获取或设置卡券总数。

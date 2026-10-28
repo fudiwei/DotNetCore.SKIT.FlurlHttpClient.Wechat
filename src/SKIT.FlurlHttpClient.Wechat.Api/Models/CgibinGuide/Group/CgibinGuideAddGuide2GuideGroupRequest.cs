@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guide_account")]
         [System.Text.Json.Serialization.JsonPropertyName("guide_account")]
-        public string GuideAccount { get; set; } = string.Empty;
+        public string? GuideAccount { get; set; }
     }
 }

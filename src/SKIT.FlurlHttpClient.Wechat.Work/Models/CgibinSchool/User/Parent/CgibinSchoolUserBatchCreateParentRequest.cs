@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parent_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
-                public string ParentUserId { get; set; } = string.Empty;
+                public string? ParentUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置手机号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-                public string MobileNumber { get; set; } = string.Empty;
+                public string? MobileNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否发起邀请。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("children")]
                 [System.Text.Json.Serialization.JsonPropertyName("children")]
-                public IList<Types.Child> Children { get; set; } = new List<Types.Child>();
+                public List<Types.Child>? Children { get; set; }
             }
         }
 
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parents")]
         [System.Text.Json.Serialization.JsonPropertyName("parents")]
-        public IList<Types.Parent> ParentList { get; set; } = new List<Types.Parent>();
+        public List<Types.Parent>? ParentList { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /componenttcb/staticfilelist 接口的响应。</para>
@@ -18,7 +18,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contents")]
         [System.Text.Json.Serialization.JsonPropertyName("contents")]
-        public Types.File[] FileList { get; set; } = default!;
+        public List<Types.File>? FileList { get; set; }
 
         /// <summary>
         /// 获取或设置内容是否被截断。

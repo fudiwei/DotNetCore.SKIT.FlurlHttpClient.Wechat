@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/tag/list 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tagname")]
                 [System.Text.Json.Serialization.JsonPropertyName("tagname")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("taglist")]
         [System.Text.Json.Serialization.JsonPropertyName("taglist")]
-        public Types.Tag[] TagList { get; set; } = default!;
+        public List<Types.Tag>? TagList { get; set; }
     }
 }

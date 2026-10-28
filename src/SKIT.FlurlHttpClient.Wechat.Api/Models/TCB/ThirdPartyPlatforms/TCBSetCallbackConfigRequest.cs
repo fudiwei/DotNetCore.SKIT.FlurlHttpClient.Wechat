@@ -56,28 +56,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("msgType")]
                         [System.Text.Json.Serialization.JsonPropertyName("msgType")]
-                        public string MessageType { get; set; } = string.Empty;
+                        public string? MessageType { get; set; }
 
                         /// <summary>
                         /// 获取或设置事件类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("event")]
                         [System.Text.Json.Serialization.JsonPropertyName("event")]
-                        public string Event { get; set; } = string.Empty;
+                        public string? Event { get; set; }
 
                         /// <summary>
                         /// 获取或设置环境 ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("env")]
                         [System.Text.Json.Serialization.JsonPropertyName("env")]
-                        public string EnvironmentId { get; set; } = string.Empty;
+                        public string? EnvironmentId { get; set; }
 
                         /// <summary>
                         /// 获取或设置云函数名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("functionName")]
                         [System.Text.Json.Serialization.JsonPropertyName("functionName")]
-                        public string FunctionName { get; set; } = string.Empty;
+                        public string? FunctionName { get; set; }
                     }
                 }
 
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("callbacks")]
                 [System.Text.Json.Serialization.JsonPropertyName("callbacks")]
-                public IList<Types.Callback>? CallbackList { get; set; }
+                public List<Types.Callback>? CallbackList { get; set; }
             }
         }
 

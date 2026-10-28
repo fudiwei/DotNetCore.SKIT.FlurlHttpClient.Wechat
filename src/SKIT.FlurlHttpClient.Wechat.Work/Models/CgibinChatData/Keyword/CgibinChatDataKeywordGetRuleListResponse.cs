@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rule_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
-                public string RuleId { get; set; } = default!;
+                public string? RuleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置规则名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_list")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-        public Types.Rule[] RuleList { get; set; } = default!;
+        public List<Types.Rule>? RuleList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

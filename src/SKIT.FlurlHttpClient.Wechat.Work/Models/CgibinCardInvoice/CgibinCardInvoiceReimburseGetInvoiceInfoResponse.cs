@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/card/invoice/reimburse/getinvoiceinfo 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置计量单位。
@@ -48,7 +48,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置不含税金额（单位：分）。
@@ -76,14 +76,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("billing_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("billing_no")]
-                public string InvoiceCode { get; set; } = default!;
+                public string? InvoiceCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票代码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("billing_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("billing_code")]
-                public string InvoiceNumber { get; set; } = default!;
+                public string? InvoiceNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票时间戳。
@@ -97,35 +97,35 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("info")]
                 [System.Text.Json.Serialization.JsonPropertyName("info")]
-                public Types.InvoiceItem[]? InvoiceItemList { get; set; }
+                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
 
                 /// <summary>
                 /// 获取或设置校验码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("check_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("check_code")]
-                public string CheckCode { get; set; } = default!;
+                public string? CheckCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                public string Detail { get; set; } = default!;
+                public string? Detail { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票报销状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reimburse_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("reimburse_status")]
-                public string ReimburseStatus { get; set; } = default!;
+                public string? ReimburseStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票文件 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pdf_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("pdf_url")]
-                public string PdfUrl { get; set; } = default!;
+                public string? PdfUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置其它消费附件 URL。
@@ -139,7 +139,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("buyer_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("buyer_number")]
-                public string BuyerTaxNumber { get; set; } = default!;
+                public string? BuyerTaxNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置购买方地址、电话。
@@ -204,7 +204,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置发票的有效期起始时间戳。
@@ -225,34 +225,34 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置开票类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = default!;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置开票方全称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payee")]
         [System.Text.Json.Serialization.JsonPropertyName("payee")]
-        public string Payee { get; set; } = default!;
+        public string? Payee { get; set; }
 
         /// <summary>
         /// 获取或设置开票详情。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail")]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public string Detail { get; set; } = default!;
+        public string? Detail { get; set; }
 
         /// <summary>
         /// 获取或设置发票信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_info")]
         [System.Text.Json.Serialization.JsonPropertyName("user_info")]
-        public Types.Invoice Invoice { get; set; } = default!;
+        public Types.Invoice? Invoice { get; set; }
     }
 }

@@ -33,7 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.SM3Utility.Hash(request.FileBytes)).Value!.ToLower();
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.SM3Utility.Hash(request.FileBytes)).Value!.ToLower();
+                }
             }
 
             IFlurlRequest flurlReq = client

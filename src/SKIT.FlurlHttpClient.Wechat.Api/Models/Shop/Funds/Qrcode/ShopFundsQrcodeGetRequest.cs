@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_ticket")]
-        public string QrcodeTicket { get; set; } = string.Empty;
+        public string? QrcodeTicket { get; set; }
     }
 }

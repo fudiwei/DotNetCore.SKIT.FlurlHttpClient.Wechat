@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /datacube/getweanalysisappiduserportrait 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置该属性访问 UV。
@@ -41,42 +41,42 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("province")]
                 [System.Text.Json.Serialization.JsonPropertyName("province")]
-                public Types.NamedValue[] ProvinceDataList { get; set; } = default!;
+                public List<Types.NamedValue>? ProvinceDataList { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市分布列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city")]
                 [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public Types.NamedValue[] CityDataList { get; set; } = default!;
+                public List<Types.NamedValue>? CityDataList { get; set; }
 
                 /// <summary>
                 /// 获取或设置性别分布列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("genders")]
                 [System.Text.Json.Serialization.JsonPropertyName("genders")]
-                public Types.NamedValue[] GenderDataList { get; set; } = default!;
+                public List<Types.NamedValue>? GenderDataList { get; set; }
 
                 /// <summary>
                 /// 获取或设置终端分布列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("platforms")]
                 [System.Text.Json.Serialization.JsonPropertyName("platforms")]
-                public Types.NamedValue[] PlatformDataList { get; set; } = default!;
+                public List<Types.NamedValue>? PlatformDataList { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备分布列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("devices")]
                 [System.Text.Json.Serialization.JsonPropertyName("devices")]
-                public Types.NamedValue[] DeviceDataList { get; set; } = default!;
+                public List<Types.NamedValue>? DeviceDataList { get; set; }
 
                 /// <summary>
                 /// 获取或设置年龄分布列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ages")]
                 [System.Text.Json.Serialization.JsonPropertyName("ages")]
-                public Types.NamedValue[] AgeDataList { get; set; } = default!;
+                public List<Types.NamedValue>? AgeDataList { get; set; }
             }
         }
 
@@ -85,20 +85,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ref_date")]
         [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-        public virtual string RefDateString { get; set; } = default!;
+        public virtual string? RefDateString { get; set; }
 
         /// <summary>
         /// 获取或设置新增用户画像数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("visit_uv_new")]
         [System.Text.Json.Serialization.JsonPropertyName("visit_uv_new")]
-        public Types.Data NewVisitUVData { get; set; } = default!;
+        public Types.Data? NewVisitUVData { get; set; }
 
         /// <summary>
         /// 获取或设置活跃用户画像数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("visit_uv")]
         [System.Text.Json.Serialization.JsonPropertyName("visit_uv")]
-        public Types.Data VisitUVData { get; set; } = default!;
+        public Types.Data? VisitUVData { get; set; }
     }
 }

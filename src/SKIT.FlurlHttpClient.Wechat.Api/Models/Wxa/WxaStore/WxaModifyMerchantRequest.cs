@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("intro")]
         [System.Text.Json.Serialization.JsonPropertyName("intro")]
-        public string Introduction { get; set; } = string.Empty;
+        public string? Introduction { get; set; }
 
         /// <summary>
         /// 获取或设置门店小程序的头像媒体文件标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("headimg_mediaid")]
         [System.Text.Json.Serialization.JsonPropertyName("headimg_mediaid")]
-        public string HeadImageMediaId { get; set; } = string.Empty;
+        public string? HeadImageMediaId { get; set; }
     }
 }

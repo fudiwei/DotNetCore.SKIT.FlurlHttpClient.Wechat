@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-                public string CouponId { get; set; } = default!;
+                public string? CouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置券状态。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Coupon[] CouponList { get; set; } = default!;
+        public List<Types.Coupon>? CouponList { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

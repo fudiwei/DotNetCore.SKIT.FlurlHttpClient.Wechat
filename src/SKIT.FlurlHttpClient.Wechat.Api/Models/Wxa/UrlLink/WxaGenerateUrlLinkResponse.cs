@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url_link")]
         [System.Text.Json.Serialization.JsonPropertyName("url_link")]
-        public string UrlLink { get; set; } = default!;
+        public string? UrlLink { get; set; }
     }
 }

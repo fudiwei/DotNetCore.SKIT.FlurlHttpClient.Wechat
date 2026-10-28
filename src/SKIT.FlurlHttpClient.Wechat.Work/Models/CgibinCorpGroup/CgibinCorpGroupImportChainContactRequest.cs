@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系人身份类型。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corp_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_name")]
-                public string CorpName { get; set; } = string.Empty;
+                public string? CorpName { get; set; }
 
                 /// <summary>
                 /// 获取或设置导入后企业所在分组。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_info_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_info_list")]
-                public IList<Types.Contact> ContactList { get; set; } = new List<Types.Contact>();
+                public List<Types.Contact>? ContactList { get; set; }
             }
         }
 
@@ -78,13 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chain_id")]
         [System.Text.Json.Serialization.JsonPropertyName("chain_id")]
-        public string ChainId { get; set; } = string.Empty;
+        public string? ChainId { get; set; }
 
         /// <summary>
         /// 获取或设置联系人列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_list")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_list")]
-        public IList<Types.ChainContact> ChainContactList { get; set; } = new List<Types.ChainContact>();
+        public List<Types.ChainContact>? ChainContactList { get; set; }
     }
 }

@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_bill_no")]
-        public string PayBillNumber { get; set; } = string.Empty;
+        public string? PayBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置退回游戏币的订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_no")]
-        public string BillNumber { get; set; } = string.Empty;
+        public string? BillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置本次退回的游戏币的数量。

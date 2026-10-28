@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("token")]
         [System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string Token { get; set; } = string.Empty;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

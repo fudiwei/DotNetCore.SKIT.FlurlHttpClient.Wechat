@@ -10,42 +10,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户出境退回单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_return_no")]
-        public string OutReturnNumber { get; set; } = default!;
+        public string? OutReturnNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信出境退回单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_id")]
         [System.Text.Json.Serialization.JsonPropertyName("return_id")]
-        public string ReturnId { get; set; } = default!;
+        public string? ReturnId { get; set; }
 
         /// <summary>
         /// 获取或设置商户出境单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
-        public string OutOrderId { get; set; } = default!;
+        public string? OutOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置微信退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
-        public string RefundId { get; set; } = default!;
+        public string? RefundId { get; set; }
 
         /// <summary>
         /// 获取或设置退回金额（单位：分）。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置出境失败原因。

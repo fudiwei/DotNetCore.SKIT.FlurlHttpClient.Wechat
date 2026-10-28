@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/members/getblacklist 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string[] OpenIdList { get; set; } = default!;
+                public List<string>? OpenIdList { get; set; }
             }
         }
 
@@ -37,13 +37,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
 
         /// <summary>
         /// 获取或设置拉取列表的最后一个用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("next_openid")]
-        public string NextOpenId { get; set; } = default!;
+        public string? NextOpenId { get; set; }
     }
 }

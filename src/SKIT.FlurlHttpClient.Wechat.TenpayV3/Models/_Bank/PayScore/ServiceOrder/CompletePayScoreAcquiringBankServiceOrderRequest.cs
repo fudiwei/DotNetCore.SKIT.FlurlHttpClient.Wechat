@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("channel_id")]
         [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string ChannelId { get; set; } = string.Empty;
+        public string? ChannelId { get; set; }
     }
 }

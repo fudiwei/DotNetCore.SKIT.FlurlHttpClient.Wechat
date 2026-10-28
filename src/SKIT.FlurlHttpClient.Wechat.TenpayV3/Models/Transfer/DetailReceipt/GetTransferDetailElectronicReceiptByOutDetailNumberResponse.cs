@@ -10,28 +10,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("accept_type")]
         [System.Text.Json.Serialization.JsonPropertyName("accept_type")]
-        public string AcceptType { get; set; } = default!;
+        public string? AcceptType { get; set; }
 
         /// <summary>
         /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]
-        public string OutBatchNumber { get; set; } = default!;
+        public string? OutBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户明细单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_detail_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_detail_no")]
-        public string OutDetailNumber { get; set; } = default!;
+        public string? OutDetailNumber { get; set; }
 
         /// <summary>
         /// 获取或设置电子回单申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("signature_no")]
         [System.Text.Json.Serialization.JsonPropertyName("signature_no")]
-        public string SignatureNumber { get; set; } = default!;
+        public string? SignatureNumber { get; set; }
 
         /// <summary>
         /// 获取或设置电子回单状态。

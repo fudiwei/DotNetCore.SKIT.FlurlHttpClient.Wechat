@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("billDate")]
         [System.Text.Json.Serialization.JsonPropertyName("billDate")]
-        public string BillDateString { get; set; } = string.Empty;
+        public string? BillDateString { get; set; }
 
         /// <summary>
         /// 获取或设置账单类型。

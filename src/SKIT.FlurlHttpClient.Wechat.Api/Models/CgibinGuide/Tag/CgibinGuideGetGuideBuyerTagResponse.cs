@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidebuyertag 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_values")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_values")]
-        public string[] TagValues { get; set; } = default!;
+        public List<string>? TagValues { get; set; }
     }
 }

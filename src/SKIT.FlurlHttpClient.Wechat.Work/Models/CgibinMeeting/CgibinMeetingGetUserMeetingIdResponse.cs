@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/get_user_meetingid 接口的响应。</para>
@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid_list")]
-        public string[] MeetingIdList { get; set; } = default!;
+        public List<string>? MeetingIdList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

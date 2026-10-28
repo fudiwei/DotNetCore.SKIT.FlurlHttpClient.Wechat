@@ -68,13 +68,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keys")]
         [System.Text.Json.Serialization.JsonPropertyName("keys")]
-        public Types.Key Key { get; set; } = new Types.Key();
+        public Types.Key? Key { get; set; }
 
         /// <summary>
         /// 获取或设置更新内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public Types.Content Content { get; set; } = new Types.Content();
+        public Types.Content? Content { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                public string OpenUserId { get; set; } = default!;
+                public string? OpenUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置生效的版本列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("edition_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("edition_list")]
-                public int[] EditionList { get; set; } = default!;
+                public List<int>? EditionList { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_user_list")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_user_list")]
-        public Types.AuthUser[] AuthUserList { get; set; } = default!;
+        public List<Types.AuthUser>? AuthUserList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

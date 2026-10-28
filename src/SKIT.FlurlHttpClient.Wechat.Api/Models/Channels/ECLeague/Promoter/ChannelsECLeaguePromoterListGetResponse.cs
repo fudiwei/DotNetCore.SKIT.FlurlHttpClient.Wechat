@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("talent_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]
-                public string TalentAppId { get; set; } = default!;
+                public string? TalentAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置带货达人昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
             }
         }
 
@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Obsolete("相关接口或字段于 2026-03-30 下线。")]
         [Newtonsoft.Json.JsonProperty("finder_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_ids")]
-        public string[] FinderIdList { get; set; } = default!;
+        public List<string>? FinderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置带货达人列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Talent[] TalentList { get; set; } = default!;
+        public List<Types.Talent>? TalentList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

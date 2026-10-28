@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Status")]
         [System.Text.Json.Serialization.JsonPropertyName("Status")]
         [System.Xml.Serialization.XmlElement("Status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
     }
 }

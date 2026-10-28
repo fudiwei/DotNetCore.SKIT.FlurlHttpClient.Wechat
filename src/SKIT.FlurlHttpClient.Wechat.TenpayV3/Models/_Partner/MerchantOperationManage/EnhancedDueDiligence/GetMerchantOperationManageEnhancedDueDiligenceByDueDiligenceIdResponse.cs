@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置尽调单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("due_diligence_id")]
         [System.Text.Json.Serialization.JsonPropertyName("due_diligence_id")]
-        public string DueDiligenceId { get; set; } = default!;
+        public string? DueDiligenceId { get; set; }
 
         /// <summary>
         /// 获取或设置尽调单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("due_diligence_state")]
         [System.Text.Json.Serialization.JsonPropertyName("due_diligence_state")]
-        public string DueDiligenceState { get; set; } = default!;
+        public string? DueDiligenceState { get; set; }
 
         /// <summary>
         /// 获取或设置截止时间。
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("submission_template")]
         [System.Text.Json.Serialization.JsonPropertyName("submission_template")]
-        public string SubmissionTemplateJson { get; set; } = default!;
+        public string? SubmissionTemplateJson { get; set; }
 
         /// <summary>
         /// 获取或设置已提交的资料 JSON 内容。

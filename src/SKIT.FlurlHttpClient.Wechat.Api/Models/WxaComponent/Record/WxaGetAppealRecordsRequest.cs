@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("illegal_record_id")]
         [System.Text.Json.Serialization.JsonPropertyName("illegal_record_id")]
-        public string IllegalRecordId { get; set; } = string.Empty;
+        public string? IllegalRecordId { get; set; }
     }
 }

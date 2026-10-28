@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fapiao_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("fapiao_media_id")]
-        public string InvoiceMediaId { get; set; } = default!;
+        public string? InvoiceMediaId { get; set; }
     }
 }

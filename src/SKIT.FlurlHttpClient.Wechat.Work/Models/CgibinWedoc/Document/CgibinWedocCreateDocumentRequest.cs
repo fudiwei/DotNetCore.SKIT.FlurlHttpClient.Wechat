@@ -31,13 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("doc_name")]
         [System.Text.Json.Serialization.JsonPropertyName("doc_name")]
-        public string DocumentName { get; set; } = string.Empty;
+        public string? DocumentName { get; set; }
 
         /// <summary>
         /// 获取或设置管理员成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin_users")]
         [System.Text.Json.Serialization.JsonPropertyName("admin_users")]
-        public IList<string>? AdminUserIdList { get; set; }
+        public List<string>? AdminUserIdList { get; set; }
     }
 }

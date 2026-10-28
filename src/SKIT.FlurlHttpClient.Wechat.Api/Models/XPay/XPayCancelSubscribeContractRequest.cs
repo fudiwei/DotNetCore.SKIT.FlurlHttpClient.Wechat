@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("termination_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("termination_reason")]
-        public string TerminationReason { get; set; } = string.Empty;
+        public string? TerminationReason { get; set; }
 
         /// <summary>
         /// 获取或设置道具 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id")]
         [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-        public string ProductId { get; set; } = string.Empty;
+        public string? ProductId { get; set; }
 
         /// <summary>
         /// 获取或设置商家签约协议号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = string.Empty;
+        public string? OutContractCode { get; set; }
 
         protected internal override string GetRequestPath()
         {

@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "partner", "delivery-plan", "delivery-plans", request.BrandId, "delivery-plans");
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "partner", "delivery-plan", "delivery-plans", request.BrandId!, "delivery-plans");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPartnerDeliveryPlansResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PlanId, "plan_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "partner", "delivery-plan", "delivery-plans", request.PlanId);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "partner", "delivery-plan", "delivery-plans", request.PlanId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingPartnerDeliveryPlanResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PlanId, "plan_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "delivery-plan", "delivery-plans", request.PlanId, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "delivery-plan", "delivery-plans", request.PlanId!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminateMarketingPartnerDeliveryPlanResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planId")]
                 [System.Text.Json.Serialization.JsonPropertyName("planId")]
-                public string PlanId { get; set; } = default!;
+                public string? PlanId { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planName")]
                 [System.Text.Json.Serialization.JsonPropertyName("planName")]
-                public string PlanName { get; set; } = default!;
+                public string? PlanName { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planDesc")]
                 [System.Text.Json.Serialization.JsonPropertyName("planDesc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划状态。
@@ -91,28 +91,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品子标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("subTitle")]
                         [System.Text.Json.Serialization.JsonPropertyName("subTitle")]
-                        public string SubTitle { get; set; } = default!;
+                        public string? SubTitle { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品主图 URL 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("headImg")]
                         [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-                        public string[] HeadImageUrlList { get; set; } = default!;
+                        public List<string>? HeadImageUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品类目列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("category")]
                         [System.Text.Json.Serialization.JsonPropertyName("category")]
-                        public Types.Category[] CategoryList { get; set; } = default!;
+                        public List<Types.Category>? CategoryList { get; set; }
 
                         /// <summary>
                         /// 获取或设置品牌 ID。
@@ -141,14 +141,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("detail")]
                         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                        public Types.Detail Detail { get; set; } = default!;
+                        public Types.Detail? Detail { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品属性列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("param")]
                         [System.Text.Json.Serialization.JsonPropertyName("param")]
-                        public Types.Parameter[] ParameterList { get; set; } = default!;
+                        public List<Types.Parameter>? ParameterList { get; set; }
 
                         /// <summary>
                         /// 获取或设置 SKU 最低价格（单位：分）。
@@ -219,7 +219,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planId")]
                 [System.Text.Json.Serialization.JsonPropertyName("planId")]
-                public string PlanId { get; set; } = default!;
+                public string? PlanId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品 ID。
@@ -248,21 +248,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productDetailInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("productDetailInfo")]
-                public Types.ProductDetail ProductDetail { get; set; } = default!;
+                public Types.ProductDetail? ProductDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置联盟佣金信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("leagueExInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("leagueExInfo")]
-                public Types.League League { get; set; } = default!;
+                public Types.League? League { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠券信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("couponInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("couponInfo")]
-                public Types.Coupon Coupon { get; set; } = default!;
+                public Types.Coupon? Coupon { get; set; }
             }
         }
 
@@ -271,13 +271,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("targetPlanInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("targetPlanInfo")]
-        public Types.TargetPlan TargetPlan { get; set; } = default!;
+        public Types.TargetPlan? TargetPlan { get; set; }
 
         /// <summary>
         /// 获取或设置商品列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("productListInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("productListInfo")]
-        public Types.Product[] ProductList { get; set; } = default!;
+        public List<Types.Product>? ProductList { get; set; }
     }
 }

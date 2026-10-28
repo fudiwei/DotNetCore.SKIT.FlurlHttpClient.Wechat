@@ -161,7 +161,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "h5", "permission", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "h5", "permission", request.SubMerchantId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantH5PermissionBySubMerchantIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

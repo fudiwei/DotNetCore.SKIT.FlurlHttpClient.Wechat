@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("used_amounts")]
                 [System.Text.Json.Serialization.JsonPropertyName("used_amounts")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int[] Items { get; set; } = default!;
+                public List<int>? Items { get; set; }
             }
         }
 
@@ -24,42 +24,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = default!;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置创建批次的商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_creator_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_creator_mchid")]
-        public string StockCreatorMerchantId { get; set; } = default!;
+        public string? StockCreatorMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置代金券 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-        public string CouponId { get; set; } = default!;
+        public string? CouponId { get; set; }
 
         /// <summary>
         /// 获取或设置代金券名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_name")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_name")]
-        public string CouponName { get; set; } = default!;
+        public string? CouponName { get; set; }
 
         /// <summary>
         /// 获取或设置代金券状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_state")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_state")]
-        public string CouponState { get; set; } = default!;
+        public string? CouponState { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置领券时间。
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-        public string ActivityId { get; set; } = default!;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置券最大使用次数。

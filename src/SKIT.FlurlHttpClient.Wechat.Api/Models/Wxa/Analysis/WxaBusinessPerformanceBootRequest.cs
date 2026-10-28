@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field")]
                 [System.Text.Json.Serialization.JsonPropertyName("field")]
-                public string Field { get; set; } = string.Empty;
+                public string? Field { get; set; }
 
                 /// <summary>
                 /// 获取或设置查询条件的值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -47,20 +47,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("time")]
         [System.Text.Json.Serialization.JsonPropertyName("time")]
-        public Types.TimeRange TimeRange { get; set; } = new Types.TimeRange();
+        public Types.TimeRange? TimeRange { get; set; }
 
         /// <summary>
         /// 获取或设置查询数据的类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("module")]
         [System.Text.Json.Serialization.JsonPropertyName("module")]
-        public string Module { get; set; } = string.Empty;
+        public string? Module { get; set; }
 
         /// <summary>
         /// 获取或设置查询条件列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("params")]
         [System.Text.Json.Serialization.JsonPropertyName("params")]
-        public IList<Types.Parameter> ParameterList { get; set; } = new List<Types.Parameter>();
+        public List<Types.Parameter>? ParameterList { get; set; }
     }
 }

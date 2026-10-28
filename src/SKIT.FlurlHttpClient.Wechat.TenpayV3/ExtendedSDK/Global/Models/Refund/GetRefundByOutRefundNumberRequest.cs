@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutRefundNumber { get; set; } = string.Empty;
+        public string? OutRefundNumber { get; set; }
     }
 }

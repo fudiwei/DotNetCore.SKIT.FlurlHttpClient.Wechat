@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/report/resident/get_grid_info 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_list")]
-        public Types.Grid[] GridList { get; set; } = default!;
+        public List<Types.Grid>? GridList { get; set; }
     }
 }

@@ -15,6 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("JobId")]
         [System.Text.Json.Serialization.JsonPropertyName("JobId")]
         [System.Xml.Serialization.XmlElement("JobId")]
-        public string JobId { get; set; } = default!;
+        public string? JobId { get; set; }
     }
 }

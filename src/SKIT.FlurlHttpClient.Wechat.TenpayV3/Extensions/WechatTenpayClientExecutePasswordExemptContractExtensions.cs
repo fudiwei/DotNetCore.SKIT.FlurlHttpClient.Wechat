@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "password-exempt-contract", "contracts", "service-id", request.ServiceId, "out-contract-code", request.OutContractCode);
+                .CreateFlurlRequest(request, HttpMethod.Get, "password-exempt-contract", "contracts", "service-id", request.ServiceId!, "out-contract-code", request.OutContractCode!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPasswordExemptContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "password-exempt-contract", "contracts", "service-id", request.ServiceId, "out-contract-code", request.OutContractCode, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "password-exempt-contract", "contracts", "service-id", request.ServiceId!, "out-contract-code", request.OutContractCode!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminatePasswordExemptContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

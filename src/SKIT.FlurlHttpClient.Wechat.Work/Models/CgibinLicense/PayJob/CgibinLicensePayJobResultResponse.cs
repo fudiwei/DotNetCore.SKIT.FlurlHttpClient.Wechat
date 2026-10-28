@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("corpid")]
                         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                        public string CorpId { get; set; } = default!;
+                        public string? CorpId { get; set; }
 
                         /// <summary>
                         /// 获取或设置错误码。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fail_corp_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_corp_list")]
-                public Types.FailedCorp[]? FailedCorpList { get; set; }
+                public List<Types.FailedCorp>? FailedCorpList { get; set; }
             }
         }
 
@@ -71,6 +71,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_job_result")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_job_result")]
-        public Types.JobResult JobResult { get; set; } = default!;
+        public Types.JobResult? JobResult { get; set; }
     }
 }

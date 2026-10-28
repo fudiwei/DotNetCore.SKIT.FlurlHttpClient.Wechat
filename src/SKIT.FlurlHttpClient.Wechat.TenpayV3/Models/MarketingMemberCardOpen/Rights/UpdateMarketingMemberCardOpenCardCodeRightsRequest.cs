@@ -17,14 +17,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Code。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Code { get; set; } = string.Empty;
+        public string? Code { get; set; }
 
         /// <summary>
         /// 获取或设置更新前用户积分（单位：分）。
@@ -52,7 +52,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置是否发送积分变更通知。

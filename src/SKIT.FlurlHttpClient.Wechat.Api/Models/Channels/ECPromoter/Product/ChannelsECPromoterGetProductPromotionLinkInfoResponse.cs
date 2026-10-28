@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("short_link")]
         [System.Text.Json.Serialization.JsonPropertyName("short_link")]
-        public string ShortLink { get; set; } = default!;
+        public string? ShortLink { get; set; }
     }
 }

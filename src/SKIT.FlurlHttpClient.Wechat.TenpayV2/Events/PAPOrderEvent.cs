@@ -5,8 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
     /// <summary>
     /// <para>表示扣款服务扣款结果通知的模型。</para>
     /// </summary>
-    [Newtonsoft.Json.JsonConverter(typeof(Converters.EventClassNewtonsoftJsonConverter))]
-    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.EventClassSystemTextJsonConverter))]
+    [Newtonsoft.Json.JsonConverter(typeof(PAPOrderEvent.Converters.EventClassNewtonsoftJsonConverter))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(PAPOrderEvent.Converters.EventClassSystemTextJsonConverter))]
     public class PAPOrderEvent : WechatTenpayEvent
     {
         public static new class Types
@@ -18,12 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 
         internal static class Converters
         {
-            internal class EventClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<PAPOrderEvent, Types.Coupon>
+            internal class EventClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNListObjectConverterBase<PAPOrderEvent, Types.Coupon>
             {
                 protected override PropertyInfo FlattenProperty => PAPOrderEvent._flattenProperty;
             }
 
-            internal class EventClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<PAPOrderEvent, Types.Coupon>
+            internal class EventClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNListObjectConverterBase<PAPOrderEvent, Types.Coupon>
             {
                 protected override PropertyInfo FlattenProperty => PAPOrderEvent._flattenProperty;
             }
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户是否订阅该公众号标识。
@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_state")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_state")]
-        public string TradeState { get; set; } = default!;
+        public string? TradeState { get; set; }
 
         /// <summary>
         /// 获取或设置付款银行。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_type")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_type")]
-        public string BankType { get; set; } = default!;
+        public string? BankType { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty(Converters.EventClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
         [System.Text.Json.Serialization.JsonPropertyName(Converters.EventClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
-        public Types.Coupon[]? CouponList { get; set; }
+        public List<Types.Coupon>? CouponList { get; set; }
 
         /// <summary>
         /// 获取或设置现金支付金额（单位：分）。
@@ -147,14 +147,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。
@@ -177,6 +177,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
     }
 }

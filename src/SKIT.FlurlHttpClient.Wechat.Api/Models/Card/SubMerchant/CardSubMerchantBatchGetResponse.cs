@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("info_list")]
-        public Types.SubMerchant[] SubMerchantList { get; set; } = default!;
+        public List<Types.SubMerchant>? SubMerchantList { get; set; }
 
         /// <summary>
         /// 获取或设置列表中最后一个子商户 ID。

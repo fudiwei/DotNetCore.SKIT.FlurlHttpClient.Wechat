@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_url")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_url")]
-        public string InvoiceUrl { get; set; } = default!;
+        public string? InvoiceUrl { get; set; }
     }
 }

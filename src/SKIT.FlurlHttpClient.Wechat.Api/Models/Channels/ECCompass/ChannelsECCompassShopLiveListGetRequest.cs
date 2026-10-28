@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_id")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-        public string FinderId { get; set; } = string.Empty;
+        public string? FinderId { get; set; }
 
         /// <summary>
         /// 获取或设置日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ds")]
         [System.Text.Json.Serialization.JsonPropertyName("ds")]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string ContentJson { get; set; } = string.Empty;
+        public string? ContentJson { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。

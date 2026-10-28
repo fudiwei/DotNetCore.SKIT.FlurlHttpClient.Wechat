@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fatherid")]
         [System.Text.Json.Serialization.JsonPropertyName("fatherid")]
-        public string ParentFileOrSpaceId { get; set; } = string.Empty;
+        public string? ParentFileOrSpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置文件 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileid")]
         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-        public IList<string> FileIdList { get; set; } = new List<string>();
+        public List<string>? FileIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否覆盖同名文件。

@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "employees", request.EmployeeId, "quota-cards");
+                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "employees", request.EmployeeId!, "quota-cards");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateWeBusinessPayEmployeeQuotaCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "employees", request.EmployeeId, "out-quota-cards", request.OutCardNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "employees", request.EmployeeId!, "out-quota-cards", request.OutCardNumber!)
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "employees", request.EmployeeId, "quota-cards", request.CardNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "employees", request.EmployeeId!, "quota-cards", request.CardNumber!)
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "employees", request.EmployeeId, "revoke");
+                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "employees", request.EmployeeId!, "revoke");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RevokeGetWeBusinessPayEmployeeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -206,7 +206,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "employees", request.EmployeeId, "quota-cards", request.CardNumber, "cancel");
+                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "employees", request.EmployeeId!, "quota-cards", request.CardNumber!, "cancel");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CancelWeBusinessPayEmployeeQuotaCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -236,7 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "employees", request.EmployeeId, "quota-cards", request.CardNumber, "payment-url")
+                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "employees", request.EmployeeId!, "quota-cards", request.CardNumber!, "payment-url")
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("application_type", request.ApplicationType);
@@ -297,7 +297,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "stores", "entity-matches", request.BatchId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "stores", "entity-matches", request.BatchId!)
                 .SetQueryParam("sp_mchid", request.MerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetWeBusinessPayStoreEntityMatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -329,7 +329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "users", request.UserId, "authorization-state")
+                .CreateFlurlRequest(request, HttpMethod.Get, "webizpay", "users", request.UserId!, "authorization-state")
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
@@ -360,7 +360,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "users", request.UserId, "authorization-url");
+                .CreateFlurlRequest(request, HttpMethod.Post, "webizpay", "users", request.UserId!, "authorization-url");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetWeBusinessPayUserAuthorizationUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

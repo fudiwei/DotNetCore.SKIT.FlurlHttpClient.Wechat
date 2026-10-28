@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息加解密公钥版本号。
@@ -35,14 +35,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_random_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_random_key")]
-                public string EncryptedRandomKey { get; set; } = default!;
+                public string? EncryptedRandomKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置经过加密的聊天内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_chat_msg")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_chat_msg")]
-                public string EncryptedChatMessage { get; set; } = default!;
+                public string? EncryptedChatMessage { get; set; }
             }
         }
 
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatdata")]
         [System.Text.Json.Serialization.JsonPropertyName("chatdata")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         public override bool IsSuccessful()
         {

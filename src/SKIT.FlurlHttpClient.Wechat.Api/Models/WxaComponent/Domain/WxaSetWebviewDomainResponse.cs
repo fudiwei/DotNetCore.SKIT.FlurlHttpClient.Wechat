@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("webviewdomain")]
         [System.Text.Json.Serialization.JsonPropertyName("webviewdomain")]
-        public string[]? WebviewDomainList { get; set; }
+        public List<string>? WebviewDomainList { get; set; }
     }
 }

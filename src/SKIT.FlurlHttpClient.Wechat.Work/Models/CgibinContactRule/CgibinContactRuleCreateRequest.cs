@@ -18,21 +18,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public IList<string>? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置部门 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("partyid")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                        public IList<long>? DepartmentIdList { get; set; }
+                        public List<long>? DepartmentIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置标签 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tagid")]
                         [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                        public IList<long>? TagIdList { get; set; }
+                        public List<long>? TagIdList { get; set; }
                     }
                 }
 
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("range")]
                 [System.Text.Json.Serialization.JsonPropertyName("range")]
-                public Types.Range Range { get; set; } = new Types.Range();
+                public Types.Range? Range { get; set; }
 
                 /// <summary>
                 /// 获取或设置白名单范围信息。
@@ -64,6 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rules")]
         [System.Text.Json.Serialization.JsonPropertyName("rules")]
-        public IList<Types.Rule> RuleList { get; set; } = new List<Types.Rule>();
+        public List<Types.Rule>? RuleList { get; set; }
     }
 }

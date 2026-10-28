@@ -10,42 +10,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("company_mchid")]
-        public string CompanyMerchantId { get; set; } = default!;
+        public string? CompanyMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置企业类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enterprise_type")]
         [System.Text.Json.Serialization.JsonPropertyName("enterprise_type")]
-        public string EnterpriseType { get; set; } = default!;
+        public string? EnterpriseType { get; set; }
 
         /// <summary>
         /// 获取或设置公司名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-        public string CompanyName { get; set; } = default!;
+        public string? CompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置公司简称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("short_name")]
         [System.Text.Json.Serialization.JsonPropertyName("short_name")]
-        public string ShortName { get; set; } = default!;
+        public string? ShortName { get; set; }
 
         /// <summary>
         /// 获取或设置税号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tax_id")]
         [System.Text.Json.Serialization.JsonPropertyName("tax_id")]
-        public string TaxId { get; set; } = default!;
+        public string? TaxId { get; set; }
 
         /// <summary>
         /// 获取或设置企业法人姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("legal_person")]
         [System.Text.Json.Serialization.JsonPropertyName("legal_person")]
-        public string LegalPerson { get; set; } = default!;
+        public string? LegalPerson { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public string Address { get; set; } = default!;
+        public string? Address { get; set; }
 
         /// <summary>
         /// 获取或设置公司电话。
@@ -87,6 +87,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_mode")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_mode")]
-        public string InvoiceMode { get; set; } = default!;
+        public string? InvoiceMode { get; set; }
     }
 }

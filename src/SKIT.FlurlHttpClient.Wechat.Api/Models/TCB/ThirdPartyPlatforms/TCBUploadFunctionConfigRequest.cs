@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置函数名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("function_name")]
         [System.Text.Json.Serialization.JsonPropertyName("function_name")]
-        public string FunctionName { get; set; } = string.Empty;
+        public string? FunctionName { get; set; }
 
         /// <summary>
         /// 获取或设置配置类型。
@@ -31,6 +31,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config")]
         [System.Text.Json.Serialization.JsonPropertyName("config")]
-        public string JsonConfig { get; set; } = string.Empty;
+        public string? JsonConfig { get; set; }
     }
 }

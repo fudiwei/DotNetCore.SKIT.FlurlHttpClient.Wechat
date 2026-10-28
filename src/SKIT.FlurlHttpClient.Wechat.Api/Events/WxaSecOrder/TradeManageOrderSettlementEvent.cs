@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("shipped_time")]
         [System.Text.Json.Serialization.JsonPropertyName("shipped_time")]
         [System.Xml.Serialization.XmlElement("shipped_time")]
-        public long ShippedTimestamp { get; set; } = default!;
+        public long ShippedTimestamp { get; set; }
 
         /// <summary>
         /// 获取或设置预计结算时时间戳。

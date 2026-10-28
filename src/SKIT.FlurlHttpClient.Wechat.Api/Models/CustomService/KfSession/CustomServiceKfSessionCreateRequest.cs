@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_account")]
         [System.Text.Json.Serialization.JsonPropertyName("kf_account")]
-        public string KfAccount { get; set; } = string.Empty;
+        public string? KfAccount { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
     }
 }

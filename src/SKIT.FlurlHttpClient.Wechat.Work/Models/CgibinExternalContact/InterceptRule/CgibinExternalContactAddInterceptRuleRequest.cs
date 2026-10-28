@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                public IList<string>? UserIdList { get; set; }
+                public List<string>? UserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                public IList<long>? DepartmentIdList { get; set; }
+                public List<long>? DepartmentIdList { get; set; }
             }
         }
 
@@ -30,21 +30,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_name")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_name")]
-        public string RuleName { get; set; } = string.Empty;
+        public string? RuleName { get; set; }
 
         /// <summary>
         /// 获取或设置敏感词列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("word_list")]
         [System.Text.Json.Serialization.JsonPropertyName("word_list")]
-        public IList<string> WordList { get; set; } = new List<string>();
+        public List<string>? WordList { get; set; }
 
         /// <summary>
         /// 获取或设置拦截语义列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("semantics_list")]
         [System.Text.Json.Serialization.JsonPropertyName("semantics_list")]
-        public IList<int>? SemanticsList { get; set; }
+        public List<int>? SemanticsList { get; set; }
 
         /// <summary>
         /// 获取或设置拦截类型。

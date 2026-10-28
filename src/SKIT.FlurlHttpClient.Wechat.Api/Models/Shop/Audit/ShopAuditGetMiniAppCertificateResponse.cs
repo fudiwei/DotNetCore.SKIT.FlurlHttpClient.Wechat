@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_wording")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_wording")]
-                public string BrandWording { get; set; } = default!;
+                public string? BrandWording { get; set; }
 
                 /// <summary>
                 /// 获取或设置销售授权书图片 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sale_authorization")]
                 [System.Text.Json.Serialization.JsonPropertyName("sale_authorization")]
-                public string[]? SaleAuthorizationUrlList { get; set; }
+                public List<string>? SaleAuthorizationUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商标注册证书图片 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trademark_registration_certificate")]
                 [System.Text.Json.Serialization.JsonPropertyName("trademark_registration_certificate")]
-                public string[]? TrademarkRegistrationCertificateUrlList { get; set; }
+                public List<string>? TrademarkRegistrationCertificateUrlList { get; set; }
             }
 
             public class Category
@@ -45,7 +45,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("first_category_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("first_category_name")]
-                public string FirstCategoryName { get; set; } = default!;
+                public string? FirstCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目 ID。
@@ -59,14 +59,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("second_category_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("second_category_name")]
-                public string SecondCategoryName { get; set; } = default!;
+                public string? SecondCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置资质材料图片 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("certificate_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("certificate_url")]
-                public string[]? QualificationUrlList { get; set; }
+                public List<string>? QualificationUrlList { get; set; }
             }
         }
 
@@ -82,6 +82,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("category_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("category_info_list")]
-        public Types.Category[]? CategoryList { get; set; }
+        public List<Types.Category>? CategoryList { get; set; }
     }
 }

@@ -48,21 +48,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                public string ExternalUserId { get; set; } = default!;
+                public string? ExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("avatar")]
                 [System.Text.Json.Serialization.JsonPropertyName("avatar")]
-                public string AvatarUrl { get; set; } = default!;
+                public string? AvatarUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置性别。
@@ -93,13 +93,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_list")]
         [System.Text.Json.Serialization.JsonPropertyName("customer_list")]
-        public Types.Customer[] CustomerList { get; set; } = default!;
+        public List<Types.Customer>? CustomerList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的外部联系人账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_external_userid")]
-        public string[] InvalidExternalUserIdList { get; set; } = default!;
+        public List<string>? InvalidExternalUserIdList { get; set; }
     }
 }

@@ -25,28 +25,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("envs")]
         [System.Text.Json.Serialization.JsonPropertyName("envs")]
-        public IList<string> EnvironmentIdList { get; set; } = new List<string>();
+        public List<string>? EnvironmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置服务名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_name")]
         [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-        public string ServiceName { get; set; } = string.Empty;
+        public string? ServiceName { get; set; }
 
         /// <summary>
         /// 获取或设置上传方式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_type")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_type")]
-        public string UploadType { get; set; } = string.Empty;
+        public string? UploadType { get; set; }
 
         /// <summary>
         /// 获取或设置流量占比（范围：0～100）。

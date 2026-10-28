@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/exmail/useroption/get 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public UserOptionItem[] Items { get; set; } = default!;
+                public List<UserOptionItem>? Items { get; set; }
             }
 
             public class UserOptionItem
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = default!;
+                public string? Value { get; set; }
             }
         }
 
@@ -40,6 +40,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("option")]
         [System.Text.Json.Serialization.JsonPropertyName("option")]
-        public Types.UserOptionList UserOptionList { get; set; } = default!;
+        public Types.UserOptionList? UserOptionList { get; set; }
     }
 }

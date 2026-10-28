@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/describeextensionuploadinfo 接口的响应。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("CodeUri")]
                         [System.Text.Json.Serialization.JsonPropertyName("CodeUri")]
-                        public string CodeUrl { get; set; } = default!;
+                        public string? CodeUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置上传文件的临时地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("UploadUrl")]
                         [System.Text.Json.Serialization.JsonPropertyName("UploadUrl")]
-                        public string UploadUrl { get; set; } = default!;
+                        public string? UploadUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义密钥。
@@ -48,14 +48,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("FilesData")]
                 [System.Text.Json.Serialization.JsonPropertyName("FilesData")]
-                public Types.File[] FileList { get; set; } = default!;
+                public List<Types.File>? FileList { get; set; }
 
                 /// <summary>
                 /// 获取或设置唯一请求 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("RequestId")]
                 [System.Text.Json.Serialization.JsonPropertyName("RequestId")]
-                public string RequestId { get; set; } = default!;
+                public string? RequestId { get; set; }
             }
         }
 
@@ -64,6 +64,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Response")]
         [System.Text.Json.Serialization.JsonPropertyName("Response")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

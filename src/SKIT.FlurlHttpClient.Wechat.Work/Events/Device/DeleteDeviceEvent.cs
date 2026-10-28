@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ServiceCorpId")]
         [System.Text.Json.Serialization.JsonPropertyName("ServiceCorpId")]
         [System.Xml.Serialization.XmlElement("ServiceCorpId")]
-        public string ServiceCorpId { get; set; } = default!;
+        public string? ServiceCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置授权方的 CorpId。
@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("DeviceSn")]
         [System.Text.Json.Serialization.JsonPropertyName("DeviceSn")]
         [System.Xml.Serialization.XmlElement("DeviceSn")]
-        public string DeviceSerialNumber { get; set; } = default!;
+        public string? DeviceSerialNumber { get; set; }
     }
 }

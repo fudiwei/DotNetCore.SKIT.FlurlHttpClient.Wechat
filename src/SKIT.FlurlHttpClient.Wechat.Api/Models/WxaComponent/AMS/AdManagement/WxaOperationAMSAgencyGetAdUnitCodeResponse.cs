@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string Code { get; set; } = default!;
+        public string? Code { get; set; }
 
         public override bool IsSuccessful()
         {

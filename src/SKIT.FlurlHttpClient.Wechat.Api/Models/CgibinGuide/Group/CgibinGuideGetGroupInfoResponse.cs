@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("guide_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("guide_nickname")]
-                public string GuideNickname { get; set; } = default!;
+                public string? GuideNickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置顾问头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("guide_headimgurl")]
                 [System.Text.Json.Serialization.JsonPropertyName("guide_headimgurl")]
-                public string GuideHeadImageUrl { get; set; } = default!;
+                public string? GuideHeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guide_list")]
         [System.Text.Json.Serialization.JsonPropertyName("guide_list")]
-        public Types.Guide[] GuideList { get; set; } = default!;
+        public List<Types.Guide>? GuideList { get; set; }
 
         /// <summary>
         /// 获取或设置组内顾问人员总数。

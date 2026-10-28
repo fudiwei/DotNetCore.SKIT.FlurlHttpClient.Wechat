@@ -30,28 +30,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户充值单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_recharge_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_recharge_no")]
-        public string OutRechargeNumber { get; set; } = default!;
+        public string? OutRechargeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信充值单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recharge_id")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_id")]
-        public string RechargeId { get; set; } = default!;
+        public string? RechargeId { get; set; }
 
         /// <summary>
         /// 获取或设置充值渠道。
@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recharge_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_scene")]
-        public string RechargeScene { get; set; } = default!;
+        public string? RechargeScene { get; set; }
 
         /// <summary>
         /// 获取或设置充值状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recharge_state")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_state")]
-        public string RechargeState { get; set; } = default!;
+        public string? RechargeState { get; set; }
 
         /// <summary>
         /// 获取或设置充值状态描述。
@@ -86,14 +86,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_type")]
         [System.Text.Json.Serialization.JsonPropertyName("account_type")]
-        public string AccountType { get; set; } = default!;
+        public string? AccountType { get; set; }
 
         /// <summary>
         /// 获取或设置充值金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recharge_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_amount")]
-        public Types.RechargeAmount RechargeAmount { get; set; } = default!;
+        public Types.RechargeAmount? RechargeAmount { get; set; }
 
         /// <summary>
         /// 获取或设置转账充值的付款信息。

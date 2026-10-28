@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_moment_comments 接口的响应。</para>
@@ -37,13 +37,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("comment_list")]
         [System.Text.Json.Serialization.JsonPropertyName("comment_list")]
-        public Types.Interaction[] CommentList { get; set; } = default!;
+        public List<Types.Interaction>? CommentList { get; set; }
 
         /// <summary>
         /// 获取或设置点赞列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("like_list")]
         [System.Text.Json.Serialization.JsonPropertyName("like_list")]
-        public Types.Interaction[] LikeList { get; set; } = default!;
+        public List<Types.Interaction>? LikeList { get; set; }
     }
 }

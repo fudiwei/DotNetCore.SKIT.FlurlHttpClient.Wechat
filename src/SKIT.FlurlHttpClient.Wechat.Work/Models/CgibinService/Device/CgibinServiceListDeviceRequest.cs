@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

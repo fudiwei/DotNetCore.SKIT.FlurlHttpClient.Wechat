@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encrypted_msg_hash")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypted_msg_hash")]
-        public string EncryptedMessageHash { get; set; } = string.Empty;
+        public string? EncryptedMessageHash { get; set; }
     }
 }

@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_store_id")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_store_id")]
-        public string StoreId { get; set; } = default!;
+        public string? StoreId { get; set; }
 
         /// <summary>
         /// 获取或设置订单 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_order_id")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置门店订单编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("store_order_id")]
-        public string StoreOrderId { get; set; } = default!;
+        public string? StoreOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置订单状态。

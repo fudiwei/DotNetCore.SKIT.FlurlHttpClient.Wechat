@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule_state")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule_state")]
-        public string ScheduleState { get; set; } = default!;
+        public string? ScheduleState { get; set; }
 
         /// <summary>
         /// 获取或设置可扣费开始日期字符串（格式：yyyy-MM-dd）。

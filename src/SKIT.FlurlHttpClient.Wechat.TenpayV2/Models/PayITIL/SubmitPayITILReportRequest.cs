@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = string.Empty;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置交易开始时间。
@@ -76,14 +76,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("user_ip")]
-        public string UserIp { get; set; } = string.Empty;
+        public string? UserIp { get; set; }
 
         /// <summary>
         /// 获取或设置接口 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("interface_url")]
         [System.Text.Json.Serialization.JsonPropertyName("interface_url")]
-        public string InterfaceUrl { get; set; } = string.Empty;
+        public string? InterfaceUrl { get; set; }
 
         /// <summary>
         /// 获取或设置接口耗时（单位：毫秒）。
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("trades")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public IList<Types.Trade>? TradeList { get; set; }
+        public List<Types.Trade>? TradeList { get; set; }
 
         /// <summary>
         /// 获取或设置商户上报时间。

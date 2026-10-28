@@ -47,6 +47,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ProductCategoryAudit")]
         [System.Text.Json.Serialization.JsonPropertyName("ProductCategoryAudit")]
         [System.Xml.Serialization.XmlElement("ProductCategoryAudit")]
-        public Types.Category Category { get; set; } = default!;
+        public Types.Category? Category { get; set; }
     }
 }

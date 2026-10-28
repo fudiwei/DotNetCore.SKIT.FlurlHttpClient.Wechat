@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pkgId")]
                 [System.Text.Json.Serialization.JsonPropertyName("pkgId")]
-                public string PackageId { get; set; } = default!;
+                public string? PackageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置额度来源的商品 SPU ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("spuId")]
                 [System.Text.Json.Serialization.JsonPropertyName("spuId")]
-                public string SPUId { get; set; } = default!;
+                public string? SPUId { get; set; }
 
                 /// <summary>
                 /// 获取或设置额度来源的商品 SKU ID。
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detailList")]
         [System.Text.Json.Serialization.JsonPropertyName("detailList")]
-        public Types.Detail[] DetailList { get; set; } = default!;
+        public List<Types.Detail>? DetailList { get; set; }
 
         /// <summary>
         /// 获取或设置用量详情总数量。

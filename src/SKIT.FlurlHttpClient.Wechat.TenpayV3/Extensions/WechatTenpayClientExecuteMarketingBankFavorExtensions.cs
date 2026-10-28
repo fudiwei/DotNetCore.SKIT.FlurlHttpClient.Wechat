@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CouponId, "coupon_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "bank-favor", "users", request.OpenId, "coupons", request.CouponId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "bank-favor", "users", request.OpenId!, "coupons", request.CouponId!)
                 .SetQueryParam("appid", request.AppId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingBankFavorUserCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "bank-favor", "users", request.OpenId, "bank-multi-activity");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "bank-favor", "users", request.OpenId!, "bank-multi-activity");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SendMarketingBankFavorUserBankMultipleActivityCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

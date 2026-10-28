@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("unoin_id")]
         [System.Text.Json.Serialization.JsonPropertyName("unoin_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string RequestId { get; set; } = default!;
+        public string? RequestId { get; set; }
 
         /// <summary>
         /// 获取或设置用户风险等级。

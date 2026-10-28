@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_product_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_product_id")]
-                        public string OutProductId { get; set; } = default!;
+                        public string? OutProductId { get; set; }
 
                         /// <summary>
                         /// 获取或设置商家自定义 SKU ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_sku_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
-                        public string OutSKUId { get; set; } = default!;
+                        public string? OutSKUId { get; set; }
 
                         /// <summary>
                         /// 获取或设置参与售后的商品数量。
@@ -48,28 +48,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
-                public string OutOrderId { get; set; } = default!;
+                public string? OutOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家自定义售后单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_aftersale_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_aftersale_id")]
-                public string OutAftersaleOrderId { get; set; } = default!;
+                public string? OutAftersaleOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序该售后单的页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置售后类型。
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_infos")]
-                public Types.Product[] ProductList { get; set; } = default!;
+                public List<Types.Product>? ProductList { get; set; }
             }
         }
 
@@ -115,6 +115,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("aftersale_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("aftersale_infos")]
-        public Types.AftersaleOrder[] AftersaleOrderList { get; set; } = default!;
+        public List<Types.AftersaleOrder>? AftersaleOrderList { get; set; }
     }
 }

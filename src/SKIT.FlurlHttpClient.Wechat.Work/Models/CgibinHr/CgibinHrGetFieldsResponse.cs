@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("value")]
                                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                public string Value { get; set; } = default!;
+                                public string? Value { get; set; }
                             }
                         }
 
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("field_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("field_name")]
-                        public string FieldName { get; set; } = default!;
+                        public string? FieldName { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段类型。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_list")]
-                        public Types.Option[]? OptionList { get; set; }
+                        public List<Types.Option>? OptionList { get; set; }
                     }
                 }
 
@@ -89,14 +89,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_name")]
-                public string GroupName { get; set; } = default!;
+                public string? GroupName { get; set; }
 
                 /// <summary>
                 /// 获取或设置字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_list")]
-                public Types.Field[] FieldList { get; set; } = default!;
+                public List<Types.Field>? FieldList { get; set; }
             }
         }
 
@@ -105,6 +105,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_list")]
         [System.Text.Json.Serialization.JsonPropertyName("group_list")]
-        public Types.FieldGroup[] FieldGroupList { get; set; } = default!;
+        public List<Types.FieldGroup>? FieldGroupList { get; set; }
     }
 }

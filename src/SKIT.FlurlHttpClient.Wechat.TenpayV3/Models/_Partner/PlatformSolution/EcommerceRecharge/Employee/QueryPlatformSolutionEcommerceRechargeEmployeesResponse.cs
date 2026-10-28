@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-                public string SubMerchantId { get; set; } = default!;
+                public string? SubMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置员工的 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sp_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sp_openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置员工状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("state")]
                 [System.Text.Json.Serialization.JsonPropertyName("state")]
-                public string State { get; set; } = default!;
+                public string? State { get; set; }
 
                 /// <summary>
                 /// 获取或设置添加时间。
@@ -55,6 +55,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employees")]
         [System.Text.Json.Serialization.JsonPropertyName("employees")]
-        public Types.Employee[] EmployeeList { get; set; } = default!;
+        public List<Types.Employee>? EmployeeList { get; set; }
     }
 }

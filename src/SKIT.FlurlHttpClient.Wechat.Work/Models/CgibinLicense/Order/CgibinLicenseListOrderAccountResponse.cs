@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("active_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("active_code")]
-                public string ActiveCode { get; set; } = default!;
+                public string? ActiveCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员的 UserId。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_list")]
         [System.Text.Json.Serialization.JsonPropertyName("account_list")]
-        public Types.Account[] AccountList { get; set; } = default!;
+        public List<Types.Account>? AccountList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

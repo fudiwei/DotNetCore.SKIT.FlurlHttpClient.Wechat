@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
-                public string Code { get; set; } = default!;
+                public string? Code { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("success_codes")]
-        public string[]? SucceededCodeList { get; set; }
+        public List<string>? SucceededCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置上传成功的数量。
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_codes")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_codes")]
-        public Types.FailedCode[]? FailedCodeList { get; set; }
+        public List<Types.FailedCode>? FailedCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置上传失败的数量。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("prefix")]
                 [System.Text.Json.Serialization.JsonPropertyName("prefix")]
-                public string Prefix { get; set; } = default!;
+                public string? Prefix { get; set; }
 
                 /// <summary>
                 /// 获取或设置符合独占规则。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string MiniProgramPagePath { get; set; } = default!;
+                public string? MiniProgramPagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置测试范围。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("debug_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("debug_url")]
-                public string[]? DebugUrlList { get; set; } = default!;
+                public List<string>? DebugUrlList { get; set; }
             }
         }
 
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_list")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-        public Types.Rule[] RuleList { get; set; } = default!;
+        public List<Types.Rule>? RuleList { get; set; }
 
         /// <summary>
         /// 获取或设置本月还可发布的次数。

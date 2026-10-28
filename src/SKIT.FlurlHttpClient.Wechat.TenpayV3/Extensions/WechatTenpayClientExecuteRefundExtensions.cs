@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutRefundNumber, "out_refund_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "refund", "domestic", "refunds", request.OutRefundNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "refund", "domestic", "refunds", request.OutRefundNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.RefundId, "refund_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "refund", "domestic", "refunds", request.RefundId, "apply-abnormal-refund");
+                .CreateFlurlRequest(request, HttpMethod.Post, "refund", "domestic", "refunds", request.RefundId!, "apply-abnormal-refund");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateRefundDomesticAbnormalRefundApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

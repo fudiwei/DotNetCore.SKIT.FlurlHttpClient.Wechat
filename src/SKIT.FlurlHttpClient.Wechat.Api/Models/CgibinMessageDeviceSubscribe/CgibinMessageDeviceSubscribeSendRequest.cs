@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -23,14 +23,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_openid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("to_openid_list")]
-        public IList<string> ToUserOpenIdList { get; set; } = new List<string>();
+        public List<string>? ToUserOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置订阅模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = string.Empty;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置设备型号 ID。
@@ -72,6 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public IDictionary<string, Types.DataItem>? Data { get; set; }
+        public Dictionary<string, Types.DataItem>? Data { get; set; }
     }
 }

@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string MediaName { get; set; } = default!;
+                public string? MediaName { get; set; }
 
                 /// <summary>
                 /// 获取或设置描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置时长（单位：秒）。
@@ -43,21 +43,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cover_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("cover_url")]
-                public string CoverUrl { get; set; } = default!;
+                public string? CoverUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置 MP4 视频临时链接。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mp4_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("mp4_url")]
-                public string VideoMp4Url { get; set; } = default!;
+                public string? VideoMp4Url { get; set; }
 
                 /// <summary>
                 /// 获取或设置 HLS 视频临时链接。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("hls_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("hls_url")]
-                public string VideoHlsUrl { get; set; } = default!;
+                public string? VideoHlsUrl { get; set; }
             }
         }
 
@@ -66,6 +66,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_info")]
         [System.Text.Json.Serialization.JsonPropertyName("media_info")]
-        public Types.MediaInfo MediaInfo { get; set; } = default!;
+        public Types.MediaInfo? MediaInfo { get; set; }
     }
 }

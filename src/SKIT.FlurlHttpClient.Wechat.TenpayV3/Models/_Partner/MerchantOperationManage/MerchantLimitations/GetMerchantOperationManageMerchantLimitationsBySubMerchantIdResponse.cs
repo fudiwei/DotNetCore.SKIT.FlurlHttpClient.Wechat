@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("relate_limitations")]
                 [System.Text.Json.Serialization.JsonPropertyName("relate_limitations")]
-                public string[]? RelateLimitationList { get; set; }
+                public List<string>? RelateLimitationList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户被该原因管控的其他能力描述。
@@ -104,21 +104,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户被管控能力列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limited_functions")]
         [System.Text.Json.Serialization.JsonPropertyName("limited_functions")]
-        public string[]? LimitedFunctionList { get; set; }
+        public List<string>? LimitedFunctionList { get; set; }
 
         /// <summary>
         /// 获取或设置被管控原因及解脱路径列表列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recovery_specifications")]
         [System.Text.Json.Serialization.JsonPropertyName("recovery_specifications")]
-        public Types.RecoverySpecification[]? RecoverySpecificationList { get; set; }
+        public List<Types.RecoverySpecification>? RecoverySpecificationList { get; set; }
 
         /// <summary>
         /// 获取或设置商户其他被管控能力描述。

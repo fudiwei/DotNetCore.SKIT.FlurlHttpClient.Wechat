@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finder_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-                public string FinderId { get; set; } = default!;
+                public string? FinderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置合作状态。
@@ -57,21 +57,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("talent_appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]
-                        public string TalentAppId { get; set; } = default!;
+                        public string? TalentAppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置带货达人昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                        public string Nickname { get; set; } = default!;
+                        public string? Nickname { get; set; }
 
                         /// <summary>
                         /// 获取或设置带货达人头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("head_img")]
                         [System.Text.Json.Serialization.JsonPropertyName("head_img")]
-                        public string HeadImageUrl { get; set; } = default!;
+                        public string? HeadImageUrl { get; set; }
                     }
 
                     public class Data
@@ -142,21 +142,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_talent_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_talent_info")]
-                public Types.BaseInfo BaseInfo { get; set; } = default!;
+                public Types.BaseInfo? BaseInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置数据信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                public Types.Data Data { get; set; } = default!;
+                public Types.Data? Data { get; set; }
 
                 /// <summary>
                 /// 获取或设置特征信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("feature_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("feature_info")]
-                public Types.Feature Feature { get; set; } = default!;
+                public Types.Feature? Feature { get; set; }
             }
         }
 
@@ -166,13 +166,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Obsolete("相关接口或字段于 2026-03-30 下线。")]
         [Newtonsoft.Json.JsonProperty("promoter")]
         [System.Text.Json.Serialization.JsonPropertyName("promoter")]
-        public Types.Promoter Promoter { get; set; } = default!;
+        public Types.Promoter? Promoter { get; set; }
 
         /// <summary>
         /// 获取或设置带货达人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("talent")]
         [System.Text.Json.Serialization.JsonPropertyName("talent")]
-        public Types.Talent Talent { get; set; } = default!;
+        public Types.Talent? Talent { get; set; }
     }
 }

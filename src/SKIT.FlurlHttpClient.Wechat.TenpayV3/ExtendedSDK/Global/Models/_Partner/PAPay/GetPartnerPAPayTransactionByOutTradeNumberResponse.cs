@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                public new Types.GoodsDetail[]? GoodsList { get; set; }
+                public new List<Types.GoodsDetail>? GoodsList { get; set; }
             }
         }
 
@@ -75,21 +75,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public override string MerchantId { get; set; } = default!;
+        public override string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public override string AppId { get; set; } = default!;
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public new Types.Amount Amount { get; set; } = default!;
+        public new Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。
@@ -124,6 +124,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotion_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
-        public new Types.Promotion[]? PromotionList { get; set; }
+        public new List<Types.Promotion>? PromotionList { get; set; }
     }
 }

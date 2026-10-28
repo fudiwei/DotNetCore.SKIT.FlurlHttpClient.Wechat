@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("sku_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_ids")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long[] SKUIdList { get; set; } = default!;
+                public List<long>? SKUIdList { get; set; }
             }
         }
 
@@ -32,6 +32,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

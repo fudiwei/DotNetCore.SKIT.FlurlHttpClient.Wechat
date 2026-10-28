@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public string Id { get; set; } = default!;
+                public string? Id { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告主名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告主头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("icon")]
                 [System.Text.Json.Serialization.JsonPropertyName("icon")]
-                public string IconUrl { get; set; } = default!;
+                public string? IconUrl { get; set; }
             }
         }
 
@@ -51,28 +51,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("blacklist_biz")]
         [System.Text.Json.Serialization.JsonPropertyName("blacklist_biz")]
-        public Types.Advertiser[] BlackList { get; set; } = default!;
+        public List<Types.Advertiser>? BlackList { get; set; }
 
         /// <summary>
         /// 获取或设置屏蔽的小程序广告主列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("blacklist_weapp")]
         [System.Text.Json.Serialization.JsonPropertyName("blacklist_weapp")]
-        public Types.Advertiser[]? WeappBlackList { get; set; }
+        public List<Types.Advertiser>? WeappBlackList { get; set; }
 
         /// <summary>
         /// 获取或设置屏蔽的 iOS 广告主列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("blacklist_ios")]
         [System.Text.Json.Serialization.JsonPropertyName("blacklist_ios")]
-        public Types.Advertiser[]? IOSBlackList { get; set; }
+        public List<Types.Advertiser>? IOSBlackList { get; set; }
 
         /// <summary>
         /// 获取或设置屏蔽的 Android 广告主列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("blacklist_android")]
         [System.Text.Json.Serialization.JsonPropertyName("blacklist_android")]
-        public Types.Advertiser[]? AndroidBlackList { get; set; }
+        public List<Types.Advertiser>? AndroidBlackList { get; set; }
 
         public override bool IsSuccessful()
         {

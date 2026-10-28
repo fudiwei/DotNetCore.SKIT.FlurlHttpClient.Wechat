@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户企业 CorpId。
@@ -56,14 +56,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("invoice_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("invoice_title")]
-                public string InvoiceTitle { get; set; } = default!;
+                public string? InvoiceTitle { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人识别号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tax_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tax_number")]
-                public string TaxNumber { get; set; } = default!;
+                public string? TaxNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票收取方式。
@@ -112,35 +112,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("company_addr")]
                 [System.Text.Json.Serialization.JsonPropertyName("company_addr")]
-                public string CompanyAddress { get; set; } = default!;
+                public string? CompanyAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置公司电话。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("company_tel")]
                 [System.Text.Json.Serialization.JsonPropertyName("company_tel")]
-                public string CompanyTeleNumber { get; set; } = default!;
+                public string? CompanyTeleNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户行。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-                public string BankName { get; set; } = default!;
+                public string? BankName { get; set; }
 
                 /// <summary>
                 /// 获取或设置银行账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_account_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_account_number")]
-                public string BankAccountNumber { get; set; } = default!;
+                public string? BankAccountNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票备注。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("invoice_note")]
                 [System.Text.Json.Serialization.JsonPropertyName("invoice_note")]
-                public string InvoiceNotes { get; set; } = default!;
+                public string? InvoiceNotes { get; set; }
             }
         }
 
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_list")]
-        public Types.Invoice[] InvoiceList { get; set; } = default!;
+        public List<Types.Invoice>? InvoiceList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

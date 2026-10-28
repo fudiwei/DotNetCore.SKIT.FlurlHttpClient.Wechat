@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("taskid")]
         [System.Text.Json.Serialization.JsonPropertyName("taskid")]
-        public string TaskId { get; set; } = string.Empty;
+        public string? TaskId { get; set; }
     }
 }

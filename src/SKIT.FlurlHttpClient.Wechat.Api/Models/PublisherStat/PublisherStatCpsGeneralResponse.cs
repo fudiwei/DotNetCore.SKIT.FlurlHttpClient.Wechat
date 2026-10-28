@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("date")]
                 [System.Text.Json.Serialization.JsonPropertyName("date")]
-                public string DateString { get; set; } = default!;
+                public string? DateString { get; set; }
             }
         }
 
@@ -86,21 +86,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("base_resp")]
         [System.Text.Json.Serialization.JsonPropertyName("base_resp")]
-        public Types.BaseResponse BaseResponse { get; set; } = default!;
+        public Types.BaseResponse? BaseResponse { get; set; }
 
         /// <summary>
         /// 获取或设置概况数据信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("summary")]
         [System.Text.Json.Serialization.JsonPropertyName("summary")]
-        public Types.Summary Summary { get; set; } = default!;
+        public Types.Summary? Summary { get; set; }
 
         /// <summary>
         /// 获取或设置数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
 
         /// <summary>
         /// 获取或设置数据总条数。

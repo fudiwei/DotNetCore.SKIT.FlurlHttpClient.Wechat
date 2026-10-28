@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guarantee_order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("guarantee_order_id_list")]
-        public IList<long>? GuaranteeOrderIdList { get; set; }
+        public List<long>? GuaranteeOrderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置订单 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id_list")]
-        public IList<long>? OrderIdList { get; set; }
+        public List<long>? OrderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置保障单类型。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("status_list")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberListWithCommaSplitConverter))]
-        public IList<int>? StatusList { get; set; }
+        public List<int>? StatusList { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

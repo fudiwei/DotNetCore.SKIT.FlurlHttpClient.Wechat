@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("failed_chat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("failed_chat_list")]
-        public Types.GroupChat[]? FailedGroupChatList { get; set; }
+        public List<Types.GroupChat>? FailedGroupChatList { get; set; }
     }
 }

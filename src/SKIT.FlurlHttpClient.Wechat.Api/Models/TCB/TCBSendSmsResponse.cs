@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("serial_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("serial_no")]
-                public string SerialNumber { get; set; } = default!;
+                public string? SerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置手机号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                public string MobileNumber { get; set; } = default!;
+                public string? MobileNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置短信请求错误码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
-                public string ErrorCode { get; set; } = default!;
+                public string? ErrorCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置短信请求错误码描述。
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_status_list")]
         [System.Text.Json.Serialization.JsonPropertyName("send_status_list")]
-        public Types.SendStatus[]? SendStatusList { get; set; }
+        public List<Types.SendStatus>? SendStatusList { get; set; }
     }
 }

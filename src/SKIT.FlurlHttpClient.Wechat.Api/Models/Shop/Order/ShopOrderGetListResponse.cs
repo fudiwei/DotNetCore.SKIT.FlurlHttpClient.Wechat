@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/order/get_list 接口的响应。</para>
@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("orders")]
         [System.Text.Json.Serialization.JsonPropertyName("orders")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置订单总数量。

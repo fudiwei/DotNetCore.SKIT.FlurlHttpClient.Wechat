@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户企业 CorpId。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("buy_content")]
                 [System.Text.Json.Serialization.JsonPropertyName("buy_content")]
-                public string BuyContent { get; set; } = default!;
+                public string? BuyContent { get; set; }
 
                 /// <summary>
                 /// 获取或设置原价（单位：分）。
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_order_list")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

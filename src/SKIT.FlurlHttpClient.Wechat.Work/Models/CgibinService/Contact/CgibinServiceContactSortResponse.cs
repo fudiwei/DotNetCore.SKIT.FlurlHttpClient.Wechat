@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/contact/sort 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("useridlist")]
         [System.Text.Json.Serialization.JsonPropertyName("useridlist")]
-        public string[] UserIdList { get; set; } = default!;
+        public List<string>? UserIdList { get; set; }
     }
 }

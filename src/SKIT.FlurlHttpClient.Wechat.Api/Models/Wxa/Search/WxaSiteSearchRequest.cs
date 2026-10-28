@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keyword")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword")]
-        public string Keyword { get; set; } = string.Empty;
+        public string? Keyword { get; set; }
 
         /// <summary>
         /// 获取或设置请求下一页的参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_page_info")]
         [System.Text.Json.Serialization.JsonPropertyName("next_page_info")]
-        public string NextPageParameter { get; set; } = string.Empty;
+        public string? NextPageParameter { get; set; }
     }
 }

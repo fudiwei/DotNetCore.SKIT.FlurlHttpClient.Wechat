@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("merchant_item_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("merchant_item_id")]
-                        public string MerchantItemId { get; set; } = string.Empty;
+                        public string? MerchantItemId { get; set; }
                     }
                 }
 
@@ -48,14 +48,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("express_company")]
                 [System.Text.Json.Serialization.JsonPropertyName("express_company")]
-                public string ExpressCompanyCode { get; set; } = string.Empty;
+                public string? ExpressCompanyCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置物流单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tracking_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("tracking_no")]
-                public string TrackingNumber { get; set; } = string.Empty;
+                public string? TrackingNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系方式。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_list")]
-                public IList<Types.Item>? ItemList { get; set; }
+                public List<Types.Item>? ItemList { get; set; }
             }
 
             public class Payer : UserOrderOrdersRequest.Types.Payer
@@ -82,28 +82,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_key")]
         [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-        public Types.OrderKey OrderKey { get; set; } = new Types.OrderKey();
+        public Types.OrderKey? OrderKey { get; set; }
 
         /// <summary>
         /// 获取或设置物流信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shipping_list")]
         [System.Text.Json.Serialization.JsonPropertyName("shipping_list")]
-        public IList<Types.Shipping> ShippingList { get; set; } = new List<Types.Shipping>();
+        public List<Types.Shipping>? ShippingList { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置发货模式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_mode")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_mode")]
-        public string DeliveryMode { get; set; } = string.Empty;
+        public string? DeliveryMode { get; set; }
 
         /// <summary>
         /// 获取或设置上传时间。

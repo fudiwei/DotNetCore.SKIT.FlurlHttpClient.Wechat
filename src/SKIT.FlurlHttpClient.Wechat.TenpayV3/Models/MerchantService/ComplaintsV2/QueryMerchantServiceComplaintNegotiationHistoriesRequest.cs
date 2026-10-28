@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComplaintId { get; set; } = string.Empty;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -20,7 +20,7 @@
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

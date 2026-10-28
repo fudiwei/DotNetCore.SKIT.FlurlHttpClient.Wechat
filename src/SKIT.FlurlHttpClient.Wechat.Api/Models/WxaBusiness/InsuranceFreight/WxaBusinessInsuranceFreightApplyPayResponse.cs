@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_url")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_url")]
-        public string PayUrl { get; set; } = default!;
+        public string? PayUrl { get; set; }
     }
 }

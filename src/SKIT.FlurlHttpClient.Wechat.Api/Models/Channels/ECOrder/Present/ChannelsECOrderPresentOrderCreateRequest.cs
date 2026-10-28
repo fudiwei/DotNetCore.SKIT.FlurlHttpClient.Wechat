@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_name")]
-                public string ItemName { get; set; } = string.Empty;
+                public string? ItemName { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核项值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_value")]
-                public string ItemValue { get; set; } = string.Empty;
+                public string? ItemValue { get; set; }
             }
         }
 
@@ -37,21 +37,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-        public string ActivityId { get; set; } = string.Empty;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置合作小店 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
-        public string ShopAppId { get; set; } = string.Empty;
+        public string? ShopAppId { get; set; }
 
         /// <summary>
         /// 获取或设置祝福语。

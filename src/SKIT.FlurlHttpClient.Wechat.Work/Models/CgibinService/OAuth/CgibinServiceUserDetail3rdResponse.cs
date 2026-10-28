@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = default!;
+        public string? CorpId { get; set; }
 
         /// <summary>
         /// 获取或设置用户所在企业内的成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置成员名称。

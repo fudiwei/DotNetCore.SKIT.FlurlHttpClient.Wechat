@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/kf/servicer/list 接口的响应。</para>
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("servicer_list")]
         [System.Text.Json.Serialization.JsonPropertyName("servicer_list")]
-        public Types.Servicer[] ServicerList { get; set; } = default!;
+        public List<Types.Servicer>? ServicerList { get; set; }
     }
 }

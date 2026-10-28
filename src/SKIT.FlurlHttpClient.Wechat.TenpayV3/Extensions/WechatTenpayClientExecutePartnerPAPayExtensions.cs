@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId, "notify");
+                .CreateFlurlRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId!, "notify");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePartnerPAPayContractNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId, "fail-notify");
+                .CreateFlurlRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId!, "fail-notify");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePartnerPAPayContractFailedNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

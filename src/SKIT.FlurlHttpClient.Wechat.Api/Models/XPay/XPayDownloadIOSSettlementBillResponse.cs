@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("month")]
                 [System.Text.Json.Serialization.JsonPropertyName("month")]
-                public string MonthString { get; set; } = default!;
+                public string? MonthString { get; set; }
 
                 /// <summary>
                 /// 获取或设置下载地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bill_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("bill_url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_list")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_list")]
-        public Types.Bill[] BillList { get; set; } = default!;
+        public List<Types.Bill>? BillList { get; set; }
     }
 }

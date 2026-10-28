@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = string.Empty;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序简称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("abbr")]
                 [System.Text.Json.Serialization.JsonPropertyName("abbr")]
-                public string Abbreviation { get; set; } = string.Empty;
+                public string? Abbreviation { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序简介。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("introduction")]
                 [System.Text.Json.Serialization.JsonPropertyName("introduction")]
-                public string Introduction { get; set; } = string.Empty;
+                public string? Introduction { get; set; }
 
                 /// <summary>
                 /// 获取或设置补充材料 MediaId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("naming_other_stuff")]
                 [System.Text.Json.Serialization.JsonPropertyName("naming_other_stuff")]
-                public IList<string>? OtherStuffMediaIdList { get; set; }
+                public List<string>? OtherStuffMediaIdList { get; set; }
             }
 
             public class SalesReturn
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mail")]
                 [System.Text.Json.Serialization.JsonPropertyName("mail")]
-                public string Email { get; set; } = string.Empty;
+                public string? Email { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址信息。
@@ -82,13 +82,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name_info")]
         [System.Text.Json.Serialization.JsonPropertyName("name_info")]
-        public Types.AppNaming AppNaming { get; set; } = new Types.AppNaming();
+        public Types.AppNaming? AppNaming { get; set; }
 
         /// <summary>
         /// 获取或设置退货信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_info")]
         [System.Text.Json.Serialization.JsonPropertyName("return_info")]
-        public Types.SalesReturn SalesReturn { get; set; } = new Types.SalesReturn();
+        public Types.SalesReturn? SalesReturn { get; set; }
     }
 }

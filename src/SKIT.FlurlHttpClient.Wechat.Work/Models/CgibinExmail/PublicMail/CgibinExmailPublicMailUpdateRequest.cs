@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<string> Items { get; set; } = new List<string>();
+                public List<string>? Items { get; set; }
             }
 
             public class AuthCodeInfo : CgibinExmailPublicMailCreateRequest.Types.AuthCodeInfo

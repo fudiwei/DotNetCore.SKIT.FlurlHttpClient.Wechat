@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/update 接口的请求。</para>
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goodsInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("goodsInfo")]
-        public Types.Goods Goods { get; set; } = new Types.Goods();
+        public Types.Goods? Goods { get; set; }
     }
 }

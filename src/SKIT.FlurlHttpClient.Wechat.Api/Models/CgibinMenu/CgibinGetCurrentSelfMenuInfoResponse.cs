@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                public NewsItem[] List { get; set; } = default!;
+                                public List<NewsItem>? List { get; set; }
                             }
 
                             public class NewsItem
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("title")]
                                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public string Title { get; set; } = default!;
+                                public string? Title { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置图文消息摘要。
@@ -62,14 +62,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("cover_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("cover_url")]
-                                public string CoverUrl { get; set; } = default!;
+                                public string? CoverUrl { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置正文 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("content_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("content_url")]
-                                public string ContentUrl { get; set; } = default!;
+                                public string? ContentUrl { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置原文 URL。
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                public Button[]? List { get; set; }
+                                public List<Button>? List { get; set; }
                             }
                         }
 
@@ -95,14 +95,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置菜单标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置菜单 KEY 值。
@@ -146,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("button")]
                 [System.Text.Json.Serialization.JsonPropertyName("button")]
-                public Types.Button[] ButtonList { get; set; } = default!;
+                public List<Types.Button>? ButtonList { get; set; }
             }
         }
 
@@ -164,6 +164,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("selfmenu_info")]
         [System.Text.Json.Serialization.JsonPropertyName("selfmenu_info")]
-        public Types.Menu SelfMenu { get; set; } = default!;
+        public Types.Menu? SelfMenu { get; set; }
     }
 }

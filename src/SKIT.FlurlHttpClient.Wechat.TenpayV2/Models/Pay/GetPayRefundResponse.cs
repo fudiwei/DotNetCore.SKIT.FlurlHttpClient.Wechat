@@ -5,8 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// <summary>
     /// <para>表示 [POST] /pay/refundquery 接口的响应。</para>
     /// </summary>
-    [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponseClassNewtonsoftJsonConverter))]
-    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
+    [Newtonsoft.Json.JsonConverter(typeof(GetPayRefundResponse.Converters.ResponseClassNewtonsoftJsonConverter))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(GetPayRefundResponse.Converters.ResponseClassSystemTextJsonConverter))]
     public class GetPayRefundResponse : WechatTenpaySignableResponse
     {
         public static class Types
@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_refund_no_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_refund_no_$n")]
-                public string OutRefundNumber { get; set; } = default!;
+                public string? OutRefundNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信退款单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_id_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_id_$n")]
-                public string RefundId { get; set; } = default!;
+                public string? RefundId { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款渠道。
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_status_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_status_$n")]
-                public string RefundStatus { get; set; } = default!;
+                public string? RefundStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款资金来源。
@@ -92,12 +92,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<GetPayRefundResponse, Types.Refund>
+            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNListObjectConverterBase<GetPayRefundResponse, Types.Refund>
             {
                 protected override PropertyInfo FlattenProperty => GetPayRefundResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<GetPayRefundResponse, Types.Refund>
+            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNListObjectConverterBase<GetPayRefundResponse, Types.Refund>
             {
                 protected override PropertyInfo FlattenProperty => GetPayRefundResponse._flattenProperty;
             }
@@ -138,14 +138,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -183,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty(Converters.ResponseClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
         [System.Text.Json.Serialization.JsonPropertyName(Converters.ResponseClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
-        public Types.Refund[] RefundList { get; set; } = default!;
+        public List<Types.Refund>? RefundList { get; set; }
 
         /// <summary>
         /// 获取或设置记录总数。

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("active_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("active_code")]
-                public string ActiveCode { get; set; } = string.Empty;
+                public string? ActiveCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置待绑定激活的成员 UserId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
             }
         }
 
@@ -30,20 +30,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置企业 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = string.Empty;
+        public string? CorpId { get; set; }
 
         /// <summary>
         /// 获取或设置激活账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("active_list")]
         [System.Text.Json.Serialization.JsonPropertyName("active_list")]
-        public IList<Types.Account> AccountList { get; set; } = new List<Types.Account>();
+        public List<Types.Account>? AccountList { get; set; }
     }
 }

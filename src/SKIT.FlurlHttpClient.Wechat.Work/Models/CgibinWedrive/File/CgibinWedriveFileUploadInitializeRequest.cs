@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_name")]
         [System.Text.Json.Serialization.JsonPropertyName("file_name")]
-        public string FileName { get; set; } = string.Empty;
+        public string? FileName { get; set; }
 
         /// <summary>
         /// 获取或设置文件大小（单位：字节）。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("block_sha")]
         [System.Text.Json.Serialization.JsonPropertyName("block_sha")]
-        public IList<string> BlockSHAList { get; set; } = new List<string>();
+        public List<string>? BlockSHAList { get; set; }
 
         /// <summary>
         /// 获取或设置是否跳过推送。

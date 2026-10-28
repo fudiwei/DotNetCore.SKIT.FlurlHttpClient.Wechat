@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config")]
         [System.Text.Json.Serialization.JsonPropertyName("config")]
-        public string JsonConfig { get; set; } = string.Empty;
+        public string? JsonConfig { get; set; }
     }
 }

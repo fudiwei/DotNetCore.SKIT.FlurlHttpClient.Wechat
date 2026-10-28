@@ -42,13 +42,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("button")]
         [System.Text.Json.Serialization.JsonPropertyName("button")]
-        public IList<Types.Button> ButtonList { get; set; } = new List<Types.Button>();
+        public List<Types.Button>? ButtonList { get; set; }
 
         /// <summary>
         /// 获取或设置菜单匹配规则。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("matchrule")]
         [System.Text.Json.Serialization.JsonPropertyName("matchrule")]
-        public Types.MatchRule MatchRule { get; set; } = new Types.MatchRule();
+        public Types.MatchRule? MatchRule { get; set; }
     }
 }

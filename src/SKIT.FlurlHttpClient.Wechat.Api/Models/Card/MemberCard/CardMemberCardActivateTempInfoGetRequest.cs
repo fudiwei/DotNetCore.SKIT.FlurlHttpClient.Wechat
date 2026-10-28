@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activate_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("activate_ticket")]
-        public string ActivateTicket { get; set; } = string.Empty;
+        public string? ActivateTicket { get; set; }
     }
 }

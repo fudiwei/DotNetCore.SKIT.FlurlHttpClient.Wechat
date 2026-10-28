@@ -21,11 +21,11 @@
 
         /// <summary>
         /// 获取或设置接口版本号。
-        /// <para>默认值：1.0</para>
+        /// <para>默认值："1.0"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public string Version { get; set; } = "1.0";
+        public string? Version { get; set; } = "1.0";
 
         /// <summary>
         /// 获取或设置模板 ID。

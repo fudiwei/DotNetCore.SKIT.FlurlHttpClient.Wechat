@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string Currency { get; set; } = "CNY";
+                public string? Currency { get; set; } = "CNY";
             }
 
             public class Detail
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("merchant_goods_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("merchant_goods_id")]
-                        public string MerchantGoodsId { get; set; } = string.Empty;
+                        public string? MerchantGoodsId { get; set; }
 
                         /// <summary>
                         /// 获取或设置微信侧商品编码。
@@ -210,14 +210,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("subsidy_period_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("subsidy_period_type")]
-                        public string SubsidyPeriodType { get; set; } = string.Empty;
+                        public string? SubsidyPeriodType { get; set; }
 
                         /// <summary>
                         /// 获取或设置还款计划列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("subsidy_plan")]
                         [System.Text.Json.Serialization.JsonPropertyName("subsidy_plan")]
-                        public IList<Types.SubsidyPlan> SubsidyPlanList { get; set; } = new List<Types.SubsidyPlan>();
+                        public List<Types.SubsidyPlan>? SubsidyPlanList { get; set; }
                     }
                 }
 
@@ -226,7 +226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subsidy_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("subsidy_detail")]
-                public IList<Types.SubsidyDetail>? SubsidyDetailList { get; set; }
+                public List<Types.SubsidyDetail>? SubsidyDetailList { get; set; }
             }
         }
 
@@ -242,21 +242,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商品描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置交易结束时间。
@@ -300,7 +300,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public Types.Amount Amount { get; set; } = new Types.Amount();
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。

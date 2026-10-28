@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_country_code")]
                         [System.Text.Json.Serialization.JsonPropertyName("value_country_code")]
-                        public string CountryCode { get; set; } = string.Empty;
+                        public string? CountryCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置手机号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_mobile")]
                         [System.Text.Json.Serialization.JsonPropertyName("value_mobile")]
-                        public string MobileNumber { get; set; } = string.Empty;
+                        public string? MobileNumber { get; set; }
                     }
 
                     public class FileValue
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public IList<string> MediaIdList { get; set; } = new List<string>();
+                        public List<string>? MediaIdList { get; set; }
                     }
                 }
 
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                public IList<Types.Field> FieldList { get; set; } = new List<Types.Field>();
+                public List<Types.Field>? FieldList { get; set; }
             }
 
             public class RemovedItem
@@ -150,27 +150,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置需要更新的项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("update_items")]
         [System.Text.Json.Serialization.JsonPropertyName("update_items")]
-        public IList<Types.UpdatedItem>? UpdatedItemList { get; set; }
+        public List<Types.UpdatedItem>? UpdatedItemList { get; set; }
 
         /// <summary>
         /// 获取或设置需要新增的项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insert_items")]
         [System.Text.Json.Serialization.JsonPropertyName("insert_items")]
-        public IList<Types.InsertedItem>? InsertedItemList { get; set; }
+        public List<Types.InsertedItem>? InsertedItemList { get; set; }
 
         /// <summary>
         /// 获取或设置需要删除的项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("remove_items")]
         [System.Text.Json.Serialization.JsonPropertyName("remove_items")]
-        public IList<Types.RemovedItem>? RemovedItemList { get; set; }
+        public List<Types.RemovedItem>? RemovedItemList { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "get_url";
+        public string? Action { get; set; } = "get_url";
 
         /// <summary>
         /// 获取或设置发票文件标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("s_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("s_media_id")]
-        public string SpMediaId { get; set; } = string.Empty;
+        public string? SpMediaId { get; set; }
     }
 }

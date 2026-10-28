@@ -48,21 +48,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("provinceName")]
                         [System.Text.Json.Serialization.JsonPropertyName("provinceName")]
-                        public string ProvinceName { get; set; } = string.Empty;
+                        public string? ProvinceName { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("cityName")]
                         [System.Text.Json.Serialization.JsonPropertyName("cityName")]
-                        public string CityName { get; set; } = string.Empty;
+                        public string? CityName { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("countyName")]
                         [System.Text.Json.Serialization.JsonPropertyName("countyName")]
-                        public string DistrictName { get; set; } = string.Empty;
+                        public string? DistrictName { get; set; }
                     }
 
                     public class AddressType : ShippingMethods
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("addressInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("addressInfo")]
-                public Types.AddressInfo AddressInfo { get; set; } = new Types.AddressInfo();
+                public Types.AddressInfo? AddressInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址类型信息。
@@ -95,6 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：20</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -140,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<string>? ShopAppIdList { get; set; }
+        public List<string>? ShopAppIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否有联盟优惠券。
@@ -161,21 +162,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<int>? CategoryIdList { get; set; }
+        public List<int>? CategoryIdList { get; set; }
 
         /// <summary>
         /// 获取或设置商品类目 ID 黑名单列表。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<int>? CategoryIdBlackList { get; set; }
+        public List<int>? CategoryIdBlackList { get; set; }
 
         /// <summary>
         /// 获取或设置商品 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<long>? ProductIdList { get; set; }
+        public List<long>? ProductIdList { get; set; }
 
         /// <summary>
         /// 获取或设置配送方式信息。
@@ -189,6 +190,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<Types.Address>? AddressList { get; set; }
+        public List<Types.Address>? AddressList { get; set; }
     }
 }

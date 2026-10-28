@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                public string ImageUrl { get; set; } = string.Empty;
+                public string? ImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置背景图片 MD5 值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_md5")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_md5")]
-                public string ImageMd5 { get; set; } = string.Empty;
+                public string? ImageMd5 { get; set; }
             }
         }
 
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置背景图片列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("image_list")]
         [System.Text.Json.Serialization.JsonPropertyName("image_list")]
-        public IList<Types.BackgroundImage> BackgroundImageList { get; set; } = new List<Types.BackgroundImage>();
+        public List<Types.BackgroundImage>? BackgroundImageList { get; set; }
 
         /// <summary>
         /// 获取或设置默认背景图片序号。

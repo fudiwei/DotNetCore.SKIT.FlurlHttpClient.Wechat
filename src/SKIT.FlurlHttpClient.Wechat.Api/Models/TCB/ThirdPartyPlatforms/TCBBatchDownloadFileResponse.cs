@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/batchdownloadfile 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fileid")]
                 [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                public string FileId { get; set; } = default!;
+                public string? FileId { get; set; }
 
                 /// <summary>
                 /// 获取或设置下载链接。
@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_list")]
         [System.Text.Json.Serialization.JsonPropertyName("file_list")]
-        public Types.File[] FileList { get; set; } = default!;
+        public List<Types.File>? FileList { get; set; }
     }
 }

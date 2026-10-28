@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置开票平台 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("s_pappid")]
         [System.Text.Json.Serialization.JsonPropertyName("s_pappid")]
-        public string SpAppId { get; set; } = string.Empty;
+        public string? SpAppId { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。
@@ -38,7 +38,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("source")]
         [System.Text.Json.Serialization.JsonPropertyName("source")]
-        public string Source { get; set; } = string.Empty;
+        public string? Source { get; set; }
 
         /// <summary>
         /// 获取或设置授权成功后跳转页面 URL。
@@ -52,7 +52,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("ticket")]
-        public string Ticket { get; set; } = string.Empty;
+        public string? Ticket { get; set; }
 
         /// <summary>
         /// 获取或设置授权类型。

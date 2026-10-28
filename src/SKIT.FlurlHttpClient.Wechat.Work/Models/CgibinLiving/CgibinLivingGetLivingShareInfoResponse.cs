@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("livingid")]
         [System.Text.Json.Serialization.JsonPropertyName("livingid")]
-        public string LivingId { get; set; } = default!;
+        public string? LivingId { get; set; }
 
         /// <summary>
         /// 获取或设置观众的成员账号。

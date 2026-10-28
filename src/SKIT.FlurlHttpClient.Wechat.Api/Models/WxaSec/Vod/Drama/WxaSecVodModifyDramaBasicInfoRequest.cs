@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("actor")]
                 [System.Text.Json.Serialization.JsonPropertyName("actor")]
-                public IList<ActorItem> Items { get; set; } = new List<ActorItem>();
+                public List<ActorItem>? Items { get; set; }
             }
 
             public class ActorItem : WxaSecVodAuditDramaRequest.Types.ActorItem

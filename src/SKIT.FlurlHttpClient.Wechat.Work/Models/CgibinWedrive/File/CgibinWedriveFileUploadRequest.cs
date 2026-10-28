@@ -31,13 +31,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_name")]
         [System.Text.Json.Serialization.JsonPropertyName("file_name")]
-        public string FileName { get; set; } = string.Empty;
+        public string? FileName { get; set; }
 
         /// <summary>
         /// 获取或设置经过 Base64 编码的文件内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_base64_content")]
         [System.Text.Json.Serialization.JsonPropertyName("file_base64_content")]
-        public string EncodingFileContent { get; set; } = string.Empty;
+        public string? EncodingFileContent { get; set; }
     }
 }

@@ -1426,9 +1426,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
-            httpContent.Add(new StringContent(request.Type, Encoding.UTF8), "\"type\"");
-            httpContent.Add(new StringContent(request.ICPOrderField, Encoding.UTF8), "\"icp_order_field\"");
-            if (request.CertificateType is not null) httpContent.Add(new StringContent(request.CertificateType.ToString()!, Encoding.UTF8), "\"certificate_type\"");
+            httpContent.Add(new StringContent(request.Type!, Encoding.UTF8), "\"type\"");
+            httpContent.Add(new StringContent(request.ICPOrderField!, Encoding.UTF8), "\"icp_order_field\"");
+            if (request.CertificateType.HasValue) httpContent.Add(new StringContent(request.CertificateType.Value.ToString(), Encoding.UTF8), "\"certificate_type\"");
 
             return await client.SendFlurlRequestAsync<Models.WxaICPUploadICPMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

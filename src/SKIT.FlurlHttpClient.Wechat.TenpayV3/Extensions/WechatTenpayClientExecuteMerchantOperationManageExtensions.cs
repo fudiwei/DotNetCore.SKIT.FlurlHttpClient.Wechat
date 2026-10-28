@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "merchant-limitations", "sub-mchid", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "merchant-limitations", "sub-mchid", request.SubMerchantId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperationManageMerchantLimitationsBySubMerchantIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DueDiligenceId, "due_diligence_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId, "submit");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId!, "submit");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantOperationManageEnhancedDueDiligenceSubmitResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -83,11 +83,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToUpper();
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToUpper();
+                }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId, "upload");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId!, "upload");
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request), formDataName: "due_diligence_file");
             return await client.SendFlurlRequestAsync<Models.UploadMerchantOperationManageEnhancedDueDiligenceFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -112,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DueDiligenceId, "due_diligence_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperationManageEnhancedDueDiligenceByDueDiligenceIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

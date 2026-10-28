@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置需要校验的姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("real_name")]
         [System.Text.Json.Serialization.JsonPropertyName("real_name")]
-        public string RealName { get; set; } = string.Empty;
+        public string? RealName { get; set; }
 
         /// <summary>
         /// 获取或设置需要校验的证件类型。
@@ -32,13 +32,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cred_id")]
         [System.Text.Json.Serialization.JsonPropertyName("cred_id")]
-        public string CredentialId { get; set; } = string.Empty;
+        public string? CredentialId { get; set; }
 
         /// <summary>
         /// 获取或设置通过小程序回跳获取的 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string Code { get; set; } = string.Empty;
+        public string? Code { get; set; }
     }
 }

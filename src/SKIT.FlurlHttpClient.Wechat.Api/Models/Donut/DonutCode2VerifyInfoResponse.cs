@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置登录时间戳。
@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = default!;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户的 OpenId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("openid")]
                         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户的 UnionId。
@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = default!;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户的 OpenId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("openid")]
                         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户的 UnionId。
@@ -104,7 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                        public string MobileNumber { get; set; } = default!;
+                        public string? MobileNumber { get; set; }
                     }
 
                     public class AppleUserInfo
@@ -114,14 +114,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bundleid")]
                         [System.Text.Json.Serialization.JsonPropertyName("bundleid")]
-                        public string BundleId { get; set; } = default!;
+                        public string? BundleId { get; set; }
 
                         /// <summary>
                         /// 获取或设置苹果用户 ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("apple_user_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("apple_user_id")]
-                        public string AppleUserId { get; set; } = default!;
+                        public string? AppleUserId { get; set; }
                     }
                 }
 
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_id")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信移动应用的用户信息。
@@ -167,13 +167,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("login_info")]
         [System.Text.Json.Serialization.JsonPropertyName("login_info")]
-        public Types.LoginInfo LoginInfo { get; set; } = default!;
+        public Types.LoginInfo? LoginInfo { get; set; }
 
         /// <summary>
         /// 获取或设置用户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_info")]
         [System.Text.Json.Serialization.JsonPropertyName("user_info")]
-        public Types.UserInfo UserInfo { get; set; } = default!;
+        public Types.UserInfo? UserInfo { get; set; }
     }
 }

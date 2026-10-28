@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("actor")]
                         [System.Text.Json.Serialization.JsonPropertyName("actor")]
-                        public new ActorItem[] Items { get; set; } = default!;
+                        public new List<ActorItem>? Items { get; set; }
                     }
 
                     public class ActorItem : WxaSecVodListDramasResponse.Types.DramaInfo.Types.ActorItem
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-                public new Types.Media[] MediaList { get; set; } = default!;
+                public new List<Types.Media>? MediaList { get; set; }
 
                 /// <summary>
                 /// 获取或设置演员列表。
@@ -62,6 +62,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("drama_info")]
         [System.Text.Json.Serialization.JsonPropertyName("drama_info")]
-        public Types.DramaInfo DramaInfo { get; set; } = default!;
+        public Types.DramaInfo? DramaInfo { get; set; }
     }
 }

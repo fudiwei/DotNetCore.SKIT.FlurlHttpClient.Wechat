@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_no")]
-                public string TransactionId { get; set; } = default!;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单状态。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

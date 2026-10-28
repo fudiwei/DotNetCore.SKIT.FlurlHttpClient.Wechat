@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_list")]
-        public string[]? InvalidOpenUserIdList { get; set; }
+        public List<string>? InvalidOpenUserIdList { get; set; }
     }
 }

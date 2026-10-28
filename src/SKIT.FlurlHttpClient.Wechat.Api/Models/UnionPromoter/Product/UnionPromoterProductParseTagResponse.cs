@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /union/promoter/product/parse_tag 接口的响应。</para>
@@ -29,7 +29,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productAppid")]
                 [System.Text.Json.Serialization.JsonPropertyName("productAppid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -53,6 +53,6 @@
         [Newtonsoft.Json.JsonProperty("tagList")]
         [System.Text.Json.Serialization.JsonPropertyName("tagList")]
 
-        public Types.Tag[] TagList { get; set; } = default!;
+        public List<Types.Tag>? TagList { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/school/user/list_parent 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parents")]
         [System.Text.Json.Serialization.JsonPropertyName("parents")]
-        public Types.Parent[] ParentList { get; set; } = default!;
+        public List<Types.Parent>? ParentList { get; set; }
     }
 }

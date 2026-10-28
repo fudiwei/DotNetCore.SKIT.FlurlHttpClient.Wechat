@@ -18,21 +18,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("talent_appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]
-                        public string TalentAppId { get; set; } = default!;
+                        public string? TalentAppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置带货达人昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                        public string Nickname { get; set; } = default!;
+                        public string? Nickname { get; set; }
 
                         /// <summary>
                         /// 获取或设置带货达人头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("head_img")]
                         [System.Text.Json.Serialization.JsonPropertyName("head_img")]
-                        public string HeadImageUrl { get; set; } = default!;
+                        public string? HeadImageUrl { get; set; }
                     }
 
                     public class CommissionInfo
@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_talent_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_talent_info")]
-                public Types.BaseInfo BaseInfo { get; set; } = default!;
+                public Types.BaseInfo? BaseInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置佣金信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commission_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("commission_info")]
-                public Types.CommissionInfo CommissionInfo { get; set; } = default!;
+                public Types.CommissionInfo? CommissionInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置推广状态。
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Talent[] TalentList { get; set; } = default!;
+        public List<Types.Talent>? TalentList { get; set; }
 
         /// <summary>
         /// 获取或设置推广计划总数量。

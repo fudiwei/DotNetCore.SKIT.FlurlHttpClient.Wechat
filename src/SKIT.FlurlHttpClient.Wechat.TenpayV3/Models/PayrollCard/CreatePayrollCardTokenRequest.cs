@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户姓名（需使用平台公钥/证书加密）。
@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employment_type")]
         [System.Text.Json.Serialization.JsonPropertyName("employment_type")]
-        public string EmploymentType { get; set; } = string.Empty;
+        public string? EmploymentType { get; set; }
     }
 }

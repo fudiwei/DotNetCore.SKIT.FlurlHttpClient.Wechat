@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_qrcode")]
         [System.Text.Json.Serialization.JsonPropertyName("product_qrcode")]
-        public string ProductQrcode { get; set; } = default!;
+        public string? ProductQrcode { get; set; }
     }
 }

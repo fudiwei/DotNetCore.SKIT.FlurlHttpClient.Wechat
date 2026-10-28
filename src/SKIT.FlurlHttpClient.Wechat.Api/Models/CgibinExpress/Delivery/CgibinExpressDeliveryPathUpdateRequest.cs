@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("token")]
         [System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string Token { get; set; } = string.Empty;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置运单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置轨迹节点时间戳。
@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_msg")]
         [System.Text.Json.Serialization.JsonPropertyName("action_msg")]
-        public string ActionMessage { get; set; } = string.Empty;
+        public string? ActionMessage { get; set; }
     }
 }

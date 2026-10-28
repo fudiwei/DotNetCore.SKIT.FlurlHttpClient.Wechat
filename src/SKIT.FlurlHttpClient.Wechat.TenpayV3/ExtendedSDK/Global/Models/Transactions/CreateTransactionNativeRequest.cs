@@ -55,14 +55,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置交易类型。
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_type")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = "NATIVE";
+        public string? TradeType { get; set; } = "NATIVE";
 
         /// <summary>
         /// 获取或设置交易起始时间。
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public Types.Amount Amount { get; set; } = new Types.Amount();
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。
@@ -151,6 +151,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_category_code")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_category_code")]
-        public string MerchantCategoryCode { get; set; } = string.Empty;
+        public string? MerchantCategoryCode { get; set; }
     }
 }

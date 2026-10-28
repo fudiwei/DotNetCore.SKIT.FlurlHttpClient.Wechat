@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("err_list")]
         [System.Text.Json.Serialization.JsonPropertyName("err_list")]
-        public Types.Failure[]? FailureList { get; set; }
+        public List<Types.Failure>? FailureList { get; set; }
     }
 }

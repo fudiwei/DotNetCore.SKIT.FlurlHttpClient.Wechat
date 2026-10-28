@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "get";
+        public string? Action { get; set; } = "get";
 
         /// <summary>
         /// 获取或设置是否开启数据预拉取。

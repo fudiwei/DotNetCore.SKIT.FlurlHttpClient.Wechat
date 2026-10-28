@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId, "representative");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId!, "representative");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AddMarketingGoodsSubsidyActivityRetailStoreRepresentativeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId, "representatives")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId!, "representatives")
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId, "representative");
+                .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "goods-subsidy-activity", "retail-store-act", request.ActivityId!, "representative");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DeleteMarketingGoodsSubsidyActivityRetailStoreRepresentativeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "materials");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId!, "materials");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateMarketingGoodsSubsidyActivityRetailStoreMaterialResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId!, "stores")
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
@@ -152,7 +152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StoreCode, "store_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores", request.StoreCode);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId!, "stores", request.StoreCode!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingGoodsSubsidyActivityRetailStoreByStoreCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId!, "stores");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AddMarketingGoodsSubsidyActivityRetailStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId, "stores");
+                .CreateFlurlRequest(request, HttpMethod.Delete, "marketing", "goods-subsidy-activity", "retail-store-act", request.BrandId!, "stores");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DeleteMarketingGoodsSubsidyActivityRetailStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

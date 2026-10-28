@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "apply";
+        public string? Action { get; set; } = "apply";
 
         /// <summary>
         /// 获取或设置插件 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plugin_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("plugin_appid")]
-        public string PluginAppId { get; set; } = string.Empty;
+        public string? PluginAppId { get; set; }
 
         /// <summary>
         /// 获取或设置申请使用理由。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reason")]
         [System.Text.Json.Serialization.JsonPropertyName("reason")]
-        public string Reason { get; set; } = string.Empty;
+        public string? Reason { get; set; }
     }
 }

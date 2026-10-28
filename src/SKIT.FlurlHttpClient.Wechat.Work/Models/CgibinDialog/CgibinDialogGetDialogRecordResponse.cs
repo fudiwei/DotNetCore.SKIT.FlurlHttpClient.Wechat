@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置主叫用户的通话时长（单位：分钟）。
@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("caller")]
                 [System.Text.Json.Serialization.JsonPropertyName("caller")]
-                public Types.Caller Caller { get; set; } = default!;
+                public Types.Caller? Caller { get; set; }
 
                 /// <summary>
                 /// 获取或设置被叫列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("callee")]
                 [System.Text.Json.Serialization.JsonPropertyName("callee")]
-                public Types.Callee[] CalleeList { get; set; } = default!;
+                public List<Types.Callee>? CalleeList { get; set; }
             }
         }
 
@@ -96,6 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record")]
         [System.Text.Json.Serialization.JsonPropertyName("record")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
     }
 }

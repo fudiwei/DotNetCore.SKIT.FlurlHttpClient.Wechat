@@ -118,9 +118,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 throw new NullReferenceException("The platform certificate manager is not configured.");
 
             if (request.WechatpaySerialNumber is null)
-                throw new WechatTenpayException("Failed to encrypt request, because the \"WechatpaySerialNumber\" of the request is unset."); 
+                throw new WechatTenpayException("Failed to encrypt request, because the \"WechatpaySerialNumber\" of the request is unset.");
 
-            CertificateEntry ? entry = manager.GetEntry(request.WechatpaySerialNumber);
+            CertificateEntry? entry = manager.GetEntry(request.WechatpaySerialNumber);
             if (!entry.HasValue)
                 throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
 

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorizer_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
-                public string AuthorizerAppId { get; set; } = default!;
+                public string? AuthorizerAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权方 RefreshToken。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Authorizer[] AuthorizerList { get; set; } = default!;
+        public List<Types.Authorizer>? AuthorizerList { get; set; }
     }
 }

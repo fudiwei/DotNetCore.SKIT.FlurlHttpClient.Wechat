@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string PlateNumber { get; set; } = string.Empty;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。

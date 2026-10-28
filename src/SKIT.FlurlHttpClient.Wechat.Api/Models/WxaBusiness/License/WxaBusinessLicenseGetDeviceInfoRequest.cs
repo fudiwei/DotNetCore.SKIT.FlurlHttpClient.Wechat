@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("model_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("model_id")]
-                public string ModelId { get; set; } = string.Empty;
+                public string? ModelId { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备序列号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("sn")]
-                public string SerialNumber { get; set; } = string.Empty;
+                public string? SerialNumber { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_list")]
-        public IList<Types.Device> DeviceList { get; set; } = new List<Types.Device>();
+        public List<Types.Device>? DeviceList { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("OpitonId")]
                         [System.Text.Json.Serialization.JsonPropertyName("OpitonId")]
                         [System.Xml.Serialization.XmlElement("OpitonId", Type = typeof(string))]
-                        public string[] Items { get; set; } = default!;
+                        public List<string>? Items { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("QuestionKey")]
                 [System.Text.Json.Serialization.JsonPropertyName("QuestionKey")]
                 [System.Xml.Serialization.XmlElement("QuestionKey")]
-                public string QuestionKey { get; set; } = default!;
+                public string? QuestionKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置选项 ID 列表。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("OpitonIds")]
                 [System.Text.Json.Serialization.JsonPropertyName("OpitonIds")]
                 [System.Xml.Serialization.XmlElement("OpitonIds")]
-                public Types.OptionIdList OptionIdList { get; set; } = default!;
+                public Types.OptionIdList? OptionIdList { get; set; }
             }
 
             public class SelectList
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("SelectedItem")]
                 [System.Text.Json.Serialization.JsonPropertyName("SelectedItem")]
                 [System.Xml.Serialization.XmlElement("SelectedItem", Type = typeof(SelectItem))]
-                public SelectItem[]? Items { get; set; } = default!;
+                public List<SelectItem>? Items { get; set; }
             }
         }
 
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("TaskId")]
         [System.Text.Json.Serialization.JsonPropertyName("TaskId")]
         [System.Xml.Serialization.XmlElement("TaskId")]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置模板卡片类型。
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("CardType")]
         [System.Text.Json.Serialization.JsonPropertyName("CardType")]
         [System.Xml.Serialization.XmlElement("CardType")]
-        public string CardType { get; set; } = default!;
+        public string? CardType { get; set; }
 
         /// <summary>
         /// 获取或设置用于更新卡片接口的 Code。
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ResponseCode")]
         [System.Text.Json.Serialization.JsonPropertyName("ResponseCode")]
         [System.Xml.Serialization.XmlElement("ResponseCode")]
-        public string ResponseCode { get; set; } = default!;
+        public string? ResponseCode { get; set; }
 
         /// <summary>
         /// 获取或设置用户点击的按钮 Key 值。
@@ -103,6 +103,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("SelectedItems")]
         [System.Text.Json.Serialization.JsonPropertyName("SelectedItems")]
         [System.Xml.Serialization.XmlElement("SelectedItems")]
-        public Types.SelectList SelectList { get; set; } = default!;
+        public Types.SelectList? SelectList { get; set; }
     }
 }

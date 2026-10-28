@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置经过 Base64 编码的人脸图片数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userface")]
         [System.Text.Json.Serialization.JsonPropertyName("userface")]
-        public string UserFaceImageData { get; set; } = string.Empty;
+        public string? UserFaceImageData { get; set; }
     }
 }

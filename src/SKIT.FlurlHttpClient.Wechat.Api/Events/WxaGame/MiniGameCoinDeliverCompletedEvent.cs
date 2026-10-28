@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Payload")]
                 [System.Text.Json.Serialization.JsonPropertyName("Payload")]
                 [System.Xml.Serialization.XmlElement("Payload")]
-                public string Payload { get; set; } = default!;
+                public string? Payload { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付签名。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("PayEventSig")]
                 [System.Text.Json.Serialization.JsonPropertyName("PayEventSig")]
                 [System.Xml.Serialization.XmlElement("PayEventSig")]
-                public string PaySign { get; set; } = default!;
+                public string? PaySign { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否是模拟数据。
@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("MiniGame")]
         [System.Text.Json.Serialization.JsonPropertyName("MiniGame")]
         [System.Xml.Serialization.XmlElement("MiniGame")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

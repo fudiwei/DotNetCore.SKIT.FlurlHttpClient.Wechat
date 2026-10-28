@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content")]
                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string Content { get; set; } = string.Empty;
+                        public string? Content { get; set; }
                     }
 
                     public class Image
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = string.Empty;
+                        public string? MediaId { get; set; }
                     }
 
                     public class Link
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = string.Empty;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置图文消息标题。
@@ -69,14 +69,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = string.Empty;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("page")]
                         [System.Text.Json.Serialization.JsonPropertyName("page")]
-                        public string PagePath { get; set; } = string.Empty;
+                        public string? PagePath { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序标题。
@@ -171,14 +171,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user")]
         [System.Text.Json.Serialization.JsonPropertyName("user")]
-        public IList<string>? UserIdList { get; set; }
+        public List<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置使用该联系方式的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("party")]
         [System.Text.Json.Serialization.JsonPropertyName("party")]
-        public IList<long>? DepartmentIdList { get; set; }
+        public List<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否临时会话模式。

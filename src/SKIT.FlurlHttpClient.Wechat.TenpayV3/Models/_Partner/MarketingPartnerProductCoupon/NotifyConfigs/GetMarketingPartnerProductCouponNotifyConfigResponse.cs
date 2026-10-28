@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public string NotifyUrl { get; set; } = default!;
+        public string? NotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置更新时间。
@@ -19,6 +19,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("update_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset UpdateTime { get; set; } = default!;
+        public DateTimeOffset UpdateTime { get; set; }
     }
 }

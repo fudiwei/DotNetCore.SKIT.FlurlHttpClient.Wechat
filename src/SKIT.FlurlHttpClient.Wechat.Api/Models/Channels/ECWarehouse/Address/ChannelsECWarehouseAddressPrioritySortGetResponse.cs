@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("priority_sort")]
                 [System.Text.Json.Serialization.JsonPropertyName("priority_sort")]
-                public string[] PrioritySortedOutWarehouseIdList { get; set; } = default!;
+                public List<string>? PrioritySortedOutWarehouseIdList { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

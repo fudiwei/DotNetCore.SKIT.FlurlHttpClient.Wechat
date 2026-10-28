@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ActiveCode")]
                 [System.Text.Json.Serialization.JsonPropertyName("ActiveCode")]
                 [System.Xml.Serialization.XmlElement("ActiveCode")]
-                public string ActiveCode { get; set; } = default!;
+                public string? ActiveCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置类型。
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("UserId")]
                 [System.Text.Json.Serialization.JsonPropertyName("UserId")]
                 [System.Xml.Serialization.XmlElement("UserId")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置之前的许可状态。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ServiceCorpId")]
         [System.Text.Json.Serialization.JsonPropertyName("ServiceCorpId")]
         [System.Xml.Serialization.XmlElement("ServiceCorpId")]
-        public string ServiceCorpId { get; set; } = default!;
+        public string? ServiceCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置授权方的 CorpId。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("AuthCorpId")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthCorpId")]
         [System.Xml.Serialization.XmlElement("AuthCorpId")]
-        public string AuthorizerCorpId { get; set; } = default!;
+        public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置许可自动激活场景值。
@@ -93,6 +93,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("AccountList")]
         [System.Text.Json.Serialization.JsonPropertyName("AccountList")]
         [System.Xml.Serialization.XmlElement("AccountList", Type = typeof(Types.Account))]
-        public Types.Account[] AccountList { get; set; } = default!;
+        public List<Types.Account>? AccountList { get; set; }
     }
 }

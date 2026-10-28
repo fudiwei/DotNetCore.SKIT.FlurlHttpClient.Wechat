@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qr_code")]
         [System.Text.Json.Serialization.JsonPropertyName("qr_code")]
-        public string QrcodeData { get; set; } = default!;
+        public string? QrcodeData { get; set; }
     }
 }

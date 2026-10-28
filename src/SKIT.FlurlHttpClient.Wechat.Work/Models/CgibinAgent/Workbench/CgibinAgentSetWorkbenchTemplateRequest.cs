@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("data")]
                         [System.Text.Json.Serialization.JsonPropertyName("data")]
-                        public string Data { get; set; } = string.Empty;
+                        public string? Data { get; set; }
 
                         /// <summary>
                         /// 获取或设置点击跳转链接。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public IList<Types.KeyDataItem> Items { get; set; } = new List<Types.KeyDataItem>();
+                public List<Types.KeyDataItem>? Items { get; set; }
             }
 
             public class ImageTemplate
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置点击跳转链接。
@@ -154,7 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public IList<Types.ListItem> Items { get; set; } = new List<Types.ListItem>();
+                public List<Types.ListItem>? Items { get; set; }
             }
         }
 
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置关键数据型模版数据。

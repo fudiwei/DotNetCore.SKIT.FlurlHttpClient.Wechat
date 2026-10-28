@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /capital/capitallhh/banks/{bank_alias_code}/branches 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_branch_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_branch_name")]
-                public string BranchName { get; set; } = default!;
+                public string? BranchName { get; set; }
 
                 /// <summary>
                 /// 获取或设置支行联行号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_branch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_branch_id")]
-                public string BranchId { get; set; } = default!;
+                public string? BranchId { get; set; }
             }
         }
 
@@ -30,10 +30,10 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Branch[] BranchList { get; set; } = default!;
+        public List<Types.Branch>? BranchList { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]
@@ -51,21 +51,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_alias")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_alias")]
-        public string BankAlias { get; set; } = default!;
+        public string? BankAlias { get; set; }
 
         /// <summary>
         /// 获取或设置银行别名编码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_alias_code")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_alias_code")]
-        public string BankAliasCode { get; set; } = default!;
+        public string? BankAliasCode { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_bank")]
         [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
-        public string AccountBank { get; set; } = default!;
+        public string? AccountBank { get; set; }
 
         /// <summary>
         /// 获取或设置开户银行编码。

@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string MixTradeNumber { get; set; } = string.Empty;
+        public string? MixTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_refund_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
-        public string OutRefundNumber { get; set; } = string.Empty;
+        public string? OutRefundNumber { get; set; }
 
         /// <summary>
         /// 获取或设置医保退款的总金额（单位：分）。

@@ -33,7 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                }
             }
 
             IFlurlRequest flurlReq = client
@@ -107,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "shopping-receipt", "customentrances", request.BrandId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "shopping-receipt", "customentrances", request.BrandId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingShoppingReceiptCustomEntranceByBrandIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -131,7 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BrandId, "brand_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "shopping-receipt", "customentrances", request.BrandId);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "shopping-receipt", "customentrances", request.BrandId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ModifyMarketingShoppingReceiptCustomEntranceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

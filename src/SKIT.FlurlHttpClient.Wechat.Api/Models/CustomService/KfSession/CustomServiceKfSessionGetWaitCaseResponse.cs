@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /customservice/kfsession/getwaitcase 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置最后一条消息的时间戳。
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waitcaselist")]
         [System.Text.Json.Serialization.JsonPropertyName("waitcaselist")]
-        public Types.WaitCase[] WaitCaseList { get; set; } = default!;
+        public List<Types.WaitCase>? WaitCaseList { get; set; }
     }
 }

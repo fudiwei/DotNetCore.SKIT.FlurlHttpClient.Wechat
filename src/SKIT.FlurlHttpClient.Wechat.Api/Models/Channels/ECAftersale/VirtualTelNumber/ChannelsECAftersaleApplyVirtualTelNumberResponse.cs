@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("virtual_tel_number")]
         [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_number")]
-        public string VirtualTelNumber { get; set; } = default!;
+        public string? VirtualTelNumber { get; set; }
 
         /// <summary>
         /// 获取或设置主动兑换的虚拟号码过期时间戳。

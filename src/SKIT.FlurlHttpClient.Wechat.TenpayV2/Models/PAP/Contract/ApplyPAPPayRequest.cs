@@ -31,21 +31,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("body")]
         [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; } = string.Empty;
+        public string? Body { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = string.Empty;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -77,11 +77,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         /// <summary>
         /// 获取或设置交易类型。
-        /// <para>默认值：PAP</para>
+        /// <para>默认值："PAP"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_type")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = "PAP";
+        public string? TradeType { get; set; } = "PAP";
 
         /// <summary>
         /// 获取或设置订单优惠标记。

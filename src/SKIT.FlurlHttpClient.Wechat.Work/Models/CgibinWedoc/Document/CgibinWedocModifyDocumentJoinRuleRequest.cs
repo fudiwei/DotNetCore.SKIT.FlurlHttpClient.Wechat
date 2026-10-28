@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("docid")]
         [System.Text.Json.Serialization.JsonPropertyName("docid")]
-        public string DocumentId { get; set; } = string.Empty;
+        public string? DocumentId { get; set; }
 
         /// <summary>
         /// 获取或设置是否为企业内可访问。
@@ -114,6 +114,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("co_auth_list")]
         [System.Text.Json.Serialization.JsonPropertyName("co_auth_list")]
-        public IList<Types.Authority>? DocumentCollaboratorAuthorityList { get; set; }
+        public List<Types.Authority>? DocumentCollaboratorAuthorityList { get; set; }
     }
 }

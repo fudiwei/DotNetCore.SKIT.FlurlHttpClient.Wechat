@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/license/batch_active_account 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("active_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("active_code")]
-                public string ActiveCode { get; set; } = string.Empty;
+                public string? ActiveCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置待绑定激活的成员 UserId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("active_result")]
         [System.Text.Json.Serialization.JsonPropertyName("active_result")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

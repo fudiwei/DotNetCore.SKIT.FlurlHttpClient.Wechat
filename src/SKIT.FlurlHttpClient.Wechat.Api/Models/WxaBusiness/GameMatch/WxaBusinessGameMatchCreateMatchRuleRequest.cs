@@ -25,6 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 /// <summary>
                 /// 获取或设置使用的 UDP 可靠性策略。
+                /// <para>默认值：3</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("udp_reliability_strategy")]
                 [System.Text.Json.Serialization.JsonPropertyName("udp_reliability_strategy")]

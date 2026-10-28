@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBatchNumber, "out_batch_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber!)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail.ToString().ToLower())
                 .SetQueryParam("detail_status", request.DetailStatus)
                 .SetQueryParam("offset", request.Offset)
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BatchId, "batch_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId!)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail.ToString().ToLower())
                 .SetQueryParam("detail_status", request.DetailStatus)
                 .SetQueryParam("offset", request.Offset)
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutDetailNumber, "out_detail_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DetailId, "detail_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId!, "details", "detail-id", request.DetailId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutBatchNumber, "out_batch_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "bill-receipt", request.OutBatchNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "bill-receipt", request.OutBatchNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTransferBillReceiptByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

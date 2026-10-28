@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Name")]
                 [System.Text.Json.Serialization.JsonPropertyName("Name")]
                 [System.Xml.Serialization.XmlElement("Name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置座机号码。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Province")]
                 [System.Text.Json.Serialization.JsonPropertyName("Province")]
                 [System.Xml.Serialization.XmlElement("Province")]
-                public string Province { get; set; } = default!;
+                public string? Province { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市。
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("City")]
                 [System.Text.Json.Serialization.JsonPropertyName("City")]
                 [System.Xml.Serialization.XmlElement("City")]
-                public string City { get; set; } = default!;
+                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置区县。
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Area")]
                 [System.Text.Json.Serialization.JsonPropertyName("Area")]
                 [System.Xml.Serialization.XmlElement("Area")]
-                public string District { get; set; } = default!;
+                public string? District { get; set; }
 
                 /// <summary>
                 /// 获取或设置详细地址。
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Address")]
                 [System.Text.Json.Serialization.JsonPropertyName("Address")]
                 [System.Xml.Serialization.XmlElement("Address")]
-                public string Address { get; set; } = default!;
+                public string? Address { get; set; }
             }
 
             public class Receiver : Sender
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("Name")]
                         [System.Text.Json.Serialization.JsonPropertyName("Name")]
                         [System.Xml.Serialization.XmlElement("Name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品数量。
@@ -168,7 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("DetailList")]
                 [System.Text.Json.Serialization.JsonPropertyName("DetailList")]
                 [System.Xml.Serialization.XmlElement("DetailList", Type = typeof(Types.GoodsDetail))]
-                public Types.GoodsDetail[]? GoodsDetailList { get; set; }
+                public List<Types.GoodsDetail>? GoodsDetailList { get; set; }
             }
 
             public class Insurance
@@ -207,7 +207,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ServiceName")]
                 [System.Text.Json.Serialization.JsonPropertyName("ServiceName")]
                 [System.Xml.Serialization.XmlElement("ServiceName")]
-                public string ServiceName { get; set; } = default!;
+                public string? ServiceName { get; set; }
             }
         }
 
@@ -217,7 +217,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Token")]
         [System.Text.Json.Serialization.JsonPropertyName("Token")]
         [System.Xml.Serialization.XmlElement("Token")]
-        public string Token { get; set; } = default!;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户编码。
@@ -225,7 +225,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("BizID")]
         [System.Text.Json.Serialization.JsonPropertyName("BizID")]
         [System.Xml.Serialization.XmlElement("BizID")]
-        public string BusinessId { get; set; } = default!;
+        public string? BusinessId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户密码。
@@ -249,7 +249,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OrderID")]
         [System.Text.Json.Serialization.JsonPropertyName("OrderID")]
         [System.Xml.Serialization.XmlElement("OrderID")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置运单号。
@@ -257,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("WayBillID")]
         [System.Text.Json.Serialization.JsonPropertyName("WayBillID")]
         [System.Xml.Serialization.XmlElement("WayBillID")]
-        public string WaybillId { get; set; } = default!;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置快递备注。
@@ -273,7 +273,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Sender")]
         [System.Text.Json.Serialization.JsonPropertyName("Sender")]
         [System.Xml.Serialization.XmlElement("Sender")]
-        public Types.Sender Sender { get; set; } = default!;
+        public Types.Sender? Sender { get; set; }
 
         /// <summary>
         /// 获取或设置收件人信息。
@@ -281,7 +281,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("Receiver")]
         [System.Xml.Serialization.XmlElement("Receiver")]
-        public Types.Receiver Receiver { get; set; } = default!;
+        public Types.Receiver? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置包裹信息。

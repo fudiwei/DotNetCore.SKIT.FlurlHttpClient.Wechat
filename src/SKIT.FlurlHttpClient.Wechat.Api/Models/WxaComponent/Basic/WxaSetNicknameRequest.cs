@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nick_name")]
         [System.Text.Json.Serialization.JsonPropertyName("nick_name")]
-        public string Nickname { get; set; } = string.Empty;
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置身份证照片的 MediaId。

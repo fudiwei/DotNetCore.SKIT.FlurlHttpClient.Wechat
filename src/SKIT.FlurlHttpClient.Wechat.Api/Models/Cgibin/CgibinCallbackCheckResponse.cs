@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ip")]
                 [System.Text.Json.Serialization.JsonPropertyName("ip")]
-                public string IP { get; set; } = default!;
+                public string? IP { get; set; }
 
                 /// <summary>
                 /// 获取或设置 IP 对应的运营商。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("real_operator")]
                 [System.Text.Json.Serialization.JsonPropertyName("real_operator")]
-                public string RealOperator { get; set; } = default!;
+                public string? RealOperator { get; set; }
             }
 
             public class Ping
@@ -31,28 +31,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ip")]
                 [System.Text.Json.Serialization.JsonPropertyName("ip")]
-                public string IP { get; set; } = default!;
+                public string? IP { get; set; }
 
                 /// <summary>
                 /// 获取或设置 IP 源头的运营商。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("from_operator")]
                 [System.Text.Json.Serialization.JsonPropertyName("from_operator")]
-                public string FromOperator { get; set; } = default!;
+                public string? FromOperator { get; set; }
 
                 /// <summary>
                 /// 获取或设置丢包率字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("package_loss")]
                 [System.Text.Json.Serialization.JsonPropertyName("package_loss")]
-                public string PackageLossString { get; set; } = default!;
+                public string? PackageLossString { get; set; }
 
                 /// <summary>
                 /// 获取或设置耗时字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("time")]
                 [System.Text.Json.Serialization.JsonPropertyName("time")]
-                public string TimeCostString { get; set; } = default!;
+                public string? TimeCostString { get; set; }
             }
         }
 
@@ -61,13 +61,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dns")]
         [System.Text.Json.Serialization.JsonPropertyName("dns")]
-        public Types.DNS[]? DNSList { get; set; }
+        public List<Types.DNS>? DNSList { get; set; }
 
         /// <summary>
         /// 获取或设置 ping 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ping")]
         [System.Text.Json.Serialization.JsonPropertyName("ping")]
-        public Types.Ping[]? PingList { get; set; }
+        public List<Types.Ping>? PingList { get; set; }
     }
 }

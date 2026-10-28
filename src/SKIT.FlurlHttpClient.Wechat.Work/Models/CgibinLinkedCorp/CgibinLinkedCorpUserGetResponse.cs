@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/linkedcorp/user/get 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_info")]
         [System.Text.Json.Serialization.JsonPropertyName("user_info")]
-        public Types.CorpUser CorpUser { get; set; } = default!;
+        public Types.CorpUser? CorpUser { get; set; }
     }
 }

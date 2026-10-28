@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public Types.DateRange DateRange { get; set; } = new Types.DateRange();
+        public Types.DateRange? DateRange { get; set; }
 
         /// <summary>
         /// 获取或设置交易类型。
@@ -46,6 +46,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public override string Version { get; set; } = "v1.1";
+        public override string? Version { get; set; } = "v1.1";
     }
 }

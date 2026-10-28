@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("corp_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("corp_name")]
-                        public string CorpName { get; set; } = string.Empty;
+                        public string? CorpName { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义 ID。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_info_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_info_list")]
-                        public Types.Contact[]? ContactList { get; set; }
+                        public List<Types.Contact>? ContactList { get; set; }
                     }
                 }
 
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chain_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("chain_id")]
-                public string ChainId { get; set; } = default!;
+                public string? ChainId { get; set; }
 
                 /// <summary>
                 /// 获取或设置导入状态。
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fail_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-                public Types.ChainContact[]? FailedChainContactList { get; set; }
+                public List<Types.ChainContact>? FailedChainContactList { get; set; }
             }
         }
 

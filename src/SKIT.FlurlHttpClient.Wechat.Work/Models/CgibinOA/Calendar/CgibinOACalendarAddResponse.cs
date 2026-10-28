@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cal_id")]
         [System.Text.Json.Serialization.JsonPropertyName("cal_id")]
-        public string CalendarId { get; set; } = default!;
+        public string? CalendarId { get; set; }
     }
 }

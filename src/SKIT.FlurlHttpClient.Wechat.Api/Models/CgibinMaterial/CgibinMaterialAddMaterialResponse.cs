@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-        public string MediaId { get; set; } = default!;
+        public string? MediaId { get; set; }
 
         /// <summary>
         /// 获取或设置图片 URL。

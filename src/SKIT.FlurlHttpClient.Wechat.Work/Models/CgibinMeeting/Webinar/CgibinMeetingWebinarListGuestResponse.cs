@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guests")]
         [System.Text.Json.Serialization.JsonPropertyName("guests")]
-        public Types.Guest[] GuestList { get; set; } = default!;
+        public List<Types.Guest>? GuestList { get; set; }
     }
 }

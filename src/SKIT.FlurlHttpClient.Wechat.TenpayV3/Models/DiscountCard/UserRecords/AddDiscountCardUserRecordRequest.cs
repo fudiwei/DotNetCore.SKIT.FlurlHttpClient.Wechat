@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("objective_completion_serial_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("objective_completion_serial_no")]
-                public string SerialNumber { get; set; } = string.Empty;
+                public string? SerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置目标 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("objective_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("objective_id")]
-                public string ObjectiveId { get; set; } = string.Empty;
+                public string? ObjectiveId { get; set; }
 
                 /// <summary>
                 /// 获取或设置目标完成时间。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("completion_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("completion_type")]
-                public string CompletionType { get; set; } = string.Empty;
+                public string? CompletionType { get; set; }
 
                 /// <summary>
                 /// 获取或设置目标完成数量。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置备注说明。
@@ -69,14 +69,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reward_usage_serial_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("reward_usage_serial_no")]
-                public string SerialNumber { get; set; } = string.Empty;
+                public string? SerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reward_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("reward_id")]
-                public string RewardId { get; set; } = string.Empty;
+                public string? RewardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠使用时间。
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("usage_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("usage_type")]
-                public string UsageType { get; set; } = string.Empty;
+                public string? UsageType { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠使用数量。
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置备注说明。
@@ -129,27 +129,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutCardCode { get; set; } = string.Empty;
+        public string? OutCardCode { get; set; }
 
         /// <summary>
         /// 获取或设置先享卡模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_template_id")]
-        public string CardTemplateId { get; set; } = string.Empty;
+        public string? CardTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置目标完成记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("objective_completion_records")]
         [System.Text.Json.Serialization.JsonPropertyName("objective_completion_records")]
-        public IList<Types.CompletionRecord> CompletionRecordList { get; set; } = new List<Types.CompletionRecord>();
+        public List<Types.CompletionRecord>? CompletionRecordList { get; set; }
 
         /// <summary>
         /// 获取或设置优惠使用记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reward_usage_records")]
         [System.Text.Json.Serialization.JsonPropertyName("reward_usage_records")]
-        public IList<Types.UsageRecord> UsageRecordList { get; set; } = new List<Types.UsageRecord>();
+        public List<Types.UsageRecord>? UsageRecordList { get; set; }
     }
 }

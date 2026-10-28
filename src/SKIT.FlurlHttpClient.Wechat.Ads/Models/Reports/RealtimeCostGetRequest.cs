@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
 
         /// <summary>
         /// 获取或设置类型级别。
@@ -25,13 +25,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Level { get; set; } = "ADGROUP";
+        public string? Level { get; set; } = "ADGROUP";
 
         /// <summary>
         /// 获取或设置过滤条件。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<Types.Filter>? Filters { get; set; }
+        public List<Types.Filter>? Filters { get; set; }
     }
 }

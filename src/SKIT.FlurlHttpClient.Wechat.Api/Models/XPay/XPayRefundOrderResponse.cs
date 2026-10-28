@@ -10,27 +10,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_order_id")]
-        public string PayOrderId { get; set; } = default!;
+        public string? PayOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信内部订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_wx_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_wx_order_id")]
-        public string PayWxOrderId { get; set; } = default!;
+        public string? PayWxOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置退款订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_order_id")]
-        public string RefundOrderId { get; set; } = default!;
+        public string? RefundOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信内部退款订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_wx_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_wx_order_id")]
-        public string RefundWxOrderId { get; set; } = default!;
+        public string? RefundWxOrderId { get; set; }
     }
 }

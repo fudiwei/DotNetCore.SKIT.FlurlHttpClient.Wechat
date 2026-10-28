@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置修改后的参数值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string Value { get; set; } = string.Empty;
+                        public string? Value { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parameter_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("parameter_list")]
-                public IList<Types.Parameter> ParameterList { get; set; } = new List<Types.Parameter>();
+                public List<Types.Parameter>? ParameterList { get; set; }
             }
         }
 
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-        public string ActivityId { get; set; } = string.Empty;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置动态消息修改后的状态。
@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_info")]
         [System.Text.Json.Serialization.JsonPropertyName("template_info")]
-        public Types.Template Template { get; set; } = new Types.Template();
+        public Types.Template? Template { get; set; }
     }
 }

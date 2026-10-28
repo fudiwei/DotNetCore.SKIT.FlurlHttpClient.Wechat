@@ -10,35 +10,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-        public string ActivityId { get; set; } = default!;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置活动名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_name")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_name")]
-        public string ActivityName { get; set; } = default!;
+        public string? ActivityName { get; set; }
 
         /// <summary>
         /// 获取或设置活动投放场景。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_scene")]
-        public string ActivityScene { get; set; } = default!;
+        public string? ActivityScene { get; set; }
 
         /// <summary>
         /// 获取或设置活动投放区域编码列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_area_code")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_area_code")]
-        public string[] ActivityAreaCodeList { get; set; } = default!;
+        public List<string>? ActivityAreaCodeList { get; set; }
 
         /// <summary>
         /// 获取或设置活动状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_state")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_state")]
-        public string ActivityState { get; set; } = default!;
+        public string? ActivityState { get; set; }
 
         /// <summary>
         /// 获取或设置指定付款方式编码。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("activity_available_week")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_available_week")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int[] AvailableWeekList { get; set; } = default!;
+        public List<int>? AvailableWeekList { get; set; }
 
         /// <summary>
         /// 获取或设置活动预算（单位：分）。

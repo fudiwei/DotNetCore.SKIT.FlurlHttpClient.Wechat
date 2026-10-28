@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("jump_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("jump_appid")]
-                public string JumpAppId { get; set; } = string.Empty;
+                public string? JumpAppId { get; set; }
             }
         }
 
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = string.Empty;
+        public string? OutContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
@@ -64,14 +64,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insured_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("insured_display_name")]
-        public string InsuredDisplayAccount { get; set; } = string.Empty;
+        public string? InsuredDisplayAccount { get; set; }
 
         /// <summary>
         /// 获取或设置签约结果回调通知地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_notify_url")]
-        public string ContractNotifyUrl { get; set; } = string.Empty;
+        public string? ContractNotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置商户侧用户标识。
@@ -85,21 +85,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_start_date")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_start_date")]
-        public string PolicyStartDateString { get; set; } = string.Empty;
+        public string? PolicyStartDateString { get; set; }
 
         /// <summary>
         /// 获取或设置保险保单的结束日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_end_date")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_end_date")]
-        public string PolicyEndDateString { get; set; } = string.Empty;
+        public string? PolicyEndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置保险保单的扣费周期列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_periods")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_periods")]
-        public IList<Types.PolicyPeriod>? PolicyPeriodList { get; set; }
+        public List<Types.PolicyPeriod>? PolicyPeriodList { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

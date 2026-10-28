@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ContractId { get; set; } = string.Empty;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置保单的扣费周期编号。
@@ -31,13 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置预约的金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scheduled_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("scheduled_amount")]
-        public Types.Amount ScheduledAmount { get; set; } = new Types.Amount();
+        public Types.Amount? ScheduledAmount { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置参与者接收状态。
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("remind_time_diffs")]
                         [System.Text.Json.Serialization.JsonPropertyName("remind_time_diffs")]
-                        public int[]? RemindTimeDiffs { get; set; }
+                        public List<int>? RemindTimeDiffs { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否重复日程。
@@ -110,14 +110,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("repeat_day_of_week")]
                         [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_week")]
-                        public int[]? RepeatDayOfWeekList { get; set; }
+                        public List<int>? RepeatDayOfWeekList { get; set; }
 
                         /// <summary>
                         /// 获取或设置每月哪几天重复。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("repeat_day_of_month")]
                         [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_month")]
-                        public int[]? RepeatDayOfMonthList { get; set; }
+                        public List<int>? RepeatDayOfMonthList { get; set; }
 
                         /// <summary>
                         /// 获取或设置时区。
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("exclude_time_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("exclude_time_list")]
-                        public Types.ExcludeTime[]? ExcludeTimeList { get; set; }
+                        public List<Types.ExcludeTime>? ExcludeTimeList { get; set; }
                     }
                 }
 
@@ -140,14 +140,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("schedule_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("schedule_id")]
-                public string ScheduleId { get; set; } = default!;
+                public string? ScheduleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置管理员成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("admins")]
                 [System.Text.Json.Serialization.JsonPropertyName("admins")]
-                public string[] AdminUserIdList { get; set; } = default!;
+                public List<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程开始时间戳。
@@ -191,35 +191,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("summary")]
                 [System.Text.Json.Serialization.JsonPropertyName("summary")]
-                public string Summary { get; set; } = default!;
+                public string? Summary { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程地点。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("location")]
                 [System.Text.Json.Serialization.JsonPropertyName("location")]
-                public string Location { get; set; } = default!;
+                public string? Location { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程提醒信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reminders")]
                 [System.Text.Json.Serialization.JsonPropertyName("reminders")]
-                public Types.Reminder Reminder { get; set; } = default!;
+                public Types.Reminder? Reminder { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程参与者列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attendees")]
                 [System.Text.Json.Serialization.JsonPropertyName("attendees")]
-                public Types.Attendee[] AttendeeList { get; set; } = default!;
+                public List<Types.Attendee>? AttendeeList { get; set; }
             }
         }
 
@@ -228,6 +228,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule_list")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule_list")]
-        public Types.Schedule[] ScheduleList { get; set; } = default!;
+        public List<Types.Schedule>? ScheduleList { get; set; }
     }
 }

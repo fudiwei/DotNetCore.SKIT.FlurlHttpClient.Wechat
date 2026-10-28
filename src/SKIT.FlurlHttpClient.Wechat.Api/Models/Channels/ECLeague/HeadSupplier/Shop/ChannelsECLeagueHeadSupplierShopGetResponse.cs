@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.BaseInfo BaseInfo { get; set; } = default!;
+                public Types.BaseInfo? BaseInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置小店数据信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("data_info")]
-                public Types.DataInfo DataInfo { get; set; } = default!;
+                public Types.DataInfo? DataInfo { get; set; }
             }
         }
 
@@ -96,6 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_detail")]
-        public Types.Shop Shop { get; set; } = default!;
+        public Types.Shop? Shop { get; set; }
     }
 }

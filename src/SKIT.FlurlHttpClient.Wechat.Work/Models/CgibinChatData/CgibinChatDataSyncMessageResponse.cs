@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = default!;
+                        public string? Id { get; set; }
                     }
 
                     public class Receiver : Sender
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("encrypted_secret_key")]
                         [System.Text.Json.Serialization.JsonPropertyName("encrypted_secret_key")]
-                        public string EncryptedSecretKey { get; set; } = default!;
+                        public string? EncryptedSecretKey { get; set; }
 
                         /// <summary>
                         /// 获取或设置公钥版本。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息类型。
@@ -69,14 +69,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sender")]
                 [System.Text.Json.Serialization.JsonPropertyName("sender")]
-                public Types.Sender Sender { get; set; } = default!;
+                public Types.Sender? Sender { get; set; }
 
                 /// <summary>
                 /// 获取或设置接收者列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_list")]
-                public Types.Receiver[]? ReceiverList { get; set; }
+                public List<Types.Receiver>? ReceiverList { get; set; }
 
                 /// <summary>
                 /// 获取或设置群 ID。
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_encrypt_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_encrypt_info")]
-                public Types.ServiceEncryptInfo ServiceEncryptInfo { get; set; } = default!;
+                public Types.ServiceEncryptInfo? ServiceEncryptInfo { get; set; }
             }
         }
 
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_list")]
-        public Types.Message[] MessageList { get; set; } = default!;
+        public List<Types.Message>? MessageList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

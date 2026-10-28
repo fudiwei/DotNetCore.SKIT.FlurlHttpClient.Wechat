@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string PlanId { get; set; } = string.Empty;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置商户请求单号。
@@ -74,6 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("modify_content")]
         [System.Text.Json.Serialization.JsonPropertyName("modify_content")]
-        public Types.ModifyContent ModifyContent { get; set; } = new Types.ModifyContent();
+        public Types.ModifyContent? ModifyContent { get; set; }
     }
 }

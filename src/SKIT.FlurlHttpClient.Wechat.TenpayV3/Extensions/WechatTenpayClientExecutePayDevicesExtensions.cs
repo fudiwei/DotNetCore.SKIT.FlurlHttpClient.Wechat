@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DeviceId, "device_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "pay-devices", "printers", request.DeviceId, "print-orders");
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay-devices", "printers", request.DeviceId!, "print-orders");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayDevicePrinterPrintOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PrintOrderNumber, "print_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "pay-devices", "printers", request.DeviceId, "print-orders", request.PrintOrderNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "pay-devices", "printers", request.DeviceId!, "print-orders", request.PrintOrderNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPayDevicePrinterPrintOrderByPrintOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("dim_key")]
                                 [System.Text.Json.Serialization.JsonPropertyName("dim_key")]
-                                public string Key { get; set; } = default!;
+                                public string? Key { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置维度指标值。
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("field_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("field_name")]
-                        public string FieldName { get; set; } = default!;
+                        public string? FieldName { get; set; }
 
                         /// <summary>
                         /// 获取或设置维度指标列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("data_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("data_list")]
-                        public Types.Dimension[] DimensionList { get; set; } = default!;
+                        public List<Types.Dimension>? DimensionList { get; set; }
                     }
                 }
 
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_list")]
-                public Types.Field[] FieldList { get; set; } = default!;
+                public List<Types.Field>? FieldList { get; set; }
             }
         }
 
@@ -64,6 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

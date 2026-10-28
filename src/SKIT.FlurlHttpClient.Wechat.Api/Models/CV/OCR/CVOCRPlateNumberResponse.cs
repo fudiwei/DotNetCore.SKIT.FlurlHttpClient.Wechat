@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("number")]
         [System.Text.Json.Serialization.JsonPropertyName("number")]
-        public string PlateNumber { get; set; } = default!;
+        public string? PlateNumber { get; set; }
     }
 }

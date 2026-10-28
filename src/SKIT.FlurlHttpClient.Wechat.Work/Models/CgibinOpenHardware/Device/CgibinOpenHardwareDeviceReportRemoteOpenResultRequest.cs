@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("oper_id")]
         [System.Text.Json.Serialization.JsonPropertyName("oper_id")]
-        public string OperationId { get; set; } = string.Empty;
+        public string? OperationId { get; set; }
 
         /// <summary>
         /// 获取或设置上报类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置识别结果错误码。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/living/get_user_all_livingid 接口的响应。</para>
@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("livingid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("livingid_list")]
-        public string[] LivingIdList { get; set; } = default!;
+        public List<string>? LivingIdList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

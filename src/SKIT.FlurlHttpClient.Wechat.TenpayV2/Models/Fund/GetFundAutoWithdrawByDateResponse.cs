@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string DateString { get; set; } = default!;
+        public string? DateString { get; set; }
 
         /// <summary>
         /// 获取或设置单据 ID。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdraw_status")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_status")]
-        public string WithdrawStatus { get; set; } = default!;
+        public string? WithdrawStatus { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。

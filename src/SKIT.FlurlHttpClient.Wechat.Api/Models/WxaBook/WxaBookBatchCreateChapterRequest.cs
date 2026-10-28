@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("book_id")]
         [System.Text.Json.Serialization.JsonPropertyName("book_id")]
-        public string BookId { get; set; } = string.Empty;
+        public string? BookId { get; set; }
 
         /// <summary>
         /// 获取或设置章节列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chapter_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chapter_list")]
-        public IList<Types.Chapter> ChapterList { get; set; } = new List<Types.Chapter>();
+        public List<Types.Chapter>? ChapterList { get; set; }
     }
 }

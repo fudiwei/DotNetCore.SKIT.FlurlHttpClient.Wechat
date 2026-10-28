@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reasons")]
         [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public string[]? ReasonList { get; set; }
+        public List<string>? ReasonList { get; set; }
     }
 }

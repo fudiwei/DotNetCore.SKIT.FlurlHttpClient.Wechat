@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/submit 接口的请求。</para>
@@ -21,21 +21,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                public string BrandName { get; set; } = string.Empty;
+                public string? BrandName { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户 Logo Url。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("logo_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-                public string LogoUrl { get; set; } = string.Empty;
+                public string? LogoUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权函 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("protocol")]
                 [System.Text.Json.Serialization.JsonPropertyName("protocol")]
-                public string AuthorizationLetterMediaId { get; set; } = string.Empty;
+                public string? AuthorizationLetterMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权函有效截止时间戳。
@@ -79,6 +79,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.SubMerchant SubMerchant { get; set; } = new Types.SubMerchant();
+        public Types.SubMerchant? SubMerchant { get; set; }
     }
 }

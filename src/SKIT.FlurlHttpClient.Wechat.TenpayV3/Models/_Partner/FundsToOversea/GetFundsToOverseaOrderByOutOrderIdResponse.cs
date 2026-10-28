@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户出境单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
-        public string OutOrderId { get; set; } = default!;
+        public string? OutOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信出境单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置出境结果。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string Result { get; set; } = default!;
+        public string? Result { get; set; }
 
         /// <summary>
         /// 获取或设置出境失败原因。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("foreign_currency")]
         [System.Text.Json.Serialization.JsonPropertyName("foreign_currency")]
-        public string ForeignCurrency { get; set; } = default!;
+        public string? ForeignCurrency { get; set; }
 
         /// <summary>
         /// 获取或设置汇率（格式：外币兑换人民币的比例乘以 10 的 8 次方）。

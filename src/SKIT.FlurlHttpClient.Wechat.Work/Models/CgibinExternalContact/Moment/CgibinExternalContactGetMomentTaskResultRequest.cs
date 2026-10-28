@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jobid")]
         [System.Text.Json.Serialization.JsonPropertyName("jobid")]
-        public string JobId { get; set; } = string.Empty;
+        public string? JobId { get; set; }
     }
 }

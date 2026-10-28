@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
             }
         }
 
@@ -30,27 +30,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("component_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("component_appid")]
-        public string ComponentAppId { get; set; } = default!;
+        public string? ComponentAppId { get; set; }
 
         /// <summary>
         /// 获取或设置服务商昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("component_nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("component_nickname")]
-        public string ComponentNickname { get; set; } = default!;
+        public string? ComponentNickname { get; set; }
 
         /// <summary>
         /// 获取或设置反查地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recheck_url")]
         [System.Text.Json.Serialization.JsonPropertyName("recheck_url")]
-        public string RecheckUrl { get; set; } = default!;
+        public string? RecheckUrl { get; set; }
 
         /// <summary>
         /// 获取或设置关联小程序列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appinfo")]
         [System.Text.Json.Serialization.JsonPropertyName("appinfo")]
-        public Types.AppInfo[] AssociatedAppList { get; set; } = default!;
+        public List<Types.AppInfo>? AssociatedAppList { get; set; }
     }
 }

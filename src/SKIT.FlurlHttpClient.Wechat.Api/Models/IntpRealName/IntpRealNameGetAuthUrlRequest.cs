@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("redirect_url")]
         [System.Text.Json.Serialization.JsonPropertyName("redirect_url")]
-        public string RedirectUrl { get; set; } = string.Empty;
+        public string? RedirectUrl { get; set; }
     }
 }

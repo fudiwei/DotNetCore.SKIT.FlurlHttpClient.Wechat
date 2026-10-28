@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/delivery/get_company_list 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递公司名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_name")]
-                public string DeliveryName { get; set; } = default!;
+                public string? DeliveryName { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_list")]
         [System.Text.Json.Serialization.JsonPropertyName("company_list")]
-        public Types.DeliveryCompany[] DeliveryCompanyList { get; set; } = default!;
+        public List<Types.DeliveryCompany>? DeliveryCompanyList { get; set; }
     }
 }

@@ -24,27 +24,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司名字。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_name")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_name")]
-        public string DeliveryName { get; set; } = string.Empty;
+        public string? DeliveryName { get; set; }
 
         /// <summary>
         /// 获取或设置快递单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
     }
 }

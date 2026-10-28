@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_name")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置上级网格 ID。
@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_admin")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_admin")]
-        public IList<string> AdministratorUserIdList { get; set; } = new List<string>();
+        public List<string>? AdministratorUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置网格成员 UserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_member")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_member")]
-        public IList<string>? MemberUserIdList { get; set; }
+        public List<string>? MemberUserIdList { get; set; }
     }
 }

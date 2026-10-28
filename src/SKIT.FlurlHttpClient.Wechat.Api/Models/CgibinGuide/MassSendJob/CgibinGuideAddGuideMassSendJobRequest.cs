@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_name")]
         [System.Text.Json.Serialization.JsonPropertyName("task_name")]
-        public string TaskName { get; set; } = string.Empty;
+        public string? TaskName { get; set; }
 
         /// <summary>
         /// 获取或设置群发任务备注。
@@ -93,13 +93,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public IList<string> BuyerOpenIdList { get; set; } = new List<string>();
+        public List<string>? BuyerOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置素材列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("material")]
         [System.Text.Json.Serialization.JsonPropertyName("material")]
-        public IList<Types.Material> MaterialList { get; set; } = new List<Types.Material>();
+        public List<Types.Material>? MaterialList { get; set; }
     }
 }

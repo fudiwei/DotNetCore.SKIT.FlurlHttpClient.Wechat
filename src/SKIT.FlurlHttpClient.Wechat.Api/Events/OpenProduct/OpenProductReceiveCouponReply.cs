@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ret_msg")]
         [System.Text.Json.Serialization.JsonPropertyName("ret_msg")]
         [System.Xml.Serialization.XmlElement("ret_msg")]
-        public string ReturnMessage { get; set; } = string.Empty;
+        public string? ReturnMessage { get; set; }
 
         /// <summary>
         /// 获取或设置商家侧优惠券 ID。

@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置多媒体 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_url")]
         [System.Text.Json.Serialization.JsonPropertyName("media_url")]
-        public string MediaUrl { get; set; } = string.Empty;
+        public string? MediaUrl { get; set; }
 
         /// <summary>
         /// 获取或设置多媒体类型。

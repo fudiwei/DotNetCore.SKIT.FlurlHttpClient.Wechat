@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openpid")]
         [System.Text.Json.Serialization.JsonPropertyName("openpid")]
-        public string PluginOpenId { get; set; } = default!;
+        public string? PluginOpenId { get; set; }
     }
 }

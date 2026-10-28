@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置提现金额（单位：分）。
@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_type")]
         [System.Text.Json.Serialization.JsonPropertyName("account_type")]
-        public string AccountType { get; set; } = string.Empty;
+        public string? AccountType { get; set; }
     }
 }

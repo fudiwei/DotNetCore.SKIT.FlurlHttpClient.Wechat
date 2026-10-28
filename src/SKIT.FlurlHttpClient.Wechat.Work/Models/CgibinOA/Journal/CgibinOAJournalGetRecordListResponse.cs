@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("journaluuid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("journaluuid_list")]
-        public string[] JournalIdList { get; set; } = default!;
+        public List<string>? JournalIdList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页是否结束。

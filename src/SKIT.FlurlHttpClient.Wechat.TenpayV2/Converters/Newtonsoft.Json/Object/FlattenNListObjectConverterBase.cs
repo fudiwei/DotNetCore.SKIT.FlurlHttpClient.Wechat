@@ -7,21 +7,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities;
 
-    internal abstract class FlattenNArrayObjectConverterBase<TModelContainer, TFlattenElement> : JsonConverter
+    public abstract class FlattenNListObjectConverterBase<TModelContainer, TFlattenElement> : JsonConverter
         where TModelContainer : class, new()
         where TFlattenElement : class, new()
     {
         public const string FLATTEN_PROPERTY_JSON_NAME = "#n";
 
-        private static bool TryMatchNArrayIndex(string key, out int index)
+        private static readonly Regex _nIndexRegex = new Regex(@"_(\d+)$", RegexOptions.Compiled);
+
+        private static bool TryMatchNIndex(string key, out int index)
         {
-            Regex regex = new Regex(@"_(\d+)$", RegexOptions.Compiled);
-            if (regex.IsMatch(key))
-            {
-                string str = regex.Match(key).Groups[1].Value;
-                index = int.Parse(str);
+            Match match = _nIndexRegex.Match(key);
+            if (match.Success && int.TryParse(match.Groups[1].Value, out index))
                 return true;
-            }
 
             index = -1;
             return false;
@@ -34,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
         }
 
         /// <summary>
-        /// 获取 `<see cref="TModelContainer"/>` 类下需要扁平展开的属性，该属性需是一个数组类型、其中每个元素是一个 `<see cref="TFlattenElement"/>`。
+        /// 获取 `<see cref="TModelContainer"/>` 类下需要扁平展开的属性，该属性需是一个 `<see cref="List{TFlattenElement}"/>` 类型。
         /// </summary>
         protected abstract PropertyInfo FlattenProperty { get; }
 
@@ -50,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
 
         public override bool CanConvert(Type objectType)
         {
-            if (!FlattenProperty.PropertyType.IsArray)
+            if (FlattenProperty.PropertyType != typeof(List<TFlattenElement>))
                 throw new NotSupportedException();
 
             return objectType.IsClass && !objectType.IsAbstract && !objectType.IsInterface
@@ -73,20 +71,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                     return outputObj;
 
                 // 取得下标最大值（-1 表示无需扁平展开）
-                int maxIndex = jObject.Properties().Select(e => TryMatchNArrayIndex(e.Name!, out int index) ? index : -1).Max();
+                int maxIndex = jObject.Properties().Select(e => TryMatchNIndex(e.Name, out int index) ? index : -1).Max();
 
                 // 解析 JSON 结构
                 JsonObjectContract jsonContract = ResolveJsonType(objectType, serializer);
+                JsonObjectContract flattenJsonContract = ResolveJsonType(typeof(TFlattenElement), serializer);
+
+                List<TFlattenElement?>? list = null;
 
                 // 遍历 JObject 并反序列化
                 foreach (JProperty jProp in jObject.Properties())
                 {
-                    string propertyName = jProp.Name!;
+                    string propertyName = jProp.Name;
 
-                    if (maxIndex != -1 && TryMatchNArrayIndex(propertyName, out int index))
+                    if (maxIndex != -1 && TryMatchNIndex(propertyName, out int index))
                     {
                         // 反序列化需扁平展开的字段
-                        JsonObjectContract flattenJsonContract = ResolveJsonType(FlattenProperty.PropertyType.GetElementType()!, serializer);
                         JsonProperty? jsonProperty = flattenJsonContract.Properties.FirstOrDefault(e => propertyName == e.PropertyName?.Replace("$n", index.ToString()));
                         if (jsonProperty is null)
                         {
@@ -95,21 +95,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                         }
                         else
                         {
-                            Array? array = ReflectionHelper.GetPropertyValue<Array>(outputObj, FlattenProperty);
-                            if (array is null)
+                            if (list is null)
                             {
-                                array = new TFlattenElement[maxIndex + 1];
-                                ReflectionHelper.SetPropertyValue(outputObj, FlattenProperty, array);
+                                list = new List<TFlattenElement?>(maxIndex + 1);
+                                for (int i = 0; i <= maxIndex; i++)
+                                    list.Add(null);
                             }
 
-                            TFlattenElement? element = ReflectionHelper.GetElementValue<TFlattenElement>(array, index);
+                            TFlattenElement? element = list[index];
                             if (element is null)
                             {
                                 element = ReflectionHelper.CreateInstance<TFlattenElement>();
-                                ReflectionHelper.SetElementValue(array, index, element);
+                                list[index] = element;
                             }
 
-                            if (jsonProperty.ShouldDeserialize is not null && !jsonProperty.ShouldDeserialize(array))
+                            if (jsonProperty.ShouldDeserialize is not null && !jsonProperty.ShouldDeserialize(element))
                                 continue;
                             if (!jsonProperty.Writable)
                                 continue;
@@ -124,6 +124,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                         // 反序列化普通字段
                         if (jsonProperty is not null)
                         {
+                            // 扁平展开字段自身的占位名称不参与反序列化
+                            if (FLATTEN_PROPERTY_JSON_NAME.Equals(jsonProperty.PropertyName))
+                                continue;
                             if (jsonProperty.Ignored && jsonProperty.PropertyName is null)
                                 continue;
                             if (jsonProperty.ShouldDeserialize is not null && !jsonProperty.ShouldDeserialize(outputObj))
@@ -139,8 +142,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                         {
                             throw new NotSupportedException($"'{GetType().FullName}' does not support JsonExtensionData.");
                         }
+                        else if (serializer.MissingMemberHandling == MissingMemberHandling.Error)
+                        {
+                            throw new JsonException($"Could not find member '{propertyName}' on object of type '{objectType.FullName}'");
+                        }
                     }
                 }
+
+                if (list is not null)
+                    ReflectionHelper.SetPropertyValue(outputObj, FlattenProperty, list);
 
                 return outputObj;
             }
@@ -174,7 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
                 string propertyName = jsonProperty.PropertyName ?? jsonProperty.UnderlyingName!;
                 if (FLATTEN_PROPERTY_JSON_NAME.Equals(propertyName))
                 {
-                    if (jsonProperty.PropertyType != FlattenProperty.PropertyType)
+                    if (jsonProperty.UnderlyingName != FlattenProperty.Name)
                         throw new JsonException("Ambiguous flatten property found.");
 
                     continue;
@@ -207,34 +217,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.NewtonsoftJson
             }
 
             // 序列化需扁平展开的字段
-            Array? flattenArray = ReflectionHelper.GetPropertyValue<Array>(inputObj, FlattenProperty);
-            if (flattenArray is not null)
+            List<TFlattenElement?>? flattenList = ReflectionHelper.GetPropertyValue<List<TFlattenElement?>>(inputObj, FlattenProperty);
+            if (flattenList is not null)
             {
-                int index = 0;
-                foreach (JToken jToken in JArray.FromObject(flattenArray))
+                for (int index = 0; index < flattenList.Count; index++)
                 {
-                    if (jToken.Type != JTokenType.Null)
+                    TFlattenElement? element = flattenList[index];
+                    if (element is null)
+                        continue;
+
+                    JObject jElement = JObject.FromObject(element, CopyJsonSerializer(serializer));
+                    foreach (JProperty jProp in jElement.Properties())
                     {
-                        foreach (JProperty jProp in jToken)
+                        string propertyName = jProp.Name.Replace("$n", index.ToString());
+                        if (jProp.Value is null || jProp.Value.Type == JTokenType.Null)
                         {
-                            string propertyName = jProp.Name.Replace("$n", index.ToString());
-                            if (jProp.Value is null || jProp.Value.Type == JTokenType.Null)
-                            {
-                                if (serializer.NullValueHandling == Newtonsoft.Json.NullValueHandling.Include)
-                                {
-                                    writer.WritePropertyName(propertyName);
-                                    writer.WriteNull();
-                                }
-                            }
-                            else
+                            if (serializer.NullValueHandling == Newtonsoft.Json.NullValueHandling.Include)
                             {
                                 writer.WritePropertyName(propertyName);
-                                serializer.Serialize(writer, jProp.Value);
+                                writer.WriteNull();
                             }
                         }
+                        else
+                        {
+                            writer.WritePropertyName(propertyName);
+                            serializer.Serialize(writer, jProp.Value);
+                        }
                     }
-
-                    index++;
                 }
             }
 

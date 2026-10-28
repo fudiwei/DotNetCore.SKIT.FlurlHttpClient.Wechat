@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
             }
 
             public class Image
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
 
             public class Mixed
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("msgtype")]
                         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-                        public string MessageType { get; set; } = default!;
+                        public string? MessageType { get; set; }
 
                         /// <summary>
                         /// 获取或设置文本消息信息。
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msg_item")]
                 [System.Text.Json.Serialization.JsonPropertyName("msg_item")]
-                public Types.MessageItem[] MessageItemList { get; set; } = default!;
+                public List<Types.MessageItem>? MessageItemList { get; set; }
             }
 
             public class Voice
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
             }
 
             public class File
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
             }
 
             public class Quote
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgtype")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-                public string MessageType { get; set; } = default!;
+                public string? MessageType { get; set; }
 
                 /// <summary>
                 /// 获取或设置文本消息信息。
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("selected_item")]
                                 [System.Text.Json.Serialization.JsonPropertyName("selected_item")]
-                                public SelectedItem[] Items { get; set; } = default!;
+                                public List<SelectedItem>? Items { get; set; }
                             }
 
                             public class SelectedItem
@@ -190,7 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("option_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("option_id")]
-                                        public string[] Items { get; set; } = default!;
+                                        public List<string>? Items { get; set; }
                                     }
                                 }
 
@@ -199,14 +199,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("question_key")]
                                 [System.Text.Json.Serialization.JsonPropertyName("question_key")]
-                                public string QuestionKey { get; set; } = default!;
+                                public string? QuestionKey { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置选项 ID 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("option_ids")]
                                 [System.Text.Json.Serialization.JsonPropertyName("option_ids")]
-                                public Types.OptionIdList OptionIdList { get; set; } = default!;
+                                public Types.OptionIdList? OptionIdList { get; set; }
                             }
                         }
 
@@ -215,7 +215,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("card_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("card_type")]
-                        public string CardType { get; set; } = default!;
+                        public string? CardType { get; set; }
 
                         /// <summary>
                         /// 获取或设置事件 Key。
@@ -246,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = default!;
+                        public string? Id { get; set; }
 
                         /// <summary>
                         /// 获取或设置反馈类型。
@@ -267,7 +267,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("inaccurate_reason_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("inaccurate_reason_list")]
-                        public int[]? InaccurateReasonTypeList { get; set; }
+                        public List<int>? InaccurateReasonTypeList { get; set; }
                     }
                 }
 
@@ -276,7 +276,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("eventtype")]
                 [System.Text.Json.Serialization.JsonPropertyName("eventtype")]
-                public string EventType { get; set; } = default!;
+                public string? EventType { get; set; }
 
                 /// <summary>
                 /// 获取或设置模版卡片事件信息。
@@ -299,14 +299,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-        public string MessageId { get; set; } = default!;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置消息触发者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("from")]
         [System.Text.Json.Serialization.JsonPropertyName("from")]
-        public Types.From From { get; set; } = default!;
+        public Types.From? From { get; set; }
 
         /// <summary>
         /// 获取或设置会话 ID。

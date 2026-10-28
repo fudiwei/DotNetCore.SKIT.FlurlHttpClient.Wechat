@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("currency")]
                         [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                        public string Currency { get; set; } = default!;
+                        public string? Currency { get; set; }
 
                         /// <summary>
                         /// 获取或设置该结算周期内会发生结算的交易总金额（单位：指定货币的最小单位）。
@@ -69,35 +69,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("batch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
-                public string BatchId { get; set; } = default!;
+                public string? BatchId { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算日期字符串（格式：yyyyMMdd）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settlement_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("settlement_date")]
-                public string SettlementDateString { get; set; } = default!;
+                public string? SettlementDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置交易开始日期字符串（格式：yyyyMMdd）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_start_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_start_date")]
-                public string StartDateString { get; set; } = default!;
+                public string? StartDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置交易结束日期字符串（格式：yyyyMMdd）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_end_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_end_date")]
-                public string EndDateString { get; set; } = default!;
+                public string? EndDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public Types.Amount Amount { get; set; } = default!;
+                public Types.Amount? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置钱包主体类型。
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Settlement[]? SettlementList { get; set; }
+        public List<Types.Settlement>? SettlementList { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

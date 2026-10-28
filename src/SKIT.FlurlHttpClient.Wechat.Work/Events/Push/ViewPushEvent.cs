@@ -25,6 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("EventKey")]
         [System.Text.Json.Serialization.JsonPropertyName("EventKey")]
         [System.Xml.Serialization.XmlElement("EventKey")]
-        public string EventKey { get; set; } = default!;
+        public string? EventKey { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tax_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("tax_code")]
-                public string TaxCode { get; set; } = default!;
+                public string? TaxCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置货物或应税劳务或服务名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                public string GoodsName { get; set; } = default!;
+                public string? GoodsName { get; set; }
 
                 /// <summary>
                 /// 获取或设置税率（单位：万分数）。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tax_prefer_mark")]
                 [System.Text.Json.Serialization.JsonPropertyName("tax_prefer_mark")]
-                public string TaxPreferMark { get; set; } = default!;
+                public string? TaxPreferMark { get; set; }
             }
         }
 
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Tax[] TaxList { get; set; } = default!;
+        public List<Types.Tax>? TaxList { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

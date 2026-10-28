@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("course_path")]
                         [System.Text.Json.Serialization.JsonPropertyName("course_path")]
-                        public Types.CoursePath CoursePath { get; set; } = default!;
+                        public Types.CoursePath? CoursePath { get; set; }
                     }
                 }
 
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = string.Empty;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递单号。
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_infos")]
-                public IList<Types.Product> ProductList { get; set; } = new List<Types.Product>();
+                public List<Types.Product>? ProductList { get; set; }
 
                 /// <summary>
                 /// 获取或设置课程信息。
@@ -129,13 +129,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置快递列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_list")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_list")]
-        public IList<Types.Delivery> DeliveryList { get; set; } = new List<Types.Delivery>();
+        public List<Types.Delivery>? DeliveryList { get; set; }
     }
 }

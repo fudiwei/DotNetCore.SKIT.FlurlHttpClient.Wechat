@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config_id")]
         [System.Text.Json.Serialization.JsonPropertyName("config_id")]
-        public string ConfigId { get; set; } = string.Empty;
+        public string? ConfigId { get; set; }
 
         /// <summary>
         /// 获取或设置场景值。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_id_list")]
-        public IList<string> GroupChatIdList { get; set; } = new List<string>();
+        public List<string>? GroupChatIdList { get; set; }
 
         /// <summary>
         /// 获取或设置入群渠道。

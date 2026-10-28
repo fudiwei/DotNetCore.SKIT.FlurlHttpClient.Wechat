@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ext_file_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ext_file_media_id")]
-        public string ExtraFileMediaId { get; set; } = default!;
+        public string? ExtraFileMediaId { get; set; }
     }
 }

@@ -30,27 +30,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置授权方 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_corpid")]
-        public string AuthorizerCorpId { get; set; } = string.Empty;
+        public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置排序字段列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sort_options")]
         [System.Text.Json.Serialization.JsonPropertyName("sort_options")]
-        public IList<Types.SortField>? SortFieldList { get; set; }
+        public List<Types.SortField>? SortFieldList { get; set; }
 
         /// <summary>
         /// 获取或设置要排序的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("useridlist")]
         [System.Text.Json.Serialization.JsonPropertyName("useridlist")]
-        public IList<string> UserIdList { get; set; } = new List<string>();
+        public List<string>? UserIdList { get; set; }
     }
 }

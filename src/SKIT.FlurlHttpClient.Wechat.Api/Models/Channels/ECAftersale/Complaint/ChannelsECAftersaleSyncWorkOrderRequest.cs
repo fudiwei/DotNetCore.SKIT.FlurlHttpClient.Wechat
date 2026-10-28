@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("tmp_media_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("tmp_media_id")]
-                                        public string MediaId { get; set; } = string.Empty;
+                                        public string? MediaId { get; set; }
                                     }
                                 }
 
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("desc")]
                         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                        public string Description { get; set; } = string.Empty;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置更新时间戳。
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-                        public IList<Types.MediaInfo>? MediaList { get; set; }
+                        public List<Types.MediaInfo>? MediaList { get; set; }
                     }
                 }
 
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("work_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("work_order_id")]
-                public string WorkOrderId { get; set; } = string.Empty;
+                public string? WorkOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置递增版本号。
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public IList<Types.Item>? ItemList { get; set; } = new List<Types.Item>();
+                public List<Types.Item>? ItemList { get; set; }
             }
         }
 
@@ -118,13 +118,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_id")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
-        public string ComplaintId { get; set; } = string.Empty;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置工单信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("work_order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("work_order_info")]
-        public Types.WorkOrder WorkOrder { get; set; } = new Types.WorkOrder();
+        public Types.WorkOrder? WorkOrder { get; set; }
     }
 }

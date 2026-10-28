@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("present_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
-        public string PresentOrderId { get; set; } = default!;
+        public string? PresentOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置外部 App 跳转业务类型。

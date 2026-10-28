@@ -35,6 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：100</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limit")]
         [System.Text.Json.Serialization.JsonPropertyName("limit")]
@@ -45,6 +46,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filters")]
         [System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public IList<Types.Filter>? FilterList { get; set; }
+        public List<Types.Filter>? FilterList { get; set; }
     }
 }

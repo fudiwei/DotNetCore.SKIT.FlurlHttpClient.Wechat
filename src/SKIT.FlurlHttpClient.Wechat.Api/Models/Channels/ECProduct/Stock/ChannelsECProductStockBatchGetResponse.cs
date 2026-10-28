@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku_stock")]
                         [System.Text.Json.Serialization.JsonPropertyName("sku_stock")]
-                        public Types.SKUStock[] SKUStockList { get; set; } = default!;
+                        public List<Types.SKUStock>? SKUStockList { get; set; }
                     }
                 }
 
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("spu_stock_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("spu_stock_list")]
-                public Types.ProductStock[] StockList { get; set; } = default!;
+                public List<Types.ProductStock>? StockList { get; set; }
             }
         }
 
@@ -72,6 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

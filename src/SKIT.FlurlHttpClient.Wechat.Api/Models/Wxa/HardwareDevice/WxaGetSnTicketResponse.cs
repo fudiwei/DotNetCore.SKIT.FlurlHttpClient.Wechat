@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sn_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("sn_ticket")]
-        public string SnTicket { get; set; } = default!;
+        public string? SnTicket { get; set; }
     }
 }

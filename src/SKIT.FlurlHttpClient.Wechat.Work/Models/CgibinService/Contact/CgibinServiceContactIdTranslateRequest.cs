@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置授权方 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_corpid")]
-        public string AuthorizerCorpId { get; set; } = string.Empty;
+        public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置需要转译的文件 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
-        public IList<string> MediaIdList { get; set; } = new List<string>();
+        public List<string>? MediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置转译后打包的文件名（不带后缀名）。

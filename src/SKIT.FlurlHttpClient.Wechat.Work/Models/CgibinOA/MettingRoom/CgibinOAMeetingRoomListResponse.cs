@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                        public string[]? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置使用范围的部门 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("department_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                        public long[]? DepartmentId { get; set; }
+                        public List<long>? DepartmentId { get; set; }
                     }
                 }
 
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室容纳人数。
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("equipment")]
                 [System.Text.Json.Serialization.JsonPropertyName("equipment")]
-                public int[]? EquipmentIdList { get; set; }
+                public List<int>? EquipmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否需要审批。
@@ -112,6 +112,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingroom_list")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingroom_list")]
-        public Types.MeetingRoom[] MeetingRoomList { get; set; } = default!;
+        public List<Types.MeetingRoom>? MeetingRoomList { get; set; }
     }
 }

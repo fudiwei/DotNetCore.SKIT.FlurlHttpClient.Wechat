@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/getcity 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                public string CityName { get; set; } = default!;
+                public string? CityName { get; set; }
 
                 /// <summary>
                 /// 获取或设置银行省市编码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_address_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_address_code")]
-                public string BankAddressCode { get; set; } = default!;
+                public string? BankAddressCode { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.City[] CityList { get; set; } = default!;
+        public List<Types.City>? CityList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-                public string ServiceName { get; set; } = default!;
+                public string? ServiceName { get; set; }
 
                 /// <summary>
                 /// 获取或设置过期时间。
@@ -46,6 +46,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_list")]
         [System.Text.Json.Serialization.JsonPropertyName("service_list")]
-        public Types.Service[] ServiceList { get; set; } = default!;
+        public List<Types.Service>? ServiceList { get; set; }
     }
 }

@@ -38,6 +38,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("short_url")]
         [System.Text.Json.Serialization.JsonPropertyName("short_url")]
-        public string ShortUrl { get; set; } = default!;
+        public string? ShortUrl { get; set; }
     }
 }

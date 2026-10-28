@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
-                public string OutOrderId { get; set; } = default!;
+                public string? OutOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置拉起收银台的票据。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ticket")]
                 [System.Text.Json.Serialization.JsonPropertyName("ticket")]
-                public string Ticket { get; set; } = default!;
+                public string? Ticket { get; set; }
 
                 /// <summary>
                 /// 获取或设置拉起收银台的票据有效时间。
@@ -54,6 +54,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

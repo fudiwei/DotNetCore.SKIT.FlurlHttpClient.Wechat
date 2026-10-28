@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("leads_component_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("leads_component_id")]
-                public string LeadsComponentId { get; set; } = default!;
+                public string? LeadsComponentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置留资组件标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("leads_description")]
                 [System.Text.Json.Serialization.JsonPropertyName("leads_description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置留资组件状态。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.LeadsComponent[] LeadsComponentList { get; set; } = default!;
+        public List<Types.LeadsComponent>? LeadsComponentList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

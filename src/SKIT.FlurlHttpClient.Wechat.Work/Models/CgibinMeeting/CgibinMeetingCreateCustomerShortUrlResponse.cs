@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_short_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_short_url")]
-                public string MeetingShortUrl { get; set; } = default!;
+                public string? MeetingShortUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户自定义数据。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("customer_data")]
                 [System.Text.Json.Serialization.JsonPropertyName("customer_data")]
-                public string CustomData { get; set; } = default!;
+                public string? CustomData { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_short_url_customer_data")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_short_url_customer_data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

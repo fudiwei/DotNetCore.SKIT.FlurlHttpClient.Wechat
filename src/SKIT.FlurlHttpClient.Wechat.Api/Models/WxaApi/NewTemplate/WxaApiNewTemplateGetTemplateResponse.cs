@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("keywordCode")]
                         [System.Text.Json.Serialization.JsonPropertyName("keywordCode")]
-                        public string KeywordCode { get; set; } = default!;
+                        public string? KeywordCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置枚举参数值列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("enumValueList")]
                         [System.Text.Json.Serialization.JsonPropertyName("enumValueList")]
-                        public string[] EnumValueList { get; set; } = default!;
+                        public List<string>? EnumValueList { get; set; }
                     }
                 }
 
@@ -34,21 +34,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("priTmplId")]
                 [System.Text.Json.Serialization.JsonPropertyName("priTmplId")]
-                public string PrivateTemplateId { get; set; } = default!;
+                public string? PrivateTemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模版标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板类型。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("keywordEnumValueList")]
                 [System.Text.Json.Serialization.JsonPropertyName("keywordEnumValueList")]
-                public Types.KeywordEnumValue[]? KeywordEnumValueList { get; set; }
+                public List<Types.KeywordEnumValue>? KeywordEnumValueList { get; set; }
             }
         }
 
@@ -78,6 +78,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Template[] TemplateList { get; set; } = default!;
+        public List<Types.Template>? TemplateList { get; set; }
     }
 }

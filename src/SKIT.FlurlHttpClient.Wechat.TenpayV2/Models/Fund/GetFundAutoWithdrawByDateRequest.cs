@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// <inheritdoc/>
@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
     }
 }

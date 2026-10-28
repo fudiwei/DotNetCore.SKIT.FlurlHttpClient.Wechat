@@ -21,28 +21,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置店铺头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("headimg_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("headimg_url")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置店铺类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subject_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("subject_type")]
-                public string SubjectType { get; set; } = default!;
+                public string? SubjectType { get; set; }
 
                 /// <summary>
                 /// 获取或设置店铺状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否本地生活小店。
@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.BasicInfo BasicInfo { get; set; } = default!;
+        public Types.BasicInfo? BasicInfo { get; set; }
     }
 }

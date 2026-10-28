@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ApplyId")]
         [System.Text.Json.Serialization.JsonPropertyName("ApplyId")]
         [System.Xml.Serialization.XmlElement("ApplyId")]
-        public string ApplyId { get; set; } = default!;
+        public string? ApplyId { get; set; }
     }
 }

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_realname_token")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_realname_token")]
-        public string WechatRealNameToken { get; set; } = string.Empty;
+        public string? WechatRealNameToken { get; set; }
     }
 }

@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public new IList<SimilarQuestionItem> Items { get; set; } = new List<SimilarQuestionItem>();
+                public new List<SimilarQuestionItem>? Items { get; set; }
             }
 
             public class SimilarQuestionItem : CgibinKfKnowledgeAddIntentRequest.Types.SimilarQuestionItem
@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attachments")]
                 [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-                public new IList<Attachment>? AttachmentList { get; set; }
+                public new List<Attachment>? AttachmentList { get; set; }
             }
         }
 
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("intent_id")]
         [System.Text.Json.Serialization.JsonPropertyName("intent_id")]
-        public string IntentId { get; set; } = string.Empty;
+        public string? IntentId { get; set; }
 
         /// <summary>
         /// 获取或设置主问题信息。
@@ -135,6 +135,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("answers")]
         [System.Text.Json.Serialization.JsonPropertyName("answers")]
-        public IList<Types.Answer>? AnswerList { get; set; }
+        public List<Types.Answer>? AnswerList { get; set; }
     }
 }

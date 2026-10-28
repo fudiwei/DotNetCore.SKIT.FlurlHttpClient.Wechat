@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置添加此外部联系人的企业成员账号。
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("info_list")]
-        public Types.ExternalContact[] ExternalContactList { get; set; } = default!;
+        public List<Types.ExternalContact>? ExternalContactList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

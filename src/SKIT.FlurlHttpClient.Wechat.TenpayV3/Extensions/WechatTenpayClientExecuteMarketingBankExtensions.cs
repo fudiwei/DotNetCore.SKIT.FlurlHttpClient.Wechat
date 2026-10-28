@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PackageId, "package_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "bank", "packages", request.PackageId, "tasks")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "bank", "packages", request.PackageId!, "tasks")
                 .SetQueryParam("filename", request.FileName)
                 .SetQueryParam("status", request.Status)
                 .SetQueryParam("offset", request.Offset)
@@ -65,11 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!.ToLower();
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "bank", "packages", request.PackageId, "tasks");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "bank", "packages", request.PackageId!, "tasks");
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadMarketingBankPackagesTasksResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);

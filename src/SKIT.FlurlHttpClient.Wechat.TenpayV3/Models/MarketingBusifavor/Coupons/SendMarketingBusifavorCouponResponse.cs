@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_code")]
         [System.Text.Json.Serialization.JsonPropertyName("card_code")]
-        public string CardCode { get; set; } = default!;
+        public string? CardCode { get; set; }
     }
 }

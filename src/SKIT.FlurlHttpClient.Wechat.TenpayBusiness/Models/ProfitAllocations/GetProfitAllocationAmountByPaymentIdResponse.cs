@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_id")]
-        public string PaymentId { get; set; } = default!;
+        public string? PaymentId { get; set; }
 
         /// <summary>
         /// 获取或设置订单剩余待分金额（单位：分）。

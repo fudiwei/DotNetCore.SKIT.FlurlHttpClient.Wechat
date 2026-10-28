@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/update_coupon_stock 接口的请求。</para>
@@ -34,14 +34,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
-                public string OutCouponId { get; set; } = string.Empty;
+                public string? OutCouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置库存信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_info")]
-                public Types.Stock Stock { get; set; } = new Types.Stock();
+                public Types.Stock? Stock { get; set; }
             }
         }
 
@@ -50,6 +50,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_stock")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_stock")]
-        public Types.CouponStock CouponStock { get; set; } = new Types.CouponStock();
+        public Types.CouponStock? CouponStock { get; set; }
     }
 }

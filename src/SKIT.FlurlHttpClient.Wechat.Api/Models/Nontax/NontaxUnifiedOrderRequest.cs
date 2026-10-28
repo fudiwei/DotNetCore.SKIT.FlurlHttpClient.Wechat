@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_id")]
-                public string ItemId { get; set; } = string.Empty;
+                public string? ItemId { get; set; }
 
                 /// <summary>
                 /// 获取或设置项目名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置滞纳金（单位：分）。
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ip")]
         [System.Text.Json.Serialization.JsonPropertyName("ip")]
-        public string ClientIp { get; set; } = string.Empty;
+        public string? ClientIp { get; set; }
 
         /// <summary>
         /// 获取或设置订单外部编号。与字段 <see cref="PaymentNoticeNumber"/> 二选一。
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_expire_date")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_expire_date")]
-        public string PaymentNoticeExpireDateString { get; set; } = string.Empty;
+        public string? PaymentNoticeExpireDateString { get; set; }
 
         /// <summary>
         /// 获取或设置用户姓名。
@@ -184,35 +184,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_code")]
         [System.Text.Json.Serialization.JsonPropertyName("department_code")]
-        public string DepartmentCode { get; set; } = string.Empty;
+        public string? DepartmentCode { get; set; }
 
         /// <summary>
         /// 获取或设置执收单位名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_name")]
         [System.Text.Json.Serialization.JsonPropertyName("department_name")]
-        public string DepartmentName { get; set; } = string.Empty;
+        public string? DepartmentName { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("region_code")]
         [System.Text.Json.Serialization.JsonPropertyName("region_code")]
-        public string RegionCode { get; set; } = string.Empty;
+        public string? RegionCode { get; set; }
 
         /// <summary>
         /// 获取或设置场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public string Scene { get; set; } = string.Empty;
+        public string? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置缴费子项目列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public IList<Types.BillItem> BillItemList { get; set; } = new List<Types.BillItem>();
+        public List<Types.BillItem>? BillItemList { get; set; }
 
         /// <summary>
         /// 获取或设置是否自动调起支付。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutBatchNumber { get; set; } = string.Empty;
+        public string? OutBatchNumber { get; set; }
     }
 }

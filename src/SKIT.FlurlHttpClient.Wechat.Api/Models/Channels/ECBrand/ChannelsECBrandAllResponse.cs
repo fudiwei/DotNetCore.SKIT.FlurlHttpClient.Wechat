@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brands")]
         [System.Text.Json.Serialization.JsonPropertyName("brands")]
-        public Types.Brand[] BrandList { get; set; } = default!;
+        public List<Types.Brand>? BrandList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("volume_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("volume_title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置分卷起始章节下标。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("book_id")]
         [System.Text.Json.Serialization.JsonPropertyName("book_id")]
-        public string BookId { get; set; } = string.Empty;
+        public string? BookId { get; set; }
 
         /// <summary>
         /// 获取或设置作品名。
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chapter_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chapter_id_list")]
-        public IList<string>? ChapterIdList { get; set; }
+        public List<string>? ChapterIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否需要分卷。
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("volume_list")]
         [System.Text.Json.Serialization.JsonPropertyName("volume_list")]
-        public IList<Types.Volume>? VolumeList { get; set; }
+        public List<Types.Volume>? VolumeList { get; set; }
 
         /// <summary>
         /// 获取或设置章节排序方式。
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keyword_list")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword_list")]
-        public IList<string>? KeywordList { get; set; }
+        public List<string>? KeywordList { get; set; }
 
         /// <summary>
         /// 获取或设置精彩片段。

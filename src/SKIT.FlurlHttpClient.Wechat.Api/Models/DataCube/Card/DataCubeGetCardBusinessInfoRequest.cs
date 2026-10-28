@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_date")]
         [System.Text.Json.Serialization.JsonPropertyName("begin_date")]
-        public string BeginDateString { get; set; } = string.Empty;
+        public string? BeginDateString { get; set; }
 
         /// <summary>
         /// 获取或设置获取数据的结束日期（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_date")]
         [System.Text.Json.Serialization.JsonPropertyName("end_date")]
-        public string EndDateString { get; set; } = string.Empty;
+        public string? EndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置卡券来源。

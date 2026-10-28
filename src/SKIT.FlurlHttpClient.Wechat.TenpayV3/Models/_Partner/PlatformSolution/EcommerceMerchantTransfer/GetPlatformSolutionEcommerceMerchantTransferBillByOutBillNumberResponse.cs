@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-                public Types.Receiver Receiver { get; set; } = default!;
+                public Types.Receiver? Receiver { get; set; }
             }
 
             public class CloseInfo
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("close_reason")]
-                public string CloseReason { get; set; } = default!;
+                public string? CloseReason { get; set; }
 
                 /// <summary>
                 /// 获取或设置关闭时间。
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
@@ -96,28 +96,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_type")]
         [System.Text.Json.Serialization.JsonPropertyName("business_type")]
-        public string BusinessType { get; set; } = default!;
+        public string? BusinessType { get; set; }
 
         /// <summary>
         /// 获取或设置商户单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_bill_no")]
-        public string OutBillNumber { get; set; } = default!;
+        public string? OutBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付付款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_id")]
-        public string BillId { get; set; } = default!;
+        public string? BillId { get; set; }
 
         /// <summary>
         /// 获取或设置转账接收方信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver_detail")]
-        public Types.ReceiverDetail ReceiverDetail { get; set; } = default!;
+        public Types.ReceiverDetail? ReceiverDetail { get; set; }
 
         /// <summary>
         /// 获取或设置赔付金额（单位：分）。
@@ -131,14 +131,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置赔付原因。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
-        public string TransferRemark { get; set; } = default!;
+        public string? TransferRemark { get; set; }
 
         /// <summary>
         /// 获取或设置收款方备注。

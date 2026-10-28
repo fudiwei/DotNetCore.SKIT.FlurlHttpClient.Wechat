@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mail_data")]
         [System.Text.Json.Serialization.JsonPropertyName("mail_data")]
-        public string MailData { get; set; } = default!;
+        public string? MailData { get; set; }
     }
 }

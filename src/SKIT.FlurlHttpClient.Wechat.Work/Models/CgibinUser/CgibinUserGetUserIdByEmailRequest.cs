@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("email")]
         [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public Types.DateRange DateRange { get; set; } = new Types.DateRange();
+        public Types.DateRange? DateRange { get; set; }
 
         /// <summary>
         /// 获取或设置报表类型。

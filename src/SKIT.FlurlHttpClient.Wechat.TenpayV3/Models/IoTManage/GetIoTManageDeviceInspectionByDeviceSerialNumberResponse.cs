@@ -10,56 +10,56 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_sn")]
         [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-        public string DeviceSerialNumber { get; set; } = default!;
+        public string? DeviceSerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置摄像头序列号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("camera_sn")]
         [System.Text.Json.Serialization.JsonPropertyName("camera_sn")]
-        public string CameraSerialNumber { get; set; } = default!;
+        public string? CameraSerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置有线网卡 MAC 地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wired_mac")]
         [System.Text.Json.Serialization.JsonPropertyName("wired_mac")]
-        public string WiredMAC { get; set; } = default!;
+        public string? WiredMAC { get; set; }
 
         /// <summary>
         /// 获取或设置无线网卡 MAC 地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wireless_mac")]
         [System.Text.Json.Serialization.JsonPropertyName("wireless_mac")]
-        public string WirelessMAC { get; set; } = default!;
+        public string? WirelessMAC { get; set; }
 
         /// <summary>
         /// 获取或设置蓝牙 MAC 地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bluetooth_mac")]
         [System.Text.Json.Serialization.JsonPropertyName("bluetooth_mac")]
-        public string BluetoothMAC { get; set; } = default!;
+        public string? BluetoothMAC { get; set; }
 
         /// <summary>
         /// 获取或设置应用版本号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("app_version")]
         [System.Text.Json.Serialization.JsonPropertyName("app_version")]
-        public string AppVersion { get; set; } = default!;
+        public string? AppVersion { get; set; }
 
         /// <summary>
         /// 获取或设置国际移动设备识别码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("imei")]
         [System.Text.Json.Serialization.JsonPropertyName("imei")]
-        public string IMEI { get; set; } = default!;
+        public string? IMEI { get; set; }
 
         /// <summary>
         /// 获取或设置国际移动设备识别码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string Result { get; set; } = default!;
+        public string? Result { get; set; }
 
         /// <summary>
         /// 获取或设置检测时间。
@@ -75,13 +75,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("errors")]
         [System.Text.Json.Serialization.JsonPropertyName("errors")]
-        public string[]? ErrorList { get; set; }
+        public List<string>? ErrorList { get; set; }
 
         /// <summary>
         /// 获取或设置警告信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("warnings")]
         [System.Text.Json.Serialization.JsonPropertyName("warnings")]
-        public string[]? WarningList { get; set; }
+        public List<string>? WarningList { get; set; }
     }
 }

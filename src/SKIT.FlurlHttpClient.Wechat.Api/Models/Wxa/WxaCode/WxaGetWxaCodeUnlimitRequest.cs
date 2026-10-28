@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public string Scene { get; set; } = string.Empty;
+        public string? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置扫码进入的小程序页面路径。

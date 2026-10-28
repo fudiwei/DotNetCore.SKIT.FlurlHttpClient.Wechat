@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.GuideId, "guide_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "smartguide", "guides", request.GuideId, "assign");
+                .CreateFlurlRequest(request, HttpMethod.Post, "smartguide", "guides", request.GuideId!, "assign");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AssignSmartGuideResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.GuideId, "guide_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "smartguide", "guides", request.GuideId);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "smartguide", "guides", request.GuideId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateSmartGuideResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

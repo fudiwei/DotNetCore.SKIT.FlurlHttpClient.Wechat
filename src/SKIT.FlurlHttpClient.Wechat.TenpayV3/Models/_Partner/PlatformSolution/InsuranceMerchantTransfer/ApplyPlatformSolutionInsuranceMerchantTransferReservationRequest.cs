@@ -26,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("policy_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("policy_no")]
-                        public string PolicyNumber { get; set; } = string.Empty;
+                        public string? PolicyNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置保险名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置取现单号。
@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置服务商 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置二级商户 AppId。
@@ -86,14 +86,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_reservation_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_reservation_no")]
-        public string OutReservationNumber { get; set; } = string.Empty;
+        public string? OutReservationNumber { get; set; }
 
         /// <summary>
         /// 获取或设置转账场景 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
-        public string TransferSceneId { get; set; } = string.Empty;
+        public string? TransferSceneId { get; set; }
 
         /// <summary>
         /// 获取或设置预计最晚转账日期。
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置收款用户姓名（需使用平台公钥/证书加密）。
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reserve_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("reserve_remark")]
-        public string ReserveRemark { get; set; } = string.Empty;
+        public string? ReserveRemark { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。

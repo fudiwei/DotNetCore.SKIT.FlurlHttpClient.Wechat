@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = string.Empty;
+                        public string? UserId { get; set; }
                     }
 
                     public class Reminder
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("remind_time_diffs")]
                         [System.Text.Json.Serialization.JsonPropertyName("remind_time_diffs")]
-                        public IList<int>? RemindTimeDiffs { get; set; }
+                        public List<int>? RemindTimeDiffs { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否重复日程。
@@ -90,14 +90,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("repeat_day_of_week")]
                         [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_week")]
-                        public IList<int>? RepeatDayOfWeekList { get; set; }
+                        public List<int>? RepeatDayOfWeekList { get; set; }
 
                         /// <summary>
                         /// 获取或设置每月哪几天重复。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("repeat_day_of_month")]
                         [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_month")]
-                        public IList<int>? RepeatDayOfMonthList { get; set; }
+                        public List<int>? RepeatDayOfMonthList { get; set; }
 
                         /// <summary>
                         /// 获取或设置时区。
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("admins")]
                 [System.Text.Json.Serialization.JsonPropertyName("admins")]
-                public IList<string>? AdminUserIdList { get; set; }
+                public List<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程开始时间戳。
@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attendees")]
                 [System.Text.Json.Serialization.JsonPropertyName("attendees")]
-                public IList<Types.Attendee>? AttendeeList { get; set; }
+                public List<Types.Attendee>? AttendeeList { get; set; }
             }
         }
 
@@ -187,7 +187,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        public Types.Schedule Schedule { get; set; } = new Types.Schedule();
+        public Types.Schedule? Schedule { get; set; }
 
         /// <summary>
         /// 获取或设置授权方安装的应用 ID。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public Types.FailedMessage[]? FailedMessageList { get; set; }
+        public List<Types.FailedMessage>? FailedMessageList { get; set; }
     }
 }

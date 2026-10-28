@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/agent/get_workbench_template 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("data")]
                         [System.Text.Json.Serialization.JsonPropertyName("data")]
-                        public string Data { get; set; } = default!;
+                        public string? Data { get; set; }
 
                         /// <summary>
                         /// 获取或设置点击跳转链接。
@@ -48,7 +48,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public Types.KeyDataItem[] Items { get; set; } = default!;
+                public List<Types.KeyDataItem>? Items { get; set; }
             }
 
             public class ImageTemplate
@@ -131,7 +131,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置点击跳转链接。
@@ -154,7 +154,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public Types.ListItem[] Items { get; set; } = default!;
+                public List<Types.ListItem>? Items { get; set; }
             }
         }
 
@@ -163,7 +163,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = default!;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置关键数据型模版数据。

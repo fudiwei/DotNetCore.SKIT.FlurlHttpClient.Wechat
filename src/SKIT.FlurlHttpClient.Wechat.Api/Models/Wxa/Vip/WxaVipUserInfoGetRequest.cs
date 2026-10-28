@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
     }
 }

@@ -105,35 +105,35 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("user_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                                public string Username { get; set; } = default!;
+                                public string? Username { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置名称。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("nick_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("nick_name")]
-                                public string Nickname { get; set; } = default!;
+                                public string? Nickname { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置头像 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("head_img")]
                                 [System.Text.Json.Serialization.JsonPropertyName("head_img")]
-                                public string HeadImageUrl { get; set; } = default!;
+                                public string? HeadImageUrl { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置公众号或小程序服务类型信息。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("service_type_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("service_type_info")]
-                                public Types.ServiceType ServiceType { get; set; } = default!;
+                                public Types.ServiceType? ServiceType { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置公众号或小程序认证类型信息。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("verify_type_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("verify_type_info")]
-                                public Types.VerifyType VerifyType { get; set; } = default!;
+                                public Types.VerifyType? VerifyType { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置主体名称。
@@ -168,7 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("business_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("business_info")]
-                                public Types.Business Business { get; set; } = default!;
+                                public Types.Business? Business { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置小程序信息。
@@ -199,7 +199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("authorizer_appid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
-                                public string AuthorizerAppId { get; set; } = default!;
+                                public string? AuthorizerAppId { get; set; }
                             }
                         }
 
@@ -208,14 +208,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("authorizer_appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
-                        public string AuthorizerAppId { get; set; } = default!;
+                        public string? AuthorizerAppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置授权方信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("authorizer_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("authorizer_info")]
-                        public Types.Authorizer Authorizer { get; set; } = default!;
+                        public Types.Authorizer? Authorizer { get; set; }
 
                         /// <summary>
                         /// 获取或设置授权信息。
@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("info")]
                 [System.Text.Json.Serialization.JsonPropertyName("info")]
-                public Types.Data Data { get; set; } = default!;
+                public Types.Data? Data { get; set; }
             }
         }
 
@@ -261,6 +261,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bindlist")]
         [System.Text.Json.Serialization.JsonPropertyName("bindlist")]
-        public Types.BindInfo[] BindList { get; set; } = default!;
+        public List<Types.BindInfo>? BindList { get; set; }
     }
 }

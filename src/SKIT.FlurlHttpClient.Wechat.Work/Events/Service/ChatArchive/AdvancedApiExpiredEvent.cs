@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChatArchiveApi")]
         [System.Text.Json.Serialization.JsonPropertyName("ChatArchiveApi")]
         [System.Xml.Serialization.XmlElement("ChatArchiveApi")]
-        public Types.ChatArchiveApi ChatArchiveApi { get; set; } = default!;
+        public Types.ChatArchiveApi? ChatArchiveApi { get; set; }
     }
 }

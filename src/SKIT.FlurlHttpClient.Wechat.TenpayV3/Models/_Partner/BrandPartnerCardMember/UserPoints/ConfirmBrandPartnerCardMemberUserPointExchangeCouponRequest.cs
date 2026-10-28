@@ -10,49 +10,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record_id")]
         [System.Text.Json.Serialization.JsonPropertyName("record_id")]
-        public string RecordId { get; set; } = string.Empty;
+        public string? RecordId { get; set; }
 
         /// <summary>
         /// 获取或设置积分兑券模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("exchange_coupon_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon_template_id")]
-        public string ExchangeCouponTemplateId { get; set; } = string.Empty;
+        public string? ExchangeCouponTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_card_code")]
         [System.Text.Json.Serialization.JsonPropertyName("user_card_code")]
-        public string UserCardCode { get; set; } = string.Empty;
+        public string? UserCardCode { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置积分兑券状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = string.Empty;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置券 Code。

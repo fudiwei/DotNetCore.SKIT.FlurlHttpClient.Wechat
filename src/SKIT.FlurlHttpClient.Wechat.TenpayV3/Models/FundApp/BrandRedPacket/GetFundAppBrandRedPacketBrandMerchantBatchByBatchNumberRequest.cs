@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BatchNumber { get; set; } = string.Empty;
+        public string? BatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置是否查询红包明细单。

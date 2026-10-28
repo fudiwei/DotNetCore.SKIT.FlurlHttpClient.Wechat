@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("dial_string")]
                 [System.Text.Json.Serialization.JsonPropertyName("dial_string")]
-                public string DialogString { get; set; } = string.Empty;
+                public string? DialogString { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置会议室 ID。与字段 <see cref="MRA"/> 二选一。

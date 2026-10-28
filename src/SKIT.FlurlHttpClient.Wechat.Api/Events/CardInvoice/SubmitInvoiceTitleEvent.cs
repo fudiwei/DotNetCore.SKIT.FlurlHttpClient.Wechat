@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("title_type")]
         [System.Text.Json.Serialization.JsonPropertyName("title_type")]
         [System.Xml.Serialization.XmlElement("title_type")]
-        public string TitleType { get; set; } = default!;
+        public string? TitleType { get; set; }
 
         /// <summary>
         /// 获取或设置发票抬头。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
         [System.Xml.Serialization.XmlElement("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置税号。

@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("acquiring_bank_id")]
         [System.Text.Json.Serialization.JsonPropertyName("acquiring_bank_id")]
-        public string AquiringBankId { get; set; } = string.Empty;
+        public string? AquiringBankId { get; set; }
 
         /// <summary>
         /// 获取或设置从业机构 AppId。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_id")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("channel_id")]
         [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string ChannelId { get; set; } = string.Empty;
+        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。

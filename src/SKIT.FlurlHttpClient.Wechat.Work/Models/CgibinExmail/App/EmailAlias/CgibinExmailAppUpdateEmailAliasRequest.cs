@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("new_email")]
         [System.Text.Json.Serialization.JsonPropertyName("new_email")]
-        public string NewEmail { get; set; } = string.Empty;
+        public string? NewEmail { get; set; }
     }
 }

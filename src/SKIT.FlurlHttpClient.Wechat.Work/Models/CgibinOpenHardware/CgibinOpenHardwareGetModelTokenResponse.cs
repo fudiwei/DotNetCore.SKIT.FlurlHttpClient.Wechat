@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("model_access_token")]
-        public string ModelAccessToken { get; set; } = default!;
+        public string? ModelAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置设备型号凭证有效期（单位：秒）。

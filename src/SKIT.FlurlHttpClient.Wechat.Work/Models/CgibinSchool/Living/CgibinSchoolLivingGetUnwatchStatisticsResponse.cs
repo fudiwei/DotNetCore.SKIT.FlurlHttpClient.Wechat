@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("partyids")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyids")]
-                        public long[] DepartmentIdList { get; set; } = default!;
+                        public List<long>? DepartmentIdList { get; set; }
                     }
                 }
 
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("students")]
                 [System.Text.Json.Serialization.JsonPropertyName("students")]
-                public Types.Student[] StudentList { get; set; } = default!;
+                public List<Types.Student>? StudentList { get; set; }
             }
         }
 
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stat_info")]
         [System.Text.Json.Serialization.JsonPropertyName("stat_info")]
-        public Types.Statistics Statistics { get; set; } = default!;
+        public Types.Statistics? Statistics { get; set; }
 
         /// <summary>
         /// 获取或设置翻页是否结束。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ref_date")]
         [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-        public override string RefDateString { get; set; } = default!;
+        public override string? RefDateString { get; set; }
     }
 }

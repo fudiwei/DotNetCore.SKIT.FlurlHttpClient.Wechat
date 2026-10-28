@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guide_id")]
         [System.Text.Json.Serialization.JsonPropertyName("guide_id")]
-        public string GuideId { get; set; } = default!;
+        public string? GuideId { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("close_reason")]
-                public string CloseReason { get; set; } = default!;
+                public string? CloseReason { get; set; }
 
                 /// <summary>
                 /// 获取或设置关闭时间。
@@ -32,21 +32,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置服务商 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置二级商户 AppId。
@@ -60,21 +60,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_reservation_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_reservation_no")]
-        public string OutReservationNumber { get; set; } = default!;
+        public string? OutReservationNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信预约单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reservation_id")]
         [System.Text.Json.Serialization.JsonPropertyName("reservation_id")]
-        public string ReservationId { get; set; } = default!;
+        public string? ReservationId { get; set; }
 
         /// <summary>
         /// 获取或设置转账场景 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
-        public string TransferSceneId { get; set; } = default!;
+        public string? TransferSceneId { get; set; }
 
         /// <summary>
         /// 获取或设置预计最晚转账日期。
@@ -104,7 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置收款银行类型。
@@ -118,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置预约受理时间。

@@ -86,8 +86,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(new StringContent(request.CustomAudienceId.ToString()), "audience_id");
-            httpContent.Add(new StringContent(request.UserIdType), "user_id_type");
-            httpContent.Add(new StringContent(request.OperationType), "operation_type");
+            httpContent.Add(new StringContent(request.UserIdType!), "user_id_type");
+            httpContent.Add(new StringContent(request.OperationType!), "operation_type");
             httpContent.Add(fileContent, "\"file\"", $"\"file.zip\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
 

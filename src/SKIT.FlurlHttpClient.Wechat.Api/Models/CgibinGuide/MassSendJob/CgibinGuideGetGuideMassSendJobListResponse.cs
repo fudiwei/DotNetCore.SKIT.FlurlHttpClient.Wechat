@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Job[] JobList { get; set; } = default!;
+        public List<Types.Job>? JobList { get; set; }
 
         /// <summary>
         /// 获取或设置任务总数。

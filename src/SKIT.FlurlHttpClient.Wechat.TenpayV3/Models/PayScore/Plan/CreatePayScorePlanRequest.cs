@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plan_detail_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_detail_name")]
-                public string DetailName { get; set; } = string.Empty;
+                public string? DetailName { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠说明。
@@ -44,28 +44,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户计划号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_plan_no")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_plan_no")]
-        public string OutPlanNumber { get; set; } = string.Empty;
+        public string? OutPlanNumber { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置计划名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_name")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_name")]
-        public string PlanName { get; set; } = string.Empty;
+        public string? PlanName { get; set; }
 
         /// <summary>
         /// 获取或设置计划有效期（单位：天）。
@@ -100,6 +100,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_detail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_detail_list")]
-        public IList<Types.PlanDetail>? PlanDetailList { get; set; }
+        public List<Types.PlanDetail>? PlanDetailList { get; set; }
     }
 }

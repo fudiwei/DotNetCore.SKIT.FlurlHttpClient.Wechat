@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link_id")]
         [System.Text.Json.Serialization.JsonPropertyName("link_id")]
-        public string LinkId { get; set; } = string.Empty;
+        public string? LinkId { get; set; }
 
         /// <summary>
         /// 获取或设置获客链接名称。

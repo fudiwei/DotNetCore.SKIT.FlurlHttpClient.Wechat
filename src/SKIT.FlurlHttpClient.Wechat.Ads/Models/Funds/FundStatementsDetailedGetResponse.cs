@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("fund_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("fund_type")]
-                        public string FundType { get; set; } = default!;
+                        public string? FundType { get; set; }
 
                         /// <summary>
                         /// 获取或设置余额（单位：分）。
@@ -32,14 +32,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bill_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("bill_number")]
-                        public string BillNumber { get; set; } = default!;
+                        public string? BillNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置交易描述。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("description")]
                         [System.Text.Json.Serialization.JsonPropertyName("description")]
-                        public string Description { get; set; } = default!;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置交易发生时间戳。
@@ -59,14 +59,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.FundStatement[] FundStatementList { get; set; } = default!;
+                public List<Types.FundStatement>? FundStatementList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Types.Pagination Pagination { get; set; } = default!;
+                public Types.Pagination? Pagination { get; set; }
             }
         }
 
@@ -75,6 +75,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

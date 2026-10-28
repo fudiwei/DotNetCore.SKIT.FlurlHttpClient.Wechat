@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_mchid")]
-        public string BrandMerchantId { get; set; } = default!;
+        public string? BrandMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置接收方类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = default!;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置接收方账户。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account")]
         [System.Text.Json.Serialization.JsonPropertyName("account")]
-        public string Account { get; set; } = default!;
+        public string? Account { get; set; }
     }
 }

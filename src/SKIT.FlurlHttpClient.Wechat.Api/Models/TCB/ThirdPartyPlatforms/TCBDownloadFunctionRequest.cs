@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置云函数名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("function_name")]
         [System.Text.Json.Serialization.JsonPropertyName("function_name")]
-        public string FunctionName { get; set; } = string.Empty;
+        public string? FunctionName { get; set; }
     }
 }

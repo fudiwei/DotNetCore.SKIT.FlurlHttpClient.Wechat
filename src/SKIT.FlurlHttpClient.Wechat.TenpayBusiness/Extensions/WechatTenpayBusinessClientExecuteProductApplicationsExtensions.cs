@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.RequestNumber, "request_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "product-applications", request.RequestNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "product-applications", request.RequestNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProductApplicationByRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutRequestNumber, "out_request_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "product-applications", "out-request-no", request.OutRequestNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "product-applications", "out-request-no", request.OutRequestNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProductApplicationByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.RequestNumber, "request_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "product-applications", request.RequestNumber, "links");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "product-applications", request.RequestNumber!, "links");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateProductApplicationLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

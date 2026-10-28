@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/wxopen/getweappsupportversion 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public SdkVersionItem[] Items { get; set; } = default!;
+                public List<SdkVersionItem>? Items { get; set; }
             }
 
             public class SdkVersionItem
@@ -24,7 +24,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("version")]
                 [System.Text.Json.Serialization.JsonPropertyName("version")]
-                public string SdkVersion { get; set; } = default!;
+                public string? SdkVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户分布百分比。
@@ -40,13 +40,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("now_version")]
         [System.Text.Json.Serialization.JsonPropertyName("now_version")]
-        public string NowSdkVersion { get; set; } = default!;
+        public string? NowSdkVersion { get; set; }
 
         /// <summary>
         /// 获取或设置基础库版本列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("uv_info")]
         [System.Text.Json.Serialization.JsonPropertyName("uv_info")]
-        public Types.SdkVersionList SdkVersionList { get; set; } = default!;
+        public Types.SdkVersionList? SdkVersionList { get; set; }
     }
 }

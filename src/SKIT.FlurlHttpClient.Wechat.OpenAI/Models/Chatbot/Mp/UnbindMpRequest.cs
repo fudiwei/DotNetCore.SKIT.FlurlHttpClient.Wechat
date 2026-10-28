@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorizer_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
-        public string AuthorizerAppId { get; set; } = string.Empty;
+        public string? AuthorizerAppId { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_list")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-        public Types.Rule[] RuleList { get; set; } = default!;
+        public List<Types.Rule>? RuleList { get; set; }
 
         /// <summary>
         /// 获取或设置营销规则总数量。

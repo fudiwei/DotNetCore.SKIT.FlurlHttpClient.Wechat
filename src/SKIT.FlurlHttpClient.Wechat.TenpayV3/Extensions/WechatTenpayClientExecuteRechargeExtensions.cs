@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutRechargeNumber, "out_recharge_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "recharge", "bank-transfer-recharges", "out-recharge-no", request.OutRechargeNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "recharge", "bank-transfer-recharges", "out-recharge-no", request.OutRechargeNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBankTransferRechargeByOutRechargeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

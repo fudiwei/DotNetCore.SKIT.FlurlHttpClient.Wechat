@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public Types.Comment Comment { get; set; } = default!;
+                public Types.Comment? Comment { get; set; }
             }
 
             public class Process
@@ -51,14 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commentId")]
                 [System.Text.Json.Serialization.JsonPropertyName("commentId")]
-                public string CommentId { get; set; } = default!;
+                public string? CommentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置进度信息列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("actionList")]
                 [System.Text.Json.Serialization.JsonPropertyName("actionList")]
-                public Types.ActionInfo[] ActionList { get; set; } = default!;
+                public List<Types.ActionInfo>? ActionList { get; set; }
             }
 
             public class OldComment
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commentId")]
                 [System.Text.Json.Serialization.JsonPropertyName("commentId")]
-                public string CommentId { get; set; } = default!;
+                public string? CommentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public Types.ContentInfo ContentInfo { get; set; } = default!;
+                public Types.ContentInfo? ContentInfo { get; set; }
             }
 
         }
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
 
         /// <summary>
         /// 获取或设置处理进度信息。

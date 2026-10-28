@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_request_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-                public string OutRequestNumber { get; set; } = default!;
+                public string? OutRequestNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置提现申请单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applyment_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("applyment_id")]
-                public string ApplymentId { get; set; } = default!;
+                public string? ApplymentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("state")]
                 [System.Text.Json.Serialization.JsonPropertyName("state")]
-                public string State { get; set; } = default!;
+                public string? State { get; set; }
 
                 /// <summary>
                 /// 获取或设置失败原因。
@@ -53,6 +53,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdrawl_apply")]
         [System.Text.Json.Serialization.JsonPropertyName("withdrawl_apply")]
-        public Types.WithdrawApplyment WithdrawApplyment { get; set; } = default!;
+        public Types.WithdrawApplyment? WithdrawApplyment { get; set; }
     }
 }

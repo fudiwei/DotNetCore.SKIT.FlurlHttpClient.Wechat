@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("BizID")]
         [System.Text.Json.Serialization.JsonPropertyName("BizID")]
         [System.Xml.Serialization.XmlElement("BizID")]
-        public string BusinessId { get; set; } = default!;
+        public string? BusinessId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户密码。

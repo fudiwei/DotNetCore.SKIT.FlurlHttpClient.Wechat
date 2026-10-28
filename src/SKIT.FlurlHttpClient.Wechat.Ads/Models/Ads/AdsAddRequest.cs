@@ -24,7 +24,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ad_name")]
         [System.Text.Json.Serialization.JsonPropertyName("ad_name")]
-        public string AdName { get; set; } = string.Empty;
+        public string? AdName { get; set; }
 
         /// <summary>
         /// 获取或设置广告状态。

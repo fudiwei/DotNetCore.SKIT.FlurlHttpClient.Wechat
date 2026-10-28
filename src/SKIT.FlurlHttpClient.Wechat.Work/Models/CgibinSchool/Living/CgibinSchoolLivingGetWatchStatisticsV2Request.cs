@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("livingid")]
         [System.Text.Json.Serialization.JsonPropertyName("livingid")]
-        public string LivingId { get; set; } = string.Empty;
+        public string? LivingId { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

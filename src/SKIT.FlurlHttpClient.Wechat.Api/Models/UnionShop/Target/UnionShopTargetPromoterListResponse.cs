@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promoterType")]
                 [System.Text.Json.Serialization.JsonPropertyName("promoterType")]
-                public string PromoterType { get; set; } = default!;
+                public string? PromoterType { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请时间戳。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promoterStatus")]
                 [System.Text.Json.Serialization.JsonPropertyName("promoterStatus")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置通过时间戳。
@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promoterList")]
         [System.Text.Json.Serialization.JsonPropertyName("promoterList")]
-        public Types.Promoter[] PromoterList { get; set; } = default!;
+        public List<Types.Promoter>? PromoterList { get; set; }
     }
 }

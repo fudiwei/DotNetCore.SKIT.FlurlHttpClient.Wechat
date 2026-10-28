@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id_list")]
-        public IList<string>? OrderIdList { get; set; }
+        public List<string>? OrderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置预约类型。

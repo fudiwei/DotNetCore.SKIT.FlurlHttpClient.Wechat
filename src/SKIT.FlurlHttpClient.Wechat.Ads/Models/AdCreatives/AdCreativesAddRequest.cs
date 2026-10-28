@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_list")]
-                public IList<string>? ImageIdList { get; set; }
+                public List<string>? ImageIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置链接名称类型。
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("share_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("share_title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置分享描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("share_description")]
                 [System.Text.Json.Serialization.JsonPropertyName("share_description")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
             }
         }
 
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("adcreative_name")]
         [System.Text.Json.Serialization.JsonPropertyName("adcreative_name")]
-        public string AdCreativeName { get; set; } = string.Empty;
+        public string? AdCreativeName { get; set; }
 
         /// <summary>
         /// 获取或设置广告创意规格 ID。
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("adcreative_elements")]
         [System.Text.Json.Serialization.JsonPropertyName("adcreative_elements")]
-        public Types.Element AdCreativeElement { get; set; } = new Types.Element();
+        public Types.Element? AdCreativeElement { get; set; }
 
         /// <summary>
         /// 获取或设置投放站点列表。
@@ -97,21 +97,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("site_set")]
         [System.Text.Json.Serialization.JsonPropertyName("site_set")]
-        public IList<string> SiteList { get; set; } = new List<string>() { "SITE_SET_WECHAT" };
+        public List<string>? SiteList { get; set; } = new List<string>() { "SITE_SET_WECHAT" };
 
         /// <summary>
         /// 获取或设置目标 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("destination_url")]
         [System.Text.Json.Serialization.JsonPropertyName("destination_url")]
-        public string DestinationUrl { get; set; } = string.Empty;
+        public string? DestinationUrl { get; set; }
 
         /// <summary>
         /// 获取或设置标的物类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_type")]
         [System.Text.Json.Serialization.JsonPropertyName("product_type")]
-        public string ProductType { get; set; } = string.Empty;
+        public string? ProductType { get; set; }
 
         /// <summary>
         /// 获取或设置标的物 ID。

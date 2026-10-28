@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议发起时间戳。
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_list")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_list")]
-        public Types.Meeting[] MeetingList { get; set; } = default!;
+        public List<Types.Meeting>? MeetingList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

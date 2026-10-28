@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                public IList<string> Items { get; set; } = new List<string>();
+                public List<string>? Items { get; set; }
             }
 
             public class ExtendedAttribute : CgibinUserCreateRequest.Types.ExtendedAttribute
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置新的成员账号。
@@ -115,21 +115,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department")]
         [System.Text.Json.Serialization.JsonPropertyName("department")]
-        public IList<long>? DepartmentIdList { get; set; }
+        public List<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置部门次序列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public IList<long>? DepartmentOrderList { get; set; }
+        public List<long>? DepartmentOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置部门领导状态列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_leader_in_dept")]
         [System.Text.Json.Serialization.JsonPropertyName("is_leader_in_dept")]
-        public IList<int>? DepartmentLeaderStatusList { get; set; }
+        public List<int>? DepartmentLeaderStatusList { get; set; }
 
         /// <summary>
         /// 获取或设置主部门 ID。
@@ -143,7 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("direct_leader")]
         [System.Text.Json.Serialization.JsonPropertyName("direct_leader")]
-        public IList<string>? DirectLeaderUserIdList { get; set; }
+        public List<string>? DirectLeaderUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置头像 MediaId。

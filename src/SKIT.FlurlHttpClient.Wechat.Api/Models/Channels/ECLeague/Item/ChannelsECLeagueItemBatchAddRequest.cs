@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public IList<Types.Item> ItemList { get; set; } = new List<Types.Item>();
+        public List<Types.Item>? ItemList { get; set; }
 
         /// <summary>
         /// 获取或设置视频号 ID 列表。
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Obsolete("相关接口或字段于 2026-06-18 下线。")]
         [Newtonsoft.Json.JsonProperty("finder_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_ids")]
-        public IList<string>? FinderIdList { get; set; }
+        public List<string>? FinderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置带货达人 AppId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("talent_appids")]
         [System.Text.Json.Serialization.JsonPropertyName("talent_appids")]
-        public IList<string>? TalentAppIdList { get; set; }
+        public List<string>? TalentAppIdList { get; set; }
 
         /// <summary>
         /// 获取或设置推广开始时间戳。

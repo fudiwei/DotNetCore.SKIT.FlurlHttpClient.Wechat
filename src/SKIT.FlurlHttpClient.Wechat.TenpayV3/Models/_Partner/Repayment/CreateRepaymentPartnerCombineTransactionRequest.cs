@@ -46,21 +46,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置子单商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                public string OutTradeNumber { get; set; } = string.Empty;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public Types.Amount Amount { get; set; } = new Types.Amount();
+                public Types.Amount? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算信息。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("combine_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("combine_appid")]
-                public string CombineAppId { get; set; } = string.Empty;
+                public string? CombineAppId { get; set; }
             }
 
             public class H5Info : CreateCombineTransactionH5Request.Types.Scene.Types.H5Info
@@ -87,14 +87,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("combine_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("combine_appid")]
-                public string CombineAppId { get; set; } = string.Empty;
+                public string? CombineAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户终端 IP。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payer_client_ip")]
                 [System.Text.Json.Serialization.JsonPropertyName("payer_client_ip")]
-                public string ClientIp { get; set; } = string.Empty;
+                public string? ClientIp { get; set; }
             }
 
             public class MiniProgramInfo
@@ -104,14 +104,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("combine_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("combine_appid")]
-                public string CombineAppId { get; set; } = string.Empty;
+                public string? CombineAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = string.Empty;
+                public string? OpenId { get; set; }
             }
         }
 
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_out_trade_no")]
-        public string CombineOutTradeNumber { get; set; } = string.Empty;
+        public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置交易结束时间。
@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置 App 支付场景信息。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/getorder 接口的响应。</para>
@@ -18,14 +18,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_out_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_out_id")]
-                public string RefundOutId { get; set; } = default!;
+                public string? RefundOutId { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_order_id")]
-                public string RefundOrderId { get; set; } = default!;
+                public string? RefundOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款金额。
@@ -39,14 +39,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
-                public string RefundReason { get; set; } = default!;
+                public string? RefundReason { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_status")]
-                public string RefundStatus { get; set; } = default!;
+                public string? RefundStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款完成时间戳。
@@ -102,7 +102,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("wxnontaxstr")]
                         [System.Text.Json.Serialization.JsonPropertyName("wxnontaxstr")]
-                        public string Nonce { get; set; } = default!;
+                        public string? Nonce { get; set; }
 
                         /// <summary>
                         /// 获取或设置通知状态。
@@ -146,21 +146,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置通知列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("notify_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("notify_detail")]
-                public Types.Notification[] NotificationList { get; set; } = default!;
+                public List<Types.Notification>? NotificationList { get; set; }
 
                 /// <summary>
                 /// 获取或设置通知次数。
@@ -176,28 +176,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置订单描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置币种。
@@ -281,7 +281,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partial_refund_info")]
         [System.Text.Json.Serialization.JsonPropertyName("partial_refund_info")]
-        public Types.Refund[]? RefundList { get; set; }
+        public List<Types.Refund>? RefundList { get; set; }
 
         /// <summary>
         /// 获取或设置订单外部编号。
@@ -302,7 +302,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_name")]
         [System.Text.Json.Serialization.JsonPropertyName("department_name")]
-        public string DepartmentName { get; set; } = default!;
+        public string? DepartmentName { get; set; }
 
         /// <summary>
         /// 获取或设置缴费通知书类型。
@@ -344,28 +344,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("region_code")]
         [System.Text.Json.Serialization.JsonPropertyName("region_code")]
-        public string RegionCode { get; set; } = default!;
+        public string? RegionCode { get; set; }
 
         /// <summary>
         /// 获取或设置场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public string Scene { get; set; } = default!;
+        public string? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置缴费子项目列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public Types.BillItem[] BillItemList { get; set; } = default!;
+        public List<Types.BillItem>? BillItemList { get; set; }
 
         /// <summary>
         /// 获取或设置通知历史列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_history")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_history")]
-        public Types.NotifyHistory[] NotifyHistoryList { get; set; } = default!;
+        public List<Types.NotifyHistory>? NotifyHistoryList { get; set; }
 
         /// <summary>
         /// 获取或设置订单支付成功时间戳。

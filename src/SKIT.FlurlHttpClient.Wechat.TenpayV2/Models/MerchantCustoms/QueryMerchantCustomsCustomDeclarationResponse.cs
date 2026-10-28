@@ -5,8 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/mch/customs/customdeclarequery 接口的响应。</para>
     /// </summary>
-    [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponseClassNewtonsoftJsonConverter))]
-    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
+    [Newtonsoft.Json.JsonConverter(typeof(QueryMerchantCustomsCustomDeclarationResponse.Converters.ResponseClassNewtonsoftJsonConverter))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(QueryMerchantCustomsCustomDeclarationResponse.Converters.ResponseClassSystemTextJsonConverter))]
     public class QueryMerchantCustomsCustomDeclarationResponse : WechatTenpaySignableResponse
     {
         public static class Types
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("state_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("state_$n")]
-                public string State { get; set; } = default!;
+                public string? State { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户子订单号。
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("customs_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("customs_$n")]
-                public string Customs { get; set; } = default!;
+                public string? Customs { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户海关备案号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mch_customs_no_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("mch_customs_no_$n")]
-                public string MerchantCustomsNumber { get; set; } = default!;
+                public string? MerchantCustomsNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置关税（单位：分）。
@@ -113,12 +113,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
+            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNListObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
             {
                 protected override PropertyInfo FlattenProperty => QueryMerchantCustomsCustomDeclarationResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
+            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNListObjectConverterBase<QueryMerchantCustomsCustomDeclarationResponse, Types.Record>
             {
                 protected override PropertyInfo FlattenProperty => QueryMerchantCustomsCustomDeclarationResponse._flattenProperty;
             }
@@ -145,14 +145,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty(Converters.ResponseClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
         [System.Text.Json.Serialization.JsonPropertyName(Converters.ResponseClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         /// <summary>
         /// 获取或设置记录总数。

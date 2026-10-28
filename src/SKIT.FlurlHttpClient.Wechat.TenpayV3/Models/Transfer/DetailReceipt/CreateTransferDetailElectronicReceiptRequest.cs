@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("accept_type")]
         [System.Text.Json.Serialization.JsonPropertyName("accept_type")]
-        public string AcceptType { get; set; } = string.Empty;
+        public string? AcceptType { get; set; }
 
         /// <summary>
         /// 获取或设置商户批次单号。
@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_detail_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_detail_no")]
-        public string OutDetailNumber { get; set; } = string.Empty;
+        public string? OutDetailNumber { get; set; }
     }
 }

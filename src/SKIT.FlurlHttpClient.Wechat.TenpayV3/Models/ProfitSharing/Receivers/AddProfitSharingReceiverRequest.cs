@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -32,14 +32,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置接收方账户。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account")]
         [System.Text.Json.Serialization.JsonPropertyName("account")]
-        public string Account { get; set; } = string.Empty;
+        public string? Account { get; set; }
 
         /// <summary>
         /// 获取或设置接收方名称（需使用平台公钥/证书加密）。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("relation_type")]
         [System.Text.Json.Serialization.JsonPropertyName("relation_type")]
-        public string RelationType { get; set; } = string.Empty;
+        public string? RelationType { get; set; }
 
         /// <summary>
         /// 获取或设置自定义的分账关系。

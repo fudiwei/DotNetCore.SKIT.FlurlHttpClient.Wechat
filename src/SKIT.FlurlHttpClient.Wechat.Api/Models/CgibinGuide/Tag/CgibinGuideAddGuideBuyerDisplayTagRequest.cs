@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string BuyerOpenId { get; set; } = string.Empty;
+        public string? BuyerOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置自定义客户标签列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("display_tag_list")]
         [System.Text.Json.Serialization.JsonPropertyName("display_tag_list")]
-        public IList<string> DisplayTagList { get; set; } = new List<string>();
+        public List<string>? DisplayTagList { get; set; }
     }
 }

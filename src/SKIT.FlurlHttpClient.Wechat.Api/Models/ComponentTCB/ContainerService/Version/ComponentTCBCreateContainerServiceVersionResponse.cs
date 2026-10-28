@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version_name")]
         [System.Text.Json.Serialization.JsonPropertyName("version_name")]
-        public string VersionName { get; set; } = default!;
+        public string? VersionName { get; set; }
     }
 }

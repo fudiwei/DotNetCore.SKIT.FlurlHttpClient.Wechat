@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = string.Empty;
+                        public string? MediaId { get; set; }
                     }
                 }
 
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置图片附件信息。
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置商品价格（单位：分）。
@@ -64,6 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attachments")]
         [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-        public IList<Types.Attachment>? AttachmentList { get; set; }
+        public List<Types.Attachment>? AttachmentList { get; set; }
     }
 }

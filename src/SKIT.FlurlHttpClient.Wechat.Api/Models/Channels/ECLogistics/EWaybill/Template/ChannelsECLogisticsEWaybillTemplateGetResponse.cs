@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置默认模板 ID。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_list")]
-                public Types.Template[] Items { get; set; } = default!;
+                public List<Types.Template>? Items { get; set; }
             }
 
             public class Template
@@ -72,35 +72,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public string TemplateId { get; set; } = default!;
+                public string? TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_desc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板信息选项列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("options")]
                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public Types.Option[] Options { get; set; } = default!;
+                public List<Types.Option>? Options { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否为该快递公司默认模板。
@@ -130,6 +130,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_template")]
         [System.Text.Json.Serialization.JsonPropertyName("total_template")]
-        public Types.TemplateList[] TemplateList { get; set; } = default!;
+        public List<Types.TemplateList>? TemplateList { get; set; }
     }
 }

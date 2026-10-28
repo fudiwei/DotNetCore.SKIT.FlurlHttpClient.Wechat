@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "apply_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "mchcontactalterapplyment", request.ApplymentId, "revoke");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "mchcontactalterapplyment", request.ApplymentId!, "revoke");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RevokeMerchantAlterApplyMerchantContactAlterApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutRequestNumber, "out_request_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchcontactalterapplyment", "merchant", request.SubMerchantId, "out-request-no", request.OutRequestNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchcontactalterapplyment", "merchant", request.SubMerchantId!, "out-request-no", request.OutRequestNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantContactAlterApplymentByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "apply_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchcontactalterapplyment", request.ApplymentId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchcontactalterapplyment", request.ApplymentId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantContactAlterApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "apply_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "merchantnamealterapplyment", request.ApplymentId, "revoke");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "merchantnamealterapplyment", request.ApplymentId!, "revoke");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RevokeMerchantAlterApplyMerchantNameAlterApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutRequestNumber, "out_request_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "merchantnamealterapplyment", "merchant", request.SubMerchantId, "out-request-no", request.OutRequestNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "merchantnamealterapplyment", "merchant", request.SubMerchantId!, "out-request-no", request.OutRequestNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantNameAlterApplymentByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -190,7 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "apply_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "merchantnamealterapplyment", request.ApplymentId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "merchantnamealterapplyment", request.ApplymentId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantNameAlterApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "apply_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "mchsubjectalterapplyment", request.ApplymentId, "revoke");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "mchsubjectalterapplyment", request.ApplymentId!, "revoke");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RevokeMerchantAlterApplyMerchantSubjectAlterApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -263,7 +263,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutRequestNumber, "out_request_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchsubjectalterapplyment", "merchant", request.SubMerchantId, "out-request-no", request.OutRequestNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchsubjectalterapplyment", "merchant", request.SubMerchantId!, "out-request-no", request.OutRequestNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantSubjectAlterApplymentByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -287,7 +287,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "apply_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchsubjectalterapplyment", request.ApplymentId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "mchsubjectalterapplyment", request.ApplymentId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantSubjectAlterApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

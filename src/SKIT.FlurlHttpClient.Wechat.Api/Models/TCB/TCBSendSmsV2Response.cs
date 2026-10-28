@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_status_list")]
         [System.Text.Json.Serialization.JsonPropertyName("send_status_list")]
-        public Types.SendStatus[]? SendStatusList { get; set; }
+        public List<Types.SendStatus>? SendStatusList { get; set; }
     }
 }

@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_flow_info_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_flow_info_list")]
-                public Types.StockFlow[] StockFlowList { get; set; } = default!;
+                public List<Types.StockFlow>? StockFlowList { get; set; }
 
                 /// <summary>
                 /// 获取或设置下一页分页游标。
@@ -141,6 +141,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

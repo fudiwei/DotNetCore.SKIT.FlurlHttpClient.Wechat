@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("option_list")]
-                public new IList<Types.Option>? OptionList { get; set; }
+                public new List<Types.Option>? OptionList { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("question_list")]
         [System.Text.Json.Serialization.JsonPropertyName("question_list")]
-        public new IList<Types.Question>? QuestionList { get; set; }
+        public new List<Types.Question>? QuestionList { get; set; }
     }
 }

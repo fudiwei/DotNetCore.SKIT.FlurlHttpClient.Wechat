@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("Mobile")]
                         [System.Text.Json.Serialization.JsonPropertyName("Mobile")]
-                        public string MobileNumber { get; set; } = default!;
+                        public string? MobileNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置短信内容。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("Content")]
                         [System.Text.Json.Serialization.JsonPropertyName("Content")]
-                        public string Content { get; set; } = default!;
+                        public string? Content { get; set; }
 
                         /// <summary>
                         /// 获取或设置短信内容长度。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("Status")]
                         [System.Text.Json.Serialization.JsonPropertyName("Status")]
-                        public string Status { get; set; } = default!;
+                        public string? Status { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户接收时间。
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("SmsRecords")]
                 [System.Text.Json.Serialization.JsonPropertyName("SmsRecords")]
-                public Types.SmsRecord[] SmsRecordList { get; set; } = default!;
+                public List<Types.SmsRecord>? SmsRecordList { get; set; }
 
                 /// <summary>
                 /// 获取或设置总记录数。
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("RequestId")]
                 [System.Text.Json.Serialization.JsonPropertyName("RequestId")]
-                public string RequestId { get; set; } = default!;
+                public string? RequestId { get; set; }
             }
         }
 
@@ -103,6 +103,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Response")]
         [System.Text.Json.Serialization.JsonPropertyName("Response")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

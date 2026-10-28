@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string Path { get; set; } = default!;
+                public string? Path { get; set; }
 
                 /// <summary>
                 /// 获取或设置请求平均耗时（单位：毫秒）。
@@ -51,7 +51,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置压测 ID。
@@ -114,6 +114,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("network_list")]
         [System.Text.Json.Serialization.JsonPropertyName("network_list")]
-        public Types.Network[]? NetworkList { get; set; }
+        public List<Types.Network>? NetworkList { get; set; }
     }
 }

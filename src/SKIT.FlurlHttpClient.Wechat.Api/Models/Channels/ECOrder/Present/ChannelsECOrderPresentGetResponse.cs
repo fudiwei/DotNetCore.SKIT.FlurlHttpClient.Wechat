@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("order_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                        public string OrderId { get; set; } = default!;
+                        public string? OrderId { get; set; }
 
                         /// <summary>
                         /// 获取或设置收礼者 OpenId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("openid")]
                         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置子单订单状态。
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("present_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
-                public string PresentOrderId { get; set; } = default!;
+                public string? PresentOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否付款。
@@ -102,14 +102,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("present_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("present_detail")]
-                public Types.PresentDetail PresentDetail { get; set; } = default!;
+                public Types.PresentDetail? PresentDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置子单列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_order_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_order_list")]
-                public Types.SubOrder[] SubOrderList { get; set; } = default!;
+                public List<Types.SubOrder>? SubOrderList { get; set; }
 
                 /// <summary>
                 /// 获取或设置关联活动 ID。
@@ -133,6 +133,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("present")]
         [System.Text.Json.Serialization.JsonPropertyName("present")]
-        public Types.PresentOrder PresentOrder { get; set; } = default!;
+        public Types.PresentOrder? PresentOrder { get; set; }
     }
 }

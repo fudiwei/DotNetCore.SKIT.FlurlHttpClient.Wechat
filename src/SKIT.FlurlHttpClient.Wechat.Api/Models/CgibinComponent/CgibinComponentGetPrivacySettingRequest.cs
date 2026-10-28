@@ -66,14 +66,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_key")]
-                public string PrivacyKey { get; set; } = string.Empty;
+                public string? PrivacyKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置收集该信息的用途。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("privacy_text")]
                 [System.Text.Json.Serialization.JsonPropertyName("privacy_text")]
-                public string PrivacyText { get; set; } = string.Empty;
+                public string? PrivacyText { get; set; }
             }
         }
 

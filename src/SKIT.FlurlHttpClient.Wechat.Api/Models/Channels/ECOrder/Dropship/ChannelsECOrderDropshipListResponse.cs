@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ds_order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ds_order_id_list")]
-        public string[] DropshipOrderIdList { get; set; } = default!;
+        public List<string>? DropshipOrderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

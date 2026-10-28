@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_applyment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_applyment_id")]
-        public string OutApplymentId { get; set; } = default!;
+        public string? OutApplymentId { get; set; }
 
         /// <summary>
         /// 获取或设置申请单 ID。
@@ -32,42 +32,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applyment_state")]
         [System.Text.Json.Serialization.JsonPropertyName("applyment_state")]
-        public string ApplymentState { get; set; } = default!;
+        public string? ApplymentState { get; set; }
 
         /// <summary>
         /// 获取或设置域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("domains")]
         [System.Text.Json.Serialization.JsonPropertyName("domains")]
-        public string[] DomainList { get; set; } = default!;
+        public List<string>? DomainList { get; set; }
 
         /// <summary>
         /// 获取或设置网站业务页面截图 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("website_business_page_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("website_business_page_pics")]
-        public string[]? WebsiteBusinessPagePictureMediaIdList { get; set; }
+        public List<string>? WebsiteBusinessPagePictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置网站首页截图 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("website_homepage_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("website_homepage_pics")]
-        public string[]? WebsiteHomePagePictureMediaIdList { get; set; }
+        public List<string>? WebsiteHomePagePictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置网站状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("website_state")]
         [System.Text.Json.Serialization.JsonPropertyName("website_state")]
-        public string WebsiteState { get; set; } = default!;
+        public string? WebsiteState { get; set; }
 
         /// <summary>
         /// 获取或设置网站 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("website_url")]
         [System.Text.Json.Serialization.JsonPropertyName("website_url")]
-        public string WebsiteUrl { get; set; } = default!;
+        public string? WebsiteUrl { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。

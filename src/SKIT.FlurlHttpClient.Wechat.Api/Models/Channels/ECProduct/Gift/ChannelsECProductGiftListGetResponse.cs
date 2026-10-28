@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("product_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("product_ids")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public long[] ProductIdList { get; set; } = default!;
+        public List<long>? ProductIdList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

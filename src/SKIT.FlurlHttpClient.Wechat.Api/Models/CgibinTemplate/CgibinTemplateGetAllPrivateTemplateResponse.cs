@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/template/get_all_private_template 接口的响应。</para>
@@ -14,35 +14,35 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public string TemplateId { get; set; } = default!;
+                public string? TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板所属一级行业。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("primary_industry")]
                 [System.Text.Json.Serialization.JsonPropertyName("primary_industry")]
-                public string PrimaryIndustry { get; set; } = default!;
+                public string? PrimaryIndustry { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板所属二级行业。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("deputy_industry")]
                 [System.Text.Json.Serialization.JsonPropertyName("deputy_industry")]
-                public string SecondaryIndustry { get; set; } = default!;
+                public string? SecondaryIndustry { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板示例。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_list")]
         [System.Text.Json.Serialization.JsonPropertyName("template_list")]
-        public Types.Template[] TemplateList { get; set; } = default!;
+        public List<Types.Template>? TemplateList { get; set; }
     }
 }

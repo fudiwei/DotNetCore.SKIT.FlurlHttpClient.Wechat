@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置导入文件路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_path")]
         [System.Text.Json.Serialization.JsonPropertyName("file_path")]
-        public string FilePath { get; set; } = string.Empty;
+        public string? FilePath { get; set; }
 
         /// <summary>
         /// 获取或设置导入文件类型。
@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query")]
         [System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string QueryString { get; set; } = string.Empty;
+        public string? QueryString { get; set; }
     }
 }

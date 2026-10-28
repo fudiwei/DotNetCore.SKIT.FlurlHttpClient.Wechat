@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_kfid")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]
-                public string OpenKfId { get; set; } = default!;
+                public string? OpenKfId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("avatar")]
                 [System.Text.Json.Serialization.JsonPropertyName("avatar")]
-                public string AvatarUrl { get; set; } = default!;
+                public string? AvatarUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否有该管理权限。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_list")]
         [System.Text.Json.Serialization.JsonPropertyName("account_list")]
-        public Types.KfAccount[] KfAccountList { get; set; } = default!;
+        public List<Types.KfAccount>? KfAccountList { get; set; }
     }
 }

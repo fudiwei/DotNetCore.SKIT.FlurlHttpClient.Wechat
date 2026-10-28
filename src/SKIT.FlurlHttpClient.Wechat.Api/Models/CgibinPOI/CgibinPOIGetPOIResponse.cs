@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/poi/getpoi 接口的响应。</para>
@@ -22,7 +22,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("photo_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("photo_url")]
-                                public string PhotoUrl { get; set; } = default!;
+                                public string? PhotoUrl { get; set; }
                             }
                         }
 
@@ -38,56 +38,56 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_name")]
-                        public string BusinessName { get; set; } = default!;
+                        public string? BusinessName { get; set; }
 
                         /// <summary>
                         /// 获取或设置分店名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("branch_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("branch_name")]
-                        public string BranchName { get; set; } = default!;
+                        public string? BranchName { get; set; }
 
                         /// <summary>
                         /// 获取或设置省份。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province")]
                         [System.Text.Json.Serialization.JsonPropertyName("province")]
-                        public string Province { get; set; } = default!;
+                        public string? Province { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city")]
                         [System.Text.Json.Serialization.JsonPropertyName("city")]
-                        public string City { get; set; } = default!;
+                        public string? City { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("district")]
                         [System.Text.Json.Serialization.JsonPropertyName("district")]
-                        public string District { get; set; } = default!;
+                        public string? District { get; set; }
 
                         /// <summary>
                         /// 获取或设置详细地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("address")]
                         [System.Text.Json.Serialization.JsonPropertyName("address")]
-                        public string Address { get; set; } = default!;
+                        public string? Address { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("telephone")]
                         [System.Text.Json.Serialization.JsonPropertyName("telephone")]
-                        public string Telephone { get; set; } = default!;
+                        public string? Telephone { get; set; }
 
                         /// <summary>
                         /// 获取或设置分类列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("categories")]
                         [System.Text.Json.Serialization.JsonPropertyName("categories")]
-                        public string[] CategoryList { get; set; } = default!;
+                        public List<string>? CategoryList { get; set; }
 
                         /// <summary>
                         /// 获取或设置坐标类型。
@@ -115,7 +115,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("photo_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("photo_list")]
-                        public Types.Photo[]? PhotoList { get; set; }
+                        public List<Types.Photo>? PhotoList { get; set; }
 
                         /// <summary>
                         /// 获取或设置推荐品。
@@ -173,7 +173,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
             }
         }
 
@@ -182,6 +182,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business")]
         [System.Text.Json.Serialization.JsonPropertyName("business")]
-        public Types.POI POI { get; set; } = default!;
+        public Types.POI? POI { get; set; }
     }
 }

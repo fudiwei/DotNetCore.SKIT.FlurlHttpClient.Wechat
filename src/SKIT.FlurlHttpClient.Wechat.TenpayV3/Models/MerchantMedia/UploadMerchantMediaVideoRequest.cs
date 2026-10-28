@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? FileBytes { get; set; }
 
         /// <summary>
         /// 获取或设置视频文件名（必须以 avi、wmv、mpeg、mp4、mov、mkv、flv、f4v、m4v、rmvb 为后缀）。如果不指定将由系统自动生成。

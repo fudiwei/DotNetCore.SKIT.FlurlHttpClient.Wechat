@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("trademark_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("trademark_type")]
-                        public string TrademarkType { get; set; } = string.Empty;
+                        public string? TrademarkType { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品产地类型。
@@ -46,28 +46,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("brand_wording")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_wording")]
-                        public string BrandWording { get; set; } = string.Empty;
+                        public string? BrandWording { get; set; }
 
                         /// <summary>
                         /// 获取或设置销售授权书图片 URL 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sale_authorization")]
                         [System.Text.Json.Serialization.JsonPropertyName("sale_authorization")]
-                        public IList<string>? SaleAuthorizationUrlList { get; set; }
+                        public List<string>? SaleAuthorizationUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标注册证书图片 URL 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("trademark_registration_certificate")]
                         [System.Text.Json.Serialization.JsonPropertyName("trademark_registration_certificate")]
-                        public IList<string>? TrademarkRegistrationCertificateUrlList { get; set; }
+                        public List<string>? TrademarkRegistrationCertificateUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标变更证明图片 URL 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("trademark_change_certificate")]
                         [System.Text.Json.Serialization.JsonPropertyName("trademark_change_certificate")]
-                        public IList<string>? TrademarkChangeCertificateUrlList { get; set; }
+                        public List<string>? TrademarkChangeCertificateUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标注册人姓名。
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("trademark_registration_application")]
                         [System.Text.Json.Serialization.JsonPropertyName("trademark_registration_application")]
-                        public IList<string>? TrademarkRegistrationApplicationUrlList { get; set; }
+                        public List<string>? TrademarkRegistrationApplicationUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商标申请人姓名。
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("imported_goods_form")]
                         [System.Text.Json.Serialization.JsonPropertyName("imported_goods_form")]
-                        public IList<string>? ImportedGoodsFormUrlList { get; set; }
+                        public List<string>? ImportedGoodsFormUrlList { get; set; }
                     }
                 }
 
@@ -129,14 +129,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("license")]
                 [System.Text.Json.Serialization.JsonPropertyName("license")]
-                public string LicenseUrl { get; set; } = string.Empty;
+                public string? LicenseUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置品牌信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_info")]
-                public Types.Brand Brand { get; set; } = new Types.Brand();
+                public Types.Brand? Brand { get; set; }
             }
         }
 
@@ -145,6 +145,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("audit_req")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_req")]
-        public Types.Audit Audit { get; set; } = new Types.Audit();
+        public Types.Audit? Audit { get; set; }
     }
 }

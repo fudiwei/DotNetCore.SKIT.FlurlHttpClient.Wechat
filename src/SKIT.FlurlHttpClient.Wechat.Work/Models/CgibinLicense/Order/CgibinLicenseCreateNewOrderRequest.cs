@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/license/create_new_order 接口的请求。</para>
@@ -47,34 +47,34 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置企业 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = string.Empty;
+        public string? CorpId { get; set; }
 
         /// <summary>
         /// 获取或设置下单人成员 UserId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_userid")]
-        public string BuyerUserId { get; set; } = string.Empty;
+        public string? BuyerUserId { get; set; }
 
         /// <summary>
         /// 获取或设置账号个数信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_count")]
         [System.Text.Json.Serialization.JsonPropertyName("account_count")]
-        public Types.AccountCount AccountCount { get; set; } = new Types.AccountCount();
+        public Types.AccountCount? AccountCount { get; set; }
 
         /// <summary>
         /// 获取或设置账号时长信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_duration")]
         [System.Text.Json.Serialization.JsonPropertyName("account_duration")]
-        public Types.AccountDuration AccountDuration { get; set; } = new Types.AccountDuration();
+        public Types.AccountDuration? AccountDuration { get; set; }
     }
 }

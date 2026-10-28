@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("uid")]
                 [System.Text.Json.Serialization.JsonPropertyName("uid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否绑定了微信号。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("perm")]
                 [System.Text.Json.Serialization.JsonPropertyName("perm")]
-                public Types.Permission[]? PermissionList { get; set; }
+                public List<Types.Permission>? PermissionList { get; set; }
             }
         }
 
@@ -74,6 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.UserInfo[] UserList { get; set; } = default!;
+        public List<Types.UserInfo>? UserList { get; set; }
     }
 }

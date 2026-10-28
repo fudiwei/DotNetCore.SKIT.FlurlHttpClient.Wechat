@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/databaseadd 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-        public string[] IdList { get; set; } = default!;
+        public List<string>? IdList { get; set; }
     }
 }

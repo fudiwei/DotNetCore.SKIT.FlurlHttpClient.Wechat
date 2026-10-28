@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
             }
 
             public class MediaSettings
@@ -89,14 +89,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("admin_userid")]
-        public string AdminUserId { get; set; } = string.Empty;
+        public string? AdminUserId { get; set; }
 
         /// <summary>
         /// 获取或设置会议主题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置主办方名称。
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hosts")]
         [System.Text.Json.Serialization.JsonPropertyName("hosts")]
-        public IList<Types.Host>? HostList { get; set; }
+        public List<Types.Host>? HostList { get; set; }
 
         /// <summary>
         /// 获取或设置观众观看限制类型。
@@ -180,7 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sensitive_words")]
         [System.Text.Json.Serialization.JsonPropertyName("sensitive_words")]
-        public IList<string>? SensitiveWordList { get; set; }
+        public List<string>? SensitiveWordList { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启人工审核。

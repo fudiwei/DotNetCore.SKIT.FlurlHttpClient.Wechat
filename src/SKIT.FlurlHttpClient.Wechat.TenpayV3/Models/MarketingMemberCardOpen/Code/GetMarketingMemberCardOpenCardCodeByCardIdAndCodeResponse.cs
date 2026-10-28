@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string Value { get; set; } = default!;
+                        public string? Value { get; set; }
                     }
 
                     public class CustomField
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("value_list")]
-                        public string[]? Values { get; set; }
+                        public List<string>? Values { get; set; }
                     }
                 }
 
@@ -58,14 +58,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public Types.CommonField[]? CommonFieldList { get; set; }
+                public List<Types.CommonField>? CommonFieldList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户自定义的开卡信息字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
-                public Types.CustomField[]? CustomFieldList { get; set; }
+                public List<Types.CustomField>? CustomFieldList { get; set; }
             }
 
             public class ServiceModule
@@ -87,14 +87,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("field_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                                        public string FieldId { get; set; } = default!;
+                                        public string? FieldId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置内容字段值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("field_value")]
                                         [System.Text.Json.Serialization.JsonPropertyName("field_value")]
-                                        public string FieldValue { get; set; } = default!;
+                                        public string? FieldValue { get; set; }
                                     }
 
                                     public class ActionSetting
@@ -108,14 +108,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("appid")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                                                public string AppId { get; set; } = default!;
+                                                public string? AppId { get; set; }
 
                                                 /// <summary>
                                                 /// 获取或设置小程序页面路径。
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("path")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                                                public string Path { get; set; } = default!;
+                                                public string? Path { get; set; }
                                             }
                                         }
 
@@ -124,14 +124,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("action_name")]
                                         [System.Text.Json.Serialization.JsonPropertyName("action_name")]
-                                        public string ActionName { get; set; } = default!;
+                                        public string? ActionName { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置跳转小程序信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("jump_miniprogram")]
                                         [System.Text.Json.Serialization.JsonPropertyName("jump_miniprogram")]
-                                        public Types.MiniProgram MiniProgram { get; set; } = default!;
+                                        public Types.MiniProgram? MiniProgram { get; set; }
                                     }
                                 }
 
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("field_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("field_list")]
-                                public Types.Field[] FieldList { get; set; } = default!;
+                                public List<Types.Field>? FieldList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置操作设置信息。
@@ -161,14 +161,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("field_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                                        public string FieldId { get; set; } = default!;
+                                        public string? FieldId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置消息字段值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("field_value")]
                                         [System.Text.Json.Serialization.JsonPropertyName("field_value")]
-                                        public string FieldValue { get; set; } = default!;
+                                        public string? FieldValue { get; set; }
                                     }
                                 }
 
@@ -177,14 +177,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("message_template_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("message_template_id")]
-                                public string TemplateMessageId { get; set; } = default!;
+                                public string? TemplateMessageId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置消息字段列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("field_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("field_list")]
-                                public Types.Field[]? FieldList { get; set; }
+                                public List<Types.Field>? FieldList { get; set; }
                             }
                         }
 
@@ -193,7 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("state_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("state_id")]
-                        public string StateId { get; set; } = default!;
+                        public string? StateId { get; set; }
 
                         /// <summary>
                         /// 获取或设置内容模板信息。
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_module_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_module_id")]
-                public string ServiceModuleId { get; set; } = default!;
+                public string? ServiceModuleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务状态设置。
@@ -236,7 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
@@ -313,7 +313,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_modules")]
         [System.Text.Json.Serialization.JsonPropertyName("service_modules")]
-        public Types.ServiceModule[]? ServiceModuleList { get; set; }
+        public List<Types.ServiceModule>? ServiceModuleList { get; set; }
 
         /// <summary>
         /// 获取或设置发票跳转文案。

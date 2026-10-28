@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public string SdkVersion { get; set; } = string.Empty;
+        public string? SdkVersion { get; set; }
     }
 }

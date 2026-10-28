@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
-        public string PartnerTradeNumber { get; set; } = default!;
+        public string? PartnerTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_no")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_no")]
-        public string PaymentNumber { get; set; } = default!;
+        public string? PaymentNumber { get; set; }
 
         /// <summary>
         /// 获取或设置手续费金额（单位：分）。

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户全局标识。
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-        public string Nickname { get; set; } = default!;
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置用户的性别。
@@ -63,13 +63,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("headimgurl")]
         [System.Text.Json.Serialization.JsonPropertyName("headimgurl")]
-        public string HeadImageUrl { get; set; } = default!;
+        public string? HeadImageUrl { get; set; }
 
         /// <summary>
         /// 获取或设置用户特权信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("privilege")]
         [System.Text.Json.Serialization.JsonPropertyName("privilege")]
-        public string[]? PrivilegeList { get; set; }
+        public List<string>? PrivilegeList { get; set; }
     }
 }

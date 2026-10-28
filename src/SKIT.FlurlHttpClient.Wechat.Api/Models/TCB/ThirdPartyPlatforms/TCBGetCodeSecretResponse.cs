@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("codesecret")]
         [System.Text.Json.Serialization.JsonPropertyName("codesecret")]
-        public string CodeSecret { get; set; } = default!;
+        public string? CodeSecret { get; set; }
     }
 }

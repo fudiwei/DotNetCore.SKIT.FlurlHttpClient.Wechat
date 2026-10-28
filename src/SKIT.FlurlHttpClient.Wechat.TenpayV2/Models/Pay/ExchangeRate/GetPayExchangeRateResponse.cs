@@ -31,20 +31,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fee_type")]
         [System.Text.Json.Serialization.JsonPropertyName("fee_type")]
-        public string FeeType { get; set; } = default!;
+        public string? FeeType { get; set; }
 
         /// <summary>
         /// 获取或设置汇率日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rate_time")]
         [System.Text.Json.Serialization.JsonPropertyName("rate_time")]
-        public string DateString { get; set; } = default!;
+        public string? DateString { get; set; }
 
         /// <summary>
         /// 获取或设置汇率（格式：外币兑换人民币的比例乘以 10 的 8 次方）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rate")]
         [System.Text.Json.Serialization.JsonPropertyName("rate")]
-        public decimal? ExchangeRate { get; set; } = default!;
+        public decimal? ExchangeRate { get; set; }
     }
 }

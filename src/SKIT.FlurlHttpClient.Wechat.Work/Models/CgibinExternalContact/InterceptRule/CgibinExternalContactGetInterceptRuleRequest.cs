@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_id")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
-        public string RuleId { get; set; } = string.Empty;
+        public string? RuleId { get; set; }
     }
 }

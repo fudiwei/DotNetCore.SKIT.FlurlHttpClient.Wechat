@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置身份证号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id_card_number")]
         [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
-        public string IdCardNumber { get; set; } = string.Empty;
+        public string? IdCardNumber { get; set; }
     }
 }

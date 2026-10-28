@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tmp_external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("tmp_external_userid")]
-                public string TempExternalUserId { get; set; } = default!;
+                public string? TempExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人账号 ID。
@@ -44,13 +44,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("results")]
         [System.Text.Json.Serialization.JsonPropertyName("results")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的外部联系人临时 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_tmp_external_userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_tmp_external_userid_list")]
-        public string[]? InvalidTempExternalUserIdList { get; set; }
+        public List<string>? InvalidTempExternalUserIdList { get; set; }
     }
 }

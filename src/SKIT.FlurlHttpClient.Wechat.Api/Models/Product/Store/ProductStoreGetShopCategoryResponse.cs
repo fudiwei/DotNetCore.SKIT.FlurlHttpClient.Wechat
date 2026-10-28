@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/store/get_shopcat 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shopcat_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("shopcat_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置上级分类 ID。
@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shopcat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("shopcat_list")]
-        public Types.Category[] CategoryList { get; set; } = default!;
+        public List<Types.Category>? CategoryList { get; set; }
     }
 }

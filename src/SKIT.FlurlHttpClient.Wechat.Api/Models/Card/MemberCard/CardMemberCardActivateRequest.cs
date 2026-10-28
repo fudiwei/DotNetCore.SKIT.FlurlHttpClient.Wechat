@@ -17,14 +17,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string CardCode { get; set; } = string.Empty;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("membership_number")]
         [System.Text.Json.Serialization.JsonPropertyName("membership_number")]
-        public string MembershipNumber { get; set; } = string.Empty;
+        public string? MembershipNumber { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡背景图 URL。

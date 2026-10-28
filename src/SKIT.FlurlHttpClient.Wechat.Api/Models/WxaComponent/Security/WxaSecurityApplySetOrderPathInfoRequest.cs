@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string PagePath { get; set; } = string.Empty;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序 AppId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid_list")]
-                public IList<string>? AppIdList { get; set; }
+                public List<string>? AppIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请材料图片 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("img_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("img_list")]
-                public IList<string>? ImageUrlList { get; set; }
+                public List<string>? ImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请材料视频 URL。
@@ -65,13 +65,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置批量申请信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_req")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_req")]
-        public Types.BatchRequest BatchRequest { get; set; } = new Types.BatchRequest();
+        public Types.BatchRequest? BatchRequest { get; set; }
     }
 }

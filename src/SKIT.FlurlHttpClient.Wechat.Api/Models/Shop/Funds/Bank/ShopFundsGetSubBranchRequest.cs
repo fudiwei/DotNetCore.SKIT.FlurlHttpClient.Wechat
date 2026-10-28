@@ -31,6 +31,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_code")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_code")]
-        public string BankCode { get; set; } = string.Empty;
+        public string? BankCode { get; set; }
     }
 }

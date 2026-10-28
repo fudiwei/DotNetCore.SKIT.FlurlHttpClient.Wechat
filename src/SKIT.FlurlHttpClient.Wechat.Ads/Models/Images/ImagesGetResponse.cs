@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("image_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("image_id")]
-                        public string ImageId { get; set; } = default!;
+                        public string? ImageId { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片宽度（单位：像素）。
@@ -53,14 +53,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("signature")]
                         [System.Text.Json.Serialization.JsonPropertyName("signature")]
-                        public string FileHash { get; set; } = default!;
+                        public string? FileHash { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片预览地址 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("preview_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("preview_url")]
-                        public string PreviewUrl { get; set; } = default!;
+                        public string? PreviewUrl { get; set; }
                     }
 
                     public class Pagination : Abstractions.CommonPagination
@@ -73,14 +73,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.Image[] ImageList { get; set; } = default!;
+                public List<Types.Image>? ImageList { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Types.Pagination Pagination { get; set; } = default!;
+                public Types.Pagination? Pagination { get; set; }
             }
         }
 
@@ -89,6 +89,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

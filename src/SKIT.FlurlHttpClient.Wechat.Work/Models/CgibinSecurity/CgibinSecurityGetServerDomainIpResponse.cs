@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("domain")]
                 [System.Text.Json.Serialization.JsonPropertyName("domain")]
-                public string Domain { get; set; } = default!;
+                public string? Domain { get; set; }
 
                 /// <summary>
                 /// 获取或设置泛域名。
@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("protocol")]
                 [System.Text.Json.Serialization.JsonPropertyName("protocol")]
-                public string Protocol { get; set; } = default!;
+                public string? Protocol { get; set; }
 
                 /// <summary>
                 /// 获取或设置端口号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("port")]
                 [System.Text.Json.Serialization.JsonPropertyName("port")]
-                public int[] PortList { get; set; } = default!;
+                public List<int>? PortList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否必要。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
 
             public class ServerIp
@@ -61,21 +61,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ip")]
                 [System.Text.Json.Serialization.JsonPropertyName("ip")]
-                public string Ip { get; set; } = default!;
+                public string? Ip { get; set; }
 
                 /// <summary>
                 /// 获取或设置协议。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("protocol")]
                 [System.Text.Json.Serialization.JsonPropertyName("protocol")]
-                public string Protocol { get; set; } = default!;
+                public string? Protocol { get; set; }
 
                 /// <summary>
                 /// 获取或设置端口号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("port")]
                 [System.Text.Json.Serialization.JsonPropertyName("port")]
-                public int[] PortList { get; set; } = default!;
+                public List<int>? PortList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否必要。
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
         }
 
@@ -100,13 +100,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("domain_list")]
         [System.Text.Json.Serialization.JsonPropertyName("domain_list")]
-        public Types.ServerDomain[] DomainList { get; set; } = default!;
+        public List<Types.ServerDomain>? DomainList { get; set; }
 
         /// <summary>
         /// 获取或设置 IP 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ip_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ip_list")]
-        public Types.ServerIp[] IpList { get; set; } = default!;
+        public List<Types.ServerIp>? IpList { get; set; }
     }
 }

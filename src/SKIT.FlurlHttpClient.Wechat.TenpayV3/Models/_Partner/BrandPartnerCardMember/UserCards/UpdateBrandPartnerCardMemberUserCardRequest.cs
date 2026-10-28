@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值（需使用平台公钥/证书加密）。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值（需使用平台公钥/证书加密）。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [System.Text.Json.Serialization.JsonPropertyName("user_chosen_values")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                        public IList<string>? Values { get; set; }
+                        public List<string>? Values { get; set; }
                     }
                 }
 
@@ -60,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public IList<Types.CommonField>? CommonFieldList { get; set; }
+                public List<Types.CommonField>? CommonFieldList { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义开卡信息字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
-                public IList<Types.CustomField>? CustomFieldList { get; set; }
+                public List<Types.CustomField>? CustomFieldList { get; set; }
             }
         }
 
@@ -76,28 +76,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string UserCardCode { get; set; } = string.Empty;
+        public string? UserCardCode { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡背景颜色。

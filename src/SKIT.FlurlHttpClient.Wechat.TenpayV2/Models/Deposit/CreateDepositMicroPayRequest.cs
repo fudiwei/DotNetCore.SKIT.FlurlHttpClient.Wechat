@@ -58,14 +58,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("body")]
         [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; } = string.Empty;
+        public string? Body { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spbill_create_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("spbill_create_ip")]
-        public string ClientIp { get; set; } = string.Empty;
+        public string? ClientIp { get; set; }
 
         /// <summary>
         /// 获取或设置商品 ID。

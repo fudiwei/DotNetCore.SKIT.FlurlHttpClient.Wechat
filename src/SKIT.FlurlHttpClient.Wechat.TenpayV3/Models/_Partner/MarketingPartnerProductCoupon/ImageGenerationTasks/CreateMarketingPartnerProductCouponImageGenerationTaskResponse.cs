@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成任务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
     }
 }

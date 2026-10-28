@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_name")]
         [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-        public string AccountName { get; set; } = string.Empty;
+        public string? AccountName { get; set; }
 
         /// <summary>
         /// 获取或设置商户昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-        public string Nickname { get; set; } = string.Empty;
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置商户头像 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("icon_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("icon_media_id")]
-        public string IconMediaId { get; set; } = string.Empty;
+        public string? IconMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置是否将消息转发到通用客服。

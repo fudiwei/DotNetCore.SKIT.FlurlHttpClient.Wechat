@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("word_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("word_list")]
-                public string[] Items { get; set; } = default!;
+                public List<string>? Items { get; set; }
             }
 
             public class SemanticsList
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("semantics_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("semantics_list")]
-                public int[] Items { get; set; } = default!;
+                public List<int>? Items { get; set; }
             }
 
             public class ApplicableRange
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("type_list")]
-                        public int[]? TypeList { get; set; }
+                        public List<int>? TypeList { get; set; }
                     }
 
                     public class ChatTypeInfo
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("type_list")]
-                        public int[]? TypeList { get; set; }
+                        public List<int>? TypeList { get; set; }
                     }
 
                     public class DepartmentInfo
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public long[]? DepartmentIdList { get; set; }
+                        public List<long>? DepartmentIdList { get; set; }
                     }
 
                     public class GroupChatInfo
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public string[]? GroupChatIdList { get; set; }
+                        public List<string>? GroupChatIdList { get; set; }
                     }
 
                     public class UserInfo
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public string[]? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
                     }
 
                     public class ExternalContactInfo
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public string[]? ExternalUserIdList { get; set; }
+                        public List<string>? ExternalUserIdList { get; set; }
                     }
 
                     public class SessionTypeInfo
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("session_type_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("session_type_list")]
-                        public int[]? SessionTypeList { get; set; }
+                        public List<int>? SessionTypeList { get; set; }
                     }
 
                     public class ExcludeMobileList
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mobile_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("mobile_list")]
-                        public string[]? Items { get; set; }
+                        public List<string>? Items { get; set; }
                     }
 
                     public class ExcludeEmailList
@@ -118,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("email_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("email_list")]
-                        public string[]? Items { get; set; }
+                        public List<string>? Items { get; set; }
                     }
 
                     public class ExcludeBankCardList
@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bank_card_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("bank_card_list")]
-                        public string[]? Items { get; set; }
+                        public List<string>? Items { get; set; }
                     }
                 }
 
@@ -209,14 +209,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置关键词列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keyword")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword")]
-        public Types.KeywordList KeywordList { get; set; } = default!;
+        public Types.KeywordList? KeywordList { get; set; }
 
         /// <summary>
         /// 获取或设置关键行为列表。

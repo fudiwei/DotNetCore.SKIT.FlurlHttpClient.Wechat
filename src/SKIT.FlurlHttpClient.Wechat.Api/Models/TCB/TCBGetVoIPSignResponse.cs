@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("signature")]
         [System.Text.Json.Serialization.JsonPropertyName("signature")]
-        public string Signature { get; set; } = default!;
+        public string? Signature { get; set; }
     }
 }

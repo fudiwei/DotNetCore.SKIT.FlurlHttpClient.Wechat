@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                public string CardId { get; set; } = string.Empty;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置经过加密的发票卡券 Code。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_code")]
-                public string EncryptedCardCode { get; set; } = string.Empty;
+                public string? EncryptedCardCode { get; set; }
             }
         }
 
@@ -30,20 +30,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置发票报销状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reimburse_status")]
         [System.Text.Json.Serialization.JsonPropertyName("reimburse_status")]
-        public string ReimburseStatus { get; set; } = string.Empty;
+        public string? ReimburseStatus { get; set; }
 
         /// <summary>
         /// 获取或设置发票卡券列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_list")]
-        public IList<Types.InvoiceCard> InvoiceCardList { get; set; } = new List<Types.InvoiceCard>();
+        public List<Types.InvoiceCard>? InvoiceCardList { get; set; }
     }
 }

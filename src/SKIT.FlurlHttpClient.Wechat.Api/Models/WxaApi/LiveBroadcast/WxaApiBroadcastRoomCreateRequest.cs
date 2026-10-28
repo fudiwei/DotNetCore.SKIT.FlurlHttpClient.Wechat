@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置直播间背景图 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coverImg")]
         [System.Text.Json.Serialization.JsonPropertyName("coverImg")]
-        public string CoverImageMediaId { get; set; } = string.Empty;
+        public string? CoverImageMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置分享图 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shareImg")]
         [System.Text.Json.Serialization.JsonPropertyName("shareImg")]
-        public string ShareImageMediaId { get; set; } = string.Empty;
+        public string? ShareImageMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置直播间类型。
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("anchorName")]
         [System.Text.Json.Serialization.JsonPropertyName("anchorName")]
-        public string AnchorName { get; set; } = string.Empty;
+        public string? AnchorName { get; set; }
 
         /// <summary>
         /// 获取或设置主播微信号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("anchorWechat")]
         [System.Text.Json.Serialization.JsonPropertyName("anchorWechat")]
-        public string AnchorWechat { get; set; } = string.Empty;
+        public string? AnchorWechat { get; set; }
 
         /// <summary>
         /// 获取或设置主播副号微信号。
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feedsImg")]
         [System.Text.Json.Serialization.JsonPropertyName("feedsImg")]
-        public string FeedsImageMediaId { get; set; } = string.Empty;
+        public string? FeedsImageMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启官方收录。

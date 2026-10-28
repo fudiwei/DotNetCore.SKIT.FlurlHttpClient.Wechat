@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("orderid")]
         [System.Text.Json.Serialization.JsonPropertyName("orderid")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置订单状态。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("paid_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("paid_corpid")]
-        public string PayerCorpId { get; set; } = default!;
+        public string? PayerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置下单方 CorpId。
@@ -74,14 +74,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("edition_id")]
         [System.Text.Json.Serialization.JsonPropertyName("edition_id")]
-        public string EditionId { get; set; } = default!;
+        public string? EditionId { get; set; }
 
         /// <summary>
         /// 获取或设置版本名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("edition_name")]
         [System.Text.Json.Serialization.JsonPropertyName("edition_name")]
-        public string EditionName { get; set; } = default!;
+        public string? EditionName { get; set; }
 
         /// <summary>
         /// 获取或设置订单价格（单位：分）。

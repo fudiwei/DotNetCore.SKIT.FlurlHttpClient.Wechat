@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id_short")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id_short")]
-        public string ShortTemplateId { get; set; } = string.Empty;
+        public string? ShortTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置模板库中模板的关键词。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keyword_name_list")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword_name_list")]
-        public IList<string> KeywordNameList { get; set; } = new List<string>();
+        public List<string>? KeywordNameList { get; set; }
     }
 }

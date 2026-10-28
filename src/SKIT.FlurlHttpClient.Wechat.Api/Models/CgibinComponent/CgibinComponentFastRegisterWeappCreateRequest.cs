@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置企业名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string EnterpriseName { get; set; } = string.Empty;
+        public string? EnterpriseName { get; set; }
 
         /// <summary>
         /// 获取或设置企业代码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string LicenseNumber { get; set; } = string.Empty;
+        public string? LicenseNumber { get; set; }
 
         /// <summary>
         /// 获取或设置企业代码类型。
@@ -38,14 +38,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("legal_persona_name")]
         [System.Text.Json.Serialization.JsonPropertyName("legal_persona_name")]
-        public string LegalPersonName { get; set; } = string.Empty;
+        public string? LegalPersonName { get; set; }
 
         /// <summary>
         /// 获取或设置法人微信号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("legal_persona_wechat")]
         [System.Text.Json.Serialization.JsonPropertyName("legal_persona_wechat")]
-        public string LegalPersonWxname { get; set; } = string.Empty;
+        public string? LegalPersonWxname { get; set; }
 
         /// <summary>
         /// 获取或设置第三方联系电话。

@@ -25,21 +25,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = string.Empty;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号个数信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_count")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_count")]
-                public Types.AccountCount AccountCount { get; set; } = new Types.AccountCount();
+                public Types.AccountCount? AccountCount { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号时长信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_duration")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_duration")]
-                public Types.AccountDuration AccountDuration { get; set; } = new Types.AccountDuration();
+                public Types.AccountDuration? AccountDuration { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否自动激活。
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置多企业新购任务 ID。
@@ -71,6 +71,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buy_list")]
         [System.Text.Json.Serialization.JsonPropertyName("buy_list")]
-        public IList<Types.Buy> BuyList { get; set; } = new List<Types.Buy>();
+        public List<Types.Buy>? BuyList { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fpqqlsh")]
         [System.Text.Json.Serialization.JsonPropertyName("fpqqlsh")]
-        public string InvoiceSerialNumber { get; set; } = string.Empty;
+        public string? InvoiceSerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置纳税人识别码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nsrsbh")]
         [System.Text.Json.Serialization.JsonPropertyName("nsrsbh")]
-        public string SellerTaxNumber { get; set; } = string.Empty;
+        public string? SellerTaxNumber { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("vpcid")]
                 [System.Text.Json.Serialization.JsonPropertyName("vpcid")]
-                public string VPCId { get; set; } = string.Empty;
+                public string? VPCId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子网 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subnetids")]
                 [System.Text.Json.Serialization.JsonPropertyName("subnetids")]
-                public IList<string>? SubnetIdList { get; set; }
+                public List<string>? SubnetIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建类型。
@@ -37,21 +37,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置服务名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_name")]
         [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-        public string ServiceName { get; set; } = string.Empty;
+        public string? ServiceName { get; set; }
 
         /// <summary>
         /// 获取或设置备注。

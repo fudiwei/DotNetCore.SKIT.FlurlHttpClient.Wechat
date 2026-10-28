@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_id")]
-        public string PaymentId { get; set; } = string.Empty;
+        public string? PaymentId { get; set; }
 
         /// <summary>
         /// 获取或设置平台分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_allocation_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_allocation_id")]
-        public string OutAllocationId { get; set; } = string.Empty;
+        public string? OutAllocationId { get; set; }
 
         /// <summary>
         /// 获取或设置分账原因描述。
@@ -38,6 +38,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("server_notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("server_notify_url")]
-        public string ServerNotifyUrl { get; set; } = string.Empty;
+        public string? ServerNotifyUrl { get; set; }
     }
 }

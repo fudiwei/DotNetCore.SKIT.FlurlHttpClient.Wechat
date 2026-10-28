@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_name")]
         [System.Text.Json.Serialization.JsonPropertyName("group_name")]
-        public string GroupName { get; set; } = string.Empty;
+        public string? GroupName { get; set; }
     }
 }

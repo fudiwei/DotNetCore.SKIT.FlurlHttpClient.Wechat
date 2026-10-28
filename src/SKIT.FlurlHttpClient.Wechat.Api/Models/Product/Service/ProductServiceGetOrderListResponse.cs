@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("service_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_order_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                public string ServiceOrderId { get; set; } = default!;
+                public string? ServiceOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置规格英文名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("specification_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("specification_id")]
-                public string SpecificationId { get; set; } = default!;
+                public string? SpecificationId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单总价（单位：分）。
@@ -54,6 +54,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("service_order_list")]
-        public Types.ServiceOrder[] ServiceOrderList { get; set; } = default!;
+        public List<Types.ServiceOrder>? ServiceOrderList { get; set; }
     }
 }

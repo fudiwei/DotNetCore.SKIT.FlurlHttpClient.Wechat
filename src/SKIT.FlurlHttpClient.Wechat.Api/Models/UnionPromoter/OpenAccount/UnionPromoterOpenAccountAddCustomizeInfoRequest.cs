@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]
-        public string UnionId { get; set; } = string.Empty;
+        public string? UnionId { get; set; }
 
         /// <summary>
         /// 获取或设置自定义参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customizeInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("customizeInfo")]
-        public string CustomizeInfo { get; set; } = string.Empty;
+        public string? CustomizeInfo { get; set; }
     }
 }

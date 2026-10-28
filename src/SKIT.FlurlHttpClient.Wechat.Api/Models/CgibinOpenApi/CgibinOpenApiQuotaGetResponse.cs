@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/openapi/quota/get 接口的响应。</para>
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("quota")]
         [System.Text.Json.Serialization.JsonPropertyName("quota")]
-        public Types.Quota Quota { get; set; } = default!;
+        public Types.Quota? Quota { get; set; }
     }
 }

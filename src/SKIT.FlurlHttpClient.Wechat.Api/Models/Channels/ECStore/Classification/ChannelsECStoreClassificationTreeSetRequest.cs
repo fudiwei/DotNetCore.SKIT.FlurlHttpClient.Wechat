@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("level_1")]
                         [System.Text.Json.Serialization.JsonPropertyName("level_1")]
-                        public IList<Level1ClassificationTreeNode> Level1Nodes { get; set; } = new List<Level1ClassificationTreeNode>();
+                        public List<Level1ClassificationTreeNode>? Level1Nodes { get; set; }
                     }
 
                     public abstract class ClassificationTreeNode
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否在用户端展示。
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("level_2")]
                         [System.Text.Json.Serialization.JsonPropertyName("level_2")]
-                        public IList<Level2ClassificationTreeNode> Level2Nodes { get; set; } = new List<Level2ClassificationTreeNode>();
+                        public List<Level2ClassificationTreeNode>? Level2Nodes { get; set; }
                     }
 
                     public class Level2ClassificationTreeNode : ClassificationTreeNode
@@ -74,14 +74,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tree")]
                 [System.Text.Json.Serialization.JsonPropertyName("tree")]
-                public Types.ClassificationTree ClassificationTree { get; set; } = new Types.ClassificationTree();
+                public Types.ClassificationTree? ClassificationTree { get; set; }
 
                 /// <summary>
                 /// 获取或设置清空关联的分类 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("classification_id_deleted")]
                 [System.Text.Json.Serialization.JsonPropertyName("classification_id_deleted")]
-                public IList<string> DeletedClassificationIdList { get; set; } = new List<string>();
+                public List<string>? DeletedClassificationIdList { get; set; }
             }
         }
 
@@ -90,6 +90,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("req")]
         [System.Text.Json.Serialization.JsonPropertyName("req")]
-        public Types.Data Data { get; set; } = new Types.Data();
+        public Types.Data? Data { get; set; }
     }
 }

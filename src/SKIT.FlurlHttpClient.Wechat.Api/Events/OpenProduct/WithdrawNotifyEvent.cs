@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("out_request_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
                 [System.Xml.Serialization.XmlElement("out_request_no")]
-                public string OutRequestNumber { get; set; } = default!;
+                public string? OutRequestNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置提现结果事件类型。
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("withdraw_info")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_info")]
         [System.Xml.Serialization.XmlElement("withdraw_info")]
-        public Types.Withdraw Withdraw { get; set; } = default!;
+        public Types.Withdraw? Withdraw { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("block_submission_id")]
         [System.Text.Json.Serialization.JsonPropertyName("block_submission_id")]
-        public string BlockSubmissionId { get; set; } = default!;
+        public string? BlockSubmissionId { get; set; }
 
         /// <summary>
         /// 获取或设置提交时间。

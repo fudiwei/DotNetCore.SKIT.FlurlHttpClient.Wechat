@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voucher")]
         [System.Text.Json.Serialization.JsonPropertyName("voucher")]
-        public Types.Voucher Voucher { get; set; } = default!;
+        public Types.Voucher? Voucher { get; set; }
     }
 }

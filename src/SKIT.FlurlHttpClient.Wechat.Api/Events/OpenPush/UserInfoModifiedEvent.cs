@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         [System.Xml.Serialization.XmlElement("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         [System.Xml.Serialization.XmlElement("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
     }
 }

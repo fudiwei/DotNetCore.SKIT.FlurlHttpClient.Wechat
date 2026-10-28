@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置会话密钥。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("session_key")]
         [System.Text.Json.Serialization.JsonPropertyName("session_key")]
-        public string SessionKey { get; set; } = string.Empty;
+        public string? SessionKey { get; set; }
     }
 }

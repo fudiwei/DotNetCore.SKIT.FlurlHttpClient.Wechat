@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxaapi/wxaembedded/get_list 接口的响应。</para>
@@ -14,28 +14,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("headimg")]
                 [System.Text.Json.Serialization.JsonPropertyName("headimg")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请理由。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                public string Reason { get; set; } = default!;
+                public string? Reason { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请状态。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_embedded_list")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_embedded_list")]
-        public Types.WxaEmbedded[] WxaEmbeddedList { get; set; } = default!;
+        public List<Types.WxaEmbedded>? WxaEmbeddedList { get; set; }
     }
 }

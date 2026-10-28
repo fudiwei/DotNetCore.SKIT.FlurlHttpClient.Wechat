@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public string Id { get; set; } = string.Empty;
+                public string? Id { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("publish_item")]
         [System.Text.Json.Serialization.JsonPropertyName("publish_item")]
-        public IList<Types.PublishItem> PublishItemList { get; set; } = new List<Types.PublishItem>();
+        public List<Types.PublishItem>? PublishItemList { get; set; }
 
         protected internal override string GetRequestPath()
         {

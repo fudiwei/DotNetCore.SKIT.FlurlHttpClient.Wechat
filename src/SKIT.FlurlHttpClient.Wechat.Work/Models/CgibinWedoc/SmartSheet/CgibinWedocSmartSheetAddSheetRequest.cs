@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("docid")]
         [System.Text.Json.Serialization.JsonPropertyName("docid")]
-        public string DocumentId { get; set; } = string.Empty;
+        public string? DocumentId { get; set; }
 
         /// <summary>
         /// 获取或设置子表信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("properties")]
         [System.Text.Json.Serialization.JsonPropertyName("properties")]
-        public Types.Sheet Sheet { get; set; } = new Types.Sheet();
+        public Types.Sheet? Sheet { get; set; }
     }
 }

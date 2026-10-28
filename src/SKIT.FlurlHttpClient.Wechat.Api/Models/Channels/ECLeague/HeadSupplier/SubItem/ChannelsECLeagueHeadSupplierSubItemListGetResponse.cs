@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_supplier_item_link")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_supplier_item_link")]
-                public string HeadSupplierItemLink { get; set; } = default!;
+                public string? HeadSupplierItemLink { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划状态。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.SubItem[] SubItemList { get; set; } = default!;
+        public List<Types.SubItem>? SubItemList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

@@ -72,14 +72,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_data")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_data")]
-                public Types.ProductData ProductData { get; set; } = default!;
+                public Types.ProductData? ProductData { get; set; }
 
                 /// <summary>
                 /// 获取或设置佣金信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("talent_commission_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("talent_commission_info")]
-                public Types.CommissionInfo CommissionInfo { get; set; } = default!;
+                public Types.CommissionInfo? CommissionInfo { get; set; }
             }
         }
 
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

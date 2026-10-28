@@ -15,6 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("RefuseReason")]
         [System.Text.Json.Serialization.JsonPropertyName("RefuseReason")]
         [System.Xml.Serialization.XmlElement("RefuseReason")]
-        public string RefuseReason { get; set; } = default!;
+        public string? RefuseReason { get; set; }
     }
 }

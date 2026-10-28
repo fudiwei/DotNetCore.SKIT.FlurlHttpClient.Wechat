@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("key")]
                 [System.Text.Json.Serialization.JsonPropertyName("key")]
-                public string Key { get; set; } = string.Empty;
+                public string? Key { get; set; }
 
                 /// <summary>
                 /// 获取或设置筛选值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -56,6 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：100</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("size")]
         [System.Text.Json.Serialization.JsonPropertyName("size")]
@@ -66,6 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filters")]
         [System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public IList<Types.Filter>? FilterList { get; set; }
+        public List<Types.Filter>? FilterList { get; set; }
     }
 }

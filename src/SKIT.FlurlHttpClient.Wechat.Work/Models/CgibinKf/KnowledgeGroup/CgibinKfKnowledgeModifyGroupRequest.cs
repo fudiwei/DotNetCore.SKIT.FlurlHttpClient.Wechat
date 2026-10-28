@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_id")]
         [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-        public string GroupId { get; set; } = string.Empty;
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// 获取或设置分组名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
     }
 }

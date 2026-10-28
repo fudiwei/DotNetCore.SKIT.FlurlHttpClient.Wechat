@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payee")]
         [System.Text.Json.Serialization.JsonPropertyName("payee")]
-        public new Types.Payee Payee { get; set; } = new Types.Payee();
+        public new Types.Payee? Payee { get; set; }
 
         /// <summary>
         /// 获取或设置付款方信息。
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goods")]
         [System.Text.Json.Serialization.JsonPropertyName("goods")]
-        public new IList<Types.Goods>? GoodsList { get; set; }
+        public new List<Types.Goods>? GoodsList { get; set; }
 
         /// <summary>
         /// 获取或设置风控信息。
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public new Types.NotifyConfig NotifyConfig { get; set; } = new Types.NotifyConfig();
+        public new Types.NotifyConfig? NotifyConfig { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。

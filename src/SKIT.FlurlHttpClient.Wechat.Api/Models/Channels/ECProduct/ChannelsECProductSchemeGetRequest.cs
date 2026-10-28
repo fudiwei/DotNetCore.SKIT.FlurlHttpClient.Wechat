@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("from_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("from_appid")]
-        public string FromAppId { get; set; } = string.Empty;
+        public string? FromAppId { get; set; }
 
         /// <summary>
         /// 获取或设置过期时间（单位：秒）。

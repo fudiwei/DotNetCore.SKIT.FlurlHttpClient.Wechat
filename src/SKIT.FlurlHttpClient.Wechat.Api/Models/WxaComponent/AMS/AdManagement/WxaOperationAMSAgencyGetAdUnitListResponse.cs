@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ad_unit_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ad_unit_id")]
-                public string AdUnitId { get; set; } = default!;
+                public string? AdUnitId { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告单元名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ad_unit_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ad_unit_name")]
-                public string AdUnitName { get; set; } = default!;
+                public string? AdUnitName { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告位类型 ID。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ad_unit_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("ad_unit_type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置开关状态。
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ad_unit_size")]
                 [System.Text.Json.Serialization.JsonPropertyName("ad_unit_size")]
-                public Types.Size[]? SizeList { get; set; }
+                public List<Types.Size>? SizeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序 AppId。
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ad_unit")]
         [System.Text.Json.Serialization.JsonPropertyName("ad_unit")]
-        public Types.AdUnit[] AdUnitList { get; set; } = default!;
+        public List<Types.AdUnit>? AdUnitList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

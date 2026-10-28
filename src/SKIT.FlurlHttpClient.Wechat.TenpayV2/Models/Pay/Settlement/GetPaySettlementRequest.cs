@@ -38,22 +38,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date_start")]
         [System.Text.Json.Serialization.JsonPropertyName("date_start")]
-        public string StartDateString { get; set; } = string.Empty;
+        public string? StartDateString { get; set; }
 
         /// <summary>
         /// 获取或设置交易结束日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date_end")]
         [System.Text.Json.Serialization.JsonPropertyName("date_end")]
-        public string EndDateString { get; set; } = string.Empty;
+        public string? EndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。
-        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int Offset { get; set; } = 0;
+        public int Offset { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

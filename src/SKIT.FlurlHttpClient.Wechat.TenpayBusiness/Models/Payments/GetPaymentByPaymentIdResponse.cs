@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ent_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_id")]
-                public string EnterpriseId { get; set; } = default!;
+                public string? EnterpriseId { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ent_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_name")]
-                public string EnterpriseName { get; set; } = default!;
+                public string? EnterpriseName { get; set; }
             }
 
             public class Payer
@@ -61,14 +61,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_payment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_payment_id")]
-        public string OutPaymentId { get; set; } = default!;
+        public string? OutPaymentId { get; set; }
 
         /// <summary>
         /// 获取或设置微企付支付单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_id")]
-        public string PaymentId { get; set; } = default!;
+        public string? PaymentId { get; set; }
 
         /// <summary>
         /// 获取或设置支付金额（单位：分）。
@@ -82,28 +82,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("currency")]
         [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        public string Currency { get; set; } = default!;
+        public string? Currency { get; set; }
 
         /// <summary>
         /// 获取或设置付款方信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = default!;
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置收款方信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payee")]
         [System.Text.Json.Serialization.JsonPropertyName("payee")]
-        public Types.Payee Payee { get; set; } = default!;
+        public Types.Payee? Payee { get; set; }
 
         /// <summary>
         /// 获取或设置订单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_status")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置附言。

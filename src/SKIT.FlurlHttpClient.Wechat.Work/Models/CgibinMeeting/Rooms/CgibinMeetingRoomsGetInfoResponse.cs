@@ -14,35 +14,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rooms_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("rooms_id_list")]
-                public string[] RoomsIdList { get; set; } = default!;
+                public List<string>? RoomsIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_room_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_room_name")]
-                public string MeetingRoomName { get; set; } = default!;
+                public string? MeetingRoomName { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city")]
                 [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public string City { get; set; } = default!;
+                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置建筑。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("building")]
                 [System.Text.Json.Serialization.JsonPropertyName("building")]
-                public string Building { get; set; } = default!;
+                public string? Building { get; set; }
 
                 /// <summary>
                 /// 获取或设置楼层。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("floor")]
                 [System.Text.Json.Serialization.JsonPropertyName("floor")]
-                public string Floor { get; set; } = default!;
+                public string? Floor { get; set; }
 
                 /// <summary>
                 /// 获取或设置容纳人数。
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("valid_period")]
                 [System.Text.Json.Serialization.JsonPropertyName("valid_period")]
-                public string ValidPeriodString { get; set; } = default!;
+                public string? ValidPeriodString { get; set; }
             }
 
             public class HardwareInfo
@@ -97,63 +97,63 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("factory")]
                 [System.Text.Json.Serialization.JsonPropertyName("factory")]
-                public string Factory { get; set; } = default!;
+                public string? Factory { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备型号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_model")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_model")]
-                public string DeviceModel { get; set; } = default!;
+                public string? DeviceModel { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备序列号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("sn")]
-                public string SerialNumber { get; set; } = default!;
+                public string? SerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置 IP 地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ip")]
                 [System.Text.Json.Serialization.JsonPropertyName("ip")]
-                public string IpAddress { get; set; } = default!;
+                public string? IpAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置 MAC 地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mac")]
                 [System.Text.Json.Serialization.JsonPropertyName("mac")]
-                public string MacAddress { get; set; } = default!;
+                public string? MacAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置 Rooms 版本。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rooms_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("rooms_version")]
-                public string RoomsVersion { get; set; } = default!;
+                public string? RoomsVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置固件版本。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("firmware_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("firmware_version")]
-                public string FirmwareVersion { get; set; } = default!;
+                public string? FirmwareVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置健康状况。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("health_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("health_status")]
-                public string HealthStatus { get; set; } = default!;
+                public string? HealthStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备系统。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("system_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("system_type")]
-                public string SystemType { get; set; } = default!;
+                public string? SystemType { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室状态。
@@ -167,42 +167,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("active_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("active_time")]
-                public string ActiveTimeString { get; set; } = default!;
+                public string? ActiveTimeString { get; set; }
 
                 /// <summary>
                 /// 获取或设置 CPU 信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cpu_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("cpu_info")]
-                public string CPUInfo { get; set; } = default!;
+                public string? CPUInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置 CPU 占用。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cpu_usage")]
                 [System.Text.Json.Serialization.JsonPropertyName("cpu_usage")]
-                public string CPUUsage { get; set; } = default!;
+                public string? CPUUsage { get; set; }
 
                 /// <summary>
                 /// 获取或设置 GPU 信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("gpu_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("gpu_info")]
-                public string GPUInfo { get; set; } = default!;
+                public string? GPUInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置网络类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("net_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("net_type")]
-                public string NetworkType { get; set; } = default!;
+                public string? NetworkType { get; set; }
 
                 /// <summary>
                 /// 获取或设置内存信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("memory_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("memory_info")]
-                public string MemoryInfo { get; set; } = default!;
+                public string? MemoryInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置显示器刷新率。
@@ -210,14 +210,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("monitor_frequency")]
                 [System.Text.Json.Serialization.JsonPropertyName("monitor_frequency")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string MonitorFrequency { get; set; } = default!;
+                public string? MonitorFrequency { get; set; }
 
                 /// <summary>
                 /// 获取或设置摄像头型号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("camera_model")]
                 [System.Text.Json.Serialization.JsonPropertyName("camera_model")]
-                public string CameraModel { get; set; } = default!;
+                public string? CameraModel { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启视频镜像。
@@ -231,14 +231,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("microphone_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("microphone_info")]
-                public string MicrophoneInfo { get; set; } = default!;
+                public string? MicrophoneInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置扬声器信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("speaker_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("speaker_info")]
-                public string SpeakerInfo { get; set; } = default!;
+                public string? SpeakerInfo { get; set; }
             }
 
             public class PMIInfo
@@ -248,14 +248,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pmi_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("pmi_code")]
-                public string PMICode { get; set; } = default!;
+                public string? PMICode { get; set; }
 
                 /// <summary>
                 /// 获取或设置入会密码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pmi_pwd")]
                 [System.Text.Json.Serialization.JsonPropertyName("pmi_pwd")]
-                public string PMIPassword { get; set; } = default!;
+                public string? PMIPassword { get; set; }
             }
         }
 
@@ -264,28 +264,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("basic_info")]
         [System.Text.Json.Serialization.JsonPropertyName("basic_info")]
-        public Types.BasicInfo BasicInfo { get; set; } = default!;
+        public Types.BasicInfo? BasicInfo { get; set; }
 
         /// <summary>
         /// 获取或设置帐号信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_info")]
         [System.Text.Json.Serialization.JsonPropertyName("account_info")]
-        public Types.AccountInfo AccountInfo { get; set; } = default!;
+        public Types.AccountInfo? AccountInfo { get; set; }
 
         /// <summary>
         /// 获取或设置硬件信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hardware_info")]
         [System.Text.Json.Serialization.JsonPropertyName("hardware_info")]
-        public Types.HardwareInfo HardwareInfo { get; set; } = default!;
+        public Types.HardwareInfo? HardwareInfo { get; set; }
 
         /// <summary>
         /// 获取或设置 PMI 信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pmi_info")]
         [System.Text.Json.Serialization.JsonPropertyName("pmi_info")]
-        public Types.PMIInfo PMIInfo { get; set; } = default!;
+        public Types.PMIInfo? PMIInfo { get; set; }
 
         /// <summary>
         /// 获取或设置告警通知状态。

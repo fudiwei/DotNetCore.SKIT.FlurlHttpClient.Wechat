@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户登录态签名。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Signature { get; set; } = string.Empty;
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 获取或设置用户登录态签名的哈希方法。
@@ -25,13 +25,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SignMethod { get; set; } = "hmac_sha256";
+        public string? SignMethod { get; set; } = "hmac_sha256";
 
         /// <summary>
         /// 获取或设置要删除的数据 Key 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("key")]
         [System.Text.Json.Serialization.JsonPropertyName("key")]
-        public IList<string> KeyList { get; set; } = new List<string>();
+        public List<string>? KeyList { get; set; }
     }
 }

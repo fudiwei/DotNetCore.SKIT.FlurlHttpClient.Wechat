@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
             }
 
             public class DigitalTaxMode
@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = default!;
+                        public string? Id { get; set; }
 
                         /// <summary>
                         /// 获取或设置开票人姓名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
                     }
 
                     public class Ability
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置授权状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
-                        public string AuthorizeStatus { get; set; } = default!;
+                        public string? AuthorizeStatus { get; set; }
 
                         /// <summary>
                         /// 获取或设置授权失败原因。
@@ -68,14 +68,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票人信息列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("billing_person_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("billing_person_info")]
-                public Types.BillingPerson[]? BillingPersonList { get; set; }
+                public List<Types.BillingPerson>? BillingPersonList { get; set; }
 
                 /// <summary>
                 /// 获取或设置接入时间。
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ability_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("ability_info")]
-                public Types.Ability[]? AbilityList { get; set; }
+                public List<Types.Ability>? AbilityList { get; set; }
             }
         }
 
@@ -116,7 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置第三方开票模式相关信息。

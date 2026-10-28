@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string TransactionId { get; set; } = string.Empty;
+        public string? TransactionId { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("whref")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithCommaSplitConverter))]
-        public IList<string>? DomainWhiteList { get; set; }
+        public List<string>? DomainWhiteList { get; set; }
 
         /// <summary>
         /// 获取或设置禁止访问的域名列表。
@@ -49,6 +49,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("bkref")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithCommaSplitConverter))]
-        public IList<string>? DomainBlackList { get; set; }
+        public List<string>? DomainBlackList { get; set; }
     }
 }

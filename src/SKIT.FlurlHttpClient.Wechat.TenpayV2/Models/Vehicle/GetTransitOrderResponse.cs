@@ -5,8 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// <summary>
     /// <para>表示 [POST] /transit/queryorder 接口的响应。</para>
     /// </summary>
-    [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponseClassNewtonsoftJsonConverter))]
-    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
+    [Newtonsoft.Json.JsonConverter(typeof(GetTransitOrderResponse.Converters.ResponseClassNewtonsoftJsonConverter))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(GetTransitOrderResponse.Converters.ResponseClassSystemTextJsonConverter))]
     public class GetTransitOrderResponse : WechatTenpaySignableResponse
     {
         public static class Types
@@ -18,12 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<GetTransitOrderResponse, Types.Coupon>
+            internal class ResponseClassNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNListObjectConverterBase<GetTransitOrderResponse, Types.Coupon>
             {
                 protected override PropertyInfo FlattenProperty => GetTransitOrderResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<GetTransitOrderResponse, Types.Coupon>
+            internal class ResponseClassSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNListObjectConverterBase<GetTransitOrderResponse, Types.Coupon>
             {
                 protected override PropertyInfo FlattenProperty => GetTransitOrderResponse._flattenProperty;
             }
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户是否订阅该公众号标识。
@@ -73,28 +73,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_state")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_state")]
-        public string TradeState { get; set; } = default!;
+        public string? TradeState { get; set; }
 
         /// <summary>
         /// 获取或设置交易状态描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_state_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_state_desc")]
-        public string TradeStateDescription { get; set; } = default!;
+        public string? TradeStateDescription { get; set; }
 
         /// <summary>
         /// 获取或设置交易类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_type")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = default!;
+        public string? TradeType { get; set; }
 
         /// <summary>
         /// 获取或设置付款银行。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_type")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_type")]
-        public string BankType { get; set; } = default!;
+        public string? BankType { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty(Converters.ResponseClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
         [System.Text.Json.Serialization.JsonPropertyName(Converters.ResponseClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
-        public Types.Coupon[]? CouponList { get; set; }
+        public List<Types.Coupon>? CouponList { get; set; }
 
         /// <summary>
         /// 获取或设置现金支付金额（单位：分）。
@@ -162,14 +162,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_bill_no")]
-        public string TransferBillNumber { get; set; } = string.Empty;
+        public string? TransferBillNumber { get; set; }
     }
 }

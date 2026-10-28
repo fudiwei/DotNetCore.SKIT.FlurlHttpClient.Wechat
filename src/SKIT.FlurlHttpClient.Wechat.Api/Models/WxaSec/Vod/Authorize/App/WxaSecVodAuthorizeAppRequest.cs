@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorized_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("authorized_appid")]
-        public string AuthorizedAppId { get; set; } = string.Empty;
+        public string? AuthorizedAppId { get; set; }
 
         /// <summary>
         /// 获取或设置授权到期时间戳。

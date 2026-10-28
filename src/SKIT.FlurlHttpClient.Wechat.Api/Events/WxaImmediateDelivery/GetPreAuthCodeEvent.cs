@@ -15,6 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("wx_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_appid")]
         [System.Xml.Serialization.XmlElement("wx_appid")]
-        public string MiniProgramAppId { get; set; } = default!;
+        public string? MiniProgramAppId { get; set; }
     }
 }

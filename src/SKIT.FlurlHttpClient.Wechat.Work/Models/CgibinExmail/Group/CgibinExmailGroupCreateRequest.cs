@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<string> Items { get; set; } = new List<string>();
+                public List<string>? Items { get; set; }
             }
 
             public class EmailGroupList
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<string> Items { get; set; } = new List<string>();
+                public List<string>? Items { get; set; }
             }
 
             public class TagIdList
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<int> Items { get; set; } = new List<int>();
+                public List<int>? Items { get; set; }
             }
 
             public class DepartmentIdList
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<long> Items { get; set; } = new List<long>();
+                public List<long>? Items { get; set; }
             }
         }
 
@@ -53,14 +53,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupid")]
         [System.Text.Json.Serialization.JsonPropertyName("groupid")]
-        public string GroupId { get; set; } = string.Empty;
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// 获取或设置邮件群组名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupname")]
         [System.Text.Json.Serialization.JsonPropertyName("groupname")]
-        public string GroupName { get; set; } = string.Empty;
+        public string? GroupName { get; set; }
 
         /// <summary>
         /// 获取或设置邮箱列表。

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("perm_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("perm_id")]
-                public string PermissionId { get; set; } = default!;
+                public string? PermissionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置权限集名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置权限集描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("perm")]
         [System.Text.Json.Serialization.JsonPropertyName("perm")]
-        public Types.Permission[] PermissionList { get; set; } = default!;
+        public List<Types.Permission>? PermissionList { get; set; }
     }
 }

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("match_id")]
         [System.Text.Json.Serialization.JsonPropertyName("match_id")]
-        public string MatchId { get; set; } = string.Empty;
+        public string? MatchId { get; set; }
     }
 }

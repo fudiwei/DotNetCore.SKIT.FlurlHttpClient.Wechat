@@ -57,6 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("channels_ec_stock_no_enough")]
         [System.Text.Json.Serialization.JsonPropertyName("channels_ec_stock_no_enough")]
         [System.Xml.Serialization.XmlElement("channels_ec_stock_no_enough")]
-        public Types.StockInfo StockInfo { get; set; } = default!;
+        public Types.StockInfo? StockInfo { get; set; }
     }
 }

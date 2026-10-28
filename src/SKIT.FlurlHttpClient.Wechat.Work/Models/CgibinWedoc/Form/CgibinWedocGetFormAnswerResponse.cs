@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answer_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("answer_list")]
-                public AnswerItem[] Items { get; set; } = default!;
+                public List<AnswerItem>? Items { get; set; }
             }
 
             public class AnswerItem
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("items")]
                         [System.Text.Json.Serialization.JsonPropertyName("items")]
-                        public ReplyItem[] Items { get; set; } = default!;
+                        public List<ReplyItem>? Items { get; set; }
                     }
 
                     public class ReplyItem
@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("fileid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                                public string FileId { get; set; } = default!;
+                                public string? FileId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置文件名。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
                             }
 
                             public class OptionReply
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("extend_text")]
                                 [System.Text.Json.Serialization.JsonPropertyName("extend_text")]
-                                public string Text { get; set; } = default!;
+                                public string? Text { get; set; }
                             }
 
                             public class DurationReply
@@ -134,7 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                public Types.Department[] DepartmentList { get; set; } = default!;
+                                public List<Types.Department>? DepartmentList { get; set; }
                             }
 
                             public class MemberReply
@@ -148,7 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("userid")]
                                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                                        public string UserId { get; set; } = default!;
+                                        public string? UserId { get; set; }
                                     }
                                 }
 
@@ -157,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                public Types.Member[] MemberList { get; set; } = default!;
+                                public List<Types.Member>? MemberList { get; set; }
                             }
                         }
 
@@ -180,21 +180,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_reply")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_reply")]
-                        public int[]? OptionReplyKeyList { get; set; }
+                        public List<int>? OptionReplyKeyList { get; set; }
 
                         /// <summary>
                         /// 获取或设置回答额外选项列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_extend_reply")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_extend_reply")]
-                        public Types.OptionReply[]? OptionReplyList { get; set; }
+                        public List<Types.OptionReply>? OptionReplyList { get; set; }
 
                         /// <summary>
                         /// 获取或设置回答文件列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("file_extend_reply")]
                         [System.Text.Json.Serialization.JsonPropertyName("file_extend_reply")]
-                        public Types.FileReply[]? FileReply { get; set; }
+                        public List<Types.FileReply>? FileReply { get; set; }
 
                         /// <summary>
                         /// 获取或设置回答时长信息。
@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                public string UserName { get; set; } = default!;
+                public string? UserName { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人临时 ID。
@@ -252,7 +252,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reply")]
                 [System.Text.Json.Serialization.JsonPropertyName("reply")]
-                public Types.ReplyList ReplyList { get; set; } = default!;
+                public Types.ReplyList? ReplyList { get; set; }
 
                 /// <summary>
                 /// 获取或设置答案状态。
@@ -282,6 +282,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("answer")]
         [System.Text.Json.Serialization.JsonPropertyName("answer")]
-        public Types.AnswerList AnswerList { get; set; } = default!;
+        public Types.AnswerList? AnswerList { get; set; }
     }
 }

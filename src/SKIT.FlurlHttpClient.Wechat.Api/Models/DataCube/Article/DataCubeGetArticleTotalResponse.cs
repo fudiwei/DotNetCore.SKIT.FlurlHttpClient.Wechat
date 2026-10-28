@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /datacube/getarticletotal 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("stat_date")]
                         [System.Text.Json.Serialization.JsonPropertyName("stat_date")]
-                        public string StatDateString { get; set; } = default!;
+                        public string? StatDateString { get; set; }
 
                         /// <summary>
                         /// 获取或设置送达人数。
@@ -202,28 +202,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ref_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-                public string RefDateString { get; set; } = default!;
+                public string? RefDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息 ID 及消息次序索引。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageIdAndIndex { get; set; } = default!;
+                public string? MessageIdAndIndex { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息的标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置数据详情列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("details")]
                 [System.Text.Json.Serialization.JsonPropertyName("details")]
-                public Types.Detail[] DetailList { get; set; } = default!;
+                public List<Types.Detail>? DetailList { get; set; }
             }
         }
 
@@ -232,6 +232,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

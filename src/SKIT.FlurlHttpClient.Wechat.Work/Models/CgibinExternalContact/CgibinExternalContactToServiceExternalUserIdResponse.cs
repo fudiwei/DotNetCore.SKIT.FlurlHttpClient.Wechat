@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-        public string ExternalUserId { get; set; } = default!;
+        public string? ExternalUserId { get; set; }
     }
 }

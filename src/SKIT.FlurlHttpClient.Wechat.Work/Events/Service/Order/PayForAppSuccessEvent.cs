@@ -13,18 +13,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// 获取或设置第三方应用的 SuiteId。
         /// </summary>
         [System.Xml.Serialization.XmlElement("SuiteId")]
-        public string SuiteId { get; set; } = default!;
+        public string? SuiteId { get; set; }
 
         /// <summary>
         /// 获取或设置购买方 CorpId。
         /// </summary>
         [System.Xml.Serialization.XmlElement("PaidCorpId")]
-        public string PayerCorpId { get; set; } = default!;
+        public string? PayerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置订单 ID。
         /// </summary>
         [System.Xml.Serialization.XmlElement("OrderId")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
     }
 }

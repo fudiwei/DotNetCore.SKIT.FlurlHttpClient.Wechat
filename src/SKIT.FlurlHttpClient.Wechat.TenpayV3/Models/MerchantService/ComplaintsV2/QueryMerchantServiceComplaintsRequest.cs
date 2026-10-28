@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string BeginDateString { get; set; } = string.Empty;
+        public string? BeginDateString { get; set; }
 
         /// <summary>
         /// 获取或设置结束日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string EndDateString { get; set; } = string.Empty;
+        public string? EndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置被诉商户号。
@@ -34,7 +34,7 @@
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("repository_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("repository_name")]
-                public string RepositoryName { get; set; } = string.Empty;
+                public string? RepositoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否公有。
@@ -28,21 +28,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tagname")]
                 [System.Text.Json.Serialization.JsonPropertyName("tagname")]
-                public string TagName { get; set; } = string.Empty;
+                public string? TagName { get; set; }
 
                 /// <summary>
                 /// 获取或设置镜像服务地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("server_addr")]
                 [System.Text.Json.Serialization.JsonPropertyName("server_addr")]
-                public string ServerAddress { get; set; } = string.Empty;
+                public string? ServerAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置镜像拉取地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                public string ImageUrl { get; set; } = string.Empty;
+                public string? ImageUrl { get; set; }
             }
 
             public class Code
@@ -119,28 +119,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置服务名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_name")]
         [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-        public string ServiceName { get; set; } = string.Empty;
+        public string? ServiceName { get; set; }
 
         /// <summary>
         /// 获取或设置上传方式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_type")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_type")]
-        public string UploadType { get; set; } = string.Empty;
+        public string? UploadType { get; set; }
 
         /// <summary>
         /// 获取或设置流量占比（范围：0～100）。

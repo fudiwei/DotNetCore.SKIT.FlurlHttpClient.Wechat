@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("refund_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_no")]
                 [System.Xml.Serialization.XmlElement("refund_no")]
-                public string OutRefundNumber { get; set; } = default!;
+                public string? OutRefundNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款状态。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 [System.Xml.Serialization.XmlElement("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款成功时间字符串（格式：yyyy-MM-dd HH:mm:ss）。
@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
         [System.Xml.Serialization.XmlElement("order_info")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

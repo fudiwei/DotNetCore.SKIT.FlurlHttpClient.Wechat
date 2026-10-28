@@ -33,21 +33,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mix_pay_type")]
         [System.Text.Json.Serialization.JsonPropertyName("mix_pay_type")]
-        public string MixPayType { get; set; } = default!;
+        public string? MixPayType { get; set; }
 
         /// <summary>
         /// 获取或设置订单类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_type")]
         [System.Text.Json.Serialization.JsonPropertyName("order_type")]
-        public string OrderType { get; set; } = default!;
+        public string? OrderType { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -82,42 +82,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置医疗机构订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("serial_no")]
         [System.Text.Json.Serialization.JsonPropertyName("serial_no")]
-        public string SerialNumber { get; set; } = default!;
+        public string? SerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置医保自费混合订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mix_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("mix_trade_no")]
-        public string MixTradeNumber { get; set; } = default!;
+        public string? MixTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置医保自费混合订单支付状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mix_pay_status")]
         [System.Text.Json.Serialization.JsonPropertyName("mix_pay_status")]
-        public string MixPayStatus { get; set; } = default!;
+        public string? MixPayStatus { get; set; }
 
         /// <summary>
         /// 获取或设置混合订单中自费部分的支付状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("self_pay_status")]
         [System.Text.Json.Serialization.JsonPropertyName("self_pay_status")]
-        public string SelfPayStatus { get; set; } = default!;
+        public string? SelfPayStatus { get; set; }
 
         /// <summary>
         /// 获取或设置混合订单中医保部分的支付状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("med_ins_pay_status")]
         [System.Text.Json.Serialization.JsonPropertyName("med_ins_pay_status")]
-        public string MedicalInsurancePayStatus { get; set; } = default!;
+        public string? MedicalInsurancePayStatus { get; set; }
 
         /// <summary>
         /// 获取或设置医保局返回的支付单 ID。
@@ -145,21 +145,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("city_id")]
         [System.Text.Json.Serialization.JsonPropertyName("city_id")]
-        public string CityId { get; set; } = default!;
+        public string? CityId { get; set; }
 
         /// <summary>
         /// 获取或设置医疗机构名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("med_inst_name")]
         [System.Text.Json.Serialization.JsonPropertyName("med_inst_name")]
-        public string MedicalInstitutionName { get; set; } = default!;
+        public string? MedicalInstitutionName { get; set; }
 
         /// <summary>
         /// 获取或设置医疗机构编码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("med_inst_no")]
         [System.Text.Json.Serialization.JsonPropertyName("med_inst_no")]
-        public string MedicalInstitutionNo { get; set; } = default!;
+        public string? MedicalInstitutionNo { get; set; }
 
         /// <summary>
         /// 获取或设置医保下单时间。
@@ -217,14 +217,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cash_add_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("cash_add_detail")]
-        public Types.CashAddDetail[]? CashAddDetailList { get; set; }
+        public List<Types.CashAddDetail>? CashAddDetailList { get; set; }
 
         /// <summary>
         /// 获取或设置现金减免列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cash_reduce_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("cash_reduce_detail")]
-        public Types.CashReduceDetail[]? CashReduceDetailList { get; set; }
+        public List<Types.CashReduceDetail>? CashReduceDetailList { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。

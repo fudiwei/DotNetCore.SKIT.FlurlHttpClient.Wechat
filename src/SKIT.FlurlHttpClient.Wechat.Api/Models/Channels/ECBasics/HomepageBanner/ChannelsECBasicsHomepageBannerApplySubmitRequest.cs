@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("banner")]
                 [System.Text.Json.Serialization.JsonPropertyName("banner")]
-                public IList<BannerItem> Items { get; set; } = new List<BannerItem>();
+                public List<BannerItem>? Items { get; set; }
             }
 
             public class BannerItem
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("img_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("img_url")]
-                        public string ImageUrl { get; set; } = string.Empty;
+                        public string? ImageUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置标题。
@@ -102,7 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("banner")]
                 [System.Text.Json.Serialization.JsonPropertyName("banner")]
-                public Types.Banner Banner { get; set; } = new Types.Banner();
+                public Types.Banner? Banner { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品信息。
@@ -132,6 +132,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("banner")]
         [System.Text.Json.Serialization.JsonPropertyName("banner")]
-        public Types.BannerList BannerList { get; set; } = new Types.BannerList();
+        public Types.BannerList? BannerList { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("print_info")]
         [System.Text.Json.Serialization.JsonPropertyName("print_info")]
-        public string? PrintInfo { get; set; } = default!;
+        public string? PrintInfo { get; set; }
     }
 }

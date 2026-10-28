@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /card/getapplyprotocol 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_name")]
-                public string CategoryName { get; set; } = default!;
+                public string? CategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("secondary_category")]
                 [System.Text.Json.Serialization.JsonPropertyName("secondary_category")]
-                public SecondaryCategory[] SubCategoryList { get; set; } = default!;
+                public List<SecondaryCategory>? SubCategoryList { get; set; }
             }
 
             public class SecondaryCategory
@@ -45,14 +45,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_name")]
-                public string CategoryName { get; set; } = default!;
+                public string? CategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置所需资质列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("need_qualification_stuffs")]
                 [System.Text.Json.Serialization.JsonPropertyName("need_qualification_stuffs")]
-                public string[]? NeedQualificationStuffList { get; set; }
+                public List<string>? NeedQualificationStuffList { get; set; }
             }
         }
 
@@ -61,6 +61,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("category")]
         [System.Text.Json.Serialization.JsonPropertyName("category")]
-        public Types.PrimaryCategory[] CategoryList { get; set; } = default!;
+        public List<Types.PrimaryCategory>? CategoryList { get; set; }
     }
 }

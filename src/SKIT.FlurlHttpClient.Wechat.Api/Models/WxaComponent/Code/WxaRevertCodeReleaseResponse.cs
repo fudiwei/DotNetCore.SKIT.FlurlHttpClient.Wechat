@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_version")]
-                public string UserVersion { get; set; } = default!;
+                public string? UserVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户自定义版本描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_desc")]
-                public string UserDescription { get; set; } = default!;
+                public string? UserDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置提交时间戳。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version_list")]
         [System.Text.Json.Serialization.JsonPropertyName("version_list")]
-        public Types.Release[]? ReleaseList { get; set; }
+        public List<Types.Release>? ReleaseList { get; set; }
     }
 }

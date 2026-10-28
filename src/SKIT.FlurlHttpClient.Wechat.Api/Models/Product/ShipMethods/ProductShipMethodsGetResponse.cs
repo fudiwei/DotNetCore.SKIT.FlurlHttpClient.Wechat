@@ -43,6 +43,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("supported_shipping_methods")]
         [System.Text.Json.Serialization.JsonPropertyName("supported_shipping_methods")]
-        public Types.ShippingMethods ShippingMethods { get; set; } = default!;
+        public Types.ShippingMethods? ShippingMethods { get; set; }
     }
 }

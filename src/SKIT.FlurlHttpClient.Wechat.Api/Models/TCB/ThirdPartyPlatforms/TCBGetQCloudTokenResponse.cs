@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("secretid")]
         [System.Text.Json.Serialization.JsonPropertyName("secretid")]
-        public string SecretId { get; set; } = default!;
+        public string? SecretId { get; set; }
 
         /// <summary>
         /// 获取或设置 SecretKey。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("secretkey")]
         [System.Text.Json.Serialization.JsonPropertyName("secretkey")]
-        public string SecretKey { get; set; } = default!;
+        public string? SecretKey { get; set; }
 
         /// <summary>
         /// 获取或设置 Token。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("token")]
         [System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string Token { get; set; } = default!;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置过期时间戳。

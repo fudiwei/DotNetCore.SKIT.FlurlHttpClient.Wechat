@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grant_type")]
         [System.Text.Json.Serialization.JsonPropertyName("grant_type")]
-        public string GrantType { get; set; } = "client_credential";
+        public string? GrantType { get; set; } = "client_credential";
 
         /// <summary>
         /// 获取或设置是否强制刷新。

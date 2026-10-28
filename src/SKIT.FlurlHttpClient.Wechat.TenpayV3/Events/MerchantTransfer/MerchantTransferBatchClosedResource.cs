@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
-        public string BatchId { get; set; } = default!;
+        public string? BatchId { get; set; }
 
         /// <summary>
         /// 获取或设置批次状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_status")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_status")]
-        public string BatchStatus { get; set; } = default!;
+        public string? BatchStatus { get; set; }
 
         /// <summary>
         /// 获取或设置转账总金额（单位：分）。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("close_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("close_reason")]
-        public string CloseReason { get; set; } = default!;
+        public string? CloseReason { get; set; }
 
         /// <summary>
         /// 获取或设置批次更新时间。

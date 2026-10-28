@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_intercept_rule 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("semantics_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("semantics_list")]
-                        public int[]? SemanticsList { get; set; }
+                        public List<int>? SemanticsList { get; set; }
                     }
 
                     public class ApplicableRange
@@ -28,14 +28,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                        public string[]? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置部门 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("department_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                        public long[]? DepartmentIdList { get; set; }
+                        public List<long>? DepartmentIdList { get; set; }
                     }
                 }
 
@@ -44,7 +44,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("word_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("word_list")]
-                public string[] WordList { get; set; } = default!;
+                public List<string>? WordList { get; set; }
 
                 /// <summary>
                 /// 获取或设置额外规则信息。
@@ -74,6 +74,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule")]
         [System.Text.Json.Serialization.JsonPropertyName("rule")]
-        public Types.Rule Rule { get; set; } = default!;
+        public Types.Rule? Rule { get; set; }
     }
 }

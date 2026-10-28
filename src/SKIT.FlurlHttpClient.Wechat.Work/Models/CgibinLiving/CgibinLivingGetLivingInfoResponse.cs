@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("livingid")]
                 [System.Text.Json.Serialization.JsonPropertyName("livingid")]
-                public string LivingId { get; set; } = default!;
+                public string? LivingId { get; set; }
 
                 /// <summary>
                 /// 获取或设置主播成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("anchor_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("anchor_userid")]
-                public string AnchorUserId { get; set; } = default!;
+                public string? AnchorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置主播所在主部门 ID。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("theme")]
                 [System.Text.Json.Serialization.JsonPropertyName("theme")]
-                public string Theme { get; set; } = default!;
+                public string? Theme { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播开始时间戳。
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启回放。
@@ -151,6 +151,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("living_info")]
         [System.Text.Json.Serialization.JsonPropertyName("living_info")]
-        public Types.Living Living { get; set; } = default!;
+        public Types.Living? Living { get; set; }
     }
 }

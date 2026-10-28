@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/funds/scanwithdraw 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_request_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-                public string OutRequestNumber { get; set; } = default!;
+                public string? OutRequestNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置提现状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置提现金额（单位：分）。
@@ -72,7 +72,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Withdraw[] WithdrawList { get; set; } = default!;
+        public List<Types.Withdraw>? WithdrawList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

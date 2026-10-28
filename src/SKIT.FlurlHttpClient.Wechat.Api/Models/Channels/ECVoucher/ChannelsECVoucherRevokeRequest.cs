@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("revoke_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("revoke_request_no")]
-        public string RevokeRequestNumber { get; set; } = string.Empty;
+        public string? RevokeRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户核销单号。
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reovke_vouchers")]
         [System.Text.Json.Serialization.JsonPropertyName("reovke_vouchers")]
-        public IList<Types.RevokeVoucher> RevokeVoucherList { get; set; } = new List<Types.RevokeVoucher>();
+        public List<Types.RevokeVoucher>? RevokeVoucherList { get; set; }
     }
 }

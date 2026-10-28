@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                public string CardId { get; set; } = string.Empty;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置缩略图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_url")]
-                public string ThumbnailUrl { get; set; } = string.Empty;
+                public string? ThumbnailUrl { get; set; }
             }
         }
 
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("banner")]
         [System.Text.Json.Serialization.JsonPropertyName("banner")]
-        public string BannerUrl { get; set; } = string.Empty;
+        public string? BannerUrl { get; set; }
 
         /// <summary>
         /// 获取或设置页面标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_title")]
         [System.Text.Json.Serialization.JsonPropertyName("page_title")]
-        public string PageTitle { get; set; } = string.Empty;
+        public string? PageTitle { get; set; }
 
         /// <summary>
         /// 获取或设置页面是否可以分享。
@@ -51,13 +51,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public string Scene { get; set; } = string.Empty;
+        public string? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置卡券列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_list")]
         [System.Text.Json.Serialization.JsonPropertyName("card_list")]
-        public IList<Types.Card> CardList { get; set; } = new List<Types.Card>();
+        public List<Types.Card>? CardList { get; set; }
     }
 }

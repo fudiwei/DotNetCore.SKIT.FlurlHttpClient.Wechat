@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_desc")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置凭证图片 URL 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("certificates")]
         [System.Text.Json.Serialization.JsonPropertyName("certificates")]
-        public IList<string> CertificateUrlList { get; set; } = new List<string>();
+        public List<string>? CertificateUrlList { get; set; }
     }
 }

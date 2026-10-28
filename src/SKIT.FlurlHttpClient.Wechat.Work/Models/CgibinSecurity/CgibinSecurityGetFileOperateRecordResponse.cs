@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置企业微信用户名。
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("operation")]
                 [System.Text.Json.Serialization.JsonPropertyName("operation")]
-                public Types.Operation Operation { get; set; } = default!;
+                public Types.Operation? Operation { get; set; }
 
                 /// <summary>
                 /// 获取或设置时间戳。
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public int? FileSize { get; set; }
 
                 /// <summary>
-                /// 获取或设置文文件的 MD5 值。
+                /// 获取或设置文件的 MD5 值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("file_md5")]
                 [System.Text.Json.Serialization.JsonPropertyName("file_md5")]
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("record_list")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

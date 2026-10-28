@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                         /// </summary>
                                                         [Newtonsoft.Json.JsonProperty("url")]
                                                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                                                        public string Url { get; set; } = default!;
+                                                        public string? Url { get; set; }
 
                                                         /// <summary>
                                                         /// 获取或设置链接标题。
                                                         /// </summary>
                                                         [Newtonsoft.Json.JsonProperty("text")]
                                                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                                                        public string Text { get; set; } = default!;
+                                                        public string? Text { get; set; }
                                                     }
                                                 }
 
@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                         /// </summary>
                                                         [Newtonsoft.Json.JsonProperty("font")]
                                                         [System.Text.Json.Serialization.JsonPropertyName("font")]
-                                                        public string FontName { get; set; } = default!;
+                                                        public string? FontName { get; set; }
 
                                                         /// <summary>
                                                         /// 获取或设置字号。
@@ -156,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("text_format")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("text_format")]
-                                                public Types.TextFormat TextFormat { get; set; } = default!;
+                                                public Types.TextFormat? TextFormat { get; set; }
                                             }
                                         }
 
@@ -165,14 +165,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("cell_value")]
                                         [System.Text.Json.Serialization.JsonPropertyName("cell_value")]
-                                        public Types.CellValue CellValue { get; set; } = default!;
+                                        public Types.CellValue? CellValue { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置单元格的样式信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("cell_format")]
                                         [System.Text.Json.Serialization.JsonPropertyName("cell_format")]
-                                        public Types.CellFormat CellFormat { get; set; } = default!;
+                                        public Types.CellFormat? CellFormat { get; set; }
                                     }
                                 }
 
@@ -181,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("values")]
                                 [System.Text.Json.Serialization.JsonPropertyName("values")]
-                                public Types.Cell[] Cells { get; set; } = default!;
+                                public List<Types.Cell>? Cells { get; set; }
                             }
                         }
 
@@ -204,7 +204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rows")]
                         [System.Text.Json.Serialization.JsonPropertyName("rows")]
-                        public Types.Row[] Rows { get; set; } = default!;
+                        public List<Types.Row>? Rows { get; set; }
                     }
                 }
 
@@ -213,7 +213,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("result")]
                 [System.Text.Json.Serialization.JsonPropertyName("result")]
-                public Types.GridData GridData { get; set; } = default!;
+                public Types.GridData? GridData { get; set; }
             }
         }
 
@@ -222,6 +222,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

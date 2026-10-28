@@ -30,35 +30,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receipt_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("receipt_id")]
-                public string ReceiptId { get; set; } = default!;
+                public string? ReceiptId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("state")]
                 [System.Text.Json.Serialization.JsonPropertyName("state")]
-                public string State { get; set; } = default!;
+                public string? State { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件图片类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_type")]
-                public string FileImageType { get; set; } = default!;
+                public string? FileImageType { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件摘要。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sha256")]
                 [System.Text.Json.Serialization.JsonPropertyName("sha256")]
-                public string FileHash { get; set; } = default!;
+                public string? FileHash { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                public string TransactionId { get; set; } = default!;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付商户号。
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置与商家的联系渠道。
@@ -129,6 +129,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receipt")]
         [System.Text.Json.Serialization.JsonPropertyName("receipt")]
-        public Types.Receipt Receipt { get; set; } = default!;
+        public Types.Receipt? Receipt { get; set; }
     }
 }

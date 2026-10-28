@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SettleState { get; set; } = string.Empty;
+        public string? SettleState { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
@@ -35,11 +35,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
 
         /// <summary>
         /// 获取或设置分页起始位置。
-        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int Offset { get; set; } = 0;
+        public int Offset { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。

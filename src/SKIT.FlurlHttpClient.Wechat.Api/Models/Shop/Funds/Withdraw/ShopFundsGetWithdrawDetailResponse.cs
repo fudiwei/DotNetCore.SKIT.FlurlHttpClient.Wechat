@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/getwithdrawdetail 接口的响应。</para>
@@ -49,7 +49,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置提现原因。
@@ -79,6 +79,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdraw_info")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_info")]
-        public Types.Withdraw Withdraw { get; set; } = default!;
+        public Types.Withdraw? Withdraw { get; set; }
     }
 }

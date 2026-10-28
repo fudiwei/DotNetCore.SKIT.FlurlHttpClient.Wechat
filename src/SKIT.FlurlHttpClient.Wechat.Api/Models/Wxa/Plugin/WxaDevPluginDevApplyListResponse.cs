@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/devplugin?action=dev_apply_list 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("first")]
                         [System.Text.Json.Serialization.JsonPropertyName("first")]
-                        public string FirstCategory { get; set; } = default!;
+                        public string? FirstCategory { get; set; }
 
                         /// <summary>
                         /// 获取或设置二级分类。
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请状态。
@@ -48,35 +48,35 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用者头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("headimgurl")]
                 [System.Text.Json.Serialization.JsonPropertyName("headimgurl")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用者的类目列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("categories")]
                 [System.Text.Json.Serialization.JsonPropertyName("categories")]
-                public Types.Category[] CategoryList { get; set; } = default!;
+                public List<Types.Category>? CategoryList { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用者的小程序码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("apply_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("apply_url")]
-                public string ApplyUrl { get; set; } = default!;
+                public string? ApplyUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用者的申请说明。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                public string Reason { get; set; } = default!;
+                public string? Reason { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用者的申请时间戳。
@@ -93,6 +93,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_list")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_list")]
-        public Types.Applyment[] ApplymentList { get; set; } = default!;
+        public List<Types.Applyment>? ApplymentList { get; set; }
     }
 }

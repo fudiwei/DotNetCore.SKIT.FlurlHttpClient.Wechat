@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultmsg")]
         [System.Text.Json.Serialization.JsonPropertyName("resultmsg")]
-        public string ResultMessage { get; set; } = default!;
+        public string? ResultMessage { get; set; }
 
         /// <summary>
         /// 获取或设置扣除的违约金（单位：元）。
@@ -31,7 +31,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         public override bool IsSuccessful()
         {

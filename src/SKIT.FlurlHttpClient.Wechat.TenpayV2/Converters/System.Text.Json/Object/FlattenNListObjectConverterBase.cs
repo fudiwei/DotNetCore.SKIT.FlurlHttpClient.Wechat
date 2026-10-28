@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -8,34 +8,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities;
 
-    internal abstract partial class FlattenNArrayObjectConverterBase<TModelContainer, TFlattenElement> : JsonConverter<TModelContainer?>
+    public abstract partial class FlattenNListObjectConverterBase<TModelContainer, TFlattenElement> : JsonConverter<TModelContainer?>
         where TModelContainer : class, new()
         where TFlattenElement : class, new()
     {
         public const string FLATTEN_PROPERTY_JSON_NAME = "#n";
 
-        private static bool TryMatchNArrayIndex(string key, out int index)
+        private static readonly Regex _nIndexRegex = new Regex(@"_(\d+)$", RegexOptions.Compiled);
+
+        private static bool TryMatchNIndex(string key, out int index)
         {
-            Regex regex = new Regex(@"_(\d+)$", RegexOptions.Compiled);
-            if (regex.IsMatch(key))
-            {
-                string str = regex.Match(key).Groups[1].Value;
-                index = int.Parse(str);
+            Match match = _nIndexRegex.Match(key);
+            if (match.Success && int.TryParse(match.Groups[1].Value, out index))
                 return true;
-            }
 
             index = -1;
             return false;
         }
 
         /// <summary>
-        /// 获取 `<see cref="TModelContainer"/>` 类下需要扁平展开的属性，该属性需是一个数组类型、其中每个元素是一个 `<see cref="TFlattenElement"/>`。
+        /// 获取 `<see cref="TModelContainer"/>` 类下需要扁平展开的属性，该属性需是一个 `<see cref="List{TFlattenElement}"/>` 类型。
         /// </summary>
         protected abstract PropertyInfo FlattenProperty { get; }
 
         public override bool CanConvert(Type typeToConvert)
         {
-            if (!FlattenProperty.PropertyType.IsArray)
+            if (FlattenProperty.PropertyType != typeof(List<TFlattenElement>))
                 throw new NotSupportedException();
 
             return typeToConvert.IsClass && !typeToConvert.IsAbstract && !typeToConvert.IsInterface
@@ -58,21 +56,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                     return outputObj;
 
                 // 取得下标最大值（-1 表示无需扁平展开）
-                int maxIndex = jObject.Select(e => TryMatchNArrayIndex(e.Key, out int index) ? index : -1).Max();
+                int maxIndex = jObject.Select(e => TryMatchNIndex(e.Key, out int index) ? index : -1).Max();
 
                 // 解析 JSON 结构
                 JsonPropertyTypeInfo[] jsonPropertyTypes = JsonPropertyTypeInfoCache.GetOrAddJsonPropertyTypes(typeToConvert, options);
+                JsonPropertyTypeInfo[] flattenJsonPropertyTypes = JsonPropertyTypeInfoCache.GetOrAddJsonPropertyTypes(typeof(TFlattenElement), options);
+
+                List<TFlattenElement?>? list = null;
 
                 // 遍历 JsonObject 并反序列化
                 foreach (KeyValuePair<string, JsonNode?> jProp in jObject)
                 {
                     string propertyName = jProp.Key;
 
-                    if (maxIndex != -1 && TryMatchNArrayIndex(propertyName, out int index))
+                    if (maxIndex != -1 && TryMatchNIndex(propertyName, out int index))
                     {
                         // 反序列化需扁平展开的字段
-                        JsonPropertyTypeInfo[] flattenJsonPropertyTypes = JsonPropertyTypeInfoCache.GetOrAddJsonPropertyTypes(FlattenProperty.PropertyType.GetElementType()!, options);
                         JsonPropertyTypeInfo? jsonPropertyType = flattenJsonPropertyTypes.FirstOrDefault(e => propertyName == e.JsonPropertyName.Replace("$n", index.ToString()));
+                        if (jsonPropertyType is null && options.PropertyNameCaseInsensitive)
+                            jsonPropertyType = flattenJsonPropertyTypes.FirstOrDefault(e => string.Equals(propertyName, e.JsonPropertyName.Replace("$n", index.ToString()), StringComparison.OrdinalIgnoreCase));
+
                         if (jsonPropertyType is null)
                         {
                             if (options.UnmappedMemberHandling == JsonUnmappedMemberHandling.Disallow)
@@ -80,18 +83,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                         }
                         else
                         {
-                            Array? array = ReflectionHelper.GetPropertyValue<Array>(outputObj, FlattenProperty);
-                            if (array is null)
+                            if (list is null)
                             {
-                                array = new TFlattenElement[maxIndex + 1];
-                                ReflectionHelper.SetPropertyValue(outputObj, FlattenProperty, array);
+                                list = new List<TFlattenElement?>(maxIndex + 1);
+                                for (int i = 0; i <= maxIndex; i++)
+                                    list.Add(null);
                             }
 
-                            TFlattenElement? element = ReflectionHelper.GetElementValue<TFlattenElement>(array, index);
+                            TFlattenElement? element = list[index];
                             if (element is null)
                             {
                                 element = ReflectionHelper.CreateInstance<TFlattenElement>();
-                                ReflectionHelper.SetElementValue(array, index, element);
+                                list[index] = element;
                             }
 
                             object? elementPropertyValue = jProp.Value?.Deserialize(jsonPropertyType.PropertyType, CopyJsonSerializerOptions(options, jsonPropertyType.JsonConverter));
@@ -107,6 +110,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                         // 反序列化普通字段
                         if (jsonPropertyType is not null)
                         {
+                            // 扁平展开字段自身的占位名称不参与反序列化
+                            if (FLATTEN_PROPERTY_JSON_NAME.Equals(jsonPropertyType.JsonPropertyName))
+                                continue;
+
                             object? propertyValue = jProp.Value?.Deserialize(jsonPropertyType.PropertyType, CopyJsonSerializerOptions(options, jsonPropertyType.JsonConverter));
                             ReflectionHelper.SetPropertyValue(outputObj, jsonPropertyType.Property, propertyValue);
                         }
@@ -115,8 +122,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                         {
                             throw new NotSupportedException($"'{GetType().FullName}' does not support JsonExtensionData.");
                         }
+                        else if (options.UnmappedMemberHandling == JsonUnmappedMemberHandling.Disallow)
+                        {
+                            throw new JsonException($"The JSON property '{propertyName}' could not be mapped to any .NET member contained in type '{typeToConvert.FullName}'");
+                        }
                     }
                 }
+
+                if (list is not null)
+                    ReflectionHelper.SetPropertyValue(outputObj, FlattenProperty, list);
 
                 return outputObj;
             }
@@ -146,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                 string propertyName = jsonPropertyType.JsonPropertyName;
                 if (FLATTEN_PROPERTY_JSON_NAME.Equals(propertyName))
                 {
-                    if (jsonPropertyType.Property != FlattenProperty)
+                    if (jsonPropertyType.Property.Name != FlattenProperty.Name)
                         throw new JsonException("Ambiguous flatten property found.");
 
                     continue;
@@ -158,7 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                     if (options.DefaultIgnoreCondition == JsonIgnoreCondition.Always || options.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingNull)
                         continue;
                 }
-                else if (propertyValue == (jsonPropertyType.PropertyType.IsValueType ? ReflectionHelper.CreateInstance<TFlattenElement>() : null))
+                else if (jsonPropertyType.PropertyType.IsValueType && propertyValue.Equals(Activator.CreateInstance(jsonPropertyType.PropertyType)))
                 {
                     if (options.DefaultIgnoreCondition == JsonIgnoreCondition.Always || options.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingDefault)
                         continue;
@@ -175,12 +189,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
             }
 
             // 序列化需扁平展开的字段
-            Array? flattenArray = ReflectionHelper.GetPropertyValue<Array>(inputObj, FlattenProperty);
-            if (flattenArray is not null)
+            List<TFlattenElement?>? flattenList = ReflectionHelper.GetPropertyValue<List<TFlattenElement?>>(inputObj, FlattenProperty);
+            if (flattenList is not null)
             {
-                for (int index = 0; index < flattenArray.Length; index++)
+                for (int index = 0; index < flattenList.Count; index++)
                 {
-                    object? element = ReflectionHelper.GetElementValue<object>(flattenArray, index);
+                    TFlattenElement? element = flattenList[index];
                     if (element is null)
                         continue;
 
@@ -200,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                         else
                         {
                             writer.WritePropertyName(options.PropertyNamingPolicy?.ConvertName(propertyName) ?? propertyName);
-                            writer.WriteRawValue(propertyValueNode?.ToJsonString(options)!, skipInputValidation: true);
+                            writer.WriteRawValue(propertyValueNode.ToJsonString(options), skipInputValidation: true);
                         }
                     }
                 }
@@ -224,15 +238,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
         }
     }
 
-    partial class FlattenNArrayObjectConverterBase<TModelContainer, TFlattenElement>
+    partial class FlattenNListObjectConverterBase<TModelContainer, TFlattenElement>
     {
         private class JsonPropertyTypeInfo
         {
             public PropertyInfo Property { get; }
 
             public Type PropertyType { get { return Property.PropertyType; } }
-
-            public JsonIgnoreCondition JsonIgnoreCondition { get; }
 
             public JsonConverter? JsonConverter { get; }
 
@@ -242,10 +254,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 
             public bool IsExtensionData { get; }
 
-            public JsonPropertyTypeInfo(PropertyInfo property, JsonIgnoreCondition jsonIgnoreCondition, JsonConverter? jsonConverter, string jsonPropertyName, int? jsonPropertyOrder)
+            public JsonPropertyTypeInfo(PropertyInfo property, JsonConverter? jsonConverter, string jsonPropertyName, int? jsonPropertyOrder)
             {
                 Property = property ?? throw new ArgumentNullException(nameof(property));
-                JsonIgnoreCondition = jsonIgnoreCondition;
                 JsonConverter = jsonConverter;
                 JsonPropertyName = jsonPropertyName;
                 JsonPropertyOrder = jsonPropertyOrder;
@@ -255,58 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
 
         private static class JsonPropertyTypeInfoCache
         {
-            private static readonly Hashtable _cache = new Hashtable(capacity: 32);
-
-            private static Type[] GetSortedTypeHierarchy(Type type)
-            {
-                if (!type.IsInterface)
-                {
-                    IList<Type> results = new List<Type>();
-                    for (Type? current = type; current is not null; current = current.BaseType)
-                    {
-                        results.Add(current);
-                    }
-
-                    return results.ToArray();
-                }
-                else
-                {
-                    throw new NotSupportedException();
-                }
-            }
-
-            private static PropertyInfo[] GetSerializableProperties(Type typeToConvert)
-            {
-                IList<PropertyInfo> results = new List<PropertyInfo>();
-
-                foreach (PropertyInfo propertyInfo in typeToConvert.GetProperties(BindingFlags.Instance | BindingFlags.Public))
-                {
-                    if (propertyInfo.GetIndexParameters().Length > 0 ||
-                       (propertyInfo.GetMethod?.IsAbstract == true || propertyInfo.SetMethod?.IsAbstract == true))
-                    {
-                        continue;
-                    }
-
-                    bool hasJsonIncludeAttribute = propertyInfo.GetCustomAttribute<JsonIncludeAttribute>(inherit: false) is not null;
-                    if (propertyInfo.GetMethod?.IsPublic == true ||
-                        propertyInfo.SetMethod?.IsPublic == true ||
-                        hasJsonIncludeAttribute)
-                    {
-                        results.Add(propertyInfo);
-                    }
-                }
-
-                return results.ToArray();
-            }
-
-            private static JsonIgnoreCondition GetPropertyJsonIgnoreCondition(PropertyInfo propertyInfo, JsonSerializerOptions jsonSerializerOptions)
-            {
-                JsonIgnoreAttribute? ignoreAttribute = propertyInfo.GetCustomAttribute<JsonIgnoreAttribute>(inherit: false);
-                if (ignoreAttribute is not null)
-                    return ignoreAttribute.Condition;
-
-                return jsonSerializerOptions.DefaultIgnoreCondition;
-            }
+            private static readonly ConcurrentDictionary<Type, JsonPropertyTypeInfo[]> _cache = new();
 
             private static JsonConverter? GetPropertyJsonConverter(PropertyInfo propertyInfo, JsonSerializerOptions jsonSerializerOptions)
             {
@@ -323,15 +283,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                     return (JsonConverter)Activator.CreateInstance(converterType)!;
             }
 
-            private static int? GetPropertyJsonOrder(PropertyInfo propertyInfo, JsonSerializerOptions jsonSerializerOptions)
-            {
-                JsonPropertyOrderAttribute? orderAttribute = propertyInfo.GetCustomAttribute<JsonPropertyOrderAttribute>(inherit: true);
-                if (orderAttribute is not null)
-                    return orderAttribute.Order;
-
-                return null;
-            }
-
             private static string GetPropertyJsonName(PropertyInfo propertyInfo, JsonSerializerOptions jsonSerializerOptions)
             {
                 JsonPropertyNameAttribute? nameAttribute = propertyInfo.GetCustomAttribute<JsonPropertyNameAttribute>(inherit: true);
@@ -343,39 +294,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Converters.SystemTextJson
                     return propertyInfo.Name;
             }
 
-            public static JsonPropertyTypeInfo[] GetOrAddJsonPropertyTypes(Type typeToConvert, JsonSerializerOptions options)
+            private static JsonPropertyTypeInfo[] BuildJsonPropertyTypes(Type typeToConvert, JsonSerializerOptions options)
             {
-                JsonPropertyTypeInfo[]? results = _cache[typeToConvert] as JsonPropertyTypeInfo[];
+                List<JsonPropertyTypeInfo> temp = new();
 
-                if (results is null)
+                foreach (PropertyInfo propertyInfo in typeToConvert.GetProperties(BindingFlags.Instance | BindingFlags.Public))
                 {
-                    IList<JsonPropertyTypeInfo> temp = new List<JsonPropertyTypeInfo>();
-
-                    foreach (Type currentType in GetSortedTypeHierarchy(typeToConvert))
+                    if (propertyInfo.GetIndexParameters().Length > 0 ||
+                        propertyInfo.GetMethod?.IsAbstract == true || propertyInfo.SetMethod?.IsAbstract == true)
                     {
-                        if (currentType == typeof(Object) ||
-                            currentType == typeof(ValueType))
-                        {
-                            break;
-                        }
-
-                        foreach (PropertyInfo propertyInfo in GetSerializableProperties(typeToConvert))
-                        {
-                            JsonIgnoreCondition jsonIgnoreCondition = GetPropertyJsonIgnoreCondition(propertyInfo, options);
-                            JsonConverter? jsonConverter = GetPropertyJsonConverter(propertyInfo, options);
-                            string jsonPropertyName = GetPropertyJsonName(propertyInfo, options);
-                            int? jsonPropertyOrder = GetPropertyJsonOrder(propertyInfo, options);
-
-                            if (!temp.Any(e => e.JsonPropertyName == jsonPropertyName))
-                                temp.Add(new JsonPropertyTypeInfo(property: propertyInfo, jsonIgnoreCondition: jsonIgnoreCondition, jsonConverter: jsonConverter, jsonPropertyName: jsonPropertyName, jsonPropertyOrder: jsonPropertyOrder));
-                        }
+                        continue;
                     }
 
-                    results = temp.OrderBy(e => e.JsonPropertyOrder).ToArray();
-                    _cache[typeToConvert] = results;
+                    if (propertyInfo.GetCustomAttribute<JsonIgnoreAttribute>(inherit: false)?.Condition == JsonIgnoreCondition.Always)
+                        continue;
+
+                    JsonConverter? jsonConverter = GetPropertyJsonConverter(propertyInfo, options);
+                    string jsonPropertyName = GetPropertyJsonName(propertyInfo, options);
+                    int? jsonPropertyOrder = propertyInfo.GetCustomAttribute<JsonPropertyOrderAttribute>(inherit: true)?.Order;
+
+                    if (!temp.Any(e => e.JsonPropertyName == jsonPropertyName))
+                        temp.Add(new JsonPropertyTypeInfo(propertyInfo, jsonConverter, jsonPropertyName, jsonPropertyOrder));
                 }
 
-                return results;
+                return temp.OrderBy(e => e.JsonPropertyOrder).ToArray();
+            }
+
+            public static JsonPropertyTypeInfo[] GetOrAddJsonPropertyTypes(Type typeToConvert, JsonSerializerOptions options)
+            {
+                return _cache.GetOrAdd(typeToConvert, type => BuildJsonPropertyTypes(type, options));
             }
         }
     }

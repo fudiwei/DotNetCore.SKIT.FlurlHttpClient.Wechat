@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/contact/batchsearch 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("query_word")]
                         [System.Text.Json.Serialization.JsonPropertyName("query_word")]
-                        public string QueryWord { get; set; } = default!;
+                        public string? QueryWord { get; set; }
 
                         /// <summary>
                         /// 获取或设置查询类型。
@@ -66,14 +66,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("query_request")]
                 [System.Text.Json.Serialization.JsonPropertyName("query_request")]
-                public Types.QueryRequest QueryRequest { get; set; } = default!;
+                public Types.QueryRequest? QueryRequest { get; set; }
 
                 /// <summary>
                 /// 获取或设置搜索结果信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("query_result")]
                 [System.Text.Json.Serialization.JsonPropertyName("query_result")]
-                public Types.QueryResult QueryResult { get; set; } = default!;
+                public Types.QueryResult? QueryResult { get; set; }
 
                 /// <summary>
                 /// 获取或设置翻页是否结束。
@@ -96,6 +96,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query_result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("query_result_list")]
-        public Types.Query[] QueryList { get; set; } = default!;
+        public List<Types.Query>? QueryList { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order_id")]
-        public string AftersaleOrderId { get; set; } = string.Empty;
+        public string? AftersaleOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置售后类型。
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_update_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_update_desc")]
-        public string MerchantUpdateDescription { get; set; } = string.Empty;
+        public string? MerchantUpdateDescription { get; set; }
 
         /// <summary>
         /// 获取或设置协商凭证 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("media_ids")]
-        public IList<string>? CertificateMediaIdList { get; set; }
+        public List<string>? CertificateMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置换货 SKU ID。

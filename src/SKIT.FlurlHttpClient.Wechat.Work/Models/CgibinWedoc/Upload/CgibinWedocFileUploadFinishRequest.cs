@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_key")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_key")]
-        public string UploadKey { get; set; } = string.Empty;
+        public string? UploadKey { get; set; }
     }
 }

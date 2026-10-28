@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = string.Empty;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置日历通知范围成员权限。
@@ -35,14 +35,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userids")]
                         [System.Text.Json.Serialization.JsonPropertyName("userids")]
-                        public IList<string>? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置部门 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("partyids")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyids")]
-                        public IList<long>? DepartmentIdList { get; set; }
+                        public List<long>? DepartmentIdList { get; set; }
                     }
                 }
 
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("admins")]
                 [System.Text.Json.Serialization.JsonPropertyName("admins")]
-                public IList<string>? AdminUserIdList { get; set; }
+                public List<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否将该日历设置为默认日历。
@@ -67,14 +67,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("summary")]
                 [System.Text.Json.Serialization.JsonPropertyName("summary")]
-                public string Summary { get; set; } = string.Empty;
+                public string? Summary { get; set; }
 
                 /// <summary>
                 /// 获取或设置日历颜色（格式：#RRGGBB）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("color")]
                 [System.Text.Json.Serialization.JsonPropertyName("color")]
-                public string Color { get; set; } = string.Empty;
+                public string? Color { get; set; }
 
                 /// <summary>
                 /// 获取或设置日历描述。
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shares")]
                 [System.Text.Json.Serialization.JsonPropertyName("shares")]
-                public IList<Types.Sharer>? SharerList { get; set; }
+                public List<Types.Sharer>? SharerList { get; set; }
             }
         }
 
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("calendar")]
         [System.Text.Json.Serialization.JsonPropertyName("calendar")]
-        public Types.Calendar Calendar { get; set; } = new Types.Calendar();
+        public Types.Calendar? Calendar { get; set; }
 
         /// <summary>
         /// 获取或设置授权方安装的应用 ID。

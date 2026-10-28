@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ScheduleId")]
         [System.Text.Json.Serialization.JsonPropertyName("ScheduleId")]
         [System.Xml.Serialization.XmlElement("ScheduleId")]
-        public string ScheduleId { get; set; } = default!;
+        public string? ScheduleId { get; set; }
 
         /// <summary>
         /// 获取或设置日历 ID。
@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("CalId")]
         [System.Text.Json.Serialization.JsonPropertyName("CalId")]
         [System.Xml.Serialization.XmlElement("CalId")]
-        public string CalendarId { get; set; } = default!;
+        public string? CalendarId { get; set; }
     }
 }

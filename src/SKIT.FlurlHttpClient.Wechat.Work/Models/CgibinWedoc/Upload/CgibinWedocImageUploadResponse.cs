@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string ImageUrl { get; set; } = default!;
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// 获取或设置图片宽度（单位：像素）。

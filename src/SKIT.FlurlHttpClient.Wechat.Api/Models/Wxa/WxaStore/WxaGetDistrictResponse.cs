@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/get_district 接口的响应。</para>
@@ -41,14 +41,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置区域全称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fullname")]
                 [System.Text.Json.Serialization.JsonPropertyName("fullname")]
-                public string FullName { get; set; } = default!;
+                public string? FullName { get; set; }
 
                 /// <summary>
                 /// 获取或设置区域经纬度信息。
@@ -62,14 +62,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pinyin")]
                 [System.Text.Json.Serialization.JsonPropertyName("pinyin")]
-                public string[]? Pinyin { get; set; }
+                public List<string>? Pinyin { get; set; }
 
                 /// <summary>
                 /// 获取或设置下属城市区域 ID 列表
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cidx")]
                 [System.Text.Json.Serialization.JsonPropertyName("cidx")]
-                public int[]? CityIdList { get; set; }
+                public List<int>? CityIdList { get; set; }
             }
         }
 
@@ -78,13 +78,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data_version")]
         [System.Text.Json.Serialization.JsonPropertyName("data_version")]
-        public string DataVersion { get; set; } = default!;
+        public string? DataVersion { get; set; }
 
         /// <summary>
         /// 获取或设置区域列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public Types.District[][] DistrictList { get; set; } = default!;
+        public List<Types.District[]>? DistrictList { get; set; }
     }
 }

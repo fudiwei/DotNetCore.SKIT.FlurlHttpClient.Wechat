@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("qrcode_guide_account")]
                 [System.Text.Json.Serialization.JsonPropertyName("qrcode_guide_account")]
                 [System.Xml.Serialization.XmlElement("qrcode_guide_account")]
-                public string GuideAccount { get; set; } = default!;
+                public string? GuideAccount { get; set; }
 
                 /// <summary>
                 /// 获取或设置顾问 OpenId。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 [System.Xml.Serialization.XmlElement("openid")]
-                public string BuyerOpenId { get; set; } = default!;
+                public string? BuyerOpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置扫码类型。
@@ -61,6 +61,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("GuideScanEvent")]
         [System.Text.Json.Serialization.JsonPropertyName("GuideScanEvent")]
         [System.Xml.Serialization.XmlElement("GuideScanEvent")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

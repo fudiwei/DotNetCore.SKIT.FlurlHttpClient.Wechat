@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置续期账号类型。
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置企业 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = string.Empty;
+        public string? CorpId { get; set; }
 
         /// <summary>
         /// 获取或设置任务 ID。
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_list")]
         [System.Text.Json.Serialization.JsonPropertyName("account_list")]
-        public IList<Types.Account> AccountList { get; set; } = new List<Types.Account>();
+        public List<Types.Account>? AccountList { get; set; }
     }
 }

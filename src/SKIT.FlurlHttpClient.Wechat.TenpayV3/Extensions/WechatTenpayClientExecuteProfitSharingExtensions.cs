@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "orders", request.OutOrderNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "orders", request.OutOrderNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("transaction_id", request.TransactionId);
 
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "return-orders", request.OutReturnNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "return-orders", request.OutReturnNumber!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("out_order_no", request.OutOrderNumber);
 
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransactionId, "transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "transactions", request.TransactionId, "amounts");
+                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "transactions", request.TransactionId!, "amounts");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitSharingTransactionAmountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "merchant-configs", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "merchant-configs", request.SubMerchantId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitSharingMerchantConfigsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("h5_url")]
         [System.Text.Json.Serialization.JsonPropertyName("h5_url")]
-        public string H5Url { get; set; } = default!;
+        public string? H5Url { get; set; }
     }
 }

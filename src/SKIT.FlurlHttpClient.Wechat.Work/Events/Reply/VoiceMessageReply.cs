@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("MediaId")]
                 [System.Text.Json.Serialization.JsonPropertyName("MediaId")]
                 [System.Xml.Serialization.XmlElement("MediaId")]
-                public string MediaId { get; set; } = string.Empty;
+                public string? MediaId { get; set; }
             }
         }
 
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Voice")]
         [System.Text.Json.Serialization.JsonPropertyName("Voice")]
         [System.Xml.Serialization.XmlElement("Voice")]
-        public Types.Voice Voice { get; set; } = new Types.Voice();
+        public Types.Voice Voice { get; set; }
 
         public VoiceMessageReply()
         {

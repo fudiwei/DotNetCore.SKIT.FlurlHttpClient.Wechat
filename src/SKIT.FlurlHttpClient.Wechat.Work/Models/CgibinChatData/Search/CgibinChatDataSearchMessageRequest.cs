@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                public IList<Types.IdInfo> IdList { get; set; } = new List<Types.IdInfo>();
+                public List<Types.IdInfo>? IdList { get; set; }
             }
         }
 
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query_word")]
         [System.Text.Json.Serialization.JsonPropertyName("query_word")]
-        public string QueryWord { get; set; } = string.Empty;
+        public string? QueryWord { get; set; }
 
         /// <summary>
         /// 获取或设置搜索的客户会话信息。

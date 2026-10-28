@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        public IList<string> ToUserOpenIdList { get; set; } = new List<string>();
+        public List<string>? ToUserOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置群发消息类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息内容。

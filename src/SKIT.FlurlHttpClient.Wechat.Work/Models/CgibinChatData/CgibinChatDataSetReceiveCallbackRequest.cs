@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("program_id")]
         [System.Text.Json.Serialization.JsonPropertyName("program_id")]
-        public string ProgramId { get; set; } = string.Empty;
+        public string? ProgramId { get; set; }
     }
 }

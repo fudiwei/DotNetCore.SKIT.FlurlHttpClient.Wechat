@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shopid")]
                 [System.Text.Json.Serialization.JsonPropertyName("shopid")]
-                public string ShopId { get; set; } = default!;
+                public string? ShopId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核结果。
@@ -44,14 +44,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultmsg")]
         [System.Text.Json.Serialization.JsonPropertyName("resultmsg")]
-        public string ResultMessage { get; set; } = default!;
+        public string? ResultMessage { get; set; }
 
         /// <summary>
         /// 获取或设置配送单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = default!;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置配送状态。

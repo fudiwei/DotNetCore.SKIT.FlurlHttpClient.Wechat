@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-                public string BrandId { get; set; } = string.Empty;
+                public string? BrandId { get; set; }
 
                 /// <summary>
                 /// 获取或设置展示名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("display_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("display_name")]
-                public string DisplayName { get; set; } = string.Empty;
+                public string? DisplayName { get; set; }
             }
 
             public class Date
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置有效期开始时间。
@@ -108,21 +108,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = string.Empty;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("values")]
                         [System.Text.Json.Serialization.JsonPropertyName("values")]
-                        public IList<string>? Values { get; set; }
+                        public List<string>? Values { get; set; }
                     }
                 }
 
@@ -131,14 +131,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public IList<string>? CommonFieldNameList { get; set; }
+                public List<string>? CommonFieldNameList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户自定义的开卡信息字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
-                public IList<Types.CustomField>? CustomFieldList { get; set; }
+                public List<Types.CustomField>? CustomFieldList { get; set; }
             }
 
             public class AdditionalStatement
@@ -178,35 +178,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Logo 媒体文件地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("logo_url")]
         [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-        public string LogoMediaUrl { get; set; } = string.Empty;
+        public string? LogoMediaUrl { get; set; }
 
         /// <summary>
         /// 获取或设置品牌信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand")]
         [System.Text.Json.Serialization.JsonPropertyName("brand")]
-        public Types.Brand Brand { get; set; } = new Types.Brand();
+        public Types.Brand? Brand { get; set; }
 
         /// <summary>
         /// 获取或设置卡名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置背景图片媒体文件地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("background_picture_url")]
         [System.Text.Json.Serialization.JsonPropertyName("background_picture_url")]
-        public string BackgroundPictureMediaUrl { get; set; } = string.Empty;
+        public string? BackgroundPictureMediaUrl { get; set; }
 
         /// <summary>
         /// 获取或设置使用须知。
@@ -227,7 +227,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code_type")]
         [System.Text.Json.Serialization.JsonPropertyName("code_type")]
-        public string CodeType { get; set; } = string.Empty;
+        public string? CodeType { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡总库存。
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date_information")]
         [System.Text.Json.Serialization.JsonPropertyName("date_information")]
-        public Types.Date Date { get; set; } = new Types.Date();
+        public Types.Date? Date { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Code 分配类型。
@@ -269,7 +269,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置储值信息。

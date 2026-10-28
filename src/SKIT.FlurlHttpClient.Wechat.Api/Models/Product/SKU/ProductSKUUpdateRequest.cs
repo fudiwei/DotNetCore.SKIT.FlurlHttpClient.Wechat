@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("thumb_img")]
         [System.Text.Json.Serialization.JsonPropertyName("thumb_img")]
-        public string ThumbnailUrl { get; set; } = string.Empty;
+        public string? ThumbnailUrl { get; set; }
 
         /// <summary>
         /// 获取或设置售价（单位：分）。
@@ -87,6 +87,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sku_attrs")]
         [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
-        public IList<Types.Attribute> AttributeList { get; set; } = new List<Types.Attribute>();
+        public List<Types.Attribute>? AttributeList { get; set; }
     }
 }

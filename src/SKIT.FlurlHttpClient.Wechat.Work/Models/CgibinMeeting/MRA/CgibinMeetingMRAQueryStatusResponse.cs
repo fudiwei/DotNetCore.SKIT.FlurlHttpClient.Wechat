@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tmp_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("tmp_openid")]
-        public string TempOpenId { get; set; } = default!;
+        public string? TempOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置终端设备类型。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("share_url")]
         [System.Text.Json.Serialization.JsonPropertyName("share_url")]
-        public string ShareUrl { get; set; } = default!;
+        public string? ShareUrl { get; set; }
     }
 }

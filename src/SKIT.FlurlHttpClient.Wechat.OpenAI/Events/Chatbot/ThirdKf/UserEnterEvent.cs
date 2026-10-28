@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events
                 /// 获取或设置消息。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("msg")]
-                public string Message { get; set; } = default!;
+                public string? Message { get; set; }
             }
         }
 
@@ -25,13 +25,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events
         /// 获取或设置用户 ID。
         /// </summary>
         [System.Xml.Serialization.XmlElement("userid")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置对话来源。
         /// </summary>
         [System.Xml.Serialization.XmlElement("from")]
-        public string From { get; set; } = default!;
+        public string? From { get; set; }
 
         /// <summary>
         /// 获取或设置消息内容。

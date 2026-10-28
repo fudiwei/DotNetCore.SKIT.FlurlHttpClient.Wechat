@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_id")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
-        public string ComplaintId { get; set; } = string.Empty;
+        public string? ComplaintId { get; set; }
     }
 }

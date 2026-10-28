@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("supplier_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("supplier_appid")]
-                public string SupplierAppId { get; set; } = default!;
+                public string? SupplierAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置供货商名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("supplier_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("supplier_name")]
-                public string SupplierName { get; set; } = default!;
+                public string? SupplierName { get; set; }
 
                 /// <summary>
                 /// 获取或设置代发单 ID。
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("ds_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ds_order_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string DropshipOrderId { get; set; } = default!;
+                public string? DropshipOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单 ID。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置代发单状态状态。
@@ -67,6 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dropship_order")]
         [System.Text.Json.Serialization.JsonPropertyName("dropship_order")]
-        public Types.DropshipOrder DropshipOrder { get; set; } = default!;
+        public Types.DropshipOrder? DropshipOrder { get; set; }
     }
 }

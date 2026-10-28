@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("list")]
                         [System.Text.Json.Serialization.JsonPropertyName("list")]
-                        public string[] Items { get; set; } = default!;
+                        public List<string>? Items { get; set; }
                     }
 
                     public class TagIdList : CgibinExmailGroupGetResponse.Types.TagIdList
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("list")]
                         [System.Text.Json.Serialization.JsonPropertyName("list")]
-                        public string[] Items { get; set; } = default!;
+                        public List<string>? Items { get; set; }
                     }
                 }
 
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("email")]
                 [System.Text.Json.Serialization.JsonPropertyName("email")]
-                public string Email { get; set; } = default!;
+                public string? Email { get; set; }
 
                 /// <summary>
                 /// 获取或设置业务邮箱名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置允许使用的成员账号列表。
@@ -96,6 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Mail[] MailList { get; set; } = default!;
+        public List<Types.Mail>? MailList { get; set; }
     }
 }

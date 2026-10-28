@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("from_content")]
         [System.Text.Json.Serialization.JsonPropertyName("from_content")]
-        public string FromContent { get; set; } = default!;
+        public string? FromContent { get; set; }
 
         /// <summary>
         /// 获取或设置目标内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_content")]
         [System.Text.Json.Serialization.JsonPropertyName("to_content")]
-        public string ToContent { get; set; } = default!;
+        public string? ToContent { get; set; }
     }
 }

@@ -7,11 +7,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置分页起始位置。
-        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public int Offset { get; set; } = 0;
+        public int Offset { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。
@@ -54,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<string>? OutOrderIdList { get; set; }
+        public List<string>? OutOrderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付交易单号。
@@ -68,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<string>? TransactionIdList { get; set; }
+        public List<string>? TransactionIdList { get; set; }
 
         /// <summary>
         /// 获取或设置支付时间起始时间戳。

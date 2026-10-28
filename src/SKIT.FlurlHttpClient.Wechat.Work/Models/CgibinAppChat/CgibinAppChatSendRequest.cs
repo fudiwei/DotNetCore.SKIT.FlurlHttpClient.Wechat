@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mentioned_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("mentioned_list")]
-                public IList<string>? MentionedUserIdList { get; set; }
+                public List<string>? MentionedUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置提及手机号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mentioned_mobile_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("mentioned_mobile_list")]
-                public IList<string>? MentionedMobileNumberList { get; set; }
+                public List<string>? MentionedMobileNumberList { get; set; }
             }
 
             public class ImageMessage : CgibinMessageSendRequest.Types.ImageMessage
@@ -59,14 +59,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mentioned_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("mentioned_list")]
-                public IList<string>? MentionedUserIdList { get; set; }
+                public List<string>? MentionedUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置提及手机号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mentioned_mobile_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("mentioned_mobile_list")]
-                public IList<string>? MentionedMobileNumberList { get; set; }
+                public List<string>? MentionedMobileNumberList { get; set; }
             }
         }
 
@@ -75,14 +75,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatid")]
         [System.Text.Json.Serialization.JsonPropertyName("chatid")]
-        public string ChatId { get; set; } = string.Empty;
+        public string? ChatId { get; set; }
 
         /// <summary>
         /// 获取或设置消息类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。

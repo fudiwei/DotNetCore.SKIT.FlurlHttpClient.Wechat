@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/media/get_upload_by_url_result 接口的响应。</para>
@@ -52,6 +52,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail")]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public Types.Result Result { get; set; } = default!;
+        public Types.Result? Result { get; set; }
     }
 }

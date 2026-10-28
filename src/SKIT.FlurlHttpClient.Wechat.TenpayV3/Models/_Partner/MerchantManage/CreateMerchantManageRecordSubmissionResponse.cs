@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("manage_submission_id")]
         [System.Text.Json.Serialization.JsonPropertyName("manage_submission_id")]
-        public string ManageSubmissionId { get; set; } = default!;
+        public string? ManageSubmissionId { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置最终风险结论。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("disp_conclusion")]
         [System.Text.Json.Serialization.JsonPropertyName("disp_conclusion")]
-        public IList<int>? DisposeConclusionList { get; set; }
+        public List<int>? DisposeConclusionList { get; set; }
 
         /// <summary>
         /// 获取或设置处置补充。

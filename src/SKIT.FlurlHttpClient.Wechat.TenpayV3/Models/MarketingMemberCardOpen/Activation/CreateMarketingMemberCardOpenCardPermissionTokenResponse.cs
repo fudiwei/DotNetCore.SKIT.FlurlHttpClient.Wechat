@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("permission_token")]
         [System.Text.Json.Serialization.JsonPropertyName("permission_token")]
-        public string PermissionToken { get; set; } = default!;
+        public string? PermissionToken { get; set; }
     }
 }

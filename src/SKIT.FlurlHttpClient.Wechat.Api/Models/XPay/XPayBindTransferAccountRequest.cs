@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_account_org_name")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_account_org_name")]
-        public string TransferAccountOrganizationName { get; set; } = string.Empty;
+        public string? TransferAccountOrganizationName { get; set; }
 
         protected internal override string GetRequestPath()
         {

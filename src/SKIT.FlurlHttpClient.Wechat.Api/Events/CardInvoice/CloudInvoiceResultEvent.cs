@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("fpqqlsh")]
         [System.Text.Json.Serialization.JsonPropertyName("fpqqlsh")]
         [System.Xml.Serialization.XmlElement("fpqqlsh")]
-        public string InvoiceSerialNumber { get; set; } = default!;
+        public string? InvoiceSerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置纳税人识别码。
@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("nsrsbh")]
         [System.Text.Json.Serialization.JsonPropertyName("nsrsbh")]
         [System.Xml.Serialization.XmlElement("nsrsbh")]
-        public string SellerTaxNumber { get; set; } = default!;
+        public string? SellerTaxNumber { get; set; }
     }
 }

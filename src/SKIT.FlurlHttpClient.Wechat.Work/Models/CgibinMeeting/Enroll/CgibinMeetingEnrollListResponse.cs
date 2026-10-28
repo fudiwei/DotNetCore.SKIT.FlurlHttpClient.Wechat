@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("answer_content")]
                         [System.Text.Json.Serialization.JsonPropertyName("answer_content")]
-                        public string[] ContentList { get; set; } = default!;
+                        public List<string>? ContentList { get; set; }
 
                         /// <summary>
                         /// 获取或设置必填类型。
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("enroll_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("enroll_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string EnrollId { get; set; } = default!;
+                public string? EnrollId { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员账号。
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("enroll_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("enroll_time")]
-                public string EnrollTimeString { get; set; } = default!;
+                public string? EnrollTimeString { get; set; }
 
                 /// <summary>
                 /// 获取或设置报名来源。
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answer_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("answer_list")]
-                public Types.Answer[]? AnswerList { get; set; }
+                public List<Types.Answer>? AnswerList { get; set; }
             }
         }
 
@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enroll_list")]
         [System.Text.Json.Serialization.JsonPropertyName("enroll_list")]
-        public Types.Enroll[] EnrollList { get; set; } = default!;
+        public List<Types.Enroll>? EnrollList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

@@ -127,17 +127,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-                public Types.Data Data { get; set; } = new Types.Data();
+                public Types.Data? Data { get; set; }
             }
         }
 
         /// <summary>
         /// 获取或设置接口版本号。
-        /// <para>默认值：3.0</para>
+        /// <para>默认值："3.0"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public string Version { get; set; } = "3.0";
+        public string? Version { get; set; } = "3.0";
 
         /// <summary>
         /// <inheritdoc/>
@@ -166,14 +166,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("body")]
         [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; } = string.Empty;
+        public string? Body { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -198,18 +198,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         /// <summary>
         /// 获取或设置交易类型。
-        /// <para>默认值：PAP</para>
+        /// <para>默认值："PAP"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_type")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = "PAP";
+        public string? TradeType { get; set; } = "PAP";
 
         /// <summary>
         /// 获取或设置交易场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = string.Empty;
+        public string? TradeScene { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。
@@ -223,7 +223,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spbill_create_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("spbill_create_ip")]
-        public string ClientIp { get; set; } = string.Empty;
+        public string? ClientIp { get; set; }
 
         /// <summary>
         /// 获取或设置订单优惠标记。
@@ -237,7 +237,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public string NotifyUrl { get; set; } = string.Empty;
+        public string? NotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。

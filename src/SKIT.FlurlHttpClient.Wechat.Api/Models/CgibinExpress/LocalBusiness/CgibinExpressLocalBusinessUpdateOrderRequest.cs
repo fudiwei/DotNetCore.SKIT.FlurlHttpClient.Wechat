@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置骑手电话。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string PhoneNumber { get; set; } = string.Empty;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置电话是否加密。
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_token")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_token")]
-        public string Token { get; set; } = string.Empty;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置商家门店编号。
@@ -53,14 +53,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置配送公司小程序跳转路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_path")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_path")]
-        public string MiniProgramPagePath { get; set; } = string.Empty;
+        public string? MiniProgramPagePath { get; set; }
 
         /// <summary>
         /// 获取或设置骑手信息。

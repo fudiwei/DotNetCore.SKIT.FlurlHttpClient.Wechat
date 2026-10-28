@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置开票平台或财政局 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("s_pappid")]
         [System.Text.Json.Serialization.JsonPropertyName("s_pappid")]
-        public string SpAppId { get; set; } = string.Empty;
+        public string? SpAppId { get; set; }
     }
 }

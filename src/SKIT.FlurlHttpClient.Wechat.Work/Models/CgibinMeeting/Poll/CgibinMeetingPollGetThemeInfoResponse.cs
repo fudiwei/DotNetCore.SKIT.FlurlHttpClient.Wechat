@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_desc")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_desc")]
-                        public string OptionDescription { get; set; } = default!;
+                        public string? OptionDescription { get; set; }
                     }
                 }
 
@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("question_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("question_desc")]
-                public string QuestionDescription { get; set; } = default!;
+                public string? QuestionDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置选项列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("option_info")]
-                public Types.Option[] OptionList { get; set; } = default!;
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 
@@ -50,21 +50,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_theme_id")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_theme_id")]
-        public string PollThemeId { get; set; } = default!;
+        public string? PollThemeId { get; set; }
 
         /// <summary>
         /// 获取或设置投票主题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_topic")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_topic")]
-        public string PollTopic { get; set; } = default!;
+        public string? PollTopic { get; set; }
 
         /// <summary>
         /// 获取或设置投票主题描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_desc")]
-        public string PollDescription { get; set; } = default!;
+        public string? PollDescription { get; set; }
 
         /// <summary>
         /// 获取或设置是否匿名。
@@ -80,6 +80,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_question_data")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_question_data")]
-        public Types.Question[] QuestionList { get; set; } = default!;
+        public List<Types.Question>? QuestionList { get; set; }
     }
 }

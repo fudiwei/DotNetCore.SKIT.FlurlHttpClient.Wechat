@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = string.Empty;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
@@ -38,7 +38,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_no")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_no")]
-        public string OutRefundNumber { get; set; } = string.Empty;
+        public string? OutRefundNumber { get; set; }
 
         /// <summary>
         /// 获取或设置订单总金额（单位：分）。

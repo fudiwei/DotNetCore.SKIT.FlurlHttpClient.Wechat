@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ReplaceName")]
                 [System.Text.Json.Serialization.JsonPropertyName("ReplaceName")]
                 [System.Xml.Serialization.XmlElement("ReplaceName")]
-                public string ReplacementText { get; set; } = string.Empty;
+                public string? ReplacementText { get; set; }
             }
         }
 

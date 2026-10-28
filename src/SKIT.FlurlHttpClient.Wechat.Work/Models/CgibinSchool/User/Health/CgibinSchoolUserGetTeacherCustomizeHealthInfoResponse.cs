@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置健康码状态。
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("report_values")]
                 [System.Text.Json.Serialization.JsonPropertyName("report_values")]
-                public Types.ReportValue[] ReportValueList { get; set; } = default!;
+                public List<Types.ReportValue>? ReportValueList { get; set; }
             }
 
             public class QuestionTemplate
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_text")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_text")]
-                        public string Text { get; set; } = default!;
+                        public string? Text { get; set; }
                     }
                 }
 
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置问题类型。
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("option_list")]
-                public Types.Option[]? OptionList { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 
@@ -142,21 +142,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = default!;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置自定义问题列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("question_templates")]
         [System.Text.Json.Serialization.JsonPropertyName("question_templates")]
-        public Types.QuestionTemplate[] QuestionTemplateList { get; set; } = default!;
+        public List<Types.QuestionTemplate>? QuestionTemplateList { get; set; }
 
         /// <summary>
         /// 获取或设置健康信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("health_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("health_infos")]
-        public Types.HealthInfo[] HealthInfoList { get; set; } = default!;
+        public List<Types.HealthInfo>? HealthInfoList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页是否结束。

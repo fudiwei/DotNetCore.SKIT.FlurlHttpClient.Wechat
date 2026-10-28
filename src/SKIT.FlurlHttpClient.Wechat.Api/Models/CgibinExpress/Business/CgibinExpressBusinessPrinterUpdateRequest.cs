@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("update_type")]
         [System.Text.Json.Serialization.JsonPropertyName("update_type")]
-        public string Action { get; set; } = string.Empty;
+        public string? Action { get; set; }
 
         /// <summary>
         /// 获取或设置打印员用户 OpenId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string PrinterOpenId { get; set; } = string.Empty;
+        public string? PrinterOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置打印员面单打印权限列表。
@@ -26,6 +26,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithCommaSplitConverter))]
-        public IList<string>? TagIdList { get; set; }
+        public List<string>? TagIdList { get; set; }
     }
 }

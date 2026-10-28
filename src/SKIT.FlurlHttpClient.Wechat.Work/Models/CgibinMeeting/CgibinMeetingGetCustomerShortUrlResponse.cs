@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_short_url_customer_data_list")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_short_url_customer_data_list")]
-        public Types.Data[] Data { get; set; } = default!;
+        public List<Types.Data>? Data { get; set; }
     }
 }

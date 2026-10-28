@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置商家备注。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_notes")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_notes")]
-        public string MerchantNotes { get; set; } = string.Empty;
+        public string? MerchantNotes { get; set; }
     }
 }

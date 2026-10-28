@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置附件类型。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AttachmentType { get; set; } = string.Empty;
+        public string? AttachmentType { get; set; }
 
         /// <summary>
         /// 获取或设置文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? FileBytes { get; set; }
 
         /// <summary>
         /// 获取或设置文件名。如果不指定将由系统自动生成。

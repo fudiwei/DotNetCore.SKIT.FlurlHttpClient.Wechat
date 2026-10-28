@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transaction-block", "transaction-block-records", "sub-mchid", request.SubMerchantId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "transaction-block", "transaction-block-records", "sub-mchid", request.SubMerchantId!)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BlockRecordId, "block_record_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transaction-block", "transaction-block-records", request.BlockRecordId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "transaction-block", "transaction-block-records", request.BlockRecordId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTransactionBlockRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "transaction-block", "transaction-block-submissions", "sub-mchid", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Post, "transaction-block", "transaction-block-submissions", "sub-mchid", request.SubMerchantId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateTransactionBlockSubmissionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BlockSubmissionId, "block_submission_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transaction-block", "transaction-block-submissions", request.BlockSubmissionId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "transaction-block", "transaction-block-submissions", request.BlockSubmissionId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTransactionBlockSubmissionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

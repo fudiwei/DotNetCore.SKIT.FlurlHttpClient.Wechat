@@ -38,6 +38,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("priority_sort")]
         [System.Text.Json.Serialization.JsonPropertyName("priority_sort")]
-        public IList<string> PrioritySortedOutWarehouseIdList { get; set; } = new List<string>();
+        public List<string>? PrioritySortedOutWarehouseIdList { get; set; }
     }
 }

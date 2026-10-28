@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置子会议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_meetingid")]
-        public string? SubMeetingId { get; set; } = string.Empty;
+        public string? SubMeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置参会时间起始时间戳。

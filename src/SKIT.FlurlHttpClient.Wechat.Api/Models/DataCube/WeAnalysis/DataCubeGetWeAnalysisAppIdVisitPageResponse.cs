@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /datacube/getweanalysisappidvisitpage 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_path")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置访问次数。
@@ -72,13 +72,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ref_date")]
         [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-        public virtual string RefDateString { get; set; } = default!;
+        public virtual string? RefDateString { get; set; }
 
         /// <summary>
         /// 获取或设置用户访问分布数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("transaction_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                        public string TransactionId { get; set; } = string.Empty;
+                        public string? TransactionId { get; set; }
                     }
                 }
 
@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_bill_no")]
-        public string OutBillNumber { get; set; } = string.Empty;
+        public string? OutBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置赔付用户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-        public Types.Receiver Receiver { get; set; } = new Types.Receiver();
+        public Types.Receiver? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置赔付金额（单位：分）。
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
-        public string TransferRemark { get; set; } = string.Empty;
+        public string? TransferRemark { get; set; }
 
         /// <summary>
         /// 获取或设置出资商户号。

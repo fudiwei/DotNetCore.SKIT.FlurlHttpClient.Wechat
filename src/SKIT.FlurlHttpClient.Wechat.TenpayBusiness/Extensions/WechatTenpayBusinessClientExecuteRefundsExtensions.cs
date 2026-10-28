@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.RefundId, "refund_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "refunds", "refund-id", request.RefundId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "refunds", "refund-id", request.RefundId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundByRefundIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

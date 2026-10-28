@@ -55,13 +55,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voucher_list")]
         [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
-        public Types.Voucher[]? VoucherList { get; set; }
+        public List<Types.Voucher>? VoucherList { get; set; }
 
         /// <summary>
         /// 获取或设置核销失败的券列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_voucher_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_voucher_list")]
-        public Types.FailedVoucher[]? FailedVoucherList { get; set; }
+        public List<Types.FailedVoucher>? FailedVoucherList { get; set; }
     }
 }

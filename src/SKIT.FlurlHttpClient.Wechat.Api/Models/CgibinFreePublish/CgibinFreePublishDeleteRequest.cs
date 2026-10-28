@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("article_id")]
         [System.Text.Json.Serialization.JsonPropertyName("article_id")]
-        public string ArticleId { get; set; } = string.Empty;
+        public string? ArticleId { get; set; }
 
         /// <summary>
         /// 获取或设置要删除的文章在图文消息中的索引。

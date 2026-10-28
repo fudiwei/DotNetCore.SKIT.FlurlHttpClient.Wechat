@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置外部联系人账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-        public string ExternalUserId { get; set; } = string.Empty;
+        public string? ExternalUserId { get; set; }
 
         /// <summary>
         /// 获取或设置该成员对外部联系人的备注。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("remark_mobiles")]
         [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
-        public IList<string>? RemarkMobileNumberList { get; set; }
+        public List<string>? RemarkMobileNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置该成员对外部联系人的备注图片的 MediaId。

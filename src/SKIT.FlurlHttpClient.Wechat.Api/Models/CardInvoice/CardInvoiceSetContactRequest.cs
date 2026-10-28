@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/invoice/setbizattr?action=set_contact 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string PhoneNumber { get; set; } = string.Empty;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票超时时间（单位：秒）。
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact")]
         [System.Text.Json.Serialization.JsonPropertyName("contact")]
-        public Types.Contact Contact { get; set; } = new Types.Contact();
+        public Types.Contact? Contact { get; set; }
     }
 }

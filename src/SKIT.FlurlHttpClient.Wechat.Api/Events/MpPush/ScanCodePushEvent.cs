@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ScanType")]
                 [System.Text.Json.Serialization.JsonPropertyName("ScanType")]
                 [System.Xml.Serialization.XmlElement("ScanType")]
-                public string ScanType { get; set; } = default!;
+                public string? ScanType { get; set; }
 
                 /// <summary>
                 /// 获取或设置扫描结果。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ScanResult")]
                 [System.Text.Json.Serialization.JsonPropertyName("ScanResult")]
                 [System.Xml.Serialization.XmlElement("ScanResult")]
-                public string ScanResult { get; set; } = default!;
+                public string? ScanResult { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("EventKey")]
         [System.Text.Json.Serialization.JsonPropertyName("EventKey")]
         [System.Xml.Serialization.XmlElement("EventKey")]
-        public string EventKey { get; set; } = default!;
+        public string? EventKey { get; set; }
 
         /// <summary>
         /// 获取或设置扫描信息。
@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ScanCodeInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("ScanCodeInfo")]
         [System.Xml.Serialization.XmlElement("ScanCodeInfo")]
-        public Types.ScanCode ScanCode { get; set; } = default!;
+        public Types.ScanCode? ScanCode { get; set; }
     }
 }

@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_name")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_name")]
-        public string TagName { get; set; } = string.Empty;
+        public string? TagName { get; set; }
 
         /// <summary>
         /// 获取或设置标签可选值列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_values")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_values")]
-        public IList<string> TagValues { get; set; } = new List<string>();
+        public List<string>? TagValues { get; set; }
     }
 }

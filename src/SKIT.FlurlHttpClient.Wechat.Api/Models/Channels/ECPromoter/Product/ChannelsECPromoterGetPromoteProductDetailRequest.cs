@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
-        public string ShopAppId { get; set; } = string.Empty;
+        public string? ShopAppId { get; set; }
 
         /// <summary>
         /// 获取或设置供货机构 AppId。

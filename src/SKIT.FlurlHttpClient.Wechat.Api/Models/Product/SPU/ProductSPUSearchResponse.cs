@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/spu/search 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spus")]
         [System.Text.Json.Serialization.JsonPropertyName("spus")]
-        public Types.SPU[] SPUList { get; set; } = default!;
+        public List<Types.SPU>? SPUList { get; set; }
     }
 }

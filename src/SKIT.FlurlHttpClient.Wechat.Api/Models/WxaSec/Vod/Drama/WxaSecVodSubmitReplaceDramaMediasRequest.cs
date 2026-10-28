@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("replace_media_list")]
         [System.Text.Json.Serialization.JsonPropertyName("replace_media_list")]
-        public IList<Types.ReplaceMedia>? ReplaceMediaList { get; set; }
+        public List<Types.ReplaceMedia>? ReplaceMediaList { get; set; }
     }
 }

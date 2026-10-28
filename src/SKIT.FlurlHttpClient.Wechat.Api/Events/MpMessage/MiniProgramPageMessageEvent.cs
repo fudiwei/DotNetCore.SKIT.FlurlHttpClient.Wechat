@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("AppId")]
         [System.Text.Json.Serialization.JsonPropertyName("AppId")]
         [System.Xml.Serialization.XmlElement("AppId")]
-        public string MiniProgramAppId { get; set; } = default!;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序标题。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Title")]
         [System.Text.Json.Serialization.JsonPropertyName("Title")]
         [System.Xml.Serialization.XmlElement("Title")]
-        public string MiniProgramTitle { get; set; } = default!;
+        public string? MiniProgramTitle { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面路径。
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("PagePath")]
         [System.Text.Json.Serialization.JsonPropertyName("PagePath")]
         [System.Xml.Serialization.XmlElement("PagePath")]
-        public string MiniProgramPagePath { get; set; } = default!;
+        public string? MiniProgramPagePath { get; set; }
 
         /// <summary>
         /// 获取或设置小程序缩略图 URL。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ThumbUrl")]
         [System.Text.Json.Serialization.JsonPropertyName("ThumbUrl")]
         [System.Xml.Serialization.XmlElement("ThumbUrl")]
-        public string MiniProgramThumbnailUrl { get; set; } = default!;
+        public string? MiniProgramThumbnailUrl { get; set; }
 
         /// <summary>
         /// 获取或设置小程序缩略图 MediaId。

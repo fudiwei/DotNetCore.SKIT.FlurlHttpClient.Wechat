@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cdnUrl")]
         [System.Text.Json.Serialization.JsonPropertyName("cdnUrl")]
-        public string QrcodeUrl { get; set; } = default!;
+        public string? QrcodeUrl { get; set; }
 
         /// <summary>
         /// 获取或设置分享海报 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("posterUrl")]
         [System.Text.Json.Serialization.JsonPropertyName("posterUrl")]
-        public string PosterUrl { get; set; } = default!;
+        public string? PosterUrl { get; set; }
 
         /// <summary>
         /// 获取或设置分享路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pagePath")]
         [System.Text.Json.Serialization.JsonPropertyName("pagePath")]
-        public string PagePath { get; set; } = default!;
+        public string? PagePath { get; set; }
     }
 }

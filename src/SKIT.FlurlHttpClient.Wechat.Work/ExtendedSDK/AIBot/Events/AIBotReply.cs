@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base64")]
                 [System.Text.Json.Serialization.JsonPropertyName("base64")]
-                public string ImageDataBase64String { get; set; } = default!;
+                public string? ImageDataBase64String { get; set; }
 
                 /// <summary>
                 /// 获取或设置图片数据的 MD5 值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("md5")]
                 [System.Text.Json.Serialization.JsonPropertyName("md5")]
-                public string ImageDataMd5 { get; set; } = default!;
+                public string? ImageDataMd5 { get; set; }
             }
 
             public class TemplateCard : Models.CgibinAIBotResponseRequest.Types.TemplateCard
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("msgtype")]
                         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-                        public string MessageType { get; set; } = default!;
+                        public string? MessageType { get; set; }
 
                         /// <summary>
                         /// 获取或设置文本消息信息。
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msg_item")]
                 [System.Text.Json.Serialization.JsonPropertyName("msg_item")]
-                public Types.MessageItem[] MessageItemList { get; set; } = default!;
+                public List<Types.MessageItem>? MessageItemList { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户交互反馈信息。

@@ -17,20 +17,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_imgs")]
         [System.Text.Json.Serialization.JsonPropertyName("head_imgs")]
-        public IList<string>? HeadImageUrlList { get; set; }
+        public List<string>? HeadImageUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品详情图 URL 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail_imgs")]
         [System.Text.Json.Serialization.JsonPropertyName("detail_imgs")]
-        public IList<string>? DetailImageUrlList { get; set; }
+        public List<string>? DetailImageUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
     }
 }

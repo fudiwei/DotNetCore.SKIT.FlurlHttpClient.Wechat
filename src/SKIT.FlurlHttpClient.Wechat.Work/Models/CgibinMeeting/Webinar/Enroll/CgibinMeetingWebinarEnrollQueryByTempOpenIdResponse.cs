@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enroll_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("enroll_id_list")]
-        public new Types.Result[] ResultList { get; set; } = default!;
+        public new List<Types.Result>? ResultList { get; set; }
     }
 }

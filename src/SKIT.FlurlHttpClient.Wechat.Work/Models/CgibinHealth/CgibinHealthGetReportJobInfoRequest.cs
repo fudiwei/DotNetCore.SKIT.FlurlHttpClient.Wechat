@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jobid")]
         [System.Text.Json.Serialization.JsonPropertyName("jobid")]
-        public string ReportJobId { get; set; } = string.Empty;
+        public string? ReportJobId { get; set; }
 
         /// <summary>
         /// 获取或设置任务日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
     }
 }

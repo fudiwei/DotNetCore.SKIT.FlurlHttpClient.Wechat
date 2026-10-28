@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query")]
         [System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string QueryString { get; set; } = string.Empty;
+        public string? QueryString { get; set; }
 
         /// <summary>
         /// 获取或设置查询环境。
@@ -18,21 +18,21 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string Environment { get; set; } = "online";
+        public string? Environment { get; set; } = "online";
 
         /// <summary>
         /// 获取或设置第一优先级的限定技能命中范围列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("first_priority_skills")]
         [System.Text.Json.Serialization.JsonPropertyName("first_priority_skills")]
-        public IList<string>? FirstPrioritySkillList { get; set; }
+        public List<string>? FirstPrioritySkillList { get; set; }
 
         /// <summary>
         /// 获取或设置第二优先级的限定技能命中范围列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("second_priority_skills")]
         [System.Text.Json.Serialization.JsonPropertyName("second_priority_skills")]
-        public IList<string>? SecondPrioritySkillList { get; set; }
+        public List<string>? SecondPrioritySkillList { get; set; }
 
         /// <summary>
         /// 获取或设置用户标识。

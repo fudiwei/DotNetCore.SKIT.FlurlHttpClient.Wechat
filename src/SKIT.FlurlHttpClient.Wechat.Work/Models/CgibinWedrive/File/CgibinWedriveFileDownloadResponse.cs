@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("download_url")]
         [System.Text.Json.Serialization.JsonPropertyName("download_url")]
-        public string DownloadUrl { get; set; } = default!;
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 获取或设置下载请求时携带的 Cookie 的 Key。

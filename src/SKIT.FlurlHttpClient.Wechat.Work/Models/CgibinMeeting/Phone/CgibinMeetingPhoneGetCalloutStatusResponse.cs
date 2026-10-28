@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("area")]
                 [System.Text.Json.Serialization.JsonPropertyName("area")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string AreaCode { get; set; } = default!;
+                public string? AreaCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置电话号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置分机号。
@@ -36,14 +36,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议的成员临时 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tmp_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("tmp_openid")]
-                public string TempOpenId { get; set; } = default!;
+                public string? TempOpenId { get; set; }
             }
         }
 
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("phone_numbers")]
         [System.Text.Json.Serialization.JsonPropertyName("phone_numbers")]
-        public Types.Callout[] CalloutList { get; set; } = default!;
+        public List<Types.Callout>? CalloutList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

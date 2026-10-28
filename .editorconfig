@@ -10,5 +10,4 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 [*.cs]
-dotnet_diagnostic.CS1570.severity = none
 dotnet_diagnostic.CS1591.severity = suggestion

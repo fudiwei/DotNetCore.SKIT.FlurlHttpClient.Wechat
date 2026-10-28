@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_no")]
-        public string BillNumber { get; set; } = default!;
+        public string? BillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置预扣后的余额。

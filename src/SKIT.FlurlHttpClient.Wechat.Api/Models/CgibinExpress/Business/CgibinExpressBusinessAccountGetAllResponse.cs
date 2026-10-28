@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/express/business/account/getall 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("biz_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("biz_id")]
-                public string BusinessId { get; set; } = default!;
+                public string? BusinessId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递公司 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置绑定状态。
@@ -42,7 +42,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("alias")]
                 [System.Text.Json.Serialization.JsonPropertyName("alias")]
-                public string Alias { get; set; } = default!;
+                public string? Alias { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号绑定失败的错误信息。
@@ -77,7 +77,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_type")]
-                public Types.Service[]? ServiceList { get; set; }
+                public List<Types.Service>? ServiceList { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号更新时间戳。
@@ -100,7 +100,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Account[] AccountList { get; set; } = default!;
+        public List<Types.Account>? AccountList { get; set; }
 
         /// <summary>
         /// 获取或设置账号数量。

@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置函数名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("functionname")]
         [System.Text.Json.Serialization.JsonPropertyName("functionname")]
-        public string FunctionName { get; set; } = string.Empty;
+        public string? FunctionName { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("envs")]
         [System.Text.Json.Serialization.JsonPropertyName("envs")]
-        public IList<string> EnvironmentIdList { get; set; } = new List<string>();
+        public List<string>? EnvironmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置经 Base64 编码的包含函数代码文件的 zip 格式文件内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("zipfile")]
         [System.Text.Json.Serialization.JsonPropertyName("zipfile")]
-        public string EncodingZipFile { get; set; } = string.Empty;
+        public string? EncodingZipFile { get; set; }
 
         /// <summary>
         /// 获取或设置 VPC 唯一标识。

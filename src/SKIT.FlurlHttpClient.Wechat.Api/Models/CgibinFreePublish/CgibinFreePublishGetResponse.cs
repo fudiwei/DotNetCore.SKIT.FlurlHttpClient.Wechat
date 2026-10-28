@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("article_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("article_url")]
-                        public string ArticleUrl { get; set; } = default!;
+                        public string? ArticleUrl { get; set; }
                     }
                 }
 
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                public Types.Item[] List { get; set; } = default!;
+                public List<Types.Item>? List { get; set; }
             }
         }
 
@@ -80,6 +80,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_idx")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_idx")]
-        public int[]? FailedIndexList { get; set; }
+        public List<int>? FailedIndexList { get; set; }
     }
 }

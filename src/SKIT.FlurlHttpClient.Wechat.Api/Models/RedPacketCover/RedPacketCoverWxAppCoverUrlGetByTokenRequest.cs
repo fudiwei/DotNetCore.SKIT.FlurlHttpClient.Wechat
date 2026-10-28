@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置红包封面平台的发放 CToken。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ctoken")]
         [System.Text.Json.Serialization.JsonPropertyName("ctoken")]
-        public string CToken { get; set; } = string.Empty;
+        public string? CToken { get; set; }
     }
 }

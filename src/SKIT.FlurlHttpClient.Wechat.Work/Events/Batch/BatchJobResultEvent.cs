@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("JobId")]
                 [System.Text.Json.Serialization.JsonPropertyName("JobId")]
                 [System.Xml.Serialization.XmlElement("JobId")]
-                public string JobId { get; set; } = default!;
+                public string? JobId { get; set; }
 
                 /// <summary>
                 /// 获取或设置任务类型。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("JobType")]
                 [System.Text.Json.Serialization.JsonPropertyName("JobType")]
                 [System.Xml.Serialization.XmlElement("JobType")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -63,6 +63,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("BatchJob")]
         [System.Text.Json.Serialization.JsonPropertyName("BatchJob")]
         [System.Xml.Serialization.XmlElement("BatchJob")]
-        public Types.BatchJob BatchJob { get; set; } = default!;
+        public Types.BatchJob? BatchJob { get; set; }
     }
 }

@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("param_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("param_name")]
-                        public string ParameterName { get; set; } = default!;
+                        public string? ParameterName { get; set; }
 
                         /// <summary>
                         /// 获取或设置审核驳回原因。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reject_reason")]
                         [System.Text.Json.Serialization.JsonPropertyName("reject_reason")]
-                        public string RejectReason { get; set; } = default!;
+                        public string? RejectReason { get; set; }
                     }
                 }
 
@@ -99,6 +99,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

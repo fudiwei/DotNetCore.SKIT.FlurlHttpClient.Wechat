@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unique_id")]
         [System.Text.Json.Serialization.JsonPropertyName("unique_id")]
-        public string UniqueId { get; set; } = default!;
+        public string? UniqueId { get; set; }
 
         /// <summary>
         /// 获取或设置用户授权确认链接 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorize_url")]
         [System.Text.Json.Serialization.JsonPropertyName("authorize_url")]
-        public string AuthorizeUrl { get; set; } = default!;
+        public string? AuthorizeUrl { get; set; }
     }
 }

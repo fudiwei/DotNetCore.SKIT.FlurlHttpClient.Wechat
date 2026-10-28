@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "contracts", "id", request.ContractId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "contracts", "id", request.ContractId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("sub_appid", request.SubAppId);
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "user", request.OpenId, "contracts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "user", request.OpenId!, "contracts")
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("sub_appid", request.SubAppId)
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Delete, "edu-papay", "contracts", request.ContractId);
+                .CreateFlurlRequest(request, HttpMethod.Delete, "edu-papay", "contracts", request.ContractId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminateEducationPAPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "edu-papay", "user-notifications", request.ContractId, "send");
+                .CreateFlurlRequest(request, HttpMethod.Post, "edu-papay", "user-notifications", request.ContractId!, "send");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SendEducationPAPayContractNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -179,7 +179,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutTradeNumber, "out_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "transactions", "out-trade-no", request.OutTradeNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "transactions", "out-trade-no", request.OutTradeNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationPAPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -204,7 +204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.TransactionId, "transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "transactions", "id", request.TransactionId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "transactions", "id", request.TransactionId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationPAPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

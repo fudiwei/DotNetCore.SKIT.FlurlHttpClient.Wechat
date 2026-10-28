@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("planId")]
         [System.Text.Json.Serialization.JsonPropertyName("planId")]
-        public string PlanId { get; set; } = default!;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置计划类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("planType")]
         [System.Text.Json.Serialization.JsonPropertyName("planType")]
-        public string PlanType { get; set; } = default!;
+        public string? PlanType { get; set; }
 
         /// <summary>
         /// 获取或设置邀请链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("inviteUrl")]
         [System.Text.Json.Serialization.JsonPropertyName("inviteUrl")]
-        public string InviteUrl { get; set; } = default!;
+        public string? InviteUrl { get; set; }
     }
 }

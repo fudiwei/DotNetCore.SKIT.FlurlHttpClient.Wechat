@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("book_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("book_id")]
-                public string BookId { get; set; } = string.Empty;
+                public string? BookId { get; set; }
 
                 /// <summary>
                 /// 获取或设置被授权账号 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grantee_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("grantee_appid")]
-                public string GranteeAppId { get; set; } = string.Empty;
+                public string? GranteeAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权到期时间戳。
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("books")]
         [System.Text.Json.Serialization.JsonPropertyName("books")]
-        public IList<Types.Book> BookList { get; set; } = new List<Types.Book>();
+        public List<Types.Book>? BookList { get; set; }
     }
 }

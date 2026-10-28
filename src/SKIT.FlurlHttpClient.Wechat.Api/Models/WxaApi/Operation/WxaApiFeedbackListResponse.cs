@@ -21,21 +21,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置反馈用户昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置反馈用户头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_url")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置反馈用户手机号。
@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置反馈截图媒体文件标识列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mediaIds")]
                 [System.Text.Json.Serialization.JsonPropertyName("mediaIds")]
-                public string[]? MediaIdList { get; set; }
+                public List<string>? MediaIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置反馈用户 JSON 格式的系统信息。
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Feedback[] FeedbackList { get; set; } = default!;
+        public List<Types.Feedback>? FeedbackList { get; set; }
 
         /// <summary>
         /// 获取或设置反馈总条数。

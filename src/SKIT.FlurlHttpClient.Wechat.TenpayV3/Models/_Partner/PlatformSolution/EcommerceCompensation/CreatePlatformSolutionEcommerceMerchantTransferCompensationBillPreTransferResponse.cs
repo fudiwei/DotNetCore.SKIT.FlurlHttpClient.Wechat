@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_bill_no")]
-        public string OutBillNumber { get; set; } = default!;
+        public string? OutBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付付款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_id")]
-        public string BillId { get; set; } = default!;
+        public string? BillId { get; set; }
 
         /// <summary>
         /// 获取或设置受理时间。
@@ -40,6 +40,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("package_info")]
         [System.Text.Json.Serialization.JsonPropertyName("package_info")]
-        public string PackageInfo { get; set; } = default!;
+        public string? PackageInfo { get; set; }
     }
 }

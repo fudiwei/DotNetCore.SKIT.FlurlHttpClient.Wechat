@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("orderId")]
                 [System.Text.Json.Serialization.JsonPropertyName("orderId")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉单 ID。
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("illegalWording")]
                 [System.Text.Json.Serialization.JsonPropertyName("illegalWording")]
-                public string IllegalWording { get; set; } = default!;
+                public string? IllegalWording { get; set; }
 
                 /// <summary>
                 /// 获取或设置扣分记录状态。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appealList")]
         [System.Text.Json.Serialization.JsonPropertyName("appealList")]
-        public Types.Appeal[] AppealList { get; set; } = default!;
+        public List<Types.Appeal>? AppealList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

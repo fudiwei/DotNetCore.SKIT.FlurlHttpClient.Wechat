@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_app_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_app_id")]
-        public string ShopAppId { get; set; } = string.Empty;
+        public string? ShopAppId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户编码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("biz_id")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_id")]
-        public string BusinessId { get; set; } = string.Empty;
+        public string? BusinessId { get; set; }
 
         /// <summary>
         /// 获取或设置审核结果。

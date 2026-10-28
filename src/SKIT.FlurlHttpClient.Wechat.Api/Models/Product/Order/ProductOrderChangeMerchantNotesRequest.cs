@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_notes")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_notes")]
-        public string MerchantNotes { get; set; } = string.Empty;
+        public string? MerchantNotes { get; set; }
     }
 }

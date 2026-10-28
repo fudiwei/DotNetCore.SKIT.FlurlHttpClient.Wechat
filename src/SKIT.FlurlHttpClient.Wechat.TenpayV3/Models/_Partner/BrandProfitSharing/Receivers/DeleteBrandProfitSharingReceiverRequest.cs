@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_mchid")]
-        public string BrandMerchantId { get; set; } = string.Empty;
+        public string? BrandMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置电商平台 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -31,13 +31,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置接收方账户。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account")]
         [System.Text.Json.Serialization.JsonPropertyName("account")]
-        public string Account { get; set; } = string.Empty;
+        public string? Account { get; set; }
     }
 }

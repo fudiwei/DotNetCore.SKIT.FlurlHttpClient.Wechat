@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("OriginalArticleUrl")]
                         [System.Text.Json.Serialization.JsonPropertyName("OriginalArticleUrl")]
                         [System.Xml.Serialization.XmlElement("OriginalArticleUrl")]
-                        public string OriginalArticleUrl { get; set; } = default!;
+                        public string? OriginalArticleUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置相似原创文的类型。
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("item")]
                         [System.Text.Json.Serialization.JsonPropertyName("item")]
                         [System.Xml.Serialization.XmlElement("item", Type = typeof(CopyrightCheckResultItem))]
-                        public CopyrightCheckResultItem[] Items { get; set; } = default!;
+                        public List<CopyrightCheckResultItem>? Items { get; set; }
                     }
                 }
 
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ResultList")]
                 [System.Text.Json.Serialization.JsonPropertyName("ResultList")]
                 [System.Xml.Serialization.XmlElement("ResultList", Type = typeof(Types.CopyrightCheckResultList))]
-                public Types.CopyrightCheckResultList ResultList { get; set; } = default!;
+                public Types.CopyrightCheckResultList? ResultList { get; set; }
             }
 
             public class ArticleUrlResult
@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("ArticleUrl")]
                         [System.Text.Json.Serialization.JsonPropertyName("ArticleUrl")]
                         [System.Xml.Serialization.XmlElement("ArticleUrl")]
-                        public string ArticleUrl { get; set; } = default!;
+                        public string? ArticleUrl { get; set; }
                     }
 
                     public class ArticleUrlResultList
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("item")]
                         [System.Text.Json.Serialization.JsonPropertyName("item")]
                         [System.Xml.Serialization.XmlElement("item", Type = typeof(ArticleUrlResultItem))]
-                        public ArticleUrlResultItem[] Items { get; set; } = default!;
+                        public List<ArticleUrlResultItem>? Items { get; set; }
                     }
                 }
 
@@ -171,7 +171,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ResultList")]
                 [System.Text.Json.Serialization.JsonPropertyName("ResultList")]
                 [System.Xml.Serialization.XmlElement("ResultList", Type = typeof(Types.ArticleUrlResultList))]
-                public Types.ArticleUrlResultList ResultList { get; set; } = default!;
+                public Types.ArticleUrlResultList? ResultList { get; set; }
             }
         }
 
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Status")]
         [System.Text.Json.Serialization.JsonPropertyName("Status")]
         [System.Xml.Serialization.XmlElement("Status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置总人数。

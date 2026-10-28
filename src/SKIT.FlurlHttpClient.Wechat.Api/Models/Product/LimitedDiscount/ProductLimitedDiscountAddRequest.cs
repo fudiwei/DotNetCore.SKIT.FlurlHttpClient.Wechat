@@ -58,6 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limited_discount_sku_list")]
         [System.Text.Json.Serialization.JsonPropertyName("limited_discount_sku_list")]
-        public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+        public List<Types.SKU>? SKUList { get; set; }
     }
 }

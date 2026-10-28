@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("notice_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("notice_id")]
-                public string NoticeId { get; set; } = default!;
+                public string? NoticeId { get; set; }
 
                 /// <summary>
                 /// 获取或设置预约状态。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status_wording")]
                 [System.Text.Json.Serialization.JsonPropertyName("status_wording")]
-                public string StatusText { get; set; } = default!;
+                public string? StatusText { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播开始时间戳。
@@ -43,21 +43,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置开播视频号昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置开播视频号头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_url")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
             }
         }
 
@@ -66,6 +66,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_notice_list")]
         [System.Text.Json.Serialization.JsonPropertyName("live_notice_list")]
-        public Types.Notice[] NoticeList { get; set; } = default!;
+        public List<Types.Notice>? NoticeList { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_code")]
-                public string StoreCode { get; set; } = default!;
+                public string? StoreCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_name")]
-                public string StoreName { get; set; } = default!;
+                public string? StoreName { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Store[]? StoreList { get; set; }
+        public List<Types.Store>? StoreList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

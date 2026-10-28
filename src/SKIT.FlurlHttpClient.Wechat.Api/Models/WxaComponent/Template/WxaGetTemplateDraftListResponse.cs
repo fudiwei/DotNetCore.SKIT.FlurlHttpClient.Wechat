@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/gettemplatedraftlist 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_version")]
-                public string UserVersion { get; set; } = default!;
+                public string? UserVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户自定义版本描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_desc")]
-                public string UserDescription { get; set; } = default!;
+                public string? UserDescription { get; set; }
 
                 /// <summary>
                 /// 获取或设置上传时间戳。
@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("draft_list")]
         [System.Text.Json.Serialization.JsonPropertyName("draft_list")]
-        public Types.Draft[] DraftList { get; set; } = default!;
+        public List<Types.Draft>? DraftList { get; set; }
     }
 }

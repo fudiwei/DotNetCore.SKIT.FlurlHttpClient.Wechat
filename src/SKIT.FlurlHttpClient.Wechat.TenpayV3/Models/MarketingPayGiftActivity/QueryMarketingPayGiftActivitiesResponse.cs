@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-                public string ActivityId { get; set; } = default!;
+                public string? ActivityId { get; set; }
 
                 /// <summary>
                 /// 获取或设置活动类型。
@@ -43,35 +43,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_status")]
-                public string ActivityStatus { get; set; } = default!;
+                public string? ActivityStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("creator_merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("creator_merchant_id")]
-                public string CreatorMerchantId { get; set; } = default!;
+                public string? CreatorMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置所属商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("belong_merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("belong_merchant_id")]
-                public string BelongMerchantId { get; set; } = default!;
+                public string? BelongMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置活动基本信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_base_info")]
-                public Types.ActivityBase ActivityBase { get; set; } = default!;
+                public Types.ActivityBase? ActivityBase { get; set; }
 
                 /// <summary>
                 /// 获取或设置活动奖品发放规则信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("award_send_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("award_send_rule")]
-                public Types.AwardSendRule AwardSendRule { get; set; } = default!;
+                public Types.AwardSendRule? AwardSendRule { get; set; }
 
                 /// <summary>
                 /// 获取或设置活动高级设置信息。
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Activity[] ActivityList { get; set; } = default!;
+        public List<Types.Activity>? ActivityList { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

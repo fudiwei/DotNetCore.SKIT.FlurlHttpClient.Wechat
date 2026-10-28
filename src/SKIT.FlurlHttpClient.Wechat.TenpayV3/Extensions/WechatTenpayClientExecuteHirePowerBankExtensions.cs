@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "hire-power-bank", "insurance-orders", request.OutOrderNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "hire-power-bank", "insurance-orders", request.OutOrderNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetHirePowerBankInsuranceOrderByOutOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "hire-power-bank", "user-qualifications", request.OpenId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "hire-power-bank", "user-qualifications", request.OpenId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetHirePowerBankUserQualificationByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

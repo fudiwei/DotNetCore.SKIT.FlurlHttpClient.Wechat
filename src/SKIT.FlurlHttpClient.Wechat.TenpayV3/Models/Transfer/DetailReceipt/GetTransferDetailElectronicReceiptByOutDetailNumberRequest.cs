@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AcceptType { get; set; } = string.Empty;
+        public string? AcceptType { get; set; }
 
         /// <summary>
         /// 获取或设置商户批次单号。
@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutDetailNumber { get; set; } = string.Empty;
+        public string? OutDetailNumber { get; set; }
     }
 }

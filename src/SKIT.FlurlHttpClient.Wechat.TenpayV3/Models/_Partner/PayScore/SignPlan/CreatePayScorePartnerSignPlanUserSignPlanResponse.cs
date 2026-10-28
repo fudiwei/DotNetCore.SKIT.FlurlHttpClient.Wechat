@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-                public string SubMerchantId { get; set; } = default!;
+                public string? SubMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户 AppId。
@@ -37,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("package")]
         [System.Text.Json.Serialization.JsonPropertyName("package")]
-        public string Package { get; set; } = default!;
+        public string? Package { get; set; }
 
         /// <summary>
         /// 获取或设置待签约计划信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_plan")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_plan")]
-        public Types.SignPlan SignPlan { get; set; } = default!;
+        public Types.SignPlan? SignPlan { get; set; }
     }
 }

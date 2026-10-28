@@ -54,14 +54,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Obsolete("相关接口或字段于 2026-06-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("fail_finder_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_finder_ids")]
-                public string[]? FailedFinderIdList { get; set; }
+                public List<string>? FailedFinderIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置失败的带货达人 AppId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fail_talent_appids")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_talent_appids")]
-                public string[]? FailedTalentAppIdList { get; set; }
+                public List<string>? FailedTalentAppIdList { get; set; }
             }
         }
 
@@ -70,6 +70,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("result_info_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

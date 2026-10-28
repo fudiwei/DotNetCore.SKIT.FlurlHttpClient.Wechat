@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/queryfee 接口的响应。</para>
@@ -38,7 +38,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_name")]
         [System.Text.Json.Serialization.JsonPropertyName("department_name")]
-        public string DepartmentName { get; set; } = default!;
+        public string? DepartmentName { get; set; }
 
         /// <summary>
         /// 获取或设置缴费通知书类型。
@@ -52,7 +52,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_notice_no")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_notice_no")]
-        public string PaymentNoticeNumber { get; set; } = default!;
+        public string? PaymentNoticeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置缴费通知书创建时间戳。
@@ -73,13 +73,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("region_code")]
         [System.Text.Json.Serialization.JsonPropertyName("region_code")]
-        public string RegionCode { get; set; } = default!;
+        public string? RegionCode { get; set; }
 
         /// <summary>
         /// 获取或设置缴费子项目列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public Types.BillItem[] BillItemList { get; set; } = default!;
+        public List<Types.BillItem>? BillItemList { get; set; }
     }
 }

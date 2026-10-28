@@ -56,6 +56,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("BrandEvent")]
         [System.Text.Json.Serialization.JsonPropertyName("BrandEvent")]
         [System.Xml.Serialization.XmlElement("BrandEvent")]
-        public Types.Brand Brand { get; set; } = default!;
+        public Types.Brand? Brand { get; set; }
     }
 }

@@ -18,21 +18,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = default!;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小店昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                        public string Nickname { get; set; } = default!;
+                        public string? Nickname { get; set; }
 
                         /// <summary>
                         /// 获取或设置小店头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("headimg_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("headimg_url")]
-                        public string HeadImageUrl { get; set; } = default!;
+                        public string? HeadImageUrl { get; set; }
                     }
                 }
 
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.BaseInfo BaseInfo { get; set; } = default!;
+                public Types.BaseInfo? BaseInfo { get; set; }
             }
         }
 
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_list")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_list")]
-        public Types.Shop[] ShopList { get; set; } = default!;
+        public List<Types.Shop>? ShopList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

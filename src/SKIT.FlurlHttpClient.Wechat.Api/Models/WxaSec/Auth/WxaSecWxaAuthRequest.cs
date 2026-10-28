@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置认证联系人邮箱。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("email")]
                         [System.Text.Json.Serialization.JsonPropertyName("email")]
-                        public string Email { get; set; } = string.Empty;
+                        public string? Email { get; set; }
                     }
 
                     public class Invoice
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string TaxNumber { get; set; } = string.Empty;
+                                public string? TaxNumber { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置发票备注。
@@ -56,35 +56,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string TaxNumber { get; set; } = string.Empty;
+                                public string? TaxNumber { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置企业电话。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("enterprise_phone")]
                                 [System.Text.Json.Serialization.JsonPropertyName("enterprise_phone")]
-                                public string EnterprisePhoneNumber { get; set; } = string.Empty;
+                                public string? EnterprisePhoneNumber { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置企业注册地址。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("enterprise_address")]
                                 [System.Text.Json.Serialization.JsonPropertyName("enterprise_address")]
-                                public string EnterpriseAddress { get; set; } = string.Empty;
+                                public string? EnterpriseAddress { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置企业开户银行。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("bank_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-                                public string BankName { get; set; } = string.Empty;
+                                public string? BankName { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置企业银行账号。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("bank_account")]
                                 [System.Text.Json.Serialization.JsonPropertyName("bank_account")]
-                                public string BankAccount { get; set; } = string.Empty;
+                                public string? BankAccount { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置邮寄地址邮编。
@@ -193,7 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_info")]
-                public Types.Contact Contact { get; set; } = new Types.Contact();
+                public Types.Contact? Contact { get; set; }
 
                 /// <summary>
                 /// 获取或设置主体资质材料 MediaId。
@@ -207,14 +207,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("qualification_other")]
                 [System.Text.Json.Serialization.JsonPropertyName("qualification_other")]
-                public IList<string>? QualificationOtherMediaIdList { get; set; }
+                public List<string>? QualificationOtherMediaIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序账号名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-                public string AccountName { get; set; } = string.Empty;
+                public string? AccountName { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序账号名称命名类型。
@@ -228,7 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_supplemental")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_supplemental")]
-                public IList<string>? AccountSupplementalMediaIdList { get; set; }
+                public List<string>? AccountSupplementalMediaIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付方式。
@@ -256,7 +256,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_ident_material")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_ident_material")]
-                public IList<string>? AuthIdentificationMaterialIdList { get; set; }
+                public List<string>? AuthIdentificationMaterialIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方联系电话。
@@ -279,6 +279,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_data")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_data")]
-        public Types.AuthData AuthData { get; set; } = new Types.AuthData();
+        public Types.AuthData? AuthData { get; set; }
     }
 }

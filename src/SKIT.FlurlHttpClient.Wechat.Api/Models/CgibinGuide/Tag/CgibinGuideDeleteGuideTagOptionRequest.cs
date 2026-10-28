@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_name")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_name")]
-        public string TagName { get; set; } = string.Empty;
+        public string? TagName { get; set; }
     }
 }

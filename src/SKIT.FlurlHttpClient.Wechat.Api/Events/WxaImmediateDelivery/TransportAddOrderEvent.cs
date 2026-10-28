@@ -15,6 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("wx_token")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_token")]
         [System.Xml.Serialization.XmlElement("wx_token")]
-        public string Token { get; set; } = default!;
+        public string? Token { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("out_product_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_product_id")]
                 [System.Xml.Serialization.XmlElement("out_product_id")]
-                public string OutProductId { get; set; } = default!;
+                public string? OutProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品 ID。
@@ -53,6 +53,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OpenProductSpuAudit")]
         [System.Text.Json.Serialization.JsonPropertyName("OpenProductSpuAudit")]
         [System.Xml.Serialization.XmlElement("OpenProductSpuAudit")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

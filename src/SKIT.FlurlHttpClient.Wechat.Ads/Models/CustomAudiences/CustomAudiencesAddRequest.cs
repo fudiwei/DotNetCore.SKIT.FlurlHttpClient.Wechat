@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string CustomAudienceName { get; set; } = string.Empty;
+        public string? CustomAudienceName { get; set; }
 
         /// <summary>
         /// 获取或设置自定义人群类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string CustomAudienceType { get; set; } = string.Empty;
+        public string? CustomAudienceType { get; set; }
 
         /// <summary>
         /// 获取或设置自定义人群描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string CustomAudienceDescription { get; set; } = string.Empty;
+        public string? CustomAudienceDescription { get; set; }
     }
 }

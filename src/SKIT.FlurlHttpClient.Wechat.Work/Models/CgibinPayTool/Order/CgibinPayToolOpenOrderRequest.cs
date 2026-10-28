@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("suiteid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("suiteid")]
-                                public string SuiteId { get; set; } = string.Empty;
+                                public string? SuiteId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置旧版应用 ID。
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("edition_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("edition_id")]
-                                public string EditionId { get; set; } = string.Empty;
+                                public string? EditionId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置购买人数。
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("buy_info_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("buy_info_list")]
-                        public IList<Types.BuyInfo> BuyInfoList { get; set; } = new List<Types.BuyInfo>();
+                        public List<Types.BuyInfo>? BuyInfoList { get; set; }
                     }
 
                     public class CustomizedApp : ProductBase
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("suiteid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("suiteid")]
-                                public string SuiteId { get; set; } = string.Empty;
+                                public string? SuiteId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置旧版应用 ID。
@@ -184,7 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("buy_info_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("buy_info_list")]
-                        public IList<Types.BuyInfo> BuyInfoList { get; set; } = new List<Types.BuyInfo>();
+                        public List<Types.BuyInfo>? BuyInfoList { get; set; }
                     }
 
                     public class PromotionCase : ProductBase
@@ -198,7 +198,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("suiteid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("suiteid")]
-                                public string SuiteId { get; set; } = string.Empty;
+                                public string? SuiteId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置旧版应用 ID。
@@ -221,14 +221,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("case_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("case_id")]
-                        public string CaseId { get; set; } = string.Empty;
+                        public string? CaseId { get; set; }
 
                         /// <summary>
                         /// 获取或设置行业方案版本名称
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("promotion_edition_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("promotion_edition_name")]
-                        public string PromotionEditionName { get; set; } = string.Empty;
+                        public string? PromotionEditionName { get; set; }
 
                         /// <summary>
                         /// 获取或设置购买天数。
@@ -249,7 +249,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("buy_info_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("buy_info_list")]
-                        public IList<Types.BuyInfo>? BuyInfoList { get; set; }
+                        public List<Types.BuyInfo>? BuyInfoList { get; set; }
                     }
                 }
 
@@ -316,6 +316,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_list")]
-        public Types.Product Product { get; set; } = new Types.Product();
+        public Types.Product? Product { get; set; }
     }
 }

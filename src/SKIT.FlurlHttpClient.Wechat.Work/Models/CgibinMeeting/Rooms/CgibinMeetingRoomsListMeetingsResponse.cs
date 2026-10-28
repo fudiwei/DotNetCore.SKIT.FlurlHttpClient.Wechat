@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meetingid")]
                 [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-                public string MeetingId { get; set; } = default!;
+                public string? MeetingId { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
-                public string MeetingCode { get; set; } = default!;
+                public string? MeetingCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议主题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subject")]
                 [System.Text.Json.Serialization.JsonPropertyName("subject")]
-                public string Subject { get; set; } = default!;
+                public string? Subject { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议类型。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议开始时间戳。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_info_list")]
-        public Types.Meeting[] MeetingList { get; set; } = default!;
+        public List<Types.Meeting>? MeetingList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

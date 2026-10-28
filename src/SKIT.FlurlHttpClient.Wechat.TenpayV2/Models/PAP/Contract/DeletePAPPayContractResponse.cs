@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public string Version { get; set; } = default!;
+        public string? Version { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
@@ -38,20 +38,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_code")]
-        public string ContractCode { get; set; } = default!;
+        public string? ContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置解约备注。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_termination_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_termination_remark")]
-        public string TerminationRemark { get; set; } = default!;
+        public string? TerminationRemark { get; set; }
     }
 }

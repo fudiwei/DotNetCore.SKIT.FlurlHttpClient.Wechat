@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 [System.Xml.Serialization.XmlElement("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
             }
         }
 
@@ -47,6 +47,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("finder_shop_guarantee_status_update")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_shop_guarantee_status_update")]
         [System.Xml.Serialization.XmlElement("finder_shop_guarantee_status_update")]
-        public Types.GuaranteeOrder GuaranteeOrder { get; set; } = default!;
+        public Types.GuaranteeOrder? GuaranteeOrder { get; set; }
     }
 }

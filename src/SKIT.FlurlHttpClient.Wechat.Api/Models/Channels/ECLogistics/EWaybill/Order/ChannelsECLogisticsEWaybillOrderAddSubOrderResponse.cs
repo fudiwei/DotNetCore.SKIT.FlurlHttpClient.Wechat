@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id_list")]
-        public Types.SubWaybill[]? SubWaybillList { get; set; }
+        public List<Types.SubWaybill>? SubWaybillList { get; set; }
     }
 }

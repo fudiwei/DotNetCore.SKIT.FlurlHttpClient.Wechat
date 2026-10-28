@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "weekly-discount", "activities", request.ActivityId, "apply");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "weekly-discount", "activities", request.ActivityId!, "apply");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ApplyMarketingWeeklyDiscountActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ActivityId, "activity_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities", request.ActivityId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities", request.ActivityId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetApplyMarketingWeeklyDiscountActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

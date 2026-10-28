@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_no_list")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_no_list")]
-        public string[] ApprovalNumberList { get; set; } = default!;
+        public List<string>? ApprovalNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

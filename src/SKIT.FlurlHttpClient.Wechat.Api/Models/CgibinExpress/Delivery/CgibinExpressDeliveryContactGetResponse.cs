@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置座机号码。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address")]
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
-                public string Address { get; set; } = default!;
+                public string? Address { get; set; }
             }
 
             public class Receiver : Sender
@@ -48,20 +48,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = default!;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置发件人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sender")]
         [System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public Types.Sender Sender { get; set; } = default!;
+        public Types.Sender? Sender { get; set; }
 
         /// <summary>
         /// 获取或设置收件人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-        public Types.Receiver Receiver { get; set; } = default!;
+        public Types.Receiver? Receiver { get; set; }
     }
 }

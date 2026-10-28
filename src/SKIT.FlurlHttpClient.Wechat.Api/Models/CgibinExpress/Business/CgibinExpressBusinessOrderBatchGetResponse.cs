@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/order/batchget 接口的响应。</para>
@@ -28,35 +28,35 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errmsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递公司 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置运单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-                public string WaybillId { get; set; } = default!;
+                public string? WaybillId { get; set; }
 
                 /// <summary>
                 /// 获取或设置运单数据列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("waybill_data")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_data")]
-                public Types.WaybillData[] WaybillDataList { get; set; } = default!;
+                public List<Types.WaybillData>? WaybillDataList { get; set; }
 
                 /// <summary>
                 /// 获取或设置运单 HTML 内容（已经 Base64 编码）。
@@ -79,6 +79,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
     }
 }

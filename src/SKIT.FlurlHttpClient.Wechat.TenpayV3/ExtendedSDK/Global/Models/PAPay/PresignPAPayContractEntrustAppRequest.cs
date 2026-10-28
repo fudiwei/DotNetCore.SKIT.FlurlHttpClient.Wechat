@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string AppId { get; set; } = string.Empty;
+        public virtual string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
@@ -24,35 +24,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = string.Empty;
+        public string? OutContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置用户账户展示名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_display_name")]
-        public string UserDisplayName { get; set; } = string.Empty;
+        public string? UserDisplayName { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("success_notify_url")]
-        public string NotifyUrl { get; set; } = string.Empty;
+        public string? NotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户终端 IP。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_client_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("user_client_ip")]
-        public string? ClientIp { get; set; } = string.Empty;
+        public string? ClientIp { get; set; }
 
         /// <summary>
         /// 获取或设置过期时间。

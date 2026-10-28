@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_product_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_product_id")]
-                public string OutProductId { get; set; } = default!;
+                public string? OutProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间。
@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

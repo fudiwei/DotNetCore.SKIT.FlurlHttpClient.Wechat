@@ -39,28 +39,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fbatchno")]
         [System.Text.Json.Serialization.JsonPropertyName("fbatchno")]
-        public string ForeignPaymentBatchNumber { get; set; } = default!;
+        public string? ForeignPaymentBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置结算日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date_settlement")]
         [System.Text.Json.Serialization.JsonPropertyName("date_settlement")]
-        public string SettlementDateString { get; set; } = default!;
+        public string? SettlementDateString { get; set; }
 
         /// <summary>
         /// 获取或设置交易开始日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date_start")]
         [System.Text.Json.Serialization.JsonPropertyName("date_start")]
-        public string StartDateString { get; set; } = default!;
+        public string? StartDateString { get; set; }
 
         /// <summary>
         /// 获取或设置交易结束日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date_end")]
         [System.Text.Json.Serialization.JsonPropertyName("date_end")]
-        public string EndDateString { get; set; } = default!;
+        public string? EndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置已划账金额（单位：指定货币的最小单位）。
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settlementfee_type")]
         [System.Text.Json.Serialization.JsonPropertyName("settlementfee_type")]
-        public string SettlementFeeType { get; set; } = default!;
+        public string? SettlementFeeType { get; set; }
 
         /// <summary>
         /// 获取或设置该结算周期内会发生结算的交易总金额（单位：指定货币的最小单位）。

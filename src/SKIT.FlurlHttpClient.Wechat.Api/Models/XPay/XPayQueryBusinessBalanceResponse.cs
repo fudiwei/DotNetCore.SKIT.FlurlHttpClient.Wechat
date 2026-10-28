@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency_code")]
-                public string Currency { get; set; } = default!;
+                public string? Currency { get; set; }
             }
         }
 
@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("balance_available")]
         [System.Text.Json.Serialization.JsonPropertyName("balance_available")]
-        public Types.Balance AvailableBalance { get; set; } = default!;
+        public Types.Balance? AvailableBalance { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string GrantType { get; set; } = "refresh_token";
+        public string? GrantType { get; set; } = "refresh_token";
 
         /// <summary>
         /// 获取或设置通过 AccessToken 获取到的 RefreshToken 参数。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string RefreshToken { get; set; } = string.Empty;
+        public string? RefreshToken { get; set; }
     }
 }

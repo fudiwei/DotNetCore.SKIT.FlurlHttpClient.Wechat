@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("headers")]
         [System.Text.Json.Serialization.JsonPropertyName("headers")]
-        public string Headers { get; set; } = default!;
+        public string? Headers { get; set; }
     }
 }

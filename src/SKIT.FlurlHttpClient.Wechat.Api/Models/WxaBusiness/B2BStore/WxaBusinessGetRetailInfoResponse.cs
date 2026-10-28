@@ -14,42 +14,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("retail_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("retail_type")]
-                public string RetailType { get; set; } = default!;
+                public string? RetailType { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_retail_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_retail_type")]
-                public string RetailSubType { get; set; } = default!;
+                public string? RetailSubType { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("retail_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("retail_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("retail_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("retail_address")]
-                public string Address { get; set; } = default!;
+                public string? Address { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店负责人的 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店负责人的手机号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
-                public string Mobilephone { get; set; } = default!;
+                public string? Mobilephone { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业名称。
@@ -107,6 +107,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.RetailInfo[] RetailInfoList { get; set; } = default!;
+        public List<Types.RetailInfo>? RetailInfoList { get; set; }
     }
 }

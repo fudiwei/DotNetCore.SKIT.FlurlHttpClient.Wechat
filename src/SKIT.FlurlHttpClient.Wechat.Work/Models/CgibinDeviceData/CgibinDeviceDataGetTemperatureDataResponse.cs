@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/devicedata/get_temperature_data 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public TemperatureDataItem[] Items { get; set; } = default!;
+                public List<TemperatureDataItem>? Items { get; set; }
             }
 
             public class TemperatureDataItem
@@ -31,14 +31,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                public string OpenUserId { get; set; } = default!;
+                public string? OpenUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备的序列号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-                public string DeviceSerialNumber { get; set; } = default!;
+                public string? DeviceSerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置上报时间戳。
@@ -52,7 +52,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("temperature")]
                 [System.Text.Json.Serialization.JsonPropertyName("temperature")]
-                public string TemperatureString { get; set; } = default!;
+                public string? TemperatureString { get; set; }
 
                 /// <summary>
                 /// 获取或设置温度状态。
@@ -68,7 +68,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("temperature_data")]
         [System.Text.Json.Serialization.JsonPropertyName("temperature_data")]
-        public Types.TemperatureDataList TemperatureDataList { get; set; } = default!;
+        public Types.TemperatureDataList? TemperatureDataList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

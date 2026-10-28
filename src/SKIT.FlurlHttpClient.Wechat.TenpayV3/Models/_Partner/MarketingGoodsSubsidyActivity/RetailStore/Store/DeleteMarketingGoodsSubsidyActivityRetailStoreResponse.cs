@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("failed_stores")]
         [System.Text.Json.Serialization.JsonPropertyName("failed_stores")]
-        public Types.Store[]? FailedStoreList { get; set; }
+        public List<Types.Store>? FailedStoreList { get; set; }
 
         /// <summary>
         /// 获取或设置删除时间。

@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transfer_account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("transfer_account_name")]
-                public string TransferAccountName { get; set; } = default!;
+                public string? TransferAccountName { get; set; }
 
                 /// <summary>
                 /// 获取或设置充值账户服务商账号 ID。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("acct_list")]
         [System.Text.Json.Serialization.JsonPropertyName("acct_list")]
-        public Types.Account[] AccountList { get; set; } = default!;
+        public List<Types.Account>? AccountList { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                public string FieldId { get; set; } = string.Empty;
+                public string? FieldId { get; set; }
             }
         }
 
@@ -23,27 +23,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("docid")]
         [System.Text.Json.Serialization.JsonPropertyName("docid")]
-        public string DocumentId { get; set; } = string.Empty;
+        public string? DocumentId { get; set; }
 
         /// <summary>
         /// 获取或设置子表 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sheet_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sheet_id")]
-        public string SheetId { get; set; } = string.Empty;
+        public string? SheetId { get; set; }
 
         /// <summary>
         /// 获取或设置编组名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置字段列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("children")]
         [System.Text.Json.Serialization.JsonPropertyName("children")]
-        public IList<Types.Field>? FieldList { get; set; }
+        public List<Types.Field>? FieldList { get; set; }
     }
 }

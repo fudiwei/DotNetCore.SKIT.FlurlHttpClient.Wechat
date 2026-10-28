@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("dimension")]
                 [System.Text.Json.Serialization.JsonPropertyName("dimension")]
-                public string Dimension { get; set; } = string.Empty;
+                public string? Dimension { get; set; }
 
                 /// <summary>
                 /// 获取或设置维度的取值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("metric")]
         [System.Text.Json.Serialization.JsonPropertyName("metric")]
-        public string Metric { get; set; } = string.Empty;
+        public string? Metric { get; set; }
 
         /// <summary>
         /// 获取或设置时间粒度。
@@ -58,13 +58,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filter_list")]
         [System.Text.Json.Serialization.JsonPropertyName("filter_list")]
-        public IList<Types.Fitler>? FitlerList { get; set; }
+        public List<Types.Fitler>? FitlerList { get; set; }
 
         /// <summary>
         /// 获取或设置维度分组列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_list")]
         [System.Text.Json.Serialization.JsonPropertyName("group_list")]
-        public IList<string>? GroupList { get; set; }
+        public List<string>? GroupList { get; set; }
     }
 }

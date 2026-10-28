@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_no")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_no")]
-        public string ShopNumber { get; set; } = string.Empty;
+        public string? ShopNumber { get; set; }
     }
 }

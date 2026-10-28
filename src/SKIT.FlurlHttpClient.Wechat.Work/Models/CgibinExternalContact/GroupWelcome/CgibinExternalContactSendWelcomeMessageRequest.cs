@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("welcome_code")]
         [System.Text.Json.Serialization.JsonPropertyName("welcome_code")]
-        public string WelcomeCode { get; set; } = string.Empty;
+        public string? WelcomeCode { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。
@@ -35,6 +35,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attachments")]
         [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-        public IList<Types.Attachment>? AttachmentList { get; set; }
+        public List<Types.Attachment>? AttachmentList { get; set; }
     }
 }

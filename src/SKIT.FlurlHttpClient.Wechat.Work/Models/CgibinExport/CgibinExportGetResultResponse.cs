@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/export/get_result 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
 
                 /// <summary>
                 /// 获取或设置数据大小（单位：字节）。
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("md5")]
                 [System.Text.Json.Serialization.JsonPropertyName("md5")]
-                public string Hash { get; set; } = default!;
+                public string? Hash { get; set; }
             }
         }
 
@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data_list")]
         [System.Text.Json.Serialization.JsonPropertyName("data_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

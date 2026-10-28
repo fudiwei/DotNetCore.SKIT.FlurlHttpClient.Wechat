@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("location_id_list")]
-                        public IList<long>? POIIdList { get; set; }
+                        public List<long>? POIIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否支持全部门店。
@@ -244,7 +244,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置团购详情。
@@ -268,7 +268,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置起用金额（单位：分）。
@@ -299,7 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置打折额度。
@@ -323,7 +323,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置兑换内容。
@@ -347,7 +347,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠详情。
@@ -382,7 +382,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置礼品卡背景图 URL。
@@ -511,7 +511,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("card_id_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("card_id_list")]
-                                public IList<string>? CardIdList { get; set; }
+                                public List<string>? CardIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置推荐位展示的截止时间戳。
@@ -564,7 +564,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置会员卡背景图 URL。
@@ -763,7 +763,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议详情。
@@ -794,7 +794,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置票类型。
@@ -825,7 +825,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置电影详情。
@@ -849,7 +849,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置起点。
@@ -914,7 +914,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置团购券信息。

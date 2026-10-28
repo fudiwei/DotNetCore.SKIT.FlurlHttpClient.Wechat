@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/openapi/rid/get 接口的响应。</para>
@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("request_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("request_url")]
-                public string RequestUrl { get; set; } = default!;
+                public string? RequestUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置请求参数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("request_body")]
                 [System.Text.Json.Serialization.JsonPropertyName("request_body")]
-                public string RequestBody { get; set; } = default!;
+                public string? RequestBody { get; set; }
 
                 /// <summary>
                 /// 获取或设置返回参数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("response_body")]
                 [System.Text.Json.Serialization.JsonPropertyName("response_body")]
-                public string ResponseBody { get; set; } = default!;
+                public string? ResponseBody { get; set; }
 
                 /// <summary>
                 /// 获取或设置发起请求的时间戳。
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("request")]
         [System.Text.Json.Serialization.JsonPropertyName("request")]
-        public Types.Request Request { get; set; } = default!;
+        public Types.Request? Request { get; set; }
     }
 }

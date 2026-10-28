@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corp_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_name")]
-                public string CorpName { get; set; } = default!;
+                public string? CorpName { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义 ID。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_corps")]
         [System.Text.Json.Serialization.JsonPropertyName("group_corps")]
-        public Types.GroupCorp[] GroupCorpList { get; set; } = default!;
+        public List<Types.GroupCorp>? GroupCorpList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileid")]
         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-        public string FileId { get; set; } = string.Empty;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置权限范围。

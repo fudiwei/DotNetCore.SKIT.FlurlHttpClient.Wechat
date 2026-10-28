@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("selected_background_id")]
         [System.Text.Json.Serialization.JsonPropertyName("selected_background_id")]
-        public string SelectedBackgroundId { get; set; } = default!;
+        public string? SelectedBackgroundId { get; set; }
 
         /// <summary>
         /// 获取或设置背景图片列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("background_list")]
         [System.Text.Json.Serialization.JsonPropertyName("background_list")]
-        public Types.BackgroundImage[] BackgroundImageList { get; set; } = default!;
+        public List<Types.BackgroundImage>? BackgroundImageList { get; set; }
     }
 }

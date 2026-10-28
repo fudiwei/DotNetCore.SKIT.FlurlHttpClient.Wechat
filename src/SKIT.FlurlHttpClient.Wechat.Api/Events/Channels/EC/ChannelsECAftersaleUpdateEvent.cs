@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 [System.Xml.Serialization.XmlElement("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序会员已经优惠金额（单位：分）。
@@ -56,6 +56,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("finder_shop_aftersale_status_update")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_shop_aftersale_status_update")]
         [System.Xml.Serialization.XmlElement("finder_shop_aftersale_status_update")]
-        public Types.AftersaleOrder AftersaleOrder { get; set; } = default!;
+        public Types.AftersaleOrder? AftersaleOrder { get; set; }
     }
 }

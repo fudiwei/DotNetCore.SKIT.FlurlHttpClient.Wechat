@@ -14,6 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("count")]
         [System.Text.Json.Serialization.JsonPropertyName("count")]
@@ -24,6 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status_list")]
         [System.Text.Json.Serialization.JsonPropertyName("status_list")]
-        public IList<string>? StatusList { get; set; }
+        public List<string>? StatusList { get; set; }
     }
 }

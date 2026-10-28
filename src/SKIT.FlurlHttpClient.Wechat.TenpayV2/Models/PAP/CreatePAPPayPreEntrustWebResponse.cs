@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_entrustweb_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_entrustweb_id")]
-        public string PreEntrustWebId { get; set; } = default!;
+        public string? PreEntrustWebId { get; set; }
     }
 }

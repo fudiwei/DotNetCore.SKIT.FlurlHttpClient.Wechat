@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_id")]
-                public string StoreId { get; set; } = string.Empty;
+                public string? StoreId { get; set; }
             }
         }
 
@@ -23,27 +23,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProductCouponId { get; set; } = string.Empty;
+        public string? ProductCouponId { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string StockId { get; set; } = string.Empty;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置门店列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_list")]
         [System.Text.Json.Serialization.JsonPropertyName("store_list")]
-        public IList<Types.Store> StoreList { get; set; } = new List<Types.Store>();
+        public List<Types.Store>? StoreList { get; set; }
     }
 }

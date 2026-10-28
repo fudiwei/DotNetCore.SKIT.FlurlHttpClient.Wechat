@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedrive/get_file_permission 接口的响应。</para>
@@ -90,7 +90,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_list")]
-                public Types.Authority[] AuthorityList { get; set; } = default!;
+                public List<Types.Authority>? AuthorityList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启父路径权限继承。
@@ -111,7 +111,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string Text { get; set; } = default!;
+                public string? Text { get; set; }
 
                 /// <summary>
                 /// 获取或设置水印类型。
@@ -155,35 +155,35 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("share_range")]
         [System.Text.Json.Serialization.JsonPropertyName("share_range")]
-        public Types.ShareRange ShareRange { get; set; } = default!;
+        public Types.ShareRange? ShareRange { get; set; }
 
         /// <summary>
         /// 获取或设置安全配置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("secure_setting")]
         [System.Text.Json.Serialization.JsonPropertyName("secure_setting")]
-        public Types.SecureSettings SecureSettings { get; set; } = default!;
+        public Types.SecureSettings? SecureSettings { get; set; }
 
         /// <summary>
         /// 获取或设置从文件父路径继承的权限信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("inherit_father_auth")]
         [System.Text.Json.Serialization.JsonPropertyName("inherit_father_auth")]
-        public Types.ACL FatherACL { get; set; } = default!;
+        public Types.ACL? FatherACL { get; set; }
 
         /// <summary>
         /// 获取或设置文件成员授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_member_list")]
         [System.Text.Json.Serialization.JsonPropertyName("file_member_list")]
-        public Types.Authority[]? FileMemberAuthorityList { get; set; }
+        public List<Types.Authority>? FileMemberAuthorityList { get; set; }
 
         /// <summary>
         /// 获取或设置文件查看者授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("co_auth_list")]
         [System.Text.Json.Serialization.JsonPropertyName("co_auth_list")]
-        public Types.Authority[]? FileCollaboratorAuthorityList { get; set; }
+        public List<Types.Authority>? FileCollaboratorAuthorityList { get; set; }
 
         /// <summary>
         /// 获取或设置水印信息。

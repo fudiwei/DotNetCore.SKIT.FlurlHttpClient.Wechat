@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ActivityId { get; set; } = string.Empty;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置报名商户号。
@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("applying_merchant_id")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-        public string ApplyingMerchantId { get; set; } = string.Empty;
+        public string? ApplyingMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置门店 ID。

@@ -15,6 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("SessionFrom")]
         [System.Text.Json.Serialization.JsonPropertyName("SessionFrom")]
         [System.Xml.Serialization.XmlElement("SessionFrom")]
-        public string SessionFrom { get; set; } = default!;
+        public string? SessionFrom { get; set; }
     }
 }

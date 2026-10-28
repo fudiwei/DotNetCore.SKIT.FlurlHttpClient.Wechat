@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /union/promoter/promotion/upd 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promotionSourceName")]
                 [System.Text.Json.Serialization.JsonPropertyName("promotionSourceName")]
-                public string SourceName { get; set; } = string.Empty;
+                public string? SourceName { get; set; }
             }
 
             public class PreviousPromotion : Promotion
@@ -24,7 +24,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promotionSourcePid")]
                 [System.Text.Json.Serialization.JsonPropertyName("promotionSourcePid")]
-                public string PromotionId { get; set; } = string.Empty;
+                public string? PromotionId { get; set; }
             }
         }
 
@@ -33,13 +33,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("previousPromotionInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("previousPromotionInfo")]
-        public Types.PreviousPromotion PreviousPromotion { get; set; } = new Types.PreviousPromotion();
+        public Types.PreviousPromotion? PreviousPromotion { get; set; }
 
         /// <summary>
         /// 获取或设置修改后的推广位信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotionInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("promotionInfo")]
-        public Types.Promotion Promotion { get; set; } = new Types.Promotion();
+        public Types.Promotion? Promotion { get; set; }
     }
 }

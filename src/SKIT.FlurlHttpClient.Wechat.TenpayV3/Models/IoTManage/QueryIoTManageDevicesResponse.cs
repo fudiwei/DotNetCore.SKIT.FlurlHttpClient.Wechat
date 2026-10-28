@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Device[] DeviceList { get; set; } = default!;
+        public List<Types.Device>? DeviceList { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

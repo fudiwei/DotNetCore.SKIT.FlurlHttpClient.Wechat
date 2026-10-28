@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_name")]
-                public string ItemName { get; set; } = string.Empty;
+                public string? ItemName { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核项值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_value")]
-                public string ItemValue { get; set; } = string.Empty;
+                public string? ItemValue { get; set; }
             }
         }
 
@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置审核项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("audit_items")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_items")]
-        public IList<Types.AuditItem> AuditItemList { get; set; } = new List<Types.AuditItem>();
+        public List<Types.AuditItem>? AuditItemList { get; set; }
     }
 }

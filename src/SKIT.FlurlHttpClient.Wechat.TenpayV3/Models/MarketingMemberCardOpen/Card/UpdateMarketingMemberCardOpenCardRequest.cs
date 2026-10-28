@@ -36,14 +36,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public IList<string>? CommonFieldNameList { get; set; }
+                public List<string>? CommonFieldNameList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户自定义的开卡信息字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
-                public IList<Types.CustomField>? CustomFieldList { get; set; }
+                public List<Types.CustomField>? CustomFieldList { get; set; }
             }
 
             public class AdditionalStatement : CreateMarketingMemberCardOpenCardRequest.Types.AdditionalStatement
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置公众号 AppId。

@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdrawl_apply")]
         [System.Text.Json.Serialization.JsonPropertyName("withdrawl_apply")]
-        public Types.WithdrawApplyment WithdrawApplyment { get; set; } = default!;
+        public Types.WithdrawApplyment? WithdrawApplyment { get; set; }
     }
 }

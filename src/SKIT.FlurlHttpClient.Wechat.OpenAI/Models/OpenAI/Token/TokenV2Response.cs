@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("access_token")]
                 [System.Text.Json.Serialization.JsonPropertyName("access_token")]
-                public string AccessToken { get; set; } = default!;
+                public string? AccessToken { get; set; }
             }
         }
     }

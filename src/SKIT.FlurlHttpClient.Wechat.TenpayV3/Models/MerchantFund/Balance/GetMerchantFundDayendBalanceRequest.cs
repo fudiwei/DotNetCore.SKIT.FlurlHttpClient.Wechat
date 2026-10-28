@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AccountType { get; set; } = string.Empty;
+        public string? AccountType { get; set; }
 
         /// <summary>
         /// 获取或设置日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
     }
 }

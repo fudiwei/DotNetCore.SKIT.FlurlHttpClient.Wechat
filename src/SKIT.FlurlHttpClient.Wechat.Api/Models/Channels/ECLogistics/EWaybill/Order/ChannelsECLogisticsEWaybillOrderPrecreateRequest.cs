@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("province")]
                 [System.Text.Json.Serialization.JsonPropertyName("province")]
-                public string Province { get; set; } = string.Empty;
+                public string? Province { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city")]
                 [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public string City { get; set; } = string.Empty;
+                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置区县。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("county")]
                 [System.Text.Json.Serialization.JsonPropertyName("county")]
-                public string District { get; set; } = string.Empty;
+                public string? District { get; set; }
 
                 /// <summary>
                 /// 获取或设置街道。
@@ -42,21 +42,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address")]
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
-                public string DetailAddress { get; set; } = string.Empty;
+                public string? DetailAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系人。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系电话。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-                public string MobileNumber { get; set; } = string.Empty;
+                public string? MobileNumber { get; set; }
             }
 
             public class Order
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("good_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("good_name")]
-                        public string GoodsName { get; set; } = string.Empty;
+                        public string? GoodsName { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品个数。
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_list")]
-                public IList<Types.Goods> GoodsList { get; set; } = new List<Types.Goods>();
+                public List<Types.Goods>? GoodsList { get; set; }
 
                 /// <summary>
                 /// 获取或设置代发的订单密文。
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置网点编码。
@@ -146,35 +146,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_id")]
-        public string ShopId { get; set; } = string.Empty;
+        public string? ShopId { get; set; }
 
         /// <summary>
         /// 获取或设置电子面单账号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ewaybill_acct_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ewaybill_acct_id")]
-        public string EWaybillAccountId { get; set; } = string.Empty;
+        public string? EWaybillAccountId { get; set; }
 
         /// <summary>
         /// 获取或设置寄件人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sender")]
         [System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public Types.Address Sender { get; set; } = new Types.Address();
+        public Types.Address? Sender { get; set; }
 
         /// <summary>
         /// 获取或设置收件人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-        public Types.Address Receiver { get; set; } = new Types.Address();
+        public Types.Address? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置订单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ec_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ec_order_list")]
-        public IList<Types.Order> OrderList { get; set; } = new List<Types.Order>();
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置备注。

@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_billno")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_billno")]
-        public string MerchantBillNumber { get; set; } = string.Empty;
+        public string? MerchantBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置订单类型。
-        /// <para>默认值：MCHT</para>
+        /// <para>默认值："MCHT"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bill_type")]
         [System.Text.Json.Serialization.JsonPropertyName("bill_type")]
-        public string BillType { get; set; } = "MCHT";
+        public string? BillType { get; set; } = "MCHT";
     }
 }

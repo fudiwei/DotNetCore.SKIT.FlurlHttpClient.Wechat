@@ -17,27 +17,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序卡片名字。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置小程序路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string Path { get; set; } = string.Empty;
+        public string? Path { get; set; }
 
         /// <summary>
         /// 获取或设置小程序封面媒体文件标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-        public string MediaId { get; set; } = string.Empty;
+        public string? MediaId { get; set; }
     }
 }

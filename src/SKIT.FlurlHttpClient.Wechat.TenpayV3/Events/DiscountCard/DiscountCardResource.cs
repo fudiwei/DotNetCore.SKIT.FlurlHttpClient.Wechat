@@ -31,42 +31,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户领卡号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_card_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_card_code")]
-        public string OutCardCode { get; set; } = default!;
+        public string? OutCardCode { get; set; }
 
         /// <summary>
         /// 获取或设置先享卡模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_template_id")]
-        public string CardTemplateId { get; set; } = default!;
+        public string? CardTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置先享卡 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置约定时间期限信息。
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置未完成约定原因。
@@ -108,14 +108,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("objectives")]
         [System.Text.Json.Serialization.JsonPropertyName("objectives")]
-        public Types.Objective[]? Objectives { get; set; }
+        public List<Types.Objective>? Objectives { get; set; }
 
         /// <summary>
         /// 获取或设置优惠列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rewards")]
         [System.Text.Json.Serialization.JsonPropertyName("rewards")]
-        public Types.Reward[]? Rewards { get; set; }
+        public List<Types.Reward>? Rewards { get; set; }
 
         /// <summary>
         /// 获取或设置邀请者用户标识。

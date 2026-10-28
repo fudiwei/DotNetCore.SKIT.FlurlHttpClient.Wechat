@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OutWithdrawId { get; set; } = string.Empty;
+        public string? OutWithdrawId { get; set; }
     }
 }

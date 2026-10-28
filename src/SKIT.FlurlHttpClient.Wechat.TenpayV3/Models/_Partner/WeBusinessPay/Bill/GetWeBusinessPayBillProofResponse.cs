@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置开始日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start_date")]
         [System.Text.Json.Serialization.JsonPropertyName("start_date")]
-        public string StartDateString { get; set; } = default!;
+        public string? StartDateString { get; set; }
 
         /// <summary>
         /// 获取或设置结束日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_date")]
         [System.Text.Json.Serialization.JsonPropertyName("end_date")]
-        public string EndDateString { get; set; } = default!;
+        public string? EndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置商户主体名称。
@@ -45,28 +45,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_operation_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_operation_id")]
-        public string OutOperationId { get; set; } = default!;
+        public string? OutOperationId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付操作流水号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("operation_id")]
         [System.Text.Json.Serialization.JsonPropertyName("operation_id")]
-        public string OperationId { get; set; } = default!;
+        public string? OperationId { get; set; }
 
         /// <summary>
         /// 获取或设置出资凭证申请单单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("proof_id")]
         [System.Text.Json.Serialization.JsonPropertyName("proof_id")]
-        public string ProofId { get; set; } = default!;
+        public string? ProofId { get; set; }
 
         /// <summary>
         /// 获取或设置账单下载地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("download_url")]
         [System.Text.Json.Serialization.JsonPropertyName("download_url")]
-        public string DownloadUrl { get; set; } = default!;
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间。

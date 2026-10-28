@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_state")]
         [System.Text.Json.Serialization.JsonPropertyName("user_state")]
-        public string UserState { get; set; } = default!;
+        public string? UserState { get; set; }
 
         /// <summary>
         /// 获取或设置发起扣费方式。

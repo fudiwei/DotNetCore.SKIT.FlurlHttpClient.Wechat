@@ -14,13 +14,13 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("first_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("first_class")]
-                public string FirstClass { get; set; } = default!;
+                public string? FirstClass { get; set; }
                 /// <summary>
                 /// 获取或设置行业二级分类。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("second_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("second_class")]
-                public string SecondClass { get; set; } = default!;
+                public string? SecondClass { get; set; }
             }
         }
 

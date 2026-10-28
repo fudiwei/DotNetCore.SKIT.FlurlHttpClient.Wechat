@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/openhw/device/get_userinfo_by_page 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("useritems")]
                 [System.Text.Json.Serialization.JsonPropertyName("useritems")]
-                public Types.UserItem[] Items { get; set; } = default!;
+                public List<Types.UserItem>? Items { get; set; }
             }
 
             public class UserItem
@@ -28,7 +28,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rule_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-                        public Types.PassRuleItem[] Items { get; set; } = default!;
+                        public List<Types.PassRuleItem>? Items { get; set; }
                     }
 
                     public class PassRuleItem
@@ -45,7 +45,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rule")]
                         [System.Text.Json.Serialization.JsonPropertyName("rule")]
-                        public string Rule { get; set; } = default!;
+                        public string? Rule { get; set; }
 
                         /// <summary>
                         /// 获取或设置生效时间戳。
@@ -61,7 +61,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                public string OpenUserId { get; set; } = default!;
+                public string? OpenUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户类型。
@@ -75,7 +75,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                public string UserName { get; set; } = default!;
+                public string? UserName { get; set; }
 
                 /// <summary>
                 /// 获取或设置门禁规则列表。
@@ -98,7 +98,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userinfo")]
         [System.Text.Json.Serialization.JsonPropertyName("userinfo")]
-        public Types.UserList UserList { get; set; } = default!;
+        public Types.UserList? UserList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

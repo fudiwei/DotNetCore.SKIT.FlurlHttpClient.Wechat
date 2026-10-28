@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string GrantType { get; set; } = "client_credential";
+        public string? GrantType { get; set; } = "client_credential";
     }
 }

@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 [System.Xml.Serialization.XmlElement("name")]
-                public string EnterpriseName { get; set; } = default!;
+                public string? EnterpriseName { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业代码类型。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
                 [System.Xml.Serialization.XmlElement("code")]
-                public string LicenseNumber { get; set; } = default!;
+                public string? LicenseNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人姓名。
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("legal_persona_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("legal_persona_name")]
                 [System.Xml.Serialization.XmlElement("legal_persona_name")]
-                public string LegalPersonName { get; set; } = default!;
+                public string? LegalPersonName { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人微信号。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("legal_persona_wechat")]
                 [System.Text.Json.Serialization.JsonPropertyName("legal_persona_wechat")]
                 [System.Xml.Serialization.XmlElement("legal_persona_wechat")]
-                public string LegalPersonWxname { get; set; } = default!;
+                public string? LegalPersonWxname { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方联系电话。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("component_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("component_phone")]
                 [System.Xml.Serialization.XmlElement("component_phone")]
-                public string ComponentPhoneNumber { get; set; } = default!;
+                public string? ComponentPhoneNumber { get; set; }
             }
         }
 
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
         [System.Xml.Serialization.XmlElement("info")]
-        public Types.InfoData InfoData { get; set; } = default!;
+        public Types.InfoData? InfoData { get; set; }
 
         /// <summary>
         /// 获取或设置错误码。

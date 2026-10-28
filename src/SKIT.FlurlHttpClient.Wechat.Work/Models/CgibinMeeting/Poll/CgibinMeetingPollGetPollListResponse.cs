@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("poll_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("poll_id")]
-                        public string PollId { get; set; } = default!;
+                        public string? PollId { get; set; }
 
                         /// <summary>
                         /// 获取或设置投票主题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("poll_topic")]
                         [System.Text.Json.Serialization.JsonPropertyName("poll_topic")]
-                        public string PollTopic { get; set; } = default!;
+                        public string? PollTopic { get; set; }
 
                         /// <summary>
                         /// 获取或设置投票状态。
@@ -59,14 +59,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("poll_theme_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("poll_theme_id")]
-                public string PollThemeId { get; set; } = default!;
+                public string? PollThemeId { get; set; }
 
                 /// <summary>
                 /// 获取或设置投票列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("polls_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("polls_info")]
-                public Types.Poll[] PollList { get; set; } = default!;
+                public List<Types.Poll>? PollList { get; set; }
             }
         }
 
@@ -75,6 +75,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("polls_theme_info")]
         [System.Text.Json.Serialization.JsonPropertyName("polls_theme_info")]
-        public Types.PollTheme[] PollThemeList { get; set; } = default!;
+        public List<Types.PollTheme>? PollThemeList { get; set; }
     }
 }

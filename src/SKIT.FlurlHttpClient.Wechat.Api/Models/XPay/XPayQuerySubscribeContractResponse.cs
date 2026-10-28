@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("original_transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("original_transaction_id")]
-                public string OriginalTransactionId { get; set; } = default!;
+                public string? OriginalTransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置自动续费状态。
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_state")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_state")]
-        public string AuthorizationState { get; set; } = default!;
+        public string? AuthorizationState { get; set; }
 
         /// <summary>
         /// 获取或设置苹果订阅信息。

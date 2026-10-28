@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Code { get; set; } = string.Empty;
+        public string? Code { get; set; }
 
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string GrantType { get; set; } = "authorization_code";
+        public string? GrantType { get; set; } = "authorization_code";
     }
 }

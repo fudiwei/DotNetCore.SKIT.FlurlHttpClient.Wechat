@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("version_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("version_name")]
-                public string VersionName { get; set; } = default!;
+                public string? VersionName { get; set; }
 
                 /// <summary>
                 /// 获取或设置版本状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置流量占比。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("upload_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("upload_type")]
-                public string UploadType { get; set; } = default!;
+                public string? UploadType { get; set; }
 
                 /// <summary>
                 /// 获取或设置最小副本数。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("updated_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset UpdateTime { get; set; } = default!;
+                public DateTimeOffset UpdateTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间。
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("created_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset CreateTime { get; set; } = default!;
+                public DateTimeOffset CreateTime { get; set; }
             }
         }
 
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public Types.Version[] VersionList { get; set; } = default!;
+        public List<Types.Version>? VersionList { get; set; }
 
         /// <summary>
         /// 获取或设置云函数总数量。

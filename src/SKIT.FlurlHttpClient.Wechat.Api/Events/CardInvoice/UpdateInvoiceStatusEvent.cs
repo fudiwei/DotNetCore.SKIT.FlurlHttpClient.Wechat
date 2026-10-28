@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("CardId")]
         [System.Text.Json.Serialization.JsonPropertyName("CardId")]
         [System.Xml.Serialization.XmlElement("CardId")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置发票或非税票据卡券 Code。
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Code")]
         [System.Text.Json.Serialization.JsonPropertyName("Code")]
         [System.Xml.Serialization.XmlElement("Code")]
-        public string CardCode { get; set; } = default!;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置发票或非税票据报销状态。

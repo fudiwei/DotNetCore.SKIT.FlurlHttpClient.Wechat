@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
@@ -24,28 +24,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_parking_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_parking_no")]
-        public string OutParkingId { get; set; } = default!;
+        public string? OutParkingId { get; set; }
 
         /// <summary>
         /// 获取或设置停车入场 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parking_id")]
         [System.Text.Json.Serialization.JsonPropertyName("parking_id")]
-        public string ParkingId { get; set; } = default!;
+        public string? ParkingId { get; set; }
 
         /// <summary>
         /// 获取或设置车牌号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-        public string PlateNumber { get; set; } = default!;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置车牌颜色。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_color")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_color")]
-        public string PlateColor { get; set; } = default!;
+        public string? PlateColor { get; set; }
 
         /// <summary>
         /// 获取或设置入场时间。
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parking_name")]
         [System.Text.Json.Serialization.JsonPropertyName("parking_name")]
-        public string ParkingName { get; set; } = default!;
+        public string? ParkingName { get; set; }
 
         /// <summary>
         /// 获取或设置免费时长（单位：秒）。
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parking_state")]
         [System.Text.Json.Serialization.JsonPropertyName("parking_state")]
-        public string ParkingState { get; set; } = default!;
+        public string? ParkingState { get; set; }
 
         /// <summary>
         /// 获取或设置不可用原因。

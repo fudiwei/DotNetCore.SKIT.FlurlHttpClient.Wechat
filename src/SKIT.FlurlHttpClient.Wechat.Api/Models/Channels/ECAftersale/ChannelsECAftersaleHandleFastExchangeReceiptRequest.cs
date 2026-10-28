@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order_id")]
-        public string AftersaleOrderId { get; set; } = string.Empty;
+        public string? AftersaleOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置操作类型。
@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reject_confirm_exchange")]
         [System.Text.Json.Serialization.JsonPropertyName("reject_confirm_exchange")]
-        public IList<string>? MediaIdList { get; set; }
+        public List<string>? MediaIdList { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_moment_send_result 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                public string ExternalUserId { get; set; } = default!;
+                public string? ExternalUserId { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_list")]
         [System.Text.Json.Serialization.JsonPropertyName("customer_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

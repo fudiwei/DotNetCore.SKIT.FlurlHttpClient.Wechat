@@ -17,21 +17,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置投票主题 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_theme_id")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_theme_id")]
-        public string PollThemeId { get; set; } = string.Empty;
+        public string? PollThemeId { get; set; }
 
         /// <summary>
         /// 获取或设置操作者的 UserId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("operator_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("operator_userid")]
-        public string OperatorUserId { get; set; } = string.Empty;
+        public string? OperatorUserId { get; set; }
 
         /// <summary>
         /// 获取或设置终端设备类型。
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_topic")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_topic")]
-        public string PollTopic { get; set; } = string.Empty;
+        public string? PollTopic { get; set; }
 
         /// <summary>
         /// 获取或设置投票主题描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_desc")]
-        public string PollDescription { get; set; } = string.Empty;
+        public string? PollDescription { get; set; }
 
         /// <summary>
         /// 获取或设置是否匿名。
@@ -68,6 +68,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("poll_questions")]
         [System.Text.Json.Serialization.JsonPropertyName("poll_questions")]
-        public IList<Types.Question> QuestionList { get; set; } = new List<Types.Question>();
+        public List<Types.Question>? QuestionList { get; set; }
     }
 }

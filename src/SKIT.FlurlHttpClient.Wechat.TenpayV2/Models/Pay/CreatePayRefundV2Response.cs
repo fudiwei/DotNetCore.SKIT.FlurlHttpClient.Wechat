@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods_detail")]
                         [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                        public new Types.GoodsDetail[]? GoodsList { get; set; }
+                        public new List<Types.GoodsDetail>? GoodsList { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promotion_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
-                public new Types.Promotion[]? PromotionList { get; set; }
+                public new List<Types.Promotion>? PromotionList { get; set; }
             }
         }
 
@@ -71,28 +71,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = default!;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置商户退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_refund_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
-        public string OutRefundNumber { get; set; } = default!;
+        public string? OutRefundNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
-        public string RefundId { get; set; } = default!;
+        public string? RefundId { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。

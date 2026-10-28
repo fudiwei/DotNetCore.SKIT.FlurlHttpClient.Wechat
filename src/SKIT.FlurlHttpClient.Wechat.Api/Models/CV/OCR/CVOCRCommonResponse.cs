@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/comm 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string Text { get; set; } = default!;
+                public string? Text { get; set; }
 
                 /// <summary>
                 /// 获取或设置识别坐标信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pos")]
                 [System.Text.Json.Serialization.JsonPropertyName("pos")]
-                public Types.Position Position { get; set; } = default!;
+                public Types.Position? Position { get; set; }
             }
 
             public class ImageSize : CVImageQrcodeResponse.Types.ImageSize
@@ -41,13 +41,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置图片大小信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_size")]
         [System.Text.Json.Serialization.JsonPropertyName("img_size")]
-        public Types.ImageSize ImageSize { get; set; } = default!;
+        public Types.ImageSize? ImageSize { get; set; }
     }
 }

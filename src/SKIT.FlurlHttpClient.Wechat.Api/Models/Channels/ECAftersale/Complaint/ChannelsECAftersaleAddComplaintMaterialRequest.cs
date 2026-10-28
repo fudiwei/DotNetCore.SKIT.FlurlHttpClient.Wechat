@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_id")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
-        public string ComplaintId { get; set; } = string.Empty;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置留言内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string Content { get; set; } = string.Empty;
+        public string? Content { get; set; }
 
         /// <summary>
         /// 获取或设置图片 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
-        public IList<string>? MediaIdList { get; set; }
+        public List<string>? MediaIdList { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
                     }
 
                     public class Department
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_partyid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_partyid")]
-                        public string OpenDepartmentId { get; set; } = default!;
+                        public string? OpenDepartmentId { get; set; }
                     }
 
                     public class Tag
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_tagid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_tagid")]
-                        public string OpenTagId { get; set; } = default!;
+                        public string? OpenTagId { get; set; }
                     }
 
                     public class Leader
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("journaluuid")]
                         [System.Text.Json.Serialization.JsonPropertyName("journaluuid")]
-                        public string JournalId { get; set; } = default!;
+                        public string? JournalId { get; set; }
 
                         /// <summary>
                         /// 获取或设置汇报时间戳。
@@ -84,21 +84,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                        public User[] UserList { get; set; } = default!;
+                        public List<User>? UserList { get; set; }
 
                         /// <summary>
                         /// 获取或设置汇报人部门列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("party_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("party_list")]
-                        public Department[] DepartmentList { get; set; } = default!;
+                        public List<Department>? DepartmentList { get; set; }
 
                         /// <summary>
                         /// 获取或设置汇报人标签列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tag_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("tag_list")]
-                        public Tag[] TagList { get; set; } = default!;
+                        public List<Tag>? TagList { get; set; }
                     }
 
                     public class ReceiverRange
@@ -108,21 +108,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                        public User[] UserList { get; set; } = default!;
+                        public List<User>? UserList { get; set; }
 
                         /// <summary>
                         /// 获取或设置接收人标签列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tag_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("tag_list")]
-                        public Tag[] TagList { get; set; } = default!;
+                        public List<Tag>? TagList { get; set; }
 
                         /// <summary>
                         /// 获取或设置接收人标签列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("leader_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("leader_list")]
-                        public Leader[] LearderList { get; set; } = default!;
+                        public List<Leader>? LearderList { get; set; }
                     }
 
                     public class Reporter
@@ -132,14 +132,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user")]
                         [System.Text.Json.Serialization.JsonPropertyName("user")]
-                        public User User { get; set; } = default!;
+                        public User? User { get; set; }
 
                         /// <summary>
                         /// 获取或设置汇报列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("itemlist")]
                         [System.Text.Json.Serialization.JsonPropertyName("itemlist")]
-                        public Journal[] JournalList { get; set; } = default!;
+                        public List<Journal>? JournalList { get; set; }
                     }
                 }
 
@@ -148,49 +148,49 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public string TemplateId { get; set; } = default!;
+                public string? TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报表单名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-                public string TemplateName { get; set; } = default!;
+                public string? TemplateName { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报人员范围信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("report_range")]
                 [System.Text.Json.Serialization.JsonPropertyName("report_range")]
-                public Types.ReporterRange ReporterRange { get; set; } = default!;
+                public Types.ReporterRange? ReporterRange { get; set; }
 
                 /// <summary>
                 /// 获取或设置白名单范围信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("white_range")]
                 [System.Text.Json.Serialization.JsonPropertyName("white_range")]
-                public Types.ReporterRange ReporterWhiteListRange { get; set; } = default!;
+                public Types.ReporterRange? ReporterWhiteListRange { get; set; }
 
                 /// <summary>
                 /// 获取或设置接收人员范围信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receivers")]
                 [System.Text.Json.Serialization.JsonPropertyName("receivers")]
-                public Types.ReceiverRange ReceiverRange { get; set; } = default!;
+                public Types.ReceiverRange? ReceiverRange { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报人列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("report_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("report_list")]
-                public Types.Reporter[] ReporterList { get; set; } = default!;
+                public List<Types.Reporter>? ReporterList { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报人列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("unreport_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("unreport_list")]
-                public Types.Reporter[] UnreportedReporterList { get; set; } = default!;
+                public List<Types.Reporter>? UnreportedReporterList { get; set; }
 
                 /// <summary>
                 /// 获取或设置周期开始时间戳。
@@ -204,7 +204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cycle_end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("cycle_end_time")]
-                public long CycleEndTimestamp { get; set; } = default!;
+                public long CycleEndTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置统计开始时间戳。
@@ -218,7 +218,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stat_end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("stat_end_time")]
-                public long StatisticsEndTimestamp { get; set; } = default!;
+                public long StatisticsEndTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报方式。
@@ -234,6 +234,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("stat_list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("err_field")]
                 [System.Text.Json.Serialization.JsonPropertyName("err_field")]
-                public string ErrorField { get; set; } = default!;
+                public string? ErrorField { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hints")]
         [System.Text.Json.Serialization.JsonPropertyName("hints")]
-        public Types.Hint[]? Hints { get; set; }
+        public List<Types.Hint>? Hints { get; set; }
     }
 }

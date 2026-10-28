@@ -32,14 +32,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("current_approvers")]
                         [System.Text.Json.Serialization.JsonPropertyName("current_approvers")]
-                        public IList<string>? CurrentApproversUserIdList { get; set; }
+                        public List<string>? CurrentApproversUserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置已处理人成员账号列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("completed_approvers")]
                         [System.Text.Json.Serialization.JsonPropertyName("completed_approvers")]
-                        public IList<string>? CompletedApproversUserIdList { get; set; }
+                        public List<string>? CompletedApproversUserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置更新时间戳。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("node_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("node_list")]
-                public IList<Types.Node> NodeList { get; set; } = new List<Types.Node>();
+                public List<Types.Node>? NodeList { get; set; }
             }
         }
 
@@ -64,14 +64,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_id")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_id")]
-        public string ApplyId { get; set; } = string.Empty;
+        public string? ApplyId { get; set; }
 
         /// <summary>
         /// 获取或设置审批 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("approval_id")]
         [System.Text.Json.Serialization.JsonPropertyName("approval_id")]
-        public string ApprovalId { get; set; } = string.Empty;
+        public string? ApprovalId { get; set; }
 
         /// <summary>
         /// 获取或设置审批单状态。
@@ -85,13 +85,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("approval_url")]
         [System.Text.Json.Serialization.JsonPropertyName("approval_url")]
-        public string ApprovalUrl { get; set; } = string.Empty;
+        public string? ApprovalUrl { get; set; }
 
         /// <summary>
         /// 获取或设置审批流程信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("process_list")]
         [System.Text.Json.Serialization.JsonPropertyName("process_list")]
-        public Types.Process Process { get; set; } = new Types.Process();
+        public Types.Process? Process { get; set; }
     }
 }

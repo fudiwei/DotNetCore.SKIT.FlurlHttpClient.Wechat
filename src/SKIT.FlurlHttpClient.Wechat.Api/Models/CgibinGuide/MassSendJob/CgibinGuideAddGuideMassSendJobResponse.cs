@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/addguidemassendjob 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string[] OpenIdList { get; set; } = default!;
+                public List<string>? OpenIdList { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_result")]
         [System.Text.Json.Serialization.JsonPropertyName("task_result")]
-        public Types.TaskResult[] TaskResultList { get; set; } = default!;
+        public List<Types.TaskResult>? TaskResultList { get; set; }
     }
 }

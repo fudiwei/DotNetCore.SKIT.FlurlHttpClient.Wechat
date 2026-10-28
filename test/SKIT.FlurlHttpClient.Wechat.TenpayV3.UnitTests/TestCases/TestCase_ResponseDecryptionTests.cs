@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetBillSubMerchantFundflowBillResponse()
                 {
-                    DownloadBillList = new Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill[]
+                    DownloadBillList = new List<Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill>()
                     {
                         new Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill()
                         {
@@ -85,25 +85,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.QueryBrandPartnerCardMemberUserCardsResponse()
                 {
-                    UserCardList = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard[]
+                    UserCardList = new List<Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard>()
                     {
                         new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard()
                         {
                             MobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
                             UserInfo = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo()
                             {
-                                CommonFieldList = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CommonField[]
+                                CommonFieldList = new List<Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CommonField>()
                                 {
                                     new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CommonField()
                                     {
                                         Value = encryptor.Invoke(MOCK_PLAIN_STR)
                                     }
                                 },
-                                CustomFieldList = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CustomField[]
+                                CustomFieldList = new List<Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CustomField>()
                                 {
                                     new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CustomField()
                                     {
-                                        Values = new string[] { encryptor.Invoke(MOCK_PLAIN_STR) }
+                                        Values = new List<string>() { encryptor.Invoke(MOCK_PLAIN_STR) }
                                     }
                                 }
                             }
@@ -114,9 +114,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockResponseModel(Models.QueryBrandPartnerCardMemberUserCardsResponse response)
             {
-                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList[0].MobileNumber);
-                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList[0].UserInfo!.CommonFieldList![0].Value);
-                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList[0].UserInfo!.CustomFieldList![0].Values![0]);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList![0].MobileNumber);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList![0].UserInfo!.CommonFieldList![0].Value);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList![0].UserInfo!.CustomFieldList![0].Values![0]);
             }
 
             await Assert.MultipleAsync(async () =>
@@ -168,18 +168,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                     MobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
                     UserInfo = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo()
                     {
-                        CommonFieldList = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CommonField[]
+                        CommonFieldList = new List<Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CommonField>()
                         {
                             new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CommonField()
                             {
                                 Value = encryptor.Invoke(MOCK_PLAIN_STR)
                             }
                         },
-                        CustomFieldList = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CustomField[]
+                        CustomFieldList = new List<Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CustomField>()
                         {
                             new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CustomField()
                             {
-                                Values = new string[] { encryptor.Invoke(MOCK_PLAIN_STR) }
+                                Values = new List<string>() { encryptor.Invoke(MOCK_PLAIN_STR) }
                             }
                         }
                     }
@@ -300,7 +300,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetEcommerceBillFundflowBillResponse()
                 {
-                    DownloadBillList = new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill[]
+                    DownloadBillList = new List<Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill>()
                     {
                         new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill()
                         {
@@ -703,7 +703,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockResponseModel(Models.UploadMarketingShoppingReceiptResponse response)
             {
-                Assert.Equal(MOCK_PLAIN_STR, response.Receipt.MerchantContactInformation!.ConsultationPhoneNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, response.Receipt!.MerchantContactInformation!.ConsultationPhoneNumber!);
             }
 
             await Assert.MultipleAsync(async () =>
@@ -752,7 +752,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.QueryMerchantServiceComplaintsResponse()
                 {
-                    ComplaintList = new Models.QueryMerchantServiceComplaintsResponse.Types.Complaint[]
+                    ComplaintList = new List<Models.QueryMerchantServiceComplaintsResponse.Types.Complaint>()
                     {
                         new Models.QueryMerchantServiceComplaintsResponse.Types.Complaint()
                         {
@@ -868,7 +868,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse()
                 {
-                    FapiaoList = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao[]
+                    FapiaoList = new List<Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao>()
                     {
                         new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao()
                         {
@@ -884,8 +884,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockResponseModel(Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse response)
             {
-                Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList[0]!.Buyer!.UserMobileNumber!);
-                Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList[0]!.Buyer!.UserEmail!);
+                Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList![0]!.Buyer!.UserMobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList![0]!.Buyer!.UserEmail!);
             }
 
             await Assert.MultipleAsync(async () =>
@@ -1101,7 +1101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetPayScoreMerchantBillResponse()
                 {
-                    DownloadBillList = new Models.GetPayScoreMerchantBillResponse.Types.DownloadBill[]
+                    DownloadBillList = new List<Models.GetPayScoreMerchantBillResponse.Types.DownloadBill>()
                     {
                         new Models.GetPayScoreMerchantBillResponse.Types.DownloadBill()
                         {
@@ -1272,7 +1272,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.QuerySmartGuidesResponse()
                 {
-                    GuideList = new Models.QuerySmartGuidesResponse.Types.Guide[]
+                    GuideList = new List<Models.QuerySmartGuidesResponse.Types.Guide>()
                     {
                         new Models.QuerySmartGuidesResponse.Types.Guide()
                         {

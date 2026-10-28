@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ent_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ent_id")]
-        public string EnterpriseId { get; set; } = string.Empty;
+        public string? EnterpriseId { get; set; }
 
         /// <summary>
         /// 获取或设置平台退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_refund_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_refund_id")]
-        public string OutRefundId { get; set; } = string.Empty;
+        public string? OutRefundId { get; set; }
 
         /// <summary>
         /// 获取或设置平台支付单号。与字段 <see cref="PaymentId"/> 二选一。
@@ -59,6 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("server_notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("server_notify_url")]
-        public string ServerNotifyUrl { get; set; } = string.Empty;
+        public string? ServerNotifyUrl { get; set; }
     }
 }

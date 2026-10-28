@@ -29,6 +29,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OpenProductAccountRegister")]
         [System.Text.Json.Serialization.JsonPropertyName("OpenProductAccountRegister")]
         [System.Xml.Serialization.XmlElement("OpenProductAccountRegister")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

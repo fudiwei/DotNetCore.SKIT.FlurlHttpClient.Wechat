@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user")]
                 [System.Text.Json.Serialization.JsonPropertyName("user")]
-                public string[]? UserIdList { get; set; }
+                public List<string>? UserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partyid")]
                 [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public long[]? DepartmentIdList { get; set; }
+                public List<long>? DepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置标签 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tagid")]
                 [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                public int[]? TagIdList { get; set; }
+                public List<int>? TagIdList { get; set; }
             }
         }
 
@@ -44,14 +44,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付商户号全称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_name")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-        public string MerchantName { get; set; } = default!;
+        public string? MerchantName { get; set; }
 
         /// <summary>
         /// 获取或设置使用范围信息。

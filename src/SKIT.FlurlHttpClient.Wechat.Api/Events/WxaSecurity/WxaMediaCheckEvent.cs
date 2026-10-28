@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("suggest")]
                 [System.Text.Json.Serialization.JsonPropertyName("suggest")]
                 [System.Xml.Serialization.XmlElement("suggest")]
-                public string SuggestType { get; set; } = default!;
+                public string? SuggestType { get; set; }
 
                 /// <summary>
                 /// 获取或设置命中标签枚举值。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("strategy")]
                 [System.Text.Json.Serialization.JsonPropertyName("strategy")]
                 [System.Xml.Serialization.XmlElement("strategy")]
-                public string Strategy { get; set; } = default!;
+                public string? Strategy { get; set; }
 
                 /// <summary>
                 /// 获取或设置建议类型。
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         [System.Xml.Serialization.XmlElement("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置请求跟踪标识。
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("trace_id")]
         [System.Text.Json.Serialization.JsonPropertyName("trace_id")]
         [System.Xml.Serialization.XmlElement("trace_id")]
-        public string TraceId { get; set; } = default!;
+        public string? TraceId { get; set; }
 
         /// <summary>
         /// 获取或设置任务状态码。
@@ -140,6 +140,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("detail")]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
         [System.Xml.Serialization.XmlElement("detail", IsNullable = true)]
-        public Types.Detail[]? DetailList { get; set; }
+        public List<Types.Detail>? DetailList { get; set; }
     }
 }

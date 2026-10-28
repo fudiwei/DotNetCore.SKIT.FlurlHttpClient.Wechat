@@ -36,14 +36,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置权限集描述。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("desc")]
                                 [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                                public string Description { get; set; } = default!;
+                                public string? Description { get; set; }
                             }
                         }
 
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("funcscope_category")]
                         [System.Text.Json.Serialization.JsonPropertyName("funcscope_category")]
-                        public Types.ScopeCategory ScopeCategory { get; set; } = default!;
+                        public Types.ScopeCategory? ScopeCategory { get; set; }
                     }
                 }
 
@@ -61,14 +61,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorizer_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
-                public string AuthorizerAppId { get; set; } = default!;
+                public string? AuthorizerAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权方 AccessToken。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorizer_access_token")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorizer_access_token")]
-                public string AuthorizerAccessToken { get; set; } = default!;
+                public string? AuthorizerAccessToken { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权方 RefreshToken。
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("func_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("func_info")]
-                public Types.Function[]? FunctionList { get; set; }
+                public List<Types.Function>? FunctionList { get; set; }
             }
         }
 
@@ -98,6 +98,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_info")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_info")]
-        public Types.Authorization Authorization { get; set; } = default!;
+        public Types.Authorization? Authorization { get; set; }
     }
 }

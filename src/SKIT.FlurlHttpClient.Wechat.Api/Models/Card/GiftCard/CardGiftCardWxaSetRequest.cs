@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_appid")]
-        public string MiniProgramAppId { get; set; } = string.Empty;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置货架 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_id")]
         [System.Text.Json.Serialization.JsonPropertyName("page_id")]
-        public string PageId { get; set; } = string.Empty;
+        public string? PageId { get; set; }
     }
 }

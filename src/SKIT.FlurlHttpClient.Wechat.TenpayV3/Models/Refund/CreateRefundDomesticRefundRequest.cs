@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("account")]
                         [System.Text.Json.Serialization.JsonPropertyName("account")]
-                        public string Account { get; set; } = string.Empty;
+                        public string? Account { get; set; }
                     }
                 }
 
@@ -49,14 +49,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string Currency { get; set; } = "CNY";
+                public string? Currency { get; set; } = "CNY";
 
                 /// <summary>
                 /// 获取或设置退款出资账户及金额列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("from")]
                 [System.Text.Json.Serialization.JsonPropertyName("from")]
-                public IList<Types.From>? FromList { get; set; }
+                public List<Types.From>? FromList { get; set; }
 
                 /// <summary>
                 /// 获取或设置手续费退款金额（单位：分）。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_goods_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_goods_id")]
-                public string MerchantGoodsId { get; set; } = string.Empty;
+                public string? MerchantGoodsId { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信侧商品编码。
@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_refund_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
-        public string OutRefundNumber { get; set; } = string.Empty;
+        public string? OutRefundNumber { get; set; }
 
         /// <summary>
         /// 获取或设置退款原因。
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public Types.Amount Amount { get; set; } = new Types.Amount();
+        public Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置退款商品列表。

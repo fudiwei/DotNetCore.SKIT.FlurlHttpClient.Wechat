@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("shopid")]
         [System.Text.Json.Serialization.JsonPropertyName("shopid")]
         [System.Xml.Serialization.XmlElement("shopid")]
-        public string ShopId { get; set; } = default!;
+        public string? ShopId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("shop_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_order_id")]
         [System.Xml.Serialization.XmlElement("shop_order_id")]
-        public string ShopOrderId { get; set; } = default!;
+        public string? ShopOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置商家门店编号。
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("shop_no")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_no")]
         [System.Xml.Serialization.XmlElement("shop_no")]
-        public string ShopNumber { get; set; } = default!;
+        public string? ShopNumber { get; set; }
 
         /// <summary>
         /// 获取或设置校验串。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("delivery_sign")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_sign")]
         [System.Xml.Serialization.XmlElement("delivery_sign")]
-        public string DeliverySignature { get; set; } = default!;
+        public string? DeliverySignature { get; set; }
 
         /// <summary>
         /// 获取或设置发件人信息。
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
         [System.Xml.Serialization.XmlElement("receiver")]
-        public Types.Receiver Receiver { get; set; } = default!;
+        public Types.Receiver? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置货物信息。
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("cargo")]
         [System.Text.Json.Serialization.JsonPropertyName("cargo")]
         [System.Xml.Serialization.XmlElement("cargo")]
-        public Types.Cargo Cargo { get; set; } = default!;
+        public Types.Cargo? Cargo { get; set; }
 
         /// <summary>
         /// 获取或设置订单信息。
@@ -90,6 +90,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
         [System.Xml.Serialization.XmlElement("order_info")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

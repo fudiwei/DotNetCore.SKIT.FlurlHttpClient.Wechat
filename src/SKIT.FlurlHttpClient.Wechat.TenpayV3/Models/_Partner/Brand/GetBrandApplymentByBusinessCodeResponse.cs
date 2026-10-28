@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_code")]
         [System.Text.Json.Serialization.JsonPropertyName("business_code")]
-        public string BusinessCode { get; set; } = default!;
+        public string? BusinessCode { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applyment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("applyment_id")]
-        public string ApplymentId { get; set; } = default!;
+        public string? ApplymentId { get; set; }
 
         /// <summary>
         /// 获取或设置申请单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applyment_state")]
         [System.Text.Json.Serialization.JsonPropertyName("applyment_state")]
-        public string ApplymentState { get; set; } = default!;
+        public string? ApplymentState { get; set; }
 
         /// <summary>
         /// 获取或设置申请单状态描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applyment_state_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("applyment_state_desc")]
-        public string ApplymentStateDescription { get; set; } = default!;
+        public string? ApplymentStateDescription { get; set; }
 
         /// <summary>
         /// 获取或设置授权确认二维码链接。

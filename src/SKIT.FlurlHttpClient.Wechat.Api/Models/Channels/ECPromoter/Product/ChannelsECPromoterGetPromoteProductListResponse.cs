@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shop_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
-                public string ShopAppId { get; set; } = default!;
+                public string? ShopAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置供货机构 AppId。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_list")]
-        public Types.Product[] ProductList { get; set; } = default!;
+        public List<Types.Product>? ProductList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

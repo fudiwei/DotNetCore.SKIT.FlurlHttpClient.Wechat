@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string VideoUrl { get; set; } = default!;
+        public string? VideoUrl { get; set; }
     }
 }

@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sandbox_signkey")]
         [System.Text.Json.Serialization.JsonPropertyName("sandbox_signkey")]
-        public string SandboxSignKey { get; set; } = default!;
+        public string? SandboxSignKey { get; set; }
     }
 }

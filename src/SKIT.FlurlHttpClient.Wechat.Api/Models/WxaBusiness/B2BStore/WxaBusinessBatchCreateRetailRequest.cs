@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("retail_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("retail_type")]
-                public string RetailType { get; set; } = string.Empty;
+                public string? RetailType { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类型。
@@ -28,42 +28,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("retail_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("retail_name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店地址省份。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_province")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_province")]
-                public string Province { get; set; } = string.Empty;
+                public string? Province { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店地址城市。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_city")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_city")]
-                public string City { get; set; } = string.Empty;
+                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店地址区县。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_region")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_region")]
-                public string District { get; set; } = string.Empty;
+                public string? District { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店地址街道。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_street")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_street")]
-                public string Street { get; set; } = string.Empty;
+                public string? Street { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店负责人的手机号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
-                public string Mobilephone { get; set; } = default!;
+                public string? Mobilephone { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业名称。
@@ -93,6 +93,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("retail_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("retail_info_list")]
-        public IList<Types.RetailInfo> RetailInfoList { get; set; } = new List<Types.RetailInfo>();
+        public List<Types.RetailInfo>? RetailInfoList { get; set; }
     }
 }

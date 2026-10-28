@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("suite_access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("suite_access_token")]
-        public string SuiteAccessToken { get; set; } = default!;
+        public string? SuiteAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置第三方应用凭证有效期（单位：秒）。

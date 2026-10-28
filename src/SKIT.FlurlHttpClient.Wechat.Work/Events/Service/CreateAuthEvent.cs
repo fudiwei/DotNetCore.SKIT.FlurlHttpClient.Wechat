@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("SuiteId")]
         [System.Text.Json.Serialization.JsonPropertyName("SuiteId")]
         [System.Xml.Serialization.XmlElement("SuiteId")]
-        public string SuiteId { get; set; } = default!;
+        public string? SuiteId { get; set; }
 
         /// <summary>
         /// 获取或设置授权码。
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("AuthCode")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthCode")]
         [System.Xml.Serialization.XmlElement("AuthCode")]
-        public string AuthCode { get; set; } = default!;
+        public string? AuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置扫码或者授权链接中的自定义参数。

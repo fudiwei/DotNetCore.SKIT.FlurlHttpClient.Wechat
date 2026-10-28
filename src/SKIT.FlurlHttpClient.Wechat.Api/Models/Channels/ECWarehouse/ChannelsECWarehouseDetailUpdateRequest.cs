@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_warehouse_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_warehouse_id")]
-        public string OutWarehouseId { get; set; } = string.Empty;
+        public string? OutWarehouseId { get; set; }
 
         /// <summary>
         /// 获取或设置仓库名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置仓库介绍。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("intro")]
         [System.Text.Json.Serialization.JsonPropertyName("intro")]
-        public string Introduction { get; set; } = string.Empty;
+        public string? Introduction { get; set; }
     }
 }

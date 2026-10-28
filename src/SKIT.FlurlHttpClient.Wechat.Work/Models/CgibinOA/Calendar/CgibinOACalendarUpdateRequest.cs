@@ -25,14 +25,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cal_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cal_id")]
-                public string CalendarId { get; set; } = string.Empty;
+                public string? CalendarId { get; set; }
 
                 /// <summary>
                 /// 获取或设置管理员成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("admins")]
                 [System.Text.Json.Serialization.JsonPropertyName("admins")]
-                public IList<string>? AdminUserIdList { get; set; }
+                public List<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置日历标题。
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shares")]
                 [System.Text.Json.Serialization.JsonPropertyName("shares")]
-                public IList<Types.Sharer>? SharerList { get; set; }
+                public List<Types.Sharer>? SharerList { get; set; }
             }
         }
 
@@ -103,6 +103,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("calendar")]
         [System.Text.Json.Serialization.JsonPropertyName("calendar")]
-        public Types.Calendar Calendar { get; set; } = new Types.Calendar();
+        public Types.Calendar? Calendar { get; set; }
     }
 }

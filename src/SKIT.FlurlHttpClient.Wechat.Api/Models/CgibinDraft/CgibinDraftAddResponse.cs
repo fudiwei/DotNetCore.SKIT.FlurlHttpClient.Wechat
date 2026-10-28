@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-        public string MediaId { get; set; } = default!;
+        public string? MediaId { get; set; }
     }
 }

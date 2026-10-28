@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户领卡号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_card_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_card_code")]
-        public string OutCardCode { get; set; } = string.Empty;
+        public string? OutCardCode { get; set; }
 
         /// <summary>
         /// 获取或设置先享卡模板 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_template_id")]
-        public string CardTemplateId { get; set; } = string.Empty;
+        public string? CardTemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置回调通知地址。

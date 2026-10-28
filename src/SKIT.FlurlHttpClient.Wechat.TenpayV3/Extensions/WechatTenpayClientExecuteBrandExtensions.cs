@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BusinessCode, "business_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "applyments", "business-code", request.BusinessCode);
+                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "applyments", "business-code", request.BusinessCode!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBrandApplymentByBusinessCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ApplymentId, "applyment_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "applyments", "applyment-id", request.ApplymentId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "applyments", "applyment-id", request.ApplymentId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBrandApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_no")]
                 [System.Xml.Serialization.XmlElement("trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付交易单号。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
                 [System.Xml.Serialization.XmlElement("transaction_id")]
-                public string TransactionId { get; set; } = default!;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付时间字符串（格式：yyyy-MM-dd HH:mm:ss）。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("pay_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("pay_time")]
                 [System.Xml.Serialization.XmlElement("pay_time")]
-                public string PayTimeString { get; set; } = default!;
+                public string? PayTimeString { get; set; }
             }
         }
 
@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
         [System.Xml.Serialization.XmlElement("order_info")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

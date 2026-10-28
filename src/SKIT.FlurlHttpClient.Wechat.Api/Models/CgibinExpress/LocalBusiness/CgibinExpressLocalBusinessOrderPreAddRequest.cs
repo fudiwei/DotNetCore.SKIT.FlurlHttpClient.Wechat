@@ -14,35 +14,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city")]
                 [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public string City { get; set; } = string.Empty;
+                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址（街道、小区、大厦等）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address")]
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
-                public string Address { get; set; } = string.Empty;
+                public string? Address { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址详情（楼号、单元号、层号等）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_detail")]
-                public string AddressDetail { get; set; } = string.Empty;
+                public string? AddressDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置电话或手机号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string PhoneNumber { get; set; } = string.Empty;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置经度。
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("good_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("good_name")]
-                                public string Name { get; set; } = string.Empty;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置货物单价（单位：元）。
@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods")]
                         [System.Text.Json.Serialization.JsonPropertyName("goods")]
-                        public IList<Types.Goods> GoodsList { get; set; } = new List<Types.Goods>();
+                        public List<Types.Goods>? GoodsList { get; set; }
                     }
                 }
 
@@ -180,14 +180,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cargo_first_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("cargo_first_class")]
-                public string CargoFirstClass { get; set; } = string.Empty;
+                public string? CargoFirstClass { get; set; }
 
                 /// <summary>
                 /// 获取或设置品类二级类目。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cargo_second_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("cargo_second_class")]
-                public string CargoSecondClass { get; set; } = string.Empty;
+                public string? CargoSecondClass { get; set; }
             }
 
             public class Order
@@ -334,21 +334,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wxa_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxa_path")]
-                public string MiniProgramPath { get; set; } = string.Empty;
+                public string? MiniProgramPath { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品缩略图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("img_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("img_url")]
-                public string ImageUrl { get; set; } = string.Empty;
+                public string? ImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                public string GoodsName { get; set; } = string.Empty;
+                public string? GoodsName { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品数量。
@@ -364,21 +364,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_no")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_no")]
-        public string ShopNumber { get; set; } = string.Empty;
+        public string? ShopNumber { get; set; }
 
         /// <summary>
         /// 获取或设置配送公司 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置下单用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置发件人信息。
@@ -392,21 +392,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("receiver")]
-        public Types.Receiver Receiver { get; set; } = new Types.Receiver();
+        public Types.Receiver? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置货物信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cargo")]
         [System.Text.Json.Serialization.JsonPropertyName("cargo")]
-        public Types.Cargo Cargo { get; set; } = new Types.Cargo();
+        public Types.Cargo? Cargo { get; set; }
 
         /// <summary>
         /// 获取或设置订单信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
-        public Types.Order Order { get; set; } = new Types.Order();
+        public Types.Order? Order { get; set; }
 
         /// <summary>
         /// 获取或设置商品信息。

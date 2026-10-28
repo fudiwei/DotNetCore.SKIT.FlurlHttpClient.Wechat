@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("number")]
         [System.Text.Json.Serialization.JsonPropertyName("number")]
-        public string BankNumber { get; set; } = default!;
+        public string? BankNumber { get; set; }
     }
 }

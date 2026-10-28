@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_bill_no")]
-        public string OutBillNumber { get; set; } = string.Empty;
+        public string? OutBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置转账金额（单位：分）。
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
-        public string TransferRemark { get; set; } = string.Empty;
+        public string? TransferRemark { get; set; }
 
         /// <summary>
         /// 获取或设置微信免确认收款授权单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_id")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_id")]
-        public string AuthorizationId { get; set; } = string.Empty;
+        public string? AuthorizationId { get; set; }
 
         /// <summary>
         /// 获取或设置收款用户姓名（需使用平台公钥/证书加密）。
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_scene_report_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_report_infos")]
-        public IList<Types.TransferSceneReportInfo>? TransferSceneReportInfoList { get; set; }
+        public List<Types.TransferSceneReportInfo>? TransferSceneReportInfoList { get; set; }
 
         /// <summary>
         /// 获取或设置出资商户号。

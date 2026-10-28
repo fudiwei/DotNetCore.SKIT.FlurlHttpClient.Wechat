@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buyer_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("buyer_corpid")]
-        public string BuyerCorpId { get; set; } = string.Empty;
+        public string? BuyerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置延长天数。

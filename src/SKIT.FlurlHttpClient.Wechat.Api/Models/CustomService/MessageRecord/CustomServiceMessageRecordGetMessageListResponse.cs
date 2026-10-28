@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /customservice/msgrecord/getmsglist 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("worker")]
                 [System.Text.Json.Serialization.JsonPropertyName("worker")]
-                public string KfAccount { get; set; } = default!;
+                public string? KfAccount { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作码。
@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string Text { get; set; } = default!;
+                public string? Text { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作时间戳。
@@ -65,6 +65,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recordlist")]
         [System.Text.Json.Serialization.JsonPropertyName("recordlist")]
-        public Types.MessageRecord[] MessageRecordList { get; set; } = default!;
+        public List<Types.MessageRecord>? MessageRecordList { get; set; }
     }
 }

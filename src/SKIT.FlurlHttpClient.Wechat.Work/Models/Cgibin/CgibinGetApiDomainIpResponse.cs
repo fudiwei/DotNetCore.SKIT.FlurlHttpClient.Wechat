@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/get_api_domain_ip 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ip_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ip_list")]
-        public string[] IPList { get; set; } = default!;
+        public List<string>? IPList { get; set; }
     }
 }

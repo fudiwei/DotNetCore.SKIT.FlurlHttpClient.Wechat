@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spus")]
         [System.Text.Json.Serialization.JsonPropertyName("spus")]
-        public Types.SPU[] SPUList { get; set; } = default!;
+        public List<Types.SPU>? SPUList { get; set; }
 
         /// <summary>
         /// 获取或设置 SPU 总数量。

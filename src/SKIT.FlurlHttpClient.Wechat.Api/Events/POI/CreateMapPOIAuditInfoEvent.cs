@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("map_poi_id")]
         [System.Text.Json.Serialization.JsonPropertyName("map_poi_id")]
         [System.Xml.Serialization.XmlElement("map_poi_id")]
-        public string MapPOIId { get; set; } = default!;
+        public string? MapPOIId { get; set; }
 
         /// <summary>
         /// 获取或设置门店名称。
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
         [System.Xml.Serialization.XmlElement("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置门店详细地址。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
         [System.Xml.Serialization.XmlElement("address")]
-        public string Address { get; set; } = default!;
+        public string? Address { get; set; }
 
         /// <summary>
         /// 获取或设置门店位置经度。
@@ -71,6 +71,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("sh_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("sh_remark")]
         [System.Xml.Serialization.XmlElement("sh_remark")]
-        public string Remark { get; set; } = default!;
+        public string? Remark { get; set; }
     }
 }

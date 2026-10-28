@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_id")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-        public string GridId { get; set; } = string.Empty;
+        public string? GridId { get; set; }
     }
 }

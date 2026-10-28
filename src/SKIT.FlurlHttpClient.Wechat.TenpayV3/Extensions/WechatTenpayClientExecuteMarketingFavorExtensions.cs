@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "stocks", request.StockId, "start");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "stocks", request.StockId!, "start");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.StartMarketingFavorStockResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "stocks", request.StockId, "pause");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "stocks", request.StockId!, "pause");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.PauseMarketingFavorStockResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "stocks", request.StockId, "restart");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "stocks", request.StockId!, "restart");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RestartMarketingFavorStockResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!)
                 .SetQueryParam("stock_creator_mchid", request.StockCreatorMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockByStockIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "merchants")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!, "merchants")
                 .SetQueryParam("stock_creator_mchid", request.StockCreatorMerchantId)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
@@ -243,7 +243,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "items")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!, "items")
                 .SetQueryParam("stock_creator_mchid", request.StockCreatorMerchantId)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
@@ -271,7 +271,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "use-flow");
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!, "use-flow");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockUseFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -291,7 +291,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "use-flow-by-day")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!, "use-flow-by-day")
                 .SetQueryParam("bill_date", request.BillDateString);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockUseFlowByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -317,7 +317,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "refund-flow");
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!, "refund-flow");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockRefundFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -337,7 +337,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.StockId, "stock_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "refund-flow-by-day")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId!, "refund-flow-by-day")
                 .SetQueryParam("bill_date", request.BillDateString);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockRefundFlowByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -368,7 +368,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "users", request.OpenId, "coupons");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "favor", "users", request.OpenId!, "coupons");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SendMarketingFavorUserCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -394,7 +394,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CouponId, "coupon_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId, "coupons", request.CouponId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId!, "coupons", request.CouponId!)
                 .SetQueryParam("appid", request.AppId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorUserCouponByCouponIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -420,7 +420,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OpenId, "openid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId, "coupons")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId!, "coupons")
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("stock_id", request.StockId)
                 .SetQueryParam("creator_mchid", request.CreatorMerchantId)

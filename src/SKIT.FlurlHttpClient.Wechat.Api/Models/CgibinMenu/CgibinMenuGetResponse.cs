@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置菜单标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置菜单 KEY 值。
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sub_button")]
                         [System.Text.Json.Serialization.JsonPropertyName("sub_button")]
-                        public Button[]? SubButtonList { get; set; }
+                        public List<Button>? SubButtonList { get; set; }
                     }
                 }
 
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("button")]
                 [System.Text.Json.Serialization.JsonPropertyName("button")]
-                public Types.Button[] ButtonList { get; set; } = default!;
+                public List<Types.Button>? ButtonList { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜单 ID。
@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("matchrule")]
                 [System.Text.Json.Serialization.JsonPropertyName("matchrule")]
-                public Types.MatchRule MatchRule { get; set; } = default!;
+                public Types.MatchRule? MatchRule { get; set; }
             }
         }
 
@@ -176,13 +176,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("menu")]
         [System.Text.Json.Serialization.JsonPropertyName("menu")]
-        public Types.Menu Menu { get; set; } = default!;
+        public Types.Menu? Menu { get; set; }
 
         /// <summary>
         /// 获取或设置个性化菜单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("conditionalmenu")]
         [System.Text.Json.Serialization.JsonPropertyName("conditionalmenu")]
-        public Types.ConditionalMenu[]? ConditionalMenuList { get; set; }
+        public List<Types.ConditionalMenu>? ConditionalMenuList { get; set; }
     }
 }

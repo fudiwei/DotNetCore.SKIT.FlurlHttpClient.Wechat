@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("properties")]
                                 [System.Text.Json.Serialization.JsonPropertyName("properties")]
-                                public Types.SheetProperty SheetProperty { get; set; } = default!;
+                                public Types.SheetProperty? SheetProperty { get; set; }
                             }
 
                             public class DeleteSheetResponse
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sheet_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sheet_id")]
-                                public string SheetId { get; set; } = default!;
+                                public string? SheetId { get; set; }
                             }
 
                             public class UpdateRangeResponse
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("responses")]
                 [System.Text.Json.Serialization.JsonPropertyName("responses")]
-                public Types.UpdateResponse[] BatchResponseList { get; set; } = default!;
+                public List<Types.UpdateResponse>? BatchResponseList { get; set; }
             }
         }
 
@@ -107,6 +107,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

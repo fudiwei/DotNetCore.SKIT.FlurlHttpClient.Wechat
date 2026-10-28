@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置空间授权信息表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_info")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
-        public IList<Types.Authority> AuthorityList { get; set; } = new List<Types.Authority>();
+        public List<Types.Authority>? AuthorityList { get; set; }
     }
 }

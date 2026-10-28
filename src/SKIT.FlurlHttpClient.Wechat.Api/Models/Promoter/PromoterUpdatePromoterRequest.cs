@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id")]
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string PromoterId { get; set; } = string.Empty;
+        public string? PromoterId { get; set; }
 
         /// <summary>
         /// 获取或设置角色 ID。

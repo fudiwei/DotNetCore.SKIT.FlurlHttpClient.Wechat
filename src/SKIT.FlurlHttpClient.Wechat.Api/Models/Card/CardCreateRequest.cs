@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_type")]
-                public string CardType { get; set; } = string.Empty;
+                public string? CardType { get; set; }
 
                 /// <summary>
                 /// 获取或设置团购券信息。
@@ -109,13 +109,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("merchant_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
-                                public string SubMerchantId { get; set; } = string.Empty;
+                                public string? SubMerchantId { get; set; }
                             }
 
                             public class SKU
                             {
                                 /// <summary>
                                 /// 获取或设置卡券库存的数量。
+                                /// <para>默认值：100000000</para>
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("quantity")]
                                 [System.Text.Json.Serialization.JsonPropertyName("quantity")]
@@ -129,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = string.Empty;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置起用时间戳。
@@ -173,63 +174,63 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("logo_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-                        public string LogoUrl { get; set; } = string.Empty;
+                        public string? LogoUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置码型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("code_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("code_type")]
-                        public string CodeType { get; set; } = string.Empty;
+                        public string? CodeType { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户名字。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("brand_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                        public string BrandName { get; set; } = string.Empty;
+                        public string? BrandName { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券颜色。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("color")]
                         [System.Text.Json.Serialization.JsonPropertyName("color")]
-                        public string Color { get; set; } = string.Empty;
+                        public string? Color { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券使用提醒。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("notice")]
                         [System.Text.Json.Serialization.JsonPropertyName("notice")]
-                        public string Notice { get; set; } = string.Empty;
+                        public string? Notice { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券使用说明。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("description")]
                         [System.Text.Json.Serialization.JsonPropertyName("description")]
-                        public string Description { get; set; } = string.Empty;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku")]
                         [System.Text.Json.Serialization.JsonPropertyName("sku")]
-                        public Types.SKU SKU { get; set; } = new Types.SKU();
+                        public Types.SKU? SKU { get; set; }
 
                         /// <summary>
                         /// 获取或设置使用日期信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("date_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("date_info")]
-                        public Types.Date Date { get; set; } = new Types.Date();
+                        public Types.Date? Date { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否自定义券码。
@@ -264,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("location_id_list")]
-                        public IList<long>? POIIdList { get; set; }
+                        public List<long>? POIIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否支持全部门店。
@@ -463,14 +464,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("abstract")]
                                 [System.Text.Json.Serialization.JsonPropertyName("abstract")]
-                                public string Description { get; set; } = string.Empty;
+                                public string? Description { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置封面图片 URL 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("icon_url_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("icon_url_list")]
-                                public IList<string>? IconUrlList { get; set; }
+                                public List<string>? IconUrlList { get; set; }
                             }
 
                             public class TextImage
@@ -480,14 +481,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("text")]
                                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                                public string Text { get; set; } = string.Empty;
+                                public string? Text { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置封面图片 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("image_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                                public string ImageUrl { get; set; } = string.Empty;
+                                public string? ImageUrl { get; set; }
                             }
 
                             public class TimeLimit
@@ -497,7 +498,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = string.Empty;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置起始时间小时（格式：H）。
@@ -548,21 +549,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text_image_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("text_image_list")]
-                        public IList<Types.TextImage>? TextImageList { get; set; }
+                        public List<Types.TextImage>? TextImageList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商家服务类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_service")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_service")]
-                        public IList<string>? BusinessServiceList { get; set; }
+                        public List<string>? BusinessServiceList { get; set; }
 
                         /// <summary>
                         /// 获取或设置使用时段限制列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("time_limit")]
                         [System.Text.Json.Serialization.JsonPropertyName("time_limit")]
-                        public IList<Types.TimeLimit>? TimeLimitList { get; set; }
+                        public List<Types.TimeLimit>? TimeLimitList { get; set; }
                     }
                 }
 
@@ -571,21 +572,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置团购详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("deal_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("deal_detail")]
-                public string DealDetail { get; set; } = string.Empty;
+                public string? DealDetail { get; set; }
             }
 
             public class CashCard
@@ -606,14 +607,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置起用金额（单位：分）。
@@ -648,14 +649,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置打折额度。
@@ -683,21 +684,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置兑换内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("gift")]
                 [System.Text.Json.Serialization.JsonPropertyName("gift")]
-                public string GiftDetail { get; set; } = string.Empty;
+                public string? GiftDetail { get; set; }
             }
 
             public class GeneralCouponCard
@@ -718,21 +719,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("default_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("default_detail")]
-                public string DefaultDetail { get; set; } = string.Empty;
+                public string? DefaultDetail { get; set; }
             }
 
             public class GeneralCard
@@ -759,7 +760,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("giftcard_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("giftcard_info")]
-                        public Types.GiftCard GiftCard { get; set; } = new Types.GiftCard();
+                        public Types.GiftCard? GiftCard { get; set; }
 
                         /// <summary>
                         /// 获取或设置礼品卡最大可赠送次数。
@@ -790,21 +791,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_card_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_card_type")]
-                public string SubCardType { get; set; } = string.Empty;
+                public string? SubCardType { get; set; }
 
                 /// <summary>
                 /// 获取或设置礼品卡背景图 URL。
@@ -818,7 +819,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("prerogative")]
                 [System.Text.Json.Serialization.JsonPropertyName("prerogative")]
-                public string Prerogative { get; set; } = string.Empty;
+                public string? Prerogative { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否领取后自动激活。
@@ -959,21 +960,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置入口右侧提示语。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tips")]
                         [System.Text.Json.Serialization.JsonPropertyName("tips")]
-                        public string Tips { get; set; } = string.Empty;
+                        public string? Tips { get; set; }
 
                         /// <summary>
                         /// 获取或设置入口跳转链接。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = string.Empty;
+                        public string? Url { get; set; }
                     }
 
                     public class BonusRule
@@ -1041,14 +1042,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置会员卡背景图 URL。
@@ -1062,7 +1063,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("prerogative")]
                 [System.Text.Json.Serialization.JsonPropertyName("prerogative")]
-                public string Prerogative { get; set; } = string.Empty;
+                public string? Prerogative { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否领取后自动激活。
@@ -1237,21 +1238,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_detail")]
-                public string MeetingDetail { get; set; } = string.Empty;
+                public string? MeetingDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置会场导览图 URL。
@@ -1279,21 +1280,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置票类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ticket_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("ticket_class")]
-                public string TicketClass { get; set; } = string.Empty;
+                public string? TicketClass { get; set; }
 
                 /// <summary>
                 /// 获取或设置景区导览图 URL。
@@ -1321,21 +1322,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置电影详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                public string MovieDetail { get; set; } = string.Empty;
+                public string? MovieDetail { get; set; }
             }
 
             public class BoardingPassCard
@@ -1356,35 +1357,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = new Types.Advance();
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置起点。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("from")]
                 [System.Text.Json.Serialization.JsonPropertyName("from")]
-                public string From { get; set; } = string.Empty;
+                public string? From { get; set; }
 
                 /// <summary>
                 /// 获取或设置终点。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("to")]
                 [System.Text.Json.Serialization.JsonPropertyName("to")]
-                public string To { get; set; } = string.Empty;
+                public string? To { get; set; }
 
                 /// <summary>
                 /// 获取或设置航班。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flight")]
                 [System.Text.Json.Serialization.JsonPropertyName("flight")]
-                public string Flight { get; set; } = string.Empty;
+                public string? Flight { get; set; }
 
                 /// <summary>
                 /// 获取或设置登机口。
@@ -1405,7 +1406,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("air_model")]
                 [System.Text.Json.Serialization.JsonPropertyName("air_model")]
-                public string AirModel { get; set; } = string.Empty;
+                public string? AirModel { get; set; }
 
                 /// <summary>
                 /// 获取或设置起飞时间戳。
@@ -1428,6 +1429,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card")]
         [System.Text.Json.Serialization.JsonPropertyName("card")]
-        public Types.Card Card { get; set; } = new Types.Card();
+        public Types.Card? Card { get; set; }
     }
 }

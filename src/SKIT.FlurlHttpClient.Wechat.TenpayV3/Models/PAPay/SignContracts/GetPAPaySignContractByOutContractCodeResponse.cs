@@ -23,14 +23,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_termination_mode")]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_termination_mode")]
-                public string TerminationMode { get; set; } = default!;
+                public string? TerminationMode { get; set; }
 
                 /// <summary>
                 /// 获取或设置解约备注。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_termination_remark")]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_termination_remark")]
-                public string TerminationRemark { get; set; } = default!;
+                public string? TerminationRemark { get; set; }
             }
 
             public class DeductSchedule
@@ -47,21 +47,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_date")]
-                public string EstimatedDeductDateString { get; set; } = default!;
+                public string? EstimatedDeductDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置预计的扣费金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
-                public Types.Amount EstimatedDeductAmount { get; set; } = default!;
+                public Types.Amount? EstimatedDeductAmount { get; set; }
 
                 /// <summary>
                 /// 获取或设置扣费预约状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("schedule_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("schedule_state")]
-                public string ScheduleState { get; set; } = default!;
+                public string? ScheduleState { get; set; }
 
                 /// <summary>
                 /// 获取或设置已预约的扣费金额信息。
@@ -91,14 +91,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置模板 ID。
@@ -112,21 +112,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
-        public string OutContractCode { get; set; } = default!;
+        public string? OutContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣签约协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置协议状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_state")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_state")]
-        public string ContractState { get; set; } = default!;
+        public string? ContractState { get; set; }
 
         /// <summary>
         /// 获取或设置签署时间。
@@ -158,7 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string ContractDisplayAccount { get; set; } = default!;
+        public string? ContractDisplayAccount { get; set; }
 
         /// <summary>
         /// 获取或设置商户侧用户标识。

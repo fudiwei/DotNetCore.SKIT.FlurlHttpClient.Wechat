@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户全局标识。
@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("session_key")]
         [System.Text.Json.Serialization.JsonPropertyName("session_key")]
-        public string SessionKey { get; set; } = default!;
+        public string? SessionKey { get; set; }
     }
 }

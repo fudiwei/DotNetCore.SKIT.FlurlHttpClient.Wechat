@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置付费说明。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠说明。
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置风险金说明。
@@ -171,28 +171,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string AppId { get; set; } = string.Empty;
+        public virtual string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户服务订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
-        public string OutOrderNumber { get; set; } = string.Empty;
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置服务信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_introduction")]
         [System.Text.Json.Serialization.JsonPropertyName("service_introduction")]
-        public string ServiceInstruction { get; set; } = string.Empty;
+        public string? ServiceInstruction { get; set; }
 
         /// <summary>
         /// 获取或设置附加数据。
@@ -227,21 +227,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_payments")]
         [System.Text.Json.Serialization.JsonPropertyName("post_payments")]
-        public IList<Types.Payment> PostPaymentList { get; set; } = new List<Types.Payment>();
+        public List<Types.Payment>? PostPaymentList { get; set; }
 
         /// <summary>
         /// 获取或设置商户优惠列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_discounts")]
         [System.Text.Json.Serialization.JsonPropertyName("post_discounts")]
-        public IList<Types.Discount>? PostDiscountList { get; set; }
+        public List<Types.Discount>? PostDiscountList { get; set; }
 
         /// <summary>
         /// 获取或设置服务时间段信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("time_range")]
         [System.Text.Json.Serialization.JsonPropertyName("time_range")]
-        public Types.TimeRange TimeRange { get; set; } = new Types.TimeRange();
+        public Types.TimeRange? TimeRange { get; set; }
 
         /// <summary>
         /// 获取或设置服务位置信息。
@@ -262,6 +262,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("risk_fund")]
         [System.Text.Json.Serialization.JsonPropertyName("risk_fund")]
-        public Types.RiskFund RiskFund { get; set; } = new Types.RiskFund();
+        public Types.RiskFund? RiskFund { get; set; }
     }
 }

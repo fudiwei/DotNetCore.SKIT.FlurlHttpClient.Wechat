@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pdf_url")]
         [System.Text.Json.Serialization.JsonPropertyName("pdf_url")]
-        public string PdfUrl { get; set; } = default!;
+        public string? PdfUrl { get; set; }
 
         /// <summary>
         /// 获取或设置发票文件 URL 有效期（单位：秒）。

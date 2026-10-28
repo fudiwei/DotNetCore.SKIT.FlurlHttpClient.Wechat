@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ReceiptId, "receipt_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "abnormal-fund-processing", "receipts", request.ReceiptId, "transfer-instructions");
+                .CreateFlurlRequest(request, HttpMethod.Post, "abnormal-fund-processing", "receipts", request.ReceiptId!, "transfer-instructions");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateAbnormalFundProcessingReceiptTransferInstructionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ReceiptId, "receipt_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "abnormal-fund-processing", "receipts", request.ReceiptId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "abnormal-fund-processing", "receipts", request.ReceiptId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetAbnormalFundProcessingReceiptByReceiptIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

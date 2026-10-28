@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("limited_discount_skus")]
                 [System.Text.Json.Serialization.JsonPropertyName("limited_discount_skus")]
-                public Types.SKU[] SKUList { get; set; } = default!;
+                public List<Types.SKU>? SKUList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启限购。
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limited_discount_tasks")]
         [System.Text.Json.Serialization.JsonPropertyName("limited_discount_tasks")]
-        public Types.LimitedDiscountTask[] LimitedDiscountTaskList { get; set; } = default!;
+        public List<Types.LimitedDiscountTask>? LimitedDiscountTaskList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

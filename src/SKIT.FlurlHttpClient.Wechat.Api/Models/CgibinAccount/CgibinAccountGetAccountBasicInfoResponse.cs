@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/account/getaccountbasicinfo 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Value { get; set; } = default!;
+                public string? Value { get; set; }
 
                 /// <summary>
                 /// 获取或设置已使用修改次数。
@@ -38,7 +38,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_image_url")]
-                public string Value { get; set; } = default!;
+                public string? Value { get; set; }
 
                 /// <summary>
                 /// 获取或设置已使用修改次数。
@@ -62,7 +62,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("signature")]
                 [System.Text.Json.Serialization.JsonPropertyName("signature")]
-                public string Value { get; set; } = default!;
+                public string? Value { get; set; }
 
                 /// <summary>
                 /// 获取或设置已使用修改次数。
@@ -123,7 +123,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置帐号类型。
@@ -144,14 +144,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("principal_name")]
         [System.Text.Json.Serialization.JsonPropertyName("principal_name")]
-        public string PrincipalName { get; set; } = default!;
+        public string? PrincipalName { get; set; }
 
         /// <summary>
         /// 获取或设置主体标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("credential")]
         [System.Text.Json.Serialization.JsonPropertyName("credential")]
-        public string PrincipalCredential { get; set; } = default!;
+        public string? PrincipalCredential { get; set; }
 
         /// <summary>
         /// 获取或设置实名认证状态。
@@ -172,27 +172,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname_info")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname_info")]
-        public Types.Nickname Nickname { get; set; } = default!;
+        public Types.Nickname? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置头像信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_image_info")]
         [System.Text.Json.Serialization.JsonPropertyName("head_image_info")]
-        public Types.HeadImage HeadImage { get; set; } = default!;
+        public Types.HeadImage? HeadImage { get; set; }
 
         /// <summary>
         /// 获取或设置介绍信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("signature_info")]
         [System.Text.Json.Serialization.JsonPropertyName("signature_info")]
-        public Types.Signature Signature { get; set; } = default!;
+        public Types.Signature? Signature { get; set; }
 
         /// <summary>
         /// 获取或设置认证信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_verify_info")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_verify_info")]
-        public Types.Verification Verification { get; set; } = default!;
+        public Types.Verification? Verification { get; set; }
     }
 }

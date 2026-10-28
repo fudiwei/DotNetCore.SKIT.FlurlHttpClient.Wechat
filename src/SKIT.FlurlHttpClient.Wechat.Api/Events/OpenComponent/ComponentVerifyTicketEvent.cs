@@ -15,6 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ComponentVerifyTicket")]
         [System.Text.Json.Serialization.JsonPropertyName("ComponentVerifyTicket")]
         [System.Xml.Serialization.XmlElement("ComponentVerifyTicket")]
-        public string ComponentVerifyTicket { get; set; } = default!;
+        public string? ComponentVerifyTicket { get; set; }
     }
 }

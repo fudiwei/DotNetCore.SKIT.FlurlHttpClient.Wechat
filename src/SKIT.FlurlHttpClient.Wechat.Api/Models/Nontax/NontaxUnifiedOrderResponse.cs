@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/unifiedorder 接口的响应。</para>
@@ -14,28 +14,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pagepath")]
                 [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面参数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("query_string")]
                 [System.Text.Json.Serialization.JsonPropertyName("query_string")]
-                public string PageQuery { get; set; } = default!;
+                public string? PageQuery { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序业务类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_type")]
-                public string BusinessType { get; set; } = default!;
+                public string? BusinessType { get; set; }
             }
         }
 
@@ -44,7 +44,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置 H5 支付链接。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("miniprogram")]
         [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
-        public Types.MiniProgram MiniProgram { get; set; } = default!;
+        public Types.MiniProgram? MiniProgram { get; set; }
     }
 }

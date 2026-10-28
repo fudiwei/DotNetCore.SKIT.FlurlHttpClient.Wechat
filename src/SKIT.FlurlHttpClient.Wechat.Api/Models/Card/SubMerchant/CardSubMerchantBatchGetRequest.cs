@@ -11,10 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_id")]
         [System.Text.Json.Serialization.JsonPropertyName("begin_id")]
-        public string NextMerchantId { get; set; } = "0";
+        public string? NextMerchantId { get; set; } = "0";
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limit")]
         [System.Text.Json.Serialization.JsonPropertyName("limit")]

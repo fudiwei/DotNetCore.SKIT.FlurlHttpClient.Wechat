@@ -10,21 +10,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version_name")]
         [System.Text.Json.Serialization.JsonPropertyName("version_name")]
-        public string VersionName { get; set; } = default!;
+        public string? VersionName { get; set; }
 
         /// <summary>
         /// 获取或设置版本状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置上传方式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_type")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_type")]
-        public string UploadType { get; set; } = default!;
+        public string? UploadType { get; set; }
 
         /// <summary>
         /// 获取或设置 CPU 核心数。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_type")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_type")]
-        public string PolicyType { get; set; } = default!;
+        public string? PolicyType { get; set; }
 
         /// <summary>
         /// 获取或设置策略阈值（范围：0～100）。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("version_ip")]
-        public string VersionIP { get; set; } = default!;
+        public string? VersionIP { get; set; }
 
         /// <summary>
         /// 获取或设置版本端口。
@@ -94,42 +94,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("repo_type")]
         [System.Text.Json.Serialization.JsonPropertyName("repo_type")]
-        public string RepositoryType { get; set; } = default!;
+        public string? RepositoryType { get; set; }
 
         /// <summary>
         /// 获取或设置仓库地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("repo")]
         [System.Text.Json.Serialization.JsonPropertyName("repo")]
-        public string RepositoryUrl { get; set; } = default!;
+        public string? RepositoryUrl { get; set; }
 
         /// <summary>
         /// 获取或设置 Dockerfile 路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dockerfile_path")]
         [System.Text.Json.Serialization.JsonPropertyName("dockerfile_path")]
-        public string DockerfilePath { get; set; } = default!;
+        public string? DockerfilePath { get; set; }
 
         /// <summary>
         /// 获取或设置构建目录。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("build_dir")]
         [System.Text.Json.Serialization.JsonPropertyName("build_dir")]
-        public string BuildDirectory { get; set; } = default!;
+        public string? BuildDirectory { get; set; }
 
         /// <summary>
         /// 获取或设置环境变量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env_params")]
         [System.Text.Json.Serialization.JsonPropertyName("env_params")]
-        public string EnvironmentVariables { get; set; } = default!;
+        public string? EnvironmentVariables { get; set; }
 
         /// <summary>
         /// 获取或设置分支。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("branch")]
         [System.Text.Json.Serialization.JsonPropertyName("branch")]
-        public string Branch { get; set; } = default!;
+        public string? Branch { get; set; }
 
         /// <summary>
         /// 获取或设置备注。
@@ -143,14 +143,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("package_name")]
         [System.Text.Json.Serialization.JsonPropertyName("package_name")]
-        public string PackageName { get; set; } = default!;
+        public string? PackageName { get; set; }
 
         /// <summary>
         /// 获取或设置包版本。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("package_version")]
         [System.Text.Json.Serialization.JsonPropertyName("package_version")]
-        public string PackageVersion { get; set; } = default!;
+        public string? PackageVersion { get; set; }
 
         /// <summary>
         /// 获取或设置镜像地址。
@@ -173,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("updated_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset UpdateTime { get; set; } = default!;
+        public DateTimeOffset UpdateTime { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间。
@@ -182,6 +182,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("created_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset CreateTime { get; set; } = default!;
+        public DateTimeOffset CreateTime { get; set; }
     }
 }

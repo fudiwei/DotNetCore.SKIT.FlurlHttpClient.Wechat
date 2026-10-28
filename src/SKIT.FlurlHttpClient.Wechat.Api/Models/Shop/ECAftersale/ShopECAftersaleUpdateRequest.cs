@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置售后类型。
@@ -59,13 +59,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
-        public string RefundReason { get; set; } = string.Empty;
+        public string? RefundReason { get; set; }
 
         /// <summary>
         /// 获取或设置附件列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_list")]
         [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-        public IList<Types.Media>? MediaList { get; set; }
+        public List<Types.Media>? MediaList { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/scanorderflow 接口的响应。</para>
@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("funds_flow_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("funds_flow_ids")]
-        public string[] FundsFlowIdList { get; set; } = default!;
+        public List<string>? FundsFlowIdList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

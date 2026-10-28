@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chain_id")]
         [System.Text.Json.Serialization.JsonPropertyName("chain_id")]
-        public string ChainId { get; set; } = string.Empty;
+        public string? ChainId { get; set; }
 
         /// <summary>
         /// 获取或设置上下游关系规则 ID。

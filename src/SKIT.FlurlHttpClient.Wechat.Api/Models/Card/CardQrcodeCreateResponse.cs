@@ -17,20 +17,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("ticket")]
-        public string Ticket { get; set; } = default!;
+        public string? Ticket { get; set; }
 
         /// <summary>
         /// 获取或设置二维码图片解析后的地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; }
 
         /// <summary>
         /// 获取或设置二维码显示地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("show_qrcode_url")]
         [System.Text.Json.Serialization.JsonPropertyName("show_qrcode_url")]
-        public string QrcodeUrl { get; set; } = default!;
+        public string? QrcodeUrl { get; set; }
     }
 }

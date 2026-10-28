@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string BuyerOpenId { get; set; } = string.Empty;
+        public string? BuyerOpenId { get; set; }
     }
 }

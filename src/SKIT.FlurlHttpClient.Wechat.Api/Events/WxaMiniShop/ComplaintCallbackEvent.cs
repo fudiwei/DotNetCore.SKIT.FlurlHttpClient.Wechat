@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("media_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
                         [System.Xml.Serialization.XmlElement("media_id_list", Type = typeof(string), IsNullable = true)]
-                        public string[]? MediaIdListString { get; set; }
+                        public List<string>? MediaIdListString { get; set; }
                     }
                 }
 
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置事件通知类型。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("option_type")]
-                public string OptionType { get; set; } = default!;
+                public string? OptionType { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉单号。
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("open_id")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉问题类型。
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("phone_number")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置投诉材料内容。
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("order_id")]
-                public string OrderId { get; set; } = default!;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户订单号。
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("out_trade_no")]
-                public string OutTradeNumber { get; set; } = default!;
+                public string? OutTradeNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品名称。
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("product_name")]
-                public string ProductName { get; set; } = default!;
+                public string? ProductName { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付时间戳。
@@ -180,20 +180,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("history", Type = typeof(Types.ComplaintHistory))]
-                public Types.ComplaintHistory[] ComplaintHistoryList { get; set; } = default!;
+                public List<Types.ComplaintHistory>? ComplaintHistoryList { get; set; }
             }
         }
 
         internal static class Converters
         {
-            internal class EventPropertyComplaintHistoryListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.EventData.Types.ComplaintHistory[]?>
+            internal class EventPropertyComplaintHistoryListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<List<Types.EventData.Types.ComplaintHistory>?>
             {
                 public override bool CanWrite
                 {
                     get { return false; }
                 }
 
-                public override Types.EventData.Types.ComplaintHistory[]? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.EventData.Types.ComplaintHistory[]? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+                public override List<Types.EventData.Types.ComplaintHistory>? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, List<Types.EventData.Types.ComplaintHistory>? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
                 {
                     /*
                      * NOTICE:
@@ -210,29 +210,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 
                         case Newtonsoft.Json.JsonToken.StartArray:
                             {
-                                return serializer.Deserialize<Types.EventData.Types.ComplaintHistory[]>(reader);
+                                return serializer.Deserialize<List<Types.EventData.Types.ComplaintHistory>>(reader);
                             }
 
                         case Newtonsoft.Json.JsonToken.StartObject:
                             {
-                                Types.EventData.Types.ComplaintHistory[] array = new Types.EventData.Types.ComplaintHistory[1];
-                                array[0] = serializer.Deserialize<Types.EventData.Types.ComplaintHistory>(reader)!;
-                                return array;
+                                List<Types.EventData.Types.ComplaintHistory> list = new();
+                                list.Add(serializer.Deserialize<Types.EventData.Types.ComplaintHistory>(reader)!);
+                                return list;
                             }
                     }
 
                     throw new Newtonsoft.Json.JsonException();
                 }
 
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.EventData.Types.ComplaintHistory[]? value, Newtonsoft.Json.JsonSerializer serializer)
+                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, List<Types.EventData.Types.ComplaintHistory>? value, Newtonsoft.Json.JsonSerializer serializer)
                 {
                     throw new NotImplementedException();
                 }
             }
 
-            internal class EventPropertyComplaintHistoryListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.EventData.Types.ComplaintHistory[]?>
+            internal class EventPropertyComplaintHistoryListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<List<Types.EventData.Types.ComplaintHistory>?>
             {
-                public override Types.EventData.Types.ComplaintHistory[]? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+                public override List<Types.EventData.Types.ComplaintHistory>? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
                     /*
                      * NOTICE:
@@ -249,23 +249,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 
                         case System.Text.Json.JsonTokenType.StartArray:
                             {
-                                return System.Text.Json.JsonSerializer.Deserialize<Types.EventData.Types.ComplaintHistory[]>(ref reader, options);
+                                return System.Text.Json.JsonSerializer.Deserialize<List<Types.EventData.Types.ComplaintHistory>>(ref reader, options);
                             }
 
                         case System.Text.Json.JsonTokenType.StartObject:
                             {
-                                Types.EventData.Types.ComplaintHistory[] array = new Types.EventData.Types.ComplaintHistory[1];
-                                array[0] = System.Text.Json.JsonSerializer.Deserialize<Types.EventData.Types.ComplaintHistory>(ref reader, options)!;
-                                return array;
+                                List<Types.EventData.Types.ComplaintHistory> list = new();
+                                list.Add(System.Text.Json.JsonSerializer.Deserialize<Types.EventData.Types.ComplaintHistory>(ref reader, options)!);
+                                return list;
                             }
                     }
 
                     throw new System.Text.Json.JsonException();
                 }
 
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.EventData.Types.ComplaintHistory[]? value, System.Text.Json.JsonSerializerOptions options)
+                public override void Write(System.Text.Json.Utf8JsonWriter writer, List<Types.EventData.Types.ComplaintHistory>? value, System.Text.Json.JsonSerializerOptions options)
                 {
-                    writer.WriteRawValue(System.Text.Json.JsonSerializer.Serialize(value, typeof(Types.EventData.Types.ComplaintHistory[]), options));
+                    writer.WriteRawValue(System.Text.Json.JsonSerializer.Serialize(value, typeof(List<Types.EventData.Types.ComplaintHistory>), options));
                 }
             }
         }
@@ -276,7 +276,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("BussiCallBackInfo")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。
@@ -287,11 +287,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string AppId
         {
-            get { return this.EventData?.AppId ?? default!; }
+            get
+            {
+                return this.EventData?.AppId ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.AppId = value!;
+                this.EventData!.AppId = value!;
             }
         }
 
@@ -304,11 +307,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string OptionType
         {
-            get { return this.EventData?.OptionType ?? default!; }
+            get
+            {
+                return this.EventData?.OptionType ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.OptionType = value!;
+                this.EventData!.OptionType = value!;
             }
         }
 
@@ -322,11 +328,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public long ComplaintOrderId
         {
-            get { return this.EventData?.ComplaintOrderId ?? default; }
+            get
+            {
+                return this.EventData?.ComplaintOrderId ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.ComplaintOrderId = value;
+                this.EventData!.ComplaintOrderId = value;
             }
         }
 
@@ -343,7 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.OpenId = value!;
+                this.EventData!.OpenId = value!;
             }
         }
 
@@ -357,11 +366,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public int Type
         {
-            get { return this.EventData?.Type ?? default; }
+            get
+            {
+                return this.EventData?.Type ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.Type = value;
+                this.EventData!.Type = value;
             }
         }
 
@@ -375,11 +387,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public int Status
         {
-            get { return this.EventData?.Status ?? default; }
+            get
+            {
+                return this.EventData?.Status ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.Status = value;
+                this.EventData!.Status = value;
             }
         }
 
@@ -393,11 +408,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string PhoneNumber
         {
-            get { return this.EventData?.PhoneNumber ?? default!; }
+            get
+            {
+                return this.EventData?.PhoneNumber ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.PhoneNumber = value!;
+                this.EventData!.PhoneNumber = value!;
             }
         }
 
@@ -410,11 +428,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string? CustomerMaterialContent
         {
-            get { return this.EventData?.CustomerMaterialContent ?? default; }
+            get
+            {
+                return this.EventData?.CustomerMaterialContent ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.CustomerMaterialContent = value;
+                this.EventData!.CustomerMaterialContent = value;
             }
         }
 
@@ -427,11 +448,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string? CustomerMaterialMediaIdListString
         {
-            get { return this.EventData?.CustomerMaterialMediaIdListString ?? default; }
+            get
+            {
+                return this.EventData?.CustomerMaterialMediaIdListString ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.CustomerMaterialMediaIdListString = value;
+                this.EventData!.CustomerMaterialMediaIdListString = value;
             }
         }
 
@@ -444,11 +468,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string OrderId
         {
-            get { return this.EventData?.OrderId ?? default!; }
+            get
+            {
+                return this.EventData?.OrderId ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.OrderId = value!;
+                this.EventData!.OrderId = value!;
             }
         }
 
@@ -461,11 +488,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string OutTradeNumber
         {
-            get { return this.EventData?.OutTradeNumber ?? default!; }
+            get
+            {
+                return this.EventData?.OutTradeNumber ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.OutTradeNumber = value!;
+                this.EventData!.OutTradeNumber = value!;
             }
         }
 
@@ -478,11 +508,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public string ProductName
         {
-            get { return this.EventData?.ProductName ?? default!; }
+            get
+            {
+                return this.EventData?.ProductName ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.ProductName = value!;
+                this.EventData!.ProductName = value!;
             }
         }
 
@@ -496,11 +529,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public long PayTimestamp
         {
-            get { return this.EventData?.PayTimestamp ?? default; }
+            get
+            {
+                return this.EventData?.PayTimestamp ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.PayTimestamp = value;
+                this.EventData!.PayTimestamp = value;
             }
         }
 
@@ -514,11 +550,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public int TotalCost
         {
-            get { return this.EventData?.TotalCost ?? default; }
+            get
+            {
+                return this.EventData?.TotalCost ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.TotalCost = value;
+                this.EventData!.TotalCost = value;
             }
         }
 
@@ -532,11 +571,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public long ComplaintCreateTimestamp
         {
-            get { return this.EventData?.ComplaintCreateTimestamp ?? default; }
+            get
+            {
+                return this.EventData?.ComplaintCreateTimestamp ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.ComplaintCreateTimestamp = value;
+                this.EventData!.ComplaintCreateTimestamp = value;
             }
         }
 
@@ -550,11 +592,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Xml.Serialization.XmlIgnore]
         public long ComplaintStatusExpireTimestamp
         {
-            get { return this.EventData?.ComplaintStatusExpireTimestamp ?? default; }
+            get
+            {
+                return this.EventData?.ComplaintStatusExpireTimestamp ?? default;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.ComplaintStatusExpireTimestamp = value;
+                this.EventData!.ComplaintStatusExpireTimestamp = value;
             }
         }
 
@@ -566,13 +611,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Text.Json.Serialization.JsonPropertyName("history")]
         [System.Text.Json.Serialization.JsonConverter(typeof(Converters.EventPropertyComplaintHistoryListSystemTextJsonConverter))]
         [System.Xml.Serialization.XmlIgnore]
-        public Types.EventData.Types.ComplaintHistory[] ComplaintHistoryList
+        public List<Types.EventData.Types.ComplaintHistory> ComplaintHistoryList
         {
-            get { return this.EventData?.ComplaintHistoryList ?? default!; }
+            get
+            {
+                return this.EventData?.ComplaintHistoryList ?? default!;
+            }
             set
             {
                 EnsureEventDataInitialized();
-                this.EventData.ComplaintHistoryList = value!;
+                this.EventData!.ComplaintHistoryList = value!;
             }
         }
 

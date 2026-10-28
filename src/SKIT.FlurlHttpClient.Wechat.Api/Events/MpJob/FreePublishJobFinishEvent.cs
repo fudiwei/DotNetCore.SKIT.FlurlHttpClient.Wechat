@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                                 [Newtonsoft.Json.JsonProperty("article_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("article_url")]
                                 [System.Xml.Serialization.XmlElement("article_url")]
-                                public string ArticleUrl { get; set; } = default!;
+                                public string? ArticleUrl { get; set; }
                             }
                         }
 
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("item")]
                         [System.Text.Json.Serialization.JsonPropertyName("item")]
                         [System.Xml.Serialization.XmlElement("item", Type = typeof(Types.Item))]
-                        public Types.Item[] List { get; set; } = default!;
+                        public List<Types.Item>? List { get; set; }
                     }
                 }
 
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("fail_idx")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_idx")]
                 [System.Xml.Serialization.XmlElement("fail_idx", Type = typeof(int))]
-                public int[]? FailedIndexList { get; set; }
+                public List<int>? FailedIndexList { get; set; }
             }
         }
 
@@ -107,6 +107,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("PublishEventInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("PublishEventInfo")]
         [System.Xml.Serialization.XmlElement("PublishEventInfo")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

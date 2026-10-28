@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public string TemplateId { get; set; } = string.Empty;
+                public string? TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板信息选项。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("options")]
                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public new IList<Types.Option> Options { get; set; } = new List<Types.Option>();
+                public new List<Types.Option>? Options { get; set; }
             }
         }
 
@@ -37,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置模板信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.Template Template { get; set; } = new Types.Template();
+        public Types.Template? Template { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_data")]
         [System.Text.Json.Serialization.JsonPropertyName("user_data")]
-        public Types.UserData[] UserDataList { get; set; } = default!;
+        public List<Types.UserData>? UserDataList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

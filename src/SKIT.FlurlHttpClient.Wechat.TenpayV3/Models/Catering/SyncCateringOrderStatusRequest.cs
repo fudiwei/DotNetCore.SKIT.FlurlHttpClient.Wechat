@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_dish_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_dish_no")]
-                public string OutDishNumber { get; set; } = string.Empty;
+                public string? OutDishNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜品名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜品单价（单位：分）。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("unit")]
                 [System.Text.Json.Serialization.JsonPropertyName("unit")]
-                public string Unit { get; set; } = string.Empty;
+                public string? Unit { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜品数量。
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("properties")]
                 [System.Text.Json.Serialization.JsonPropertyName("properties")]
-                public IDictionary<string, string>? Properties { get; set; }
+                public Dictionary<string, string>? Properties { get; set; }
             }
         }
 
@@ -86,14 +86,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置服务商 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_shop_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_shop_no")]
-        public string OutShopNumber { get; set; } = string.Empty;
+        public string? OutShopNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
@@ -128,14 +128,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("login_token")]
         [System.Text.Json.Serialization.JsonPropertyName("login_token")]
-        public string LoginToken { get; set; } = string.Empty;
+        public string? LoginToken { get; set; }
 
         /// <summary>
         /// 获取或设置点餐入口。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_entry")]
         [System.Text.Json.Serialization.JsonPropertyName("order_entry")]
-        public string OrderEntryPath { get; set; } = string.Empty;
+        public string? OrderEntryPath { get; set; }
 
         /// <summary>
         /// 获取或设置总价（单位：分）。
@@ -163,7 +163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = string.Empty;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置操作时间。
@@ -202,7 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
-        public string OutOrderNumber { get; set; } = string.Empty;
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户桌台号。
@@ -223,6 +223,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dish_list")]
         [System.Text.Json.Serialization.JsonPropertyName("dish_list")]
-        public IList<Types.Dish>? DishList { get; set; }
+        public List<Types.Dish>? DishList { get; set; }
     }
 }

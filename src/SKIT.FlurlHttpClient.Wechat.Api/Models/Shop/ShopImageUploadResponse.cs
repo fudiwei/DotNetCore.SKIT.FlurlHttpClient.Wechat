@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/img/upload 接口的响应。</para>
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_info")]
         [System.Text.Json.Serialization.JsonPropertyName("img_info")]
-        public Types.Image Image { get; set; } = default!;
+        public Types.Image? Image { get; set; }
     }
 }

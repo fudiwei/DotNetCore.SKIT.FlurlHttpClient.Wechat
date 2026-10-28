@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("siteid")]
         [System.Text.Json.Serialization.JsonPropertyName("siteid")]
-        public string SiteCodeId { get; set; } = string.Empty;
+        public string? SiteCodeId { get; set; }
 
         /// <summary>
         /// 获取或设置日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("date")]
         [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

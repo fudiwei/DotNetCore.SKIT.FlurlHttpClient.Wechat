@@ -49,21 +49,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户简称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_shortname")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_shortname")]
-        public string MerchantShortName { get; set; } = string.Empty;
+        public string? MerchantShortName { get; set; }
 
         /// <summary>
         /// 获取或设置主体类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("organization_type")]
         [System.Text.Json.Serialization.JsonPropertyName("organization_type")]
-        public string SubjectType { get; set; } = string.Empty;
+        public string? SubjectType { get; set; }
 
         /// <summary>
         /// 获取或设置是否是金融机构。
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id_doc_type")]
         [System.Text.Json.Serialization.JsonPropertyName("id_doc_type")]
-        public string IdentityType { get; set; } = string.Empty;
+        public string? IdentityType { get; set; }
 
         /// <summary>
         /// 获取或设置身份证信息。
@@ -126,28 +126,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ubo_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ubo_info_list")]
-        public IList<Types.UBO>? UBOList { get; set; }
+        public List<Types.UBO>? UBOList { get; set; }
 
         /// <summary>
         /// 获取或设置结算银行账户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_info")]
         [System.Text.Json.Serialization.JsonPropertyName("account_info")]
-        public Types.BankAccount BankAccount { get; set; } = new Types.BankAccount();
+        public Types.BankAccount? BankAccount { get; set; }
 
         /// <summary>
         /// 获取或设置超级管理员信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_info")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_info")]
-        public Types.Contact Contact { get; set; } = new Types.Contact();
+        public Types.Contact? Contact { get; set; }
 
         /// <summary>
         /// 获取或设置销售场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sales_scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("sales_scene_info")]
-        public Types.SaleScene SaleScene { get; set; } = new Types.SaleScene();
+        public Types.SaleScene? SaleScene { get; set; }
 
         /// <summary>
         /// 获取或设置结算规则信息。
@@ -161,14 +161,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualifications")]
         [System.Text.Json.Serialization.JsonPropertyName("qualifications")]
-        public IList<string>? QualificationPictureMediaIdList { get; set; }
+        public List<string>? QualificationPictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置补充材料媒体文件标识 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_addition_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("business_addition_pics")]
-        public IList<string>? BusinessAdditionPictureMediaIdList { get; set; }
+        public List<string>? BusinessAdditionPictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置补充说明。

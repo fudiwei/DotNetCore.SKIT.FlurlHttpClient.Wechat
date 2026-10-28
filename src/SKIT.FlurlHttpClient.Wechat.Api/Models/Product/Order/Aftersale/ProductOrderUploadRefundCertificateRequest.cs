@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_certificates")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_certificates")]
-        public IList<string>? RefundCertificateMediaIdList { get; set; } = new List<string>();
+        public List<string>? RefundCertificateMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置描述。

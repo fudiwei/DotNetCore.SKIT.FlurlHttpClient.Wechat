@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string MiniProgramAppId { get; set; } = string.Empty;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置是否发送模板消息通知公众号粉丝。

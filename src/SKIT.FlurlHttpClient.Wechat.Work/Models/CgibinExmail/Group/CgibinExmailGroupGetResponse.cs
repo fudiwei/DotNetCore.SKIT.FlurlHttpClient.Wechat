@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/exmail/group/get 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public string[] Items { get; set; } = default!;
+                public List<string>? Items { get; set; }
             }
 
             public class EmailGroupList
@@ -24,7 +24,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public string[] Items { get; set; } = default!;
+                public List<string>? Items { get; set; }
             }
 
             public class TagIdList
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public int[] Items { get; set; } = default!;
+                public List<int>? Items { get; set; }
             }
 
             public class DepartmentIdList
@@ -44,7 +44,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public long[] Items { get; set; } = default!;
+                public List<long>? Items { get; set; }
             }
         }
 
@@ -53,14 +53,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupid")]
         [System.Text.Json.Serialization.JsonPropertyName("groupid")]
-        public string GroupId { get; set; } = default!;
+        public string? GroupId { get; set; }
 
         /// <summary>
         /// 获取或设置邮件群组名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupname")]
         [System.Text.Json.Serialization.JsonPropertyName("groupname")]
-        public string GroupName { get; set; } = default!;
+        public string? GroupName { get; set; }
 
         /// <summary>
         /// 获取或设置邮箱列表。

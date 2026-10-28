@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = string.Empty;
+                public string? Content { get; set; }
             }
 
             public class ImageMessage
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                public string MediaId { get; set; } = string.Empty;
+                public string? MediaId { get; set; }
             }
 
             public class ImagesMessage
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_ids")]
-                public IList<string> MediaIdList { get; set; } = new List<string>();
+                public List<string>? MediaIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置推荐语。
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                public string CardId { get; set; } = string.Empty;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券扩展属性。
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息内容。

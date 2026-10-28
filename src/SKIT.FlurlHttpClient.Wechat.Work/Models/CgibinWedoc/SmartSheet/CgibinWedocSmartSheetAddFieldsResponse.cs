@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                public string FieldId { get; set; } = default!;
+                public string? FieldId { get; set; }
 
                 /// <summary>
                 /// 获取或设置字段名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置字段类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("field_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fields")]
         [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public Types.Field[] FieldList { get; set; } = default!;
+        public List<Types.Field>? FieldList { get; set; }
     }
 }

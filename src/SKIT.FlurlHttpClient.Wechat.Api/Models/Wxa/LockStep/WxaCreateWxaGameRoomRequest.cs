@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("open_id_list")]
-        public IList<string> OpenIdList { get; set; } = new List<string>();
+        public List<string>? OpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置发送开始游戏指令的玩家达到比例后开始游戏。
@@ -28,6 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置使用的 UDP 可靠性策略。
+        /// <para>默认值：3</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("udp_reliability_strategy")]
         [System.Text.Json.Serialization.JsonPropertyName("udp_reliability_strategy")]

@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("operation")]
         [System.Text.Json.Serialization.JsonPropertyName("operation")]
-        public string Operation { get; set; } = string.Empty;
+        public string? Operation { get; set; }
     }
 }

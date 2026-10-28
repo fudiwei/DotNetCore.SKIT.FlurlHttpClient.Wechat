@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("phonenumbers")]
         [System.Text.Json.Serialization.JsonPropertyName("phonenumbers")]
-        public string[] VirtualPhoneNumberList { get; set; } = default!;
+        public List<string>? VirtualPhoneNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

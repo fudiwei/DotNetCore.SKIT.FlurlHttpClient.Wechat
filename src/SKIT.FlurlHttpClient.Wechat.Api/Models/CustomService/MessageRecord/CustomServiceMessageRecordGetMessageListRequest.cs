@@ -21,6 +21,7 @@
 
         /// <summary>
         /// 获取或设置消息 ID。
+        /// <para>默认值：1</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
@@ -28,6 +29,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("number")]
         [System.Text.Json.Serialization.JsonPropertyName("number")]

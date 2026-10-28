@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-        public string TaskId { get; set; } = string.Empty;
+        public string? TaskId { get; set; }
 
         protected internal override string GetRequestPath()
         {

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/report/patrol/category_statistic 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_id")]
-                public string CategoryId { get; set; } = default!;
+                public string? CategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置分类名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_name")]
-                public string CategoryName { get; set; } = default!;
+                public string? CategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置分类层级。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dashboard_list")]
         [System.Text.Json.Serialization.JsonPropertyName("dashboard_list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

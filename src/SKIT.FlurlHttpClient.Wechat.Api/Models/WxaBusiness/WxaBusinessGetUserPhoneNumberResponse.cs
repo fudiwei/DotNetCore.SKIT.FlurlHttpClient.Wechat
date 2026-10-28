@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = default!;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户获取手机号操作的时间戳。
@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phoneNumber")]
                 [System.Text.Json.Serialization.JsonPropertyName("phoneNumber")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置没有区号的手机号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("purePhoneNumber")]
                 [System.Text.Json.Serialization.JsonPropertyName("purePhoneNumber")]
-                public string PurePhoneNumber { get; set; } = default!;
+                public string? PurePhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置区号。
@@ -49,14 +49,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("countryCode")]
                 [System.Text.Json.Serialization.JsonPropertyName("countryCode")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                public string CountryCode { get; set; } = default!;
+                public string? CountryCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置数据水印。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("watermark")]
                 [System.Text.Json.Serialization.JsonPropertyName("watermark")]
-                public Types.Watermark Watermark { get; set; } = default!;
+                public Types.Watermark? Watermark { get; set; }
             }
         }
 
@@ -65,6 +65,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("phone_info")]
         [System.Text.Json.Serialization.JsonPropertyName("phone_info")]
-        public Types.PhoneInfo PhoneInfo { get; set; } = default!;
+        public Types.PhoneInfo? PhoneInfo { get; set; }
     }
 }

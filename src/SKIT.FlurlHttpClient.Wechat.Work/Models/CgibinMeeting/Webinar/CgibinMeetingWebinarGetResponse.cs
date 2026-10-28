@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
             }
 
             public class MediaSettings
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auto_record_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("auto_record_type")]
-                public string AutoRecordType { get; set; } = default!;
+                public string? AutoRecordType { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否当有参会成员入会时立即开启云录制。
@@ -89,28 +89,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = default!;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置会议号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_code")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
-        public string MeetingCode { get; set; } = default!;
+        public string? MeetingCode { get; set; }
 
         /// <summary>
         /// 获取或设置会议主题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置主办方名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sponsor")]
         [System.Text.Json.Serialization.JsonPropertyName("sponsor")]
-        public string Sponsor { get; set; } = default!;
+        public string? Sponsor { get; set; }
 
         /// <summary>
         /// 获取或设置会议开始时间戳。
@@ -133,14 +133,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置会议主持人列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hosts")]
         [System.Text.Json.Serialization.JsonPropertyName("hosts")]
-        public Types.Host[]? HostList { get; set; }
+        public List<Types.Host>? HostList { get; set; }
 
         /// <summary>
         /// 获取或设置观众观看限制类型。
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_setting")]
         [System.Text.Json.Serialization.JsonPropertyName("media_setting")]
-        public Types.MediaSettings MediaSettings { get; set; } = default!;
+        public Types.MediaSettings? MediaSettings { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启问答。

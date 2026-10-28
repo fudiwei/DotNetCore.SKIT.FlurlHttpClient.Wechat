@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/report/patrol/get_order_list 接口的响应。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置详细地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("address")]
                         [System.Text.Json.Serialization.JsonPropertyName("address")]
-                        public string Address { get; set; } = default!;
+                        public string? Address { get; set; }
 
                         /// <summary>
                         /// 获取或设置经度。
@@ -56,7 +56,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("process_desc")]
                         [System.Text.Json.Serialization.JsonPropertyName("process_desc")]
-                        public string Description { get; set; } = default!;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置流程状态。
@@ -70,14 +70,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("image_urls")]
                         [System.Text.Json.Serialization.JsonPropertyName("image_urls")]
-                        public string[]? ImageUrlList { get; set; }
+                        public List<string>? ImageUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置视频 MediaId 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("video_media_ids")]
                         [System.Text.Json.Serialization.JsonPropertyName("video_media_ids")]
-                        public string[]? VideoMediaIdList { get; set; }
+                        public List<string>? VideoMediaIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置办结人用户 UserId。
@@ -100,14 +100,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string WorkOrderId { get; set; } = default!;
+                public string? WorkOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置事件描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置紧急类型。
@@ -121,21 +121,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("case_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("case_name")]
-                public string CategoryName { get; set; } = default!;
+                public string? CategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置网格 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grid_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-                public string GridId { get; set; } = default!;
+                public string? GridId { get; set; }
 
                 /// <summary>
                 /// 获取或设置网格名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grid_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("grid_name")]
-                public string GridName { get; set; } = default!;
+                public string? GridName { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -149,14 +149,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_urls")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_urls")]
-                public string[]? ImageUrlList { get; set; }
+                public List<string>? ImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频 MediaId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("video_media_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("video_media_ids")]
-                public string[]? VideoMediaIdList { get; set; }
+                public List<string>? VideoMediaIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置位置信息。
@@ -170,14 +170,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("processor_userids")]
                 [System.Text.Json.Serialization.JsonPropertyName("processor_userids")]
-                public string[]? ProcessorUserIdList { get; set; }
+                public List<string>? ProcessorUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置处理记录列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("process_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("process_list")]
-                public Types.ProcessRecord[] ProcessRecordList { get; set; } = default!;
+                public List<Types.ProcessRecord>? ProcessRecordList { get; set; }
             }
         }
 
@@ -186,7 +186,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public Types.WorkOrder[] WorkOrderList { get; set; } = default!;
+        public List<Types.WorkOrder>? WorkOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

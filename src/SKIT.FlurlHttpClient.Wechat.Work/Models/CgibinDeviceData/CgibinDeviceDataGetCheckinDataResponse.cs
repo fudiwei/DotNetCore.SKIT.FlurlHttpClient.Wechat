@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/devicedata/get_checkin_data 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public CheckinDataItem[] Items { get; set; } = default!;
+                public List<CheckinDataItem>? Items { get; set; }
             }
 
             public class CheckinDataItem
@@ -24,14 +24,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                public string OpenUserId { get; set; } = default!;
+                public string? OpenUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备的序列号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-                public string DeviceSerialNumber { get; set; } = default!;
+                public string? DeviceSerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置上报时间戳。
@@ -47,7 +47,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("checkindata")]
         [System.Text.Json.Serialization.JsonPropertyName("checkindata")]
-        public Types.CheckinDataList CheckinDataList { get; set; } = default!;
+        public Types.CheckinDataList? CheckinDataList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

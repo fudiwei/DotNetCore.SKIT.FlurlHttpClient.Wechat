@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promotionSourcePid")]
                 [System.Text.Json.Serialization.JsonPropertyName("promotionSourcePid")]
-                public string PromotionId { get; set; } = default!;
+                public string? PromotionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置推广位名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promotionSourceName")]
                 [System.Text.Json.Serialization.JsonPropertyName("promotionSourceName")]
-                public string SourceName { get; set; } = default!;
+                public string? SourceName { get; set; }
             }
         }
 
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("promotionSourceList")]
         [System.Text.Json.Serialization.JsonPropertyName("promotionSourceList")]
 
-        public Types.Promotion[] PromotionList { get; set; } = default!;
+        public List<Types.Promotion>? PromotionList { get; set; }
 
         /// <summary>
         /// 获取或设置推广位总数量。

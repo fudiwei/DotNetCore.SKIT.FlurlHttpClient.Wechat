@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tmp_external_userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("tmp_external_userid_list")]
-        public IList<string> TempExternalUserIdList { get; set; } = new List<string>();
+        public List<string>? TempExternalUserIdList { get; set; }
     }
 }

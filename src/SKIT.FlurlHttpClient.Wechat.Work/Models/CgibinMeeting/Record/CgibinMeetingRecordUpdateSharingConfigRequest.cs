@@ -65,20 +65,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置会议录制 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_record_id")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_record_id")]
-        public string RecordId { get; set; } = string.Empty;
+        public string? RecordId { get; set; }
 
         /// <summary>
         /// 获取或设置共享配置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sharing_config")]
         [System.Text.Json.Serialization.JsonPropertyName("sharing_config")]
-        public Types.SharingConfig SharingConfig { get; set; } = new Types.SharingConfig();
+        public Types.SharingConfig? SharingConfig { get; set; }
     }
 }

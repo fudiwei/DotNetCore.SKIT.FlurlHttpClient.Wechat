@@ -2,74 +2,104 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.Converters
 {
     public class TestCase_FlattenNArrayObjectJsonConverterTest
     {
+        [Newtonsoft.Json.JsonConverter(typeof(MockObject.Converters.MockObjectNewtonsoftJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(MockObject.Converters.MockObjectSystemTextJsonConverter))]
+        private sealed class MockObject
+        {
+            public static class Types
+            {
+                public class Element
+                {
+                    [Newtonsoft.Json.JsonProperty("element_id_$n")]
+                    [System.Text.Json.Serialization.JsonPropertyName("element_id_$n")]
+                    public string? Id { get; set; }
+
+                    [Newtonsoft.Json.JsonProperty("element_name_$n")]
+                    [System.Text.Json.Serialization.JsonPropertyName("element_name_$n")]
+                    public string? Name { get; set; }
+
+                    [Newtonsoft.Json.JsonProperty("element_amount_$n")]
+                    [System.Text.Json.Serialization.JsonPropertyName("element_amount_$n")]
+                    [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                    public int Amount { get; set; }
+                }
+            }
+
+            public static class Converters
+            {
+                internal sealed class MockObjectNewtonsoftJsonConverter : TenpayV2.Converters.NewtonsoftJson.FlattenNArrayObjectConverterBase<MockObject, Types.Element>
+                {
+                    protected override System.Reflection.PropertyInfo FlattenProperty => MockObject._flattenProperty;
+                }
+
+                internal sealed class MockObjectSystemTextJsonConverter : TenpayV2.Converters.SystemTextJson.FlattenNArrayObjectConverterBase<MockObject, Types.Element>
+                {
+                    protected override System.Reflection.PropertyInfo FlattenProperty => MockObject._flattenProperty;
+                }
+            }
+
+            private static readonly System.Reflection.PropertyInfo _flattenProperty = typeof(MockObject).GetProperty(nameof(Elements), System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)!;
+
+            [Newtonsoft.Json.JsonProperty("id")]
+            [System.Text.Json.Serialization.JsonPropertyName("id")]
+            public string? Id { get; set; }
+
+            [Newtonsoft.Json.JsonProperty("count")]
+            [System.Text.Json.Serialization.JsonPropertyName("count")]
+            public int? Count { get; set; }
+
+            [Newtonsoft.Json.JsonProperty("#n")]
+            [System.Text.Json.Serialization.JsonPropertyName("#n")]
+            public Types.Element[]? Elements { get; set; }
+        }
+
         private static void TestCustomJsonConverter(IJsonSerializer jsonSerializer)
         {
             Assert.Multiple(() =>
             {
-                string expectedJson = "{\"return_code\":\"RETURN_CODE\",\"return_msg\":\"RETURN_MSG\",\"sign\":\"SIGN\",\"appid\":\"APPID\",\"mch_id\":\"MCH_ID\",\"result_code\":\"RESULT_CODE\",\"err_code\":\"ERR_CODE\",\"err_code_des\":\"ERR_CODE_DESC\",\"transaction_id\":\"TRANSACTION_ID\",\"count\":2,\"sub_order_no_0\":\"SUB_ORDER_NO_0\",\"sub_order_id_0\":\"SUB_ORDER_ID_0\",\"mch_customs_no_0\":\"MCH_CUSTOMS_NO_0\",\"customs_0\":\"CUSTOMS_0\",\"duty_0\":10,\"fee_type_0\":\"FEE_TYPE_0\",\"order_fee_0\":10,\"transport_fee_0\":10,\"product_fee_0\":10,\"state_0\":\"STATE_0\",\"explanation_0\":\"EXPLANATION_0\",\"modify_time_0\":\"20000101112233\",\"cert_check_result_0\":\"UNCHECKED\",\"sub_order_no_1\":\"SUB_ORDER_NO_1\",\"sub_order_id_1\":\"SUB_ORDER_ID_1\",\"mch_customs_no_1\":\"MCH_CUSTOMS_NO_1\",\"customs_1\":\"CUSTOMS_1\",\"duty_1\":11,\"fee_type_1\":\"FEE_TYPE_1\",\"order_fee_1\":11,\"transport_fee_1\":11,\"product_fee_1\":11,\"state_1\":\"STATE_1\",\"explanation_1\":\"EXPLANATION_1\",\"modify_time_1\":\"20010101112233\",\"cert_check_result_1\":\"UNCHECKED1\"}";
-                var actualObj = jsonSerializer.Deserialize<Models.QueryMerchantCustomsCustomDeclarationResponse>(expectedJson);
+                string json = "{\"id\":\"ID\",\"count\":2,\"element_id_0\":\"ID_0\",\"element_name_0\":\"NAME_0\",\"element_amount_0\":10,\"element_id_1\":\"ID_1\",\"element_name_1\":\"NAME_1\",\"element_amount_1\":\"11\"}";
+                var actualObj = jsonSerializer.Deserialize<MockObject>(json);
 
-                Assert.Equal("RETURN_CODE", actualObj.ReturnCode);
-                Assert.Equal("RETURN_MSG", actualObj.ReturnMessage);
-                Assert.Equal("SIGN", actualObj.Signature);
-                Assert.Equal("APPID", actualObj.AppId);
-                Assert.Equal("MCH_ID", actualObj.MerchantId);
-                Assert.Equal("RESULT_CODE", actualObj.ResultCode);
-                Assert.Equal("ERR_CODE", actualObj.ErrorCode);
-                Assert.Equal("ERR_CODE_DESC", actualObj.ErrorCodeDescription);
-                Assert.Equal("TRANSACTION_ID", actualObj.TransactionId);
-                Assert.Equal(2, actualObj.RecordCount);
-                Assert.Equal("SUB_ORDER_NO_0", actualObj.RecordList[0].SubOrderNumber);
-                Assert.Equal("SUB_ORDER_ID_0", actualObj.RecordList[0].SubOrderId);
-                Assert.Equal("MCH_CUSTOMS_NO_0", actualObj.RecordList[0].MerchantCustomsNumber);
-                Assert.Equal("CUSTOMS_0", actualObj.RecordList[0].Customs);
-                Assert.Equal(10, actualObj.RecordList[0].Duty);
-                Assert.Equal("FEE_TYPE_0", actualObj.RecordList[0].FeeType);
-                Assert.Equal(DateTimeOffset.Parse("2000-01-01 11:22:33"), actualObj.RecordList[0].ModifyTime);
-                Assert.Equal("SUB_ORDER_NO_1", actualObj.RecordList[1].SubOrderNumber);
-                Assert.Equal("SUB_ORDER_ID_1", actualObj.RecordList[1].SubOrderId);
-                Assert.Equal("MCH_CUSTOMS_NO_1", actualObj.RecordList[1].MerchantCustomsNumber);
-                Assert.Equal("CUSTOMS_1", actualObj.RecordList[1].Customs);
-                Assert.Equal(11, actualObj.RecordList[1].Duty);
-                Assert.Equal("FEE_TYPE_1", actualObj.RecordList[1].FeeType);
-                Assert.Equal(DateTimeOffset.Parse("2001-01-01 11:22:33"), actualObj.RecordList[1].ModifyTime);
+                Assert.Equal("ID", actualObj.Id);
+                Assert.Equal(2, actualObj.Count);
+                Assert.Equal(2, actualObj.Elements!.Length);
+                Assert.Equal("ID_0", actualObj.Elements![0].Id);
+                Assert.Equal("NAME_0", actualObj.Elements![0].Name);
+                Assert.Equal(10, actualObj.Elements![0].Amount);
+                Assert.Equal("ID_1", actualObj.Elements![1].Id);
+                Assert.Equal("NAME_1", actualObj.Elements![1].Name);
+                Assert.Equal(11, actualObj.Elements![1].Amount);
             });
 
             Assert.Multiple(() =>
             {
-                var expectedObj = new Models.QueryMerchantCustomsCustomDeclarationResponse()
+                var actualObj = jsonSerializer.Deserialize<MockObject>("{}");
+
+                Assert.Null(actualObj.Id);
+                Assert.Null(actualObj.Count);
+                Assert.Null(actualObj.Elements);
+            });
+
+            Assert.Multiple(() =>
+            {
+                var actualObj = jsonSerializer.Deserialize<MockObject>("{\"id\":\"ID\",\"element_id_1\":\"ID_1\"}");
+
+                Assert.Equal("ID", actualObj.Id);
+                Assert.Equal(2, actualObj.Elements!.Length);
+                Assert.Null(actualObj.Elements![0]);
+                Assert.Equal("ID_1", actualObj.Elements![1].Id);
+            });
+
+            Assert.Multiple(() =>
+            {
+                var expectedObj = new MockObject()
                 {
-                    ReturnCode = "RETURN_CODE",
-                    ReturnMessage = "RETURN_MSG",
-                    AppId = "APPID",
-                    MerchantId = "MCH_ID",
-                    ResultCode = "RESULT_CODE",
-                    ErrorCode = "ERR_CODE",
-                    ErrorCodeDescription = "ERR_CODE_DESC",
-                    TransactionId = "TRANSACTION_ID",
-                    RecordCount = 2,
-                    RecordList = new Models.QueryMerchantCustomsCustomDeclarationResponse.Types.Record[]
+                    Id = "ID",
+                    Count = 2,
+                    Elements = new MockObject.Types.Element[]
                     {
-                        new Models.QueryMerchantCustomsCustomDeclarationResponse.Types.Record()
-                        {
-                            SubOrderNumber = "SUB_ORDER_NO_0",
-                            SubOrderId = "SUB_ORDER_ID_0",
-                            MerchantCustomsNumber = "MCH_CUSTOMS_NO_0",
-                            Customs = "CUSTOMS_0",
-                            Duty = 10,
-                            FeeType = "FEE_TYPE_0",
-                            ModifyTime = DateTimeOffset.Parse("2000-01-01 11:22:33"),
-                        },
-                        new Models.QueryMerchantCustomsCustomDeclarationResponse.Types.Record()
-                        {
-                            SubOrderNumber = "SUB_ORDER_NO_1",
-                            SubOrderId = "SUB_ORDER_ID_1",
-                            MerchantCustomsNumber = "MCH_CUSTOMS_NO_1",
-                            Customs = "CUSTOMS_1",
-                            Duty = 11,
-                            FeeType = "FEE_TYPE_1",
-                            ModifyTime = DateTimeOffset.Parse("2001-01-01 11:22:33"),
-                        }
+                        new MockObject.Types.Element() { Id = "ID_0", Name = "NAME_0", Amount = 10 },
+                        new MockObject.Types.Element() { Id = "ID_1", Name = "NAME_1", Amount = 11 },
                     }
                 };
                 string actualJson = jsonSerializer.Serialize(expectedObj);
@@ -79,31 +109,45 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.Converters
                 Assert.DoesNotContain("#n", actualJson);
                 Assert.DoesNotContain("$n", actualJson);
                 Assert.DoesNotContain("_flattenProperty", actualJson);
-                Assert.DoesNotContain(nameof(Models.QueryMerchantCustomsCustomDeclarationResponse.RecordList), actualJson);
+                Assert.DoesNotContain(nameof(MockObject.Elements), actualJson);
 
-                Assert.Contains("\"return_code\":\"RETURN_CODE\"", actualJson);
-                Assert.Contains("\"return_msg\":\"RETURN_MSG\"", actualJson);
-                Assert.Contains("\"appid\":\"APPID\"", actualJson);
-                Assert.Contains("\"mch_id\":\"MCH_ID\"", actualJson);
-                Assert.Contains("\"result_code\":\"RESULT_CODE\"", actualJson);
-                Assert.Contains("\"err_code\":\"ERR_CODE\"", actualJson);
-                Assert.Contains("\"err_code_des\":\"ERR_CODE_DESC\"", actualJson);
-                Assert.Contains("\"transaction_id\":\"TRANSACTION_ID\"", actualJson);
-                Assert.Contains("\"sub_order_no_0\":\"SUB_ORDER_NO_0\"", actualJson);
-                Assert.Contains("\"sub_order_id_0\":\"SUB_ORDER_ID_0\"", actualJson);
-                Assert.Contains("\"mch_customs_no_0\":\"MCH_CUSTOMS_NO_0\"", actualJson);
-                Assert.Contains("\"customs_0\":\"CUSTOMS_0\"", actualJson);
-                Assert.Contains("\"duty_0\":10", actualJson);
-                Assert.Contains("\"fee_type_0\":\"FEE_TYPE_0\"", actualJson);
-                Assert.Contains("\"modify_time_0\":\"20000101112233\"", actualJson);
-                Assert.Contains("\"sub_order_no_1\":\"SUB_ORDER_NO_1\"", actualJson);
-                Assert.Contains("\"sub_order_id_1\":\"SUB_ORDER_ID_1\"", actualJson);
-                Assert.Contains("\"mch_customs_no_1\":\"MCH_CUSTOMS_NO_1\"", actualJson);
-                Assert.Contains("\"customs_1\":\"CUSTOMS_1\"", actualJson);
-                Assert.Contains("\"duty_1\":11", actualJson);
-                Assert.Contains("\"fee_type_1\":\"FEE_TYPE_1\"", actualJson);
-                Assert.Contains("\"modify_time_1\":\"20010101112233\"", actualJson);
+                Assert.Contains("\"id\":\"ID\"", actualJson);
                 Assert.Contains("\"count\":2", actualJson);
+                Assert.Contains("\"element_id_0\":\"ID_0\"", actualJson);
+                Assert.Contains("\"element_name_0\":\"NAME_0\"", actualJson);
+                Assert.Contains("\"element_amount_0\":10", actualJson);
+                Assert.Contains("\"element_id_1\":\"ID_1\"", actualJson);
+                Assert.Contains("\"element_name_1\":\"NAME_1\"", actualJson);
+                Assert.Contains("\"element_amount_1\":11", actualJson);
+
+                var actualObj = jsonSerializer.Deserialize<MockObject>(actualJson);
+                Assert.Equal(expectedObj.Id, actualObj.Id);
+                Assert.Equal(expectedObj.Count, actualObj.Count);
+                Assert.Equal(2, actualObj.Elements!.Length);
+                Assert.Equal("NAME_1", actualObj.Elements![1].Name);
+            });
+
+            Assert.Multiple(() =>
+            {
+                string actualJson = jsonSerializer.Serialize(new MockObject() { Id = "ID", Elements = null });
+
+                Assert.Contains("\"id\":\"ID\"", actualJson);
+                Assert.DoesNotContain("element_", actualJson);
+            });
+
+            Assert.Multiple(() =>
+            {
+                string actualJson = jsonSerializer.Serialize(new MockObject()
+                {
+                    Elements = new MockObject.Types.Element[]
+                    {
+                        null!,
+                        new MockObject.Types.Element() { Id = "ID_1" },
+                    }
+                });
+
+                Assert.DoesNotContain("element_id_0", actualJson);
+                Assert.Contains("\"element_id_1\":\"ID_1\"", actualJson);
             });
         }
 

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cos_url")]
         [System.Text.Json.Serialization.JsonPropertyName("cos_url")]
-        public string CosUrl { get; set; } = default!;
+        public string? CosUrl { get; set; }
     }
 }

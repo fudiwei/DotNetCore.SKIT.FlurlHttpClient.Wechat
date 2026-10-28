@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("repeated_id")]
         [System.Text.Json.Serialization.JsonPropertyName("repeated_id")]
-        public string RepeatedId { get; set; } = string.Empty;
+        public string? RepeatedId { get; set; }
 
         /// <summary>
         /// 获取或设置请求类型。

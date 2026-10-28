@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pic_file")]
         [System.Text.Json.Serialization.JsonPropertyName("pic_file")]
-        public Types.PictureFile PictureFile { get; set; } = default!;
+        public Types.PictureFile? PictureFile { get; set; }
     }
 }

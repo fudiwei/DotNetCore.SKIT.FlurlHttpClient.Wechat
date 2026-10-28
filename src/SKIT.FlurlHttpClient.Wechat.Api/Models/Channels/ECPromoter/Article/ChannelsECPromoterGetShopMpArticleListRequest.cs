@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
-        public string ShopAppId { get; set; } = string.Empty;
+        public string? ShopAppId { get; set; }
 
         /// <summary>
         /// 获取或设置推客 AppId。
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promoter_id")]
         [System.Text.Json.Serialization.JsonPropertyName("promoter_id")]
-        public string PromoterId { get; set; } = string.Empty;
+        public string? PromoterId { get; set; }
 
         /// <summary>
         /// 获取或设置关联账号类型。

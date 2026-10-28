@@ -16,6 +16,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("CalId")]
         [System.Text.Json.Serialization.JsonPropertyName("CalId")]
         [System.Xml.Serialization.XmlElement("CalId")]
-        public string CalendarId { get; set; } = default!;
+        public string? CalendarId { get; set; }
     }
 }

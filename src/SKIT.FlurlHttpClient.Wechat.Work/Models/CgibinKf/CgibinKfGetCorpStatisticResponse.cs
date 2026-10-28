@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("statistic")]
                 [System.Text.Json.Serialization.JsonPropertyName("statistic")]
-                public Types.Data Data { get; set; } = default!;
+                public Types.Data? Data { get; set; }
             }
         }
 
@@ -92,6 +92,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("statistic_list")]
         [System.Text.Json.Serialization.JsonPropertyName("statistic_list")]
-        public Types.Statistic[]? StatisticList { get; set; } = default!;
+        public List<Types.Statistic>? StatisticList { get; set; }
     }
 }

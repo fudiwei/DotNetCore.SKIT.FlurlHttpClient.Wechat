@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("from")]
                         [System.Text.Json.Serialization.JsonPropertyName("from")]
-                        public new Types.From[]? FromList { get; set; }
+                        public new List<Types.From>? FromList { get; set; }
                     }
 
                     public class Promotion : QueryRefundsResponse.Types.Refund.Types.Promotion
@@ -53,14 +53,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public new Types.Amount Amount { get; set; } = default!;
+                public new Types.Amount? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠退款信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_detail")]
-                public new Types.Promotion Promotion { get; set; } = default!;
+                public new Types.Promotion? Promotion { get; set; }
             }
         }
 
@@ -69,27 +69,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public override string MerchantId { get; set; } = default!;
+        public override string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public new Types.Amount Amount { get; set; } = default!;
+        public new Types.Amount? Amount { get; set; }
 
         /// <summary>
         /// 获取或设置退款单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public new Types.Refund[] RefundList { get; set; } = default!;
+        public new List<Types.Refund>? RefundList { get; set; }
     }
 }

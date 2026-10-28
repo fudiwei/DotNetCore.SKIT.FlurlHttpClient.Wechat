@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trace_id")]
         [System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        public string TraceId { get; set; } = default!;
+        public string? TraceId { get; set; }
     }
 }

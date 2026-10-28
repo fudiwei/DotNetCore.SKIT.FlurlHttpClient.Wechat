@@ -24,14 +24,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guide_nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("guide_nickname")]
-        public string GuideNickname { get; set; } = default!;
+        public string? GuideNickname { get; set; }
 
         /// <summary>
         /// 获取或设置顾问头像 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guide_headimgurl")]
         [System.Text.Json.Serialization.JsonPropertyName("guide_headimgurl")]
-        public string GuideHeadImageUrl { get; set; } = default!;
+        public string? GuideHeadImageUrl { get; set; }
 
         /// <summary>
         /// 获取或设置顾问状态。

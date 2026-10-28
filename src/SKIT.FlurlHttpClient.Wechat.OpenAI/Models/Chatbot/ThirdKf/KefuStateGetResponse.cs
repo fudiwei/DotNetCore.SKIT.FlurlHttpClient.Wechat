@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kefustate")]
         [System.Text.Json.Serialization.JsonPropertyName("kefustate")]
-        public string KfState { get; set; } = default!;
+        public string? KfState { get; set; }
 
         /// <summary>
         /// 获取或设置人工客服接入状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ActivityId { get; set; } = string.Empty;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

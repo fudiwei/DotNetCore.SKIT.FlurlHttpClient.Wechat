@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/checkin/getcheckinschedulist 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("scheduleList")]
                         [System.Text.Json.Serialization.JsonPropertyName("scheduleList")]
-                        public ScheduleItem[] Items { get; set; } = default!;
+                        public List<ScheduleItem>? Items { get; set; }
                     }
 
                     public class ScheduleItem
@@ -80,14 +80,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("schedule_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("schedule_name")]
-                                public string ScheduleName { get; set; } = default!;
+                                public string? ScheduleName { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置时段列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("time_section")]
                                 [System.Text.Json.Serialization.JsonPropertyName("time_section")]
-                                public Types.TimeSection[] TimeSectionList { get; set; } = default!;
+                                public List<Types.TimeSection>? TimeSectionList { get; set; }
                             }
                         }
 
@@ -103,7 +103,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("schedule_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("schedule_info")]
-                        public Types.Schedule Schedule { get; set; } = default!;
+                        public Types.Schedule? Schedule { get; set; }
                     }
                 }
 
@@ -112,7 +112,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置排班年月（格式：yyyyMM）。
@@ -133,14 +133,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("groupname")]
                 [System.Text.Json.Serialization.JsonPropertyName("groupname")]
-                public string GroupName { get; set; } = default!;
+                public string? GroupName { get; set; }
 
                 /// <summary>
                 /// 获取或设置个人排班信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("schedule")]
                 [System.Text.Json.Serialization.JsonPropertyName("schedule")]
-                public Types.ScheduleList ScheduleList { get; set; } = default!;
+                public Types.ScheduleList? ScheduleList { get; set; }
             }
         }
 
@@ -149,6 +149,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule_list")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule_list")]
-        public Types.Schedule[] ScheduleList { get; set; } = default!;
+        public List<Types.Schedule>? ScheduleList { get; set; }
     }
 }

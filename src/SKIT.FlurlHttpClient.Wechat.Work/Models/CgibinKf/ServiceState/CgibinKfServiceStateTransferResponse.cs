@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_code")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_code")]
-        public string MessageCode { get; set; } = default!;
+        public string? MessageCode { get; set; }
     }
 }

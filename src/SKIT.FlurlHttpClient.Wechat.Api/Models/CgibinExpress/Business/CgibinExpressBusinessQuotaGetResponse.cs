@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("quota_num")]
         [System.Text.Json.Serialization.JsonPropertyName("quota_num")]
-        public int QuotaNumber { get; set; } = default!;
+        public int QuotaNumber { get; set; }
     }
 }

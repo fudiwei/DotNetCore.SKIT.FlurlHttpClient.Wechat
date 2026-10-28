@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-        public string MobileNumber { get; set; } = string.Empty;
+        public string? MobileNumber { get; set; }
     }
 }

@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shop_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
-                public string ShopAppId { get; set; } = default!;
+                public string? ShopAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小店昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shop_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("shop_nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置小店头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shop_head_img")]
                 [System.Text.Json.Serialization.JsonPropertyName("shop_head_img")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置绑定时间戳。
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_list")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_list")]
-        public Types.Shop[] ShopList { get; set; } = default!;
+        public List<Types.Shop>? ShopList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

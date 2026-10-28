@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
-        public string PartnerTradeNumber { get; set; } = default!;
+        public string? PartnerTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信付款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail_id")]
         [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
-        public string PaymentNumber { get; set; } = default!;
+        public string? PaymentNumber { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置收款用户姓名。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置转账时间。

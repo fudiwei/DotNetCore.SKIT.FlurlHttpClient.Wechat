@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置模板描述。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("desc")]
                         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                        public string Description { get; set; } = default!;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置面单宽度（单位：毫米）。
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = default!;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义模板配置。
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("single")]
                 [System.Text.Json.Serialization.JsonPropertyName("single")]
-                public Types.Config SingleConfig { get; set; } = default!;
+                public Types.Config? SingleConfig { get; set; }
             }
         }
 
@@ -105,6 +105,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config")]
         [System.Text.Json.Serialization.JsonPropertyName("config")]
-        public IDictionary<string, Types.TemplateConfig> TemplateConfigMap { get; set; } = default!;
+        public Dictionary<string, Types.TemplateConfig>? TemplateConfigMap { get; set; }
     }
 }

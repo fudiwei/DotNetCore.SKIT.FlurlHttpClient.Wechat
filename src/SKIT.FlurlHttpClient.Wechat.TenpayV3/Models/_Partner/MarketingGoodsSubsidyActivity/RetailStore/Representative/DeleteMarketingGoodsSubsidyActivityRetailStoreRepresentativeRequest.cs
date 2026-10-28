@@ -17,21 +17,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ActivityId { get; set; } = string.Empty;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置请求业务单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置业务代理列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("representative_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("representative_info_list")]
-        public IList<Types.Representative> RepresentativeList { get; set; } = new List<Types.Representative>();
+        public List<Types.Representative>? RepresentativeList { get; set; }
 
         /// <summary>
         /// 获取或设置删除时间。

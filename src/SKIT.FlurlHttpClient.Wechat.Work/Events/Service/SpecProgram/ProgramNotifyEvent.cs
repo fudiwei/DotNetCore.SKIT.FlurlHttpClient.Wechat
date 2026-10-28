@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("NotifyId")]
         [System.Text.Json.Serialization.JsonPropertyName("NotifyId")]
         [System.Xml.Serialization.XmlElement("NotifyId")]
-        public string NotifyId { get; set; } = default!;
+        public string? NotifyId { get; set; }
 
         /// <summary>
         /// 获取或设置通知场景值。

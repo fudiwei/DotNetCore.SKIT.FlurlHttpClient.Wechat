@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string CardCode { get; set; } = string.Empty;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置失效原因。

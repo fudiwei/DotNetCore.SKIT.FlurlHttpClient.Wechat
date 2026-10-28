@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ModelAccessToken { get; set; } = string.Empty;
+        public string? ModelAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置设备序列号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_sn")]
         [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-        public string DeviceSerialNumber { get; set; } = string.Empty;
+        public string? DeviceSerialNumber { get; set; }
     }
 }

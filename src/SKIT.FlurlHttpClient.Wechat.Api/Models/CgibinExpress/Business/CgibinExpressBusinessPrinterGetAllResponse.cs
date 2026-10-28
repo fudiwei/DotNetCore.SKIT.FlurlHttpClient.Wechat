@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/express/business/printer/getall 接口的响应。</para>
@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string[] PrinterOpenIdList { get; set; } = default!;
+        public List<string>? PrinterOpenIdList { get; set; }
 
         /// <summary>
         /// 获取或设置打印员面单打印权限列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
-        public string[] TagIdList { get; set; } = default!;
+        public List<string>? TagIdList { get; set; }
 
         /// <summary>
         /// 获取或设置打印员数量。

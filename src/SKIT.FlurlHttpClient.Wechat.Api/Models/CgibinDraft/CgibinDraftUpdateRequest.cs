@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_media_id")]
-                public string ThumbnailMediaId { get; set; } = string.Empty;
+                public string? ThumbnailMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息作者。
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = string.Empty;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否显示封面。
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-        public string Media { get; set; } = string.Empty;
+        public string? Media { get; set; }
 
         /// <summary>
         /// 获取或设置要更新的文章在草稿中的位置（从 0 开始）。
@@ -99,6 +99,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("articles")]
         [System.Text.Json.Serialization.JsonPropertyName("articles")]
-        public Types.Article Article { get; set; } = new Types.Article();
+        public Types.Article? Article { get; set; }
     }
 }

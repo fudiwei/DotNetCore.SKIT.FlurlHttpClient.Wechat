@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_auth_code")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_auth_code")]
-        public string PreAuthCode { get; set; } = default!;
+        public string? PreAuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置预授权码有效期（单位：秒）。

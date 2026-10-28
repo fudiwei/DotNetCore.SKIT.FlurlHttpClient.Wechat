@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("drama_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("drama_id")]
                 [System.Xml.Serialization.XmlElement("drama_id")]
-                public string DramaId { get; set; } = default!;
+                public string? DramaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核信息。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("audit_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
                 [System.Xml.Serialization.XmlElement("audit_detail")]
-                public Types.AuditDetail AuditDetail { get; set; } = default!;
+                public Types.AuditDetail? AuditDetail { get; set; }
             }
         }
 
@@ -72,6 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("audit_event")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_event")]
         [System.Xml.Serialization.XmlElement("audit_event")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

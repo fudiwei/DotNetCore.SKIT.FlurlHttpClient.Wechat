@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("MerchantId")]
         [System.Text.Json.Serialization.JsonPropertyName("MerchantId")]
         [System.Xml.Serialization.XmlElement("MerchantId")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置是否通过。

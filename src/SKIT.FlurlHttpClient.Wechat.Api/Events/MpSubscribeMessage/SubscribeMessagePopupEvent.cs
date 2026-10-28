@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("TemplateId")]
                         [System.Text.Json.Serialization.JsonPropertyName("TemplateId")]
                         [System.Xml.Serialization.XmlElement("TemplateId")]
-                        public string TemplateId { get; set; } = default!;
+                        public string? TemplateId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户点击行为。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("SubscribeStatusString")]
                         [System.Text.Json.Serialization.JsonPropertyName("SubscribeStatusString")]
                         [System.Xml.Serialization.XmlElement("SubscribeStatusString")]
-                        public string SubscribeStatus { get; set; } = default!;
+                        public string? SubscribeStatus { get; set; }
 
                         /// <summary>
                         /// 获取或设置场景。
@@ -49,20 +49,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("List", typeof(Types.EventItem))]
-                public Types.EventItem[] EventList { get; set; } = default!;
+                public List<Types.EventItem>? EventList { get; set; }
             }
         }
 
         internal static class Converters
         {
-            internal class ResponsePropertyEventDataListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.EventData.Types.EventItem[]?>
+            internal class ResponsePropertyEventDataListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<List<Types.EventData.Types.EventItem>?>
             {
                 public override bool CanWrite
                 {
                     get { return false; }
                 }
 
-                public override Types.EventData.Types.EventItem[]? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.EventData.Types.EventItem[]? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+                public override List<Types.EventData.Types.EventItem>? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, List<Types.EventData.Types.EventItem>? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
                 {
                     /*
                      * NOTICE:
@@ -79,29 +79,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 
                         case Newtonsoft.Json.JsonToken.StartArray:
                             {
-                                return serializer.Deserialize<Types.EventData.Types.EventItem[]>(reader);
+                                return serializer.Deserialize<List<Types.EventData.Types.EventItem>?>(reader);
                             }
 
                         case Newtonsoft.Json.JsonToken.StartObject:
                             {
-                                Types.EventData.Types.EventItem[] array = new Types.EventData.Types.EventItem[1];
-                                array[0] = serializer.Deserialize<Types.EventData.Types.EventItem>(reader)!;
-                                return array;
+                                List<Types.EventData.Types.EventItem> list = new();
+                                list.Add(serializer.Deserialize<Types.EventData.Types.EventItem>(reader)!);
+                                return list;
                             }
                     }
 
                     throw new Newtonsoft.Json.JsonException();
                 }
 
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.EventData.Types.EventItem[]? value, Newtonsoft.Json.JsonSerializer serializer)
+                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, List<Types.EventData.Types.EventItem>? value, Newtonsoft.Json.JsonSerializer serializer)
                 {
                     throw new NotImplementedException();
                 }
             }
 
-            internal class ResponsePropertyEventDataListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.EventData.Types.EventItem[]?>
+            internal class ResponsePropertyEventDataListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<List<Types.EventData.Types.EventItem>?>
             {
-                public override Types.EventData.Types.EventItem[]? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+                public override List<Types.EventData.Types.EventItem>? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
                     /*
                      * NOTICE:
@@ -118,23 +118,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 
                         case System.Text.Json.JsonTokenType.StartArray:
                             {
-                                return System.Text.Json.JsonSerializer.Deserialize<Types.EventData.Types.EventItem[]>(ref reader, options);
+                                return System.Text.Json.JsonSerializer.Deserialize<List<Types.EventData.Types.EventItem>>(ref reader, options);
                             }
 
                         case System.Text.Json.JsonTokenType.StartObject:
                             {
-                                Types.EventData.Types.EventItem[] array = new Types.EventData.Types.EventItem[1];
-                                array[0] = System.Text.Json.JsonSerializer.Deserialize<Types.EventData.Types.EventItem>(ref reader, options)!;
-                                return array;
+                                List<Types.EventData.Types.EventItem> list = new();
+                                list.Add(System.Text.Json.JsonSerializer.Deserialize<Types.EventData.Types.EventItem>(ref reader, options)!);
+                                return list;
                             }
                     }
 
                     throw new System.Text.Json.JsonException();
                 }
 
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.EventData.Types.EventItem[]? value, System.Text.Json.JsonSerializerOptions options)
+                public override void Write(System.Text.Json.Utf8JsonWriter writer, List<Types.EventData.Types.EventItem>? value, System.Text.Json.JsonSerializerOptions options)
                 {
-                    writer.WriteRawValue(System.Text.Json.JsonSerializer.Serialize(value, typeof(Types.EventData.Types.EventItem[]), options));
+                    writer.WriteRawValue(System.Text.Json.JsonSerializer.Serialize(value, typeof(List<Types.EventData.Types.EventItem>), options));
                 }
             }
         }
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("SubscribeMsgPopupEvent")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
 
         /// <summary>
         /// 获取或设置用户订阅通知弹窗数据列表。
@@ -156,9 +156,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Text.Json.Serialization.JsonPropertyName("List")]
         [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyEventDataListSystemTextJsonConverter))]
         [System.Xml.Serialization.XmlIgnore]
-        public Types.EventData.Types.EventItem[]? EventDataList
+        public List<Types.EventData.Types.EventItem>? EventDataList
         {
-            get { return this.EventData?.EventList; }
+            get
+            {
+                return this.EventData?.EventList;
+            }
             set
             {
                 this.EventData ??= new Types.EventData();

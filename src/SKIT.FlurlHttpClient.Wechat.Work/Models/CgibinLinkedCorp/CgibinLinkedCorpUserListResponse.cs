@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/linkedcorp/user/list 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置成员名称。
@@ -70,7 +70,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department")]
                 [System.Text.Json.Serialization.JsonPropertyName("department")]
-                public string[]? LinkedDepartmentIdList { get; set; }
+                public List<string>? LinkedDepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义字段信息。
@@ -86,6 +86,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userlist")]
         [System.Text.Json.Serialization.JsonPropertyName("userlist")]
-        public Types.CorpUser[] CorpUserList { get; set; } = default!;
+        public List<Types.CorpUser>? CorpUserList { get; set; }
     }
 }

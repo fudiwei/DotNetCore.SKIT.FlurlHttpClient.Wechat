@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("action_msg")]
                         [System.Text.Json.Serialization.JsonPropertyName("action_msg")]
                         [System.Xml.Serialization.XmlElement("action_msg")]
-                        public string ActionMessage { get; set; } = default!;
+                        public string? ActionMessage { get; set; }
 
                         /// <summary>
                         /// 获取或设置取件员姓名。
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("path_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("path_info")]
                 [System.Xml.Serialization.XmlElement("path_info", Type = typeof(Types.PathAction))]
-                public Types.PathAction[] PathActionList { get; set; } = default!;
+                public List<Types.PathAction>? PathActionList { get; set; }
             }
         }
 
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Sender")]
         [System.Text.Json.Serialization.JsonPropertyName("Sender")]
         [System.Xml.Serialization.XmlElement("Sender")]
-        public Types.Sender Sender { get; set; } = default!;
+        public Types.Sender Sender { get; set; }
 
         /// <summary>
         /// 获取或设置收件人信息。
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("Receiver")]
         [System.Xml.Serialization.XmlElement("Receiver")]
-        public Types.Receiver Receiver { get; set; } = default!;
+        public Types.Receiver Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置包裹信息。
@@ -163,7 +163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("PathInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("PathInfo")]
         [System.Xml.Serialization.XmlElement("PathInfo")]
-        public Types.Path? Path { get; set; } = default!;
+        public Types.Path? Path { get; set; }
 
         /// <summary>
         /// 获取或设置运费（单位：分）。

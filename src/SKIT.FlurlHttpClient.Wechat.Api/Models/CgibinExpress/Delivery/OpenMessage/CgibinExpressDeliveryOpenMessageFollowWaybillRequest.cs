@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                        public string GoodsName { get; set; } = string.Empty;
+                        public string? GoodsName { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品图片 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods_img_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("goods_img_url")]
-                        public string GoodsImageUrl { get; set; } = string.Empty;
+                        public string? GoodsImageUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品详情描述。
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_list")]
-                public IList<Types.Detail> DetailList { get; set; } = new List<Types.Detail>();
+                public List<Types.Detail>? DetailList { get; set; }
             }
         }
 
@@ -50,14 +50,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置运单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置寄件人电话号码。

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ProviderAccessToken { get; set; } = string.Empty;
+        public string? ProviderAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置注册码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_code")]
         [System.Text.Json.Serialization.JsonPropertyName("register_code")]
-        public string RegisterCode { get; set; } = string.Empty;
+        public string? RegisterCode { get; set; }
     }
 }

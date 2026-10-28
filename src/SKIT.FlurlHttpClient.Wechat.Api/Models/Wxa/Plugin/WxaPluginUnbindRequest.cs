@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "unbind";
+        public string? Action { get; set; } = "unbind";
 
         /// <summary>
         /// 获取或设置插件 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plugin_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("plugin_appid")]
-        public string PluginAppId { get; set; } = string.Empty;
+        public string? PluginAppId { get; set; }
     }
 }

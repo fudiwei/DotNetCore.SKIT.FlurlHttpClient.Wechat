@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("booking_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("booking_id")]
-                public string BookingId { get; set; } = default!;
+                public string? BookingId { get; set; }
 
                 /// <summary>
                 /// 获取或设置主预定 ID。
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        public Types.Schedule Schedule { get; set; } = default!;
+        public Types.Schedule? Schedule { get; set; }
     }
 }

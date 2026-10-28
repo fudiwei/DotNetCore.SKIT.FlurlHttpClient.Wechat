@@ -11,13 +11,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "get";
+        public string? Action { get; set; } = "get";
 
         /// <summary>
         /// 获取或设置业务域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("webviewdomain")]
         [System.Text.Json.Serialization.JsonPropertyName("webviewdomain")]
-        public IList<string>? WebviewDomainList { get; set; }
+        public List<string>? WebviewDomainList { get; set; }
     }
 }

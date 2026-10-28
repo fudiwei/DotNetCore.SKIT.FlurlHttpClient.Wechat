@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string VoiceId { get; set; } = string.Empty;
+        public string? VoiceId { get; set; }
 
         /// <summary>
         /// 获取或设置语言。

@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string EnvironmentId { get; set; } = default!;
+                public string? EnvironmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errmsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("err_list")]
         [System.Text.Json.Serialization.JsonPropertyName("err_list")]
-        public Types.Error[]? ErrorList { get; set; }
+        public List<Types.Error>? ErrorList { get; set; }
     }
 }

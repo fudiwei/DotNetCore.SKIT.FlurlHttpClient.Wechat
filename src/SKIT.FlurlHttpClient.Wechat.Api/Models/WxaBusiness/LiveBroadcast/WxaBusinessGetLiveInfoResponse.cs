@@ -25,21 +25,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序商品详情页路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string PagePath { get; set; } = default!;
+                        public string? PagePath { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品封面图 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("cover_img")]
                         [System.Text.Json.Serialization.JsonPropertyName("cover_img")]
-                        public string CoverImageUrl { get; set; } = default!;
+                        public string? CoverImageUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置价格类型。
@@ -83,21 +83,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播间背景图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cover_img")]
                 [System.Text.Json.Serialization.JsonPropertyName("cover_img")]
-                public string CoverImageUrl { get; set; } = default!;
+                public string? CoverImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置分享图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("share_img")]
                 [System.Text.Json.Serialization.JsonPropertyName("share_img")]
-                public string ShareImageUrl { get; set; } = default!;
+                public string? ShareImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播间类型。
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("anchor_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("anchor_name")]
-                public string AnchorName { get; set; } = default!;
+                public string? AnchorName { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建者 OpenId。
@@ -146,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("feeds_img")]
                 [System.Text.Json.Serialization.JsonPropertyName("feeds_img")]
-                public string FeedsImageUrl { get; set; } = default!;
+                public string? FeedsImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启官方收录。
@@ -180,7 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods")]
-                public Types.Goods[]? GoodsList { get; set; }
+                public List<Types.Goods>? GoodsList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否关闭评论。
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("room_info")]
         [System.Text.Json.Serialization.JsonPropertyName("room_info")]
-        public Types.Room[] RoomList { get; set; } = default!;
+        public List<Types.Room>? RoomList { get; set; }
 
         /// <summary>
         /// 获取或设置房间总数。

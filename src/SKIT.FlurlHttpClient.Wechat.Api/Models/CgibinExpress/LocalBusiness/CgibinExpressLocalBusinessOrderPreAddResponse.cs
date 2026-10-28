@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultmsg")]
         [System.Text.Json.Serialization.JsonPropertyName("resultmsg")]
-        public string ResultMessage { get; set; } = default!;
+        public string? ResultMessage { get; set; }
 
         /// <summary>
         /// 获取或设置实际运费（单位：元）。
@@ -66,7 +66,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = default!;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置配送状态。

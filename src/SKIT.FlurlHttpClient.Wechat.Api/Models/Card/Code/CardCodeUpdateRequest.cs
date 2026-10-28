@@ -17,13 +17,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string OldCardCode { get; set; } = string.Empty;
+        public string? OldCardCode { get; set; }
 
         /// <summary>
         /// 获取或设置新卡券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("new_code")]
         [System.Text.Json.Serialization.JsonPropertyName("new_code")]
-        public string NewCardCode { get; set; } = string.Empty;
+        public string? NewCardCode { get; set; }
     }
 }

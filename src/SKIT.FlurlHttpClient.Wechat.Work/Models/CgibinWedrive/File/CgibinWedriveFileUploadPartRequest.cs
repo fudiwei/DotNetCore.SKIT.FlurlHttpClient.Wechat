@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("upload_key")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_key")]
-        public string UploadKey { get; set; } = string.Empty;
+        public string? UploadKey { get; set; }
 
         /// <summary>
         /// 获取或设置文件分块号。
@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_base64_content")]
         [System.Text.Json.Serialization.JsonPropertyName("file_base64_content")]
-        public string EncodingBlockContent { get; set; } = string.Empty;
+        public string? EncodingBlockContent { get; set; }
     }
 }

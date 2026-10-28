@@ -21,28 +21,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mch_invite_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("mch_invite_status")]
-                public string MerchantInviteStatus { get; set; } = default!;
+                public string? MerchantInviteStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ep_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ep_name")]
-                public string MerchantName { get; set; } = default!;
+                public string? MerchantName { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户税号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tax_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("tax_id")]
-                public string TaxId { get; set; } = default!;
+                public string? TaxId { get; set; }
 
                 /// <summary>
                 /// 获取或设置邀请码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("invite_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("invite_code")]
-                public string InviteCode { get; set; } = default!;
+                public string? InviteCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作时间。
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_invite_result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_invite_result_list")]
-        public Types.MerchantInviteResult[] MerchantInviteResultList { get; set; } = default!;
+        public List<Types.MerchantInviteResult>? MerchantInviteResultList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Limit { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offset")]
         [System.Text.Json.Serialization.JsonPropertyName("offset")]

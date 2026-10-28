@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("repeated_id")]
         [System.Text.Json.Serialization.JsonPropertyName("repeated_id")]
-        public string RepeatedId { get; set; } = string.Empty;
+        public string? RepeatedId { get; set; }
 
         /// <summary>
         /// 获取或设置答案 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("answer_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("answer_ids")]
-        public IList<long>? AnswerIdList { get; set; }
+        public List<long>? AnswerIdList { get; set; }
     }
 }

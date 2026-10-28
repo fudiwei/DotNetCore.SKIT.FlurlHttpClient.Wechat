@@ -9,16 +9,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置无效的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidlist")]
-        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringArrayWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("invalidlist")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringArrayWithPipeSplitConverter))]
-        public string[]? InvalidUserIdList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithPipeSplitConverter))]
+        public List<string>? InvalidUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidparty")]
         [System.Text.Json.Serialization.JsonPropertyName("invalidparty")]
-        public long[]? InvalidDepartmentIdList { get; set; }
+        public List<long>? InvalidDepartmentIdList { get; set; }
     }
 }

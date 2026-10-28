@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text")]
                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                        public string Text { get; set; } = string.Empty;
+                        public string? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置要替换的文档范围列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ranges")]
                         [System.Text.Json.Serialization.JsonPropertyName("ranges")]
-                        public IList<Range> RangeList { get; set; } = new List<Range>();
+                        public List<Range>? RangeList { get; set; }
                     }
 
                     public class InsertTextRequest
@@ -62,14 +62,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text")]
                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                        public string Text { get; set; } = string.Empty;
+                        public string? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置插入的位置信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location")]
                         [System.Text.Json.Serialization.JsonPropertyName("location")]
-                        public Location Location { get; set; } = new Location();
+                        public Location? Location { get; set; }
                     }
 
                     public class DeleteContentRequest
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("range")]
                         [System.Text.Json.Serialization.JsonPropertyName("range")]
-                        public Range Range { get; set; } = new Range();
+                        public Range? Range { get; set; }
                     }
 
                     public class InsertImageRequest
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("image_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("image_id")]
-                        public string ImageId { get; set; } = string.Empty;
+                        public string? ImageId { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片宽度（单位：像素）。
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location")]
                         [System.Text.Json.Serialization.JsonPropertyName("location")]
-                        public Location Location { get; set; } = new Location();
+                        public Location? Location { get; set; }
                     }
 
                     public class InsertPageBreakRequest
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location")]
                         [System.Text.Json.Serialization.JsonPropertyName("location")]
-                        public Location Location { get; set; } = new Location();
+                        public Location? Location { get; set; }
                     }
 
                     public class InsertTableRequest
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location")]
                         [System.Text.Json.Serialization.JsonPropertyName("location")]
-                        public Location Location { get; set; } = new Location();
+                        public Location? Location { get; set; }
                     }
 
                     public class InsertParagraphRequest
@@ -154,7 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location")]
                         [System.Text.Json.Serialization.JsonPropertyName("location")]
-                        public Location Location { get; set; } = new Location();
+                        public Location? Location { get; set; }
                     }
 
                     public class UpdateTextPropertyRequest
@@ -245,7 +245,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("docid")]
         [System.Text.Json.Serialization.JsonPropertyName("docid")]
-        public string DocumentId { get; set; } = string.Empty;
+        public string? DocumentId { get; set; }
 
         /// <summary>
         /// 获取或设置文档版本。
@@ -259,6 +259,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("requests")]
         [System.Text.Json.Serialization.JsonPropertyName("requests")]
-        public IList<Types.UpdateRequest> BatchRequestList { get; set; } = new List<Types.UpdateRequest>();
+        public List<Types.UpdateRequest>? BatchRequestList { get; set; }
     }
 }

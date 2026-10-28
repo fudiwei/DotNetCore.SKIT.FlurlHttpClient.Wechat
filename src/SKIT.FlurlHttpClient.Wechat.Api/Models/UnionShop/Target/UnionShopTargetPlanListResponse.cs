@@ -14,35 +14,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planId")]
                 [System.Text.Json.Serialization.JsonPropertyName("planId")]
-                public string PlanId { get; set; } = default!;
+                public string? PlanId { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planType")]
                 [System.Text.Json.Serialization.JsonPropertyName("planType")]
-                public string PlanType { get; set; } = default!;
+                public string? PlanType { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planName")]
                 [System.Text.Json.Serialization.JsonPropertyName("planName")]
-                public string PlanName { get; set; } = default!;
+                public string? PlanName { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planDesc")]
                 [System.Text.Json.Serialization.JsonPropertyName("planDesc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planStatus")]
                 [System.Text.Json.Serialization.JsonPropertyName("planStatus")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划开始时间戳。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("inviteUrl")]
                 [System.Text.Json.Serialization.JsonPropertyName("inviteUrl")]
-                public string InviteUrl { get; set; } = default!;
+                public string? InviteUrl { get; set; }
             }
         }
 
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("planList")]
         [System.Text.Json.Serialization.JsonPropertyName("planList")]
-        public Types.Plan[]? PlanList { get; set; }
+        public List<Types.Plan>? PlanList { get; set; }
 
         /// <summary>
         /// 获取或设置计划信息。

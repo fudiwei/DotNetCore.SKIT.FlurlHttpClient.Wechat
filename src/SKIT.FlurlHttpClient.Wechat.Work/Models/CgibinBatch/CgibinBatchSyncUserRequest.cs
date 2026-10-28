@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string NotifyUrl { get; set; } = string.Empty;
+                public string? NotifyUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置用于生成签名的 Token。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("token")]
                 [System.Text.Json.Serialization.JsonPropertyName("token")]
-                public string Token { get; set; } = string.Empty;
+                public string? Token { get; set; }
 
                 /// <summary>
                 /// 获取或设置经过 Base64 编码的 AES 密钥。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encodingaeskey")]
                 [System.Text.Json.Serialization.JsonPropertyName("encodingaeskey")]
-                public string EncodingAesKey { get; set; } = string.Empty;
+                public string? EncodingAesKey { get; set; }
             }
         }
 
@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-        public string MediaId { get; set; } = string.Empty;
+        public string? MediaId { get; set; }
 
         /// <summary>
         /// 获取或设置是否邀请成员。

@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("area")]
                 [System.Text.Json.Serialization.JsonPropertyName("area")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string AreaCode { get; set; } = default!;
+                public string? AreaCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置电话号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string PhoneNumber { get; set; } = default!;
+                public string? PhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置分机号。
@@ -45,13 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("phone_numbers")]
         [System.Text.Json.Serialization.JsonPropertyName("phone_numbers")]
-        public Types.Callout[] SuccessfulCalloutList { get; set; } = default!;
+        public List<Types.Callout>? SuccessfulCalloutList { get; set; }
 
         /// <summary>
         /// 获取或设置不合法的外呼列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_phone_numbers")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_phone_numbers")]
-        public Types.Callout[] InvalidCalloutList { get; set; } = default!;
+        public List<Types.Callout>? InvalidCalloutList { get; set; }
     }
 }

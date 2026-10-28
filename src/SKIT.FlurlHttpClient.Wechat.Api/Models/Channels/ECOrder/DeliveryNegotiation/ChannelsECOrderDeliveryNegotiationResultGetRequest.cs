@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id_list")]
-        public IList<string> OrderIdList { get; set; } = new List<string>();
+        public List<string>? OrderIdList { get; set; }
     }
 }

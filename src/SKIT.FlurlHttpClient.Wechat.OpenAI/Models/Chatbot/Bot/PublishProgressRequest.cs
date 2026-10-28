@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("managerid")]
         [System.Text.Json.Serialization.JsonPropertyName("managerid")]
-        public string ManagerId { get; set; } = string.Empty;
+        public string? ManagerId { get; set; }
     }
 }

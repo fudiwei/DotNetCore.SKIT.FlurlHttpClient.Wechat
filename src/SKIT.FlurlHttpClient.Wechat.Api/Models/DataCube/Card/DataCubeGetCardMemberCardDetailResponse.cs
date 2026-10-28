@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cardid")]
                 [System.Text.Json.Serialization.JsonPropertyName("cardid")]
-                public string CardId { get; set; } = default!;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子商户类型。
@@ -59,6 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Data[] DataList { get; set; } = default!;
+        public List<Types.Data>? DataList { get; set; }
     }
 }

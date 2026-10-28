@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "pay", "transactions", "out-trade-no", request.OutTradeNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "pay", "transactions", "out-trade-no", request.OutTradeNumber!)
                 .SetQueryParam("mchid", request.MerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "pay", "transactions", "id", request.TransactionId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "pay", "transactions", "id", request.TransactionId!)
                 .SetQueryParam("mchid", request.MerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -234,7 +234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "transactions", "out-trade-no", request.OutTradeNumber, "close");
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "transactions", "out-trade-no", request.OutTradeNumber!, "close");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ClosePayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -263,7 +263,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "transactions", "out-trade-no", request.OutTradeNumber, "reverse");
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "transactions", "out-trade-no", request.OutTradeNumber!, "reverse");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ReversePayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -46,14 +46,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = string.Empty;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pagepath")]
                 [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                public string PagePath { get; set; } = string.Empty;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序标题。
@@ -76,28 +76,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_external_user")]
         [System.Text.Json.Serialization.JsonPropertyName("to_external_user")]
-        public IList<string>? ToExternalUserIdList { get; set; }
+        public List<string>? ToExternalUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息家长账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_parent_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("to_parent_userid")]
-        public IList<string>? ToParentUserIdList { get; set; }
+        public List<string>? ToParentUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息学生账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_student_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("to_student_userid")]
-        public IList<string>? ToStudentUserIdList { get; set; }
+        public List<string>? ToStudentUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的部门 ID列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_party")]
         [System.Text.Json.Serialization.JsonPropertyName("to_party")]
-        public IList<long>? ToDepartmentIdList { get; set; }
+        public List<long>? ToDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否发送给学校的所有家长。
@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。

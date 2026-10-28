@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("zone_id")]
         [System.Text.Json.Serialization.JsonPropertyName("zone_id")]
-        public string ZoneId { get; set; } = string.Empty;
+        public string? ZoneId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置虚拟支付环境。
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SignMethod { get; set; } = Constants.MidasSignMethods.HMAC_SHA256;
+        public string? SignMethod { get; set; } = Constants.MidasSignMethods.HMAC_SHA256;
 
         /// <summary>
         /// 获取或设置用户登录态签名。如果不指定将由系统自动生成。

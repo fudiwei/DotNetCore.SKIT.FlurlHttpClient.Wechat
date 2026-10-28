@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/page/update 接口的请求。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_id")]
-                public string PageId { get; set; } = string.Empty;
+                public string? PageId { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page")]
         [System.Text.Json.Serialization.JsonPropertyName("page")]
-        public Types.Page Page { get; set; } = new Types.Page();
+        public Types.Page? Page { get; set; }
     }
 }

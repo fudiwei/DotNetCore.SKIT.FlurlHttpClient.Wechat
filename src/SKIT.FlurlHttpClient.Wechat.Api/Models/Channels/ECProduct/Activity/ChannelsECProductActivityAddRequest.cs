@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("gift_items")]
                                 [System.Text.Json.Serialization.JsonPropertyName("gift_items")]
-                                public IList<Types.Gift> GiftList { get; set; } = new List<Types.Gift>();
+                                public List<Types.Gift>? GiftList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置赠品总套数。
@@ -106,14 +106,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("main_products")]
                         [System.Text.Json.Serialization.JsonPropertyName("main_products")]
-                        public IList<Types.MainProduct> MainProductList { get; set; } = new List<Types.MainProduct>();
+                        public List<Types.MainProduct>? MainProductList { get; set; }
 
                         /// <summary>
                         /// 获取或设置赠品套装信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("gift_set")]
                         [System.Text.Json.Serialization.JsonPropertyName("gift_set")]
-                        public Types.GiftSet GiftSet { get; set; } = new Types.GiftSet();
+                        public Types.GiftSet? GiftSet { get; set; }
 
                         /// <summary>
                         /// 获取或设置满赠门槛类型。
@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置买赠活动开始时间戳。
@@ -171,7 +171,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                public Types.Detail Detail { get; set; } = new Types.Detail();
+                public Types.Detail? Detail { get; set; }
             }
         }
 
@@ -180,6 +180,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("gift_activity")]
         [System.Text.Json.Serialization.JsonPropertyName("gift_activity")]
-        public Types.GiftActivity GiftActivity { get; set; } = new Types.GiftActivity();
+        public Types.GiftActivity? GiftActivity { get; set; }
     }
 }

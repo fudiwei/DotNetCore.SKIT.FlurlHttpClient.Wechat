@@ -11,21 +11,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户侧授权单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_authorization_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_authorization_no")]
-        public string OutAuthorizationNumber { get; set; } = string.Empty;
+        public string? OutAuthorizationNumber { get; set; }
 
         /// <summary>
         /// 获取或设置收款用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置转账场景 ID。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_display_name")]
-        public string UserDisplayName { get; set; } = string.Empty;
+        public string? UserDisplayName { get; set; }
 
         /// <summary>
         /// 获取或设置用户收款感知。

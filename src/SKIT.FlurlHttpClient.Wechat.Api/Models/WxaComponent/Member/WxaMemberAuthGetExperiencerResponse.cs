@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/memberauth?action=get_experiencer 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userstr")]
                 [System.Text.Json.Serialization.JsonPropertyName("userstr")]
-                public string UserString { get; set; } = default!;
+                public string? UserString { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("members")]
         [System.Text.Json.Serialization.JsonPropertyName("members")]
-        public Types.Member[] MemberList { get; set; } = default!;
+        public List<Types.Member>? MemberList { get; set; }
     }
 }

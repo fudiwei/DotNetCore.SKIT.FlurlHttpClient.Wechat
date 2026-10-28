@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
-                        public string MerchantGoodsId { get; set; } = string.Empty;
+                        public string? MerchantGoodsId { get; set; }
 
                         /// <summary>
                         /// 获取或设置微信侧商品编码。
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = string.Empty;
+                        public string? Id { get; set; }
 
                         /// <summary>
                         /// 获取或设置门店名称。
@@ -223,14 +223,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("body")]
         [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; } = string.Empty;
+        public string? Body { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置订单金额（单位：分）。
@@ -279,14 +279,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spbill_create_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("spbill_create_ip")]
-        public string ClientIp { get; set; } = string.Empty;
+        public string? ClientIp { get; set; }
 
         /// <summary>
         /// 获取或设置交易类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_type")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = string.Empty;
+        public string? TradeType { get; set; }
 
         /// <summary>
         /// 获取或设置订单优惠标记。

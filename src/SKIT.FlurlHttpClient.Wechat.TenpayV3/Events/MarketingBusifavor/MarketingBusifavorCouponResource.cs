@@ -69,21 +69,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("event_type")]
         [System.Text.Json.Serialization.JsonPropertyName("event_type")]
-        public string EventType { get; set; } = default!;
+        public string? EventType { get; set; }
 
         /// <summary>
         /// 获取或设置商家券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_code")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_code")]
-        public string CouponCode { get; set; } = default!;
+        public string? CouponCode { get; set; }
 
         /// <summary>
         /// 获取或设置批次号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = default!;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
@@ -113,14 +113,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_channel")]
         [System.Text.Json.Serialization.JsonPropertyName("send_channel")]
-        public string SendChannel { get; set; } = default!;
+        public string? SendChannel { get; set; }
 
         /// <summary>
         /// 获取或设置发券商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_merchant")]
         [System.Text.Json.Serialization.JsonPropertyName("send_merchant")]
-        public string SendMerchantId { get; set; } = default!;
+        public string? SendMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置发券附加信息。

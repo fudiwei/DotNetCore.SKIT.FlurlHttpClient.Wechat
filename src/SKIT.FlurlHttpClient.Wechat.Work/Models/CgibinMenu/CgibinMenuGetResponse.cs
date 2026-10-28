@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/menu/get 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜单标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜单 KEY 值。
@@ -56,7 +56,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_button")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_button")]
-                public Button[]? SubButtonList { get; set; }
+                public List<Button>? SubButtonList { get; set; }
             }
         }
 
@@ -65,6 +65,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("button")]
         [System.Text.Json.Serialization.JsonPropertyName("button")]
-        public Types.Button[] ButtonList { get; set; } = default!;
+        public List<Types.Button>? ButtonList { get; set; }
     }
 }

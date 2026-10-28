@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("video_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("video_id_list")]
-                public IList<string>? VideoMediaIdList { get; set; }
+                public List<string>? VideoMediaIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置屏幕截图 MediaId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pic_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("pic_id_list")]
-                public IList<string>? PictureMediaIdList { get; set; }
+                public List<string>? PictureMediaIdList { get; set; }
             }
 
             public class UGCDeclaration
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene")]
-                public IList<int>? SceneList { get; set; }
+                public List<int>? SceneList { get; set; }
 
                 /// <summary>
                 /// 获取或设置其他场景说明。
@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("method")]
                 [System.Text.Json.Serialization.JsonPropertyName("method")]
-                public IList<int>? AuditMethodList { get; set; }
+                public List<int>? AuditMethodList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否有审核团队。
@@ -136,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item_list")]
         [System.Text.Json.Serialization.JsonPropertyName("item_list")]
-        public IList<Types.Page> PageList { get; set; } = new List<Types.Page>();
+        public List<Types.Page>? PageList { get; set; }
 
         /// <summary>
         /// 获取或设置预览信息。
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("feedback_stuff")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithPipeSplitConverter))]
-        public IList<string>? FeedbackStuffMediaIdList { get; set; }
+        public List<string>? FeedbackStuffMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置 UGC 声明信息。

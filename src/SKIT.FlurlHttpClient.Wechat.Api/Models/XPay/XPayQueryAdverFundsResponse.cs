@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fund_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("fund_id")]
-                public string FundId { get; set; } = default!;
+                public string? FundId { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告金发放类型。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("adver_funds_list")]
         [System.Text.Json.Serialization.JsonPropertyName("adver_funds_list")]
-        public Types.AdverFund[] AdverFundList { get; set; } = default!;
+        public List<Types.AdverFund>? AdverFundList { get; set; }
 
         /// <summary>
         /// 获取或设置总页数。

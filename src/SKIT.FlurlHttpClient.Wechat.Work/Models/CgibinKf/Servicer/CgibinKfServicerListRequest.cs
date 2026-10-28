@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenKfId { get; set; } = string.Empty;
+        public string? OpenKfId { get; set; }
     }
 }

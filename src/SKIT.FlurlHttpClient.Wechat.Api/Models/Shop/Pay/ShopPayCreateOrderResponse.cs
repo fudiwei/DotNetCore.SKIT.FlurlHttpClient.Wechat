@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/pay/createorder 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_params")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_params")]
-        public Types.PaymentParameters PaymentParameters { get; set; } = default!;
+        public Types.PaymentParameters? PaymentParameters { get; set; }
     }
 }

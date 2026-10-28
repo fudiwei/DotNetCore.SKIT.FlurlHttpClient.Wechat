@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/user/list_id 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门 ID。
@@ -30,7 +30,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dept_user")]
         [System.Text.Json.Serialization.JsonPropertyName("dept_user")]
-        public Types.DepartmentUser[] DepartmentUser { get; set; } = default!;
+        public List<Types.DepartmentUser>? DepartmentUser { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

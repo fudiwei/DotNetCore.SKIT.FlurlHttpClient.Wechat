@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Url")]
                 [System.Text.Json.Serialization.JsonPropertyName("Url")]
                 [System.Xml.Serialization.XmlElement("Url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文封面图片链接。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("PicUrl")]
                 [System.Text.Json.Serialization.JsonPropertyName("PicUrl")]
                 [System.Xml.Serialization.XmlElement("PicUrl")]
-                public string PictureUrl { get; set; } = default!;
+                public string? PictureUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文标题。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Title")]
                 [System.Text.Json.Serialization.JsonPropertyName("Title")]
                 [System.Xml.Serialization.XmlElement("Title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文描述。
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Description")]
                 [System.Text.Json.Serialization.JsonPropertyName("Description")]
                 [System.Xml.Serialization.XmlElement("Description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
 
             public class ArticleList
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
                 [System.Xml.Serialization.XmlElement("item", Type = typeof(ArticleItem))]
-                public ArticleItem[] Items { get; set; } = default!;
+                public List<ArticleItem>? Items { get; set; }
             }
         }
 
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Articles")]
         [System.Text.Json.Serialization.JsonPropertyName("Articles")]
         [System.Xml.Serialization.XmlElement("Articles")]
-        public Types.ArticleList ArticleList { get; set; } = default!;
+        public Types.ArticleList ArticleList { get; set; }
 
         public NewsMessageReply()
         {

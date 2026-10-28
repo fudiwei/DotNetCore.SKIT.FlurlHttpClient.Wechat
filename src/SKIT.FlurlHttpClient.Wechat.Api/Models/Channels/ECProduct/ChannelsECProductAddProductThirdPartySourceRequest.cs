@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("supplier_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("supplier_name")]
-                public string SupplierName { get; set; } = string.Empty;
+                public string? SupplierName { get; set; }
 
                 /// <summary>
                 /// 获取或设置货源平台类型。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("source_platform_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("source_platform_name")]
-                public string? SourcePlatformName { get; set; } = string.Empty;
+                public string? SourcePlatformName { get; set; }
             }
 
             public class SupplierShopPerformance
@@ -118,28 +118,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-                        public string OutSKUId { get; set; } = string.Empty;
+                        public string? OutSKUId { get; set; }
 
                         /// <summary>
                         /// 获取或设置规格名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("spec_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("spec_name")]
-                        public string SpecificationName { get; set; } = string.Empty;
+                        public string? SpecificationName { get; set; }
 
                         /// <summary>
                         /// 获取或设置规格值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("spec_value")]
                         [System.Text.Json.Serialization.JsonPropertyName("spec_value")]
-                        public string SpecificationValue { get; set; } = string.Empty;
+                        public string? SpecificationValue { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片 Url。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku_img")]
                         [System.Text.Json.Serialization.JsonPropertyName("sku_img")]
-                        public string ImageUrl { get; set; } = string.Empty;
+                        public string? ImageUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置价格（单位：分）。
@@ -186,35 +186,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-                public string OutProductId { get; set; } = string.Empty;
+                public string? OutProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置可访问链接。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("visit_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("visit_url")]
-                public string VisitUrl { get; set; } = string.Empty;
+                public string? VisitUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品主图 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_img_urls")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_img_urls")]
-                public IList<string> HeadImageUrlList { get; set; } = new List<string>();
+                public List<string>? HeadImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品详情图 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_img_urls")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_img_urls")]
-                public IList<string> DetailImageUrlList { get; set; } = new List<string>();
+                public List<string>? DetailImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品详情描述。
@@ -228,7 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("qualification_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("qualification_list")]
-                public IList<string>? QualificationPictureUrlList { get; set; }
+                public List<string>? QualificationPictureUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品品牌。
@@ -242,14 +242,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attr_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("attr_list")]
-                public IList<Types.Attribute>? AttributeList { get; set; }
+                public List<Types.Attribute>? AttributeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置 SKU 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sku_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_list")]
-                public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+                public List<Types.SKU>? SKUList { get; set; }
 
                 /// <summary>
                 /// 获取或设置物流信息。
@@ -307,6 +307,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_source_info")]
         [System.Text.Json.Serialization.JsonPropertyName("product_source_info")]
-        public Types.ProductSourceInfo ProductSourceInfo { get; set; } = new Types.ProductSourceInfo();
+        public Types.ProductSourceInfo? ProductSourceInfo { get; set; }
     }
 }

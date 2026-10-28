@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("FailReason")]
         [System.Text.Json.Serialization.JsonPropertyName("FailReason")]
         [System.Xml.Serialization.XmlElement("FailReason")]
-        public string FailReason { get; set; } = default!;
+        public string? FailReason { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请材料图片 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("img_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("img_list")]
-                public string[]? ImageUrlList { get; set; }
+                public List<string>? ImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请材料视频 URL。
@@ -72,6 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg")]
         [System.Text.Json.Serialization.JsonPropertyName("msg")]
-        public Types.Page Page { get; set; } = default!;
+        public Types.Page? Page { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("items")]
                         [System.Text.Json.Serialization.JsonPropertyName("items")]
-                        public new IList<QuestionItem> Items { get; set; } = new List<QuestionItem>();
+                        public new List<QuestionItem>? Items { get; set; }
                     }
 
                     public class QuestionItem : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_item")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_item")]
-                        public new IList<Types.Option>? OptionList { get; set; }
+                        public new List<Types.Option>? OptionList { get; set; }
                     }
 
                     public class Settings : CgibinWedocCreateFormRequest.Types.Form.Types.Settings
@@ -127,13 +127,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("formid")]
         [System.Text.Json.Serialization.JsonPropertyName("formid")]
-        public string FormId { get; set; } = string.Empty;
+        public string? FormId { get; set; }
 
         /// <summary>
         /// 获取或设置收集表信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("form_info")]
         [System.Text.Json.Serialization.JsonPropertyName("form_info")]
-        public Types.Form Form { get; set; } = new Types.Form();
+        public Types.Form? Form { get; set; }
     }
 }

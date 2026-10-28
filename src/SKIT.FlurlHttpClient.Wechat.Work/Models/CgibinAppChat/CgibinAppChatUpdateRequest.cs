@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatid")]
         [System.Text.Json.Serialization.JsonPropertyName("chatid")]
-        public string ChatId { get; set; } = string.Empty;
+        public string? ChatId { get; set; }
 
         /// <summary>
         /// 获取或设置群聊名称。
@@ -31,13 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("add_user_list")]
         [System.Text.Json.Serialization.JsonPropertyName("add_user_list")]
-        public IList<string>? AddMemberUserIdList { get; set; }
+        public List<string>? AddMemberUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置踢出的群成员 UserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("del_user_list")]
         [System.Text.Json.Serialization.JsonPropertyName("del_user_list")]
-        public IList<string>? RemoveMemberUserIdList { get; set; }
+        public List<string>? RemoveMemberUserIdList { get; set; }
     }
 }

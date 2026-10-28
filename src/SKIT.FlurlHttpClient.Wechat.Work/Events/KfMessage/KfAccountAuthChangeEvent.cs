@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("AuthAddOpenKfId")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthAddOpenKfId")]
         [System.Xml.Serialization.XmlElement("AuthAddOpenKfId", Type = typeof(string), IsNullable = true)]
-        public string[]? AuthAddedOpenKfId { get; set; }
+        public List<string>? AuthAddedOpenKfId { get; set; }
 
         /// <summary>
         /// 获取或设置取消授权的客服账号 ID 列表。
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("AuthDelOpenKfId")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthDelOpenKfId")]
         [System.Xml.Serialization.XmlElement("AuthDelOpenKfId", Type = typeof(string), IsNullable = true)]
-        public string[]? AuthDeletedOpenKfId { get; set; }
+        public List<string>? AuthDeletedOpenKfId { get; set; }
     }
 }

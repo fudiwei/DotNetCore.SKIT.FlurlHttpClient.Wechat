@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content")]
                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string Content { get; set; } = default!;
+                        public string? Content { get; set; }
 
                         /// <summary>
                         /// 获取或设置回复时间戳。
@@ -41,14 +41,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置评论内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否精选评论。
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reply")]
                 [System.Text.Json.Serialization.JsonPropertyName("reply")]
-                public Types.Reply[]? ReplyList { get; set; } = default!;
+                public List<Types.Reply>? ReplyList { get; set; }
 
                 /// <summary>
                 /// 获取或设置评论时间戳。
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("comment")]
         [System.Text.Json.Serialization.JsonPropertyName("comment")]
-        public Types.Comment[] CommentList { get; set; } = default!;
+        public List<Types.Comment>? CommentList { get; set; }
 
         /// <summary>
         /// 获取或设置评论总数。

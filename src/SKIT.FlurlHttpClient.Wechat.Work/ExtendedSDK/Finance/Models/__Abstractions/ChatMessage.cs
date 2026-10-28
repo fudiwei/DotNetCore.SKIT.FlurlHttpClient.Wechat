@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonExtensionData]
         [System.Text.Json.Serialization.JsonExtensionData]
-        public IDictionary<string, object>? ExtensionData { get; set; }
+        public Dictionary<string, object?>? ExtensionData { get; set; }
     }
 
     public class TextMessage : ChatMessageBase
@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
     }
 
     public class ImageMessage : ChatMessageBase
@@ -27,14 +27,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置图片文件 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("md5sum")]
         [System.Text.Json.Serialization.JsonPropertyName("md5sum")]
-        public string FileMD5 { get; set; } = default!;
+        public string? FileMD5 { get; set; }
 
         /// <summary>
         /// 获取或设置图片文件大小（单位：字节）。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_msgid")]
-        public string PreviousMessageId { get; set; } = default!;
+        public string? PreviousMessageId { get; set; }
     }
 
     public class AgreeMessage : ChatMessageBase
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置时间戳。
@@ -85,14 +85,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置语音文件 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("md5sum")]
         [System.Text.Json.Serialization.JsonPropertyName("md5sum")]
-        public string FileMD5 { get; set; } = default!;
+        public string? FileMD5 { get; set; }
 
         /// <summary>
         /// 获取或设置语音文件大小（单位：字节）。
@@ -116,14 +116,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置视频文件 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("md5sum")]
         [System.Text.Json.Serialization.JsonPropertyName("md5sum")]
-        public string FileMD5 { get; set; } = default!;
+        public string? FileMD5 { get; set; }
 
         /// <summary>
         /// 获取或设置视频文件大小（单位：字节）。
@@ -140,14 +140,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpname")]
         [System.Text.Json.Serialization.JsonPropertyName("corpname")]
-        public string CorpName { get; set; } = default!;
+        public string? CorpName { get; set; }
 
         /// <summary>
         /// 获取或设置 UserId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
     }
 
     public class LocationMessage : ChatMessageBase
@@ -171,14 +171,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置详细地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public string Address { get; set; } = default!;
+        public string? Address { get; set; }
 
         /// <summary>
         /// 获取或设置缩放比例。
@@ -216,14 +216,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置表情文件 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("md5sum")]
         [System.Text.Json.Serialization.JsonPropertyName("md5sum")]
-        public string FileMD5 { get; set; } = default!;
+        public string? FileMD5 { get; set; }
 
         /// <summary>
         /// 获取或设置表情文件大小（单位：字节）。
@@ -240,28 +240,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filename")]
         [System.Text.Json.Serialization.JsonPropertyName("filename")]
-        public string FileName { get; set; } = default!;
+        public string? FileName { get; set; }
 
         /// <summary>
         /// 获取或设置文件后缀。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileext")]
         [System.Text.Json.Serialization.JsonPropertyName("fileext")]
-        public string FileExtension { get; set; } = default!;
+        public string? FileExtension { get; set; }
 
         /// <summary>
         /// 获取或设置文件 FileId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置文件 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("md5sum")]
         [System.Text.Json.Serialization.JsonPropertyName("md5sum")]
-        public string FileMD5 { get; set; } = default!;
+        public string? FileMD5 { get; set; }
 
         /// <summary>
         /// 获取或设置文件大小（单位：字节）。
@@ -278,28 +278,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link_url")]
         [System.Text.Json.Serialization.JsonPropertyName("link_url")]
-        public string LinkUrl { get; set; } = default!;
+        public string? LinkUrl { get; set; }
 
         /// <summary>
         /// 获取或设置图文标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置图文描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置图文封面的 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("image_url")]
         [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        public string ImageUrl { get; set; } = default!;
+        public string? ImageUrl { get; set; }
     }
 
     public class MiniProgramMessage : ChatMessageBase
@@ -309,28 +309,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置消息描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置小程序名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("displayname")]
         [System.Text.Json.Serialization.JsonPropertyName("displayname")]
-        public string DisplayName { get; set; } = default!;
+        public string? DisplayName { get; set; }
 
         /// <summary>
         /// 获取或设置用户名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("username")]
         [System.Text.Json.Serialization.JsonPropertyName("username")]
-        public string UserName { get; set; } = default!;
+        public string? UserName { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。
@@ -365,14 +365,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string MessageType { get; set; } = default!;
+                public string? MessageType { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息内容 JSON 字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string MessageContentJson { get; set; } = default!;
+                public string? MessageContentJson { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否来自群聊。
@@ -388,14 +388,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置聊天记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
     }
 
     public class TodoMessage : ChatMessageBase
@@ -405,14 +405,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置待办的具体内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
     }
 
     public class VoteMessage : ChatMessageBase
@@ -422,7 +422,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voteid")]
         [System.Text.Json.Serialization.JsonPropertyName("voteid")]
-        public string VoteId { get; set; } = default!;
+        public string? VoteId { get; set; }
 
         /// <summary>
         /// 获取或设置投票类型。
@@ -436,14 +436,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("votetitle")]
         [System.Text.Json.Serialization.JsonPropertyName("votetitle")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置投票选项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voteitem")]
         [System.Text.Json.Serialization.JsonPropertyName("voteitem")]
-        public string[] Options { get; set; } = default!;
+        public List<string>? Options { get; set; }
     }
 
     public class CollectMessage : ChatMessageBase
@@ -459,21 +459,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringReadOnlyConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string ID { get; set; } = default!;
+                public string? ID { get; set; }
 
                 /// <summary>
                 /// 获取或设置表项类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置表项名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ques")]
                 [System.Text.Json.Serialization.JsonPropertyName("ques")]
-                public string Question { get; set; } = default!;
+                public string? Question { get; set; }
             }
         }
 
@@ -482,35 +482,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("room_name")]
         [System.Text.Json.Serialization.JsonPropertyName("room_name")]
-        public string RoomName { get; set; } = default!;
+        public string? RoomName { get; set; }
 
         /// <summary>
         /// 获取或设置创建者名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("creator")]
         [System.Text.Json.Serialization.JsonPropertyName("creator")]
-        public string CreatorName { get; set; } = default!;
+        public string? CreatorName { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间字符串（格式：yyyy-MM-dd HH:mm:ss）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-        public string CreateTimeString { get; set; } = default!;
+        public string? CreateTimeString { get; set; }
 
         /// <summary>
         /// 获取或设置表名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置表项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("details")]
         [System.Text.Json.Serialization.JsonPropertyName("details")]
-        public Types.Detail[] DetailList { get; set; } = default!;
+        public List<Types.Detail>? DetailList { get; set; }
     }
 
     public class RedPacketMessage : ChatMessageBase
@@ -527,7 +527,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wish")]
         [System.Text.Json.Serialization.JsonPropertyName("wish")]
-        public string Wishing { get; set; } = default!;
+        public string? Wishing { get; set; }
 
         /// <summary>
         /// 获取或设置总个数。
@@ -567,7 +567,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("topic")]
         [System.Text.Json.Serialization.JsonPropertyName("topic")]
-        public string Topic { get; set; } = default!;
+        public string? Topic { get; set; }
 
         /// <summary>
         /// 获取或设置会议开始时间戳。
@@ -588,14 +588,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public string Address { get; set; } = default!;
+        public string? Address { get; set; }
 
         /// <summary>
         /// 获取或设置备注信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("remarks")]
         [System.Text.Json.Serialization.JsonPropertyName("remarks")]
-        public string Remark { get; set; } = default!;
+        public string? Remark { get; set; }
 
         /// <summary>
         /// 获取或设置会议邀请处理状态。
@@ -612,21 +612,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置文档链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link_url")]
         [System.Text.Json.Serialization.JsonPropertyName("link_url")]
-        public string LinkUrl { get; set; } = default!;
+        public string? LinkUrl { get; set; }
 
         /// <summary>
         /// 获取或设置创建者 UserId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("doc_creator")]
         [System.Text.Json.Serialization.JsonPropertyName("doc_creator")]
-        public string CreatorUserId { get; set; } = default!;
+        public string? CreatorUserId { get; set; }
     }
 
     public class InfoMessage : ChatMessageBase
@@ -640,21 +640,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = default!;
+                public string? Url { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息配图 URL。
@@ -701,7 +701,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.NewsItem[]? NewsItemList { get; set; }
+        public List<Types.NewsItem>? NewsItemList { get; set; }
 
         /// <summary>
         /// 获取或设置 VoIP 通话时长（单位：秒）。
@@ -748,14 +748,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置日程组织者名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("creatorname")]
         [System.Text.Json.Serialization.JsonPropertyName("creatorname")]
-        public string CreatorName { get; set; } = default!;
+        public string? CreatorName { get; set; }
 
         /// <summary>
         /// 获取或设置日程开始时间戳。
@@ -776,21 +776,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attendeename")]
         [System.Text.Json.Serialization.JsonPropertyName("attendeename")]
-        public string[] AttendeeNameList { get; set; } = default!;
+        public List<string>? AttendeeNameList { get; set; }
 
         /// <summary>
         /// 获取或设置日程地点。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("place")]
         [System.Text.Json.Serialization.JsonPropertyName("place")]
-        public string Place { get; set; } = default!;
+        public string? Place { get; set; }
 
         /// <summary>
         /// 获取或设置备注信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("remarks")]
         [System.Text.Json.Serialization.JsonPropertyName("remarks")]
-        public string Remark { get; set; } = default!;
+        public string? Remark { get; set; }
     }
 
     public class MixedMessage : ChatMessageBase
@@ -804,14 +804,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息内容 JSON 字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string ContentJson { get; set; } = default!;
+                public string? ContentJson { get; set; }
             }
         }
 
@@ -820,7 +820,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.Message[] MessageList { get; set; } = default!;
+        public List<Types.Message>? MessageList { get; set; }
     }
 
     public class MeetingVoiceCallMessage : ChatMessageBase
@@ -834,14 +834,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("filename")]
                 [System.Text.Json.Serialization.JsonPropertyName("filename")]
-                public string FileName { get; set; } = default!;
+                public string? FileName { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作者 UserId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("demooperator")]
                 [System.Text.Json.Serialization.JsonPropertyName("demooperator")]
-                public string OperatorUserId { get; set; } = default!;
+                public string? OperatorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置开始时间戳。
@@ -865,7 +865,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("share")]
                 [System.Text.Json.Serialization.JsonPropertyName("share")]
-                public string SharerUserId { get; set; } = default!;
+                public string? SharerUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置开始时间戳。
@@ -888,7 +888,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置音频结束时间戳。
@@ -902,14 +902,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("demofiledata")]
         [System.Text.Json.Serialization.JsonPropertyName("demofiledata")]
-        public Types.ShareFileData[]? ShareFileDataList { get; set; }
+        public List<Types.ShareFileData>? ShareFileDataList { get; set; }
 
         /// <summary>
         /// 获取或设置屏幕共享对象列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sharescreendata")]
         [System.Text.Json.Serialization.JsonPropertyName("sharescreendata")]
-        public Types.ShareScreenData[]? ShareScreenDataList { get; set; }
+        public List<Types.ShareScreenData>? ShareScreenDataList { get; set; }
     }
 
     public class VoIPDocumentShareMessage : ChatMessageBase
@@ -919,21 +919,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filename")]
         [System.Text.Json.Serialization.JsonPropertyName("filename")]
-        public string FileName { get; set; } = default!;
+        public string? FileName { get; set; }
 
         /// <summary>
         /// 获取或设置音频 FileId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sdkfileid")]
         [System.Text.Json.Serialization.JsonPropertyName("sdkfileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置音频文件 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("md5sum")]
         [System.Text.Json.Serialization.JsonPropertyName("md5sum")]
-        public string FileMD5 { get; set; } = default!;
+        public string? FileMD5 { get; set; }
 
         /// <summary>
         /// 获取或设置音频文件大小（单位：字节）。
@@ -961,13 +961,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sph_name")]
         [System.Text.Json.Serialization.JsonPropertyName("sph_name")]
-        public string ChannelsNickName { get; set; } = default!;
+        public string? ChannelsNickName { get; set; }
 
         /// <summary>
         /// 获取或设置消息描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feed_desc")]
         [System.Text.Json.Serialization.JsonPropertyName("feed_desc")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
     }
 }

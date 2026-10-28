@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_mchid")]
-        public string BrandMerchantId { get; set; } = default!;
+        public string? BrandMerchantId { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("AuthorizerAppid")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthorizerAppid")]
         [System.Xml.Serialization.XmlElement("AuthorizerAppid")]
-        public string AuthorizerAppId { get; set; } = default!;
+        public string? AuthorizerAppId { get; set; }
 
         /// <summary>
         /// 获取或设置预授权码。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("PreAuthCode")]
         [System.Text.Json.Serialization.JsonPropertyName("PreAuthCode")]
         [System.Xml.Serialization.XmlElement("PreAuthCode")]
-        public string PreAuthCode { get; set; } = default!;
+        public string? PreAuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置授权码。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("AuthorizationCode")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthorizationCode")]
         [System.Xml.Serialization.XmlElement("AuthorizationCode")]
-        public string AuthCode { get; set; } = default!;
+        public string? AuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置授权码过期时间戳。

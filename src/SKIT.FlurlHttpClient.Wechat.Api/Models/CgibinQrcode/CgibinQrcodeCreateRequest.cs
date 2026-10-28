@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/qrcode/create 接口的请求。</para>
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene")]
-                public Types.Scene Scene { get; set; } = new Types.Scene();
+                public Types.Scene? Scene { get; set; }
             }
         }
 
@@ -50,13 +50,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_name")]
         [System.Text.Json.Serialization.JsonPropertyName("action_name")]
-        public string ActionType { get; set; } = string.Empty;
+        public string? ActionType { get; set; }
 
         /// <summary>
         /// 获取或设置二维码详细信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_info")]
         [System.Text.Json.Serialization.JsonPropertyName("action_info")]
-        public Types.Action Action { get; set; } = new Types.Action();
+        public Types.Action? Action { get; set; }
     }
 }

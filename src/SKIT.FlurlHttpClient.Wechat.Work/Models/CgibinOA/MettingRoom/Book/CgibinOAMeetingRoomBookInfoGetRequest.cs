@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("booking_id")]
         [System.Text.Json.Serialization.JsonPropertyName("booking_id")]
-        public string BookingId { get; set; } = string.Empty;
+        public string? BookingId { get; set; }
     }
 }

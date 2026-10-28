@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/path/get 接口的响应。</para>
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("action_msg")]
                 [System.Text.Json.Serialization.JsonPropertyName("action_msg")]
-                public string ActionMessage { get; set; } = default!;
+                public string? ActionMessage { get; set; }
             }
         }
 
@@ -44,21 +44,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = default!;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置运单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = default!;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置轨迹节点列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path_item_list")]
         [System.Text.Json.Serialization.JsonPropertyName("path_item_list")]
-        public Types.PathItem[] PathItemList { get; set; } = default!;
+        public List<Types.PathItem>? PathItemList { get; set; }
 
         /// <summary>
         /// 获取或设置轨迹节点数量。

@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("audit_strategy")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_strategy")]
-        public Types.AuditStrategy AuditStrategy { get; set; } = default!;
+        public Types.AuditStrategy? AuditStrategy { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "contracts", request.ContractId, "notify");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "contracts", request.ContractId!, "notify");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePAPayContractNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "contracts", request.ContractId, "fail-notify");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "contracts", request.ContractId!, "fail-notify");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePAPayContractFailedNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PolicyPeriodId, "policy_period_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-pay", "policy-periods", "contract-id", request.ContractId, "policy-period-id", request.PolicyPeriodId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-pay", "policy-periods", "contract-id", request.ContractId!, "policy-period-id", request.PolicyPeriodId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPAPayInsurancePayPolicyPeriodByPolicyPeriodIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PolicyPeriodId, "policy_period_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-pay", "policy-periods", "contract-id", request.ContractId, "policy-period-id", request.PolicyPeriodId, "schedule");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-pay", "policy-periods", "contract-id", request.ContractId!, "policy-period-id", request.PolicyPeriodId, "schedule");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePAPayInsurancePayPolicyPeriodScheduleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -201,7 +201,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode);
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPAPayInsuranceSignContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -226,7 +226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminatePAPayInsuranceSignContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -251,7 +251,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-sign", "policy_periods", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode)
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-sign", "policy_periods", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode!)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
@@ -278,7 +278,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "contract-id", request.ContractId, "renew");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "contract-id", request.ContractId!, "renew");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RenewPAPayInsuranceSignContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -328,7 +328,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "pay", "schedules", "contract-id", request.ContractId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "pay", "schedules", "contract-id", request.ContractId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPAPayPaySchedulesContractByContractIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -352,7 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ContractId, "contract_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "pay", "schedules", "contract-id", request.ContractId, "schedule");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "pay", "schedules", "contract-id", request.ContractId!, "schedule");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePAPayPaySchedulesContractScheduleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -515,7 +515,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode);
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPAPaySignContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -540,7 +540,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutContractCode, "out_contract_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminatePAPaySignContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

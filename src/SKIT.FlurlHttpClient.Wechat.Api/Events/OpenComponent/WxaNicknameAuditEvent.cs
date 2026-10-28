@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
         [System.Xml.Serialization.XmlElement("nickname")]
-        public string Nickname { get; set; } = default!;
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置审核状态。

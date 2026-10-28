@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_url")]
         [System.Text.Json.Serialization.JsonPropertyName("page_url")]
-        public string PagePath { get; set; } = string.Empty;
+        public string? PagePath { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_title")]
         [System.Text.Json.Serialization.JsonPropertyName("page_title")]
-        public string PageTitle { get; set; } = string.Empty;
+        public string? PageTitle { get; set; }
 
         /// <summary>
         /// 获取或设置是否永久有效。

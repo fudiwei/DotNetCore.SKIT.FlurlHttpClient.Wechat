@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("user_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                                public new Types.User[] UserList { get; set; } = default!;
+                                public new List<Types.User>? UserList { get; set; }
                             }
                         }
 
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_seat_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_seat_list")]
-                        public new Types.UserSeat[] UserSeatList { get; set; } = default!;
+                        public new List<Types.UserSeat>? UserSeatList { get; set; }
                     }
                 }
 
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_list")]
-                public new Types.Page[] PageList { get; set; } = default!;
+                public new List<Types.Page>? PageList { get; set; }
             }
         }
 
@@ -67,6 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("layout_list")]
         [System.Text.Json.Serialization.JsonPropertyName("layout_list")]
-        public Types.Layout[] LayoutList { get; set; } = default!;
+        public List<Types.Layout>? LayoutList { get; set; }
     }
 }

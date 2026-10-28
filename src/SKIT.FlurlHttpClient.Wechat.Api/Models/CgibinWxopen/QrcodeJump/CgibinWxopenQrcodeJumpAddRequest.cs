@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prefix")]
         [System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public string Prefix { get; set; } = string.Empty;
+        public string? Prefix { get; set; }
 
         /// <summary>
         /// 获取或设置符合独占规则。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string MiniProgramPagePath { get; set; } = string.Empty;
+        public string? MiniProgramPagePath { get; set; }
 
         /// <summary>
         /// 获取或设置测试范围。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("debug_url")]
         [System.Text.Json.Serialization.JsonPropertyName("debug_url")]
-        public IList<string>? DebugUrlList { get; set; }
+        public List<string>? DebugUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置是否是编辑已有二维码规则。

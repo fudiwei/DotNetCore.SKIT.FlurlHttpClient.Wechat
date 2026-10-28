@@ -14,42 +14,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_no")]
-                public string OrderNumber { get; set; } = default!;
+                public string? OrderNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置保单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("policy_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("policy_no")]
-                public string PolicyNumber { get; set; } = default!;
+                public string? PolicyNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置理赔报案号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("report_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("report_no")]
-                public string ReportNumber { get; set; } = default!;
+                public string? ReportNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置发货运单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_no")]
-                public string DeliveryNumber { get; set; } = default!;
+                public string? DeliveryNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款运单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_delivery_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_delivery_no")]
-                public string RefundDeliveryNumber { get; set; } = default!;
+                public string? RefundDeliveryNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置保单截止日期时间戳（单位：yyyy-MM-dd）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("insurance_end_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("insurance_end_date")]
-                public string InsuranceEndDateString { get; set; } = default!;
+                public string? InsuranceEndDateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置预估理赔金额（单位：分）。
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Order[] OrderList { get; set; } = default!;
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

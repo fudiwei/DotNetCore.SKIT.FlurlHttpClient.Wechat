@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prepare_card_token")]
         [System.Text.Json.Serialization.JsonPropertyName("prepare_card_token")]
-        public string PrepareCardToken { get; set; } = default!;
+        public string? PrepareCardToken { get; set; }
     }
 }

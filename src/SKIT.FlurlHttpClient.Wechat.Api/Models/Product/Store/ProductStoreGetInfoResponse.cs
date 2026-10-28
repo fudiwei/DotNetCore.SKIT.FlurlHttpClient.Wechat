@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/store/get_info 接口的响应。</para>
@@ -21,14 +21,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_name")]
-                public string StoreName { get; set; } = default!;
+                public string? StoreName { get; set; }
 
                 /// <summary>
                 /// 获取或设置店铺头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("logo")]
                 [System.Text.Json.Serialization.JsonPropertyName("logo")]
-                public string LogoUrl { get; set; } = default!;
+                public string? LogoUrl { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Store Store { get; set; } = default!;
+        public Types.Store? Store { get; set; }
     }
 }

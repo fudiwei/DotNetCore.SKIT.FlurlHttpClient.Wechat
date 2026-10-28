@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mediaid")]
         [System.Text.Json.Serialization.JsonPropertyName("mediaid")]
-        public string MediaId { get; set; } = default!;
+        public string? MediaId { get; set; }
     }
 }

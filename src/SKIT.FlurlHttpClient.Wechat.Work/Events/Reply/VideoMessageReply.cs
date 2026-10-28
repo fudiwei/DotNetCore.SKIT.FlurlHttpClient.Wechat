@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("MediaId")]
                 [System.Text.Json.Serialization.JsonPropertyName("MediaId")]
                 [System.Xml.Serialization.XmlElement("MediaId")]
-                public string MediaId { get; set; } = string.Empty;
+                public string? MediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频标题。
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("Title")]
                 [System.Text.Json.Serialization.JsonPropertyName("Title")]
                 [System.Xml.Serialization.XmlElement("Title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频描述。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("Description")]
                 [System.Text.Json.Serialization.JsonPropertyName("Description")]
                 [System.Xml.Serialization.XmlElement("Description")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
             }
         }
 
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Video")]
         [System.Text.Json.Serialization.JsonPropertyName("Video")]
         [System.Xml.Serialization.XmlElement("Video")]
-        public Types.Video Video { get; set; } = new Types.Video();
+        public Types.Video Video { get; set; }
 
         public VideoMessageReply()
         {

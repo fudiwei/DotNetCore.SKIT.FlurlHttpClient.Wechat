@@ -41,42 +41,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rooms_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("rooms_id")]
-                public string RoomsId { get; set; } = default!;
+                public string? RoomsId { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_room_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_room_id")]
-                public string MeetingRoomId { get; set; } = default!;
+                public string? MeetingRoomId { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_room_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_room_name")]
-                public string MeetingRoomName { get; set; } = default!;
+                public string? MeetingRoomName { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_room_location")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_room_location")]
-                public string MeetingRoomLocation { get; set; } = default!;
+                public string? MeetingRoomLocation { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备型号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_model")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_model")]
-                public string DeviceModel { get; set; } = default!;
+                public string? DeviceModel { get; set; }
 
                 /// <summary>
                 /// 获取或设置应用版本。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("app_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("app_version")]
-                public string AppVersion { get; set; } = default!;
+                public string? AppVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室状态。
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("device_monitor_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("device_monitor_info")]
-                public Types.MonitorInfo MonitorInfo { get; set; } = default!;
+                public Types.MonitorInfo? MonitorInfo { get; set; }
             }
         }
 
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_info_list")]
-        public Types.Device[] DeviceList { get; set; } = default!;
+        public List<Types.Device>? DeviceList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

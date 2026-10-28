@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("journaluuid")]
         [System.Text.Json.Serialization.JsonPropertyName("journaluuid")]
-        public string JournalId { get; set; } = string.Empty;
+        public string? JournalId { get; set; }
     }
 }

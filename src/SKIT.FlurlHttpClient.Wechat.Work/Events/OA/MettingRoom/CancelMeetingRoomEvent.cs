@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("MeetingId")]
         [System.Text.Json.Serialization.JsonPropertyName("MeetingId")]
         [System.Xml.Serialization.XmlElement("MeetingId")]
-        public string MeetingId { get; set; } = default!;
+        public string? MeetingId { get; set; }
     }
 }

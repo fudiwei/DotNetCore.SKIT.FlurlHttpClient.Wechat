@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cgi_path")]
         [System.Text.Json.Serialization.JsonPropertyName("cgi_path")]
-        public string CgiPath { get; set; } = string.Empty;
+        public string? CgiPath { get; set; }
     }
 }

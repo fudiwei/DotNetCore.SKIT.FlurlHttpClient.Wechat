@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("word")]
         [System.Text.Json.Serialization.JsonPropertyName("word")]
-        public string Word { get; set; } = string.Empty;
+        public string? Word { get; set; }
     }
 }

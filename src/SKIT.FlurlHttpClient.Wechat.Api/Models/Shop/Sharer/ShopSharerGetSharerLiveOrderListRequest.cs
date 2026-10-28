@@ -10,17 +10,18 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置直播间 ExportId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_export_id")]
         [System.Text.Json.Serialization.JsonPropertyName("live_export_id")]
-        public string LiveExportId { get; set; } = string.Empty;
+        public string? LiveExportId { get; set; }
 
         /// <summary>
-        /// 获取或设置分页页数（从 1 开始）。
+        /// 获取或设置分页页数。
+        /// <para>默认值：1</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page")]
         [System.Text.Json.Serialization.JsonPropertyName("page")]
@@ -28,6 +29,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_size")]
         [System.Text.Json.Serialization.JsonPropertyName("page_size")]

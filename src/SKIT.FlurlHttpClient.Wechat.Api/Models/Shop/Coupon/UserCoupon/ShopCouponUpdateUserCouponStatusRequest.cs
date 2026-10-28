@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置商家侧用户优惠券 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_user_coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_user_coupon_id")]
-        public string OutUserCouponId { get; set; } = string.Empty;
+        public string? OutUserCouponId { get; set; }
 
         /// <summary>
         /// 获取或设置商家侧优惠券 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
-        public string OutCouponId { get; set; } = string.Empty;
+        public string? OutCouponId { get; set; }
 
         /// <summary>
         /// 获取或设置用户优惠券状态。

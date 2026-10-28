@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string PromoterOpenId { get; set; } = string.Empty;
+        public string? PromoterOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置触达场景值。

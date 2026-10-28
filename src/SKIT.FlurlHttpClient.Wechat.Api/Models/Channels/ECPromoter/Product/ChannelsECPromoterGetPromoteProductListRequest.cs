@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flags")]
                 [System.Text.Json.Serialization.JsonPropertyName("flags")]
-                public IList<string>? FlagList { get; set; }
+                public List<string>? FlagList { get; set; }
             }
 
             public class Category
@@ -93,21 +93,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_ids_1")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_ids_1")]
-                public IList<long>? Category1stIdList { get; set; }
+                public List<long>? Category1stIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_ids_2")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_ids_2")]
-                public IList<long>? Category2ndIdList { get; set; }
+                public List<long>? Category2ndIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置三级类目 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("category_ids_3")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_ids_3")]
-                public IList<long>? Category3rdIdList { get; set; }
+                public List<long>? Category3rdIdList { get; set; }
             }
         }
 

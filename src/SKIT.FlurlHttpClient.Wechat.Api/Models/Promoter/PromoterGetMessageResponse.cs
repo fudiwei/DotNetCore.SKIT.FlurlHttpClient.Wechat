@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public string PromoterId { get; set; } = default!;
+                public string? PromoterId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_info")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_info")]
-        public Types.Failure[]? FailureList { get; set; }
+        public List<Types.Failure>? FailureList { get; set; }
 
         /// <summary>
         /// 获取或设置失败信息文件下载链接。
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string ContentJson { get; set; } = default!;
+        public string? ContentJson { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。
@@ -100,20 +100,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("role_id")]
         [System.Text.Json.Serialization.JsonPropertyName("role_id")]
-        public int[]? RoleIdList { get; set; }
+        public List<int>? RoleIdList { get; set; }
 
         /// <summary>
         /// 获取或设置门店 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("retail_id")]
         [System.Text.Json.Serialization.JsonPropertyName("retail_id")]
-        public string[]? RetailIdList { get; set; }
+        public List<string>? RetailIdList { get; set; }
 
         /// <summary>
         /// 获取或设置推广员 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id")]
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string[]? PromoterIdList { get; set; }
+        public List<string>? PromoterIdList { get; set; }
     }
 }

@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("province")]
                 [System.Text.Json.Serialization.JsonPropertyName("province")]
-                public string Province { get; set; } = string.Empty;
+                public string? Province { get; set; }
 
                 /// <summary>
                 /// 获取或设置城市。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("city")]
                 [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public string City { get; set; } = string.Empty;
+                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置区县。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("county")]
                 [System.Text.Json.Serialization.JsonPropertyName("county")]
-                public string District { get; set; } = string.Empty;
+                public string? District { get; set; }
 
                 /// <summary>
                 /// 获取或设置详细地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address")]
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
-                public string DetailAddress { get; set; } = string.Empty;
+                public string? DetailAddress { get; set; }
             }
         }
 
@@ -44,14 +44,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("order_no")]
-        public string OrderNumber { get; set; } = string.Empty;
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置支付时间戳。
@@ -72,20 +72,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_no")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_no")]
-        public string DeliveryNumber { get; set; } = string.Empty;
+        public string? DeliveryNumber { get; set; }
 
         /// <summary>
         /// 获取或设置发货地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_place")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_place")]
-        public Types.Address DeliveryAddress { get; set; } = new Types.Address();
+        public Types.Address? DeliveryAddress { get; set; }
 
         /// <summary>
         /// 获取或设置收货地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receipt_place")]
         [System.Text.Json.Serialization.JsonPropertyName("receipt_place")]
-        public Types.Address ReceiptAddress { get; set; } = new Types.Address();
+        public Types.Address? ReceiptAddress { get; set; }
     }
 }

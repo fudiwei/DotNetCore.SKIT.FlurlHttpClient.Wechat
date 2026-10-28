@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("out_coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
         [System.Xml.Serialization.XmlElement("out_coupon_id")]
-        public string OutCouponId { get; set; } = default!;
+        public string? OutCouponId { get; set; }
 
         /// <summary>
         /// 获取或设置请求唯一标识。
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("request_id")]
         [System.Text.Json.Serialization.JsonPropertyName("request_id")]
         [System.Xml.Serialization.XmlElement("request_id")]
-        public string RequestId { get; set; } = default!;
+        public string? RequestId { get; set; }
     }
 }

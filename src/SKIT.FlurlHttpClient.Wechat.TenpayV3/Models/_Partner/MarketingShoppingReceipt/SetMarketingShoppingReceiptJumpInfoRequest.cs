@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_appid")]
-                public string MiniProgramAppId { get; set; } = string.Empty;
+                public string? MiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_path")]
-                public string MiniProgramPagePath { get; set; } = string.Empty;
+                public string? MiniProgramPagePath { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = string.Empty;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付商户号。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置上传时间。
@@ -67,6 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jump_info")]
         [System.Text.Json.Serialization.JsonPropertyName("jump_info")]
-        public Types.JumpInfo JumpInfo { get; set; } = new Types.JumpInfo();
+        public Types.JumpInfo? JumpInfo { get; set; }
     }
 }

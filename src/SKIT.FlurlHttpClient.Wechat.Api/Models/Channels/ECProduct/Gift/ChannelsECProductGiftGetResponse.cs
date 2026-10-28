@@ -90,35 +90,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置主图 URL 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_imgs")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_imgs")]
-                public string[] HeadImageUrlList { get; set; } = default!;
+                public List<string>? HeadImageUrlList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品详情信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("desc_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("desc_info")]
-                public Types.Detail Detail { get; set; } = default!;
+                public Types.Detail? Detail { get; set; }
 
                 /// <summary>
                 /// 获取或设置新版商品类目列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cats_v2")]
                 [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
-                public Types.Category[]? CategoryV2List { get; set; }
+                public List<Types.Category>? CategoryV2List { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品属性列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attrs")]
                 [System.Text.Json.Serialization.JsonPropertyName("attrs")]
-                public Types.Attribute[]? AttributeList { get; set; }
+                public List<Types.Attribute>? AttributeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品编码。
@@ -154,7 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("skus")]
                 [System.Text.Json.Serialization.JsonPropertyName("skus")]
-                public Types.SKU[]? SKUList { get; set; }
+                public List<Types.SKU>? SKUList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品类型。

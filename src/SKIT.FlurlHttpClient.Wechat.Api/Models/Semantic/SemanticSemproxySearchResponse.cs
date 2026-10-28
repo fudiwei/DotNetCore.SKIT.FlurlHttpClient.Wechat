@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置日期字符串（格式：yyyy-MM-dd）。
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置国家。
@@ -161,7 +161,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("loc_ori")]
                 [System.Text.Json.Serialization.JsonPropertyName("loc_ori")]
-                public string LocationOriginal { get; set; } = default!;
+                public string? LocationOriginal { get; set; }
             }
 
             public class Number
@@ -171,21 +171,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置开始值字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("begin")]
                 [System.Text.Json.Serialization.JsonPropertyName("begin")]
-                public string BeginString { get; set; } = default!;
+                public string? BeginString { get; set; }
 
                 /// <summary>
                 /// 获取或设置结束值字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("end")]
                 [System.Text.Json.Serialization.JsonPropertyName("end")]
-                public string EndString { get; set; } = default!;
+                public string? EndString { get; set; }
             }
 
             public class RestaurantDetail : IDetail
@@ -1213,14 +1213,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("details")]
                 [System.Text.Json.Serialization.JsonPropertyName("details")]
-                public D Detail { get; set; } = default!;
+                public D? Detail { get; set; }
 
                 /// <summary>
                 /// 获取或设置语义意图。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("intent")]
                 [System.Text.Json.Serialization.JsonPropertyName("intent")]
-                public string Intent { get; set; } = default!;
+                public string? Intent { get; set; }
             }
         }
 
@@ -1229,14 +1229,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query")]
         [System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string Query { get; set; } = default!;
+        public string? Query { get; set; }
 
         /// <summary>
         /// 获取或设置服务的全局类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = default!;
+        public string? Type { get; set; }
     }
 
     /// <summary>
@@ -1250,6 +1250,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("semantic")]
         [System.Text.Json.Serialization.JsonPropertyName("semantic")]
-        public Types.Semantic<T> Semantic { get; set; } = default!;
+        public Types.Semantic<T>? Semantic { get; set; }
     }
 }

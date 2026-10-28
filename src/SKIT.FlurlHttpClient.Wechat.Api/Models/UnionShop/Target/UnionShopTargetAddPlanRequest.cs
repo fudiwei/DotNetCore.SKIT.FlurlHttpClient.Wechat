@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planName")]
                 [System.Text.Json.Serialization.JsonPropertyName("planName")]
-                public string PlanName { get; set; } = string.Empty;
+                public string? PlanName { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planDesc")]
                 [System.Text.Json.Serialization.JsonPropertyName("planDesc")]
-                public string Description { get; set; } = string.Empty;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划开始时间戳。
@@ -61,13 +61,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("planItem")]
         [System.Text.Json.Serialization.JsonPropertyName("planItem")]
-        public Types.Plan Plan { get; set; } = new Types.Plan();
+        public Types.Plan? Plan { get; set; }
 
         /// <summary>
         /// 获取或设置商品列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("productList")]
         [System.Text.Json.Serialization.JsonPropertyName("productList")]
-        public IList<Types.Product> ProductList { get; set; } = new List<Types.Product>();
+        public List<Types.Product>? ProductList { get; set; }
     }
 }

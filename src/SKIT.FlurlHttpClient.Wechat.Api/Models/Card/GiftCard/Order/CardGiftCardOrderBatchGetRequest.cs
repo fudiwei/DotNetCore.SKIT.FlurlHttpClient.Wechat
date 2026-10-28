@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sort_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sort_type")]
-        public string SortType { get; set; } = "ASC";
+        public string? SortType { get; set; } = "ASC";
 
         /// <summary>
         /// 获取或设置分页起始位置。
@@ -36,6 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("count")]
         [System.Text.Json.Serialization.JsonPropertyName("count")]

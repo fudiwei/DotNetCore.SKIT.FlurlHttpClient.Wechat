@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址行政编码。
@@ -37,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("addrs_msg")]
         [System.Text.Json.Serialization.JsonPropertyName("addrs_msg")]
-        public Types.AddressInfo AddressInfo { get; set; } = default!;
+        public Types.AddressInfo? AddressInfo { get; set; }
 
         /// <summary>
         /// 获取或设置下一级地址列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_level_addrs")]
         [System.Text.Json.Serialization.JsonPropertyName("next_level_addrs")]
-        public Types.AddressInfo[]? NextLevelAddressList { get; set; }
+        public List<Types.AddressInfo>? NextLevelAddressList { get; set; }
     }
 }

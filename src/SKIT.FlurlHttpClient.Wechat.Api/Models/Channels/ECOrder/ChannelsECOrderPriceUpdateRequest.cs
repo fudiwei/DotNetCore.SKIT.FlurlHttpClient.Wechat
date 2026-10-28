@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置是否修改运费。
@@ -58,6 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("change_order_infos")]
         [System.Text.Json.Serialization.JsonPropertyName("change_order_infos")]
-        public IList<Types.Product>? ProductList { get; set; }
+        public List<Types.Product>? ProductList { get; set; }
     }
 }

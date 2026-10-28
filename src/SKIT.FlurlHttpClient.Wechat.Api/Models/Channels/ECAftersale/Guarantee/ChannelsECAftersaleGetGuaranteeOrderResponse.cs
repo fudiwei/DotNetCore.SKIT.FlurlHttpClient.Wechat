@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guarantee_order")]
         [System.Text.Json.Serialization.JsonPropertyName("guarantee_order")]
-        public Types.GuaranteeOrder GuaranteeOrder { get; set; } = default!;
+        public Types.GuaranteeOrder? GuaranteeOrder { get; set; }
     }
 }

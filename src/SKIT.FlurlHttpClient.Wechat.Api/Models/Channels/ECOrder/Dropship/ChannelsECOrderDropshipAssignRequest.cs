@@ -41,20 +41,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置供货商 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("supplier_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("supplier_appid")]
-        public string SupplierAppId { get; set; } = string.Empty;
+        public string? SupplierAppId { get; set; }
 
         /// <summary>
         /// 获取或设置代发商品列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("dropship_product_list")]
         [System.Text.Json.Serialization.JsonPropertyName("dropship_product_list")]
-        public IList<Types.DropshipProduct> DropshipProductList { get; set; } = new List<Types.DropshipProduct>();
+        public List<Types.DropshipProduct>? DropshipProductList { get; set; }
     }
 }

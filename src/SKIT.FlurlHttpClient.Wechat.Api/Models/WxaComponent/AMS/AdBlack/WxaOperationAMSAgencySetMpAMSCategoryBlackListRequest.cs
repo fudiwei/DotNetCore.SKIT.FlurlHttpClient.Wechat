@@ -12,6 +12,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("ams_category")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithPipeSplitConverter))]
-        public IList<string> AMSCategoryList { get; set; } = new List<string>();
+        public List<string>? AMSCategoryList { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置自动回复内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
             }
 
             public class KeywordAutoReplyRuleList
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public KeywordAutoReplyRule[] Items { get; set; } = default!;
+                public List<KeywordAutoReplyRule>? Items { get; set; }
             }
 
             public class KeywordAutoReplyRule
@@ -45,21 +45,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("match_mode")]
                         [System.Text.Json.Serialization.JsonPropertyName("match_mode")]
-                        public string MatchMode { get; set; } = default!;
+                        public string? MatchMode { get; set; }
 
                         /// <summary>
                         /// 获取或设置关键词类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置关键词内容。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content")]
                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string Content { get; set; } = default!;
+                        public string? Content { get; set; }
                     }
 
                     public class Reply
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                public NewsItem[] List { get; set; } = default!;
+                                public List<NewsItem>? List { get; set; }
                             }
 
                             public class NewsItem : CgibinGetCurrentSelfMenuInfoResponse.Types.Menu.Types.Button.Types.NewsItem
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置回复内容。
@@ -109,14 +109,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rule_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("rule_name")]
-                public string RuleName { get; set; } = default!;
+                public string? RuleName { get; set; }
 
                 /// <summary>
                 /// 获取或设置回复模式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reply_mode")]
                 [System.Text.Json.Serialization.JsonPropertyName("reply_mode")]
-                public string ReplyMode { get; set; } = default!;
+                public string? ReplyMode { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -130,14 +130,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("keyword_list_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("keyword_list_info")]
-                public Types.Keyword[] KeywordList { get; set; } = default!;
+                public List<Types.Keyword>? KeywordList { get; set; }
 
                 /// <summary>
                 /// 获取或设置自动回复列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reply_list_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("reply_list_info")]
-                public Types.Reply[] ReplyList { get; set; } = default!;
+                public List<Types.Reply>? ReplyList { get; set; }
             }
         }
 
@@ -178,6 +178,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keyword_autoreply_info")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword_autoreply_info")]
-        public Types.KeywordAutoReplyRuleList? KeywordAutoReplyRuleList { get; set; } = default!;
+        public Types.KeywordAutoReplyRuleList? KeywordAutoReplyRuleList { get; set; }
     }
 }

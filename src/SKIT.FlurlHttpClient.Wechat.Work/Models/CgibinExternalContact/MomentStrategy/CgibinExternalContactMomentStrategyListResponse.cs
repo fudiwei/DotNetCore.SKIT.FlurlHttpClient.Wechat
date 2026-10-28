@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/moment_strategy/list 接口的响应。</para>
@@ -23,7 +23,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("strategy")]
         [System.Text.Json.Serialization.JsonPropertyName("strategy")]
-        public Types.Strategy[] StrategyList { get; set; } = default!;
+        public List<Types.Strategy>? StrategyList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

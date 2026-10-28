@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corp_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
             }
 
             public class AuthorizerCorp : DealerCorp
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("name_list")]
-                        public string[]? NameList { get; set; } = default!;
+                        public List<string>? NameList { get; set; }
                     }
                 }
 
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corp_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业方形头像 URL。
@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corp_ex_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_ex_name")]
-                public Types.CorpExtraName? CorpExtraName { get; set; } = default!;
+                public Types.CorpExtraName? CorpExtraName { get; set; }
             }
 
             public class Authorization
@@ -153,42 +153,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_user")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_user")]
-                                public string[]? AllowedUserIdList { get; set; }
+                                public List<string>? AllowedUserIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置可见部门 ID 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_party")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_party")]
-                                public long[]? AllowedDepartmentIdList { get; set; }
+                                public List<long>? AllowedDepartmentIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置可见标签 ID 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_tag")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_tag")]
-                                public int[]? AllowedTagIdList { get; set; }
+                                public List<int>? AllowedTagIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置额外成员账号列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("extra_user")]
                                 [System.Text.Json.Serialization.JsonPropertyName("extra_user")]
-                                public string[]? ExtraUserIdList { get; set; }
+                                public List<string>? ExtraUserIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置额外部门 ID 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("extra_party")]
                                 [System.Text.Json.Serialization.JsonPropertyName("extra_party")]
-                                public long[]? ExtraDepartmentIdList { get; set; }
+                                public List<long>? ExtraDepartmentIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置额外标签 ID 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("extra_tag")]
                                 [System.Text.Json.Serialization.JsonPropertyName("extra_tag")]
-                                public int[]? ExtraTagIdList { get; set; }
+                                public List<int>? ExtraTagIdList { get; set; }
                             }
 
                             public class SharedFrom
@@ -214,21 +214,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置应用方形头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("square_logo_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("square_logo_url")]
-                        public string SquareLogoUrl { get; set; } = default!;
+                        public string? SquareLogoUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置应用圆形头像 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("round_logo_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("round_logo_url")]
-                        public string RoundLogoUrl { get; set; } = default!;
+                        public string? RoundLogoUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置第三方套件应用 AppId。
@@ -250,7 +250,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("privilege")]
                         [System.Text.Json.Serialization.JsonPropertyName("privilege")]
-                        public Types.Privilege Privilege { get; set; } = default!;
+                        public Types.Privilege? Privilege { get; set; }
 
                         /// <summary>
                         /// 获取或设置共享了应用的互联企业信息。
@@ -266,7 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("agent")]
                 [System.Text.Json.Serialization.JsonPropertyName("agent")]
-                public Types.Agent[] AgentList { get; set; } = default!;
+                public List<Types.Agent>? AgentList { get; set; }
             }
 
             public class Edition : CgibinServiceGetPermanentCodeResponse.Types.Edition

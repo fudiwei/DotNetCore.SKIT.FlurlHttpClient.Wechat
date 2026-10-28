@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_no")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_no")]
-        public string PolicyNumber { get; set; } = default!;
+        public string? PolicyNumber { get; set; }
 
         /// <summary>
         /// 获取或设置保单截止日期时间戳（单位：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insurance_end_date")]
         [System.Text.Json.Serialization.JsonPropertyName("insurance_end_date")]
-        public string InsuranceEndDateString { get; set; } = default!;
+        public string? InsuranceEndDateString { get; set; }
 
         /// <summary>
         /// 获取或设置预估理赔金额（单位：分）。

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content")]
                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string Content { get; set; } = default!;
+                        public string? Content { get; set; }
                     }
 
                     public class Image
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = default!;
+                        public string? MediaId { get; set; }
                     }
 
                     public class Video
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = default!;
+                        public string? MediaId { get; set; }
 
                         /// <summary>
                         /// 获取或设置视频封面 MediaId。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = default!;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置网页标题。
@@ -95,14 +95,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("moment_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("moment_id")]
-                public string MomentId { get; set; } = default!;
+                public string? MomentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建者的成员账号或外部联系人账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("creator")]
                 [System.Text.Json.Serialization.JsonPropertyName("creator")]
-                public string CreatorUserId { get; set; } = default!;
+                public string? CreatorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建类型。
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image")]
                 [System.Text.Json.Serialization.JsonPropertyName("image")]
-                public Types.Image[]? ImageList { get; set; }
+                public List<Types.Image>? ImageList { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频消息信息。
@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("moment_list")]
         [System.Text.Json.Serialization.JsonPropertyName("moment_list")]
-        public Types.Moment[] MomentList { get; set; } = default!;
+        public List<Types.Moment>? MomentList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

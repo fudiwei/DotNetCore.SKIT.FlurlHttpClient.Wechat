@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/getpressuretestreport 接口的响应。</para>
@@ -31,7 +31,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("path")]
                         [System.Text.Json.Serialization.JsonPropertyName("path")]
-                        public string Path { get; set; } = default!;
+                        public string? Path { get; set; }
 
                         /// <summary>
                         /// 获取或设置请求平均耗时（单位：毫秒）。
@@ -66,7 +66,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("top_time_cost_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("top_time_cost_list")]
-                        public Types.TopTimeCost[] TopTimeCostList { get; set; } = default!;
+                        public List<Types.TopTimeCost>? TopTimeCostList { get; set; }
 
                         /// <summary>
                         /// 获取或设置超过 800ms 的请求数量。
@@ -89,14 +89,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("task_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("task_url")]
-                public string TaskPagePath { get; set; } = default!;
+                public string? TaskPagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置压测时间（单位：秒）。
@@ -145,7 +145,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("network_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("network_list")]
-                public Types.Network[]? NetworkList { get; set; }
+                public List<Types.Network>? NetworkList { get; set; }
             }
         }
 
@@ -154,6 +154,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("report")]
         [System.Text.Json.Serialization.JsonPropertyName("report")]
-        public Types.Report Report { get; set; } = default!;
+        public Types.Report? Report { get; set; }
     }
 }

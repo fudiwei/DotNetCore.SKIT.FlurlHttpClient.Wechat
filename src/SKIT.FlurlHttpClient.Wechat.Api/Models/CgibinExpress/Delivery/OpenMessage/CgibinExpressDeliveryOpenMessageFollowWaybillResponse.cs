@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_token")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_token")]
-        public string WaybillToken { get; set; } = default!;
+        public string? WaybillToken { get; set; }
     }
 }

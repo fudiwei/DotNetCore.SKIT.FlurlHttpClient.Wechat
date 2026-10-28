@@ -254,7 +254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.BusinessCode, "business_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "card", "card-links", "business-code", request.BusinessCode)
+                .CreateFlurlRequest(request, HttpMethod.Get, "brand", "card", "card-links", "business-code", request.BusinessCode!)
                 .SetQueryParam("brand_id", request.BrandId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBrandCardLinkByBusinessCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

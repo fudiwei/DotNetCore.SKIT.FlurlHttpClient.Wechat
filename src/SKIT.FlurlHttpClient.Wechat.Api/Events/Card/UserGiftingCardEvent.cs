@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("CardId")]
         [System.Text.Json.Serialization.JsonPropertyName("CardId")]
         [System.Xml.Serialization.XmlElement("CardId")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置卡券 Code。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("UserCardCode")]
         [System.Text.Json.Serialization.JsonPropertyName("UserCardCode")]
         [System.Xml.Serialization.XmlElement("UserCardCode")]
-        public string CardCode { get; set; } = default!;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置接收卡券用户的 OpenId。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("FriendUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("FriendUserName")]
         [System.Xml.Serialization.XmlElement("FriendUserName")]
-        public string FriendOpenId { get; set; } = default!;
+        public string? FriendOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置是否转增退回。

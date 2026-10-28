@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("result_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("result_id")]
-                public string ResultId { get; set; } = default!;
+                public string? ResultId { get; set; }
 
                 /// <summary>
                 /// 获取或设置加密信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_encrypt_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_encrypt_info")]
-                public Types.ServiceEncryptInfo ServiceEncryptInfo { get; set; } = default!;
+                public Types.ServiceEncryptInfo? ServiceEncryptInfo { get; set; }
             }
 
             public class ItemResult
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -89,6 +89,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("analyze_result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("analyze_result_list")]
-        public Types.ItemResult[]? ItemResultList { get; set; }
+        public List<Types.ItemResult>? ItemResultList { get; set; }
     }
 }

@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ActionMsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("ActionMsg")]
                 [System.Xml.Serialization.XmlElement("ActionMsg")]
-                public string ActionMessage { get; set; } = default!;
+                public string? ActionMessage { get; set; }
             }
         }
 
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("DeliveryID")]
         [System.Text.Json.Serialization.JsonPropertyName("DeliveryID")]
         [System.Xml.Serialization.XmlElement("DeliveryID")]
-        public string DeliveryId { get; set; } = default!;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("OrderId")]
         [System.Xml.Serialization.XmlElement("OrderId")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置运单号。
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("WayBillId")]
         [System.Text.Json.Serialization.JsonPropertyName("WayBillId")]
         [System.Xml.Serialization.XmlElement("WayBillId")]
-        public string WaybillId { get; set; } = default!;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置轨迹版本号。
@@ -85,6 +85,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Actions")]
         [System.Text.Json.Serialization.JsonPropertyName("Actions")]
         [System.Xml.Serialization.XmlElement("Actions", Type = typeof(Types.Action))]
-        public Types.Action[] ActionList { get; set; } = default!;
+        public List<Types.Action>? ActionList { get; set; }
     }
 }

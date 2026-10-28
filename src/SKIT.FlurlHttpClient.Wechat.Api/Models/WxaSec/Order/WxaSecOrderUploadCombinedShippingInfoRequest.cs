@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-                public Types.OrderKey OrderKey { get; set; } = new Types.OrderKey();
+                public Types.OrderKey? OrderKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置物流形式。
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shipping_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("shipping_list")]
-                public IList<Types.Shipping> ShippingList { get; set; } = new List<Types.Shipping>();
+                public List<Types.Shipping>? ShippingList { get; set; }
 
             }
         }
@@ -84,21 +84,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_key")]
         [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-        public Types.OrderKey OrderKey { get; set; } = new Types.OrderKey();
+        public Types.OrderKey? OrderKey { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置子单信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+        public List<Types.SubOrder>? SubOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置上传时间。

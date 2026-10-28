@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("notice_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("notice_id")]
-                public string NoticeId { get; set; } = default!;
+                public string? NoticeId { get; set; }
 
                 /// <summary>
                 /// 获取或设置预约描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播开始时间戳。
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_notice_record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("live_notice_record_list")]
-        public Types.LiveNoticeRecord[] LiveNoticeRecordList { get; set; } = default!;
+        public List<Types.LiveNoticeRecord>? LiveNoticeRecordList { get; set; }
     }
 }

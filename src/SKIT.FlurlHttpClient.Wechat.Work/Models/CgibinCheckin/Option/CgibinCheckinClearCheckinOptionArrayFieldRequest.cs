@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("clear_field")]
         [System.Text.Json.Serialization.JsonPropertyName("clear_field")]
-        public IList<int> ClearFieldKeyList { get; set; } = new List<int>();
+        public List<int>? ClearFieldKeyList { get; set; }
 
         /// <summary>
         /// 获取或设置是否立即生效。

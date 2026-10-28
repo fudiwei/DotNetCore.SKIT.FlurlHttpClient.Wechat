@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置参与者临时 OpenId。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-        public Types.User[] UserList { get; set; } = default!;
+        public List<Types.User>? UserList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多。

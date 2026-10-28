@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string FunctionName { get; set; } = default!;
+                public string? FunctionName { get; set; }
 
                 /// <summary>
                 /// 获取或设置运行时。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("runtime")]
                 [System.Text.Json.Serialization.JsonPropertyName("runtime")]
-                public string Runtime { get; set; } = default!;
+                public string? Runtime { get; set; }
 
                 /// <summary>
                 /// 获取或设置函数状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置修改时间。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("functions")]
         [System.Text.Json.Serialization.JsonPropertyName("functions")]
-        public Types.Function[] FunctionList { get; set; } = default!;
+        public List<Types.Function>? FunctionList { get; set; }
 
         /// <summary>
         /// 获取或设置云函数总数量。

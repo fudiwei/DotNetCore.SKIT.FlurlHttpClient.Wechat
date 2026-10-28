@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("custom_entrance_type")]
         [System.Text.Json.Serialization.JsonPropertyName("custom_entrance_type")]
-        public string CustomEntranceType { get; set; } = default!;
+        public string? CustomEntranceType { get; set; }
 
         /// <summary>
         /// 获取或设置副标题。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("subtitle")]
         [System.Text.Json.Serialization.JsonPropertyName("subtitle")]
-        public string SubTitle { get; set; } = default!;
+        public string? SubTitle { get; set; }
 
         /// <summary>
         /// 获取或设置商品缩略图 URL。
@@ -56,28 +56,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("custom_entrance_state")]
         [System.Text.Json.Serialization.JsonPropertyName("custom_entrance_state")]
-        public string CustomEntranceState { get; set; } = default!;
+        public string? CustomEntranceState { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = default!;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置请求业务单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = default!;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置跳转信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jump_link")]
         [System.Text.Json.Serialization.JsonPropertyName("jump_link")]
-        public Types.JumpLink JumpLink { get; set; } = default!;
+        public Types.JumpLink? JumpLink { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/funds/getorderflow 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_flow")]
         [System.Text.Json.Serialization.JsonPropertyName("order_flow")]
-        public Types.OrderFlow OrderFlow { get; set; } = default!;
+        public Types.OrderFlow? OrderFlow { get; set; }
     }
 }

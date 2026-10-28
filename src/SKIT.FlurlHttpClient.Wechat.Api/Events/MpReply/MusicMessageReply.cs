@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("MusicUrl")]
                 [System.Text.Json.Serialization.JsonPropertyName("MusicUrl")]
                 [System.Xml.Serialization.XmlElement("MusicUrl")]
-                public string MusicUrl { get; set; } = default!;
+                public string? MusicUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置高质量音乐链接。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("ThumbMediaId")]
                 [System.Text.Json.Serialization.JsonPropertyName("ThumbMediaId")]
                 [System.Xml.Serialization.XmlElement("ThumbMediaId")]
-                public string ThumbMediaId { get; set; } = default!;
+                public string? ThumbMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置音乐标题。
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Title")]
                 [System.Text.Json.Serialization.JsonPropertyName("Title")]
                 [System.Xml.Serialization.XmlElement("Title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置音乐描述。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Description")]
                 [System.Text.Json.Serialization.JsonPropertyName("Description")]
                 [System.Xml.Serialization.XmlElement("Description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
         }
 
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Music")]
         [System.Text.Json.Serialization.JsonPropertyName("Music")]
         [System.Xml.Serialization.XmlElement("Music")]
-        public Types.Music Music { get; set; } = default!;
+        public Types.Music Music { get; set; }
 
         public MusicMessageReply()
         {

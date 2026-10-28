@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.AuthorizationCode, "authorization_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "payscore", "acquiringbank", "permissions", "authorization-code", request.AuthorizationCode)
+                .CreateFlurlRequest(request, HttpMethod.Get, "payscore", "acquiringbank", "permissions", "authorization-code", request.AuthorizationCode!)
                 .SetQueryParam("service_id", request.ServiceId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.AuthorizationCode, "authorization_code");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "permissions", "authorization-code", request.AuthorizationCode, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "permissions", "authorization-code", request.AuthorizationCode!, "terminate");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TerminatePayScoreAcquiringBankPermissionsByAuthorizationCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "cancel");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber!, "cancel");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CancelPayScoreAcquiringBankServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -194,7 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "modify");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber!, "modify");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ModifyPayScoreAcquiringBankServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -218,7 +218,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "complete");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber!, "complete");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CompletePayScoreAcquiringBankServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -242,7 +242,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "sync");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber!, "sync");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SyncPayScoreAcquiringBankServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -266,7 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.OutOrderNumber, "out_order_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "registerdeductinfo");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber!, "registerdeductinfo");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RegisterPayScoreAcquiringBankServiceOrderDeductionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

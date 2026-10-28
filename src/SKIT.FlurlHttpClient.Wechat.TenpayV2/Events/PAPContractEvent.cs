@@ -31,21 +31,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_code")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_code")]
-        public string ContractCode { get; set; } = default!;
+        public string? ContractCode { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_id")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-        public string ContractId { get; set; } = default!;
+        public string? ContractId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户在子商户下的 OpenId。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("change_type")]
         [System.Text.Json.Serialization.JsonPropertyName("change_type")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置请求序列号。

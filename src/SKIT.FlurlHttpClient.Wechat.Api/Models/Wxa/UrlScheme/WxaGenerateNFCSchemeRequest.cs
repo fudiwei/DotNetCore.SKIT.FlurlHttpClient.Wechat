@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jump_wxa")]
         [System.Text.Json.Serialization.JsonPropertyName("jump_wxa")]
-        public Types.MiniProgram MiniProgram { get; set; } = new Types.MiniProgram();
+        public Types.MiniProgram? MiniProgram { get; set; }
 
         /// <summary>
         /// 获取或设置设备 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_id")]
         [System.Text.Json.Serialization.JsonPropertyName("model_id")]
-        public string ModelId { get; set; } = string.Empty;
+        public string? ModelId { get; set; }
 
         /// <summary>
         /// 获取或设置设备序列号。

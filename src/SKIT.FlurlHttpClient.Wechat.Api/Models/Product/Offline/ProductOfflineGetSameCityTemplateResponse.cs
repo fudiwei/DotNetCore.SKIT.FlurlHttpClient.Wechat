@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/offline/get_same_city_template 接口的响应。</para>
@@ -69,7 +69,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置条件免运费信息。
@@ -134,7 +134,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置额外计费信息。
@@ -223,7 +223,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shipper")]
                 [System.Text.Json.Serialization.JsonPropertyName("shipper")]
-                public string Shipper { get; set; } = default!;
+                public string? Shipper { get; set; }
 
                 /// <summary>
                 /// 获取或设置配送范围（单位：米）。
@@ -237,21 +237,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("same_city_valuation")]
                 [System.Text.Json.Serialization.JsonPropertyName("same_city_valuation")]
-                public Types.Valuation Valuation { get; set; } = default!;
+                public Types.Valuation? Valuation { get; set; }
 
                 /// <summary>
                 /// 获取或设置特殊时段计价方式信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("special_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("special_time")]
-                public Types.SpecialTimeValuation SpecialTimeValuation { get; set; } = default!;
+                public Types.SpecialTimeValuation? SpecialTimeValuation { get; set; }
 
                 /// <summary>
                 /// 获取或设置配送时间信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_time")]
-                public Types.DeliveryTime DeliveryTime { get; set; } = default!;
+                public Types.DeliveryTime? DeliveryTime { get; set; }
             }
         }
 
@@ -260,6 +260,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("same_city_template")]
         [System.Text.Json.Serialization.JsonPropertyName("same_city_template")]
-        public Types.Template Template { get; set; } = default!;
+        public Types.Template? Template { get; set; }
     }
 }

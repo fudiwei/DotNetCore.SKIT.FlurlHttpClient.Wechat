@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_login_info 接口的响应。</para>
@@ -45,7 +45,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
             }
 
             public class Agent
@@ -92,7 +92,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department")]
                 [System.Text.Json.Serialization.JsonPropertyName("department")]
-                public Types.Department[] DepartmentList { get; set; } = default!;
+                public List<Types.Department>? DepartmentList { get; set; }
             }
         }
 
@@ -108,27 +108,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_info")]
         [System.Text.Json.Serialization.JsonPropertyName("user_info")]
-        public Types.User User { get; set; } = default!;
+        public Types.User? User { get; set; }
 
         /// <summary>
         /// 获取或设置授权方企业信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corp_info")]
         [System.Text.Json.Serialization.JsonPropertyName("corp_info")]
-        public Types.Corp Corp { get; set; } = default!;
+        public Types.Corp? Corp { get; set; }
 
         /// <summary>
         /// 获取或设置应用列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("agent")]
         [System.Text.Json.Serialization.JsonPropertyName("agent")]
-        public Types.Agent[] AgentList { get; set; } = default!;
+        public List<Types.Agent>? AgentList { get; set; }
 
         /// <summary>
         /// 获取或设置权限信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_info")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
-        public Types.Authorization Authorization { get; set; } = default!;
+        public Types.Authorization? Authorization { get; set; }
     }
 }

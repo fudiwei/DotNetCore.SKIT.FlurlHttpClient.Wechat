@@ -56,14 +56,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filter")]
         [System.Text.Json.Serialization.JsonPropertyName("filter")]
-        public Types.Filter Filter { get; set; } = new Types.Filter();
+        public Types.Filter? Filter { get; set; }
 
         /// <summary>
         /// 获取或设置群发消息类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息内容。

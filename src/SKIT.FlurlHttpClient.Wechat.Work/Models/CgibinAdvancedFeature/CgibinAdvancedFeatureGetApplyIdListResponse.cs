@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_id_list")]
-        public string[] ApplyIdList { get; set; } = default!;
+        public List<string>? ApplyIdList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

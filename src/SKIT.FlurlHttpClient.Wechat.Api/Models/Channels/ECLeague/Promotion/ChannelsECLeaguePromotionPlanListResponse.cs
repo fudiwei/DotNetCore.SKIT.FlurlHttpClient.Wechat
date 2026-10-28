@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.PromotionPlan[] PromotionPlanList { get; set; } = default!;
+        public List<Types.PromotionPlan>? PromotionPlanList { get; set; }
 
         /// <summary>
         /// 获取或设置推广计划总数量。

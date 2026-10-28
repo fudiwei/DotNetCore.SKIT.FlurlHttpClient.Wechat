@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string ContentHtml { get; set; } = default!;
+        public string? ContentHtml { get; set; }
     }
 }

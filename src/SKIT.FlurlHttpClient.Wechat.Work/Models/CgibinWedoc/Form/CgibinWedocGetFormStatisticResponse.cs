@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                public string UserName { get; set; } = default!;
+                public string? UserName { get; set; }
 
                 /// <summary>
                 /// 获取或设置答案 ID。
@@ -52,14 +52,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                public string UserName { get; set; } = default!;
+                public string? UserName { get; set; }
             }
         }
 
@@ -89,14 +89,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("submit_users")]
         [System.Text.Json.Serialization.JsonPropertyName("submit_users")]
-        public Types.FillUser[]? FillUserList { get; set; }
+        public List<Types.FillUser>? FillUserList { get; set; }
 
         /// <summary>
         /// 获取或设置未填写人列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unfill_users")]
         [System.Text.Json.Serialization.JsonPropertyName("unfill_users")]
-        public Types.UnfillUser[]? UnfillUserList { get; set; }
+        public List<Types.UnfillUser>? UnfillUserList { get; set; }
 
         /// <summary>
         /// 获取或设置是否还有更多数据。

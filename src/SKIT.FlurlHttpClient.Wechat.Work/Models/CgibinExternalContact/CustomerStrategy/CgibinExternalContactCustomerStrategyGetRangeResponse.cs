@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/customer_strategy/get_range 接口的响应。</para>
@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("range")]
         [System.Text.Json.Serialization.JsonPropertyName("range")]
-        public Types.Range[] RangeList { get; set; } = default!;
+        public List<Types.Range>? RangeList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

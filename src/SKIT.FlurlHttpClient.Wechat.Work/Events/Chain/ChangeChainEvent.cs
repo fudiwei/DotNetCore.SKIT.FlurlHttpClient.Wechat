@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("GroupId")]
                 [System.Text.Json.Serialization.JsonPropertyName("GroupId")]
                 [System.Xml.Serialization.XmlElement("GroupId", Type = typeof(int))]
-                public int[] Items { get; set; } = default!;
+                public List<int>? Items { get; set; }
             }
 
             public class CorpIdList
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("CorpId")]
                 [System.Text.Json.Serialization.JsonPropertyName("CorpId")]
                 [System.Xml.Serialization.XmlElement("CorpId", Type = typeof(string))]
-                public string[] Items { get; set; } = default!;
+                public List<string>? Items { get; set; }
             }
         }
 
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChangeType")]
         [System.Text.Json.Serialization.JsonPropertyName("ChangeType")]
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置上下游 ID。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChainId")]
         [System.Text.Json.Serialization.JsonPropertyName("ChainId")]
         [System.Xml.Serialization.XmlElement("ChainId")]
-        public string ChainId { get; set; } = default!;
+        public string? ChainId { get; set; }
 
         /// <summary>
         /// 获取或设置分组 ID 列表。

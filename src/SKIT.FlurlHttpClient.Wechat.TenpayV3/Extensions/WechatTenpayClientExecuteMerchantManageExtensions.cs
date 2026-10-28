@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.SubMerchantId, "sub_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mch-manage", "mch-manage-records", "sub-mchid", request.SubMerchantId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "mch-manage", "mch-manage-records", "sub-mchid", request.SubMerchantId!)
                 .SetQueryParam("manage_record_type", request.ManageRecordType)
                 .SetQueryParam("manage_record_state", request.ManageRecordState)
                 .SetQueryParam("limit", request.Limit)
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ManageRecordId, "manage_record_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mch-manage", "mch-manage-records", request.ManageRecordId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "mch-manage", "mch-manage-records", request.ManageRecordId!)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantManageRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.ManageRecordId, "manage_record_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mch-manage", "mch-manage-records", request.ManageRecordId, "mch-manage-submissions");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mch-manage", "mch-manage-records", request.ManageRecordId!, "mch-manage-submissions");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantManageRecordSubmissionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -111,14 +111,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (request.FileHash is null)
             {
-                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                if (request.FileBytes is not null)
+                {
+                    request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+                }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mch-manage", "submission-files", "sub-mchid", request.SubMerchantId, "upload");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mch-manage", "submission-files", "sub-mchid", request.SubMerchantId!, "upload");
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request), formDataName: "submission_file");
-            httpContent.Add(new StringContent(request.ItemId), "item_id");
+            httpContent.Add(new StringContent(request.ItemId!), "item_id");
 
             return await client.SendFlurlRequestAsync<Models.UploadMerchantManageSubmissionFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

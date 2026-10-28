@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("booking_id")]
         [System.Text.Json.Serialization.JsonPropertyName("booking_id")]
-        public string BookingId { get; set; } = default!;
+        public string? BookingId { get; set; }
 
         /// <summary>
         /// 获取或设置冲突日期的时间戳列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("conflict_date")]
         [System.Text.Json.Serialization.JsonPropertyName("conflict_date")]
-        public long[]? ConflictDateTimestampList { get; set; }
+        public List<long>? ConflictDateTimestampList { get; set; }
     }
 }

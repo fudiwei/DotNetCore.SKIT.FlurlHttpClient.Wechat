@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_supplier_item_link")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_supplier_item_link")]
-                public string HeadSupplierItemLink { get; set; } = default!;
+                public string? HeadSupplierItemLink { get; set; }
             }
         }
 
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.CooperativeItem[] CooperativeItemList { get; set; } = default!;
+        public List<Types.CooperativeItem>? CooperativeItemList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

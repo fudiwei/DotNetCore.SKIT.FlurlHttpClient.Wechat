@@ -10,20 +10,20 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置通过 `wx.startSoterAuthentication` 成功回调获得的 `resultJSON` 字段。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("json_string")]
         [System.Text.Json.Serialization.JsonPropertyName("json_string")]
-        public string JsonString { get; set; } = string.Empty;
+        public string? JsonString { get; set; }
 
         /// <summary>
         /// 获取或设置通过 `wx.startSoterAuthentication` 成功回调获得的 `resultJSONSignature` 字段。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("json_signature")]
         [System.Text.Json.Serialization.JsonPropertyName("json_signature")]
-        public string JsonSignature { get; set; } = string.Empty;
+        public string? JsonSignature { get; set; }
     }
 }

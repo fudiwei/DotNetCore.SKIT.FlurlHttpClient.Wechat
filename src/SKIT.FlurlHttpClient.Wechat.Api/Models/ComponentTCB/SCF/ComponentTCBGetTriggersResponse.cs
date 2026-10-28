@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /componenttcb/gettriggers 接口的响应。</para>
@@ -14,21 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trigger_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("trigger_name")]
-                public string TriggerName { get; set; } = default!;
+                public string? TriggerName { get; set; }
 
                 /// <summary>
                 /// 获取或设置触发器触发周期。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("config")]
                 [System.Text.Json.Serialization.JsonPropertyName("config")]
-                public string Config { get; set; } = default!;
+                public string? Config { get; set; }
 
                 /// <summary>
                 /// 获取或设置触发器类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string? Type { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("triggers")]
         [System.Text.Json.Serialization.JsonPropertyName("triggers")]
-        public Types.Trigger[] TriggerList { get; set; } = default!;
+        public List<Types.Trigger>? TriggerList { get; set; }
     }
 }

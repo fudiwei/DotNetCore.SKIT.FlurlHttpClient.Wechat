@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-        public string PlanId { get; set; } = string.Empty;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户在子商户下的唯一标识。
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id")]
         [System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        public string OutUserId { get; set; } = string.Empty;
+        public string? OutUserId { get; set; }
 
         /// <summary>
         /// 获取或设置首次扣款日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("period_start_date")]
         [System.Text.Json.Serialization.JsonPropertyName("period_start_date")]
-        public string PeriodStartDateString { get; set; } = string.Empty;
+        public string? PeriodStartDateString { get; set; }
 
         /// <summary>
         /// 获取或设置场景值。
@@ -67,6 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = "EDUCATION_PERIOD";
+        public string? TradeScene { get; set; } = "EDUCATION_PERIOD";
     }
 }

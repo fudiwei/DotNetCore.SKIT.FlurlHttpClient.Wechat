@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置推荐语。
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("chat_id")]
-                public string GroupChatId { get; set; } = string.Empty;
+                public string? GroupChatId { get; set; }
 
                 /// <summary>
                 /// 获取或设置推荐语。
@@ -47,14 +47,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_kfid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]
-        public string OpenKfId { get; set; } = string.Empty;
+        public string? OpenKfId { get; set; }
 
         /// <summary>
         /// 获取或设置外部联系人账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-        public string ExternalUserId { get; set; } = string.Empty;
+        public string? ExternalUserId { get; set; }
 
         /// <summary>
         /// 获取或设置升级服务类型。

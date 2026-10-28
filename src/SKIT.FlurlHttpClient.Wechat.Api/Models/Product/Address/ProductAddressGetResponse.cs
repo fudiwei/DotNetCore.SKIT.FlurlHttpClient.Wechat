@@ -18,35 +18,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                        public string UserName { get; set; } = default!;
+                        public string? UserName { get; set; }
 
                         /// <summary>
                         /// 获取或设置省份。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                        public string ProvinceName { get; set; } = default!;
+                        public string? ProvinceName { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                        public string CityName { get; set; } = default!;
+                        public string? CityName { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("county_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("county_name")]
-                        public string DistrictName { get; set; } = default!;
+                        public string? DistrictName { get; set; }
 
                         /// <summary>
                         /// 获取或设置详细地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("detail_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("detail_info")]
-                        public string Detail { get; set; } = default!;
+                        public string? Detail { get; set; }
 
                         /// <summary>
                         /// 获取或设置国家码。
@@ -125,14 +125,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                public Types.Address Address { get; set; } = default!;
+                public Types.Address? Address { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址类型信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_type")]
-                public Types.AddressType? AddressType { get; set; } = default!;
+                public Types.AddressType? AddressType { get; set; }
 
                 /// <summary>
                 /// 获取或设置座机。
@@ -205,6 +205,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address_list")]
         [System.Text.Json.Serialization.JsonPropertyName("address_list")]
-        public Types.AddressDetail[] AddressDetailList { get; set; } = default!;
+        public List<Types.AddressDetail>? AddressDetailList { get; set; }
     }
 }

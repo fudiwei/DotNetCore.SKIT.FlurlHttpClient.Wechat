@@ -14,49 +14,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户侧授权单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_authorization_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_authorization_no")]
-        public string OutAuthorizationNumber { get; set; } = default!;
+        public string? OutAuthorizationNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信免确认收款授权单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_id")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_id")]
-        public string AuthorizationId { get; set; } = default!;
+        public string? AuthorizationId { get; set; }
 
         /// <summary>
         /// 获取或设置授权状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置收款用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户展示昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_display_name")]
-        public string UserDisplayName { get; set; } = default!;
+        public string? UserDisplayName { get; set; }
 
         /// <summary>
         /// 获取或设置用户确认授权的时间。

@@ -1478,8 +1478,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "file");
-            httpContent.Add(new StringContent(request.FileType), "msg_type");
-            httpContent.Add(new StringContent(request.OpenId), "open_id");
+            httpContent.Add(new StringContent(request.FileType!), "msg_type");
+            httpContent.Add(new StringContent(request.OpenId!), "open_id");
 
             return await client.SendFlurlRequestAsync<Models.ChannelsECCommonKfCosUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

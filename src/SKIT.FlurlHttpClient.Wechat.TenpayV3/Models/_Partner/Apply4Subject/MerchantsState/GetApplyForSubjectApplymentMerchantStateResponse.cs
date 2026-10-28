@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorize_state")]
         [System.Text.Json.Serialization.JsonPropertyName("authorize_state")]
-        public string AuthorizeState { get; set; } = default!;
+        public string? AuthorizeState { get; set; }
     }
 }

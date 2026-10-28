@@ -38,21 +38,21 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ans_node_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ans_node_name")]
-                public string AnswerNodeName { get; set; } = default!;
+                public string? AnswerNodeName { get; set; }
 
                 /// <summary>
                 /// 获取或设置推荐标准问题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置推荐回答。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answer")]
                 [System.Text.Json.Serialization.JsonPropertyName("answer")]
-                public string Answer { get; set; } = default!;
+                public string? Answer { get; set; }
 
                 /// <summary>
                 /// 获取或设置推荐信息指数。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("confirm_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("confirm_status")]
-                public string ConfirmStatus { get; set; } = default!;
+                public string? ConfirmStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置开始位置。
@@ -90,14 +90,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("slot_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("slot_name")]
-                public string SlotName { get; set; } = default!;
+                public string? SlotName { get; set; }
 
                 /// <summary>
                 /// 获取或设置槽位值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("slot_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("slot_value")]
-                public string SlotValue { get; set; } = default!;
+                public string? SlotValue { get; set; }
 
                 /// <summary>
                 /// 获取或设置词典类型。
@@ -142,21 +142,21 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ans_node_name")]
         [System.Text.Json.Serialization.JsonPropertyName("ans_node_name")]
-        public string AnswerNodeName { get; set; } = default!;
+        public string? AnswerNodeName { get; set; }
 
         /// <summary>
         /// 获取或设置标准问题或意图名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置命中的回答。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("answer")]
         [System.Text.Json.Serialization.JsonPropertyName("answer")]
-        public string Answer { get; set; } = default!;
+        public string? Answer { get; set; }
 
         /// <summary>
         /// 获取或设置回答显示状态。
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("answer_type")]
         [System.Text.Json.Serialization.JsonPropertyName("answer_type")]
-        public string AnswerType { get; set; } = default!;
+        public string? AnswerType { get; set; }
 
         /// <summary>
         /// 获取或设置回答信心指数。
@@ -184,42 +184,42 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("from_user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("from_user_name")]
-        public string FromUserName { get; set; } = default!;
+        public string? FromUserName { get; set; }
 
         /// <summary>
         /// 获取或设置接受查询的机器人。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("to_user_name")]
-        public string ToUserName { get; set; } = default!;
+        public string? ToUserName { get; set; }
 
         /// <summary>
         /// 获取或设置用户发送的消息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query")]
         [System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string QueryString { get; set; } = default!;
+        public string? QueryString { get; set; }
 
         /// <summary>
         /// 获取或设置消息 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_id")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_id")]
-        public string MessageId { get; set; } = default!;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置消息类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = default!;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置机器人回复的状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置当前事件。
@@ -310,13 +310,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("options")]
         [System.Text.Json.Serialization.JsonPropertyName("options")]
-        public Types.Option[]? OptionList { get; set; }
+        public List<Types.Option>? OptionList { get; set; }
 
         /// <summary>
         /// 获取或设置槽位列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("slots_info")]
         [System.Text.Json.Serialization.JsonPropertyName("slots_info")]
-        public Types.Slot[]? SlotList { get; set; }
+        public List<Types.Slot>? SlotList { get; set; }
     }
 }

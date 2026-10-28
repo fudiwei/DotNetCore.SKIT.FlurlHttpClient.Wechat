@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /targeting_tags/get 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置上级 ID。
@@ -39,7 +39,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("parent_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("parent_name")]
-                        public string ParentName { get; set; } = default!;
+                        public string? ParentName { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市级别。
@@ -55,7 +55,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.Tag[] TagList { get; set; } = default!;
+                public List<Types.Tag>? TagList { get; set; }
             }
         }
 
@@ -64,6 +64,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

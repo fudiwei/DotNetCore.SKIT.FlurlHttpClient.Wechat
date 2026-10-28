@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/ecaftersale/get 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_product_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_product_id")]
-                        public string OutProductId { get; set; } = default!;
+                        public string? OutProductId { get; set; }
 
                         /// <summary>
                         /// 获取或设置 SKU ID。
@@ -39,7 +39,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_sku_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
-                        public string OutSKUId { get; set; } = default!;
+                        public string? OutSKUId { get; set; }
 
                         /// <summary>
                         /// 获取或设置参与售后的商品数量。
@@ -56,21 +56,21 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("delivery_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                        public string DeliveryId { get; set; } = default!;
+                        public string? DeliveryId { get; set; }
 
                         /// <summary>
                         /// 获取或设置快递公司名字。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("delivery_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("delivery_name")]
-                        public string DeliveryName { get; set; } = default!;
+                        public string? DeliveryName { get; set; }
 
                         /// <summary>
                         /// 获取或设置快递单号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("waybill_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-                        public string WaybillId { get; set; } = default!;
+                        public string? WaybillId { get; set; }
 
                         /// <summary>
                         /// 获取或设置退货时间戳。
@@ -95,7 +95,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = default!;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置缩略图 URL。
@@ -112,7 +112,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("refund_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
-                        public string RefundId { get; set; } = default!;
+                        public string? RefundId { get; set; }
                     }
                 }
 
@@ -128,7 +128,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_aftersale_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_aftersale_id")]
-                public string OutAftersaleOrderId { get; set; } = default!;
+                public string? OutAftersaleOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单 ID。
@@ -142,7 +142,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
-                public string OutOrderId { get; set; } = default!;
+                public string? OutOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置类型。
@@ -163,7 +163,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款金额（单位：分）。
@@ -184,7 +184,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
-                public string RefundReason { get; set; } = default!;
+                public string? RefundReason { get; set; }
 
                 /// <summary>
                 /// 获取或设置退货单号。
@@ -214,7 +214,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_info")]
-                public Types.Product Product { get; set; } = default!;
+                public Types.Product? Product { get; set; }
 
                 /// <summary>
                 /// 获取或设置退货信息。
@@ -235,7 +235,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-                public Types.Media[]? MediaList { get; set; }
+                public List<Types.Media>? MediaList { get; set; }
             }
         }
 
@@ -244,6 +244,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sales_order")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sales_order")]
-        public Types.AftersaleOrder AftersaleOrder { get; set; } = default!;
+        public Types.AftersaleOrder? AftersaleOrder { get; set; }
     }
 }

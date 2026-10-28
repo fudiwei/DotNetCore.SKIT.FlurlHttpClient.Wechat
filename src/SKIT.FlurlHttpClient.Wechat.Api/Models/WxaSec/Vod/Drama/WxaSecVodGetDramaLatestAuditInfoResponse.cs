@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("audit_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
-        public Types.AuditDetail AuditDetail { get; set; } = default!;
+        public Types.AuditDetail? AuditDetail { get; set; }
     }
 }

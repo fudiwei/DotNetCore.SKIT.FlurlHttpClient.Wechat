@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("acct_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("acct_type")]
-                public int[] AccountTypeList { get; set; } = default!;
+                public List<int>? AccountTypeList { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Deliver[]? DeliverList { get; set; }
+        public List<Types.Deliver>? DeliverList { get; set; }
     }
 }

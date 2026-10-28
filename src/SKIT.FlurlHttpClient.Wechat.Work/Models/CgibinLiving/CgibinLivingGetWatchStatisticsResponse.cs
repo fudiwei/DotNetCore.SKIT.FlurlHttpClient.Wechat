@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置观看时长（单位：秒）。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("external_userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                        public string ExternalUserId { get; set; } = default!;
+                        public string? ExternalUserId { get; set; }
 
                         /// <summary>
                         /// 获取或设置外部成员类型。
@@ -129,14 +129,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("users")]
                 [System.Text.Json.Serialization.JsonPropertyName("users")]
-                public Types.User[] UserList { get; set; } = default!;
+                public List<Types.User>? UserList { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_users")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_users")]
-                public Types.ExternalUser[] ExternalUserList { get; set; } = default!;
+                public List<Types.ExternalUser>? ExternalUserList { get; set; }
             }
         }
 
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stat_info")]
         [System.Text.Json.Serialization.JsonPropertyName("stat_info")]
-        public Types.Statistics Statistics { get; set; } = default!;
+        public Types.Statistics? Statistics { get; set; }
 
         /// <summary>
         /// 获取或设置翻页是否结束。

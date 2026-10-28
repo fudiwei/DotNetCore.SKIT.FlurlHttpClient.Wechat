@@ -18,28 +18,28 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                        public string PhoneNumber { get; set; } = default!;
+                        public string? PhoneNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置邮箱。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("email")]
                         [System.Text.Json.Serialization.JsonPropertyName("email")]
-                        public string Email { get; set; } = default!;
+                        public string? Email { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义字段列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("custom_field")]
                         [System.Text.Json.Serialization.JsonPropertyName("custom_field")]
-                        public CustomField[]? CustomFieldList { get; set; }
+                        public List<CustomField>? CustomFieldList { get; set; }
                     }
 
                     public class BusinessField
@@ -49,49 +49,49 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                        public string PhoneNumber { get; set; } = default!;
+                        public string? PhoneNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置税号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tax_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("tax_no")]
-                        public string TaxNumber { get; set; } = default!;
+                        public string? TaxNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置单位地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("addr")]
                         [System.Text.Json.Serialization.JsonPropertyName("addr")]
-                        public string Address { get; set; } = default!;
+                        public string? Address { get; set; }
 
                         /// <summary>
                         /// 获取或设置开户银行。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bank_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("bank_type")]
-                        public string BankType { get; set; } = default!;
+                        public string? BankType { get; set; }
 
                         /// <summary>
                         /// 获取或设置银行账号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bank_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("bank_no")]
-                        public string BankNumber { get; set; } = default!;
+                        public string? BankNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义字段列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("custom_field")]
                         [System.Text.Json.Serialization.JsonPropertyName("custom_field")]
-                        public CustomField[]? CustomFieldList { get; set; }
+                        public List<CustomField>? CustomFieldList { get; set; }
                     }
 
                     public class CustomField
@@ -101,14 +101,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("key")]
                         [System.Text.Json.Serialization.JsonPropertyName("key")]
-                        public string Key { get; set; } = default!;
+                        public string? Key { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义字段的值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string Value { get; set; } = default!;
+                        public string? Value { get; set; }
                     }
                 }
 
@@ -133,7 +133,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_status")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置订单授权时间戳。

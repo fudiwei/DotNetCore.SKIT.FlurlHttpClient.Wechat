@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CompanyMerchantId, "company_mchid");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "taxi-companies", request.CompanyMerchantId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "taxi-companies", request.CompanyMerchantId!)
                 .SetQueryParam("region_id", request.RegionId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceTaxiCompanyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.PlateNumber, "plate_number");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "taxies", request.PlateNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "taxies", request.PlateNumber!)
                 .SetQueryParam("region_id", request.RegionId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceTaxiResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.DriverLicenseNumber, "driver_license");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "drivers", request.DriverLicenseNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "drivers", request.DriverLicenseNumber!)
                 .SetQueryParam("region_id", request.RegionId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceDriverResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -228,11 +228,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (request.FileHash is null)
             {
-                switch (request.FileHashAlgorithm)
+                if (request.FileBytes is not null)
                 {
-                    case "SM3":
-                        request.FileHash = EncodedString.ToHexString(Utilities.SM3Utility.Hash(request.FileBytes)).Value!.ToLower();
-                        break;
+                    switch (request.FileHashAlgorithm)
+                    {
+                        case "SM3":
+                            request.FileHash = EncodedString.ToHexString(Utilities.SM3Utility.Hash(request.FileBytes)).Value!.ToLower();
+                            break;
+                    }
                 }
             }
 

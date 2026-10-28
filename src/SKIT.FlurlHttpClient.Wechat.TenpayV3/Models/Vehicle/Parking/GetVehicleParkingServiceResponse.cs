@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-        public string PlateNumber { get; set; } = default!;
+        public string? PlateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置车牌颜色。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_color")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_color")]
-        public string PlateColor { get; set; } = default!;
+        public string? PlateColor { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置服务状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_state")]
         [System.Text.Json.Serialization.JsonPropertyName("service_state")]
-        public string ServiceState { get; set; } = default!;
+        public string? ServiceState { get; set; }
 
         /// <summary>
         /// 获取或设置服务开通时间。

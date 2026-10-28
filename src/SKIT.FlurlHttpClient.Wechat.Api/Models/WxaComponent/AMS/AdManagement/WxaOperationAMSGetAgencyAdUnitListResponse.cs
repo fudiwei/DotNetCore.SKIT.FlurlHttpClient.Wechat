@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tmpl_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("tmpl_id")]
-                public string TemplateId { get; set; } = default!;
+                public string? TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告单元名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ad_unit_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ad_unit_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置广告位类型 ID。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tmpl_bind_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("tmpl_bind_list")]
-                public Types.AdUnit[]? AdUnitList { get; set; }
+                public List<Types.AdUnit>? AdUnitList { get; set; }
             }
         }
 
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ad_unit_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ad_unit_list")]
-        public Types.Template[] TemplateList { get; set; } = default!;
+        public List<Types.Template>? TemplateList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

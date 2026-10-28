@@ -21,17 +21,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_batch")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_batch")]
-        public Types.TransferBatch TransferBatch { get; set; } = default!;
+        public Types.TransferBatch? TransferBatch { get; set; }
 
         /// <summary>
         /// 获取或设置转账明细单列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.TransferDetail[]? TransferDetailList { get; set; }
+        public List<Types.TransferDetail>? TransferDetailList { get; set; }
 
         /// <summary>
-        /// 获取或设置分页开始位置。
+        /// 获取或设置分页起始位置。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

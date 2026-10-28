@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_seq_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_seq_no")]
-        public string OutSequenceNumber { get; set; } = string.Empty;
+        public string? OutSequenceNumber { get; set; }
 
         /// <summary>
         /// 获取或设置人脸核身会话唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verify_id")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_id")]
-        public string VerifyId { get; set; } = string.Empty;
+        public string? VerifyId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置证件信息摘要。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cert_hash")]
         [System.Text.Json.Serialization.JsonPropertyName("cert_hash")]
-        public string CertHash { get; set; } = string.Empty;
+        public string? CertHash { get; set; }
 
         public void SetCertHash(string certType, string certName, string certNumber)
         {

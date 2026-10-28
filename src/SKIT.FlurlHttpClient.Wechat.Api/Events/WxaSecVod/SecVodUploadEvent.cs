@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
                 [System.Xml.Serialization.XmlElement("media_id")]
-                public string MediaId { get; set; } = default!;
+                public string? MediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置来源上下文。
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("source_context")]
                 [System.Text.Json.Serialization.JsonPropertyName("source_context")]
                 [System.Xml.Serialization.XmlElement("source_context")]
-                public string SourceContext { get; set; } = default!;
+                public string? SourceContext { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -50,6 +50,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("upload_event")]
         [System.Text.Json.Serialization.JsonPropertyName("upload_event")]
         [System.Xml.Serialization.XmlElement("upload_event")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

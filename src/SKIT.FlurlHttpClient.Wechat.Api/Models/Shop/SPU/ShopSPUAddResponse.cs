@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/spu/add 接口的响应。</para>
@@ -25,7 +25,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("out_sku_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
-                        public string OutSKUId { get; set; } = default!;
+                        public string? OutSKUId { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("skus")]
                 [System.Text.Json.Serialization.JsonPropertyName("skus")]
-                public Types.SKU[] SKUList { get; set; } = default!;
+                public List<Types.SKU>? SKUList { get; set; }
             }
         }
 
@@ -43,6 +43,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

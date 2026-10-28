@@ -94,14 +94,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("week_day")]
                                 [System.Text.Json.Serialization.JsonPropertyName("week_day")]
-                                public IList<int> WeekDayList { get; set; } = new List<int>();
+                                public List<int>? WeekDayList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置当天可用时间段。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("available_day_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("available_day_time")]
-                                public IList<Types.AvailableTimeRange>? AvailableTimeRangeList { get; set; }
+                                public List<Types.AvailableTimeRange>? AvailableTimeRangeList { get; set; }
                             }
 
                             public class AvailableTime
@@ -156,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("irregulary_avaliable_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("irregulary_avaliable_time")]
-                        public IList<Types.AvailableTime>? IrregularyAvailableTimeList { get; set; }
+                        public List<Types.AvailableTime>? IrregularyAvailableTimeList { get; set; }
 
                         /// <summary>
                         /// 获取或设置生效后 N 天内有效。
@@ -258,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("use_method")]
                 [System.Text.Json.Serialization.JsonPropertyName("use_method")]
-                public string UseMethod { get; set; } = string.Empty;
+                public string? UseMethod { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家小程序 AppId。
@@ -286,21 +286,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mini_programs_appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("mini_programs_appid")]
-                        public string AppId { get; set; } = string.Empty;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置商家小程序路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mini_programs_path")]
                         [System.Text.Json.Serialization.JsonPropertyName("mini_programs_path")]
-                        public string Path { get; set; } = string.Empty;
+                        public string? Path { get; set; }
 
                         /// <summary>
                         /// 获取或设置入口文案。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("entrance_words")]
                         [System.Text.Json.Serialization.JsonPropertyName("entrance_words")]
-                        public string EntranceWords { get; set; } = string.Empty;
+                        public string? EntranceWords { get; set; }
 
                         /// <summary>
                         /// 获取或设置引导文案。
@@ -435,21 +435,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_name")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_name")]
-        public string StockName { get; set; } = string.Empty;
+        public string? StockName { get; set; }
 
         /// <summary>
         /// 获取或设置批次类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_type")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_type")]
-        public string StockType { get; set; } = string.Empty;
+        public string? StockType { get; set; }
 
         /// <summary>
         /// 获取或设置商户单据号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置批次归属商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
@@ -463,14 +463,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_send_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_send_rule")]
-        public Types.StockSendRule StockSendRule { get; set; } = new Types.StockSendRule();
+        public Types.StockSendRule? StockSendRule { get; set; }
 
         /// <summary>
         /// 获取或设置核销规则信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_use_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_use_rule")]
-        public Types.CouponUseRule CouponUseRule { get; set; } = new Types.CouponUseRule();
+        public Types.CouponUseRule? CouponUseRule { get; set; }
 
         /// <summary>
         /// 获取或设置自定义入口信息。
@@ -498,14 +498,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goods_name")]
         [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-        public string GoodsName { get; set; } = string.Empty;
+        public string? GoodsName { get; set; }
 
         /// <summary>
         /// 获取或设置商家券 Code 模式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_code_mode")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_code_mode")]
-        public string CouponCodeMode { get; set; } = string.Empty;
+        public string? CouponCodeMode { get; set; }
 
         /// <summary>
         /// 获取或设置是否允许营销补贴。

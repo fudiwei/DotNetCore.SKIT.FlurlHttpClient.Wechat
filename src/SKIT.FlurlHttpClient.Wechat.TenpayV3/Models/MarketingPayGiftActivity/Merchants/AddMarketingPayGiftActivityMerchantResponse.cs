@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置无效原因。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("invalid_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("invalid_reason")]
-                public string MerchantMemberAppId { get; set; } = default!;
+                public string? MerchantMemberAppId { get; set; }
             }
         }
 
@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-        public string ActivityId { get; set; } = default!;
+        public string? ActivityId { get; set; }
 
         /// <summary>
         /// 获取或设置校验失败的发券商户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_merchant_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_merchant_id_list")]
-        public Types.InvalidMerchant[]? InvalidMerchantList { get; set; }
+        public List<Types.InvalidMerchant>? InvalidMerchantList { get; set; }
 
         /// <summary>
         /// 获取或设置添加时间。

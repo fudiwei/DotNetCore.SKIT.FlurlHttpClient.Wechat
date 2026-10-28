@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limited_discount_skus")]
         [System.Text.Json.Serialization.JsonPropertyName("limited_discount_skus")]
-        public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+        public List<Types.SKU>? SKUList { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启限购。

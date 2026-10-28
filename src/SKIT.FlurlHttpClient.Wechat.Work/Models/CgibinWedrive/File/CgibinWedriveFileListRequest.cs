@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置上级文件 ID 或空间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fatherid")]
         [System.Text.Json.Serialization.JsonPropertyName("fatherid")]
-        public string ParentFileOrSpaceId { get; set; } = string.Empty;
+        public string? ParentFileOrSpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置排序方式。
@@ -35,6 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limit")]
         [System.Text.Json.Serialization.JsonPropertyName("limit")]

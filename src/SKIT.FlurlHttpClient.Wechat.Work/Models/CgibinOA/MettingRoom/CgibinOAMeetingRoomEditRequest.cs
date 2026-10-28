@@ -77,6 +77,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("equipment")]
         [System.Text.Json.Serialization.JsonPropertyName("equipment")]
-        public IList<int>? EquipmentIdList { get; set; }
+        public List<int>? EquipmentIdList { get; set; }
     }
 }

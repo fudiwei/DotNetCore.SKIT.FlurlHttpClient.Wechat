@@ -24,6 +24,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("suite_ticket")]
         [System.Text.Json.Serialization.JsonPropertyName("suite_ticket")]
-        public string SuiteTicket { get; set; } = string.Empty;
+        public string? SuiteTicket { get; set; }
     }
 }

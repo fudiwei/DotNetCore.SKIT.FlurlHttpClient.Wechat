@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Token")]
         [System.Text.Json.Serialization.JsonPropertyName("Token")]
         [System.Xml.Serialization.XmlElement("Token")]
-        public string Token { get; set; } = default!;
+        public string? Token { get; set; }
 
         /// <summary>
         /// 获取或设置客服账号 ID。
@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("OpenKfId")]
         [System.Text.Json.Serialization.JsonPropertyName("OpenKfId")]
         [System.Xml.Serialization.XmlElement("OpenKfId")]
-        public string OpenKfId { get; set; } = default!;
+        public string? OpenKfId { get; set; }
     }
 }

@@ -25,14 +25,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建者成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("creator")]
                 [System.Text.Json.Serialization.JsonPropertyName("creator")]
-                public string CreatorUserId { get; set; } = default!;
+                public string? CreatorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建类型。
@@ -53,7 +53,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attachments")]
                 [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-                public Types.Attachment[]? AttachmentList { get; set; }
+                public List<Types.Attachment>? AttachmentList { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -69,7 +69,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group_msg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("group_msg_list")]
-        public Types.GroupMessage[]? GroupMessageList { get; set; } = default!;
+        public List<Types.GroupMessage>? GroupMessageList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

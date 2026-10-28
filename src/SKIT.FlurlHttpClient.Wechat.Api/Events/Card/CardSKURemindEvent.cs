@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("CardId")]
         [System.Text.Json.Serialization.JsonPropertyName("CardId")]
         [System.Xml.Serialization.XmlElement("CardId")]
-        public string CardId { get; set; } = default!;
+        public string? CardId { get; set; }
 
         /// <summary>
         /// 获取或设置报警详细信息。
@@ -23,6 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Detail")]
         [System.Text.Json.Serialization.JsonPropertyName("Detail")]
         [System.Xml.Serialization.XmlElement("Detail")]
-        public string Detail { get; set; } = default!;
+        public string? Detail { get; set; }
     }
 }

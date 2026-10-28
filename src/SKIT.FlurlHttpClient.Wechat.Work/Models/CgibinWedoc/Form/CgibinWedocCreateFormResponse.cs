@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("formid")]
         [System.Text.Json.Serialization.JsonPropertyName("formid")]
-        public string FormId { get; set; } = default!;
+        public string? FormId { get; set; }
     }
 }

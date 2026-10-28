@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
-        public string SubMerhantId { get; set; } = default!;
+        public string? SubMerhantId { get; set; }
 
         /// <summary>
         /// 获取或设置验证状态。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/get_merchant_category 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("categories")]
                         [System.Text.Json.Serialization.JsonPropertyName("categories")]
-                        public CategoryItem[] Items { get; set; } = default!;
+                        public List<CategoryItem>? Items { get; set; }
                     }
 
                     public class CategoryItem : CgibinWxopenGetAllCategoriesResponse.Types.CategoryItem
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("all_category_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("all_category_info")]
-                public Types.CategoryList CategoryList { get; set; } = default!;
+                public Types.CategoryList? CategoryList { get; set; }
             }
         }
 
@@ -40,6 +40,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

@@ -17,20 +17,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string UserIdType { get; set; } = string.Empty;
+        public string? UserIdType { get; set; }
 
         /// <summary>
         /// 获取或设置文件操作类型。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OperationType { get; set; } = string.Empty;
+        public string? OperationType { get; set; }
 
         /// <summary>
         /// 获取或设置压缩文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
+        public byte[]? FileBytes { get; set; }
     }
 }

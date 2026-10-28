@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_url")]
         [System.Text.Json.Serialization.JsonPropertyName("task_url")]
-        public string TaskPagePath { get; set; } = string.Empty;
+        public string? TaskPagePath { get; set; }
 
         /// <summary>
         /// 获取或设置 Worker 数量。
@@ -28,6 +28,7 @@
 
         /// <summary>
         /// 获取或设置压测版本。
+        /// <para>默认值：4</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("source_type")]
         [System.Text.Json.Serialization.JsonPropertyName("source_type")]

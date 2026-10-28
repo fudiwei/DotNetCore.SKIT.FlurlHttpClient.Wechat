@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_supplier_item_link")]
         [System.Text.Json.Serialization.JsonPropertyName("head_supplier_item_link")]
-        public string HeadSupplierItemLink { get; set; } = string.Empty;
+        public string? HeadSupplierItemLink { get; set; }
 
         /// <summary>
         /// 获取或设置是否隐藏。

@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string[]? UserIdList { get; set; }
+                        public List<string>? UserIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置部门 ID 列表。
@@ -26,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("party_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("party_id")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public long[]? DepartmentIdList { get; set; }
+                        public List<long>? DepartmentIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置标签 ID 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tagid")]
                         [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                        public int[]? TagIdList { get; set; }
+                        public List<int>? TagIdList { get; set; }
                     }
 
                     public class Reporter
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reporters")]
                         [System.Text.Json.Serialization.JsonPropertyName("reporters")]
-                        public Types.ReportUser[]? ReportUserList { get; set; }
+                        public List<Types.ReportUser>? ReportUserList { get; set; }
 
                         /// <summary>
                         /// 获取或设置更新时间戳。
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("items")]
                                         [System.Text.Json.Serialization.JsonPropertyName("items")]
-                                        public CalendarTimeRuleItem[] Items { get; set; } = default!;
+                                        public List<CalendarTimeRuleItem>? Items { get; set; }
                                     }
 
                                     public class CalendarTimeRuleItem
@@ -309,14 +309,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("range")]
                 [System.Text.Json.Serialization.JsonPropertyName("range")]
-                public Types.Range Range { get; set; } = default!;
+                public Types.Range? Range { get; set; }
 
                 /// <summary>
                 /// 获取或设置白名单成员账号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("white_users")]
                 [System.Text.Json.Serialization.JsonPropertyName("white_users")]
-                public string[]? UserIdWhiteList { get; set; }
+                public List<string>? UserIdWhiteList { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报对象信息。
@@ -365,14 +365,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_userid")]
-                public string CreatorUserId { get; set; } = default!;
+                public string? CreatorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置最近编辑人成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("update_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("update_userid")]
-                public string UpdaterUserId { get; set; } = default!;
+                public string? UpdaterUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -388,6 +388,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("group")]
         [System.Text.Json.Serialization.JsonPropertyName("group")]
-        public Types.CheckinGroup[] CheckinGroupList { get; set; } = default!;
+        public List<Types.CheckinGroup>? CheckinGroupList { get; set; }
     }
 }

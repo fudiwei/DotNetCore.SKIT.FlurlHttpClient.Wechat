@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("news_item")]
                         [System.Text.Json.Serialization.JsonPropertyName("news_item")]
-                        public Types.Article[] ArticleList { get; set; } = default!;
+                        public List<Types.Article>? ArticleList { get; set; }
                     }
                 }
 
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("article_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("article_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string ArticleId { get; set; } = default!;
+                public string? ArticleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置草稿内容。
@@ -58,20 +58,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.Item[] List { get; set; } = default!;
+        public List<Types.Item>? List { get; set; }
 
         /// <summary>
         /// 获取或设置本次数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item_count")]
         [System.Text.Json.Serialization.JsonPropertyName("item_count")]
-        public int Count { get; set; } = default!;
+        public int Count { get; set; }
 
         /// <summary>
         /// 获取或设置草稿总数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_count")]
         [System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int TotalCount { get; set; } = default!;
+        public int TotalCount { get; set; }
     }
 }

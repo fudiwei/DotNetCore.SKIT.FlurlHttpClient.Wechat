@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("audit_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                public string AuditId { get; set; } = default!;
+                public string? AuditId { get; set; }
 
                 /// <summary>
                 /// 获取或设置附近地点 ID。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("poi_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("poi_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                public string POIId { get; set; } = default!;
+                public string? POIId { get; set; }
 
                 /// <summary>
                 /// 获取或设置经营资质证件号。
@@ -39,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

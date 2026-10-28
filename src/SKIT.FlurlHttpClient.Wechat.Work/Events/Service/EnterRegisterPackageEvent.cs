@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("UserId")]
                 [System.Text.Json.Serialization.JsonPropertyName("UserId")]
                 [System.Xml.Serialization.XmlElement("UserId")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ServiceCorpId")]
         [System.Text.Json.Serialization.JsonPropertyName("ServiceCorpId")]
         [System.Xml.Serialization.XmlElement("ServiceCorpId")]
-        public string ServiceCorpId { get; set; } = default!;
+        public string? ServiceCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置授权方的 CorpId。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("AuthCorpId")]
         [System.Text.Json.Serialization.JsonPropertyName("AuthCorpId")]
         [System.Xml.Serialization.XmlElement("AuthCorpId")]
-        public string AuthorizerCorpId { get; set; } = default!;
+        public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
         /// 获取或设置注册码。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("RegisterCode")]
         [System.Text.Json.Serialization.JsonPropertyName("RegisterCode")]
         [System.Xml.Serialization.XmlElement("RegisterCode")]
-        public string RegisterCode { get; set; } = default!;
+        public string? RegisterCode { get; set; }
 
         /// <summary>
         /// 获取或设置授权管理员信息。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("TemplateId")]
         [System.Text.Json.Serialization.JsonPropertyName("TemplateId")]
         [System.Xml.Serialization.XmlElement("TemplateId")]
-        public string TemplateId { get; set; } = default!;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置自定义渠道参数。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/user/list_member_auth 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                public string OepnUserId { get; set; } = default!;
+                public string? OepnUserId { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("member_auth_list")]
         [System.Text.Json.Serialization.JsonPropertyName("member_auth_list")]
-        public Types.MemberAuth[] MemberAuthList { get; set; } = default!;
+        public List<Types.MemberAuth>? MemberAuthList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

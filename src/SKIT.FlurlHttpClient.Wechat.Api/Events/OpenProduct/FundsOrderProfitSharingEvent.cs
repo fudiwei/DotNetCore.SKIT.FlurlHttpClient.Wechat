@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("profit_sharing_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("profit_sharing_no")]
                 [System.Xml.Serialization.XmlElement("profit_sharing_no")]
-                public string OutProfitSharingNumber { get; set; } = default!;
+                public string? OutProfitSharingNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账金额（单位：分）。
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("result")]
                 [System.Text.Json.Serialization.JsonPropertyName("result")]
                 [System.Xml.Serialization.XmlElement("result")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置完成时间字符串（格式：yyyy-MM-dd HH:mm:ss）。
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("finish_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("finish_time")]
                 [System.Xml.Serialization.XmlElement("finish_time")]
-                public string FinishTimeString { get; set; } = default!;
+                public string? FinishTimeString { get; set; }
             }
         }
 
@@ -53,6 +53,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
         [System.Xml.Serialization.XmlElement("order_info")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

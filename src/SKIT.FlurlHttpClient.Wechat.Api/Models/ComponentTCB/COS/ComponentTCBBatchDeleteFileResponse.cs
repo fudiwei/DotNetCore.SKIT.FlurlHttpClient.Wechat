@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /componenttcb/batchdeletefile 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fileid")]
                 [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                public string FileId { get; set; } = default!;
+                public string? FileId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delete_list")]
         [System.Text.Json.Serialization.JsonPropertyName("delete_list")]
-        public Types.File[] FileList { get; set; } = default!;
+        public List<Types.File>? FileList { get; set; }
     }
 }

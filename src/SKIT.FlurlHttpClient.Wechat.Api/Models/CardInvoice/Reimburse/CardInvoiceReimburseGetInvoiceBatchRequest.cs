@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                public string CardId { get; set; } = string.Empty;
+                public string? CardId { get; set; }
 
                 /// <summary>
                 /// 获取或设置经过加密的发票卡券 Code。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_code")]
-                public string EncryptedCardCode { get; set; } = string.Empty;
+                public string? EncryptedCardCode { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item_list")]
         [System.Text.Json.Serialization.JsonPropertyName("item_list")]
-        public IList<Types.InvoiceCard> InvoiceCardList { get; set; } = new List<Types.InvoiceCard>();
+        public List<Types.InvoiceCard>? InvoiceCardList { get; set; }
     }
 }

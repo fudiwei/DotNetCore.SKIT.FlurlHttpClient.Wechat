@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reject_reason")]
         [System.Text.Json.Serialization.JsonPropertyName("reject_reason")]
-        public string RejectReason { get; set; } = string.Empty;
+        public string? RejectReason { get; set; }
     }
 }

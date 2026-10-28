@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("presign_token")]
         [System.Text.Json.Serialization.JsonPropertyName("presign_token")]
-        public string PresignToken { get; set; } = default!;
+        public string? PresignToken { get; set; }
     }
 }

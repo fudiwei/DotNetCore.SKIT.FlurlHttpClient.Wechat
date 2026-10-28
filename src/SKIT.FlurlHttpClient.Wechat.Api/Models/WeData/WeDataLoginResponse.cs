@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("err_msg")]
                 [System.Text.Json.Serialization.JsonPropertyName("err_msg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("base_resp")]
         [System.Text.Json.Serialization.JsonPropertyName("base_resp")]
-        public Types.BaseResponse BaseResponse { get; set; } = default!;
+        public Types.BaseResponse? BaseResponse { get; set; }
 
         /// <summary>
         /// 获取或设置 We 分析登录链接。

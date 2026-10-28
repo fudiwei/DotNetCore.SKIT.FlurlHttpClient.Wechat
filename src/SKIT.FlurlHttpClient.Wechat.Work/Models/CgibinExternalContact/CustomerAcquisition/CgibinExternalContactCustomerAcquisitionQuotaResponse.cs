@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("quota_list")]
         [System.Text.Json.Serialization.JsonPropertyName("quota_list")]
-        public Types.Quota[]? QuotaList { get; set; }
+        public List<Types.Quota>? QuotaList { get; set; }
     }
 }

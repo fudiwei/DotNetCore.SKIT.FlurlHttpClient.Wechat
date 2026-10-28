@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_entrustweb_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_entrustweb_id")]
-        public string PresignSessionId { get; set; } = default!;
+        public string? PresignSessionId { get; set; }
 
         /// <summary>
         /// 获取或设置跳转小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("redirect_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("redirect_appid")]
-        public string RedirectAppId { get; set; } = default!;
+        public string? RedirectAppId { get; set; }
 
         /// <summary>
         /// 获取或设置跳转小程序页面路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("redirect_path")]
         [System.Text.Json.Serialization.JsonPropertyName("redirect_path")]
-        public string RedirectPagePath { get; set; } = default!;
+        public string? RedirectPagePath { get; set; }
     }
 }

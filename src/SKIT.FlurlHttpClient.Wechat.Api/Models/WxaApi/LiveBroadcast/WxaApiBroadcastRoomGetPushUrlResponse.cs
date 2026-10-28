@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pushAddr")]
         [System.Text.Json.Serialization.JsonPropertyName("pushAddr")]
-        public string PushUrl { get; set; } = default!;
+        public string? PushUrl { get; set; }
     }
 }

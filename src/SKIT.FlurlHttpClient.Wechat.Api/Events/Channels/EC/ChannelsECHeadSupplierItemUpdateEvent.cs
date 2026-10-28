@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
                 [System.Xml.Serialization.XmlElement("appid")]
-                public string AppId { get; set; } = default!;
+                public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品 ID。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("update_fields")]
                 [System.Text.Json.Serialization.JsonPropertyName("update_fields")]
                 [System.Xml.Serialization.XmlElement("update_fields", Type = typeof(string), IsNullable = true)]
-                public string[]? UpdatedFieldList { get; set; }
+                public List<string>? UpdatedFieldList { get; set; }
             }
         }
 
@@ -63,6 +63,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("item_info")]
         [System.Text.Json.Serialization.JsonPropertyName("item_info")]
         [System.Xml.Serialization.XmlElement("item_info")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

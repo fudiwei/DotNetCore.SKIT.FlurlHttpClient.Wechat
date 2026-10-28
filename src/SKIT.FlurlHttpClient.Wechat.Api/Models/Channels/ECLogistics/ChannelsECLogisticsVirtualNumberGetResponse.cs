@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("masked_real_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("masked_real_phone")]
-        public string MaskedPhoneNumber { get; set; } = default!;
+        public string? MaskedPhoneNumber { get; set; }
 
         /// <summary>
         /// 获取或设置虚拟号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("main_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("main_phone")]
-        public string VirtualPhoneNumber { get; set; } = default!;
+        public string? VirtualPhoneNumber { get; set; }
 
         /// <summary>
         /// 获取或设置完整虚拟号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("virtual_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("virtual_phone")]
-        public string FullVirtualPhoneNumber { get; set; } = default!;
+        public string? FullVirtualPhoneNumber { get; set; }
     }
 }

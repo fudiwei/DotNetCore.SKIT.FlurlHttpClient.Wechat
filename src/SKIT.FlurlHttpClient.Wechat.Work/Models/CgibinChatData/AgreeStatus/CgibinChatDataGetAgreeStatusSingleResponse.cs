@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("agree_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("agree_status")]
-                public string AgreeStatus { get; set; } = default!;
+                public string? AgreeStatus { get; set; }
 
                 /// <summary>
                 /// 获取或设置状态改变时间戳。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("agreeinfo")]
         [System.Text.Json.Serialization.JsonPropertyName("agreeinfo")]
-        public Types.AgreeInfo[] AgreeInfoList { get; set; } = default!;
+        public List<Types.AgreeInfo>? AgreeInfoList { get; set; }
     }
 }

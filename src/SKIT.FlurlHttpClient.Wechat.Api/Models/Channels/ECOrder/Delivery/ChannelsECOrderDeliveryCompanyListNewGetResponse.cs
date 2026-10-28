@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_list")]
         [System.Text.Json.Serialization.JsonPropertyName("company_list")]
-        public Types.DeliveryCompany[] DeliveryCompanyList { get; set; } = default!;
+        public List<Types.DeliveryCompany>? DeliveryCompanyList { get; set; }
     }
 }

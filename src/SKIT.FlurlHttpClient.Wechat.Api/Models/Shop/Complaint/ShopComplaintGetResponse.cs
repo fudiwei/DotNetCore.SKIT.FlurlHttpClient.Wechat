@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/complaint/get 接口的响应。</para>
@@ -18,7 +18,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public ComplaintFlowItem[] Items { get; set; } = default!;
+                public List<ComplaintFlowItem>? Items { get; set; }
             }
 
             public class ComplaintFlowItem
@@ -32,14 +32,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("content")]
                         [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string Content { get; set; } = default!;
+                        public string? Content { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片 URL 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_url_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_url_list")]
-                        public string[] MediaUrlList { get; set; } = default!;
+                        public List<string>? MediaUrlList { get; set; }
                     }
 
                     public class OpenPlatformRecord
@@ -56,7 +56,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("state_describe")]
                         [System.Text.Json.Serialization.JsonPropertyName("state_describe")]
-                        public string StateDescription { get; set; } = default!;
+                        public string? StateDescription { get; set; }
 
                         /// <summary>
                         /// 获取或设置处理事件。
@@ -70,7 +70,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("event_describe")]
                         [System.Text.Json.Serialization.JsonPropertyName("event_describe")]
-                        public string EventDescription { get; set; } = default!;
+                        public string? EventDescription { get; set; }
 
                         /// <summary>
                         /// 获取或设置时间戳。
@@ -99,7 +99,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("operator_nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("operator_nickname")]
-                        public string OperatorNickname { get; set; } = default!;
+                        public string? OperatorNickname { get; set; }
                     }
                 }
 
@@ -138,13 +138,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public Types.ComplaintOrder ComplaintOrder { get; set; } = default!;
+        public Types.ComplaintOrder? ComplaintOrder { get; set; }
 
         /// <summary>
         /// 获取或设置纠纷流程列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("flow_info")]
         [System.Text.Json.Serialization.JsonPropertyName("flow_info")]
-        public Types.ComplaintFlowList ComplaintFlowList { get; set; } = default!;
+        public Types.ComplaintFlowList? ComplaintFlowList { get; set; }
     }
 }

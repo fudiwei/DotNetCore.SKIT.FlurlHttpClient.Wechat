@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("items")]
         [System.Text.Json.Serialization.JsonPropertyName("items")]
-        public Types.Item[] ItemList { get; set; } = default!;
+        public List<Types.Item>? ItemList { get; set; }
 
         /// <summary>
         /// 获取或设置联盟商品总数量。

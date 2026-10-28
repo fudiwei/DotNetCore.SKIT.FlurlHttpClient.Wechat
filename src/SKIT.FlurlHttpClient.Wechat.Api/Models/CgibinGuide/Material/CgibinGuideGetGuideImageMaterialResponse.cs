@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("picurl")]
                 [System.Text.Json.Serialization.JsonPropertyName("picurl")]
-                public string PictureUrl { get; set; } = default!;
+                public string? PictureUrl { get; set; }
             }
         }
 
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_list")]
         [System.Text.Json.Serialization.JsonPropertyName("model_list")]
-        public Types.ImageMaterial[] ImageList { get; set; } = default!;
+        public List<Types.ImageMaterial>? ImageList { get; set; }
 
         /// <summary>
         /// 获取或设置图片素材总数。

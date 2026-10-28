@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("abnormal_settle_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("abnormal_settle_type")]
-                public string AbnormalSettleType { get; set; } = default!;
+                public string? AbnormalSettleType { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户异常结算批次单处理单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_abnormal_settle_batch_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_abnormal_settle_batch_no")]
-                public string OutAbnormalSettleBatchNumber { get; set; } = default!;
+                public string? OutAbnormalSettleBatchNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付异常资金付款单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("abnormal_fund_receipt_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("abnormal_fund_receipt_id")]
-                public string AbnormalFundReceiptId { get; set; } = default!;
+                public string? AbnormalFundReceiptId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请成功时间。
@@ -53,28 +53,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_settle_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_settle_batch_no")]
-        public string OutSettleBatchNumber { get; set; } = default!;
+        public string? OutSettleBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付结算批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settle_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("settle_batch_no")]
-        public string SettleBatchNumber { get; set; } = default!;
+        public string? SettleBatchNumber { get; set; }
 
         /// <summary>
         /// 获取或设置批次状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string State { get; set; } = default!;
+        public string? State { get; set; }
 
         /// <summary>
         /// 获取或设置收款方描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置交易场景。

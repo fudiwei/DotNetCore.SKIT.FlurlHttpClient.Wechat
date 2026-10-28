@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("words")]
                         [System.Text.Json.Serialization.JsonPropertyName("words")]
-                        public string Words { get; set; } = string.Empty;
+                        public string? Words { get; set; }
 
                         /// <summary>
                         /// 获取或设置描述。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("description")]
                         [System.Text.Json.Serialization.JsonPropertyName("description")]
-                        public string Description { get; set; } = string.Empty;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置跳转链接。
@@ -85,13 +85,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("card_appid")]
-        public string CardAppId { get; set; } = string.Empty;
+        public string? CardAppId { get; set; }
 
         /// <summary>
         /// 获取或设置卡券模板信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_template_information")]
         [System.Text.Json.Serialization.JsonPropertyName("card_template_information")]
-        public Types.CartTemplate CartTemplate { get; set; } = new Types.CartTemplate();
+        public Types.CartTemplate? CartTemplate { get; set; }
     }
 }

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pid")]
         [System.Text.Json.Serialization.JsonPropertyName("pid")]
-        public string PromotionId { get; set; } = default!;
+        public string? PromotionId { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getuserencryptkey 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_key")]
-                public string EncryptKey { get; set; } = default!;
+                public string? EncryptKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置加密 IV。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("iv")]
                 [System.Text.Json.Serialization.JsonPropertyName("iv")]
-                public string IV { get; set; } = default!;
+                public string? IV { get; set; }
 
                 /// <summary>
                 /// 获取或设置版本号。
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("key_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("key_info_list")]
-        public Types.Key[] KeyList { get; set; } = default!;
+        public List<Types.Key>? KeyList { get; set; }
     }
 }

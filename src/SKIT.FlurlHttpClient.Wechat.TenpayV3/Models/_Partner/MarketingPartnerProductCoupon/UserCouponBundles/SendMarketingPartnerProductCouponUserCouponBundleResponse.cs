@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_coupon_bundle_id")]
         [System.Text.Json.Serialization.JsonPropertyName("user_coupon_bundle_id")]
-        public string UserCouponBundleId { get; set; } = default!;
+        public string? UserCouponBundleId { get; set; }
 
         /// <summary>
         /// 获取或设置用户券列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_product_coupon_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_product_coupon_list")]
-        public Types.UserCoupon[] UserCouponList { get; set; } = default!;
+        public List<Types.UserCoupon>? UserCouponList { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("date")]
                 [System.Text.Json.Serialization.JsonPropertyName("date")]
-                public string DateString { get; set; } = default!;
+                public string? DateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置观看次数。
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("summaries")]
         [System.Text.Json.Serialization.JsonPropertyName("summaries")]
-        public Types.Summary[] SummaryList { get; set; } = default!;
+        public List<Types.Summary>? SummaryList { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_apply_information")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_apply_information")]
-                public IList<Types.Material>? MaterialList { get; set; }
+                public List<Types.Material>? MaterialList { get; set; }
             }
 
             public class AdditionalInfomation : CreateRateActivityApplicationRequest.Types.AdditionalInfomation
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ApplicationId { get; set; } = string.Empty;
+        public string? ApplicationId { get; set; }
 
         /// <summary>
         /// 获取或设置报名活动详情。

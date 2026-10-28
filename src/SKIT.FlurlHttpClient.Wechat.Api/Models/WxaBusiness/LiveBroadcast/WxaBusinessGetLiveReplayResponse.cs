@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_url")]
-                public string MediaUrl { get; set; } = default!;
+                public string? MediaUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置回放视频 URL 过期时间戳。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_replay")]
         [System.Text.Json.Serialization.JsonPropertyName("live_replay")]
-        public Types.LiveReplay[] LiveReplayList { get; set; } = default!;
+        public List<Types.LiveReplay>? LiveReplayList { get; set; }
 
         /// <summary>
         /// 获取或设置回放视频片段总数。

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chapter_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("chapter_title")]
-                public string Title { get; set; } = string.Empty;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置章节内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = string.Empty;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置提供方章节唯一标识。
@@ -51,13 +51,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("book_id")]
         [System.Text.Json.Serialization.JsonPropertyName("book_id")]
-        public string BookId { get; set; } = string.Empty;
+        public string? BookId { get; set; }
 
         /// <summary>
         /// 获取或设置章节信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chapter")]
         [System.Text.Json.Serialization.JsonPropertyName("chapter")]
-        public Types.Chapter Chapter { get; set; } = new Types.Chapter();
+        public Types.Chapter? Chapter { get; set; }
     }
 }

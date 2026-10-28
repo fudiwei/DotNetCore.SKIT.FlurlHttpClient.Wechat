@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("redirect_url")]
         [System.Text.Json.Serialization.JsonPropertyName("redirect_url")]
-        public string RedirectUrl { get; set; } = default!;
+        public string? RedirectUrl { get; set; }
     }
 }

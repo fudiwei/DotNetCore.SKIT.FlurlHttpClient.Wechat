@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段排序。
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string IndexName { get; set; } = string.Empty;
+                public string? IndexName { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否唯一。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("keys")]
                 [System.Text.Json.Serialization.JsonPropertyName("keys")]
-                public IList<Types.Field>? FieldList { get; set; }
+                public List<Types.Field>? FieldList { get; set; }
             }
         }
 
@@ -57,27 +57,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置集合名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("collection_name")]
         [System.Text.Json.Serialization.JsonPropertyName("collection_name")]
-        public string CollectionName { get; set; } = string.Empty;
+        public string? CollectionName { get; set; }
 
         /// <summary>
         /// 获取或设置新增索引列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_indexes")]
         [System.Text.Json.Serialization.JsonPropertyName("create_indexes")]
-        public IList<Types.Index> CreateIndexList { get; set; } = new List<Types.Index>();
+        public List<Types.Index>? CreateIndexList { get; set; }
 
         /// <summary>
         /// 获取或设置删除索引列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("drop_indexes")]
         [System.Text.Json.Serialization.JsonPropertyName("drop_indexes")]
-        public IList<Types.Index> DropIndexList { get; set; } = new List<Types.Index>();
+        public List<Types.Index>? DropIndexList { get; set; }
     }
 }

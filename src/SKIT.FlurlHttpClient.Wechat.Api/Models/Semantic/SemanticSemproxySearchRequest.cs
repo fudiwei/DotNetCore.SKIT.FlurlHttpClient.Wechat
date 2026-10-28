@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query")]
         [System.Text.Json.Serialization.JsonPropertyName("query")]
-        public string Query { get; set; } = string.Empty;
+        public string? Query { get; set; }
 
         /// <summary>
         /// 获取或设置需要使用的服务类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Category { get; set; } = string.Empty;
+        public string? Category { get; set; }
 
         /// <summary>
         /// 获取或设置纬度坐标。

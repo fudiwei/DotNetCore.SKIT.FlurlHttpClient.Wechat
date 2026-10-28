@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/openhw/device/get_device_detail 接口的响应。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_corpid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_corpid")]
-                        public string OpenCorpId { get; set; } = default!;
+                        public string? OpenCorpId { get; set; }
 
                         /// <summary>
                         /// 获取或设置企业名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("corp_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("corp_name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("qr_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("qr_code")]
-                public string QrcodeData { get; set; } = default!;
+                public string? QrcodeData { get; set; }
 
                 /// <summary>
                 /// 获取或设置设备型号名。
@@ -78,6 +78,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("device_detail")]
-        public Types.DeviceDetail DeviceDetail { get; set; } = default!;
+        public Types.DeviceDetail? DeviceDetail { get; set; }
     }
 }

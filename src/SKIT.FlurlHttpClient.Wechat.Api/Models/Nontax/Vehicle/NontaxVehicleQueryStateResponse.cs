@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_state")]
         [System.Text.Json.Serialization.JsonPropertyName("user_state")]
-        public string UserState { get; set; } = default!;
+        public string? UserState { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
@@ -31,13 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number_info")]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number_info")]
-        public string[]? PlateNumberList { get; set; }
+        public List<string>? PlateNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置授权参数信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorize_package")]
         [System.Text.Json.Serialization.JsonPropertyName("authorize_package")]
-        public IDictionary<string, string>? AuthorizePackage { get; set; }
+        public Dictionary<string, string>? AuthorizePackage { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_account")]
         [System.Text.Json.Serialization.JsonPropertyName("kf_account")]
-        public string KfAccount { get; set; } = string.Empty;
+        public string? KfAccount { get; set; }
 
         /// <summary>
         /// 获取或设置接收绑定邀请的客服微信号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invite_wx")]
         [System.Text.Json.Serialization.JsonPropertyName("invite_wx")]
-        public string InviteWxname { get; set; } = string.Empty;
+        public string? InviteWxname { get; set; }
     }
 }

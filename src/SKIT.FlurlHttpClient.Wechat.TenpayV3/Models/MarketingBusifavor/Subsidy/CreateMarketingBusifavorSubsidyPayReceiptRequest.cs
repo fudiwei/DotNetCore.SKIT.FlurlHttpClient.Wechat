@@ -10,21 +10,21 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-        public string StockId { get; set; } = string.Empty;
+        public string? StockId { get; set; }
 
         /// <summary>
         /// 获取或设置商家券 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_code")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_code")]
-        public string CouponCode { get; set; } = string.Empty;
+        public string? CouponCode { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string TransactionId { get; set; } = string.Empty;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置营销补差扣款商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
@@ -52,13 +52,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置业务请求唯一单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_subsidy_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_subsidy_no")]
-        public string OutSubsidyNumber { get; set; } = string.Empty;
+        public string? OutSubsidyNumber { get; set; }
     }
 }

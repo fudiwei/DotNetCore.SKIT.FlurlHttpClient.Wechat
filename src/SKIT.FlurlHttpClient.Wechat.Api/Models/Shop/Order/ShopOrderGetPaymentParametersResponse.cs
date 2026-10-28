@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/order/getpaymentparams 接口的响应。</para>
@@ -22,28 +22,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nonceStr")]
                 [System.Text.Json.Serialization.JsonPropertyName("nonceStr")]
-                public string Nonce { get; set; } = default!;
+                public string? Nonce { get; set; }
 
                 /// <summary>
                 /// 获取或设置下单参数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("package")]
                 [System.Text.Json.Serialization.JsonPropertyName("package")]
-                public string Package { get; set; } = default!;
+                public string? Package { get; set; }
 
                 /// <summary>
                 /// 获取或设置签名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("paySign")]
                 [System.Text.Json.Serialization.JsonPropertyName("paySign")]
-                public string PaySign { get; set; } = default!;
+                public string? PaySign { get; set; }
 
                 /// <summary>
                 /// 获取或设置签名方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("signType")]
                 [System.Text.Json.Serialization.JsonPropertyName("signType")]
-                public string SignType { get; set; } = default!;
+                public string? SignType { get; set; }
             }
         }
 
@@ -52,6 +52,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_params")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_params")]
-        public Types.PaymentParameters PaymentParameters { get; set; } = default!;
+        public Types.PaymentParameters? PaymentParameters { get; set; }
     }
 }

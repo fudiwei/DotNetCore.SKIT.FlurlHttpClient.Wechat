@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("date")]
                         [System.Text.Json.Serialization.JsonPropertyName("date")]
-                        public string DateString { get; set; } = string.Empty;
+                        public string? DateString { get; set; }
                     }
 
                     public class AdGroupDailyReportSpec : AdGroupHourlyReportSpec
@@ -52,14 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("last_modified_time_range")]
                         [System.Text.Json.Serialization.JsonPropertyName("last_modified_time_range")]
-                        public Types.TimeRange TimeRange { get; set; } = new Types.TimeRange();
+                        public Types.TimeRange? TimeRange { get; set; }
 
                         /// <summary>
                         /// 获取或设置查询字段列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("fields")]
                         [System.Text.Json.Serialization.JsonPropertyName("fields")]
-                        public IList<string> FieldList { get; set; } = new List<string>();
+                        public List<string>? FieldList { get; set; }
                     }
 
                     public class POIHourlyReportSpec : AdGroupHourlyReportSpec
@@ -102,20 +102,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_name")]
         [System.Text.Json.Serialization.JsonPropertyName("task_name")]
-        public string TaskName { get; set; } = string.Empty;
+        public string? TaskName { get; set; }
 
         /// <summary>
         /// 获取或设置任务类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_type")]
         [System.Text.Json.Serialization.JsonPropertyName("task_type")]
-        public string TaskType { get; set; } = string.Empty;
+        public string? TaskType { get; set; }
 
         /// <summary>
         /// 获取或设置任务所需条件信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_spec")]
         [System.Text.Json.Serialization.JsonPropertyName("task_spec")]
-        public Types.Specification TaskSpecification { get; set; } = new Types.Specification();
+        public Types.Specification? TaskSpecification { get; set; }
     }
 }

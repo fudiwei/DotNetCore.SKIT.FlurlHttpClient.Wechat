@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-        public string PlanId { get; set; } = default!;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置投放计划状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_state")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_state")]
-        public string PlanState { get; set; } = default!;
+        public string? PlanState { get; set; }
 
         /// <summary>
         /// 获取或设置审核状态。

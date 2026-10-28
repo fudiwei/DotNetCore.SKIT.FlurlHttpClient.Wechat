@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("PageId")]
         [System.Text.Json.Serialization.JsonPropertyName("PageId")]
         [System.Xml.Serialization.XmlElement("PageId")]
-        public string PageId { get; set; } = default!;
+        public string? PageId { get; set; }
 
         /// <summary>
         /// 获取或设置订单号。
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("OrderId")]
         [System.Xml.Serialization.XmlElement("OrderId")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置是否是群转增。

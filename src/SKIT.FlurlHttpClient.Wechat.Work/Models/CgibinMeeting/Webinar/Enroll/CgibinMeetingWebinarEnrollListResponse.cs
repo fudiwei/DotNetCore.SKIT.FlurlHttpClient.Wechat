@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answer_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("answer_list")]
-                public new Types.Answer[]? AnswerList { get; set; }
+                public new List<Types.Answer>? AnswerList { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enroll_list")]
         [System.Text.Json.Serialization.JsonPropertyName("enroll_list")]
-        public new Types.Enroll[] EnrollList { get; set; } = default!;
+        public new List<Types.Enroll>? EnrollList { get; set; }
     }
 }

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grid_id")]
         [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-        public string GridId { get; set; } = default!;
+        public string? GridId { get; set; }
 
         /// <summary>
         /// 获取或设置无效的 UserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_userids")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_userids")]
-        public string[]? InvalidUserIdList { get; set; }
+        public List<string>? InvalidUserIdList { get; set; }
     }
 }

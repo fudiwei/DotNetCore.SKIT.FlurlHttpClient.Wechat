@@ -117,14 +117,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-        public string MessageId { get; set; } = default!;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置消息动作。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = default!;
+        public string? Action { get; set; }
 
         /// <summary>
         /// 获取或设置消息发送方 UserId。
@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tolist")]
         [System.Text.Json.Serialization.JsonPropertyName("tolist")]
-        public string[]? ToUserIdList { get; set; }
+        public List<string>? ToUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置企业成员账号。
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = default!;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。
@@ -355,20 +355,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voiceid")]
         [System.Text.Json.Serialization.JsonPropertyName("voiceid")]
-        public string? VoiceId { get; set; } = default!;
+        public string? VoiceId { get; set; }
 
         /// <summary>
         /// 获取或设置 VoIP ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voipid")]
         [System.Text.Json.Serialization.JsonPropertyName("voipid")]
-        public string? VoIPId { get; set; } = default!;
+        public string? VoIPId { get; set; }
 
         /// <summary>
         /// 获取或设置扩展字段。
         /// </summary>
         [Newtonsoft.Json.JsonExtensionData]
         [System.Text.Json.Serialization.JsonExtensionData]
-        public IDictionary<string, object>? ExtensionData { get; set; }
+        public Dictionary<string, object?>? ExtensionData { get; set; }
     }
 }

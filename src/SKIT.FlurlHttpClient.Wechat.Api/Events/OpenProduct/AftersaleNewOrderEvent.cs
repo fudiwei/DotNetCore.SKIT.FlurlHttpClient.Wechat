@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
                 [System.Xml.Serialization.XmlElement("out_order_id")]
-                public string OutOrderId { get; set; } = default!;
+                public string? OutOrderId { get; set; }
             }
         }
 
@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("aftersale_info")]
         [System.Text.Json.Serialization.JsonPropertyName("aftersale_info")]
         [System.Xml.Serialization.XmlElement("aftersale_info")]
-        public Types.AftersaleOrder AftersaleOrder { get; set; } = default!;
+        public Types.AftersaleOrder? AftersaleOrder { get; set; }
     }
 }

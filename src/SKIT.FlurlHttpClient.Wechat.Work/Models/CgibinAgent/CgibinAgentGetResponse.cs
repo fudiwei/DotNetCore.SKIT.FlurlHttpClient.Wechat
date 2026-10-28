@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
                         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
+                        public string? UserId { get; set; }
                     }
                 }
 
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user")]
                 [System.Text.Json.Serialization.JsonPropertyName("user")]
-                public Types.User[] UserList { get; set; } = default!;
+                public List<Types.User>? UserList { get; set; }
             }
 
             public class AllowedDepartment
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partyid")]
                 [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public long[] DepartmentIdList { get; set; } = default!;
+                public List<long>? DepartmentIdList { get; set; }
             }
 
             public class AllowedTag
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tagid")]
                 [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                public int[] TagIdList { get; set; } = default!;
+                public List<int>? TagIdList { get; set; }
             }
         }
 
@@ -63,42 +63,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置应用方形头像 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("square_logo_url")]
         [System.Text.Json.Serialization.JsonPropertyName("square_logo_url")]
-        public string SquareLogoUrl { get; set; } = default!;
+        public string? SquareLogoUrl { get; set; }
 
         /// <summary>
         /// 获取或设置应用详情。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置可见成员范围信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_userinfos")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_userinfos")]
-        public Types.AllowedUser AllowedUser { get; set; } = default!;
+        public Types.AllowedUser? AllowedUser { get; set; }
 
         /// <summary>
         /// 获取或设置可见部门范围信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_partys")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_partys")]
-        public Types.AllowedDepartment AllowedDepartment { get; set; } = default!;
+        public Types.AllowedDepartment? AllowedDepartment { get; set; }
 
         /// <summary>
         /// 获取或设置可见标签范围信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_tags")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_tags")]
-        public Types.AllowedTag AllowedTag { get; set; } = default!;
+        public Types.AllowedTag? AllowedTag { get; set; }
 
         /// <summary>
         /// 获取或设置是否被停用。

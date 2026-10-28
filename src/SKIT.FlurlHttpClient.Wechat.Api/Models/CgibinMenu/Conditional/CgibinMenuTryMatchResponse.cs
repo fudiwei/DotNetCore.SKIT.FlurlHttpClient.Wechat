@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/menu/trymatch 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("button")]
         [System.Text.Json.Serialization.JsonPropertyName("button")]
-        public Types.Button[] ButtonList { get; set; } = default!;
+        public List<Types.Button>? ButtonList { get; set; }
     }
 }

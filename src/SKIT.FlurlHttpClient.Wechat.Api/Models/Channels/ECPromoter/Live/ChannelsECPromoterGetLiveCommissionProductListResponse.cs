@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品图片 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_img_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_img_url")]
-                public string ImageUrl { get; set; } = default!;
+                public string? ImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置售价（单位：分）。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_list")]
-        public Types.Product[] ProductList { get; set; } = default!;
+        public List<Types.Product>? ProductList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

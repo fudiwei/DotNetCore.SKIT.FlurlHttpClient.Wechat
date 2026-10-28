@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-        public string MessageId { get; set; } = string.Empty;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

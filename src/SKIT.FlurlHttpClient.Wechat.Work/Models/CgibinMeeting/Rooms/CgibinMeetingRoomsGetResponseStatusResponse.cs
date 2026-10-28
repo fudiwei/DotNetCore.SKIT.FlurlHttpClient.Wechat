@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("response_time")]
         [System.Text.Json.Serialization.JsonPropertyName("response_time")]
-        public string LastResponseTimeString { get; set; } = default!;
+        public string? LastResponseTimeString { get; set; }
     }
 }

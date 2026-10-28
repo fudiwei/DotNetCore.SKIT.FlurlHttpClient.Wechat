@@ -59,6 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customs")]
         [System.Text.Json.Serialization.JsonPropertyName("customs")]
-        public string Customs { get; set; } = string.Empty;
+        public string? Customs { get; set; }
     }
 }

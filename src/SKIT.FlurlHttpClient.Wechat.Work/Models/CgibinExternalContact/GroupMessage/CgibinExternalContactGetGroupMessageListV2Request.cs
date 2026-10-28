@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = string.Empty;
+                public string? Content { get; set; }
             }
 
             public class Attachment
@@ -45,7 +45,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置图文消息描述。
@@ -59,7 +59,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = string.Empty;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置图文消息封面 URL。
@@ -76,7 +76,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = string.Empty;
+                        public string? MediaId { get; set; }
                     }
 
                     public class MiniProgram
@@ -86,21 +86,21 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = string.Empty;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("page")]
                         [System.Text.Json.Serialization.JsonPropertyName("page")]
-                        public string PagePath { get; set; } = string.Empty;
+                        public string? PagePath { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序封面 MediaId。
@@ -116,7 +116,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgtype")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置图片附件信息。
@@ -153,7 +153,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_type")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_type")]
-        public string ChatType { get; set; } = string.Empty;
+        public string? ChatType { get; set; }
 
         /// <summary>
         /// 获取或设置指定开始时间戳。

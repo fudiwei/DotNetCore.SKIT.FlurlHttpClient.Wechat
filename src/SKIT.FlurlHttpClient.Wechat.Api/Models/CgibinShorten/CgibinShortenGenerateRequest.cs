@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("long_data")]
         [System.Text.Json.Serialization.JsonPropertyName("long_data")]
-        public string LongData { get; set; } = string.Empty;
+        public string? LongData { get; set; }
     }
 }

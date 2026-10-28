@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string EnvironmentId { get; set; } = default!;
+                public string? EnvironmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误描述。
@@ -30,6 +30,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_env_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_env_list")]
-        public Types.Failure[]? FailureList { get; set; }
+        public List<Types.Failure>? FailureList { get; set; }
     }
 }

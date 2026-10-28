@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_url")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_url")]
-        public string QrcodeUrl { get; set; } = default!;
+        public string? QrcodeUrl { get; set; }
     }
 }

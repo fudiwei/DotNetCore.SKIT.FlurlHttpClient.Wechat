@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/customservice/getkflist 接口的响应。</para>
@@ -14,28 +14,28 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kf_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("kf_id")]
-                public string KfId { get; set; } = default!;
+                public string? KfId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kf_account")]
                 [System.Text.Json.Serialization.JsonPropertyName("kf_account")]
-                public string KfAccount { get; set; } = default!;
+                public string? KfAccount { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kf_nick")]
                 [System.Text.Json.Serialization.JsonPropertyName("kf_nick")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kf_headimgurl")]
                 [System.Text.Json.Serialization.JsonPropertyName("kf_headimgurl")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服微信号。
@@ -79,6 +79,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_list")]
         [System.Text.Json.Serialization.JsonPropertyName("kf_list")]
-        public Types.Kf[] KfList { get; set; } = default!;
+        public List<Types.Kf>? KfList { get; set; }
     }
 }

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("formid")]
         [System.Text.Json.Serialization.JsonPropertyName("formid")]
-        public string FormId { get; set; } = string.Empty;
+        public string? FormId { get; set; }
     }
 }

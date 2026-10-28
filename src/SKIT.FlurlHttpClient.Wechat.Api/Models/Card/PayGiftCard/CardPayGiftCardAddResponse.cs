@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                public string MerchantId { get; set; } = default!;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -58,13 +58,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_mchid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_mchid_list")]
-        public Types.Merchant[] FailedMerchantList { get; set; } = default!;
+        public List<Types.Merchant>? FailedMerchantList { get; set; }
 
         /// <summary>
         /// 获取或设置设置成功的微信商户号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("succ_mchid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("succ_mchid_list")]
-        public string[] SuccessfulMerchantIdList { get; set; } = default!;
+        public List<string>? SuccessfulMerchantIdList { get; set; }
     }
 }

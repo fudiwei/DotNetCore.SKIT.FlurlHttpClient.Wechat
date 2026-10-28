@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         [System.Xml.Serialization.XmlElement("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置审核结果。
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 [System.Xml.Serialization.XmlElement("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核文案。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("scene_group_ext_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_group_ext_list")]
                 [System.Xml.Serialization.XmlElement("scene_group_ext_list", Type = typeof(Types.SceneGroupExtra))]
-                public Types.SceneGroupExtra[] SceneGroupExtraList { get; set; } = default!;
+                public List<Types.SceneGroupExtra>? SceneGroupExtraList { get; set; }
             }
         }
 
@@ -83,6 +83,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("SceneGroupAudit")]
         [System.Text.Json.Serialization.JsonPropertyName("SceneGroupAudit")]
         [System.Xml.Serialization.XmlElement("SceneGroupAudit")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.EventData? EventData { get; set; }
     }
 }

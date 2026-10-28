@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
                 [System.Xml.Serialization.XmlElement("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置违规链接。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("content_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("content_url")]
                 [System.Xml.Serialization.XmlElement("content_url")]
-                public string ContentUrl { get; set; } = default!;
+                public string? ContentUrl { get; set; }
             }
 
             public class AppealMaterial
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
                 [System.Xml.Serialization.XmlElement("reason")]
-                public string Reason { get; set; } = default!;
+                public string? Reason { get; set; }
 
                 /// <summary>
                 /// 获取或设置证明材料 MediaId 列表。
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("proof_material_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("proof_material_id")]
                 [System.Xml.Serialization.XmlElement("proof_material_id", Type = typeof(string))]
-                public string[] ProofMediaIdList { get; set; } = default!;
+                public List<string>? ProofMediaIdList { get; set; }
             }
         }
 
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         [System.Xml.Serialization.XmlElement("appid")]
-        public string MiniProgramAppId { get; set; } = default!;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置申诉次数。
@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("material")]
         [System.Text.Json.Serialization.JsonPropertyName("material")]
         [System.Xml.Serialization.XmlElement("material", Type = typeof(Types.Material), IsNullable = true)]
-        public Types.Material[]? MaterialList { get; set; }
+        public List<Types.Material>? MaterialList { get; set; }
 
         /// <summary>
         /// 获取或设置处罚原因描述。

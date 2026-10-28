@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mweb_url")]
         [System.Text.Json.Serialization.JsonPropertyName("mweb_url")]
-        public string MWebUrl { get; set; } = default!;
+        public string? MWebUrl { get; set; }
     }
 }

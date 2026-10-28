@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付注销提现申请单号。与字段 <see cref="OutRequestNumber"/> 二选一。
@@ -47,6 +47,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cancel_contract_version")]
         [System.Text.Json.Serialization.JsonPropertyName("cancel_contract_version")]
-        public string CancelContractVersion { get; set; } = string.Empty;
+        public string? CancelContractVersion { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("suggest")]
                 [System.Text.Json.Serialization.JsonPropertyName("suggest")]
-                public string SuggestType { get; set; } = default!;
+                public string? SuggestType { get; set; }
 
                 /// <summary>
                 /// 获取或设置命中标签枚举值。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("strategy")]
                 [System.Text.Json.Serialization.JsonPropertyName("strategy")]
-                public string Strategy { get; set; } = default!;
+                public string? Strategy { get; set; }
 
                 /// <summary>
                 /// 获取或设置建议类型。
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trace_id")]
         [System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        public string TraceId { get; set; } = default!;
+        public string? TraceId { get; set; }
 
         /// <summary>
         /// 获取或设置综合结果信息。
@@ -82,6 +82,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail")]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public Types.Detail[]? DetailList { get; set; }
+        public List<Types.Detail>? DetailList { get; set; }
     }
 }

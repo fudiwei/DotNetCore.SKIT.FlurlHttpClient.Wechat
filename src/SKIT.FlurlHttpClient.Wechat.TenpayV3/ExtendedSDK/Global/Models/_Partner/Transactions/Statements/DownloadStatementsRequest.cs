@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DateString { get; set; } = string.Empty;
+        public string? DateString { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。

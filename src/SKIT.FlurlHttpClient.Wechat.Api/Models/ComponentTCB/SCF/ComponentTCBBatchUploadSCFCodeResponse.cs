@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_env_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_env_list")]
-        public Types.Failure[]? FailureList { get; set; }
+        public List<Types.Failure>? FailureList { get; set; }
     }
 }

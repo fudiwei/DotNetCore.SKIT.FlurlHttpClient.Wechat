@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verify_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_openid")]
-        public string VerifyOpenIdResults { get; set; } = default!;
+        public string? VerifyOpenIdResults { get; set; }
 
         /// <summary>
         /// 获取或设置实名验证结果。

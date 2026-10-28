@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_product_album_list 接口的响应。</para>
@@ -22,7 +22,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("media_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                                public string MediaId { get; set; } = default!;
+                                public string? MediaId { get; set; }
                             }
                         }
 
@@ -31,7 +31,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = default!;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片附件信息。
@@ -47,14 +47,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-                public string ProductId { get; set; } = default!;
+                public string? ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品价格（单位：分）。
@@ -75,7 +75,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attachments")]
                 [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-                public Types.Attachment[]? AttachmentList { get; set; }
+                public List<Types.Attachment>? AttachmentList { get; set; }
             }
         }
 
@@ -91,6 +91,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_list")]
-        public Types.Product[] ProductList { get; set; } = default!;
+        public List<Types.Product>? ProductList { get; set; }
     }
 }

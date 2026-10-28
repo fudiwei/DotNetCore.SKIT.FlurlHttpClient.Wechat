@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("chat_id")]
-                public string GroupChatId { get; set; } = default!;
+                public string? GroupChatId { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误码。
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errmsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("failed_chat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("failed_chat_list")]
-        public Types.GroupChat[]? FailedGroupChatList { get; set; }
+        public List<Types.GroupChat>? FailedGroupChatList { get; set; }
     }
 }

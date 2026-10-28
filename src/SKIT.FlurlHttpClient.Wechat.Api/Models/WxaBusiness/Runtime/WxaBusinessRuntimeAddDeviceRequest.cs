@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_id_list")]
-        public IList<string> DeviceIdList { get; set; } = new List<string>();
+        public List<string>? DeviceIdList { get; set; }
 
         /// <summary>
         /// 获取或设置机型名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_name")]
         [System.Text.Json.Serialization.JsonPropertyName("model_name")]
-        public string DeviceModelName { get; set; } = string.Empty;
+        public string? DeviceModelName { get; set; }
     }
 }

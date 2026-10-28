@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("task_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-                public string TaskId { get; set; } = string.Empty;
+                public string? TaskId { get; set; }
 
                 /// <summary>
                 /// 获取或设置替换文案。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("replace_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("replace_name")]
-                public string ReplacementText { get; set; } = string.Empty;
+                public string? ReplacementText { get; set; }
             }
 
             public class TemplateCardMessage : CgibinMessageSendRequest.Types.TemplateCardMessage
@@ -47,21 +47,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userids")]
         [System.Text.Json.Serialization.JsonPropertyName("userids")]
-        public IList<string>? UserIdList { get; set; }
+        public List<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partyids")]
         [System.Text.Json.Serialization.JsonPropertyName("partyids")]
-        public IList<long>? DepartmentIdList { get; set; }
+        public List<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagids")]
         [System.Text.Json.Serialization.JsonPropertyName("tagids")]
-        public IList<int>? TagIdList { get; set; }
+        public List<int>? TagIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否更新整个任务接收人员。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("response_code")]
         [System.Text.Json.Serialization.JsonPropertyName("response_code")]
-        public string ResponseCode { get; set; } = string.Empty;
+        public string? ResponseCode { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启 ID 转译。

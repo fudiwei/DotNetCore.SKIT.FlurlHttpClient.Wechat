@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/vehicle/payapply 接口的请求。</para>
@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("plate_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("plate_number")]
-                public string PlateNumber { get; set; } = string.Empty;
+                public string? PlateNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置车辆类型。
@@ -135,7 +135,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。
@@ -170,14 +170,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_code")]
         [System.Text.Json.Serialization.JsonPropertyName("department_code")]
-        public string DepartmentCode { get; set; } = string.Empty;
+        public string? DepartmentCode { get; set; }
 
         /// <summary>
         /// 获取或设置执收单位名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_name")]
         [System.Text.Json.Serialization.JsonPropertyName("department_name")]
-        public string DepartmentName { get; set; } = string.Empty;
+        public string? DepartmentName { get; set; }
 
         /// <summary>
         /// 获取或设置行政区划代码。
@@ -198,13 +198,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
-        public string TradeScene { get; set; } = string.Empty;
+        public string? TradeScene { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        public Types.Scene Scene { get; set; } = new Types.Scene();
+        public Types.Scene? Scene { get; set; }
     }
 }

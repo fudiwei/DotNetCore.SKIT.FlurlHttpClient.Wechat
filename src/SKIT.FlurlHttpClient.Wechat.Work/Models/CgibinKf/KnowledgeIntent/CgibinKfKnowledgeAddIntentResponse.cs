@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("intent_id")]
         [System.Text.Json.Serialization.JsonPropertyName("intent_id")]
-        public string IntentId { get; set; } = default!;
+        public string? IntentId { get; set; }
     }
 }

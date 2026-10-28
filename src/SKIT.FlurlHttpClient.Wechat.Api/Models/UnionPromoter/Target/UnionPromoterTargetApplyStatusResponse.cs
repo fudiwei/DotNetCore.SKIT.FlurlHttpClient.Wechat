@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /union/promoter/target/apply_status 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planId")]
                 [System.Text.Json.Serialization.JsonPropertyName("planId")]
-                public string PlanId { get; set; } = default!;
+                public string? PlanId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请状态。
@@ -65,6 +65,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

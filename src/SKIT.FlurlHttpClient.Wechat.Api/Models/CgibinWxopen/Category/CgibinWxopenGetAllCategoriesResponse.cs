@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/wxopen/getallcategories 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("categories")]
                 [System.Text.Json.Serialization.JsonPropertyName("categories")]
-                public CategoryItem[] Items { get; set; } = default!;
+                public List<CategoryItem>? Items { get; set; }
             }
 
             public class CategoryItem
@@ -36,7 +36,7 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("name")]
                                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public string Name { get; set; } = default!;
+                                        public string? Name { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置资质文件示例 URL。
@@ -52,7 +52,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("inner_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("inner_list")]
-                                public Types.Example[] ExampleList { get; set; } = default!;
+                                public List<Types.Example>? ExampleList { get; set; }
                             }
                         }
 
@@ -61,7 +61,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("exter_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("exter_list")]
-                        public Types.File[] FileList { get; set; } = default!;
+                        public List<Types.File>? FileList { get; set; }
 
                         /// <summary>
                         /// 获取或设置资质备注。
@@ -105,7 +105,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("children")]
                 [System.Text.Json.Serialization.JsonPropertyName("children")]
-                public int[]? SubCategoryIdList { get; set; }
+                public List<int>? SubCategoryIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置敏感类目类型。
@@ -128,6 +128,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("categories_list")]
         [System.Text.Json.Serialization.JsonPropertyName("categories_list")]
-        public Types.CategoryList CategoryList { get; set; } = default!;
+        public Types.CategoryList? CategoryList { get; set; }
     }
 }

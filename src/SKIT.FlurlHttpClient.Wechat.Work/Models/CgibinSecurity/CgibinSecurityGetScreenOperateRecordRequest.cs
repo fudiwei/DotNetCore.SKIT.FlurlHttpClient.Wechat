@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("userid_list")]
-        public IList<string>? UserIdList { get; set; }
+        public List<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置操作者部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("department_id_list")]
-        public IList<long>? DepartmentIdList { get; set; }
+        public List<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置截屏内容类型。

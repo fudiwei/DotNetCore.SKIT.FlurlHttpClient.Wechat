@@ -20,6 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Certificate[] CertificateList { get; set; } = default!;
+        public List<Types.Certificate>? CertificateList { get; set; }
     }
 }

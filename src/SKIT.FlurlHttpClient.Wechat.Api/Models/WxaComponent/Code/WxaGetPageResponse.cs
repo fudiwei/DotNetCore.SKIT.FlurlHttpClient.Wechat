@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/get_page 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_list")]
         [System.Text.Json.Serialization.JsonPropertyName("page_list")]
-        public string[] PageList { get; set; } = default!;
+        public List<string>? PageList { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/invoice/platform/createcard 接口的请求。</para>
@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("logo_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-                        public string LogoUrl { get; set; } = string.Empty;
+                        public string? LogoUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置商家简称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置开票平台自定义入口名称。
@@ -76,21 +76,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票方全称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payee")]
                 [System.Text.Json.Serialization.JsonPropertyName("payee")]
-                public string Payee { get; set; } = string.Empty;
+                public string? Payee { get; set; }
             }
         }
 
@@ -99,6 +99,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoice_info")]
         [System.Text.Json.Serialization.JsonPropertyName("invoice_info")]
-        public Types.InvoiceTemplate InvoiceTemplate { get; set; } = new Types.InvoiceTemplate();
+        public Types.InvoiceTemplate? InvoiceTemplate { get; set; }
     }
 }

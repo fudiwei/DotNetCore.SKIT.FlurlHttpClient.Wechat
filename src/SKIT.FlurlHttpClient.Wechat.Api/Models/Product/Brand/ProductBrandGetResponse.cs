@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("brand_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
                     }
                 }
 
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_info")]
-                public Types.BrandInfo BrandInfo { get; set; } = default!;
+                public Types.BrandInfo? BrandInfo { get; set; }
             }
         }
 
@@ -64,6 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brands")]
         [System.Text.Json.Serialization.JsonPropertyName("brands")]
-        public Types.Brand[] BrandList { get; set; } = default!;
+        public List<Types.Brand>? BrandList { get; set; }
     }
 }

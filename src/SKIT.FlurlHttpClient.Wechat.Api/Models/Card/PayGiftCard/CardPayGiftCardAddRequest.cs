@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mchid_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("mchid_list")]
-                        public IList<string> MerchantIdList { get; set; } = new List<string>();
+                        public List<string>? MerchantIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置规则开始时间戳。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("card_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                        public string CardId { get; set; } = string.Empty;
+                        public string? CardId { get; set; }
 
                         /// <summary>
                         /// 获取或设置单次消费送会员卡的金额下限（单位：分）。
@@ -87,14 +87,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = "RULE_TYPE_PAY_MEMBER_CARD";
+                public string? Type { get; set; } = "RULE_TYPE_PAY_MEMBER_CARD";
 
                 /// <summary>
                 /// 获取或设置营销规则基本信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = new Types.Base();
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付即会员规则信息。
@@ -110,6 +110,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_info")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_info")]
-        public Types.Rule Rule { get; set; } = new Types.Rule();
+        public Types.Rule? Rule { get; set; }
     }
 }

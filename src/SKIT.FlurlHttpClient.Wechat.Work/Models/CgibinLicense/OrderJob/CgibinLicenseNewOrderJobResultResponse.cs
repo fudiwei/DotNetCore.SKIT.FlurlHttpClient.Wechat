@@ -31,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public Types.FailedCorp[]? FailedCorpList { get; set; }
+        public List<Types.FailedCorp>? FailedCorpList { get; set; }
     }
 }

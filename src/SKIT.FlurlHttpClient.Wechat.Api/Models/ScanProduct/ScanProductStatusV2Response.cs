@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/status 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("pid")]
                         [System.Text.Json.Serialization.JsonPropertyName("pid")]
-                        public string ProductId { get; set; } = default!;
+                        public string? ProductId { get; set; }
 
                         /// <summary>
                         /// 获取或设置错误状态码。
@@ -62,14 +62,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("progress")]
                 [System.Text.Json.Serialization.JsonPropertyName("progress")]
-                public string ProgressString { get; set; } = default!;
+                public string? ProgressString { get; set; }
 
                 /// <summary>
                 /// 获取或设置导入商品列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("statuses")]
                 [System.Text.Json.Serialization.JsonPropertyName("statuses")]
-                public Types.Product[] ProductList { get; set; } = default!;
+                public List<Types.Product>? ProductList { get; set; }
             }
         }
 
@@ -78,6 +78,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public Types.Result Result { get; set; } = default!;
+        public Types.Result? Result { get; set; }
     }
 }

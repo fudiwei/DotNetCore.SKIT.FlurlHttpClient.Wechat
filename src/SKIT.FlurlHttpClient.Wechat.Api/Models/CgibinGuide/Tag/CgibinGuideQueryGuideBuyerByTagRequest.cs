@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_values")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_values")]
-        public IList<string> TagValues { get; set; } = new List<string>();
+        public List<string>? TagValues { get; set; }
 
         /// <summary>
         /// 获取或设置本月还可主动发消息次数。

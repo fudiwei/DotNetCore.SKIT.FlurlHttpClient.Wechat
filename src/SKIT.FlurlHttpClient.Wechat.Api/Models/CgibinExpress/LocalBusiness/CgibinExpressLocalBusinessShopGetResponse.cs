@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/shop/get 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string DeliveryId { get; set; } = default!;
+                public string? DeliveryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shopid")]
                 [System.Text.Json.Serialization.JsonPropertyName("shopid")]
-                public string ShopId { get; set; } = default!;
+                public string? ShopId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核结果。
@@ -44,14 +44,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultmsg")]
         [System.Text.Json.Serialization.JsonPropertyName("resultmsg")]
-        public string ResultMessage { get; set; } = default!;
+        public string? ResultMessage { get; set; }
 
         /// <summary>
         /// 获取或设置绑定的商家签约账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_list")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_list")]
-        public Types.Shop[] ShopList { get; set; } = default!;
+        public List<Types.Shop>? ShopList { get; set; }
 
         public override bool IsSuccessful()
         {

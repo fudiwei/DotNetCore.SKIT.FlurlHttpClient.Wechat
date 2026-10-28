@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("siteid")]
         [System.Text.Json.Serialization.JsonPropertyName("siteid")]
-        public string SiteCodeId { get; set; } = string.Empty;
+        public string? SiteCodeId { get; set; }
     }
 }

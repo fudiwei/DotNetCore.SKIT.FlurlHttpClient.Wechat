@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("to_head_supplier_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("to_head_supplier_appid")]
-                public string ToHeadSupplierAppId { get; set; } = default!;
+                public string? ToHeadSupplierAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发放时间戳。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Coupon[] CouponList { get; set; } = default!;
+        public List<Types.Coupon>? CouponList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

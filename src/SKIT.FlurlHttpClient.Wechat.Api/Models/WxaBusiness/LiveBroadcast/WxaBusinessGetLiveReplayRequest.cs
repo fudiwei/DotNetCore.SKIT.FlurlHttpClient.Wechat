@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "get_replay";
+        public string? Action { get; set; } = "get_replay";
 
         /// <summary>
         /// 获取或设置直播间 ID。
@@ -28,6 +28,7 @@
 
         /// <summary>
         /// 获取或设置分页每页数量。
+        /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limit")]
         [System.Text.Json.Serialization.JsonPropertyName("limit")]

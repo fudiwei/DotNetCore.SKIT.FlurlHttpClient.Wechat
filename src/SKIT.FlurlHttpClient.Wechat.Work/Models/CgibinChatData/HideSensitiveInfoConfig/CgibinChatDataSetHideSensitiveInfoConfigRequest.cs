@@ -37,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-        public string OpenUserId { get; set; } = string.Empty;
+        public string? OpenUserId { get; set; }
 
         /// <summary>
         /// 获取或设置配置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("config")]
         [System.Text.Json.Serialization.JsonPropertyName("config")]
-        public Types.Config Config { get; set; } = new Types.Config();
+        public Types.Config? Config { get; set; }
     }
 }

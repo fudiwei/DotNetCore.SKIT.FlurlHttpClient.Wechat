@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_name")]
-                public string StoreName { get; set; } = string.Empty;
+                public string? StoreName { get; set; }
 
                 /// <summary>
                 /// 获取或设置分店名称。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_detail")]
-                public string AddressDetail { get; set; } = string.Empty;
+                public string? AddressDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店地址辅助描述。
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-                public string MerchantId { get; set; } = string.Empty;
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店收款主体。
@@ -130,27 +130,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_basics")]
         [System.Text.Json.Serialization.JsonPropertyName("store_basics")]
-        public Types.Basic Basic { get; set; } = new Types.Basic();
+        public Types.Basic? Basic { get; set; }
 
         /// <summary>
         /// 获取或设置门店地址信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_address")]
         [System.Text.Json.Serialization.JsonPropertyName("store_address")]
-        public Types.Address Address { get; set; } = new Types.Address();
+        public Types.Address? Address { get; set; }
 
         /// <summary>
         /// 获取或设置门店经营信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_business")]
         [System.Text.Json.Serialization.JsonPropertyName("store_business")]
-        public Types.Business Business { get; set; } = new Types.Business();
+        public Types.Business? Business { get; set; }
 
         /// <summary>
         /// 获取或设置门店收款信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_recipient")]
         [System.Text.Json.Serialization.JsonPropertyName("store_recipient")]
-        public IList<Types.Recipient>? RecipientList { get; set; }
+        public List<Types.Recipient>? RecipientList { get; set; }
     }
 }

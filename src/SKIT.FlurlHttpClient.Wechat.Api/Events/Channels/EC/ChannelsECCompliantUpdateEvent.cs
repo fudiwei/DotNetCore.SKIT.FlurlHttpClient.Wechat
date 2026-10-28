@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("complaint_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
                 [System.Xml.Serialization.XmlElement("complaint_id")]
-                public string CompliantId { get; set; } = default!;
+                public string? CompliantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置售后单 ID。
@@ -56,6 +56,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("finder_shop_complaint")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_shop_complaint")]
         [System.Xml.Serialization.XmlElement("finder_shop_complaint")]
-        public Types.CompliantOrder CompliantOrder { get; set; } = default!;
+        public Types.CompliantOrder? CompliantOrder { get; set; }
     }
 }

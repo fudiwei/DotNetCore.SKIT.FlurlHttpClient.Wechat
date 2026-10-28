@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/customservice/getonlinekflist 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kf_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("kf_id")]
-                public string KfId { get; set; } = default!;
+                public string? KfId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kf_account")]
                 [System.Text.Json.Serialization.JsonPropertyName("kf_account")]
-                public string KfAccount { get; set; } = default!;
+                public string? KfAccount { get; set; }
 
                 /// <summary>
                 /// 获取或设置客服在线状态。
@@ -51,6 +51,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_online_list")]
         [System.Text.Json.Serialization.JsonPropertyName("kf_online_list")]
-        public Types.Kf[] KfList { get; set; } = default!;
+        public List<Types.Kf>? KfList { get; set; }
     }
 }

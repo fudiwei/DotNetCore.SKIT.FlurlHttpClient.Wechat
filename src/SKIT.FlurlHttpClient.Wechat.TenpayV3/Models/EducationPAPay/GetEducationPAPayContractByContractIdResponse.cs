@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
-                public string ContractId { get; set; } = default!;
+                public string? ContractId { get; set; }
 
                 /// <summary>
                 /// 获取或设置签约状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置签约时间。
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -67,27 +67,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-        public string PlanId { get; set; } = default!;
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户在子商户下的唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
-        public string SubOpenId { get; set; } = default!;
+        public string? SubOpenId { get; set; }
 
         /// <summary>
         /// 获取或设置签约信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_information")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_information")]
-        public Types.Contract Contract { get; set; } = default!;
+        public Types.Contract? Contract { get; set; }
     }
 }

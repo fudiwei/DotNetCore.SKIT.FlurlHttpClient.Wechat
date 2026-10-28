@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_img_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("head_img_media_id")]
-        public string HeadImageMediaId { get; set; } = string.Empty;
+        public string? HeadImageMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置裁剪框左上角 X 坐标（范围：0～1）。

@@ -10,35 +10,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
-        public string OutOrderNumber { get; set; } = default!;
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = default!;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置商户回退单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_return_no")]
-        public string OutReturnNumber { get; set; } = default!;
+        public string? OutReturnNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信回退单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("return_no")]
-        public string ReturnId { get; set; } = default!;
+        public string? ReturnId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("return_mchid")]
-        public string ReturnMerchantId { get; set; } = default!;
+        public string? ReturnMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置回退金额（单位：分）。
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string Result { get; set; } = default!;
+        public string? Result { get; set; }
 
         /// <summary>
         /// 获取或设置回退失败原因。

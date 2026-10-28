@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("err_msg")]
                 [System.Text.Json.Serialization.JsonPropertyName("err_msg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
 
             public class SettlementData
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("slot_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("slot_id")]
-                        public string AdSlotName { get; set; } = default!;
+                        public string? AdSlotName { get; set; }
 
                         /// <summary>
                         /// 获取或设置该广告位结算金额（单位：分）。
@@ -51,21 +51,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("date")]
                 [System.Text.Json.Serialization.JsonPropertyName("date")]
-                public string DateString { get; set; } = default!;
+                public string? DateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置日期区间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("zone")]
                 [System.Text.Json.Serialization.JsonPropertyName("zone")]
-                public string ZoneString { get; set; } = default!;
+                public string? ZoneString { get; set; }
 
                 /// <summary>
                 /// 获取或设置收入月份（格式：yyyyMM）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("month")]
                 [System.Text.Json.Serialization.JsonPropertyName("month")]
-                public string MonthString { get; set; } = default!;
+                public string? MonthString { get; set; }
 
                 /// <summary>
                 /// 获取或设置收入半月。
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sett_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("sett_no")]
-                public string SettleNumber { get; set; } = default!;
+                public string? SettleNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请补发结算单次数。
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("slot_revenue")]
                 [System.Text.Json.Serialization.JsonPropertyName("slot_revenue")]
-                public Types.SlotRevenue[] SlotRevenueList { get; set; } = default!;
+                public List<Types.SlotRevenue>? SlotRevenueList { get; set; }
             }
         }
 
@@ -116,14 +116,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("base_resp")]
         [System.Text.Json.Serialization.JsonPropertyName("base_resp")]
-        public Types.BaseResponse BaseResponse { get; set; } = default!;
+        public Types.BaseResponse? BaseResponse { get; set; }
 
         /// <summary>
         /// 获取或设置主体名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("body")]
         [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; } = default!;
+        public string? Body { get; set; }
 
         /// <summary>
         /// 获取或设置累计收入（单位：分）。
@@ -151,7 +151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settlement_list")]
         [System.Text.Json.Serialization.JsonPropertyName("settlement_list")]
-        public Types.SettlementData[] SettlementList { get; set; } = default!;
+        public List<Types.SettlementData>? SettlementList { get; set; }
 
         /// <summary>
         /// 获取或设置结算数据总条数。

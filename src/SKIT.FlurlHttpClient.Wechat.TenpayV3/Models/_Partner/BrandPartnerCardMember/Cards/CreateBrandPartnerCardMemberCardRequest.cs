@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置有效期开始时间。
@@ -80,21 +80,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = string.Empty;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置字段值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("values")]
                         [System.Text.Json.Serialization.JsonPropertyName("values")]
-                        public IList<string>? Values { get; set; }
+                        public List<string>? Values { get; set; }
                     }
                 }
 
@@ -103,14 +103,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public IList<string>? CommonFieldList { get; set; }
+                public List<string>? CommonFieldList { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义开卡信息字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
-                public IList<Types.CustomField>? CustomFieldList { get; set; }
+                public List<Types.CustomField>? CustomFieldList { get; set; }
             }
         }
 
@@ -119,35 +119,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置商家 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_type")]
         [System.Text.Json.Serialization.JsonPropertyName("card_type")]
-        public string CardType { get; set; } = string.Empty;
+        public string? CardType { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_title")]
         [System.Text.Json.Serialization.JsonPropertyName("card_title")]
-        public string CardTitle { get; set; } = string.Empty;
+        public string? CardTitle { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡背景颜色。

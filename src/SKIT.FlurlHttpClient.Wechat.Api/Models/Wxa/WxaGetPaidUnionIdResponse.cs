@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]
-        public string UnionId { get; set; } = default!;
+        public string? UnionId { get; set; }
     }
 }

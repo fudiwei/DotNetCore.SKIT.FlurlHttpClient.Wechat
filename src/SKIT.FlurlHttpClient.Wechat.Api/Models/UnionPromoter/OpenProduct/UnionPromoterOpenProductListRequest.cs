@@ -7,11 +7,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置分页起始位置。
-        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public int Offset { get; set; } = 0;
+        public int Offset { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。
@@ -82,27 +81,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<string>? ShopAppIdList { get; set; }
+        public List<string>? ShopAppIdList { get; set; }
 
         /// <summary>
         /// 获取或设置类目 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<int>? CategoryIdList { get; set; }
+        public List<int>? CategoryIdList { get; set; }
 
         /// <summary>
         /// 获取或设置黑名单类目 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<int>? CategoryIdBlackList { get; set; }
+        public List<int>? CategoryIdBlackList { get; set; }
 
         /// <summary>
         /// 获取或设置商品 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<long>? ProductIdList { get; set; }
+        public List<long>? ProductIdList { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_taglink")]
         [System.Text.Json.Serialization.JsonPropertyName("product_taglink")]
-        public string ProductTagLink { get; set; } = default!;
+        public string? ProductTagLink { get; set; }
     }
 }

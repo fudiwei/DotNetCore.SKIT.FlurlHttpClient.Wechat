@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户全局标识。只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("language")]
                 [System.Text.Json.Serialization.JsonPropertyName("language")]
-                public string Language { get; set; } = default!;
+                public string? Language { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户的头像 URL。
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tagid_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
-                public int[]? TagIdList { get; set; }
+                public List<int>? TagIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置二维码扫码场景值 ID。
@@ -143,6 +143,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_info_list")]
-        public Types.User[] UserList { get; set; } = default!;
+        public List<Types.User>? UserList { get; set; }
     }
 }

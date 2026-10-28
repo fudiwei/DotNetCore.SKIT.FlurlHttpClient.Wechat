@@ -29,21 +29,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scope")]
                 [System.Text.Json.Serialization.JsonPropertyName("scope")]
-                public string Scope { get; set; } = string.Empty;
+                public string? Scope { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品券类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用模式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("usage_mode")]
                 [System.Text.Json.Serialization.JsonPropertyName("usage_mode")]
-                public string UsageMode { get; set; } = string.Empty;
+                public string? UsageMode { get; set; }
 
                 /// <summary>
                 /// 获取或设置满减券使用规则信息。
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                public string ImageUrl { get; set; } = string.Empty;
+                public string? ImageUrl { get; set; }
             }
         }
 
@@ -90,21 +90,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public string BrandId { get; set; } = string.Empty;
+        public string? BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成任务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
-        public string TaskId { get; set; } = string.Empty;
+        public string? TaskId { get; set; }
 
         /// <summary>
         /// 获取或设置图片生成类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("image_generation_type")]
         [System.Text.Json.Serialization.JsonPropertyName("image_generation_type")]
-        public string ImageGenerationType { get; set; } = string.Empty;
+        public string? ImageGenerationType { get; set; }
 
         /// <summary>
         /// 获取或设置拼图数据。

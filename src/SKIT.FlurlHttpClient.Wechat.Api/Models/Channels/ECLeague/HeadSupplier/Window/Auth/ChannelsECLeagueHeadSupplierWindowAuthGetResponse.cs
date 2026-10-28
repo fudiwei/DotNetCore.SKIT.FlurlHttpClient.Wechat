@@ -14,28 +14,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_wxa_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_wxa_appid")]
-                public string MiniProgramAppId { get; set; } = default!;
+                public string? MiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_wxa_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_wxa_path")]
-                public string MiniProgramPagePath { get; set; } = default!;
+                public string? MiniProgramPagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_wxa_username")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_wxa_username")]
-                public string MiniProgramName { get; set; } = default!;
+                public string? MiniProgramName { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权链接。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_url")]
-                public string AuthUrl { get; set; } = default!;
+                public string? AuthUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置达人昵称。
@@ -58,6 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_info")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
-        public Types.AuthInfo AuthInfo { get; set; } = default!;
+        public Types.AuthInfo? AuthInfo { get; set; }
     }
 }

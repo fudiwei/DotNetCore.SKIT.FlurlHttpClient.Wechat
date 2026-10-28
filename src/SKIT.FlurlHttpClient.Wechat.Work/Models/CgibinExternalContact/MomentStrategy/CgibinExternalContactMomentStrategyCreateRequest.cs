@@ -61,27 +61,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("strategy_name")]
         [System.Text.Json.Serialization.JsonPropertyName("strategy_name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置管理员 UserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin_list")]
         [System.Text.Json.Serialization.JsonPropertyName("admin_list")]
-        public IList<string> AdminUserIdList { get; set; } = new List<string>();
+        public List<string>? AdminUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置权限信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("privilege")]
         [System.Text.Json.Serialization.JsonPropertyName("privilege")]
-        public Types.Privilege Privilege { get; set; } = new Types.Privilege();
+        public Types.Privilege? Privilege { get; set; }
 
         /// <summary>
         /// 获取或设置规则组范围列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("range")]
         [System.Text.Json.Serialization.JsonPropertyName("range")]
-        public IList<Types.Range> RangeList { get; set; } = new List<Types.Range>();
+        public List<Types.Range>? RangeList { get; set; }
     }
 }

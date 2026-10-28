@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("employee_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("employee_id")]
-                public string EmployeeId { get; set; } = default!;
+                public string? EmployeeId { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorization_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorization_state")]
-                public string AuthorizationState { get; set; } = default!;
+                public string? AuthorizationState { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权时间。
@@ -48,27 +48,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户企业员工 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id")]
         [System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置微信授权关系列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employee_list")]
         [System.Text.Json.Serialization.JsonPropertyName("employee_list")]
-        public Types.Employee[]? EmployeeList { get; set; }
+        public List<Types.Employee>? EmployeeList { get; set; }
     }
 }

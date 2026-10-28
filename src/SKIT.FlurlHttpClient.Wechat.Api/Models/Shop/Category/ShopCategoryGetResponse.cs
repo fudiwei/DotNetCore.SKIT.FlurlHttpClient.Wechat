@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/cat/get 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("first_cat_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("first_cat_name")]
-                public string FirstCategoryName { get; set; } = default!;
+                public string? FirstCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目 ID。
@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("second_cat_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("second_cat_name")]
-                public string SecondCategoryName { get; set; } = default!;
+                public string? SecondCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置三级类目 ID。
@@ -49,7 +49,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("third_cat_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("third_cat_name")]
-                public string ThirdCategoryName { get; set; } = default!;
+                public string? ThirdCategoryName { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目资质类型。
@@ -86,6 +86,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("third_cat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("third_cat_list")]
-        public Types.Category[] CategoryList { get; set; } = default!;
+        public List<Types.Category>? CategoryList { get; set; }
     }
 }

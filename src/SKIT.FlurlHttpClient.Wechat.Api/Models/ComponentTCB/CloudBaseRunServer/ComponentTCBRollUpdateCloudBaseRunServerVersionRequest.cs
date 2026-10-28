@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nfs_volumes")]
                 [System.Text.Json.Serialization.JsonPropertyName("nfs_volumes")]
-                public new IList<Types.NFSVolumeSource>? NFSVolumes { get; set; }
+                public new List<Types.NFSVolumeSource>? NFSVolumes { get; set; }
             }
 
             public class HPAPolicy : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.HPAPolicy
@@ -55,21 +55,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
+        public string? ComponentAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env_id")]
         [System.Text.Json.Serialization.JsonPropertyName("env_id")]
-        public string EnvironmentId { get; set; } = string.Empty;
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置版本名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version_name")]
         [System.Text.Json.Serialization.JsonPropertyName("version_name")]
-        public string VersionName { get; set; } = string.Empty;
+        public string? VersionName { get; set; }
 
         /// <summary>
         /// 获取或设置上传类型。
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("server_name")]
         [System.Text.Json.Serialization.JsonPropertyName("server_name")]
-        public string ServerName { get; set; } = string.Empty;
+        public string? ServerName { get; set; }
 
         /// <summary>
         /// 获取或设置仓库类型。
@@ -258,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mount_volume_info")]
         [System.Text.Json.Serialization.JsonPropertyName("mount_volume_info")]
-        public IList<Types.VolumeMount>? VolumeMountList { get; set; }
+        public List<Types.VolumeMount>? VolumeMountList { get; set; }
 
         /// <summary>
         /// 获取或设置是否使用统一域名。
@@ -286,6 +286,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_detail")]
-        public IList<Types.HPAPolicy>? HPAPolicyList { get; set; }
+        public List<Types.HPAPolicy>? HPAPolicyList { get; set; }
     }
 }

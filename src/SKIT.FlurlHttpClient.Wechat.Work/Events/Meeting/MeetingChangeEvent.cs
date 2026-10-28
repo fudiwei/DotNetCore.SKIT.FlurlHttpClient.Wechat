@@ -117,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("MediumUrl")]
                 [System.Text.Json.Serialization.JsonPropertyName("MediumUrl")]
                 [System.Xml.Serialization.XmlElement("MediumUrl")]
-                public string MediumUrl { get; set; } = default!;
+                public string? MediumUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置上传结果。
@@ -152,7 +152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("DialString")]
                 [System.Text.Json.Serialization.JsonPropertyName("DialString")]
                 [System.Xml.Serialization.XmlElement("DialString")]
-                public string DialogString { get; set; } = default!;
+                public string? DialogString { get; set; }
             }
         }
 
@@ -162,7 +162,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ChangeType")]
         [System.Text.Json.Serialization.JsonPropertyName("ChangeType")]
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ChangeType { get; set; } = default!;
+        public string? ChangeType { get; set; }
 
         /// <summary>
         /// 获取或设置会议 ID。
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("MeetingId")]
         [System.Text.Json.Serialization.JsonPropertyName("MeetingId")]
         [System.Xml.Serialization.XmlElement("MeetingId")]
-        public string MeetingId { get; set; } = default!;
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置会议室 ID。
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("UploadInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("UploadInfo")]
         [System.Xml.Serialization.XmlElement("UploadInfo", Type = typeof(Types.UploadInfo), IsNullable = true)]
-        public Types.UploadInfo[]? UploadInfoList { get; set; }
+        public List<Types.UploadInfo>? UploadInfoList { get; set; }
 
         /// <summary>
         /// 获取或设置报名 ID。

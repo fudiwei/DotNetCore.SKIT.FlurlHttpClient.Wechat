@@ -17,28 +17,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置门店分类。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("category")]
         [System.Text.Json.Serialization.JsonPropertyName("category")]
-        public string Category { get; set; } = string.Empty;
+        public string? Category { get; set; }
 
         /// <summary>
         /// 获取或设置门店介绍。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("introduct")]
         [System.Text.Json.Serialization.JsonPropertyName("introduct")]
-        public string Introduction { get; set; } = string.Empty;
+        public string? Introduction { get; set; }
 
         /// <summary>
         /// 获取或设置门店电话。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("telephone")]
         [System.Text.Json.Serialization.JsonPropertyName("telephone")]
-        public string Telephone { get; set; } = string.Empty;
+        public string? Telephone { get; set; }
 
         /// <summary>
         /// 获取或设置门店位置经度。
@@ -66,41 +66,41 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("province")]
         [System.Text.Json.Serialization.JsonPropertyName("province")]
-        public string Province { get; set; } = string.Empty;
+        public string? Province { get; set; }
 
         /// <summary>
         /// 获取或设置门店所在城市。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("city")]
         [System.Text.Json.Serialization.JsonPropertyName("city")]
-        public string City { get; set; } = string.Empty;
+        public string? City { get; set; }
 
         /// <summary>
         /// 获取或设置门店所在区县。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("district")]
         [System.Text.Json.Serialization.JsonPropertyName("district")]
-        public string District { get; set; } = string.Empty;
+        public string? District { get; set; }
 
         /// <summary>
         /// 获取或设置门店详细地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public string Address { get; set; } = string.Empty;
+        public string? Address { get; set; }
 
         /// <summary>
         /// 获取或设置门店图片媒体文件标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("photo")]
         [System.Text.Json.Serialization.JsonPropertyName("photo")]
-        public string PictureMediaId { get; set; } = string.Empty;
+        public string? PictureMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置营业执照图片媒体文件标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("license")]
         [System.Text.Json.Serialization.JsonPropertyName("license")]
-        public string LicenseMediaId { get; set; } = string.Empty;
+        public string? LicenseMediaId { get; set; }
     }
 }

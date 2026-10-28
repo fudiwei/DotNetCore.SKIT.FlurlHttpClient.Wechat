@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buffer")]
         [System.Text.Json.Serialization.JsonPropertyName("buffer")]
-        public string EncodingFileData { get; set; } = default!;
+        public string? EncodingFileData { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("apply_material_information")]
                         [System.Text.Json.Serialization.JsonPropertyName("apply_material_information")]
-                        public IList<string>? MaterialMediaIdList { get; set; }
+                        public List<string>? MaterialMediaIdList { get; set; }
                     }
                 }
 
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-                public string ActivityId { get; set; } = string.Empty;
+                public string? ActivityId { get; set; }
 
                 /// <summary>
                 /// 获取或设置活动费率字符串。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_apply_information")]
                 [System.Text.Json.Serialization.JsonPropertyName("activity_apply_information")]
-                public IList<Types.Material>? MaterialList { get; set; }
+                public List<Types.Material>? MaterialList { get; set; }
             }
 
             public class AdditionalInfomation
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("additional_material")]
                 [System.Text.Json.Serialization.JsonPropertyName("additional_material")]
-                public IList<string>? AdditionalMaterialMediaIdList { get; set; }
+                public List<string>? AdditionalMaterialMediaIdList { get; set; }
             }
         }
 
@@ -74,28 +74,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("acquiring_bank_id")]
         [System.Text.Json.Serialization.JsonPropertyName("acquiring_bank_id")]
-        public string AcquiringBankId { get; set; } = string.Empty;
+        public string? AcquiringBankId { get; set; }
 
         /// <summary>
         /// 获取或设置渠道商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("channel_id")]
         [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string ChannelId { get; set; } = string.Empty;
+        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置从业机构特约商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置报名活动详情。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_detail")]
-        public Types.ActivityDetail ActivityDetail { get; set; } = new Types.ActivityDetail();
+        public Types.ActivityDetail? ActivityDetail { get; set; }
 
         /// <summary>
         /// 获取或设置补充信息。

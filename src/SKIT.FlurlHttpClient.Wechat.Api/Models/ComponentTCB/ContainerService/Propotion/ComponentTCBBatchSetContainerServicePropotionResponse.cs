@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /componenttcb/batchsetcspropotion 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string EnvironmentId { get; set; } = default!;
+                public string? EnvironmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_name")]
-                public string ServiceName { get; set; } = default!;
+                public string? ServiceName { get; set; }
             }
 
             public class Failure : Success
@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errmsg")]
                 [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string ErrorMessage { get; set; } = default!;
+                public string? ErrorMessage { get; set; }
             }
         }
 
@@ -40,13 +40,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("succ_list")]
         [System.Text.Json.Serialization.JsonPropertyName("succ_list")]
-        public Types.Success[] SuccessList { get; set; } = default!;
+        public List<Types.Success>? SuccessList { get; set; }
 
         /// <summary>
         /// 获取或设置失败项列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_list")]
-        public Types.Failure[] FailureList { get; set; } = default!;
+        public List<Types.Failure>? FailureList { get; set; }
     }
 }

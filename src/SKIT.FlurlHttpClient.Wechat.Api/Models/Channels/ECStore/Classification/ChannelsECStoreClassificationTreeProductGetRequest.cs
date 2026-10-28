@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("req")]
         [System.Text.Json.Serialization.JsonPropertyName("req")]
-        public Types.Data Data { get; set; } = new Types.Data();
+        public Types.Data? Data { get; set; }
     }
 }

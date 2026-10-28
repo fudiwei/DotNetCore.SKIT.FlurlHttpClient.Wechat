@@ -85,20 +85,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("update_results")]
         [System.Text.Json.Serialization.JsonPropertyName("update_results")]
-        public Types.UpdatedResult[]? UpdatedResultList { get; set; }
+        public List<Types.UpdatedResult>? UpdatedResultList { get; set; }
 
         /// <summary>
         /// 获取或设置新增结果列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insert_result")]
         [System.Text.Json.Serialization.JsonPropertyName("insert_result")]
-        public Types.InsertedResult[]? InsertedResultList { get; set; }
+        public List<Types.InsertedResult>? InsertedResultList { get; set; }
 
         /// <summary>
         /// 获取或设置删除结果列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("remove_results")]
         [System.Text.Json.Serialization.JsonPropertyName("remove_results")]
-        public Types.RemovedResult[]? RemovedResultList { get; set; }
+        public List<Types.RemovedResult>? RemovedResultList { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<string> PictureUrlList { get; set; } = new List<string>();
+                public List<string>? PictureUrlList { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("map_poi_id")]
         [System.Text.Json.Serialization.JsonPropertyName("map_poi_id")]
-        public string MapPOIId { get; set; } = string.Empty;
+        public string? MapPOIId { get; set; }
 
         /// <summary>
         /// 获取或设置门店图片信息。
@@ -39,55 +39,55 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public Types.Picture Picture { get; set; } = new Types.Picture();
+        public Types.Picture? Picture { get; set; }
 
         /// <summary>
         /// 获取或设置营业时间（格式：HHmm-HHmm）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hour")]
         [System.Text.Json.Serialization.JsonPropertyName("hour")]
-        public string BusinessHours { get; set; } = string.Empty;
+        public string? BusinessHours { get; set; }
 
         /// <summary>
         /// 获取或设置地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public string Address { get; set; } = string.Empty;
+        public string? Address { get; set; }
 
         /// <summary>
         /// 获取或设置主体名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("company_name")]
         [System.Text.Json.Serialization.JsonPropertyName("company_name")]
-        public string CompanyName { get; set; } = string.Empty;
+        public string? CompanyName { get; set; }
 
         /// <summary>
         /// 获取或设置门店电话。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_phone")]
-        public string Telephone { get; set; } = string.Empty;
+        public string? Telephone { get; set; }
 
         /// <summary>
         /// 获取或设置经营资质证件号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("credential")]
         [System.Text.Json.Serialization.JsonPropertyName("credential")]
-        public string LicenseNumber { get; set; } = string.Empty;
+        public string? LicenseNumber { get; set; }
 
         /// <summary>
         /// 获取或设置证明材料媒体文件标识列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualification_list")]
         [System.Text.Json.Serialization.JsonPropertyName("qualification_list")]
-        public IList<string>? QualificationMediaIdList { get; set; }
+        public List<string>? QualificationMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置卡券 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_id")]
         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-        public string CardId { get; set; } = string.Empty;
+        public string? CardId { get; set; }
     }
 }

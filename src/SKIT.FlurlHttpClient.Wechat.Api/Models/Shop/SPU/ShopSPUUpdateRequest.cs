@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置小程序商品页面路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string PagePath { get; set; } = string.Empty;
+        public string? PagePath { get; set; }
 
         /// <summary>
         /// 获取或设置小程序商品立即购买页面路径。
@@ -60,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_img")]
         [System.Text.Json.Serialization.JsonPropertyName("head_img")]
-        public IList<string> HeadImageUrlList { get; set; } = new List<string>();
+        public List<string>? HeadImageUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品资质图片 Url 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualification_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("qualification_pics")]
-        public IList<string>? QualificationPictureUrlList { get; set; }
+        public List<string>? QualificationPictureUrlList { get; set; }
 
         /// <summary>
         /// 获取或设置商品详情信息。
@@ -102,13 +102,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("skus")]
         [System.Text.Json.Serialization.JsonPropertyName("skus")]
-        public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+        public List<Types.SKU>? SKUList { get; set; }
 
         /// <summary>
         /// 获取或设置商品使用场景 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_group_list")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_group_list")]
-        public IList<int>? SceneGroupIdList { get; set; }
+        public List<int>? SceneGroupIdList { get; set; }
     }
 }

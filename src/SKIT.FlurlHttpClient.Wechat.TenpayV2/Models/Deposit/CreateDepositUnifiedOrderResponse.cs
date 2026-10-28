@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_type")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = default!;
+        public string? TradeType { get; set; }
 
         /// <summary>
         /// 获取或设置预支付交易会话标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prepay_id")]
         [System.Text.Json.Serialization.JsonPropertyName("prepay_id")]
-        public string PrepayId { get; set; } = default!;
+        public string? PrepayId { get; set; }
 
         /// <summary>
         /// 获取或设置二维码链接。

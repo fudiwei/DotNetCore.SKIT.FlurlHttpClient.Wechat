@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
             {
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public IList<string> Items { get; set; } = new List<string>();
+                public List<string>? Items { get; set; }
             }
         }
 
@@ -20,34 +20,34 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置标签名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("category")]
         [System.Text.Json.Serialization.JsonPropertyName("category")]
-        public string Category { get; set; } = string.Empty;
+        public string? Category { get; set; }
 
         /// <summary>
         /// 获取或设置二级标签名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("label")]
         [System.Text.Json.Serialization.JsonPropertyName("label")]
-        public string Label { get; set; } = string.Empty;
+        public string? Label { get; set; }
 
         /// <summary>
         /// 获取或设置标签分类规则。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置要设置标签的 OpenId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.OpenIdList OpenIdList { get; set; } = new Types.OpenIdList();
+        public Types.OpenIdList? OpenIdList { get; set; }
     }
 }

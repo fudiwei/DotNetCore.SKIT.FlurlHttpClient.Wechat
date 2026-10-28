@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/report/resident/get_order_list 接口的响应。</para>
@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reporter_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("reporter_name")]
-                public string ReporterName { get; set; } = default!;
+                public string? ReporterName { get; set; }
 
                 /// <summary>
                 /// 获取或设置上报人手机号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reporter_mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("reporter_mobile")]
-                public string ReporterMobileNumber { get; set; } = default!;
+                public string? ReporterMobileNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置上报人 UnionId。
@@ -37,7 +37,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public Types.WorkOrder[] WorkOrderList { get; set; } = default!;
+        public List<Types.WorkOrder>? WorkOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

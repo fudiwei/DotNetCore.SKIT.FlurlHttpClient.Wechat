@@ -665,9 +665,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: $"{request.MediaName}.{request.MediaType}", fileBytes: request.MediaFileBytes, fileContentType: "video/mp4", formDataName: "media_data");
-            if (request.CoverType is not null) httpContent.Add(new StringContent(request.CoverType), "cover_type");
-            if (request.CoverFileBytes is not null) httpContent.Add(new ByteArrayContent(request.CoverFileBytes), "cover_data");
-            if (request.SourceContext is not null) httpContent.Add(new StringContent(request.SourceContext), "source_context");
+            if (request.CoverType is not null) httpContent.Add(new StringContent(request.CoverType!), "cover_type");
+            if (request.CoverFileBytes is not null) httpContent.Add(new ByteArrayContent(request.CoverFileBytes!), "cover_data");
+            if (request.SourceContext is not null) httpContent.Add(new StringContent(request.SourceContext!), "source_context");
 
             return await client.SendFlurlRequestAsync<Models.WxaSecVodSingleFileUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -762,7 +762,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: string.Empty, fileBytes: request.FileBytes, fileContentType: "application/octet-stream", formDataName: "data");
-            httpContent.Add(new StringContent(request.UploadId), "upload_id");
+            httpContent.Add(new StringContent(request.UploadId!), "upload_id");
             httpContent.Add(new StringContent(request.PartNumber.ToString()), "part_number");
             httpContent.Add(new StringContent(request.FileType.ToString()), "resource_type");
 

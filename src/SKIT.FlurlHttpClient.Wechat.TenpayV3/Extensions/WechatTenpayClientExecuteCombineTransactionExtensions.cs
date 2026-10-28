@@ -236,7 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CombineOutTradeNumber, "combine_out_trade_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetCombineTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -260,7 +260,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.ThrowIfUnsetPathVariable(request.CombineTransactionId, "combine_transaction_id");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "id", request.CombineTransactionId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "id", request.CombineTransactionId!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetCombineTransactionByCombineTransactionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -299,7 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber, "close");
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber!, "close");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CloseCombineTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

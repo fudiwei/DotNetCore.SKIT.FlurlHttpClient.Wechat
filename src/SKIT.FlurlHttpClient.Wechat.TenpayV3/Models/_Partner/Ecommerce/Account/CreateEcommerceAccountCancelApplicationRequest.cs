@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("application_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("application_type")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请材料 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("application_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("application_media_id")]
-                public string MediaId { get; set; } = string.Empty;
+                public string? MediaId { get; set; }
             }
         }
 
@@ -30,20 +30,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户注销申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_apply_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_apply_no")]
-        public string OutApplyNumber { get; set; } = string.Empty;
+        public string? OutApplyNumber { get; set; }
 
         /// <summary>
         /// 获取或设置注销申请材料列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("application_info")]
         [System.Text.Json.Serialization.JsonPropertyName("application_info")]
-        public IList<Types.ApplicationMaterial> ApplicationMaterialList { get; set; } = new List<Types.ApplicationMaterial>();
+        public List<Types.ApplicationMaterial>? ApplicationMaterialList { get; set; }
     }
 }

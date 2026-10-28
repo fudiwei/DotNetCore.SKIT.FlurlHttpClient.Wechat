@@ -60,13 +60,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("progress")]
         [System.Text.Json.Serialization.JsonPropertyName("progress")]
-        public Types.Progress Progress { get; set; } = default!;
+        public Types.Progress? Progress { get; set; }
 
         /// <summary>
         /// 获取或设置申请信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("application")]
         [System.Text.Json.Serialization.JsonPropertyName("application")]
-        public Types.Application Application { get; set; } = default!;
+        public Types.Application? Application { get; set; }
     }
 }

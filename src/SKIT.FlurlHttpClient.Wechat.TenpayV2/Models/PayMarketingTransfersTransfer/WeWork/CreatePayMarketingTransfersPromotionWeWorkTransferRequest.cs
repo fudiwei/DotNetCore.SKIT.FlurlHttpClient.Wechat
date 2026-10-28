@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
-        public string PartnerTradeNumber { get; set; } = string.Empty;
+        public string? PartnerTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置收款用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置付款的应用 ID。
@@ -63,11 +63,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         /// <summary>
         /// 获取或设置校验用户姓名选项。
-        /// <para>默认值：FORCE_CHECK</para>
+        /// <para>默认值："FORCE_CHECK"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("check_name")]
         [System.Text.Json.Serialization.JsonPropertyName("check_name")]
-        public string CheckNameType { get; set; } = "FORCE_CHECK";
+        public string? CheckNameType { get; set; } = "FORCE_CHECK";
 
         /// <summary>
         /// 获取或设置收款用户姓名。
@@ -81,15 +81,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spbill_create_ip")]
         [System.Text.Json.Serialization.JsonPropertyName("spbill_create_ip")]
-        public string ClientIp { get; set; } = string.Empty;
+        public string? ClientIp { get; set; }
 
         /// <summary>
         /// 获取或设置付款消息类型。
-        /// <para>默认值：NORMAL_MSG</para>
+        /// <para>默认值："NORMAL_MSG"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ww_msg_type")]
         [System.Text.Json.Serialization.JsonPropertyName("ww_msg_type")]
-        public string MessageType { get; set; } = "NORMAL_MSG";
+        public string? MessageType { get; set; } = "NORMAL_MSG";
 
         /// <summary>
         /// 获取或设置审批单号。

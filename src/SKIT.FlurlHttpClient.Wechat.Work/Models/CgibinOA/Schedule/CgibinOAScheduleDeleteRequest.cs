@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule_id")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule_id")]
-        public string ScheduleId { get; set; } = string.Empty;
+        public string? ScheduleId { get; set; }
 
         /// <summary>
         /// 获取或设置操作模式。

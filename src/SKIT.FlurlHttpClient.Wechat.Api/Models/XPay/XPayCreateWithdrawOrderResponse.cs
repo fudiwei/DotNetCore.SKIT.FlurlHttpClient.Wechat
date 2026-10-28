@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdraw_no")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_no")]
-        public string WithdrawNumber { get; set; } = default!;
+        public string? WithdrawNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信内部提现单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_withdraw_no")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_withdraw_no")]
-        public string WxWithdrawNumber { get; set; } = default!;
+        public string? WxWithdrawNumber { get; set; }
     }
 }

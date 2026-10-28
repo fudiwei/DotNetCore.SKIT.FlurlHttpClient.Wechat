@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/scanwithdraw 接口的响应。</para>
@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_nos")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_nos")]
-        public string[] OutRequestNumberList { get; set; } = default!;
+        public List<string>? OutRequestNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

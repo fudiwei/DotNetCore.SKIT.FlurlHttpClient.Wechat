@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rule_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("rule_id")]
-                        public string RuleId { get; set; } = default!;
+                        public string? RuleId { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否命中关键词。
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("semantics_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("semantics_list")]
-                        public int[]? SemanticsList { get; set; }
+                        public List<int>? SemanticsList { get; set; }
                     }
                 }
 
@@ -41,14 +41,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgid")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-                public string MessageId { get; set; } = default!;
+                public string? MessageId { get; set; }
 
                 /// <summary>
                 /// 获取或设置命中的规则列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("hit_rule_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("hit_rule_list")]
-                public Types.HitRule[] HitRuleList { get; set; } = default!;
+                public List<Types.HitRule>? HitRuleList { get; set; }
             }
         }
 
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_list")]
-        public Types.Message[] MessageList { get; set; } = default!;
+        public List<Types.Message>? MessageList { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

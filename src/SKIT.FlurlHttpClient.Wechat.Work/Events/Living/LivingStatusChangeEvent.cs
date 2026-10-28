@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("LivingId")]
         [System.Text.Json.Serialization.JsonPropertyName("LivingId")]
         [System.Xml.Serialization.XmlElement("LivingId")]
-        public string LivingId { get; set; } = default!;
+        public string? LivingId { get; set; }
 
         /// <summary>
         /// 获取或设置直播状态。

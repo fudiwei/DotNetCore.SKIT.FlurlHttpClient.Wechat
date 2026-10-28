@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sharer_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sharer_appid")]
-                public string SharerAppId { get; set; } = default!;
+                public string? SharerAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置推客昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置推客头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_img_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置绑定时间戳。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sharer_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("sharer_info_list")]
-        public Types.Sharer[] SharerList { get; set; } = default!;
+        public List<Types.Sharer>? SharerList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

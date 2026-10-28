@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = "all";
+        public string? Action { get; set; } = "all";
 
         /// <summary>
         /// 获取或设置指定平台从某个运营商进行检测。
@@ -19,6 +19,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("check_operator")]
         [System.Text.Json.Serialization.JsonPropertyName("check_operator")]
-        public string CheckOperator { get; set; } = "DEFAULT";
+        public string? CheckOperator { get; set; } = "DEFAULT";
     }
 }

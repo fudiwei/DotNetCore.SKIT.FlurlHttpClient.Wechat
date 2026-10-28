@@ -26,28 +26,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("spbm")]
                         [System.Text.Json.Serialization.JsonPropertyName("spbm")]
-                        public string GoodsCode { get; set; } = string.Empty;
+                        public string? GoodsCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置项目名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("xmmc")]
                         [System.Text.Json.Serialization.JsonPropertyName("xmmc")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置计量单位。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("dw")]
                         [System.Text.Json.Serialization.JsonPropertyName("dw")]
-                        public string Unit { get; set; } = string.Empty;
+                        public string? Unit { get; set; }
 
                         /// <summary>
                         /// 获取或设置规格型号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ggxh")]
                         [System.Text.Json.Serialization.JsonPropertyName("ggxh")]
-                        public string Specification { get; set; } = string.Empty;
+                        public string? Specification { get; set; }
 
                         /// <summary>
                         /// 获取或设置项目数量。
@@ -96,63 +96,63 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wxopenid")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxopenid")]
-                public string OpenId { get; set; } = string.Empty;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ddh")]
                 [System.Text.Json.Serialization.JsonPropertyName("ddh")]
-                public string OrderId { get; set; } = string.Empty;
+                public string? OrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发票请求流水号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fpqqlsh")]
                 [System.Text.Json.Serialization.JsonPropertyName("fpqqlsh")]
-                public string InvoiceSerialNumber { get; set; } = string.Empty;
+                public string? InvoiceSerialNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人识别码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrsbh")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrsbh")]
-                public string SellerTaxNumber { get; set; } = string.Empty;
+                public string? SellerTaxNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrmc")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrmc")]
-                public string SellerName { get; set; } = string.Empty;
+                public string? SellerName { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrdz")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrdz")]
-                public string SellerAddress { get; set; } = string.Empty;
+                public string? SellerAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人电话。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrdh")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrdh")]
-                public string SellerPhoneNumber { get; set; } = string.Empty;
+                public string? SellerPhoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人开户行。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrbank")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrbank")]
-                public string SellerBank { get; set; } = string.Empty;
+                public string? SellerBank { get; set; }
 
                 /// <summary>
                 /// 获取或设置纳税人银行账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nsrbankid")]
                 [System.Text.Json.Serialization.JsonPropertyName("nsrbankid")]
-                public string SellerBankNumber { get; set; } = string.Empty;
+                public string? SellerBankNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置购货方识别号。
@@ -201,7 +201,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("kpr")]
                 [System.Text.Json.Serialization.JsonPropertyName("kpr")]
-                public string Drawer { get; set; } = string.Empty;
+                public string? Drawer { get; set; }
 
                 /// <summary>
                 /// 获取或设置收款人。
@@ -261,7 +261,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("invoicedetail_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("invoicedetail_list")]
-                public IList<Types.InvoiceItem> InvoiceItemList { get; set; } = new List<Types.InvoiceItem>();
+                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
             }
         }
 
@@ -270,6 +270,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invoiceinfo")]
         [System.Text.Json.Serialization.JsonPropertyName("invoiceinfo")]
-        public Types.Invoice Invoice { get; set; } = new Types.Invoice();
+        public Types.Invoice? Invoice { get; set; }
     }
 }

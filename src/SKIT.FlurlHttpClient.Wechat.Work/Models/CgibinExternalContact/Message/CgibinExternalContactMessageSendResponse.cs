@@ -10,27 +10,27 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_external_user")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_external_user")]
-        public string[]? InvalidExternalUserIdList { get; set; }
+        public List<string>? InvalidExternalUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的家长账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_parent_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_parent_userid")]
-        public string[]? InvalidParentUserIdList { get; set; }
+        public List<string>? InvalidParentUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的学生账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_student_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_student_userid")]
-        public string[]? InvalidStudentUserIdList { get; set; }
+        public List<string>? InvalidStudentUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_party")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_party")]
-        public long[]? InvalidDepartmentIdIdList { get; set; }
+        public List<long>? InvalidDepartmentIdIdList { get; set; }
     }
 }

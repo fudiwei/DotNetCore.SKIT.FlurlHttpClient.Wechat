@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/idcard 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pos")]
                 [System.Text.Json.Serialization.JsonPropertyName("pos")]
-                public Types.Position Position { get; set; } = default!;
+                public Types.Position? Position { get; set; }
             }
 
             public class ImageSize : CVImageQrcodeResponse.Types.ImageSize
@@ -34,7 +34,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = default!;
+        public string? Type { get; set; }
 
         /// <summary>
         /// 获取或设置身份证号。

@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encoding_aeskey")]
         [System.Text.Json.Serialization.JsonPropertyName("encoding_aeskey")]
-        public string EncodingAESKey { get; set; } = string.Empty;
+        public string? EncodingAESKey { get; set; }
 
         /// <summary>
         /// 获取或设置每块数据的人员数。

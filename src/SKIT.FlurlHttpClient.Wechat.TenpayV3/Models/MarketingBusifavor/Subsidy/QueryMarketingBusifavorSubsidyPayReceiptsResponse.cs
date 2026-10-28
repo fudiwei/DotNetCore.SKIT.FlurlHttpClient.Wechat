@@ -14,42 +14,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subsidy_receipt_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("subsidy_receipt_id")]
-                public string SubsidyReceiptId { get; set; } = default!;
+                public string? SubsidyReceiptId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家券批次号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-                public string StockId { get; set; } = default!;
+                public string? StockId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家券 Code。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_code")]
-                public string CouponCode { get; set; } = default!;
+                public string? CouponCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置微信支付订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                public string TransactionId { get; set; } = default!;
+                public string? TransactionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置营销补差扣款商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payer_merchant")]
                 [System.Text.Json.Serialization.JsonPropertyName("payer_merchant")]
-                public string PayerMerchantId { get; set; } = default!;
+                public string? PayerMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置营销补差入账商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payee_merchant")]
                 [System.Text.Json.Serialization.JsonPropertyName("payee_merchant")]
-                public string PayeeMerchantId { get; set; } = default!;
+                public string? PayeeMerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置补差付款金额（单位：分）。
@@ -63,21 +63,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置业务请求唯一单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_subsidy_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_subsidy_no")]
-                public string OutSubsidyNumber { get; set; } = default!;
+                public string? OutSubsidyNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置补差付款单据状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
+                public string? Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置补差付款失败原因。
@@ -111,6 +111,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_receipt_list")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_receipt_list")]
-        public Types.PayReceipt[]? PayReceiptList { get; set; }
+        public List<Types.PayReceipt>? PayReceiptList { get; set; }
     }
 }

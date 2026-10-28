@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("img_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("img_url")]
-                public string ImageUrl { get; set; } = default!;
+                public string? ImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请 ID。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_url")]
         [System.Text.Json.Serialization.JsonPropertyName("img_url")]
-        public string ImageUrl { get; set; } = default!;
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// 获取或设置最近一次申请信息。

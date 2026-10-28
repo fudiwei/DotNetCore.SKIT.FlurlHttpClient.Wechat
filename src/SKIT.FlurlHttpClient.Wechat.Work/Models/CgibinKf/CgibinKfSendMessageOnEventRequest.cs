@@ -21,7 +21,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string MessageCode { get; set; } = string.Empty;
+        public string? MessageCode { get; set; }
 
         /// <summary>
         /// 获取或设置消息 ID。
@@ -35,7 +35,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-        public string MessageType { get; set; } = string.Empty;
+        public string? MessageType { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。

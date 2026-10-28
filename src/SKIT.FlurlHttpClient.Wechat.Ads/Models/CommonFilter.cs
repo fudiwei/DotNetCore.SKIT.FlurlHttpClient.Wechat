@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
         /// </summary>
         [Newtonsoft.Json.JsonProperty("field")]
         [System.Text.Json.Serialization.JsonPropertyName("field")]
-        public string Field { get; set; } = string.Empty;
+        public string? Field { get; set; }
 
         /// <summary>
         /// 获取或设置操作符。
@@ -22,13 +22,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
         /// </summary>
         [Newtonsoft.Json.JsonProperty("operator")]
         [System.Text.Json.Serialization.JsonPropertyName("operator")]
-        public string Operator { get; set; } = OPERATOR_EQUALS;
+        public string? Operator { get; set; } = OPERATOR_EQUALS;
 
         /// <summary>
         /// 获取或设置字段取值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("values")]
         [System.Text.Json.Serialization.JsonPropertyName("values")]
-        public IList<string> Values { get; set; } = new List<string>();
+        public List<string>? Values { get; set; }
     }
 }

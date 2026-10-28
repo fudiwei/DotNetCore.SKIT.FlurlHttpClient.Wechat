@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("hbinfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("hbinfo")]
-                public ReceiverItem[] Items { get; set; } = default!;
+                public List<ReceiverItem>? Items { get; set; }
             }
 
             public class ReceiverItem
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置领取金额（单位：分）。
@@ -64,35 +64,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_billno")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_billno")]
-        public string MerchantBillNumber { get; set; } = default!;
+        public string? MerchantBillNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信红包订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail_id")]
         [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
-        public string PaymentNumber { get; set; } = default!;
+        public string? PaymentNumber { get; set; }
 
         /// <summary>
         /// 获取或设置转账状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置发放类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_type")]
         [System.Text.Json.Serialization.JsonPropertyName("send_type")]
-        public string SendType { get; set; } = default!;
+        public string? SendType { get; set; }
 
         /// <summary>
         /// 获取或设置红包类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hb_type")]
         [System.Text.Json.Serialization.JsonPropertyName("hb_type")]
-        public string RedPackType { get; set; } = default!;
+        public string? RedPackType { get; set; }
 
         /// <summary>
         /// 获取或设置红包金额（单位：分）。
@@ -170,6 +170,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hblist")]
         [System.Text.Json.Serialization.JsonPropertyName("hblist")]
-        public Types.ReceiverList ReceiverList { get; set; } = default!;
+        public Types.ReceiverList? ReceiverList { get; set; }
     }
 }

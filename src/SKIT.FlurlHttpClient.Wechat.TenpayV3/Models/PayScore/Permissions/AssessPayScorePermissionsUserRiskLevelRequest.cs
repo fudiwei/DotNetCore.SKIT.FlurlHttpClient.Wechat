@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品图片链接。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("picture")]
                         [System.Text.Json.Serialization.JsonPropertyName("picture")]
-                        public string PictureUrl { get; set; } = string.Empty;
+                        public string? PictureUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品单价（单位：分）。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("category_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("category_id")]
-                        public IList<string>? CategoryIdList { get; set; }
+                        public List<string>? CategoryIdList { get; set; }
                     }
                 }
 
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods")]
-                public IList<Types.Goods>? GoodsList { get; set; }
+                public List<Types.Goods>? GoodsList { get; set; }
             }
         }
 
@@ -64,14 +64,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string ServiceId { get; set; } = string.Empty;
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("skill")]
                 [System.Text.Json.Serialization.JsonPropertyName("skill")]
-                public string SkillName { get; set; } = string.Empty;
+                public string? SkillName { get; set; }
 
                 /// <summary>
                 /// 获取或设置原意图名称。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("intent")]
                 [System.Text.Json.Serialization.JsonPropertyName("intent")]
-                public string IntentName { get; set; } = string.Empty;
+                public string? IntentName { get; set; }
 
                 /// <summary>
                 /// 获取或设置相似度。
@@ -51,14 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("questions")]
                 [System.Text.Json.Serialization.JsonPropertyName("questions")]
-                public IList<string> QuestionList { get; set; } = new List<string>();
+                public List<string>? QuestionList { get; set; }
 
                 /// <summary>
                 /// 获取或设置回答列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("answers")]
                 [System.Text.Json.Serialization.JsonPropertyName("answers")]
-                public IList<string> AnswerList { get; set; } = new List<string>();
+                public List<string>? AnswerList { get; set; }
             }
         }
 
@@ -74,6 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public IList<Types.Skill> SkillList { get; set; } = new List<Types.Skill>();
+        public List<Types.Skill>? SkillList { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("memberid")]
                 [System.Text.Json.Serialization.JsonPropertyName("memberid")]
-                public string Id { get; set; } = default!;
+                public string? Id { get; set; }
 
                 /// <summary>
                 /// 获取或设置入群时间戳。
@@ -37,14 +37,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("members")]
         [System.Text.Json.Serialization.JsonPropertyName("members")]
-        public Types.Member[] MemberList { get; set; } = default!;
+        public List<Types.Member>? MemberList { get; set; }
 
         /// <summary>
         /// 获取或设置创建者的密文 UserId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("creator")]
         [System.Text.Json.Serialization.JsonPropertyName("creator")]
-        public string CreatorOpenUserId { get; set; } = default!;
+        public string? CreatorOpenUserId { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间戳。

@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("page_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("page_type")]
-                        public string PageType { get; set; } = string.Empty;
+                        public string? PageType { get; set; }
 
                         /// <summary>
                         /// 获取或设置网址。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonExtensionData]
                 [System.Text.Json.Serialization.JsonExtensionData]
-                public IDictionary<string, object>? ExtensionData { get; set; }
+                public Dictionary<string, object?>? ExtensionData { get; set; }
             }
 
             /// <summary>
@@ -612,14 +612,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("app_id")]
         [System.Text.Json.Serialization.JsonPropertyName("app_id")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_id")]
         [System.Text.Json.Serialization.JsonPropertyName("open_id")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置业务方订单 ID。
@@ -633,7 +633,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_id")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_id")]
-        public string MessageId { get; set; } = string.Empty;
+        public string? MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置子状态。

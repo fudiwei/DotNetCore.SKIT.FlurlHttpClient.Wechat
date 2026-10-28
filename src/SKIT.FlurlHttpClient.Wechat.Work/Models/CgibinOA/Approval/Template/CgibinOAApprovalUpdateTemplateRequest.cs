@@ -21,20 +21,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string TemplateId { get; set; } = string.Empty;
+        public string? TemplateId { get; set; }
 
         /// <summary>
         /// 获取或设置模板名称列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_name")]
         [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-        public IList<Types.MultiLangText> TemplateName { get; set; } = new List<Types.MultiLangText>();
+        public List<Types.MultiLangText>? TemplateName { get; set; }
 
         /// <summary>
         /// 获取或设置模板内容信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_content")]
         [System.Text.Json.Serialization.JsonPropertyName("template_content")]
-        public Types.TemplateContent TemplateContent { get; set; } = new Types.TemplateContent();
+        public Types.TemplateContent? TemplateContent { get; set; }
     }
 }

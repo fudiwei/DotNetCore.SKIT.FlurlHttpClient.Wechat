@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/school/get_payment_result 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("student_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("student_userid")]
-                public string StudentUserId { get; set; } = default!;
+                public string? StudentUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置家长账号。
@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_no")]
-                public string TradeNumber { get; set; } = default!;
+                public string? TradeNumber { get; set; }
             }
         }
 
@@ -44,7 +44,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("project_name")]
         [System.Text.Json.Serialization.JsonPropertyName("project_name")]
-        public string ProjectName { get; set; } = default!;
+        public string? ProjectName { get; set; }
 
         /// <summary>
         /// 获取或设置收款金额（单位：分）。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_result")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_result")]
-        public Types.PaymentResult[] PaymentResultList { get; set; } = default!;
+        public List<Types.PaymentResult>? PaymentResultList { get; set; }
     }
 }

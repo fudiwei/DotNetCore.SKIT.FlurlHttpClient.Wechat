@@ -10,28 +10,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("delivery_id")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-        public string DeliveryId { get; set; } = string.Empty;
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司客户编码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("biz_id")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_id")]
-        public string BusinessId { get; set; } = string.Empty;
+        public string? BusinessId { get; set; }
 
         /// <summary>
         /// 获取或设置运单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-        public string WaybillId { get; set; } = string.Empty;
+        public string? WaybillId { get; set; }
 
         /// <summary>
         /// 获取或设置轨迹节点时间戳。
@@ -52,6 +52,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_msg")]
         [System.Text.Json.Serialization.JsonPropertyName("action_msg")]
-        public string ActionMessage { get; set; } = string.Empty;
+        public string? ActionMessage { get; set; }
     }
 }

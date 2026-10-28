@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("merchant_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-                        public string MerchantName { get; set; } = default!;
+                        public string? MerchantName { get; set; }
 
                         /// <summary>
                         /// 获取或设置营业执照编号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_license_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_license_number")]
-                        public string BusinessLicenseNumber { get; set; } = default!;
+                        public string? BusinessLicenseNumber { get; set; }
                     }
 
                     public class Contact
@@ -35,21 +35,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
-                        public string UserName { get; set; } = default!;
+                        public string? UserName { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系人身份证号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
-                        public string IdCardNumber { get; set; } = default!;
+                        public string? IdCardNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置手机号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("mobile_phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
-                        public string MobileNumber { get; set; } = default!;
+                        public string? MobileNumber { get; set; }
                     }
 
                     public class SaleScene
@@ -89,14 +89,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_license_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_license_info")]
-                public Types.BusinessLicense BusinessLicense { get; set; } = new Types.BusinessLicense();
+                public Types.BusinessLicense? BusinessLicense { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系人信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_info")]
-                public Types.Contact Contact { get; set; } = default!;
+                public Types.Contact? Contact { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户简称。
@@ -119,6 +119,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_req")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_req")]
-        public Types.PayRequest PayRequest { get; set; } = default!;
+        public Types.PayRequest? PayRequest { get; set; }
     }
 }

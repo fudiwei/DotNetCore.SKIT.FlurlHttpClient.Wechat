@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotionSourceName")]
         [System.Text.Json.Serialization.JsonPropertyName("promotionSourceName")]
-        public string SourceName { get; set; } = string.Empty;
+        public string? SourceName { get; set; }
     }
 }

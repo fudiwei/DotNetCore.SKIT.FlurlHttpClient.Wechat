@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openlink")]
         [System.Text.Json.Serialization.JsonPropertyName("openlink")]
-        public string ProductScheme { get; set; } = default!;
+        public string? ProductScheme { get; set; }
     }
 }

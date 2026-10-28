@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("merchant_id")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
         [System.Xml.Serialization.XmlElement("merchant_id")]
-        public string MerchantId { get; set; } = default!;
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("merchant_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_trade_no")]
         [System.Xml.Serialization.XmlElement("merchant_trade_no")]
-        public string MerchantTradeNo { get; set; } = default!;
+        public string? MerchantTradeNo { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
         [System.Xml.Serialization.XmlElement("transaction_id")]
-        public string TransactionId { get; set; } = default!;
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置支付成功时间戳。

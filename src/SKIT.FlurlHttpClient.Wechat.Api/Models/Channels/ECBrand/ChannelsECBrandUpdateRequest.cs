@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("classification_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("classification_no")]
-                public string ClassificationNumber { get; set; } = string.Empty;
+                public string? ClassificationNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置商标类型。
@@ -64,14 +64,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("register_details")]
                 [System.Text.Json.Serialization.JsonPropertyName("register_details")]
-                public Types.RegisterDetail RegisterDetail { get; set; } = new Types.RegisterDetail();
+                public Types.RegisterDetail? RegisterDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置商标申请详细信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("application_details")]
                 [System.Text.Json.Serialization.JsonPropertyName("application_details")]
-                public Types.ApplicationDetail ApplicationDetail { get; set; } = new Types.ApplicationDetail();
+                public Types.ApplicationDetail? ApplicationDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置商标授权类型。
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("grant_details")]
                 [System.Text.Json.Serialization.JsonPropertyName("grant_details")]
-                public Types.GrantDetail GrantDetail { get; set; } = new Types.GrantDetail();
+                public Types.GrantDetail? GrantDetail { get; set; }
             }
         }
 
@@ -94,6 +94,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand")]
         [System.Text.Json.Serialization.JsonPropertyName("brand")]
-        public Types.Brand Brand { get; set; } = new Types.Brand();
+        public Types.Brand? Brand { get; set; }
     }
 }

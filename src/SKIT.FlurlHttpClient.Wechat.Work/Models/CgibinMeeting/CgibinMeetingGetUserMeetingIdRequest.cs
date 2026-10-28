@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        public string? UserId { get; set; }
 
         /// <summary>
         /// 获取或设置指定开始时间戳。
@@ -28,11 +28,11 @@
 
         /// <summary>
         /// 获取或设置翻页标记。
-        /// <para>默认值：0</para>
+        /// <para>默认值："0"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cursor")]
         [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        public string Cursor { get; set; } = "0";
+        public string? Cursor { get; set; } = "0";
 
         /// <summary>
         /// 获取或设置分页每页数量。

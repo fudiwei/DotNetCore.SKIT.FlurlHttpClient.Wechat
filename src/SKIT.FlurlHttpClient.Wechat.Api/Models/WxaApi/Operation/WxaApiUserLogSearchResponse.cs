@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("msg")]
                                 [System.Text.Json.Serialization.JsonPropertyName("msg")]
-                                public string[] MessageList { get; set; } = default!;
+                                public List<string>? MessageList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置日志时间戳。
@@ -52,21 +52,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("libraryVersion")]
                         [System.Text.Json.Serialization.JsonPropertyName("libraryVersion")]
-                        public string SdkVersion { get; set; } = default!;
+                        public string? SdkVersion { get; set; }
 
                         /// <summary>
                         /// 获取或设置客户端版本。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("clientVersion")]
                         [System.Text.Json.Serialization.JsonPropertyName("clientVersion")]
-                        public string ClientVersion { get; set; } = default!;
+                        public string? ClientVersion { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户 OpenId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string OpenId { get; set; } = default!;
+                        public string? OpenId { get; set; }
 
                         /// <summary>
                         /// 获取或设置平台类型。
@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("traceid")]
                         [System.Text.Json.Serialization.JsonPropertyName("traceid")]
-                        public string TraceId { get; set; } = default!;
+                        public string? TraceId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string PagePath { get; set; } = default!;
+                        public string? PagePath { get; set; }
 
                         /// <summary>
                         /// 获取或设置过滤字段。
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("msg")]
                         [System.Text.Json.Serialization.JsonPropertyName("msg")]
-                        public Types.Message[] MessageList { get; set; } = default!;
+                        public List<Types.Message>? MessageList { get; set; }
 
                         /// <summary>
                         /// 获取或设置日志时间戳。
@@ -117,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.RealtimeLog[] RealtimeLogList { get; set; } = default!;
+                public List<Types.RealtimeLog>? RealtimeLogList { get; set; }
 
                 /// <summary>
                 /// 获取或设置实时日志总条数。
@@ -133,6 +133,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Data Data { get; set; } = default!;
+        public Types.Data? Data { get; set; }
     }
 }

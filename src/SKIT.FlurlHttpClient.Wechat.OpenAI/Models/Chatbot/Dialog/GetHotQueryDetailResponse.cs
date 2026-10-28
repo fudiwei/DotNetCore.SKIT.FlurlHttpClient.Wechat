@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ques")]
                         [System.Text.Json.Serialization.JsonPropertyName("ques")]
-                        public string Question { get; set; } = default!;
+                        public string? Question { get; set; }
 
                         /// <summary>
                         /// 获取或设置问题得分。
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public Types.HotQuery[] HotQueryList { get; set; } = default!;
+                public List<Types.HotQuery>? HotQueryList { get; set; }
             }
         }
 

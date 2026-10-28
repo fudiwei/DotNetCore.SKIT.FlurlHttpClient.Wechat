@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chapter_id")]
         [System.Text.Json.Serialization.JsonPropertyName("chapter_id")]
-        public string ChapterId { get; set; } = default!;
+        public string? ChapterId { get; set; }
     }
 }

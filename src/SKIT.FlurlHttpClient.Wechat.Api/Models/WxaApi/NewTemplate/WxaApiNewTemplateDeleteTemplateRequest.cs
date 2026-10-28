@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("priTmplId")]
         [System.Text.Json.Serialization.JsonPropertyName("priTmplId")]
-        public string PrivateTemplateId { get; set; } = string.Empty;
+        public string? PrivateTemplateId { get; set; }
     }
 }

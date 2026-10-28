@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("card_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("card_id")]
-                        public string CardId { get; set; } = string.Empty;
+                        public string? CardId { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券 Code。
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("card_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("card_list")]
-                        public IList<Card> CardList { get; set; } = new List<Card>();
+                        public List<Card>? CardList { get; set; }
                     }
                 }
 
@@ -95,13 +95,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_name")]
         [System.Text.Json.Serialization.JsonPropertyName("action_name")]
-        public string ActionType { get; set; } = string.Empty;
+        public string? ActionType { get; set; }
 
         /// <summary>
         /// 获取或设置二维码详细信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_info")]
         [System.Text.Json.Serialization.JsonPropertyName("action_info")]
-        public Types.Action Action { get; set; } = new Types.Action();
+        public Types.Action? Action { get; set; }
     }
 }

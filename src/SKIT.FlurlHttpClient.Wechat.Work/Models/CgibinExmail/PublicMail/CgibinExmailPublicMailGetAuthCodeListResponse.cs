@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("remark")]
                 [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                public string Remark { get; set; } = default!;
+                public string? Remark { get; set; }
 
                 /// <summary>
                 /// 获取或设置最后使用时间戳。
@@ -44,6 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_code_list")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_code_list")]
-        public Types.AuthCode[] AuthCodeList { get; set; } = default!;
+        public List<Types.AuthCode>? AuthCodeList { get; set; }
     }
 }

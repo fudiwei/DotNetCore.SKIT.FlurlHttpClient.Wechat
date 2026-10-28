@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("acl_tag")]
         [System.Text.Json.Serialization.JsonPropertyName("acl_tag")]
-        public string ACLTag { get; set; } = default!;
+        public string? ACLTag { get; set; }
 
         /// <summary>
         /// 获取或设置自定义规则。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule")]
         [System.Text.Json.Serialization.JsonPropertyName("rule")]
-        public string Rule { get; set; } = default!;
+        public string? Rule { get; set; }
     }
 }

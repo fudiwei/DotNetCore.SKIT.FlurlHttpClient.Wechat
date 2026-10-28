@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_url")]
         [System.Text.Json.Serialization.JsonPropertyName("file_url")]
-        public string FileUrl { get; set; } = default!;
+        public string? FileUrl { get; set; }
     }
 }

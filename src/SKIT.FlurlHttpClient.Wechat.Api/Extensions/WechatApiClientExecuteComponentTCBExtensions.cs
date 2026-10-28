@@ -305,7 +305,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("env", request.EnvironmentId)
                 .SetQueryParam("name", request.FunctionName);
 
-            using var httpContent = new StringContent(request.Data ?? string.Empty, Encoding.UTF8);
+            using var httpContent = new StringContent(request.Data!, Encoding.UTF8);
             return await client.SendFlurlRequestAsync<Models.ComponentTCBInvokeCloudFunctionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion

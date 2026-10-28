@@ -320,14 +320,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string Title { get; set; } = default!;
+                public string? Title { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品头图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_img_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品价格（单位：分）。
@@ -366,7 +366,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                public Types.Data Data { get; set; } = default!;
+                public Types.Data? Data { get; set; }
             }
         }
 
@@ -375,6 +375,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_list")]
         [System.Text.Json.Serialization.JsonPropertyName("product_list")]
-        public Types.Product[] ProductList { get; set; } = default!;
+        public List<Types.Product>? ProductList { get; set; }
     }
 }

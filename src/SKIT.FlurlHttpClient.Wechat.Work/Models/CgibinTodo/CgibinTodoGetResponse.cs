@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置参与人待办状态。
@@ -40,14 +40,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
 
         /// <summary>
         /// 获取或设置创建人成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("creator")]
         [System.Text.Json.Serialization.JsonPropertyName("creator")]
-        public string CreatorUserId { get; set; } = default!;
+        public string? CreatorUserId { get; set; }
 
         /// <summary>
         /// 获取或设置待办状态。
@@ -75,13 +75,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attendees")]
         [System.Text.Json.Serialization.JsonPropertyName("attendees")]
-        public Types.Attendee[]? AttendeeList { get; set; }
+        public List<Types.Attendee>? AttendeeList { get; set; }
 
         /// <summary>
         /// 获取或设置提醒列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reminders")]
         [System.Text.Json.Serialization.JsonPropertyName("reminders")]
-        public Types.Reminder[]? ReminderList { get; set; }
+        public List<Types.Reminder>? ReminderList { get; set; }
     }
 }

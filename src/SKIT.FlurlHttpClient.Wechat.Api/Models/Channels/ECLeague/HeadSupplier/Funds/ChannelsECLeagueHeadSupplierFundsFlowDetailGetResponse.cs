@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flow_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("flow_id")]
-                public string FundsFlowId { get; set; } = default!;
+                public string? FundsFlowId { get; set; }
 
                 /// <summary>
                 /// 获取或设置资金类型。
@@ -82,6 +82,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("funds_flow")]
         [System.Text.Json.Serialization.JsonPropertyName("funds_flow")]
-        public Types.FundsFlow FundsFlow { get; set; } = default!;
+        public Types.FundsFlow? FundsFlow { get; set; }
     }
 }

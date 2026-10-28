@@ -10,20 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string DueDiligenceId { get; set; } = string.Empty;
+        public string? DueDiligenceId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置提交资料 JSON 内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("submit_data")]
         [System.Text.Json.Serialization.JsonPropertyName("submit_data")]
-        public string SubmitDataJson { get; set; } = "{}";
+        public string? SubmitDataJson { get; set; } = "{}";
     }
 }

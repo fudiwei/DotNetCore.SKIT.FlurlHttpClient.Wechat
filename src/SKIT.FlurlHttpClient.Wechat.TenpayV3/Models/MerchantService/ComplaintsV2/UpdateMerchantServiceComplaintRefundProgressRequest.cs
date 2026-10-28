@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ComplaintId { get; set; } = string.Empty;
+        public string? ComplaintId { get; set; }
 
         /// <summary>
         /// 获取或设置审批动作。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string Action { get; set; } = string.Empty;
+        public string? Action { get; set; }
 
         /// <summary>
         /// 获取或设置预计发起退款天数。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reject_media_list")]
         [System.Text.Json.Serialization.JsonPropertyName("reject_media_list")]
-        public IList<string>? RejectMediaIdList { get; set; }
+        public List<string>? RejectMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置备注。

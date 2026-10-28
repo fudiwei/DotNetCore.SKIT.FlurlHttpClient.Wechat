@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corpgroup/rule/modify_rule 接口的请求。</para>
@@ -25,14 +25,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("owner_corp_range")]
                 [System.Text.Json.Serialization.JsonPropertyName("owner_corp_range")]
-                public Types.OwnerCorpRange OwnerCorpRange { get; set; } = default!;
+                public Types.OwnerCorpRange? OwnerCorpRange { get; set; }
 
                 /// <summary>
                 /// 获取或设置下游企业规则范围信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member_corp_range")]
                 [System.Text.Json.Serialization.JsonPropertyName("member_corp_range")]
-                public Types.MemberCorpRange MemberCorpRange { get; set; } = default!;
+                public Types.MemberCorpRange? MemberCorpRange { get; set; }
             }
         }
 
@@ -41,7 +41,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chain_id")]
         [System.Text.Json.Serialization.JsonPropertyName("chain_id")]
-        public string ChainId { get; set; } = string.Empty;
+        public string? ChainId { get; set; }
 
         /// <summary>
         /// 获取或设置上下游关系规则 ID。
@@ -55,6 +55,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rule_info")]
         [System.Text.Json.Serialization.JsonPropertyName("rule_info")]
-        public Types.Rule Rule { get; set; } = new Types.Rule();
+        public Types.Rule? Rule { get; set; }
     }
 }

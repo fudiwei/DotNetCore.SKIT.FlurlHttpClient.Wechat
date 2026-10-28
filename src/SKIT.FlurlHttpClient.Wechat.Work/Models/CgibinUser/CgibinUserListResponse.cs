@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方成员唯一标识。
@@ -110,21 +110,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department")]
                 [System.Text.Json.Serialization.JsonPropertyName("department")]
-                public long[] DepartmentIdList { get; set; } = default!;
+                public List<long>? DepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门次序列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order")]
                 [System.Text.Json.Serialization.JsonPropertyName("order")]
-                public long[] DepartmentOrderList { get; set; } = default!;
+                public List<long>? DepartmentOrderList { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门领导状态列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_leader_in_dept")]
                 [System.Text.Json.Serialization.JsonPropertyName("is_leader_in_dept")]
-                public int[]? DepartmentLeaderStatusList { get; set; }
+                public List<int>? DepartmentLeaderStatusList { get; set; }
 
                 /// <summary>
                 /// 获取或设置主部门 ID。
@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("direct_leader")]
                 [System.Text.Json.Serialization.JsonPropertyName("direct_leader")]
-                public string[]? DirectLeaderUserIdList { get; set; }
+                public List<string>? DirectLeaderUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置头像 URL。
@@ -196,6 +196,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userlist")]
         [System.Text.Json.Serialization.JsonPropertyName("userlist")]
-        public Types.User[] UserList { get; set; } = default!;
+        public List<Types.User>? UserList { get; set; }
     }
 }

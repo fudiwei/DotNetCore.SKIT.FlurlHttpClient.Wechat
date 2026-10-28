@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("export_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("export_id")]
-                public string ExportId { get; set; } = default!;
+                public string? ExportId { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置内嵌直播卡片时需要的推广参数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promoter_share_link")]
                 [System.Text.Json.Serialization.JsonPropertyName("promoter_share_link")]
-                public string PromoterShareLink { get; set; } = default!;
+                public string? PromoterShareLink { get; set; }
             }
         }
 
@@ -37,6 +37,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("live_record_list")]
         [System.Text.Json.Serialization.JsonPropertyName("live_record_list")]
-        public Types.LiveRecord[] LiveRecordList { get; set; } = default!;
+        public List<Types.LiveRecord>? LiveRecordList { get; set; }
     }
 }

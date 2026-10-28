@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("talent_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]
-        public string TalentAppId { get; set; } = string.Empty;
+        public string? TalentAppId { get; set; }
 
         /// <summary>
         /// 获取或设置商品数据类型。

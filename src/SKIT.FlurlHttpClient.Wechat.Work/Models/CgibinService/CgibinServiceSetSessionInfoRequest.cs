@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public IList<int>? AppIdList { get; set; }
+                public List<int>? AppIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权类型。
@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_auth_code")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_auth_code")]
-        public string PreAuthCode { get; set; } = string.Empty;
+        public string? PreAuthCode { get; set; }
 
         /// <summary>
         /// 获取或设置本次授权过程中需要用到的会话信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("session_info")]
         [System.Text.Json.Serialization.JsonPropertyName("session_info")]
-        public Types.Session Session { get; set; } = new Types.Session();
+        public Types.Session? Session { get; set; }
     }
 }

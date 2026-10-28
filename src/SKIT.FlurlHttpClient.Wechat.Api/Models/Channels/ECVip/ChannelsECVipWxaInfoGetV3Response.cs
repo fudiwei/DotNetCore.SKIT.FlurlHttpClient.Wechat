@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("register_path")]
                         [System.Text.Json.Serialization.JsonPropertyName("register_path")]
-                        public string RegisterPathPath { get; set; } = default!;
+                        public string? RegisterPathPath { get; set; }
 
                         /// <summary>
                         /// 获取或设置会员权益页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rights_path")]
                         [System.Text.Json.Serialization.JsonPropertyName("rights_path")]
-                        public string RightsPagePath { get; set; } = default!;
+                        public string? RightsPagePath { get; set; }
                     }
 
                     public class DisplayInfo
@@ -44,21 +44,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("paths")]
                 [System.Text.Json.Serialization.JsonPropertyName("paths")]
-                public Types.PathInfo PathInfo { get; set; } = default!;
+                public Types.PathInfo? PathInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置测试白名单用户 OpenId 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("whitelist_openids")]
                 [System.Text.Json.Serialization.JsonPropertyName("whitelist_openids")]
-                public string[] WhiteListOpenIdList { get; set; } = default!;
+                public List<string>? WhiteListOpenIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置展示信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("display_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("display_info")]
-                public Types.DisplayInfo DisplayInfo { get; set; } = default!;
+                public Types.DisplayInfo? DisplayInfo { get; set; }
             }
         }
 
@@ -67,14 +67,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_appid")]
-        public string MiniProgramAppId { get; set; } = default!;
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.MiniProgramInfo MiniProgramInfo { get; set; } = default!;
+        public Types.MiniProgramInfo? MiniProgramInfo { get; set; }
 
         /// <summary>
         /// 获取或设置状态。

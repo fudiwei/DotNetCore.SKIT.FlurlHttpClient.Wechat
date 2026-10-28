@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("picurl")]
         [System.Text.Json.Serialization.JsonPropertyName("picurl")]
-        public string PictureUrl { get; set; } = string.Empty;
+        public string? PictureUrl { get; set; }
     }
 }

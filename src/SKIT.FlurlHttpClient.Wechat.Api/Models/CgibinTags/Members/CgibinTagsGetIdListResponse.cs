@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/getidlist 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
-        public int[] TagIdList { get; set; } = default!;
+        public List<int>? TagIdList { get; set; }
     }
 }

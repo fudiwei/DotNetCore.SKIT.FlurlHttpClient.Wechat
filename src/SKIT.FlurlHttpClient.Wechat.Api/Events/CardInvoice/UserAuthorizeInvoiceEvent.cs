@@ -33,6 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Source")]
         [System.Text.Json.Serialization.JsonPropertyName("Source")]
         [System.Xml.Serialization.XmlElement("Source")]
-        public string Source { get; set; } = default!;
+        public string? Source { get; set; }
     }
 }

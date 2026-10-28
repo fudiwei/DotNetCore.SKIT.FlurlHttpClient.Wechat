@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("MediaId")]
         [System.Text.Json.Serialization.JsonPropertyName("MediaId")]
         [System.Xml.Serialization.XmlElement("MediaId")]
-        public string MediaId { get; set; } = default!;
+        public string? MediaId { get; set; }
 
         /// <summary>
         /// 获取或设置视频消息缩略图 MediaId。
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ThumbMediaId")]
         [System.Text.Json.Serialization.JsonPropertyName("ThumbMediaId")]
         [System.Xml.Serialization.XmlElement("ThumbMediaId")]
-        public string ThumbnailMediaId { get; set; } = default!;
+        public string? ThumbnailMediaId { get; set; }
 
         /// <summary>
         /// 获取或设置消息数据 ID。

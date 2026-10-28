@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public IList<string> Items { get; set; } = new List<string>();
+                public List<string>? Items { get; set; }
             }
 
             public class TagIdList : CgibinExmailGroupCreateRequest.Types.TagIdList
@@ -41,14 +41,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("email")]
         [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; }
 
         /// <summary>
         /// 获取或设置业务邮箱名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置允许使用的成员账号列表。

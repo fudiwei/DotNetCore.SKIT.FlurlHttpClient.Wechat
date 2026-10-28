@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/msgaudit/groupchat/get 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("memberid")]
                 [System.Text.Json.Serialization.JsonPropertyName("memberid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置入群时间戳。
@@ -30,28 +30,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("roomname")]
         [System.Text.Json.Serialization.JsonPropertyName("roomname")]
-        public string RoomName { get; set; } = default!;
+        public string? RoomName { get; set; }
 
         /// <summary>
         /// 获取或设置群聊创建者的成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("creator")]
         [System.Text.Json.Serialization.JsonPropertyName("creator")]
-        public string CreatorUserId { get; set; } = default!;
+        public string? CreatorUserId { get; set; }
 
         /// <summary>
         /// 获取或设置群成员列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("members")]
         [System.Text.Json.Serialization.JsonPropertyName("members")]
-        public Types.Member[] MemberList { get; set; } = default!;
+        public List<Types.Member>? MemberList { get; set; }
 
         /// <summary>
         /// 获取或设置群公告。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notice")]
         [System.Text.Json.Serialization.JsonPropertyName("notice")]
-        public string Notice { get; set; } = default!;
+        public string? Notice { get; set; }
 
         /// <summary>
         /// 获取或设置群聊创建时间戳。

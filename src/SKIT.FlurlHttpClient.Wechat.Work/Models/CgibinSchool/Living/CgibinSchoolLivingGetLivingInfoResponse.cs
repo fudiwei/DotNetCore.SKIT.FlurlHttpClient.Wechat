@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("partyids")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyids")]
-                        public long[]? DepartmentIdList { get; set; }
+                        public List<long>? DepartmentIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置客户群（即班级群）名称列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("group_names")]
                         [System.Text.Json.Serialization.JsonPropertyName("group_names")]
-                        public string[]? GroupChatNameList { get; set; }
+                        public List<string>? GroupChatNameList { get; set; }
                     }
                 }
 
@@ -34,14 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("anchor_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("anchor_userid")]
-                public string AnchorUserId { get; set; } = default!;
+                public string? AnchorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("theme")]
                 [System.Text.Json.Serialization.JsonPropertyName("theme")]
-                public string Theme { get; set; } = default!;
+                public string? Theme { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播开始时间戳。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("living_range")]
                 [System.Text.Json.Serialization.JsonPropertyName("living_range")]
-                public Types.LivingRange Range { get; set; } = default!;
+                public Types.LivingRange? Range { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启回放。
@@ -101,6 +101,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("living_info")]
         [System.Text.Json.Serialization.JsonPropertyName("living_info")]
-        public Types.Living Living { get; set; } = default!;
+        public Types.Living? Living { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [POST] /estimation/get 接口的请求。</para>
@@ -17,13 +17,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("campaign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("campaign_type")]
-        public string CampaignType { get; set; } = string.Empty;
+        public string? CampaignType { get; set; }
 
         /// <summary>
         /// 获取或设置定向条件。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("targeting")]
         [System.Text.Json.Serialization.JsonPropertyName("targeting")]
-        public Types.Target Target { get; set; } = new Types.Target();
+        public Types.Target? Target { get; set; }
     }
 }

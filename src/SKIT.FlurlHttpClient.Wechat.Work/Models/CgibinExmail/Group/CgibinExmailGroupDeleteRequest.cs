@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupid")]
         [System.Text.Json.Serialization.JsonPropertyName("groupid")]
-        public string GroupId { get; set; } = string.Empty;
+        public string? GroupId { get; set; }
     }
 }

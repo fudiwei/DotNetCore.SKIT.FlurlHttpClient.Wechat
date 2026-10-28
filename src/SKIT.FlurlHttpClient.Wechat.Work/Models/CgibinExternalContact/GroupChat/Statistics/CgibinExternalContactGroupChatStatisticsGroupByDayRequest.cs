@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/groupchat/statistic_group_by_day 接口的请求。</para>
@@ -31,6 +31,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("owner_filter")]
         [System.Text.Json.Serialization.JsonPropertyName("owner_filter")]
-        public Types.OwnerFilter Owner { get; set; } = new Types.OwnerFilter();
+        public Types.OwnerFilter? Owner { get; set; }
     }
 }

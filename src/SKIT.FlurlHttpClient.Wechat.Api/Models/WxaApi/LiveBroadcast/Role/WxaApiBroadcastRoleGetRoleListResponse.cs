@@ -14,35 +14,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户微信号（已脱敏处理）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("username")]
                 [System.Text.Json.Serialization.JsonPropertyName("username")]
-                public string Username { get; set; } = default!;
+                public string? Username { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户头像 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("headingimg")]
                 [System.Text.Json.Serialization.JsonPropertyName("headingimg")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置角色类型列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("roleList")]
                 [System.Text.Json.Serialization.JsonPropertyName("roleList")]
-                public int[] RoleList { get; set; } = default!;
+                public List<int>? RoleList { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Member[] MemberList { get; set; } = default!;
+        public List<Types.Member>? MemberList { get; set; }
 
         /// <summary>
         /// 获取或设置成员总数量。

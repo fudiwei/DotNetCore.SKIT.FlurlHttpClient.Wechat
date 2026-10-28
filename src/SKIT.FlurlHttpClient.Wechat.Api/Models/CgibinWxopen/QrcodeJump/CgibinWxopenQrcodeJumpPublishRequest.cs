@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("prefix")]
         [System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public string Prefix { get; set; } = string.Empty;
+        public string? Prefix { get; set; }
     }
 }

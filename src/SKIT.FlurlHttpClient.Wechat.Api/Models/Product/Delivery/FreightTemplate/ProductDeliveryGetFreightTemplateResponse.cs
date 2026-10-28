@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("address_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                        public Address[] AddressList { get; set; } = default!;
+                        public List<Address>? AddressList { get; set; }
                     }
 
                     public class ConditionFreeDetailItem
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("address_infos")]
                         [System.Text.Json.Serialization.JsonPropertyName("address_infos")]
-                        public Address[] AddressList { get; set; } = default!;
+                        public List<Address>? AddressList { get; set; }
 
                         /// <summary>
                         /// 获取或设置包邮最低件数。
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("condition_free_detail_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("condition_free_detail_list")]
-                        public ConditionFreeDetailItem[] Items { get; set; } = default!;
+                        public List<ConditionFreeDetailItem>? Items { get; set; }
                     }
 
                     public class FreightCalculateMethodItem
@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("address_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                        public Address[] AddressList { get; set; } = default!;
+                        public List<Address>? AddressList { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否为默认运费。
@@ -165,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("freight_calc_method_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("freight_calc_method_list")]
-                        public FreightCalculateMethodItem[] Items { get; set; } = default!;
+                        public List<FreightCalculateMethodItem>? Items { get; set; }
                     }
                 }
 
@@ -181,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置计费类型。
@@ -209,7 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string[] DeliveryIdList { get; set; } = default!;
+                public List<string>? DeliveryIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置配送方式。
@@ -223,14 +223,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                public Types.Address SendAddress { get; set; } = default!;
+                public Types.Address? SendAddress { get; set; }
 
                 /// <summary>
                 /// 获取或设置不发货地区信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("not_send_area")]
                 [System.Text.Json.Serialization.JsonPropertyName("not_send_area")]
-                public Types.Area NotSupportedArea { get; set; } = default!;
+                public Types.Area? NotSupportedArea { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否为默认模版。
@@ -246,14 +246,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("all_condition_free_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("all_condition_free_detail")]
-                public Types.ConditionFreeDetailList ConditionFreeDetailList { get; set; } = default!;
+                public Types.ConditionFreeDetailList? ConditionFreeDetailList { get; set; }
 
                 /// <summary>
                 /// 获取或设置指定地区具体计费方法信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("all_freight_calc_method")]
                 [System.Text.Json.Serialization.JsonPropertyName("all_freight_calc_method")]
-                public Types.FreightCalculateMethodList FreightCalculateMethodList { get; set; } = default!;
+                public Types.FreightCalculateMethodList? FreightCalculateMethodList { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
@@ -276,6 +276,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_list")]
         [System.Text.Json.Serialization.JsonPropertyName("template_list")]
-        public Types.FreightTemplate[] FreightTemplateList { get; set; } = default!;
+        public List<Types.FreightTemplate>? FreightTemplateList { get; set; }
     }
 }

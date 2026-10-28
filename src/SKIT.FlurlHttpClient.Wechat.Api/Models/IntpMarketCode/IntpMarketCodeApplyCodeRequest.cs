@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("isv_application_id")]
         [System.Text.Json.Serialization.JsonPropertyName("isv_application_id")]
-        public string ISVApplicationId { get; set; } = string.Empty;
+        public string? ISVApplicationId { get; set; }
     }
 }

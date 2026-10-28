@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = string.Empty;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置管理员类型。
@@ -93,6 +93,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_admins")]
         [System.Text.Json.Serialization.JsonPropertyName("department_admins")]
-        public IList<Types.Administrator>? AdministratorList { get; set; }
+        public List<Types.Administrator>? AdministratorList { get; set; }
     }
 }

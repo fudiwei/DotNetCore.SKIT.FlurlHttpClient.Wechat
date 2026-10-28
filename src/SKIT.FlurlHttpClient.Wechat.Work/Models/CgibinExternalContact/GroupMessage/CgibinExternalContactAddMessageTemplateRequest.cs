@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tag_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("tag_list")]
-                        public IList<string>? TagList { get; set; }
+                        public List<string>? TagList { get; set; }
                     }
                 }
 
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_list")]
-                public IList<Types.TagFilterGroup>? GroupList { get; set; }
+                public List<Types.TagFilterGroup>? GroupList { get; set; }
             }
 
             public class Text
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = string.Empty;
+                public string? Content { get; set; }
             }
 
             public class Attachment
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置图文消息描述。
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = string.Empty;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置图文消息封面 URL。
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = string.Empty;
+                        public string? MediaId { get; set; }
                     }
 
                     public class MiniProgram
@@ -109,21 +109,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string AppId { get; set; } = string.Empty;
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("page")]
                         [System.Text.Json.Serialization.JsonPropertyName("page")]
-                        public string PagePath { get; set; } = string.Empty;
+                        public string? PagePath { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = string.Empty;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序封面 MediaId。
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string MediaId { get; set; } = string.Empty;
+                        public string? MediaId { get; set; }
                     }
                 }
 
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgtype")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
-                public string Type { get; set; } = string.Empty;
+                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置图片附件信息。
@@ -193,21 +193,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_type")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_type")]
-        public string ChatType { get; set; } = string.Empty;
+        public string? ChatType { get; set; }
 
         /// <summary>
         /// 获取或设置外部联系人账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-        public IList<string>? ExternalUserIdList { get; set; }
+        public List<string>? ExternalUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置客户群 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_id_list")]
-        public IList<string>? GroupChatIdList { get; set; }
+        public List<string>? GroupChatIdList { get; set; }
 
         /// <summary>
         /// 获取或设置标签筛选条件。
@@ -242,6 +242,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attachments")]
         [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-        public IList<Types.Attachment>? AttachmentList { get; set; }
+        public List<Types.Attachment>? AttachmentList { get; set; }
     }
 }

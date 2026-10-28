@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
-                public string Code { get; set; } = default!;
+                public string? Code { get; set; }
 
                 /// <summary>
                 /// 获取或设置券状态。
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户的 UnionId。
@@ -186,14 +186,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置团购优惠券列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voucher_list")]
         [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
-        public Types.Voucher[] VoucherList { get; set; } = default!;
+        public List<Types.Voucher>? VoucherList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

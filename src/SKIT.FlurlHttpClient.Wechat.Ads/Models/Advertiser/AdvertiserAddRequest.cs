@@ -17,14 +17,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_person")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_person")]
-        public string ContactPerson { get; set; } = string.Empty;
+        public string? ContactPerson { get; set; }
 
         /// <summary>
         /// 获取或设置联系人电话号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_person_telephone")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_person_telephone")]
-        public string ContactTeleNumber { get; set; } = string.Empty;
+        public string? ContactTeleNumber { get; set; }
 
         /// <summary>
         /// 获取或设置经营性质类型。

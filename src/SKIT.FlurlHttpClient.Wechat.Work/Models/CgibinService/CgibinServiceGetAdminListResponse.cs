@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方成员唯一标识。
@@ -37,6 +37,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin")]
         [System.Text.Json.Serialization.JsonPropertyName("admin")]
-        public Types.Administrator[]? AdministratorList { get; set; }
+        public List<Types.Administrator>? AdministratorList { get; set; }
     }
 }

@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("workdays")]
                                 [System.Text.Json.Serialization.JsonPropertyName("workdays")]
-                                public int[] WorkdayList { get; set; } = default!;
+                                public List<int>? WorkdayList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置工作日上下班打卡时间列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("checkintime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("checkintime")]
-                                public CheckinTime[] CheckinTimeList { get; set; } = default!;
+                                public List<CheckinTime>? CheckinTimeList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否下班不需要打卡。
@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("rest_times")]
                                 [System.Text.Json.Serialization.JsonPropertyName("rest_times")]
-                                public Types.RestTime[]? RestTimeList { get; set; }
+                                public List<Types.RestTime>? RestTimeList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否不需要上班打卡。
@@ -209,14 +209,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("checkintime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("checkintime")]
-                                public CheckinTime[] CheckinTimeList { get; set; } = default!;
+                                public List<CheckinTime>? CheckinTimeList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置特殊日期备注。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("notes")]
                                 [System.Text.Json.Serialization.JsonPropertyName("notes")]
-                                public string Notes { get; set; } = default!;
+                                public string? Notes { get; set; }
                             }
 
                             public class WiFiMac
@@ -226,14 +226,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("wifiname")]
                                 [System.Text.Json.Serialization.JsonPropertyName("wifiname")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置 Wi-Fi 打卡地点 MAC 地址或 BSSID。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("wifimac")]
                                 [System.Text.Json.Serialization.JsonPropertyName("wifimac")]
-                                public string Mac { get; set; } = default!;
+                                public string? Mac { get; set; }
                             }
 
                             public class Location
@@ -243,14 +243,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("loc_title")]
                                 [System.Text.Json.Serialization.JsonPropertyName("loc_title")]
-                                public string Title { get; set; } = default!;
+                                public string? Title { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置位置打卡地点详情。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("loc_detail")]
                                 [System.Text.Json.Serialization.JsonPropertyName("loc_detail")]
-                                public string Detail { get; set; } = default!;
+                                public string? Detail { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置位置打卡地点经度。
@@ -296,7 +296,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("timerules")]
                                         [System.Text.Json.Serialization.JsonPropertyName("timerules")]
-                                        public TimeRule[] TimeRuleList { get; set; } = default!;
+                                        public List<TimeRule>? TimeRuleList { get; set; }
                                     }
 
                                     public class TimeRule
@@ -330,14 +330,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("odd_workdays")]
                                         [System.Text.Json.Serialization.JsonPropertyName("odd_workdays")]
-                                        public int[]? OddWorkdayList { get; set; }
+                                        public List<int>? OddWorkdayList { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置偶数周次序号列表。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("even_workdays")]
                                         [System.Text.Json.Serialization.JsonPropertyName("even_workdays")]
-                                        public int[]? EvenWorkdayList { get; set; }
+                                        public List<int>? EvenWorkdayList { get; set; }
                                     }
                                 }
 
@@ -353,14 +353,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("schedule_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("schedule_name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置班次上下班时段列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("time_section")]
                                 [System.Text.Json.Serialization.JsonPropertyName("time_section")]
-                                public Types.TimeSection[] TimeSectionList { get; set; } = default!;
+                                public List<Types.TimeSection>? TimeSectionList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否下班不需要打卡。
@@ -453,7 +453,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("groupname")]
                         [System.Text.Json.Serialization.JsonPropertyName("groupname")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否同步法定节假日。
@@ -516,42 +516,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("checkindate")]
                         [System.Text.Json.Serialization.JsonPropertyName("checkindate")]
-                        public Types.CheckinDate[] CheckinDateList { get; set; } = default!;
+                        public List<Types.CheckinDate>? CheckinDateList { get; set; }
 
                         /// <summary>
                         /// 获取或设置特殊日期必须打卡日期列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("spe_workdays")]
                         [System.Text.Json.Serialization.JsonPropertyName("spe_workdays")]
-                        public Types.SpecialCheckinDate[]? SpecialCheckinDateList { get; set; }
+                        public List<Types.SpecialCheckinDate>? SpecialCheckinDateList { get; set; }
 
                         /// <summary>
                         /// 获取或设置特殊日期不用打卡日期列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("spe_offdays")]
                         [System.Text.Json.Serialization.JsonPropertyName("spe_offdays")]
-                        public Types.SpecialCheckinDate[]? SpecialNonCheckinDateList { get; set; }
+                        public List<Types.SpecialCheckinDate>? SpecialNonCheckinDateList { get; set; }
 
                         /// <summary>
                         /// 获取或设置 Wi-Fi 打卡地点列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("wifimac_infos")]
                         [System.Text.Json.Serialization.JsonPropertyName("wifimac_infos")]
-                        public Types.WiFiMac[]? WiFiMacList { get; set; }
+                        public List<Types.WiFiMac>? WiFiMacList { get; set; }
 
                         /// <summary>
                         /// 获取或设置位置打卡地点列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("loc_infos")]
                         [System.Text.Json.Serialization.JsonPropertyName("loc_infos")]
-                        public Types.Location[]? LocationList { get; set; }
+                        public List<Types.Location>? LocationList { get; set; }
 
                         /// <summary>
                         /// 获取或设置排班列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("schedulelist")]
                         [System.Text.Json.Serialization.JsonPropertyName("schedulelist")]
-                        public Types.Schedule[]? ScheduleList { get; set; }
+                        public List<Types.Schedule>? ScheduleList { get; set; }
 
                         /// <summary>
                         /// 获取或设置补卡异常类型。
@@ -595,14 +595,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡规则信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group")]
                 [System.Text.Json.Serialization.JsonPropertyName("group")]
-                public Types.CheckinGroup CheckinGroup { get; set; } = default!;
+                public Types.CheckinGroup? CheckinGroup { get; set; }
             }
         }
 
@@ -611,6 +611,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.CheckinOption[] CheckinOptionList { get; set; } = default!;
+        public List<Types.CheckinOption>? CheckinOptionList { get; set; }
     }
 }

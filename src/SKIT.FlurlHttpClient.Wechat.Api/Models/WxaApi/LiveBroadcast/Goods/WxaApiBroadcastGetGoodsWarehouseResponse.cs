@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/getgoodswarehouse 接口的响应。</para>
@@ -21,21 +21,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序商品详情页路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品封面图 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cover_img_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("cover_img_url")]
-                public string CoverImageUrl { get; set; } = default!;
+                public string? CoverImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置价格类型。
@@ -86,7 +86,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goods")]
         [System.Text.Json.Serialization.JsonPropertyName("goods")]
-        public Types.Goods[] GoodsList { get; set; } = default!;
+        public List<Types.Goods>? GoodsList { get; set; }
 
         /// <summary>
         /// 获取或设置商品数数。

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string EnvironmentId { get; set; } = string.Empty;
+                public string? EnvironmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置静态网站自定义域名。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string Path { get; set; } = string.Empty;
+        public string? Path { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面参数。

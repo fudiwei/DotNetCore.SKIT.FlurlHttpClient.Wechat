@@ -32,28 +32,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_number")]
-        public string AuthenticateNumber { get; set; } = string.Empty;
+        public string? AuthenticateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置项目名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("project_name")]
         [System.Text.Json.Serialization.JsonPropertyName("project_name")]
-        public string ProjectName { get; set; } = string.Empty;
+        public string? ProjectName { get; set; }
 
         /// <summary>
         /// 获取或设置用工单位名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employer_name")]
         [System.Text.Json.Serialization.JsonPropertyName("employer_name")]
-        public string EmployerName { get; set; } = string.Empty;
+        public string? EmployerName { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置用户姓名（需使用平台公钥/证书加密）。
@@ -78,13 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("employment_type")]
         [System.Text.Json.Serialization.JsonPropertyName("employment_type")]
-        public string EmploymentType { get; set; } = string.Empty;
+        public string? EmploymentType { get; set; }
 
         /// <summary>
         /// 获取或设置核身类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authenticate_type")]
         [System.Text.Json.Serialization.JsonPropertyName("authenticate_type")]
-        public string AuthenticateType { get; set; } = string.Empty;
+        public string? AuthenticateType { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/vacation/getuservacationquota 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("vacationname")]
                 [System.Text.Json.Serialization.JsonPropertyName("vacationname")]
-                public string VacationName { get; set; } = default!;
+                public string? VacationName { get; set; }
 
                 /// <summary>
                 /// 获取或设置发放时长（单位：秒）。
@@ -58,6 +58,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("lists")]
         [System.Text.Json.Serialization.JsonPropertyName("lists")]
-        public Types.VacationQuota[] VacationQuotaList { get; set; } = default!;
+        public List<Types.VacationQuota>? VacationQuotaList { get; set; }
     }
 }

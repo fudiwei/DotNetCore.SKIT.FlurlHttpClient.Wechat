@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("user_coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_coupon_id")]
                 [System.Xml.Serialization.XmlElement("user_coupon_id")]
-                public string UserCouponId { get; set; } = default!;
+                public string? UserCouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠券 ID。
@@ -47,6 +47,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("receive_info")]
         [System.Text.Json.Serialization.JsonPropertyName("receive_info")]
         [System.Xml.Serialization.XmlElement("receive_info")]
-        public Types.UserCoupon UserCoupon { get; set; } = default!;
+        public Types.UserCoupon? UserCoupon { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("key")]
                 [System.Text.Json.Serialization.JsonPropertyName("key")]
-                public string Key { get; set; } = string.Empty;
+                public string? Key { get; set; }
 
                 /// <summary>
                 /// 获取或设置值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = string.Empty;
+                public string? Value { get; set; }
             }
         }
 
@@ -74,13 +74,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("params")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public IList<Types.Parameter>? ParameterList { get; set; }
+        public List<Types.Parameter>? ParameterList { get; set; }
 
         /// <summary>
         /// 获取或设置额外参数列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ext_params")]
         [System.Text.Json.Serialization.JsonPropertyName("ext_params")]
-        public IList<Types.Parameter>? ExtraParameterList { get; set; }
+        public List<Types.Parameter>? ExtraParameterList { get; set; }
     }
 }

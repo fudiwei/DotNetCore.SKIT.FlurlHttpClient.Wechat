@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileid")]
         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-        public string FileId { get; set; } = default!;
+        public string? FileId { get; set; }
     }
 }

@@ -51,20 +51,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_recharge_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_recharge_no")]
-        public string OutRechargeNumber { get; set; } = default!;
+        public string? OutRechargeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信充值单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recharge_id")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_id")]
-        public string RechargeId { get; set; } = default!;
+        public string? RechargeId { get; set; }
 
         /// <summary>
         /// 获取或设置充值目标账户。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_in_account")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_in_account")]
-        public Types.TransferInAccount TransferInAccount { get; set; } = default!;
+        public Types.TransferInAccount? TransferInAccount { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-                public string WaybillId { get; set; } = string.Empty;
+                public string? WaybillId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发货方式。
@@ -44,13 +44,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id_list")]
-        public IList<string> OrderIdList { get; set; } = new List<string>();
+        public List<string>? OrderIdList { get; set; }
 
         /// <summary>
         /// 获取或设置订单 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("logistics_info")]
         [System.Text.Json.Serialization.JsonPropertyName("logistics_info")]
-        public Types.LogisticsInfo LogisticsInfo { get; set; } = new Types.LogisticsInfo();
+        public Types.LogisticsInfo? LogisticsInfo { get; set; }
     }
 }

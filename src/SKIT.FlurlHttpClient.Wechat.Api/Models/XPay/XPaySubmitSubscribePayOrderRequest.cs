@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offer_id")]
         [System.Text.Json.Serialization.JsonPropertyName("offer_id")]
-        public string OfferId { get; set; } = string.Empty;
+        public string? OfferId { get; set; }
 
         /// <summary>
         /// 获取或设置道具 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id")]
         [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-        public string ProductId { get; set; } = string.Empty;
+        public string? ProductId { get; set; }
 
         /// <summary>
         /// 获取或设置道具价格（单位：分）。
@@ -40,21 +40,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("currency_type")]
         [System.Text.Json.Serialization.JsonPropertyName("currency_type")]
-        public string CurrencyType { get; set; } = "CNY";
+        public string? CurrencyType { get; set; } = "CNY";
 
         /// <summary>
         /// 获取或设置订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
 
         /// <summary>
         /// 获取或设置透传信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attach")]
         [System.Text.Json.Serialization.JsonPropertyName("attach")]
-        public string Attachment { get; set; } = string.Empty;
+        public string? Attachment { get; set; }
 
         protected internal override string GetRequestPath()
         {

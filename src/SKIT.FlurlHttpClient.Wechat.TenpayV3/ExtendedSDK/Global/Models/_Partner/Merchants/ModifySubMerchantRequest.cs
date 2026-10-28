@@ -40,14 +40,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置渠道号。
@@ -61,42 +61,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_type")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_type")]
-        public string MerchantType { get; set; } = string.Empty;
+        public string? MerchantType { get; set; }
 
         /// <summary>
         /// 获取或设置子商户全称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string MerchantName { get; set; } = string.Empty;
+        public string? MerchantName { get; set; }
 
         /// <summary>
         /// 获取或设置子商户简称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shortname")]
         [System.Text.Json.Serialization.JsonPropertyName("shortname")]
-        public string MerchantShortName { get; set; } = string.Empty;
+        public string? MerchantShortName { get; set; }
 
         /// <summary>
         /// 获取或设置注册国家或地区代码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_country_code")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_country_code")]
-        public string CountryCode { get; set; } = string.Empty;
+        public string? CountryCode { get; set; }
 
         /// <summary>
         /// 获取或设置公司电话号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("office_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("office_phone")]
-        public string OfficePhoneNumber { get; set; } = string.Empty;
+        public string? OfficePhoneNumber { get; set; }
 
         /// <summary>
         /// 获取或设置联系人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact")]
         [System.Text.Json.Serialization.JsonPropertyName("contact")]
-        public Types.Contact Contact { get; set; } = new Types.Contact();
+        public Types.Contact? Contact { get; set; }
 
         /// <summary>
         /// 获取或设置商业类目编码。
@@ -110,14 +110,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("registration_certificate_number")]
         [System.Text.Json.Serialization.JsonPropertyName("registration_certificate_number")]
-        public string RegistrationCertificateNumber { get; set; } = string.Empty;
+        public string? RegistrationCertificateNumber { get; set; }
 
         /// <summary>
         /// 获取或设置公司注册文件过期时间字符串（格式：yyyy-MM-dd / PERMANENT）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("registration_certificate_date")]
         [System.Text.Json.Serialization.JsonPropertyName("registration_certificate_date")]
-        public string RegistrationCertificateDateString { get; set; } = string.Empty;
+        public string? RegistrationCertificateDateString { get; set; }
 
         /// <summary>
         /// 获取或设置公司注册文件照片 MediaId。
@@ -131,14 +131,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settlement_bank_number")]
         [System.Text.Json.Serialization.JsonPropertyName("settlement_bank_number")]
-        public string SettlementBankNumber { get; set; } = string.Empty;
+        public string? SettlementBankNumber { get; set; }
 
         /// <summary>
         /// 获取或设置业务信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business")]
         [System.Text.Json.Serialization.JsonPropertyName("business")]
-        public Types.Business Business { get; set; } = new Types.Business();
+        public Types.Business? Business { get; set; }
 
         /// <summary>
         /// 获取或设置董事信息。

@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileid")]
         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-        public string FileId { get; set; } = string.Empty;
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 获取或设置新的文件名称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("new_name")]
         [System.Text.Json.Serialization.JsonPropertyName("new_name")]
-        public string FileName { get; set; } = string.Empty;
+        public string? FileName { get; set; }
     }
 }

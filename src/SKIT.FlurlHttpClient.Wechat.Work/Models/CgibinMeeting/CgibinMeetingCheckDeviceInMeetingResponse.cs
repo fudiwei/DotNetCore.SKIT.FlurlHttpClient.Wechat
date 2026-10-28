@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meetingid")]
                 [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-                public string MeetingId { get; set; } = default!;
+                public string? MeetingId { get; set; }
 
                 /// <summary>
                 /// 获取或设置终端设备类型。
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result_list")]
         [System.Text.Json.Serialization.JsonPropertyName("result_list")]
-        public Types.Result[] ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

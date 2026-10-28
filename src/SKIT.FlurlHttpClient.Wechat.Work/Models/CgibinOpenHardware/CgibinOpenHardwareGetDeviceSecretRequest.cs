@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string ModelAccessToken { get; set; } = string.Empty;
+        public string? ModelAccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置授权码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_code")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_code")]
-        public string AuthCode { get; set; } = string.Empty;
+        public string? AuthCode { get; set; }
     }
 }

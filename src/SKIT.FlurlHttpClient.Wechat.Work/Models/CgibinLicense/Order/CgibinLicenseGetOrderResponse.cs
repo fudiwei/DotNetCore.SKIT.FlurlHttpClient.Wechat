@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单金额（单位：分）。
@@ -79,14 +79,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_count")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_count")]
-                public Types.AccountCount AccountCount { get; set; } = default!;
+                public Types.AccountCount? AccountCount { get; set; }
 
                 /// <summary>
                 /// 获取或设置账号时长信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_duration")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_duration")]
-                public Types.AccountDuration AccountDuration { get; set; } = default!;
+                public Types.AccountDuration? AccountDuration { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -109,6 +109,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public Types.Order Order { get; set; } = default!;
+        public Types.Order? Order { get; set; }
     }
 }

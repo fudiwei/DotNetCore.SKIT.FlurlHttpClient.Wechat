@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ad_slot")]
                 [System.Text.Json.Serialization.JsonPropertyName("ad_slot")]
-                public string AdSlot { get; set; } = default!;
+                public string? AdSlot { get; set; }
 
                 /// <summary>
                 /// 获取或设置日期字符串（格式：yyyyMMdd）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("date")]
                 [System.Text.Json.Serialization.JsonPropertyName("date")]
-                public string DateString { get; set; } = default!;
+                public string? DateString { get; set; }
             }
 
             public class Summary
@@ -103,21 +103,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("summary")]
         [System.Text.Json.Serialization.JsonPropertyName("summary")]
-        public Types.Summary Summary { get; set; } = default!;
+        public Types.Summary? Summary { get; set; }
 
         /// <summary>
         /// 获取或设置每日数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public Types.Record[] RecordList { get; set; } = default!;
+        public List<Types.Record>? RecordList { get; set; }
 
         /// <summary>
         /// 获取或设置数据总数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_num")]
         [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-        public int TotalCount { get; set; } = default!;
+        public int TotalCount { get; set; }
 
         public override bool IsSuccessful()
         {

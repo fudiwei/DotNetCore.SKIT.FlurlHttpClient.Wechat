@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置客户群 ID。
@@ -51,7 +51,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_list")]
         [System.Text.Json.Serialization.JsonPropertyName("send_list")]
-        public Types.Result[]? ResultList { get; set; } = default!;
+        public List<Types.Result>? ResultList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

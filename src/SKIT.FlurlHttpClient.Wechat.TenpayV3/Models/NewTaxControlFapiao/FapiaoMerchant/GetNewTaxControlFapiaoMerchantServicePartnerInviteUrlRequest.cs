@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OperationType { get; set; } = string.Empty;
+        public string? OperationType { get; set; }
 
         /// <summary>
         /// 获取或设置操作人员（需使用平台公钥/证书加密）。
@@ -27,14 +27,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string FapiaoMode { get; set; } = string.Empty;
+        public string? FapiaoMode { get; set; }
 
         /// <summary>
         /// 获取或设置发票能力类型。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<string>? FapiaoAbilityTypeList { get; set; }
+        public List<string>? FapiaoAbilityTypeList { get; set; }
 
         /// <summary>
         /// 获取或设置服务商邀请渠道。
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string InviteCode { get; set; } = string.Empty;
+        public string? InviteCode { get; set; }
 
         /// <summary>
         /// 获取或设置受邀商户号。

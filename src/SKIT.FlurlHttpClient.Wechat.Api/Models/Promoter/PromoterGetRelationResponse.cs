@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promoter_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("promoter_openid")]
-                public string PromoterOpenId { get; set; } = default!;
+                public string? PromoterOpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置角色 ID。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string UserOpenId { get; set; } = default!;
+                public string? UserOpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置触达场景值。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string PagePath { get; set; } = default!;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置触达时间戳。
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("relation_list")]
         [System.Text.Json.Serialization.JsonPropertyName("relation_list")]
-        public Types.Relation[] RelationList { get; set; } = default!;
+        public List<Types.Relation>? RelationList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

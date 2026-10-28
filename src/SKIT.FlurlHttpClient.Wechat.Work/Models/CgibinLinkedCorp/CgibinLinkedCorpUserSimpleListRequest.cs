@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department_id")]
         [System.Text.Json.Serialization.JsonPropertyName("department_id")]
-        public string LinkedDepartmentId { get; set; } = string.Empty;
+        public string? LinkedDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置是否递归获取子部门成员。

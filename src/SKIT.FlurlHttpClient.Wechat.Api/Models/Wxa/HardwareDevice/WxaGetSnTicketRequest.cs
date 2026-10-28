@@ -10,13 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sn")]
         [System.Text.Json.Serialization.JsonPropertyName("sn")]
-        public string SerialNumber { get; set; } = string.Empty;
+        public string? SerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置设备型号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("model_id")]
         [System.Text.Json.Serialization.JsonPropertyName("model_id")]
-        public string ModelId { get; set; } = string.Empty;
+        public string? ModelId { get; set; }
     }
 }

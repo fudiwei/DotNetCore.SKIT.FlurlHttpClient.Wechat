@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("moment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("moment_id")]
-        public string MomentId { get; set; } = string.Empty;
+        public string? MomentId { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

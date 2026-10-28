@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_type")]
         [System.Text.Json.Serialization.JsonPropertyName("file_type")]
-        public string FileType { get; set; } = string.Empty;
+        public string? FileType { get; set; }
 
         /// <summary>
         /// 获取或设置文件大小（单位：字节）。

@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device_sn_list")]
         [System.Text.Json.Serialization.JsonPropertyName("device_sn_list")]
-        public IList<string>? DeviceSerialNumberList { get; set; }
+        public List<string>? DeviceSerialNumberList { get; set; }
 
         /// <summary>
         /// 获取或设置成员的 OpenUserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("open_userid_list")]
-        public IList<string>? OpenUserIdList { get; set; }
+        public List<string>? OpenUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

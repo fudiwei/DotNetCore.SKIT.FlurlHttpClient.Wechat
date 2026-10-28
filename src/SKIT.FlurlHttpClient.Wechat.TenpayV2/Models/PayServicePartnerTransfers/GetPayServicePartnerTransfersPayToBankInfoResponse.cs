@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
-        public string PartnerTradeNumber { get; set; } = default!;
+        public string? PartnerTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置金额（单位：分）。
@@ -39,21 +39,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_no")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_no")]
-        public string PaymentNumber { get; set; } = default!;
+        public string? PaymentNumber { get; set; }
 
         /// <summary>
         /// 获取或设置收款方银行卡号的 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_no_md5")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_no_md5")]
-        public string BankNumberMD5Value { get; set; } = default!;
+        public string? BankNumberMD5Value { get; set; }
 
         /// <summary>
         /// 获取或设置收款方用户名的 MD5 哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("true_name_md5")]
         [System.Text.Json.Serialization.JsonPropertyName("true_name_md5")]
-        public string UserNameMD5Value { get; set; } = default!;
+        public string? UserNameMD5Value { get; set; }
 
         /// <summary>
         /// 获取或设置手续费金额（单位：分）。
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; }
 
         /// <summary>
         /// 获取或设置下单时间。

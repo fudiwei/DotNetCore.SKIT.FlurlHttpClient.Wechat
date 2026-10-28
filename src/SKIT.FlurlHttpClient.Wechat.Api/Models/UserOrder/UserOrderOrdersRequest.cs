@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = string.Empty;
+                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序 AppId。
@@ -80,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("merchant_item_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("merchant_item_id")]
-                        public string MerchantItemId { get; set; } = string.Empty;
+                        public string? MerchantItemId { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品描述。
@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("image_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                        public IList<string> ImageUrlList { get; set; } = new List<string>();
+                        public List<string>? ImageUrlList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户交易商品详情页链接信息。
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_order_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_order_no")]
-                public string MerchantOrderNumber { get; set; } = string.Empty;
+                public string? MerchantOrderNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户交易订单详情页链接信息。
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_list")]
-                public IList<Types.Item> ItemList { get; set; } = new List<Types.Item>();
+                public List<Types.Item>? ItemList { get; set; }
             }
 
             public class Payer
@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = string.Empty;
+                public string? OpenId { get; set; }
             }
         }
 
@@ -164,21 +164,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_key")]
         [System.Text.Json.Serialization.JsonPropertyName("order_key")]
-        public Types.OrderKey OrderKey { get; set; } = new Types.OrderKey();
+        public Types.OrderKey? OrderKey { get; set; }
 
         /// <summary>
         /// 获取或设置购物详情列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_list")]
-        public IList<Types.Order> OrderList { get; set; } = new List<Types.Order>();
+        public List<Types.Order>? OrderList { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public Types.Payer Payer { get; set; } = new Types.Payer();
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置物流形式。

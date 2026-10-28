@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string CardCode { get; set; } = string.Empty;
+        public string? CardCode { get; set; }
 
         /// <summary>
         /// 获取或设置电影票类型。
@@ -52,6 +52,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("seat_number")]
         [System.Text.Json.Serialization.JsonPropertyName("seat_number")]
-        public IList<string>? SeatNumberList { get; set; }
+        public List<string>? SeatNumberList { get; set; }
     }
 }

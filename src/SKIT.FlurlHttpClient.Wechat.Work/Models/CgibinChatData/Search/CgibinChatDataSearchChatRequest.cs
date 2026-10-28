@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query_word")]
         [System.Text.Json.Serialization.JsonPropertyName("query_word")]
-        public string QueryWord { get; set; } = string.Empty;
+        public string? QueryWord { get; set; }
 
         /// <summary>
         /// 获取或设置分页游标。

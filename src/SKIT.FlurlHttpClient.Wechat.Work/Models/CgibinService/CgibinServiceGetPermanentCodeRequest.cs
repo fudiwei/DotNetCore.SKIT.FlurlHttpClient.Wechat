@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_code")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_code")]
-        public string TempAuthCode { get; set; } = string.Empty;
+        public string? TempAuthCode { get; set; }
     }
 }

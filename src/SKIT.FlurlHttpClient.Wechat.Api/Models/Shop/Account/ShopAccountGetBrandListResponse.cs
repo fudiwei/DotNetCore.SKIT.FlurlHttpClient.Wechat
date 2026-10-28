@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_wording")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_wording")]
-                public string BrandWording { get; set; } = default!;
+                public string? BrandWording { get; set; }
             }
         }
 
@@ -30,6 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Brand[] BrandList { get; set; } = default!;
+        public List<Types.Brand>? BrandList { get; set; }
     }
 }

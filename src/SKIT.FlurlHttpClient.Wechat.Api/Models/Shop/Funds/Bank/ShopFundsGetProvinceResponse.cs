@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/getprovince 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("province_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                public string ProvinceName { get; set; } = default!;
+                public string? ProvinceName { get; set; }
             }
         }
 
@@ -30,7 +30,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.Province[] ProvinceList { get; set; } = default!;
+        public List<Types.Province>? ProvinceList { get; set; }
 
         /// <summary>
         /// 获取或设置总数量。

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("virtual_number")]
         [System.Text.Json.Serialization.JsonPropertyName("virtual_number")]
-        public string VirtualNumber { get; set; } = default!;
+        public string? VirtualNumber { get; set; }
 
         /// <summary>
         /// 获取或设置分机号。

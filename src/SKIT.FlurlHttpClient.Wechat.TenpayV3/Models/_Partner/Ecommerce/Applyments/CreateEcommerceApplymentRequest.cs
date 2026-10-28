@@ -29,28 +29,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_license_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_license_number")]
-                public string LicenceNumber { get; set; } = string.Empty;
+                public string? LicenceNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置营业执照照片媒体文件标识 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_license_copy")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_license_copy")]
-                public string LicenseCopyMediaId { get; set; } = string.Empty;
+                public string? LicenseCopyMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_name")]
-                public string MerchantName { get; set; } = string.Empty;
+                public string? MerchantName { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人姓名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("legal_person")]
                 [System.Text.Json.Serialization.JsonPropertyName("legal_person")]
-                public string LegalPerson { get; set; } = string.Empty;
+                public string? LegalPerson { get; set; }
 
                 /// <summary>
                 /// 获取或设置注册地址。
@@ -74,14 +74,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finance_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("finance_type")]
-                public string FinanceType { get; set; } = string.Empty;
+                public string? FinanceType { get; set; }
 
                 /// <summary>
                 /// 获取或设置金融机构许可证图片媒体文件标识 ID 列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finance_license_pics")]
                 [System.Text.Json.Serialization.JsonPropertyName("finance_license_pics")]
-                public IList<string> FinanceLicensePictureMediaIdList { get; set; } = new List<string>();
+                public List<string>? FinanceLicensePictureMediaIdList { get; set; }
             }
 
             public class IdCard
@@ -91,14 +91,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_card_copy")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_copy")]
-                public string IdCardFrontCopyMediaId { get; set; } = string.Empty;
+                public string? IdCardFrontCopyMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置身份证国徽面照片媒体文件标识 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_card_national")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_national")]
-                public string IdCardBackCopyMediaId { get; set; } = string.Empty;
+                public string? IdCardBackCopyMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置身份证姓名（需使用平台公钥/证书加密）。
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdCardName { get; set; } = string.Empty;
+                public string? IdCardName { get; set; }
 
                 /// <summary>
                 /// 获取或设置身份证号码（需使用平台公钥/证书加密）。
@@ -116,7 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdCardNumber { get; set; } = string.Empty;
+                public string? IdCardNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置身份证地址（需使用平台公钥/证书加密）。
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_doc_copy")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_copy")]
-                public string IdDocumentFrontCopyMediaId { get; set; } = string.Empty;
+                public string? IdDocumentFrontCopyMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件背面照片媒体文件标识 ID。
@@ -165,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdDocumentName { get; set; } = string.Empty;
+                public string? IdDocumentName { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件号码（需使用平台公钥/证书加密）。
@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdDocumentNumber { get; set; } = string.Empty;
+                public string? IdDocumentNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件地址（需使用平台公钥/证书加密）。
@@ -207,7 +207,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_type")]
-                public string ContactType { get; set; } = string.Empty;
+                public string? ContactType { get; set; }
 
                 /// <summary>
                 /// 获取或设置超级管理员姓名（需使用平台公钥/证书加密）。
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string ContactName { get; set; } = string.Empty;
+                public string? ContactName { get; set; }
 
                 /// <summary>
                 /// 获取或设置超级管理员证件类型。
@@ -295,7 +295,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ubo_id_doc_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_type")]
-                public string IdentityType { get; set; } = string.Empty;
+                public string? IdentityType { get; set; }
 
                 /// <summary>
                 /// 获取或设置受益人姓名（需使用平台公钥/证书加密）。
@@ -304,7 +304,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string IdName { get; set; } = string.Empty;
+                public string? IdName { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件人像面照片媒体文件标识 ID。
@@ -360,7 +360,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_account_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_account_type")]
-                public string AccountType { get; set; } = string.Empty;
+                public string? AccountType { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户名称（需使用平台公钥/证书加密）。
@@ -369,7 +369,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string AccountName { get; set; } = string.Empty;
+                public string? AccountName { get; set; }
 
                 /// <summary>
                 /// 获取或设置银行账号（需使用平台公钥/证书加密）。
@@ -378,21 +378,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("account_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-                public string AccountNumber { get; set; } = string.Empty;
+                public string? AccountNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户银行。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_bank")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
-                public string AccountBank { get; set; } = string.Empty;
+                public string? AccountBank { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户银行省市编码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_address_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_address_code")]
-                public string BankAddressCode { get; set; } = string.Empty;
+                public string? BankAddressCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置开户银行联行号。与字段 <see cref="BankBranchName"/> 二选一。
@@ -416,7 +416,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_name")]
-                public string StoreName { get; set; } = string.Empty;
+                public string? StoreName { get; set; }
 
                 /// <summary>
                 /// 获取或设置店铺链接。与字段 <see cref="StoreQrcodeMediaId"/> 二选一。
@@ -463,21 +463,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-        public string OutRequestNumber { get; set; } = string.Empty;
+        public string? OutRequestNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户简称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_shortname")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_shortname")]
-        public string MerchantShortName { get; set; } = string.Empty;
+        public string? MerchantShortName { get; set; }
 
         /// <summary>
         /// 获取或设置主体类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("organization_type")]
         [System.Text.Json.Serialization.JsonPropertyName("organization_type")]
-        public string SubjectType { get; set; } = string.Empty;
+        public string? SubjectType { get; set; }
 
         /// <summary>
         /// 获取或设置是否是金融机构。
@@ -512,7 +512,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id_doc_type")]
         [System.Text.Json.Serialization.JsonPropertyName("id_doc_type")]
-        public string IdentityType { get; set; } = string.Empty;
+        public string? IdentityType { get; set; }
 
         /// <summary>
         /// 获取或设置身份证信息。
@@ -540,7 +540,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ubo_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ubo_info_list")]
-        public IList<Types.UBO>? UBOList { get; set; }
+        public List<Types.UBO>? UBOList { get; set; }
 
         /// <summary>
         /// 获取或设置法人是否为受益人。
@@ -554,21 +554,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_info")]
         [System.Text.Json.Serialization.JsonPropertyName("account_info")]
-        public Types.BankAccount BankAccount { get; set; } = new Types.BankAccount();
+        public Types.BankAccount? BankAccount { get; set; }
 
         /// <summary>
         /// 获取或设置超级管理员信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_info")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_info")]
-        public Types.Contact Contact { get; set; } = new Types.Contact();
+        public Types.Contact? Contact { get; set; }
 
         /// <summary>
         /// 获取或设置销售场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sales_scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("sales_scene_info")]
-        public Types.SaleScene SaleScene { get; set; } = new Types.SaleScene();
+        public Types.SaleScene? SaleScene { get; set; }
 
         /// <summary>
         /// 获取或设置结算规则信息。
@@ -582,14 +582,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualifications")]
         [System.Text.Json.Serialization.JsonPropertyName("qualifications")]
-        public IList<string>? QualificationPictureMediaIdList { get; set; }
+        public List<string>? QualificationPictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置补充材料媒体文件标识 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_addition_pics")]
         [System.Text.Json.Serialization.JsonPropertyName("business_addition_pics")]
-        public IList<string>? BusinessAdditionPictureMediaIdList { get; set; }
+        public List<string>? BusinessAdditionPictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置补充说明。

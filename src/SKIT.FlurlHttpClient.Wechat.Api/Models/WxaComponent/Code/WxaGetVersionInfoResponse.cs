@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exp_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("exp_version")]
-                public string Version { get; set; } = default!;
+                public string? Version { get; set; }
 
                 /// <summary>
                 /// 获取或设置版本描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exp_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("exp_desc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
 
             public class ReleaseInfo
@@ -45,14 +45,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("release_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("release_version")]
-                public string Version { get; set; } = default!;
+                public string? Version { get; set; }
 
                 /// <summary>
                 /// 获取或设置版本描述。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("release_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("release_desc")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
             }
         }
 

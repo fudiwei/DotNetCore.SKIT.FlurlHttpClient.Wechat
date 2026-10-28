@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                         [Newtonsoft.Json.JsonProperty("Item")]
                                         [System.Text.Json.Serialization.JsonPropertyName("Item")]
                                         [System.Xml.Serialization.XmlElement("Item", typeof(ApprovalerItem))]
-                                        public ApprovalerItem[] Items { get; set; } = default!;
+                                        public List<ApprovalerItem>? Items { get; set; }
                                     }
 
                                     public class ApprovalerItem
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                         [Newtonsoft.Json.JsonProperty("ItemUserid")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ItemUserid")]
                                         [System.Xml.Serialization.XmlElement("ItemUserid")]
-                                        public string UserId { get; set; } = default!;
+                                        public string? UserId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置审批人名称。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                         [Newtonsoft.Json.JsonProperty("ItemName")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ItemName")]
                                         [System.Xml.Serialization.XmlElement("ItemName")]
-                                        public string Name { get; set; } = default!;
+                                        public string? Name { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置审批人部门名称。
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                         [Newtonsoft.Json.JsonProperty("ItemParty")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ItemParty")]
                                         [System.Xml.Serialization.XmlElement("ItemParty")]
-                                        public string DepartmentName { get; set; } = default!;
+                                        public string? DepartmentName { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置审批人头像 URL。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                         [Newtonsoft.Json.JsonProperty("ItemImage")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ItemImage")]
                                         [System.Xml.Serialization.XmlElement("ItemImage")]
-                                        public string AvatarUrl { get; set; } = default!;
+                                        public string? AvatarUrl { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置分支审批状态。
@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 [Newtonsoft.Json.JsonProperty("Items")]
                                 [System.Text.Json.Serialization.JsonPropertyName("Items")]
                                 [System.Xml.Serialization.XmlElement("Items")]
-                                public Types.ApprovalerList ApprovalerList { get; set; } = default!;
+                                public Types.ApprovalerList? ApprovalerList { get; set; }
                             }
                         }
 
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("ApprovalNode")]
                         [System.Text.Json.Serialization.JsonPropertyName("ApprovalNode")]
                         [System.Xml.Serialization.XmlElement("ApprovalNode", typeof(Types.RecordDetail))]
-                        public Types.RecordDetail[] RecordDetailList { get; set; } = default!;
+                        public List<Types.RecordDetail>? RecordDetailList { get; set; }
                     }
 
                     public class Notification
@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 [Newtonsoft.Json.JsonProperty("ItemUserid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ItemUserid")]
                                 [System.Xml.Serialization.XmlElement("ItemUserid")]
-                                public string UserId { get; set; } = default!;
+                                public string? UserId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置抄送人名称。
@@ -158,7 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 [Newtonsoft.Json.JsonProperty("ItemName")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ItemName")]
                                 [System.Xml.Serialization.XmlElement("ItemName")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置抄送人部门名称。
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 [Newtonsoft.Json.JsonProperty("ItemParty")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ItemParty")]
                                 [System.Xml.Serialization.XmlElement("ItemParty")]
-                                public string DepartmentName { get; set; } = default!;
+                                public string? DepartmentName { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置抄送人头像 URL。
@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 [Newtonsoft.Json.JsonProperty("ItemImage")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ItemImage")]
                                 [System.Xml.Serialization.XmlElement("ItemImage")]
-                                public string AvatarUrl { get; set; } = default!;
+                                public string? AvatarUrl { get; set; }
                             }
                         }
 
@@ -184,7 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("NotifyNode")]
                         [System.Text.Json.Serialization.JsonPropertyName("NotifyNode")]
                         [System.Xml.Serialization.XmlElement("NotifyNode", typeof(Types.Notifier))]
-                        public Types.Notifier[] NotifierList { get; set; } = default!;
+                        public List<Types.Notifier>? NotifierList { get; set; }
                     }
                 }
 
@@ -194,7 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ThirdNo")]
                 [System.Text.Json.Serialization.JsonPropertyName("ThirdNo")]
                 [System.Xml.Serialization.XmlElement("ThirdNo")]
-                public string ThirdPartyApprovalNumber { get; set; } = default!;
+                public string? ThirdPartyApprovalNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务商审批模板 ID。
@@ -202,7 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("OpenTemplateId")]
                 [System.Text.Json.Serialization.JsonPropertyName("OpenTemplateId")]
                 [System.Xml.Serialization.XmlElement("OpenTemplateId")]
-                public string OpenTemplateId { get; set; } = default!;
+                public string? OpenTemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审批单名称。
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("OpenSpName")]
                 [System.Text.Json.Serialization.JsonPropertyName("OpenSpName")]
                 [System.Xml.Serialization.XmlElement("OpenSpName")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置审批单状态。
@@ -234,7 +234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ApplyUserId")]
                 [System.Text.Json.Serialization.JsonPropertyName("ApplyUserId")]
                 [System.Xml.Serialization.XmlElement("ApplyUserId")]
-                public string ApplicantUserId { get; set; } = default!;
+                public string? ApplicantUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请人成员名称。
@@ -242,7 +242,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ApplyUserName")]
                 [System.Text.Json.Serialization.JsonPropertyName("ApplyUserName")]
                 [System.Xml.Serialization.XmlElement("ApplyUserName")]
-                public string ApplicantName { get; set; } = default!;
+                public string? ApplicantName { get; set; }
 
                 /// <summary>
                 /// 获取或设置提单部门名称。
@@ -250,7 +250,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ApplyUserParty")]
                 [System.Text.Json.Serialization.JsonPropertyName("ApplyUserParty")]
                 [System.Xml.Serialization.XmlElement("ApplyUserParty")]
-                public string ApplicantDepartmentName { get; set; } = default!;
+                public string? ApplicantDepartmentName { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请人头像 URL。
@@ -258,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ApplyUserImage")]
                 [System.Text.Json.Serialization.JsonPropertyName("ApplyUserImage")]
                 [System.Xml.Serialization.XmlElement("ApplyUserImage")]
-                public string ApplicantAvatarUrl { get; set; } = default!;
+                public string? ApplicantAvatarUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置审批信息。
@@ -266,7 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("ApprovalNodes")]
                 [System.Text.Json.Serialization.JsonPropertyName("ApprovalNodes")]
                 [System.Xml.Serialization.XmlElement("ApprovalNodes")]
-                public Types.ApprovalRecord ApprovalRecord { get; set; } = default!;
+                public Types.ApprovalRecord? ApprovalRecord { get; set; }
 
                 /// <summary>
                 /// 获取或设置抄送信息。
@@ -274,7 +274,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 [Newtonsoft.Json.JsonProperty("NotifyNodes")]
                 [System.Text.Json.Serialization.JsonPropertyName("NotifyNodes")]
                 [System.Xml.Serialization.XmlElement("NotifyNodes")]
-                public Types.Notification Notification { get; set; } = default!;
+                public Types.Notification? Notification { get; set; }
 
                 /// <summary>
                 /// 获取或设置当前审批节点。
@@ -300,6 +300,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("ApprovalInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("ApprovalInfo")]
         [System.Xml.Serialization.XmlElement("ApprovalInfo")]
-        public Types.Approval Approval { get; set; } = default!;
+        public Types.Approval? Approval { get; set; }
     }
 }

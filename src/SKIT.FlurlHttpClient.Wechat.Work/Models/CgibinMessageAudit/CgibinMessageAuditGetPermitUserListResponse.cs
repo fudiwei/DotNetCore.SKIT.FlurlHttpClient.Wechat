@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/msgaudit/get_permit_user_list 接口的响应。</para>
@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ids")]
         [System.Text.Json.Serialization.JsonPropertyName("ids")]
-        public string[] UserIdList { get; set; } = default!;
+        public List<string>? UserIdList { get; set; }
     }
 }

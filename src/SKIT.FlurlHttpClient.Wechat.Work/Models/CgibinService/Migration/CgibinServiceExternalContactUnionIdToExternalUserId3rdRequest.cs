@@ -10,14 +10,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]
-        public string UnionId { get; set; } = string.Empty;
+        public string? UnionId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置需要换取的企业 CorpId。

@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openAccount")]
         [System.Text.Json.Serialization.JsonPropertyName("openAccount")]
-        public string OpenAccount { get; set; } = string.Empty;
+        public string? OpenAccount { get; set; }
     }
 }

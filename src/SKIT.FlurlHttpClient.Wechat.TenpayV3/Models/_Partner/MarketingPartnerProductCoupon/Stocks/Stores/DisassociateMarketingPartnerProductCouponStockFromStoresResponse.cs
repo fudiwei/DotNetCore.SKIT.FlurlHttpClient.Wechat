@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_store_list")]
         [System.Text.Json.Serialization.JsonPropertyName("success_store_list")]
-        public Types.Store[]? SucceededStoreList { get; set; }
+        public List<Types.Store>? SucceededStoreList { get; set; }
 
         /// <summary>
         /// 获取或设置取消关联失败的门店列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("failed_store_list")]
         [System.Text.Json.Serialization.JsonPropertyName("failed_store_list")]
-        public Types.Store[]? FailedStoreList { get; set; }
+        public List<Types.Store>? FailedStoreList { get; set; }
     }
 }

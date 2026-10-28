@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/get 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_type")]
-                public string CardType { get; set; } = default!;
+                public string? CardType { get; set; }
 
                 /// <summary>
                 /// 获取或设置团购券信息。
@@ -119,7 +119,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = default!;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置起用时间戳。
@@ -156,77 +156,77 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = default!;
+                        public string? Id { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户 Logo URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("logo_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-                        public string LogoUrl { get; set; } = default!;
+                        public string? LogoUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置码型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("code_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("code_type")]
-                        public string CodeType { get; set; } = default!;
+                        public string? CodeType { get; set; }
 
                         /// <summary>
                         /// 获取或设置商户名字。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("brand_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_name")]
-                        public string BrandName { get; set; } = default!;
+                        public string? BrandName { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
+                        public string? Title { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券颜色。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("color")]
                         [System.Text.Json.Serialization.JsonPropertyName("color")]
-                        public string Color { get; set; } = default!;
+                        public string? Color { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券使用提醒。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("notice")]
                         [System.Text.Json.Serialization.JsonPropertyName("notice")]
-                        public string Notice { get; set; } = default!;
+                        public string? Notice { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券使用说明。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("description")]
                         [System.Text.Json.Serialization.JsonPropertyName("description")]
-                        public string Description { get; set; } = default!;
+                        public string? Description { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku")]
                         [System.Text.Json.Serialization.JsonPropertyName("sku")]
-                        public Types.SKU SKU { get; set; } = default!;
+                        public Types.SKU? SKU { get; set; }
 
                         /// <summary>
                         /// 获取或设置使用日期信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("date_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("date_info")]
-                        public Types.Date Date { get; set; } = default!;
+                        public Types.Date? Date { get; set; }
 
                         /// <summary>
                         /// 获取或设置卡券状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
-                        public string Status { get; set; } = default!;
+                        public string? Status { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否自定义券码。
@@ -261,7 +261,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("location_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("location_id_list")]
-                        public long[]? POIIdList { get; set; }
+                        public List<long>? POIIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否支持全部门店。
@@ -432,14 +432,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("abstract")]
                                 [System.Text.Json.Serialization.JsonPropertyName("abstract")]
-                                public string Description { get; set; } = default!;
+                                public string? Description { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置封面图片 URL 列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("icon_url_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("icon_url_list")]
-                                public string[] IconUrlList { get; set; } = default!;
+                                public List<string>? IconUrlList { get; set; }
                             }
 
                             public class TextImage
@@ -449,14 +449,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("text")]
                                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                                public string Text { get; set; } = default!;
+                                public string? Text { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置封面图片 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("image_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                                public string ImageUrl { get; set; } = default!;
+                                public string? ImageUrl { get; set; }
                             }
 
                             public class TimeLimit
@@ -466,7 +466,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = default!;
+                                public string? Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置起始时间小时（格式：H）。
@@ -517,21 +517,21 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text_image_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("text_image_list")]
-                        public Types.TextImage[]? TextImageList { get; set; }
+                        public List<Types.TextImage>? TextImageList { get; set; }
 
                         /// <summary>
                         /// 获取或设置商家服务类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("business_service")]
                         [System.Text.Json.Serialization.JsonPropertyName("business_service")]
-                        public string[]? BusinessServiceList { get; set; }
+                        public List<string>? BusinessServiceList { get; set; }
 
                         /// <summary>
                         /// 获取或设置使用时段限制列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("time_limit")]
                         [System.Text.Json.Serialization.JsonPropertyName("time_limit")]
-                        public Types.TimeLimit[]? TimeLimitList { get; set; }
+                        public List<Types.TimeLimit>? TimeLimitList { get; set; }
                     }
                 }
 
@@ -540,21 +540,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置团购详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("deal_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("deal_detail")]
-                public string DealDetail { get; set; } = default!;
+                public string? DealDetail { get; set; }
             }
 
             public class CashCard
@@ -575,14 +575,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置起用金额（单位：分）。
@@ -617,14 +617,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置打折额度。
@@ -652,21 +652,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置兑换内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("gift")]
                 [System.Text.Json.Serialization.JsonPropertyName("gift")]
-                public string GiftDetail { get; set; } = default!;
+                public string? GiftDetail { get; set; }
             }
 
             public class GeneralCouponCard
@@ -687,21 +687,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("default_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("default_detail")]
-                public string DefaultDetail { get; set; } = default!;
+                public string? DefaultDetail { get; set; }
             }
 
             public class MembershipCard
@@ -787,21 +787,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置会员卡特权说明。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("prerogative")]
                 [System.Text.Json.Serialization.JsonPropertyName("prerogative")]
-                public string Prerogative { get; set; } = default!;
+                public string? Prerogative { get; set; }
 
                 /// <summary>
                 /// 获取或设置绑定旧卡的外链。
@@ -885,21 +885,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_detail")]
-                public string MeetingDetail { get; set; } = default!;
+                public string? MeetingDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置会场导览图 URL。
@@ -927,21 +927,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置票类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ticket_class")]
                 [System.Text.Json.Serialization.JsonPropertyName("ticket_class")]
-                public string TicketClass { get; set; } = default!;
+                public string? TicketClass { get; set; }
 
                 /// <summary>
                 /// 获取或设置景区导览图 URL。
@@ -969,21 +969,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置电影详情。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                public string MovieDetail { get; set; } = default!;
+                public string? MovieDetail { get; set; }
             }
 
             public class BoardingPassCard
@@ -1004,35 +1004,35 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base Base { get; set; } = default!;
+                public Types.Base? Base { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券高级信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("advanced_info")]
-                public Types.Advance Advance { get; set; } = default!;
+                public Types.Advance? Advance { get; set; }
 
                 /// <summary>
                 /// 获取或设置起点。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("from")]
                 [System.Text.Json.Serialization.JsonPropertyName("from")]
-                public string From { get; set; } = default!;
+                public string? From { get; set; }
 
                 /// <summary>
                 /// 获取或设置终点。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("to")]
                 [System.Text.Json.Serialization.JsonPropertyName("to")]
-                public string To { get; set; } = default!;
+                public string? To { get; set; }
 
                 /// <summary>
                 /// 获取或设置航班。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flight")]
                 [System.Text.Json.Serialization.JsonPropertyName("flight")]
-                public string Flight { get; set; } = default!;
+                public string? Flight { get; set; }
 
                 /// <summary>
                 /// 获取或设置登机口。
@@ -1053,7 +1053,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("air_model")]
                 [System.Text.Json.Serialization.JsonPropertyName("air_model")]
-                public string AirModel { get; set; } = default!;
+                public string? AirModel { get; set; }
 
                 /// <summary>
                 /// 获取或设置起飞时间戳。
@@ -1076,6 +1076,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card")]
         [System.Text.Json.Serialization.JsonPropertyName("card")]
-        public Types.Card Card { get; set; } = default!;
+        public Types.Card? Card { get; set; }
     }
 }

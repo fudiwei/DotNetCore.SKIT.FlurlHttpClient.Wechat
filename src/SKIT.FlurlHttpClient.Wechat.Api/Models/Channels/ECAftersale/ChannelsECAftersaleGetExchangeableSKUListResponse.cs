@@ -11,6 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("sku_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("sku_id_list")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public long[] SKUIdList { get; set; } = default!;
+        public List<long>? SKUIdList { get; set; }
     }
 }

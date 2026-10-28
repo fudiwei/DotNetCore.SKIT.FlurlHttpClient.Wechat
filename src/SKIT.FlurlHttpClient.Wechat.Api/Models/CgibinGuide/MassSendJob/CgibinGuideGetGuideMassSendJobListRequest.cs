@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_status")]
         [System.Text.Json.Serialization.JsonPropertyName("task_status")]
-        public IList<int>? TaskStatusList { get; set; }
+        public List<int>? TaskStatusList { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

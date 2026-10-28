@@ -14,21 +14,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("guide_account")]
                 [System.Text.Json.Serialization.JsonPropertyName("guide_account")]
-                public string GuideAccount { get; set; } = default!;
+                public string? GuideAccount { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置聊天内容。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("content")]
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
+                public string? Content { get; set; }
 
                 /// <summary>
                 /// 获取或设置聊天记录类型。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_list")]
-        public Types.ChatRecord[] ChatRecordList { get; set; } = default!;
+        public List<Types.ChatRecord>? ChatRecordList { get; set; }
 
         /// <summary>
         /// 获取或设置消息记录总数。

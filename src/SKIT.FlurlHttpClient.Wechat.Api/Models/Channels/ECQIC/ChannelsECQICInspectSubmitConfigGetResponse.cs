@@ -26,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                        public string Id { get; set; } = default!;
+                                        public string? Id { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置保价类型名称。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("name")]
                                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public string Name { get; set; } = default!;
+                                        public string? Name { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置上限类型。
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string Name { get; set; } = default!;
+                                public string? Name { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置保价类型。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("insure_type_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("insure_type_list")]
-                                public Types.Insure[] InsureList { get; set; } = default!;
+                                public List<Types.Insure>? InsureList { get; set; }
                             }
                         }
 
@@ -86,21 +86,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = default!;
+                        public string? Id { get; set; }
 
                         /// <summary>
                         /// 获取或设置快递公司名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置快递产品列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("delivery_products")]
                         [System.Text.Json.Serialization.JsonPropertyName("delivery_products")]
-                        public Types.DeliveryProduct[] DeliveryProductList { get; set; } = default!;
+                        public List<Types.DeliveryProduct>? DeliveryProductList { get; set; }
                     }
 
                     public class InspectOrganization
@@ -110,14 +110,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string Id { get; set; } = default!;
+                        public string? Id { get; set; }
 
                         /// <summary>
                         /// 获取或设置质检机构名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = default!;
+                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置质检机构类别。
@@ -133,14 +133,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_list")]
-                public Types.Delivery[] DeliveryList { get; set; } = default!;
+                public List<Types.Delivery>? DeliveryList { get; set; }
 
                 /// <summary>
                 /// 获取或设置质检机构信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("inspect_org_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("inspect_org_list")]
-                public Types.InspectOrganization[] InspectOrganizationList { get; set; } = default!;
+                public List<Types.InspectOrganization>? InspectOrganizationList { get; set; }
 
                 /// <summary>
                 /// 获取或设置资费标准 URL。
@@ -156,6 +156,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("submit_config")]
         [System.Text.Json.Serialization.JsonPropertyName("submit_config")]
-        public Types.SubmitConfig SubmitConfig { get; set; } = default!;
+        public Types.SubmitConfig? SubmitConfig { get; set; }
     }
 }

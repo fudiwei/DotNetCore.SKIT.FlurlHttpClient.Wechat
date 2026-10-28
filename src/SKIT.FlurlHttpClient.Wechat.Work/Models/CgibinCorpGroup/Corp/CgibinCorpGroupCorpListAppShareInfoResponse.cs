@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corpid")]
                 [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string CorpId { get; set; } = default!;
+                public string? CorpId { get; set; }
 
                 /// <summary>
                 /// 获取或设置下级企业名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("corp_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_name")]
-                public string CorpName { get; set; } = default!;
+                public string? CorpName { get; set; }
 
                 /// <summary>
                 /// 获取或设置下级企业应用 ID。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corp_list")]
         [System.Text.Json.Serialization.JsonPropertyName("corp_list")]
-        public Types.Agent[] AgentList { get; set; } = default!;
+        public List<Types.Agent>? AgentList { get; set; }
 
         /// <summary>
         /// 获取或设置是否已拉取全部数据。
