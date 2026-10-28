@@ -1,4 +1,4 @@
-﻿{
+{
     "game_tick": 30,
     "open_id_list": ["OPENID"],
     "udp_reliability_strategy": 3,

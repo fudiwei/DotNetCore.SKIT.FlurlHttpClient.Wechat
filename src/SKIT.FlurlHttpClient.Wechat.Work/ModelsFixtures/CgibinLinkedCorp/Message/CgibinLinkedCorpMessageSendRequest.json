@@ -1,4 +1,4 @@
-﻿{
+{
     "touser": ["userid1", "userid2", "CorpId1/userid1", "CorpId2/userid2"],
     "toparty": [
         "partyid1",

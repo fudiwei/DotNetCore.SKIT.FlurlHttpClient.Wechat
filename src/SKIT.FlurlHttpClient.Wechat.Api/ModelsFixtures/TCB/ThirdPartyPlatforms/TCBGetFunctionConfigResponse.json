@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "config": "{\"permissions\":{\"openapi\":[\"wxacode.get\",\"wxacode.getUnlimited\",\"templateMessage.send\",\"templateMessage.addTemplate\",\"templateMessage.deleteTemplate\",\"templateMessage.getTemplateList\",\"templateMessage.getTemplateLibraryById\",\"templateMessage.getTemplateLibraryList\"]}}"

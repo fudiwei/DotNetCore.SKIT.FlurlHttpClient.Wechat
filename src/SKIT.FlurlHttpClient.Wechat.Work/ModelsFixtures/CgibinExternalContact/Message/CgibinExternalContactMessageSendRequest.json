@@ -1,4 +1,4 @@
-﻿{
+{
     "to_external_user": ["external_userid1", "external_userid2"],
     "to_parent_userid": ["parent_userid1", "parent_userid2"],
     "to_student_userid": ["student_userid1", "student_userid2"],

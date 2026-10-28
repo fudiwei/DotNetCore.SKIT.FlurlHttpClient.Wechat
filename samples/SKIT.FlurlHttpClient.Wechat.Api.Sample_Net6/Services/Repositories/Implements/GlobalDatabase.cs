@@ -1,4 +1,4 @@
-﻿using NMemory;
+using NMemory;
 using NMemory.Tables;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.Repositories.Implements

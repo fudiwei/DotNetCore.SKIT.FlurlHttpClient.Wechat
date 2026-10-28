@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Constants
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Constants
 {
     public static class SignTypes
     {

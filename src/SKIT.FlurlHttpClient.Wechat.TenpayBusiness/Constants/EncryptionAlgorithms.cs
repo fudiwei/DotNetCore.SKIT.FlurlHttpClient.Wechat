@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Constants
+namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Constants
 {
     public static class EncryptionAlgorithms
     {

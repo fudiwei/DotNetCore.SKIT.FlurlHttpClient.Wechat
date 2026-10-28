@@ -1,4 +1,4 @@
-﻿# SKIT.FlurlHttpClient.Wechat.Api
+# SKIT.FlurlHttpClient.Wechat.Api
 
 基于 `Flurl.Http` 的[微信公众平台](https://mp.weixin.qq.com/)（订阅号、服务号、小程序、小游戏、小商店、视频号）、[微信开放平台](https://open.weixin.qq.com/) API 客户端 SDK。
 

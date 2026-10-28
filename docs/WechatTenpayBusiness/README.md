@@ -1,4 +1,4 @@
-﻿# SKIT.FlurlHttpClient.Wechat.TenpayBusiness
+# SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
 基于 `Flurl.Http` 的[微企付](https://businesspay.qq.com/p/mse-pay/) API 客户端 SDK。
 

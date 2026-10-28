@@ -1,4 +1,4 @@
-﻿{
+{
     "rule_name": "rulename",
     "word_list": ["敏感词1", "敏感词2"],
     "semantics_list": [1, 2, 3],

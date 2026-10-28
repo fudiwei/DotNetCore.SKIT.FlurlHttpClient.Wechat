@@ -1,4 +1,4 @@
-﻿{
+{
     "action": "add",
     "requestdomain": ["https://www.qq.com", "https://www.qq.com"],
     "wsrequestdomain": ["wss://www.qq.com", "wss://www.qq.com"],

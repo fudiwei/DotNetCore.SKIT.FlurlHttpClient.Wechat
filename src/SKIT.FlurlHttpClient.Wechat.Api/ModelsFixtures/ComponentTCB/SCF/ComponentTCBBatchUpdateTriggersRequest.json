@@ -1,4 +1,4 @@
-﻿{
+{
     "funcname": "testfunc",
     "envs": ["test-env1", "test-env2"],
     "triggers": [

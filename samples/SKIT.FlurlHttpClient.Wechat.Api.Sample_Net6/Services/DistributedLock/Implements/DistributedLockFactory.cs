@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Medallion.Threading;
 using Medallion.Threading.FileSystem;

@@ -1,4 +1,4 @@
-﻿<xml>
+<xml>
     <DeviceSn><![CDATA[testsn]]></DeviceSn>
     <InfoType><![CDATA[fetch_log_finish]]></InfoType>
     <TimeStamp>1548074765</TimeStamp>

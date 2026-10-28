@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "config": "{\"enable\":true,\"callbacks\":[{\"msgType\":\"msg\",\"event\":\"event\",\"env\":\"env\",\"functionName\":\"func\"}]}"

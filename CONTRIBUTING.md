@@ -1,4 +1,4 @@
-﻿# CONTRIBUTING
+# CONTRIBUTING
 
 在你参与贡献本项目之前，请先阅读如下指南：
 

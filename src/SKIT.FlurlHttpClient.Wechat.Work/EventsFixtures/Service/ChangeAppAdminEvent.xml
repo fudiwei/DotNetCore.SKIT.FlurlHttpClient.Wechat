@@ -1,4 +1,4 @@
-﻿<xml>
+<xml>
     <ToUserName><![CDATA[toUser]]></ToUserName>
     <FromUserName><![CDATA[sys]]></FromUserName>
     <CreateTime>1348831860</CreateTime>

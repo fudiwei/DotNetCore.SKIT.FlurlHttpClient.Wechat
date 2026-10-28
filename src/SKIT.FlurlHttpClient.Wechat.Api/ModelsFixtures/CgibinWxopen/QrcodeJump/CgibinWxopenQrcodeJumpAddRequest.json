@@ -1,4 +1,4 @@
-﻿{
+{
     "prefix": "https://weixin.qq.com/qrcodejump",
     "permit_sub_rule": 1,
     "path": "pages/index/index",

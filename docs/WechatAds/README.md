@@ -1,4 +1,4 @@
-﻿# SKIT.FlurlHttpClient.Wechat.Ads
+# SKIT.FlurlHttpClient.Wechat.Ads
 
 基于 `Flurl.Http` 的[微信广告平台](https://ad.weixin.qq.com/)（广点通）API 客户端 SDK。
 

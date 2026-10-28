@@ -1,4 +1,4 @@
-﻿using Medallion.Threading;
+using Medallion.Threading;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.DistributedLock
 {

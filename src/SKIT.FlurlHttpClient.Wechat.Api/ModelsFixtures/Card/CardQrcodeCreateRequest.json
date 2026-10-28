@@ -1,4 +1,4 @@
-﻿{
+{
     "action_name": "QR_CARD",
     "expire_seconds": 1800,
     "action_info": {

@@ -1,4 +1,4 @@
-﻿# SKIT.FlurlHttpClient.Wechat.TenpayV3
+# SKIT.FlurlHttpClient.Wechat.TenpayV3
 
 基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/)（微信支付）API v3 客户端 SDK。
 

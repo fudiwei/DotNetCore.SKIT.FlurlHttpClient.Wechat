@@ -1,4 +1,4 @@
-﻿{
+{
     "authorizer_access_token": "some-access-token",
     "expires_in": 7200,
     "authorizer_refresh_token": "refresh_token_value"

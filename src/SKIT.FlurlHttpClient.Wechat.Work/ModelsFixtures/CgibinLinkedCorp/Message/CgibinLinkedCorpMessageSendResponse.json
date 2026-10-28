@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "invaliduser": ["userid1", "userid2", "CorpId1/userid1", "CorpId2/userid2"],

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Models
 {
     public class WechatAccessTokenEntity
     {

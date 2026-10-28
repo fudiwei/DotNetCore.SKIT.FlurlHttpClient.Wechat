@@ -1,4 +1,4 @@
-﻿{
+{
     "product_id": 100000,
     "device_id_list": ["deviceid_1", "deviceid_2", "deviceid_3"],
     "model_name": "YOUR_MODEL_NAME"

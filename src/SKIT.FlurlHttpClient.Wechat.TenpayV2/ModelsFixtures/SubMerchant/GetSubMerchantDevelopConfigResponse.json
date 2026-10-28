@@ -1,4 +1,4 @@
-﻿{
+{
     "return_code": "SUCCESS",
     "return_msg": "签名失败",
     "jsapi_path_list": "{\"jsapi_path_list\":[\"http://www.qq.com/abcd/\",\"http://www.qq.com/abcdedfg/\"]}",
