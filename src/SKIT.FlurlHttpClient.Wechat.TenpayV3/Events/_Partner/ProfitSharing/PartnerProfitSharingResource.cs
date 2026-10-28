@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 PROFITSHARING.SUCCESS （仅限服务商）通知的数据。</para>
-    /// <para>表示 PROFITSHARING.RETURN （仅限服务商）通知的数据。</para>
+    /// <para>表示 PROFITSHARING.SUCCESS （仅限服务商）回调通知事件的数据。</para>
+    /// <para>表示 PROFITSHARING.RETURN （仅限服务商）回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012116672 ]]> <br/>

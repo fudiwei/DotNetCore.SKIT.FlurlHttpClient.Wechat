@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示退款结果通知的数据。</para>
+    /// <para>表示退款结果回调通知事件的数据。</para>
     /// </summary>
     public class RefundEvent : WechatTenpayEvent
     {

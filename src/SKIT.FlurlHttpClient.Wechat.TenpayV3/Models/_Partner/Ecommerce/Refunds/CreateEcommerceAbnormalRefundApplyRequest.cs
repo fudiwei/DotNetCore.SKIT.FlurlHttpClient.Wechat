@@ -6,34 +6,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     [WechatTenpaySensitive]
     public class CreateEcommerceAbnormalRefundApplyRequest : WechatTenpayRequest
     {
-        public static class Types
-        {
-            public class Amount
-            {
-                /// <summary>
-                /// 获取或设置原订单金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("total")]
-                [System.Text.Json.Serialization.JsonPropertyName("total")]
-                public int Total { get; set; }
-
-                /// <summary>
-                /// 获取或设置退款金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("refund")]
-                [System.Text.Json.Serialization.JsonPropertyName("refund")]
-                public int Refund { get; set; }
-
-                /// <summary>
-                /// 获取或设置退款币种。
-                /// <para>默认值："CNY"</para>
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("currency")]
-                [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string? Currency { get; set; } = "CNY";
-            }
-        }
-
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>

@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 COMPLAINT.CREATE 通知的数据。</para>
-    /// <para>表示 COMPLAINT.STATE_CHANGE 通知的数据。</para>
+    /// <para>表示 "COMPLAINT.CREATE" 回调通知事件的数据。</para>
+    /// <para>表示 "COMPLAINT.STATE_CHANGE" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289719 ]]>

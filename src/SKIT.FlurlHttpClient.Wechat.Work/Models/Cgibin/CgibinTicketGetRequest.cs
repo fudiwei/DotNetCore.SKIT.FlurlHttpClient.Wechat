@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/ticket/get 接口的请求。</para>
     /// </summary>
-    public class CgibinTicketGetRequest : CgibinGetJsapiTicketRequest
+    public class CgibinTicketGetRequest : WechatWorkRequest
     {
         /// <summary>
         /// 获取或设置票据类型。

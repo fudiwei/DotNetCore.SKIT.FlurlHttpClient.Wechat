@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
 {
     /// <summary>
-    /// <para>表示 mse_payment.succeeded 通知的数据。</para>
-    /// <para>表示 mse_payment.close 通知的数据。</para>
-    /// <para>表示 mse_payment.revoked 通知的数据。</para>
+    /// <para>表示 "mse_payment.succeeded" 回调通知事件的数据。</para>
+    /// <para>表示 "mse_payment.close" 回调通知事件的数据。</para>
+    /// <para>表示 "mse_payment.revoked" 回调通知事件的数据。</para>
     /// </summary>
     public class PaymentEvent : WechatTenpayBusinessEvent<PaymentEvent.Types.EventContent>
     {

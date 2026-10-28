@@ -180,6 +180,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置填写规则。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("required_rule")]
+                [System.Text.Json.Serialization.JsonPropertyName("required_rule")]
+                public new Types.RequiredRule? RequiredRule { get; set; }
             }
 
             public class ProductQualification

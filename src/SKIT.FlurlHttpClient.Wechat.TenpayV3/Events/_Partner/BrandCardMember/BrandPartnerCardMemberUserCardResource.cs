@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 BRAND_MEMBER_CARD_SP.USER_CARD.CREATE （仅限服务商）通知的数据。</para>
+    /// <para>表示 BRAND_MEMBER_CARD_SP.USER_CARD.CREATE （仅限服务商）回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015283692 ]]>

@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 DISCOUNT_CARD.USER_ACCEPTED 通知的数据。</para>
-    /// <para>表示 DISCOUNT_CARD.AGREEMENT_ENDED 通知的数据。</para>
-    /// <para>表示 DISCOUNT_CARD.USER_PAID 通知的数据。</para>
+    /// <para>表示 "DISCOUNT_CARD.USER_ACCEPTED" 回调通知事件的数据。</para>
+    /// <para>表示 "DISCOUNT_CARD.AGREEMENT_ENDED" 回调通知事件的数据。</para>
+    /// <para>表示 "DISCOUNT_CARD.USER_PAID" 回调通知事件的数据。</para>
     /// </summary>
     public class DiscountCardResource : WechatTenpayEvent.Types.IDecryptedResource
     {

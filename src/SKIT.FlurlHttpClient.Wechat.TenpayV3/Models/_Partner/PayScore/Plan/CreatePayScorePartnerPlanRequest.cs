@@ -25,5 +25,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置计划明细列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("plan_detail_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("plan_detail_list")]
+        public new List<Types.PlanDetail>? PlanDetailList { get; set; }
     }
 }

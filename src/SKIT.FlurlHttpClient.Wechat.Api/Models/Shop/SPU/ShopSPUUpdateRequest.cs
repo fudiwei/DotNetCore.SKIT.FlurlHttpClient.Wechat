@@ -17,6 +17,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
             public class SKU : ShopSPUAddRequest.Types.SKU
             {
+                /// <summary>
+                /// 获取或设置商品属性列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sku_attrs")]
+                [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
+                public new List<Attribute>? AttributeList { get; set; }
             }
         }
 

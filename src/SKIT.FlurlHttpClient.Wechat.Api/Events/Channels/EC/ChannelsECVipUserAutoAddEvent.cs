@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.channels_ec_vip_user_auto_add 事件的数据。</para>
+    /// <para>表示 "EVENT.channels_ec_vip_user_auto_add" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/wxamember/wxa/channels_ec_vip_user_auto_add.html ]]>

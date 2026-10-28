@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
 {
     /// <summary>
-    /// <para>表示 profit_allocation.finished 通知的数据。</para>
+    /// <para>表示 "profit_allocation.finished" 回调通知事件的数据。</para>
     /// </summary>
-    public class ProfitAllocationEvent : WechatTenpayBusinessEvent<RefundEvent.Types.EventContent>
+    public class ProfitAllocationEvent : WechatTenpayBusinessEvent<ProfitAllocationEvent.Types.EventContent>
     {
         public static class Types
         {

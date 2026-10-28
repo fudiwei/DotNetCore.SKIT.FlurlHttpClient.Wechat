@@ -5,26 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// </summary>
     public class CgibinLivingModifyRequest : WechatWorkRequest
     {
-        public static class Types
-        {
-            public class Attendee
-            {
-                /// <summary>
-                /// 获取或设置参与者成员账号列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public List<string>? UserIdList { get; set; }
-
-                /// <summary>
-                /// 获取或设置设备序列号列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("device_sn")]
-                [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
-                public List<string>? DeviceSerialNumberList { get; set; }
-            }
-        }
-
         /// <summary>
         /// 获取或设置直播 ID。
         /// </summary>

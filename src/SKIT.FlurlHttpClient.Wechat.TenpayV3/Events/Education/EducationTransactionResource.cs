@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示教育续费通 TRANSACTION.SUCCESS 通知的数据。</para>
-    /// <para>表示教育续费通 TRANSACTION.FAIL 通知的数据。</para>
+    /// <para>表示教育续费通 TRANSACTION.SUCCESS 回调通知事件的数据。</para>
+    /// <para>表示教育续费通 TRANSACTION.FAIL 回调通知事件的数据。</para>
     /// </summary>
     public class EducationTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
     {

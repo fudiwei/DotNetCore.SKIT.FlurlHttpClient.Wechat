@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 PRODUCT_COUPON_SP.SEND 通知的数据。</para>
+    /// <para>表示 "PRODUCT_COUPON_SP.SEND" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4017327744 ]]> <br/>

@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 PAYSCORE.USER_OPEN_SERVICE（针对从业机构）通知的数据。</para>
-    /// <para>表示 PAYSCORE.USER_CLOSE_SERVICE（针对从业机构）通知的数据。</para>
+    /// <para>表示 PAYSCORE.USER_OPEN_SERVICE（针对从业机构）回调通知事件的数据。</para>
+    /// <para>表示 PAYSCORE.USER_CLOSE_SERVICE（针对从业机构）回调通知事件的数据。</para>
     /// </summary>
     public class PayScoreAcquiringBankPermissionsResource : WechatTenpayEvent.Types.IDecryptedResource
     {

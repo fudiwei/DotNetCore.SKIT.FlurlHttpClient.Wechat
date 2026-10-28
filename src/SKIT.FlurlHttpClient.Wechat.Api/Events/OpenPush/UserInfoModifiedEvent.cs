@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.user_info_modified 事件的数据。</para>
+    /// <para>表示 "EVENT.user_info_modified" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/authorization_change.html ]]> <br/>

@@ -36,5 +36,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sub_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
         public string? SubOpenId { get; set; }
+
+        /// <summary>
+        /// 获取或设置服务时间段信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("time_range")]
+        [System.Text.Json.Serialization.JsonPropertyName("time_range")]
+        public new Types.TimeRange? TimeRange { get; set; }
+
+        /// <summary>
+        /// 获取或设置服务位置信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("location")]
+        [System.Text.Json.Serialization.JsonPropertyName("location")]
+        public new Types.Location? Location { get; set; }
     }
 }

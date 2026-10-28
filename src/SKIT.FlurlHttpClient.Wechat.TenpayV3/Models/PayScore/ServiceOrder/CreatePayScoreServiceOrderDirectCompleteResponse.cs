@@ -22,10 +22,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Location : GetPayScoreServiceOrderByOutOrderNumberResponse.Types.Location
             {
             }
-
-            public class RiskFund : GetPayScoreServiceOrderByOutOrderNumberResponse.Types.RiskFund
-            {
-            }
         }
 
         /// <summary>

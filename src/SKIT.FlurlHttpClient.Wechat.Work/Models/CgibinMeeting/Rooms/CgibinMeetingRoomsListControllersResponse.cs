@@ -9,33 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         {
             public class Controller
             {
-                public static class Types
-                {
-                    public class MonitorInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置摄像头状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("camera_status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("camera_status")]
-                        public bool CameraStatus { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置麦克风状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("microphone_status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("microphone_status")]
-                        public bool MicrophoneStatus { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置扬声器状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("speaker_status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("speaker_status")]
-                        public bool SpeakerStatus { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置 Rooms ID。
                 /// </summary>

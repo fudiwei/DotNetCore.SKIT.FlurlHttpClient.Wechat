@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /promoter/addrole 接口的请求。</para>
     /// </summary>
-    public class PromoterAddRoleRequest : PublisherStatSettlementRequest, IInferable<PromoterAddRoleRequest, PromoterAddRoleResponse>
+    public class PromoterAddRoleRequest : WechatApiRequest, IInferable<PromoterAddRoleRequest, PromoterAddRoleResponse>
     {
         /// <summary>
         /// 获取或设置角色名称。

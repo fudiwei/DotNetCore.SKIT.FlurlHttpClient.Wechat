@@ -6,13 +6,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     [WechatTenpaySensitive]
     public class CreateEcommerceMerchantTransferBillRequest : WechatTenpayRequest
     {
-        public static class Types
-        {
-            public class TransferDetail : CreateTransferBatchRequest.Types.TransferDetail
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>

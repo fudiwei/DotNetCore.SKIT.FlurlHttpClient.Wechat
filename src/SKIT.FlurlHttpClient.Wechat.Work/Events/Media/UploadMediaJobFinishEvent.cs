@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.upload_media_job_finish 事件的数据。</para>
+    /// <para>表示 "EVENT.upload_media_job_finish" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96219 ]]>

@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 VIOLATION.PUNISH 通知的数据。</para>
-    /// <para>表示 VIOLATION.INTERCEPT 通知的数据。</para>
-    /// <para>表示 VIOLATION.APPEAL 通知的数据。</para>
+    /// <para>表示 "VIOLATION.PUNISH" 回调通知事件的数据。</para>
+    /// <para>表示 "VIOLATION.INTERCEPT" 回调通知事件的数据。</para>
+    /// <para>表示 "VIOLATION.APPEAL" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012079216 ]]>

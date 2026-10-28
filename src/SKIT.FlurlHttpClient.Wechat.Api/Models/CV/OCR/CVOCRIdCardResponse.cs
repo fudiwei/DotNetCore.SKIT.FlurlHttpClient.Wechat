@@ -5,30 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class CVOCRIdCardResponse : WechatApiResponse
     {
-        public static class Types
-        {
-            public class CertificationPosition
-            {
-                public static class Types
-                {
-                    public class Position : CVImageQrcodeResponse.Types.CodeResult.Types.Position
-                    {
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置识别坐标信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("pos")]
-                [System.Text.Json.Serialization.JsonPropertyName("pos")]
-                public Types.Position? Position { get; set; }
-            }
-
-            public class ImageSize : CVImageQrcodeResponse.Types.ImageSize
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置正反面类型。
         /// </summary>

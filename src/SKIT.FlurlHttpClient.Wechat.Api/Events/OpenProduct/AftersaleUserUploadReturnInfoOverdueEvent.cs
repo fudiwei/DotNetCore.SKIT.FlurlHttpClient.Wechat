@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.aftersale_user_upload_return_info_overdue 事件的数据。</para>
+    /// <para>表示 "EVENT.aftersale_user_upload_return_info_overdue" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_user_upload_return_info_overdue.html ]]>

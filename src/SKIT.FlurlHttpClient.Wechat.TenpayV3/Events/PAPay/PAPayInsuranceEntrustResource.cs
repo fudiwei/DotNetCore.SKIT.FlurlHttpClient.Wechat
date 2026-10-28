@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示保险委托代扣 INSURANCE_ENTRUST.SIGN 通知的数据。</para>
-    /// <para>表示保险委托代扣 INSURANCE_ENTRUST.TERMINATE 通知的数据。</para>
+    /// <para>表示保险委托代扣 INSURANCE_ENTRUST.SIGN 回调通知事件的数据。</para>
+    /// <para>表示保险委托代扣 INSURANCE_ENTRUST.TERMINATE 回调通知事件的数据。</para>
     /// </summary>
     public class PAPayInsuranceEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
     {

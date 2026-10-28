@@ -5,27 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// </summary>
     public class CreatePayScoreServiceOrderPayRequest : WechatTenpayRequest
     {
-        public static class Types
-        {
-            public class Payment : CreatePayScoreServiceOrderRequest.Types.Payment
-            {
-            }
-
-            public class Discount : CreatePayScoreServiceOrderRequest.Types.Discount
-            {
-            }
-
-            public class Location
-            {
-                /// <summary>
-                /// 获取或设置服务结束地点。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("end_location")]
-                [System.Text.Json.Serialization.JsonPropertyName("end_location")]
-                public string? EndLocation { get; set; }
-            }
-        }
-
         /// <summary>
         /// 获取或设置商户服务订单号。
         /// </summary>

@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.secbook_audit_event 事件的数据。</para>
+    /// <para>表示 "EVENT.secbook_audit_event" 回调通知事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E5%AE%A1%E6%A0%B8%E7%8A%B6%E6%80%81%E4%BA%8B%E4%BB%B6 </para>
     /// </summary>
     public class SecBookAuditEvent : WechatApiEvent

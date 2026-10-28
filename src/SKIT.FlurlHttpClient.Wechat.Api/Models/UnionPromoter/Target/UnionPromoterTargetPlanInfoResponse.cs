@@ -80,10 +80,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class Parameter : UnionPromoterProductListResponse.Types.Product.Types.ProductDetail.Types.Parameter
                             {
                             }
-
-                            public class SKU : UnionPromoterProductListResponse.Types.Product.Types.ProductDetail.Types.SKU
-                            {
-                            }
                         }
 
                         /// <summary>

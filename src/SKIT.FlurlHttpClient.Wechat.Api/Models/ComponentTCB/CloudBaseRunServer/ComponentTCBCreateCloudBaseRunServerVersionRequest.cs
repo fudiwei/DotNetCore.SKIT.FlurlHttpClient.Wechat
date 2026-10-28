@@ -189,10 +189,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class NFSVolumeSource : VolumeMount.Types.NFSVolumeSource
-                    {
-                    }
-
                     public class EmptyDirectoryVolumeSource
                     {
                         /// <summary>

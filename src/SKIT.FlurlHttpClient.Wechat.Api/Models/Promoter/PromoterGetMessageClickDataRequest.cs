@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /promoter/getmsgclickdata 接口的请求。</para>
     /// </summary>
-    public class PromoterGetMessageClickDataRequest : PublisherStatSettlementRequest, IInferable<PromoterGetMessageClickDataRequest, PromoterGetMessageClickDataResponse>
+    public class PromoterGetMessageClickDataRequest : WechatApiRequest, IInferable<PromoterGetMessageClickDataRequest, PromoterGetMessageClickDataResponse>
     {
         /// <summary>
         /// 获取或设置数据统计维度。

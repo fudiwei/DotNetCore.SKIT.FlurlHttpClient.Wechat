@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 {
                     public class AdGroup
                     {
-                        public class Types
+                        public static class Types
                         {
                             public class Target
                             {

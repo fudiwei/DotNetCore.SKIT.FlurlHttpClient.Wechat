@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_list")]
-                public List<Types.Authority>? AuthorityList { get; set; }
+                public List<Authority>? AuthorityList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启父路径权限继承。

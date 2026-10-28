@@ -6,6 +6,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class PublisherStatSettlementRequest : WechatApiRequest, IInferable<PublisherStatSettlementRequest, PublisherStatSettlementResponse>
     {
         /// <summary>
+        /// 获取或设置获取数据的开始时间（格式：yyyy-MM-dd）。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? StartDateString { get; set; }
+
+        /// <summary>
+        /// 获取或设置获取数据的结束时间（格式：yyyy-MM-dd）。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? EndDateString { get; set; }
+
+        /// <summary>
         /// 获取或设置分页页数。
         /// <para>默认值：1</para>
         /// </summary>
@@ -20,19 +34,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public int Limit { get; set; } = 10;
-
-        /// <summary>
-        /// 获取或设置获取数据的开始时间（格式：yyyy-MM-dd）。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? StartDateString { get; set; }
-
-        /// <summary>
-        /// 获取或设置获取数据的结束时间（格式：yyyy-MM-dd）。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? EndDateString { get; set; }
     }
 }

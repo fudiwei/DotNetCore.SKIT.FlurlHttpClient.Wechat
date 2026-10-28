@@ -47,6 +47,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                             }
                         }
+
+                        /// <summary>
+                        /// 获取或设置选项列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("options")]
+                        [System.Text.Json.Serialization.JsonPropertyName("options")]
+                        public new List<Types.Option>? OptionList { get; set; }
                     }
 
                     public class CreatedTimeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CreatedTimeFieldProperty
@@ -69,6 +76,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                             }
                         }
+
+                        /// <summary>
+                        /// 获取或设置选项列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("options")]
+                        [System.Text.Json.Serialization.JsonPropertyName("options")]
+                        public new List<Types.Option>? OptionList { get; set; }
                     }
 
                     public class ReferenceFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.ReferenceFieldProperty
@@ -87,6 +101,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                             }
                         }
+
+                        /// <summary>
+                        /// 获取或设置自定义规则列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("rules")]
+                        [System.Text.Json.Serialization.JsonPropertyName("rules")]
+                        public new List<Types.Rule>? RuleList { get; set; }
                     }
 
                     public class CurrencyFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CurrencyFieldProperty

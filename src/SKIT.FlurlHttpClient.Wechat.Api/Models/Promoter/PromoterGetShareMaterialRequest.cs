@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /promoter/getsharematerial 接口的请求。</para>
     /// </summary>
-    public class PromoterGetShareMaterialRequest : PublisherStatSettlementRequest, IInferable<PromoterGetShareMaterialRequest, PromoterGetShareMaterialResponse>
+    public class PromoterGetShareMaterialRequest : WechatApiRequest, IInferable<PromoterGetShareMaterialRequest, PromoterGetShareMaterialResponse>
     {
         /// <summary>
         /// 获取或设置小程序页面名称。

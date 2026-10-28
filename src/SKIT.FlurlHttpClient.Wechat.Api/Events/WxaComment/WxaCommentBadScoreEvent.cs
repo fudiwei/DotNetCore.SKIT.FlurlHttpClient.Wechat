@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.wxa_comment_bad_score 事件的数据。</para>
+    /// <para>表示 "EVENT.wxa_comment_bad_score" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_4-1%E5%B7%AE%E8%AF%84%E9%80%9A%E7%9F%A5CallBack ]]>

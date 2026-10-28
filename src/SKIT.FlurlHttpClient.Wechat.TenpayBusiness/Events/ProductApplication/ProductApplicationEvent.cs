@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
 {
     /// <summary>
-    /// <para>表示 product.application.finish 通知的数据。</para>
+    /// <para>表示 "product.application.finish" 回调通知事件的数据。</para>
     /// </summary>
     public class ProductApplicationEvent : WechatTenpayBusinessEvent<ProductApplicationEvent.Types.EventContent>
     {

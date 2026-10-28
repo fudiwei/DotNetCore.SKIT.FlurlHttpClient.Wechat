@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.head_supplier_item_update 事件的数据。</para>
+    /// <para>表示 "EVENT.head_supplier_item_update" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/callback/head_supplier_item_update.html ]]>

@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
 {
     /// <summary>
-    /// <para>表示 TRANSACTION.SUCCESS （仅限直连商户）通知的数据。</para>
+    /// <para>表示 TRANSACTION.SUCCESS （仅限直连商户）回调通知事件的数据。</para>
     /// </summary>
     public class TransactionResource : WechatTenpayGlobalEvent.Types.IDecryptedResource
     {

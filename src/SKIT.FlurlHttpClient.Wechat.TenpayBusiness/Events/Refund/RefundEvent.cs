@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
 {
     /// <summary>
-    /// <para>表示 mse_refund.succeeded 通知的数据。</para>
+    /// <para>表示 "mse_refund.succeeded" 回调通知事件的数据。</para>
     /// </summary>
     public class RefundEvent : WechatTenpayBusinessEvent<RefundEvent.Types.EventContent>
     {

@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.submit_vip_account_approval 事件的数据。</para>
+    /// <para>表示 "EVENT.submit_vip_account_approval" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99876 ]]>

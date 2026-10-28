@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /promoter/singlesendmsg 接口的请求。</para>
     /// </summary>
-    public class PromoterSingleSendMessageRequest : PublisherStatSettlementRequest, IInferable<PromoterSingleSendMessageRequest, PromoterSingleSendMessageResponse>
+    public class PromoterSingleSendMessageRequest : WechatApiRequest, IInferable<PromoterSingleSendMessageRequest, PromoterSingleSendMessageResponse>
     {
         /// <summary>
         /// 获取或设置消息类型。

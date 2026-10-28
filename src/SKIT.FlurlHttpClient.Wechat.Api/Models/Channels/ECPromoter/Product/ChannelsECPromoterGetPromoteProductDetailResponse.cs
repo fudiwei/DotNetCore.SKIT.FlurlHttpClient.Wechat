@@ -27,12 +27,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                             }
 
-                            public class SKUDeliver : ChannelsECProductGetResponse.Types.Product.Types.SKUDeliverInfo
+                            public class SKUDeliverInfo : ChannelsECProductGetResponse.Types.Product.Types.SKUDeliverInfo
                             {
                             }
 
                             public class SKU : ChannelsECProductGetResponse.Types.Product.Types.SKU
                             {
+                                /// <summary>
+                                /// 获取或设置商品属性列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sku_attrs")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
+                                public new List<Attribute>? AttributeList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品配送信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                                public new SKUDeliverInfo? SKUDeliverInfo { get; set; }
+
                                 /// <summary>
                                 /// 获取或设置用户视角普惠价（单位：分）。
                                 /// </summary>

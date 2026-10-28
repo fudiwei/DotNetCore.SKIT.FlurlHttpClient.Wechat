@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.secvod_upload_event 事件的数据。</para>
+    /// <para>表示 "EVENT.secvod_upload_event" 回调通知事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_7-1-%E5%AA%92%E8%B5%84%E4%B8%8A%E4%BC%A0%E5%AE%8C%E6%88%90%E4%BA%8B%E4%BB%B6%20SecVod </para>
     /// </summary>
     public class SecVodUploadEvent : WechatApiEvent

@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 MEMBERCARD.ACTIVATE_CARD 通知的数据。</para>
-    /// <para>表示 MEMBERCARD.USERCARD_MANAGE 通知的数据。</para>
+    /// <para>表示 "MEMBERCARD.ACTIVATE_CARD" 回调通知事件的数据。</para>
+    /// <para>表示 "MEMBERCARD.USERCARD_MANAGE" 回调通知事件的数据。</para>
     /// </summary>
     public class MarketingMemberCardResource : WechatTenpayEvent.Types.IDecryptedResource
     {

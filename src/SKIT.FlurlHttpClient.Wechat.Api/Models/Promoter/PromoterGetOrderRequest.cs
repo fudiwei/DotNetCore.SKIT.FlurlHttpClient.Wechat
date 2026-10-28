@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /promoter/getorder 接口的请求。</para>
     /// </summary>
-    public class PromoterGetOrderRequest : PublisherStatSettlementRequest, IInferable<PromoterGetOrderRequest, PromoterGetOrderResponse>
+    public class PromoterGetOrderRequest : WechatApiRequest, IInferable<PromoterGetOrderRequest, PromoterGetOrderResponse>
     {
         /// <summary>
         /// 获取或设置推广员的 OpenId。

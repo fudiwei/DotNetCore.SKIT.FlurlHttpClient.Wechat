@@ -7,30 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     {
         public static class Types
         {
-            public class BotState
-            {
-                /// <summary>
-                /// 获取或设置机器人配置错误信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("err_msg")]
-                [System.Text.Json.Serialization.JsonPropertyName("err_msg")]
-                public string? ErrorMessage { get; set; }
-
-                /// <summary>
-                /// 获取或设置最后有效时间字符串。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("latest_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("latest_time")]
-                public string? LatestTimeString { get; set; }
-
-                /// <summary>
-                /// 获取或设置最后有效时间字符串。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("latest_valid")]
-                [System.Text.Json.Serialization.JsonPropertyName("latest_valid")]
-                public bool IsLatestValid { get; set; }
-            }
-
             public class Option
             {
                 /// <summary>

@@ -13,6 +13,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 {
                     public class ACL : CgibinWedriveSpaceInfoResponse.Types.Space.Types.ACL
                     {
+                        /// <summary>
+                        /// 获取或设置空间授权信息列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("auth_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
+                        public new List<Authority>? AuthorityList { get; set; }
                     }
 
                     public class Authority : CgibinWedriveSpaceInfoResponse.Types.Space.Types.Authority

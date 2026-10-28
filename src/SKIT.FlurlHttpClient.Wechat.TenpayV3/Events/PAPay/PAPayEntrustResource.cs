@@ -1,8 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示委托代扣 ENTRUST.SIGN （仅限直连商户）通知的数据。</para>
-    /// <para>表示委托代扣 ENTRUST.TERMINATE （仅限直连商户）通知的数据。</para>
+    /// <para>表示委托代扣 ENTRUST.SIGN （仅限直连商户）回调通知事件的数据。</para>
+    /// <para>表示委托代扣 ENTRUST.TERMINATE （仅限直连商户）回调通知事件的数据。</para>
     /// </summary>
     public class PAPayEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
     {

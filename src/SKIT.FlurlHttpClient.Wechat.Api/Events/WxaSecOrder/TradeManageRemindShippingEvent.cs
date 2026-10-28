@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.trade_manage_remind_shipping 事件的数据。</para>
+    /// <para>表示 "EVENT.trade_manage_remind_shipping" 回调通知事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/order-shipping/order-shipping.html#%E4%B9%9D%E3%80%81%E7%9B%B8%E5%85%B3%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81 </para>
     /// </summary>
     public class TradeManageRemindShippingEvent : WechatApiEvent

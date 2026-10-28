@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示微信支付分停车服务 TRANSACTION.SUCCESS 通知的数据。</para>
-    /// <para>表示微信支付分停车服务 TRANSACTION.FAIL 通知的数据。</para>
-    /// <para>表示微信支付分停车服务 TRANSACTION.PAY_BACK 通知的数据。</para>
+    /// <para>表示微信支付分停车服务 TRANSACTION.SUCCESS 回调通知事件的数据。</para>
+    /// <para>表示微信支付分停车服务 TRANSACTION.FAIL 回调通知事件的数据。</para>
+    /// <para>表示微信支付分停车服务 TRANSACTION.PAY_BACK 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012284177 ]]> <br/>

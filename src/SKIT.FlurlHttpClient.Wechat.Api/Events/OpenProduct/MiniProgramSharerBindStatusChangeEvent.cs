@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.miniprogram_sharer_bind_status_change 事件的数据。</para>
+    /// <para>表示 "EVENT.miniprogram_sharer_bind_status_change" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/sharer_bind_staus_change.html ]]>

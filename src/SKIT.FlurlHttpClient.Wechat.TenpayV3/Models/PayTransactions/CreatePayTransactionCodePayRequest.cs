@@ -94,6 +94,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     {
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public new Types.Store? Store { get; set; }
             }
 
             public class Settlement : CreatePayTransactionAppRequest.Types.Settlement

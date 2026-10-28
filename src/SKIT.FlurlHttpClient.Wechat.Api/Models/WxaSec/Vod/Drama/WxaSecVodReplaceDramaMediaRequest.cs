@@ -5,13 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class WxaSecVodReplaceDramaMediaRequest : WechatApiRequest, IInferable<WxaSecVodReplaceDramaMediaRequest, WxaSecVodReplaceDramaMediaResponse>
     {
-        public static class Types
-        {
-            public class ReplaceMedia : WxaSecVodAuditDramaRequest.Types.ReplaceMedia
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置剧目 ID。
         /// </summary>

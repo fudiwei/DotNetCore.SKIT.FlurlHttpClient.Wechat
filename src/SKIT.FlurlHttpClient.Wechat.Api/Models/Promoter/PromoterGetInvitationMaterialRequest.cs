@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /promoter/getinvitationmaterial 接口的请求。</para>
     /// </summary>
-    public class PromoterGetInvitationMaterialRequest : PublisherStatSettlementRequest, IInferable<PromoterGetInvitationMaterialRequest, PromoterGetInvitationMaterialResponse>
+    public class PromoterGetInvitationMaterialRequest : WechatApiRequest, IInferable<PromoterGetInvitationMaterialRequest, PromoterGetInvitationMaterialResponse>
     {
         /// <summary>
         /// 获取或设置角色 ID。

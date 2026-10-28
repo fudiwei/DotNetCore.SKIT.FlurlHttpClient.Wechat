@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.ewaybill_push_path 事件的数据。</para>
+    /// <para>表示 "EVENT.ewaybill_push_path" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/push_path.html ]]> <br/>

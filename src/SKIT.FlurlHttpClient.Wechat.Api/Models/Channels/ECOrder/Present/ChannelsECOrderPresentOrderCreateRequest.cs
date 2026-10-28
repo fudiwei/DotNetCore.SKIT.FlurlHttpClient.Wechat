@@ -5,26 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ChannelsECOrderPresentOrderCreateRequest : WechatApiRequest, IInferable<ChannelsECOrderPresentOrderCreateRequest, ChannelsECOrderPresentOrderCreateResponse>
     {
-        public static class Types
-        {
-            public class AuditItem
-            {
-                /// <summary>
-                /// 获取或设置审核项名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("item_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("item_name")]
-                public string? ItemName { get; set; }
-
-                /// <summary>
-                /// 获取或设置审核项值。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("item_value")]
-                [System.Text.Json.Serialization.JsonPropertyName("item_value")]
-                public string? ItemValue { get; set; }
-            }
-        }
-
         /// <summary>
         /// 获取或设置请求幂等 ID。
         /// </summary>

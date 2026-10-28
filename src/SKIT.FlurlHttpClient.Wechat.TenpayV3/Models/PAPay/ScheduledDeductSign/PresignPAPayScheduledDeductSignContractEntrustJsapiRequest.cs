@@ -15,6 +15,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     {
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置预计的扣费金额信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
+                public new Types.Amount? EstimatedDeductAmount { get; set; }
             }
         }
 

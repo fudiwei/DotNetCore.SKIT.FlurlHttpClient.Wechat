@@ -40,40 +40,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 {
                                     public class BuyInfo
                                     {
-                                        public static class Types
-                                        {
-                                            public class DiscountInfo
-                                            {
-                                                /// <summary>
-                                                /// 获取或设置优惠类型。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("discount_type")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("discount_type")]
-                                                public int DiscountType { get; set; }
-
-                                                /// <summary>
-                                                /// 获取或设置优惠金额（单位：分）。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("discount_amount")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
-                                                public int? DiscountAmount { get; set; }
-
-                                                /// <summary>
-                                                /// 获取或设置优惠折扣（单位：百分数）。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("discount_ratio")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("discount_ratio")]
-                                                public int? DiscountRatio { get; set; }
-
-                                                /// <summary>
-                                                /// 获取或设置优惠原因。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("discount_remarks")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("discount_remarks")]
-                                                public string? DiscountRemarks { get; set; }
-                                            }
-                                        }
-
                                         /// <summary>
                                         /// 获取或设置套件 ID。
                                         /// </summary>

@@ -1,11 +1,11 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 FAPIAO.USER_APPLIED 通知的数据。</para>
-    /// <para>标识 FAPIAO.CARD_INSERTED 通知的数据。</para>
-    /// <para>标识 FAPIAO.CARD_DISCARDED 通知的数据。</para>
-    /// <para>标识 FAPIAO.ISSUED 通知的数据。</para>
-    /// <para>标识 FAPIAO.REVERSED 通知的数据。</para>
+    /// <para>表示 "FAPIAO.USER_APPLIED" 回调通知事件的数据。</para>
+    /// <para>标识 FAPIAO.CARD_INSERTED 回调通知事件的数据。</para>
+    /// <para>标识 FAPIAO.CARD_DISCARDED 回调通知事件的数据。</para>
+    /// <para>标识 FAPIAO.ISSUED 回调通知事件的数据。</para>
+    /// <para>标识 FAPIAO.REVERSED 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286035 ]]> <br/>

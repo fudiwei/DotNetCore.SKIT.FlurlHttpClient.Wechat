@@ -9,33 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         {
             public class InspectInfo
             {
-                public static class Types
-                {
-                    public class Box
-                    {
-                        /// <summary>
-                        /// 获取或设置包装盒 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("boxId")]
-                        [System.Text.Json.Serialization.JsonPropertyName("boxId")]
-                        public int Id { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置包装盒名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("boxName")]
-                        [System.Text.Json.Serialization.JsonPropertyName("boxName")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置包装盒数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("boxNum")]
-                        [System.Text.Json.Serialization.JsonPropertyName("boxNum")]
-                        public int Count { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置快递公司 ID。
                 /// </summary>

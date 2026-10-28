@@ -18,5 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("group_id")]
         [System.Text.Json.Serialization.JsonPropertyName("group_id")]
         public List<string>? TagGroupIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置授权方安装的应用 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("agentid")]
+        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
+        public int? AgentId { get; set; }
     }
 }

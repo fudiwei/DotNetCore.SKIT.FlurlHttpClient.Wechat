@@ -132,8 +132,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                             }
                         }
+
+                        /// <summary>
+                        /// 获取或设置属性值映射列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("value_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("value_list")]
+                        public new List<Types.SpecificationValue>? ValueList { get; set; }
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置尺码规格列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("specification_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("specification_list")]
+                public new List<Types.Specification>? SpecificationList { get; set; }
             }
 
             public class TimingOnSale : ChannelsECProductAddRequest.Types.TimingOnSale

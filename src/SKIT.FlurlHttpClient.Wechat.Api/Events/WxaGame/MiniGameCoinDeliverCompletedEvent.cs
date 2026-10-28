@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.minigame_coin_deliver_completed 事件的数据。</para>
+    /// <para>表示 "EVENT.minigame_coin_deliver_completed" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://docs.qq.com/doc/DVVZZdHFsYkttYmxl ]]>

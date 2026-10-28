@@ -5,33 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class CgibinExpressLocalBusinessOrderGetResponse : WechatApiResponse
     {
-        public static class Types
-        {
-            public class Shop
-            {
-                /// <summary>
-                /// 获取或设置配送公司 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("delivery_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public string? DeliveryId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("shopid")]
-                [System.Text.Json.Serialization.JsonPropertyName("shopid")]
-                public string? ShopId { get; set; }
-
-                /// <summary>
-                /// 获取或设置审核结果。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("audit_result")]
-                [System.Text.Json.Serialization.JsonPropertyName("audit_result")]
-                public int AuditResult { get; set; }
-            }
-        }
-
         /// <summary>
         /// 获取或设置运力返回的错误码。
         /// </summary>

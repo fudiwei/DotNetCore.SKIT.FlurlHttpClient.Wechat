@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class WxaSecurityGetPrivacyInterfaceResponse : WechatApiResponse
     {
-        public class Types
+        public static class Types
         {
             public class PrivacyInterface
             {

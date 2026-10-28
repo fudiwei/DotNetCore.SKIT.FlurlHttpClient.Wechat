@@ -1,26 +1,11 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 ECOMMERCE_ENTRUST.SIGN 通知的数据。</para>
-    /// <para>表示 ECOMMERCE_ENTRUST.TERMINATE 通知的数据。</para>
+    /// <para>表示 "ECOMMERCE_ENTRUST.SIGN" 回调通知事件的数据。</para>
+    /// <para>表示 "ECOMMERCE_ENTRUST.TERMINATE" 回调通知事件的数据。</para>
     /// </summary>
     public class EcommerceEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
     {
-        public static class Types
-        {
-            public class SubOrder : Models.GetCombineTransactionByCombineOutTradeNumberResponse.Types.SubOrder
-            {
-            }
-
-            public class Scene : Models.GetCombineTransactionByCombineOutTradeNumberResponse.Types.Scene
-            {
-            }
-
-            public class Payer : Models.GetCombineTransactionByCombineOutTradeNumberResponse.Types.Payer
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>

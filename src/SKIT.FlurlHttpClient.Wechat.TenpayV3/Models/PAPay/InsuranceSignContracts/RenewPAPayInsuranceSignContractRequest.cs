@@ -7,10 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.Amount
-            {
-            }
-
             public class PolicyPeriod : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.PolicyPeriod
             {
             }
