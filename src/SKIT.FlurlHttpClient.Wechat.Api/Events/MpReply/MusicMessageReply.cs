@@ -1,10 +1,11 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示被动回复音乐消息的数据。</para>
+    /// <para>表示 "music" 回调通知应答的数据</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html#4 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/product/message/Passive_user_reply_message.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/message/Passive_user_reply_message.html ]]>
     /// </para>
     /// </summary>
     public class MusicMessageReply : WechatApiEvent
@@ -61,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Music")]
         [System.Text.Json.Serialization.JsonPropertyName("Music")]
         [System.Xml.Serialization.XmlElement("Music")]
-        public Types.Music Music { get; set; }
+        public Types.Music? Music { get; set; }
 
         public MusicMessageReply()
         {

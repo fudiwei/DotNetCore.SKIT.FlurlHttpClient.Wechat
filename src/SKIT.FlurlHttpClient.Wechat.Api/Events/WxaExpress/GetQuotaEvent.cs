@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.get_quota" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/express/express-by-provider/onGetQuota.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/event_push/express/provider/Query_merchant_balance_events.html ]]>
     /// </para>
     /// </summary>
     public class GetQuotaEvent : WechatApiEvent

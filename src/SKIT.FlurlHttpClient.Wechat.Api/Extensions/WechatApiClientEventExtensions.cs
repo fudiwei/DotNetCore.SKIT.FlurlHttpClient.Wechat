@@ -194,8 +194,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/message_push.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/dev/push/encryption.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/dev/push/encryption.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/dev_before/base/message_push.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/dev_before/message_push.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -234,8 +236,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>验证回调通知事件签名（仅安全模式）。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/message_push.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/dev/push/encryption.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/dev/push/encryption.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/dev_before/base/message_push.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/dev_before/message_push.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/developers/dev/push/encryption.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -278,8 +283,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>验证回调通知事件签名（仅安全模式）。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/message_push.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/dev/push/encryption.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/dev/push/encryption.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/dev_before/base/message_push.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/dev_before/message_push.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/developers/dev/push/encryption.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

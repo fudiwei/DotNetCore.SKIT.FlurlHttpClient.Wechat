@@ -4,9 +4,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.user_authorize_invoice" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html#_12-2-2-4%E6%8E%A5%E6%94%B6%E5%BC%80%E7%A5%A8%E4%BA%8B%E4%BB%B6 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Vendor_API_List.html#6 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#2.3 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
     /// </para>
     /// </summary>
     public class UserAuthorizeInvoiceEvent : WechatApiEvent

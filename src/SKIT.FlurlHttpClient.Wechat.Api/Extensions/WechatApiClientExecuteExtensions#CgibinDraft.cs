@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/draft/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Add_draft.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/draftbox/draftmanage/api_draft_add.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/draftbox/draftmanage/api_draft_add.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/draft/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Add_draft.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/draftbox/draftmanage/api_getdraft.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/draftbox/draftmanage/api_getdraft.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +54,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/draft/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Delete_draft.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/draftbox/draftmanage/api_draft_delete.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/draftbox/draftmanage/api_draft_delete.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +78,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/draft/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Update_draft.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/draftbox/draftmanage/api_draft_update.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/draftbox/draftmanage/api_draft_update.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +102,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/draft/count 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Count_drafts.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/draftbox/draftmanage/api_draft_count.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/draftbox/draftmanage/api_draft_count.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -121,7 +126,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/draft/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Get_draft_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/draftbox/draftmanage/api_draft_batchget.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/draftbox/draftmanage/api_draft_batchget.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

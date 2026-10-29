@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/template/api_set_industry 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/template/api_setindustry.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/template/get_industry 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/template/api_getindustry.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/template/api_add_template 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/template/api_addtemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/template/get_all_private_template 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/template/api_getalltemplates.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/template/del_private_template 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/template/api_deletetemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

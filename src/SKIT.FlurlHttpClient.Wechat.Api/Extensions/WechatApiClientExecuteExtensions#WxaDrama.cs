@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxadrama/setplayerdramarecmdswitch 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/videoplayer.html#%E6%92%AD%E6%94%BE%E5%8E%9F%E5%A7%8B%E8%A7%86%E9%A2%91 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/dramaOthersAPI/api_setplayerdramarecmdswitch.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

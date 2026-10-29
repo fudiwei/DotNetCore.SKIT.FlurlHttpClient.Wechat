@@ -4,8 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.product_spu_listing" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/callback/ProductSpuListing.html ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/callback1.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/notify/product_callback/ProductSpuListing.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/dev_before/locallife/callback/product_related/Group_purchase_discounts_on_and_off_the_shelves_callback.html ]]>
     /// </para>
     /// </summary>
     public class ChannelsECProductSPUListingEvent : WechatApiEvent

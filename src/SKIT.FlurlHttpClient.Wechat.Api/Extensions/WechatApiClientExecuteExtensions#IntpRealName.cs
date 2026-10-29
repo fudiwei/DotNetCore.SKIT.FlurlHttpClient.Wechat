@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/realname/getauthurl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#9.2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxrealnamegetauthurl.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/quickcheckstudentidentity 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/student.html#_5-2-%E5%BF%AB%E9%80%9F%E8%8E%B7%E5%8F%96%E5%AD%A6%E7%94%9F%E8%BA%AB%E4%BB%BDAPI ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/student.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

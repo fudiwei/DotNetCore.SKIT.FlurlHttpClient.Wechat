@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /semantic/semproxy/search 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Natural_Language_Processing.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/Intelligent_Interface/nlp.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Smart_APIs/Semantic_Understanding.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Smart_APIs/Semantic_Understanding.html ]]>
         /// </para>

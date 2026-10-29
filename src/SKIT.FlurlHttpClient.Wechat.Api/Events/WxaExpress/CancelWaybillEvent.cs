@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.cancel_waybill" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/express/express-by-provider/onCancelOrder.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/event_push/express/provider/Cancel_order_event.html ]]>
     /// </para>
     /// </summary>
     public class CancelWaybillEvent : WechatApiEvent

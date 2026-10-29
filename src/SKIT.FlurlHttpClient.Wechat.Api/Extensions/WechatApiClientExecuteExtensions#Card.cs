@@ -6,15 +6,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Create_a_Coupon_Voucher_or_Card.html#8 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Create_a_membership_card.html#3 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#1 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#4 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#6 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#9 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#5 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#7 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Create_a_Coupon_Voucher_or_Card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Create_a_membership_card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Manage_Member_Card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Special_ticket.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -83,10 +80,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#4 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#2 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#3 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Manage_Member_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -109,7 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/modifystock 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -132,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#7 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -155,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/paycell/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Create_a_Coupon_Voucher_or_Card.html#11 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Create_a_Coupon_Voucher_or_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -178,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/selfconsumecell/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Create_a_Coupon_Voucher_or_Card.html#14 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Create_a_Coupon_Voucher_or_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -201,7 +196,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/qrcode/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -224,7 +219,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/landingpage/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -247,7 +242,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/mpnews/gethtml 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#6 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -270,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/testwhitelist/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#12 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -294,7 +289,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/deposit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -317,7 +312,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/getdepositcount 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -340,7 +335,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/checkcode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -363,10 +358,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Redeeming_a_coupon_voucher_or_card.html#1 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#0 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons-Mini_Program_Start_Up.html#%E6%8E%A5%E5%8F%A34%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%BC%80%E5%8D%A1%E6%97%B6%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%88%E9%9D%9E%E8%B7%B3%E8%BD%AC%E5%9E%8B%E5%BC%80%E5%8D%A1%E7%BB%84%E4%BB%B6%EF%BC%89 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html#_11-4-%E6%9F%A5%E8%AF%A2%E7%A4%BC%E5%93%81%E5%8D%A1%E4%BF%A1%E6%81%AF%E6%8E%A5%E5%8F%A3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Redeeming_a_coupon_voucher_or_card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Coupons-Mini_Program_Start_Up.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -389,8 +384,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/consume 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Redeeming_a_coupon_voucher_or_card.html#2 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Redeeming_a_coupon_voucher_or_card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -413,8 +408,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/decrypt 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Redeeming_a_coupon_voucher_or_card.html#5 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Invoicing_Platform_API_List.html#8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Redeeming_a_coupon_voucher_or_card.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -437,7 +432,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#6 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -460,7 +455,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/code/unavailable 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -485,7 +480,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/user/getcardlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -510,7 +505,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/membercard/activate/geturl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons-Mini_Program_Start_Up.html#%E6%8E%A5%E5%8F%A31%EF%BC%9A%E8%8E%B7%E5%8F%96%E5%BC%80%E5%8D%A1%E6%8F%92%E4%BB%B6%E5%8F%82%E6%95%B0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Coupons-Mini_Program_Start_Up.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -533,7 +528,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/membercard/activatetempinfo/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons-Mini_Program_Start_Up.html#%E6%8E%A5%E5%8F%A33%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%BC%80%E5%8D%A1%E6%97%B6%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%88%E8%B7%B3%E8%BD%AC%E5%9E%8B%E5%BC%80%E5%8D%A1%E7%BB%84%E4%BB%B6%EF%BC%89 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Coupons-Mini_Program_Start_Up.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -556,8 +551,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/membercard/activate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons-Mini_Program_Start_Up.html#%E6%8E%A5%E5%8F%A35%EF%BC%9A%E6%BF%80%E6%B4%BB%E7%94%A8%E6%88%B7%E9%A2%86%E5%8F%96%E7%9A%84%E4%BC%9A%E5%91%98%E5%8D%A1%EF%BC%88%E8%B7%B3%E8%BD%AC%E5%9E%8B%E5%BC%80%E5%8D%A1%E7%BB%84%E4%BB%B6%EF%BC%89 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Create_a_membership_card.html#15 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Create_a_membership_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Coupons-Mini_Program_Start_Up.html ]]> <br/>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -580,7 +575,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/membercard/activateuserform/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Create_a_membership_card.html#16 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Create_a_membership_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -603,7 +598,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/membercard/updateuser 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Create_a_membership_card.html#18 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Create_a_membership_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -626,7 +621,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/membercard/userinfo/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Create_a_membership_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -651,7 +646,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/meetingticket/updateuser 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Special_ticket.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -674,7 +669,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/movieticket/updateuser 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#7 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Special_ticket.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -697,7 +692,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/boardingpass/checkin 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Special_ticket.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Special_ticket.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -722,7 +717,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/page/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -745,7 +740,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/page/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -768,7 +763,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/page/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -791,7 +786,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/page/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -814,7 +809,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/maintain/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -837,7 +832,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/pay/whitelist/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -860,7 +855,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/pay/submch/bind 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -883,7 +878,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/wxa/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -906,7 +901,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/generalcard/updateuser 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -930,7 +925,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/order/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -953,7 +948,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/order/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -976,7 +971,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/giftcard/order/refund 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1002,7 +997,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/paygiftcard/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Manage_Member_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1025,7 +1020,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/paygiftcard/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Manage_Member_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1048,7 +1043,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/paygiftcard/getbyid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Manage_Member_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1071,7 +1066,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/paygiftcard/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Manage_Member_Card.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1096,7 +1091,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/submerchant/submit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1119,7 +1114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/submerchant/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1142,7 +1137,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /card/getapplyprotocol 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1165,7 +1160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/submerchant/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1188,7 +1183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/submerchant/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#6 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1211,10 +1206,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region WxaStore
         /// <summary>
         /// <para>异步调用 [POST] /card/storewxa/get 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Stores/WeChat_Shop_Miniprogram_Interface.html#18 ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1234,10 +1225,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /card/storewxa/set 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Stores/WeChat_Shop_Miniprogram_Interface.html#18 ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
     {
         /**
          * REF:
-         *   https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/getting_started/api_signature.html
+         *   https://developers.weixin.qq.com/miniprogram/dev/server/getting_started/api_signature.html
          *   https://developers.weixin.qq.com/community/develop/article/doc/00028ca675c708b23f100b8e161013
          *   https://developers.weixin.qq.com/community/develop/article/doc/000e68b8038ed8796f00f6c2f68c13
          *   https://wxaintpcos.wxqcloud.qq.com.cn/public/tmp/apitool.py

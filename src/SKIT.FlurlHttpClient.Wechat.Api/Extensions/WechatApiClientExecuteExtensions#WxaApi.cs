@@ -2,12 +2,795 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static partial class WechatApiClientExecuteExtensions
     {
+        #region Broadcast
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/create 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_createroom.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomCreateResponse> ExecuteWxaApiBroadcastRoomCreateAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "create")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/deleteroom 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_deleteroom.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomDeleteRoomResponse> ExecuteWxaApiBroadcastRoomDeleteRoomAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomDeleteRoomRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "deleteroom")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomDeleteRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/editroom 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_editroom.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomEditRoomResponse> ExecuteWxaApiBroadcastRoomEditRoomAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomEditRoomRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "editroom")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomEditRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getpushurl 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_getpushurl.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomGetPushUrlResponse> ExecuteWxaApiBroadcastRoomGetPushUrlAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetPushUrlRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getpushurl")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("roomId", request.RoomId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetPushUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getsharedcode 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_getsharedcode.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomGetSharedCodeResponse> ExecuteWxaApiBroadcastRoomGetSharedCodeAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetSharedCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getsharedcode")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("roomId", request.RoomId)
+                .SetQueryParam("params", request.CustomParameter);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetSharedCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatefeedpublic 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_updatefeedpublic.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomUpdateFeedPublicResponse> ExecuteWxaApiBroadcastRoomUpdateFeedPublicAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateFeedPublicRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatefeedpublic")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateFeedPublicResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatereplay 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_updatereplay.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomUpdateReplayResponse> ExecuteWxaApiBroadcastRoomUpdateReplayAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateReplayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatereplay")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateReplayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatekf 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_updatekf.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomUpdateKfResponse> ExecuteWxaApiBroadcastRoomUpdateKfAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateKfRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatekf")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateKfResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatecomment 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_updatecomment.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomUpdateCommentResponse> ExecuteWxaApiBroadcastRoomUpdateCommentAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateCommentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatecomment")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateCommentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        #region Broadcast/Goods
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/add 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_addgoods.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsAddResponse> ExecuteWxaApiBroadcastGoodsAddAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/resetaudit 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_resetaudit.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsResetAuditResponse> ExecuteWxaApiBroadcastGoodsResetAuditAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsResetAuditRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "resetaudit")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsResetAuditResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/audit 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_resubmitaudit.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsAuditResponse> ExecuteWxaApiBroadcastGoodsAuditAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsAuditRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "audit")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsAuditResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/delete 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_deletegoodsinfo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsDeleteResponse> ExecuteWxaApiBroadcastGoodsDeleteAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/update 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_updategoodsinfo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsUpdateResponse> ExecuteWxaApiBroadcastGoodsUpdateAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/getgoodswarehouse 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_getgoodsauditinfo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBussinessGetGoodsWarehouseResponse> ExecuteWxaBussinessGetGoodsWarehouseAsync(this WechatApiClient client, Models.WxaBussinessGetGoodsWarehouseRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "business", "getgoodswarehouse")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaBussinessGetGoodsWarehouseResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/broadcast/goods/getapproved 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/commodity-management/api_getgoodsinfo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsGetApprovedResponse> ExecuteWxaApiBroadcastGoodsGetApprovedAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsGetApprovedRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "goods", "getapproved")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("status", request.AuditStatus);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsGetApprovedResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region Broadcast/Role
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/role/addrole 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/role-management/api_getrolelistdw.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoleAddRoleResponse> ExecuteWxaApiBroadcastRoleAddRoleAsync(this WechatApiClient client, Models.WxaApiBroadcastRoleAddRoleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "role", "addrole")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleAddRoleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/role/deleterole 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/role-management/api_deleterole.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoleDeleteRoleResponse> ExecuteWxaApiBroadcastRoleDeleteRoleAsync(this WechatApiClient client, Models.WxaApiBroadcastRoleDeleteRoleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "role", "deleterole")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleDeleteRoleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/broadcast/role/getrolelist 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/role-management/api_getrolelist.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoleGetRoleListResponse> ExecuteWxaApiBroadcastRoleGetRoleListAsync(this WechatApiClient client, Models.WxaApiBroadcastRoleGetRoleListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "role", "getrolelist")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("keyword", request.Keyword)
+                .SetQueryParam("role", request.Role)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleGetRoleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region Broadcast/RoomAnchor
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/addsubanchor 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_addsubanchor.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomAddSubAnchorResponse> ExecuteWxaApiBroadcastRoomAddSubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomAddSubAnchorRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "addsubanchor")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomAddSubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/modifysubanchor 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_modifysubanchor.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomModifySubAnchorResponse> ExecuteWxaApiBroadcastRoomModifySubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomModifySubAnchorRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "modifysubanchor")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomModifySubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/deletesubanchor 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_deletesubanchor.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomDeleteSubAnchorResponse> ExecuteWxaApiBroadcastRoomDeleteSubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomDeleteSubAnchorRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "deletesubanchor")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomDeleteSubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getsubanchor 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_getsubanchor.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomGetSubAnchorResponse> ExecuteWxaApiBroadcastRoomGetSubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetSubAnchorRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getsubanchor")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("roomId", request.RoomId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetSubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region Broadcast/RoomAssistant
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/addassistant 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_addveassistant.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomAddAssistantResponse> ExecuteWxaApiBroadcastRoomAddAssistantAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomAddAssistantRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "addassistant")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomAddAssistantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/modifyassistant 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_modifyassistant.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomModifyAssistantResponse> ExecuteWxaApiBroadcastRoomModifyAssistantAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomModifyAssistantRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "modifyassistant")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomModifyAssistantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/removeassistant 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_removeassistant.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomRemoveAssistantResponse> ExecuteWxaApiBroadcastRoomRemoveAssistantAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomRemoveAssistantRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "removeassistant")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomRemoveAssistantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getassistantlist 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_getassistantlist.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomGetAssistantListResponse> ExecuteWxaApiBroadcastRoomGetAssistantListAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetAssistantListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getassistantlist")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("roomId", request.RoomId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetAssistantListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region Broadcast/RoomGoods
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/room/addgoods 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_importgoods.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastRoomAddGoodsResponse> ExecuteWxaApiBroadcastRoomAddGoodsAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomAddGoodsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "addgoods")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomAddGoodsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/onsale 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_salegoods.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsOnSaleResponse> ExecuteWxaApiBroadcastGoodsOnSaleAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsOnSaleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "onsale")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsOnSaleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/deleteInRoom 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_deletedoods.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsDeleteInRoomResponse> ExecuteWxaApiBroadcastGoodsDeleteInRoomAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsDeleteInRoomRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "deleteInRoom")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsDeleteInRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/push 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_pushgoods.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsPushResponse> ExecuteWxaApiBroadcastGoodsPushAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsPushRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "push")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsPushResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/sort 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_sortgoods.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsSortResponse> ExecuteWxaApiBroadcastGoodsSortAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsSortRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "sort")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsSortResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/getVideo 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/livebroadcast/studio-management/api_downloadgoodsvideo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiBroadcastGoodsGetVideoResponse> ExecuteWxaApiBroadcastGoodsGetVideoAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsGetVideoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "getVideo")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsGetVideoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+        #endregion
+
         #region Comment
         /// <summary>
         /// <para>异步调用 [GET] /wxaapi/comment/mpcommentlist/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_1-1%E6%9F%A5%E8%AF%A2%E8%AF%84%E4%BB%B7%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_getccommentlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,7 +818,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/comment/replyandcommentreplylist/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_1-2%E6%9F%A5%E8%AF%A2%E8%AF%84%E8%AE%BA%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_getcommentreplylist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -59,7 +842,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/comment/commentinfo/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_1-3%E6%9F%A5%E8%AF%A2%E8%AF%84%E4%BB%B7%E8%AF%A6%E6%83%85 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_getcommentinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -83,7 +866,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/comment/commentreply/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_2-1%E5%88%9B%E5%BB%BA%E8%AF%84%E8%AE%BA ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_addcommentreply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -106,7 +889,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/comment/commentreply/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_3-2%E5%88%A0%E9%99%A4%E5%9B%9E%E5%A4%8D ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_deletecommentreply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -129,7 +912,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/comment/apikfquota/reset 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_4-2%E9%87%8D%E7%BD%AEApi%E5%AE%A2%E6%9C%8Dquota ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_resetapikfquota.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -152,7 +935,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/comment/confirmcompromise 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_5%E3%80%81%E7%A1%AE%E8%AE%A4%E5%92%8C%E8%A7%A3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/comment/api_confirmcompromise.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -177,8 +960,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/newtmpl/addtemplate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#addTemplate%E9%80%89%E7%94%A8%E6%A8%A1%E6%9D%BF ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.addTemplate.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-message-management/subscribe-message/api_addwxanewtemplate.html ]]> <br/>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -201,8 +983,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/newtmpl/deltemplate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#deleteTemplate%E5%88%A0%E9%99%A4%E6%A8%A1%E6%9D%BF ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.deleteTemplate.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-message-management/subscribe-message/api_delwxanewtemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -225,8 +1006,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/newtmpl/getcategory 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#getCategory%E8%8E%B7%E5%8F%96%E5%85%AC%E4%BC%97%E5%8F%B7%E7%B1%BB%E7%9B%AE ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getCategory.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-message-management/subscribe-message/api_getcategory.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -249,8 +1029,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/newtmpl/getpubtemplatekeywords 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#getPubTemplateKeyWordsById%E8%8E%B7%E5%8F%96%E6%A8%A1%E6%9D%BF%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E8%AF%8D ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getPubTemplateKeyWordsById.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-message-management/subscribe-message/api_getpubnewtemplatekeywords.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -274,8 +1053,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/newtmpl/getpubtemplatetitles 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#getPubTemplateTitleList%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9B%AE%E4%B8%8B%E7%9A%84%E5%85%AC%E5%85%B1%E6%A8%A1%E6%9D%BF ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getPubTemplateTitleList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-message-management/subscribe-message/api_getpubnewtemplatetitles.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -301,8 +1079,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/newtmpl/gettemplate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#getTemplateList%E8%8E%B7%E5%8F%96%E7%A7%81%E6%9C%89%E6%A8%A1%E6%9D%BF%E5%88%97%E8%A1%A8 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getTemplateList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-message-management/subscribe-message/api_getwxapubnewtemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -327,7 +1104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/feedback/list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getFeedback.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_getfeedback.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -353,7 +1130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/log/jserr_detail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getJsErrDetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_getjserrdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -376,7 +1153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/log/jserr_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getJsErrList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_getjserrlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -399,7 +1176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/log/get_performance 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getPerformance.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_getperformance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -422,7 +1199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/log/get_scene 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getSceneList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_getscenelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -445,7 +1222,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/log/get_client_version 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getVersionList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_getversionlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -468,7 +1245,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/userlog/userlog_search 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.realtimelogSearch.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/operation/api_realtimelogsearch.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -496,789 +1273,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiUserLogSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-        #endregion
-
-        #region LiveBroadcast
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/create 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#1 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomCreateResponse> ExecuteWxaApiBroadcastRoomCreateAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomCreateRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "create")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/deleteroom 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#5 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomDeleteRoomResponse> ExecuteWxaApiBroadcastRoomDeleteRoomAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomDeleteRoomRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "deleteroom")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomDeleteRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/editroom 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#6 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomEditRoomResponse> ExecuteWxaApiBroadcastRoomEditRoomAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomEditRoomRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "editroom")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomEditRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getpushurl 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#7 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomGetPushUrlResponse> ExecuteWxaApiBroadcastRoomGetPushUrlAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetPushUrlRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getpushurl")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("roomId", request.RoomId);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetPushUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getsharedcode 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#8 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomGetSharedCodeResponse> ExecuteWxaApiBroadcastRoomGetSharedCodeAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetSharedCodeRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getsharedcode")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("roomId", request.RoomId)
-                .SetQueryParam("params", request.CustomParameter);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetSharedCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatefeedpublic 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#17 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomUpdateFeedPublicResponse> ExecuteWxaApiBroadcastRoomUpdateFeedPublicAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateFeedPublicRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatefeedpublic")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateFeedPublicResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatereplay 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#18 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomUpdateReplayResponse> ExecuteWxaApiBroadcastRoomUpdateReplayAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateReplayRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatereplay")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateReplayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatekf 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#19 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomUpdateKfResponse> ExecuteWxaApiBroadcastRoomUpdateKfAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateKfRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatekf")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateKfResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/updatecomment 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#20 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomUpdateCommentResponse> ExecuteWxaApiBroadcastRoomUpdateCommentAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomUpdateCommentRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "updatecomment")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomUpdateCommentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        #region LiveBroadcastRoomGoods
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/addgoods 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#4 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomAddGoodsResponse> ExecuteWxaApiBroadcastRoomAddGoodsAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomAddGoodsRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "addgoods")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomAddGoodsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/onsale 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#21 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsOnSaleResponse> ExecuteWxaApiBroadcastGoodsOnSaleAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsOnSaleRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "onsale")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsOnSaleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/deleteInRoom 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#22 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsDeleteInRoomResponse> ExecuteWxaApiBroadcastGoodsDeleteInRoomAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsDeleteInRoomRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "deleteInRoom")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsDeleteInRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/push 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#23 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsPushResponse> ExecuteWxaApiBroadcastGoodsPushAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsPushRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "push")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsPushResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/sort 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#24 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsSortResponse> ExecuteWxaApiBroadcastGoodsSortAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsSortRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "sort")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsSortResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/getVideo 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#25 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsGetVideoResponse> ExecuteWxaApiBroadcastGoodsGetVideoAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsGetVideoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "getVideo")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsGetVideoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
-        #region LiveBroadcastRoomAssistant
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/addassistant 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#9 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomAddAssistantResponse> ExecuteWxaApiBroadcastRoomAddAssistantAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomAddAssistantRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "addassistant")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomAddAssistantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/modifyassistant 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#10 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomModifyAssistantResponse> ExecuteWxaApiBroadcastRoomModifyAssistantAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomModifyAssistantRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "modifyassistant")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomModifyAssistantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/removeassistant 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#11 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomRemoveAssistantResponse> ExecuteWxaApiBroadcastRoomRemoveAssistantAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomRemoveAssistantRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "removeassistant")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomRemoveAssistantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getassistantlist 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#12 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomGetAssistantListResponse> ExecuteWxaApiBroadcastRoomGetAssistantListAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetAssistantListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getassistantlist")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("roomId", request.RoomId);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetAssistantListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
-        #region LiveBroadcastRoomAnchor
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/addsubanchor 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#13 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomAddSubAnchorResponse> ExecuteWxaApiBroadcastRoomAddSubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomAddSubAnchorRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "addsubanchor")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomAddSubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/modifysubanchor 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#14 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomModifySubAnchorResponse> ExecuteWxaApiBroadcastRoomModifySubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomModifySubAnchorRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "modifysubanchor")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomModifySubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/room/deletesubanchor 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#15 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomDeleteSubAnchorResponse> ExecuteWxaApiBroadcastRoomDeleteSubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomDeleteSubAnchorRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "room", "deletesubanchor")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomDeleteSubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxaapi/broadcast/room/getsubanchor 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/studio-api.html#16 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoomGetSubAnchorResponse> ExecuteWxaApiBroadcastRoomGetSubAnchorAsync(this WechatApiClient client, Models.WxaApiBroadcastRoomGetSubAnchorRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getsubanchor")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("roomId", request.RoomId);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetSubAnchorResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
-        #region LiveBroadcastGoods
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/add 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#1 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsAddResponse> ExecuteWxaApiBroadcastGoodsAddAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsAddRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "add")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/resetaudit 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#2 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsResetAuditResponse> ExecuteWxaApiBroadcastGoodsResetAuditAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsResetAuditRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "resetaudit")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsResetAuditResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/audit 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#3 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsAuditResponse> ExecuteWxaApiBroadcastGoodsAuditAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsAuditRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "audit")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsAuditResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/delete 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#4 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsDeleteResponse> ExecuteWxaApiBroadcastGoodsDeleteAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsDeleteRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "delete")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/goods/update 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#5 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsUpdateResponse> ExecuteWxaApiBroadcastGoodsUpdateAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsUpdateRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "goods", "update")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/getgoodswarehouse 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#6 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGetGoodsWarehouseResponse> ExecuteWxaApiBroadcastGetGoodsWarehouseAsync(this WechatApiClient client, Models.WxaApiBroadcastGetGoodsWarehouseRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "getgoodswarehouse")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGetGoodsWarehouseResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxaapi/broadcast/goods/getapproved 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/commodity-api.html#7 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastGoodsGetApprovedResponse> ExecuteWxaApiBroadcastGoodsGetApprovedAsync(this WechatApiClient client, Models.WxaApiBroadcastGoodsGetApprovedRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "goods", "getapproved")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("offset", request.Offset)
-                .SetQueryParam("limit", request.Limit)
-                .SetQueryParam("status", request.AuditStatus);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastGoodsGetApprovedResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
-        #region LiveBroadcastRole
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/role/addrole 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/role-manage.html#1 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoleAddRoleResponse> ExecuteWxaApiBroadcastRoleAddRoleAsync(this WechatApiClient client, Models.WxaApiBroadcastRoleAddRoleRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "role", "addrole")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleAddRoleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxaapi/broadcast/role/deleterole 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/role-manage.html#2 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoleDeleteRoleResponse> ExecuteWxaApiBroadcastRoleDeleteRoleAsync(this WechatApiClient client, Models.WxaApiBroadcastRoleDeleteRoleRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "broadcast", "role", "deleterole")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleDeleteRoleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxaapi/broadcast/role/getrolelist 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/role-manage.html#4 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaApiBroadcastRoleGetRoleListResponse> ExecuteWxaApiBroadcastRoleGetRoleListAsync(this WechatApiClient client, Models.WxaApiBroadcastRoleGetRoleListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "role", "getrolelist")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("keyword", request.Keyword)
-                .SetQueryParam("role", request.Role)
-                .SetQueryParam("offset", request.Offset)
-                .SetQueryParam("limit", request.Limit);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleGetRoleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
         #endregion
 
         #region MiniShop
@@ -1404,7 +1398,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/wxaembedded/get_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/getEmbeddedList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/embedded-management/api_getembeddedlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1429,7 +1423,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/wxaembedded/get_own_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/getOwnList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/embedded-management/api_getownlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1454,7 +1448,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/add_embedded 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/addEmbedded.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/embedded-management/api_addembedded.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1477,7 +1471,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/del_embedded 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/deleteEmbedded.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/embedded-management/api_deleteembedded.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1500,7 +1494,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/del_authorize 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/deleteAuthorizedEmbedded.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/embedded-management/api_deleteauthorizedembedded.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1523,7 +1517,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/set_authorize 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/setAuthorizedEmbedded.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/embedded-management/api_setauthorizedembedded.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1548,7 +1542,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/wxamptrade/get_guarantee_status 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/transaction-guarantee/GetGuaranteeStatus.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/basic/api_getguaranteestatus.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1571,7 +1565,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxaapi/wxamptrade/get_penalty_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/transaction-guarantee/GetPenaltyList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/transaction-guarantee/basic/api_getpenaltylist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

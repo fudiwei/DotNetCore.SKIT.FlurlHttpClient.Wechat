@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/account/fastregister 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-registration-officalaccount/registerMiniprogramByOffiaccount.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-registration-officalaccount/api_registerminiprogrambyoffiaccount.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/account/getaccountbasicinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/basic-info-management/getAccountBasicInfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/basic-info-management/api_getaccountbasicinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/account/modifyheadimage 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/basic-info-management/setHeadImage.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/basic-info-management/api_setheadimage.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/account/modifysignature 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/basic-info-management/setSignature.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/basic-info-management/api_setsignature.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

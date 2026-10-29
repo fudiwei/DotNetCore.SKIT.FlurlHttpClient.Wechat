@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/user/info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/usermanage/userinfo/api_userinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/usermanage/userinfo/api_userinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -31,7 +32,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/user/info/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/usermanage/userinfo/api_batchuserinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/usermanage/userinfo/api_batchuserinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -54,7 +56,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/user/info/updateremark 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Configuring_user_notes.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/usermanage/userinfo/api_updateremark.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/usermanage/userinfo/api_updateremark.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -77,7 +80,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/user/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Getting_a_User_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/usermanage/userinfo/api_getfans.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/usermanage/userinfo/api_getfans.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

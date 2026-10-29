@@ -7,8 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/img/qrcode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E4%BA%8C%E3%80%81%E4%BA%8C%E7%BB%B4%E7%A0%81-%E6%9D%A1%E7%A0%81%E8%AF%86%E5%88%AB%E6%8E%A5%E5%8F%A3 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.scanQRCode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/image/api_imgqrcode.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/image/api_imgqrcode.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/img/api_imgqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -41,8 +42,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/img/superresolution 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E4%B8%89%E3%80%81%E5%9B%BE%E7%89%87%E9%AB%98%E6%B8%85%E5%8C%96%E6%8E%A5%E5%8F%A3 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.superresolution.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/image/api_imgsuperresolution.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/image/api_imgsuperresolution.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/img/api_imgsuperresolution.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,8 +77,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/img/aicrop 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E5%9B%9B%E3%80%81%E5%9B%BE%E7%89%87%E6%99%BA%E8%83%BD%E8%A3%81%E5%89%AA%E6%8E%A5%E5%8F%A3 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.aiCrop.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/image/api_imgaicrop.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/image/api_imgaicrop.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/img/api_imgaicrop.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -108,11 +111,47 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region OCR
         /// <summary>
+        /// <para>异步调用 [POST] /cv/ocr/comm 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_commocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_commocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/ocr/api_commocr.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CVOCRCommonResponse> ExecuteCVOCRCommonAsync(this WechatApiClient client, Models.CVOCRCommonRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cv", "ocr", "comm")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.ImageUrl is not null)
+            {
+                flurlReq.SetQueryParam("img_url", request.ImageUrl);
+
+                return await client.SendFlurlRequestAsJsonAsync<Models.CVOCRCommonResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
+                return await client.SendFlurlRequestAsync<Models.CVOCRCommonResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/idcard 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.idcard.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_idcardocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_idcardocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/ocr/api_idcardocr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -146,8 +185,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/ocr/bankcard 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.bankcard.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_bankcardocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_bankcardocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/ocr/api_bankcardocr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -181,8 +221,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/ocr/driving 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.vehicleLicense.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_drivingocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_drivingocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/ocr/api_drivingocr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -216,8 +257,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/ocr/drivinglicense 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.driverLicense.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_drivingocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_drivingocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/ocr/api_drivinglicenseocr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -251,8 +293,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cv/ocr/bizlicense 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.businessLicense.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_bizlicenseocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_bizlicenseocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/img-ocr/ocr/api_bizlicenseocr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -283,44 +326,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cv/ocr/comm 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.printedText.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CVOCRCommonResponse> ExecuteCVOCRCommonAsync(this WechatApiClient client, Models.CVOCRCommonRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cv", "ocr", "comm")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.ImageUrl is not null)
-            {
-                flurlReq.SetQueryParam("img_url", request.ImageUrl);
-
-                return await client.SendFlurlRequestAsJsonAsync<Models.CVOCRCommonResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-            }
-            else
-            {
-                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
-                return await client.SendFlurlRequestAsync<Models.CVOCRCommonResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
-            }
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/platenum 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_platenumocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_platenumocr.html ]]> <br/>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

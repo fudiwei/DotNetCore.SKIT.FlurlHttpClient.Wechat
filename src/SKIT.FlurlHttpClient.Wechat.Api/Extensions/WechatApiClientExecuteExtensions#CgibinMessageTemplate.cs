@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/template/send 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/subscribe/api_templatesubscribe.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/template/api_sendtemplatemessage.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

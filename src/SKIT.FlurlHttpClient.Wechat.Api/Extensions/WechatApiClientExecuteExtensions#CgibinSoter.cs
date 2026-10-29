@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/soter/verify_signature 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/soter/soter.verifySignature.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/soter/api_verifysignature.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

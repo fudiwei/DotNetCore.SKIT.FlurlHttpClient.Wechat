@@ -4,7 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "VOICE" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html#%E8%AF%AD%E9%9F%B3%E6%B6%88%E6%81%AF ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/product/message/Receiving_standard_messages.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/message/Receiving_standard_messages.html ]]>
     /// </para>
     /// </summary>
     public class VoiceMessageEvent : WechatApiEvent

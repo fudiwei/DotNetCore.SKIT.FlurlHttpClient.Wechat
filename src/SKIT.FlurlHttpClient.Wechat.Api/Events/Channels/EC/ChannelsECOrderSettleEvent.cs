@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.channels_ec_order_settle" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_settle.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/notify/order_callback/channels_ec_order_settle.html ]]>
     /// </para>
     /// </summary>
     public class ChannelsECOrderSettleEvent : WechatApiEvent

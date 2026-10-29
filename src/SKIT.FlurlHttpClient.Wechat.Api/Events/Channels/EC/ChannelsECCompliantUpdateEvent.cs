@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.channels_ec_complaint_update" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/complaint/callback/channels_ec_complaint_update.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/notify/aftersale_callback/channels_ec_complaint_update.html ]]>
     /// </para>
     /// </summary>
     public class ChannelsECCompliantUpdateEvent : WechatApiEvent

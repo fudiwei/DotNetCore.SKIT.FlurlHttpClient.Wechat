@@ -4,8 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.update_invoice_status" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Invoicing_Platform_API_List.html#7 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#3.6 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
     /// </para>
     /// </summary>
     public class UpdateInvoiceStatusEvent : WechatApiEvent

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.submit_invoice_title" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Quick_issuing/Interface_Instructions.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Quick_issuing/Interface_Instructions.html ]]>
     /// </para>
     /// </summary>
     public class SubmitInvoiceTitleEvent : WechatApiEvent

@@ -6,13 +6,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/token 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getaccesstoken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/getaccesstoken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getaccesstoken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/basics/getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/access-token/api_getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_getaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/getaccesstoken.html ]]>
         /// </para>
         /// </summary>
@@ -38,11 +37,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/stable_token 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/getStableAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getStableAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getStableAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getStableAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getStableAccessToken.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getstableaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getstableaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getstableaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/access-token/api_getstableaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getstableaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_getstableaccesstoken.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -74,9 +74,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/ticket/getticket 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#54 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Vendor_API_List.html#1 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#2.1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/webdev/jssdk/api_getticket.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/webdev/js/api_getticket.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,7 +99,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/getcallbackip 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_the_WeChat_server_IP_address.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getcallbackip.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getcallbackip.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getcallbackip.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -123,7 +124,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/get_api_domain_ip 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_the_WeChat_server_IP_address.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getapidomainip.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getapidomainip.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getapidomainip.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -146,7 +149,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/callback/check 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Network_Detection.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_callbackcheck.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_callbackcheck.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_callbackcheck.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -169,7 +174,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/changeopenid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://kf.qq.com/faq/1901177NrqMr190117nqYJze.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/usermanage/changeopenid/api_changeopenid.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/usermanage/changeopenid/api_changeopenid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -192,7 +198,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/get_current_autoreply_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Getting_Rules_for_Auto_Replies.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/autoreplies/api_getcurrentautoreplyinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/autoreplies/api_getcurrentautoreplyinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

@@ -1,10 +1,10 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示回复 EVENT.waybill_complaint 回调通知事件的数据。</para>
+    /// <para>表示 "EVENT.waybill_complaint" 回调通知应答的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/single-delivery.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/event_push/express/provider/user_complaints.html ]]>
     /// </para>
     /// </summary>
     public class WaybillComplaintReply : WechatApiEvent

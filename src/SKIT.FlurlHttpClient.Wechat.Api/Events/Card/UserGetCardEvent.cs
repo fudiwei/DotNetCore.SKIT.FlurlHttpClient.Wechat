@@ -4,10 +4,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.user_get_card" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Distributing_Coupons_Vouchers_and_Cards.html#11 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#2 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Create_a_membership_card.html#13 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html#_10-4%E3%80%81%E8%B5%A0%E9%80%8124%E5%B0%8F%E6%97%B6%E5%AF%B9%E6%96%B9%E6%9C%AA%E9%A2%86%E5%8F%96%E9%80%80%E5%9B%9E%E5%90%8E%E7%9A%84%E4%BA%8B%E4%BB%B6 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Distributing_Coupons_Vouchers_and_Cards.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Coupons_Vouchers_and_Cards_Event_Push_Messages.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Membership_Cards/Create_a_membership_card.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]>
     /// </para>
     /// </summary>
     public class UserGetCardEvent : WechatApiEvent

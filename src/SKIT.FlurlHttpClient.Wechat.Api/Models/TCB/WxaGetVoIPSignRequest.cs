@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /tcb/getvoipsign 接口的请求。</para>
+    /// <para>表示 [POST] /wxa/getvoipsign 接口的请求。</para>
     /// </summary>
-    public class TCBGetVoIPSignRequest : WechatApiRequest, IInferable<TCBGetVoIPSignRequest, TCBGetVoIPSignResponse>
+    public class WxaGetVoIPSignRequest : WechatApiRequest, IInferable<WxaGetVoIPSignRequest, WxaGetVoIPSignResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/adddelayedfunctiontask 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.addDelayedFunctionTask.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/functions/api_adddelayedfunctiontask.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -27,10 +27,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/createpressuretesttask 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.createPressureTest.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,8 +48,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/createsendsmstask 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.createSendSmsTask.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.createSendSmsTask.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_createsendsmstask.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/cloudbase/api_createsendsmstask.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -76,8 +72,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/describeextensionuploadinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.describeExtensionUploadInfo.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.describeExtensionUploadInfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_describeextensionuploadinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/cloudbase/api_describeextensionuploadinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,8 +96,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/describesmsrecords 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.describeSmsRecords.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.describeSmsRecords.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_describesmsrecords.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/cloudbase/api_describesmsrecords.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -121,35 +117,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /tcb/getopendata 接口。</para>
+        /// <para>异步调用 [POST] /wxa/getopendata 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.getOpenData.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_getopendata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.TCBGetOpenDataResponse> ExecuteTCBGetOpenDataAsync(this WechatApiClient client, Models.TCBGetOpenDataRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.WxaGetOpenDataResponse> ExecuteWxaGetOpenDataAsync(this WechatApiClient client, Models.WxaGetOpenDataRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "getopendata")
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "getopendata")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBGetOpenDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetOpenDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/getpressuretestreport 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.getPressureTestReport.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -169,10 +161,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/getpressureteststatus 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.getPressureTestStatus.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -194,8 +182,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getstatistics 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.getStatistics.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.getStatistics.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_getcloudbasestatistics.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/cloudbase/api_getcloudbasestatistics.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -215,17 +203,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /tcb/getvoipsign 接口。</para>
+        /// <para>异步调用 [POST] /wxa/getvoipsign 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.getVoIPSign.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_getcloudbasevoipsign.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.TCBGetVoIPSignResponse> ExecuteTCBGetVoIPSignAsync(this WechatApiClient client, Models.TCBGetVoIPSignRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.WxaGetVoIPSignResponse> ExecuteWxaGetVoIPSignAsync(this WechatApiClient client, Models.WxaGetVoIPSignRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -241,19 +229,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "getvoipsign")
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "getvoipsign")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBGetVoIPSignResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetVoIPSignResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/cloudbasereport 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.report.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.report.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cloudbase/others/api_cloudbasereportapi.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/cloudbase/api_cloudbasereportapi.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -274,11 +262,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/sendsms 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.sendSms.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.sendSms.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -298,11 +281,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/sendsmsv2 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/cloudbase/cloudbase.sendSmsV2.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/cloudbase/cloudbase.sendSmsV2.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -325,7 +303,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/createclouduser 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/admin-management/createCloudUser.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/admin-management/api_createclouduser.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -348,7 +326,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getenvinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/env-management/getEnvInfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/env-management/api_getenvinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -371,7 +349,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/createenvandresource 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/env-management/createEnv.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/env-management/api_createenv.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -394,8 +372,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/modifyenv 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-batch/env-mgnt/changeTcbEnv.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/env-management/changeTcbEnv.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_changetcbenv.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_changetcbenv.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -418,7 +396,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/shareenv 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/env-management/shareEnv.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_sharecloudbaseenv.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -441,7 +419,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/usecloudaccesstoken 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/admin-management/setCloudAccessToken.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_setcloudaccesstoken.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -464,7 +442,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/checkmobile 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/admin-management/checkMobileConfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/admin-management/api_checkmobileconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -485,10 +463,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/uploadappconfig 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/uploadAppConfig.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -508,10 +482,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/getappconfig 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/getAppConfig.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -533,7 +503,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/setcallbackconfig 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/msg-push/setCallBackConfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/msg-push/api_setcallbackconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -556,7 +526,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getcallbackconfig 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/msg-push/getCallBackConfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/msg-push/api_getcallbackconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -579,7 +549,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getqcloudtoken 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/admin-management/getCloudToken.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/admin-management/api_getcloudtoken.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -602,7 +572,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/wxpaylist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/wechatpay/getWechatPayList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/wechatpay/api_getwechatpaylist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -625,7 +595,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/wxpayopenauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/wechatpay/getWechatPayAuth.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/wechatpay/api_getwechatpayauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -648,7 +618,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/batchdeletefile 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/file-management/deleteTcbCloudFile.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/file-mgnt/api_deletetcbfile.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -671,7 +641,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/batchdownloadfile 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/file-management/getDownloadTcbFileLink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/file-management/api_getdownloadtcbfilelink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -694,7 +664,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/uploadfile 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/file-management/getUploadTcbFileLink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/file-management/api_getuploadtcbfilelink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -717,7 +687,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/createfunction 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/createFunction.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/scf-mgnt/api_batchuuloadcloudfunction.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -740,7 +710,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getcodesecret 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/getCodeSecret.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/scf-management/api_getcodesecret.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -763,7 +733,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getuploadsignature 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/getYploadSignature.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/scf-management/api_getyploadsignature.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -786,7 +756,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/listfunctions 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/getFuntionList.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/scf-management/api_getfuntionlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -809,7 +779,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/downloadfunction 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/getFuntionLink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/scf-management/api_getfuntionlink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -832,7 +802,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/uploadfuncconfig 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/getUploadFuntionConfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/scf-management/api_getuploadfuntionconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -855,7 +825,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/getfuncconfig 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/getFuntionConfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/scf-management/api_getfuntionconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -878,8 +848,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/invokecloudfunction 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-batch/scf-mgnt/invokeCloudFunction.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/scf-management/invokeCloudFunction.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/scf-mgnt/api_invokecloudfunction.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/scf-mgnt/api_invokecloudfunction.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -905,7 +875,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databaseadd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/addDatabaseItem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_adddatabaseitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -928,7 +898,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databaseaggregate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/file-management/aggregateDatabase.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/db-mgnt/api_dbaggregate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -951,7 +921,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasecollectionadd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/addDatabaseCollection.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_adddatabasecollection.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -974,7 +944,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasecollectiondelete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/deleteDatabaseCollection.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_deletedatabasecollection.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -997,7 +967,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasecollectionget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/getDatabaseCollection.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_getdatabasecollection.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1020,7 +990,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasecount 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/getDatabaseCount.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_getdatabasecount.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1043,7 +1013,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasedelete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/deleteDatabaseItem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_deletedatabaseitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1066,7 +1036,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasemigrateexport 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/exportDatabaseItem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/db-mgnt/api_dbexport.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1089,7 +1059,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasemigrateimport 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/importDatabaseItem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/db-mgnt/api_dbimport.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1112,7 +1082,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasemigratequeryinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/getDatabaseRecord.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_getdatabaserecord.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1135,7 +1105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databasequery 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/databasequery.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_getdatabaserecord.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1158,7 +1128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/databaseupdate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudbase-common/db-management/updateDatabaseIndex.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_updatedatabaseindexs.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1181,7 +1151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /tcb/updateindex 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/updateindexinfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-common/db-management/api_updatedatabaseindexs.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

@@ -4,7 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.FREEPUBLISHJOBFINISH" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Publish/Callback_on_finish.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublish_submit.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/public/api_freepublish_submit.html ]]>
     /// </para>
     /// </summary>
     public class FreePublishJobFinishEvent : WechatApiEvent

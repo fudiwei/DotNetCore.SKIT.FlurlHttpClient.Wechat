@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/express/local/business/update_order 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/express/local/delivery/update_order 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessUpdateOrderRequest : CgibinExpressLocalBusinessRealMockUpdateOrderRequest, IInferable<CgibinExpressLocalBusinessUpdateOrderRequest, CgibinExpressLocalBusinessUpdateOrderResponse>
+    public class CgibinExpressLocalDeliveryUpdateOrderRequest : WechatApiRequest, IInferable<CgibinExpressLocalDeliveryUpdateOrderRequest, CgibinExpressLocalDeliveryUpdateOrderResponse>
     {
         public static class Types
         {
@@ -42,6 +42,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? Token { get; set; }
 
         /// <summary>
+        /// 获取或设置商家 ID。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.ImmeDeliveryAppSecret"/> 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("shopid")]
+        [System.Text.Json.Serialization.JsonPropertyName("shopid")]
+        public string? ShopId { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("shop_order_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("shop_order_id")]
+        public string? ShopOrderId { get; set; }
+
+        /// <summary>
         /// 获取或设置商家门店编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_no")]
@@ -61,6 +75,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("wxa_path")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_path")]
         public string? MiniProgramPagePath { get; set; }
+
+        /// <summary>
+        /// 获取或设置配送状态。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("order_status")]
+        [System.Text.Json.Serialization.JsonPropertyName("order_status")]
+        public int OrderStatus { get; set; }
+
+        /// <summary>
+        /// 获取或设置状态变更时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("action_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("action_time")]
+        public long ActionTimestamp { get; set; }
+
+        /// <summary>
+        /// 获取或设置附加信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("action_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("action_msg")]
+        public string? ActionMessage { get; set; }
 
         /// <summary>
         /// 获取或设置骑手信息。

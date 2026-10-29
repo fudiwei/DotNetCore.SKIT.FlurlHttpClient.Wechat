@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/menu/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Creating_Custom-Defined_Menu.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_createcustommenu.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_createcustommenu.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/get_current_selfmenu_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Querying_Custom_Menus.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_getcurrentselfmenuinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_getcurrentselfmenuinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +54,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/menu/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Deleting_Custom-Defined_Menu.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_deletemenu.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_deletemenu.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +78,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/menu/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Getting_Custom_Menu_Configurations.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_getmenu.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_getmenu.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -99,7 +103,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/menu/addconditional 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html#0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_addconditionalmenu.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_addconditionalmenu.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -122,7 +127,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/menu/delconditional 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html#1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_deleteconditionalmenu.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_deleteconditionalmenu.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -145,7 +151,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/menu/trymatch 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html#2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/custommenu/api_trymatchmenu.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/custommenu/api_trymatchmenu.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

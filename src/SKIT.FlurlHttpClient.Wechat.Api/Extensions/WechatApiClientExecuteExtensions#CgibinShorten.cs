@@ -3,33 +3,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static partial class WechatApiClientExecuteExtensions
     {
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/shorturl 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Account_Management/URL_Shortener.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinShortUrlResponse> ExecuteCgibinShortUrlAsync(this WechatApiClient client, Models.CgibinShortUrlRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "shorturl")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinShortUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/shorten/gen 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Account_Management/KEY_Shortener.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/qrcode/shorten/api_genshortkey.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/shorten/fetch 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Account_Management/KEY_Shortener.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/qrcode/shorten/api_fetchshorten.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

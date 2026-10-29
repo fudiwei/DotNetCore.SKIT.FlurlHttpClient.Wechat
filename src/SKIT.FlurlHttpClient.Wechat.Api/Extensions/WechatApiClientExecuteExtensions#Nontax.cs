@@ -2,92 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static partial class WechatApiClientExecuteExtensions
     {
-        #region Bill
-        /// <summary>
-        /// <para>异步调用 [POST] /nontax/getbillauthurl 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#2.2 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.NontaxGetBillAuthUrlResponse> ExecuteNontaxGetBillAuthUrlAsync(this WechatApiClient client, Models.NontaxGetBillAuthUrlRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            if (request.Timestamp is null)
-            {
-                request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
-            }
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "getbillauthurl")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxGetBillAuthUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /nontax/createbillcard 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#3.2 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.NontaxCreateBillCardResponse> ExecuteNontaxCreateBillCardAsync(this WechatApiClient client, Models.NontaxCreateBillCardRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "createbillcard")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxCreateBillCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /nontax/insertbill 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#3.5 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.NontaxInsertBillResponse> ExecuteNontaxInsertBillAsync(this WechatApiClient client, Models.NontaxInsertBillRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            if (request.AppId is null)
-            {
-                request.AppId = client.Credentials.AppId;
-            }
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "insertbill")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxInsertBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
         /// <summary>
         /// <para>异步调用 [POST] /nontax/queryfee 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxqueryfee.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -115,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/unifiedorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxunifiedorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -143,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/getorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxgetorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -171,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/refund 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxrefund.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -199,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/downloadbill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxdownloadbill.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -227,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/notifyinconsistentorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.6 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxnotifyinconsistentorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -255,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/mocknotification 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.7 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxmocknotification.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -283,7 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/mockqueryfee 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxmockqueryfee.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -311,7 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/micropay 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.9 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxmicropay.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -339,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/getorderlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#6.1.9 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxgetorderlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -367,7 +286,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/getrealname 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/API_document.html#9.3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/nontaxpay/api_nontaxgetrealname.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -386,74 +305,84 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendFlurlRequestAsJsonAsync<Models.NontaxGetRealNameResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        #region Vehicle
+        #region Bill
         /// <summary>
-        /// <para>异步调用 [POST] /nontax/vehicle/querystate 接口。</para>
+        /// <para>异步调用 [POST] /nontax/getbillauthurl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/Non-tax_driver_platform.html#2.1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html#2.2 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.NontaxVehicleQueryStateResponse> ExecuteNontaxVehicleQueryStateAsync(this WechatApiClient client, Models.NontaxVehicleQueryStateRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.NontaxGetBillAuthUrlResponse> ExecuteNontaxGetBillAuthUrlAsync(this WechatApiClient client, Models.NontaxGetBillAuthUrlRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            if (request.Timestamp is null)
+            {
+                request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
+            }
+
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "vehicle", "querystate")
+                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "getbillauthurl")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxVehicleQueryStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxGetBillAuthUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /nontax/vehicle/entrancenotify 接口。</para>
+        /// <para>异步调用 [POST] /nontax/createbillcard 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/Non-tax_driver_platform.html#2.2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html#3.2 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.NontaxVehicleEntranceNotifyResponse> ExecuteNontaxVehicleEntranceNotifyAsync(this WechatApiClient client, Models.NontaxVehicleEntranceNotifyRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.NontaxCreateBillCardResponse> ExecuteNontaxCreateBillCardAsync(this WechatApiClient client, Models.NontaxCreateBillCardRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "vehicle", "entrancenotify")
+                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "createbillcard")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxVehicleEntranceNotifyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxCreateBillCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /nontax/vehicle/payapply 接口。</para>
+        /// <para>异步调用 [POST] /nontax/insertbill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Non_tax_pay/Non-tax_driver_platform.html#2.3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html#3.5 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.NontaxVehiclePayApplyResponse> ExecuteNontaxVehiclePayApplyAsync(this WechatApiClient client, Models.NontaxVehiclePayApplyRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.NontaxInsertBillResponse> ExecuteNontaxInsertBillAsync(this WechatApiClient client, Models.NontaxInsertBillRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            if (request.AppId is null)
+            {
+                request.AppId = client.Credentials.AppId;
+            }
+
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "vehicle", "payapply")
+                .CreateFlurlRequest(request, HttpMethod.Post, "nontax", "insertbill")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxVehiclePayApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.NontaxInsertBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

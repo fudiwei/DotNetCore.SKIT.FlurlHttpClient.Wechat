@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/freepublish/submit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Publish/Publish.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublish_submit.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/public/api_freepublish_submit.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/freepublish/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Publish/Get_status.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublish_get.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/public/api_freepublish_get.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +54,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/freepublish/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Publish/Delete_posts.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublishdelete.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/public/api_freepublishdelete.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +78,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/freepublish/getarticle 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Publish/Get_article_from_id.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublishgetarticle.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/public/api_freepublishgetarticle.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +102,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/freepublish/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Publish/Get_publication_records.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/public/api_freepublish_batchget.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/public/api_freepublish_batchget.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

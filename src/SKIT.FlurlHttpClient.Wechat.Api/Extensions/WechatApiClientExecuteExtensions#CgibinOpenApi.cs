@@ -6,12 +6,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/clear_quota 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/API_Call_Limits.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/clearQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/openApi-mgnt/clearQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/clearQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/clearQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/apimgnt/clearQuota.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/apimanage/api_clearquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/apimanage/api_clearquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/openApi-mgnt/api_clearquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_clearquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_clearquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/openapi/api_clearquota.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -39,10 +39,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/clear_quota/v2 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/openApi/clearQuotaByAppSecret.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/clearQuotaByAppSecret.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/clearQuotaByAppSecret.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/apimgnt/clearQuotaByAppSecret.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/apimanage/api_clearquotabyappsecret.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/apimanage/api_clearquotabyappsecret.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/openApi-mgnt/api_clearquotabyappsecret.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_clearquotabyappsecret.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_clearquotabyappsecret.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/openapi/api_componentclearquota_v2.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -76,12 +78,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/openapi/quota/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/openApi/get_api_quota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/getApiQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/openApi-mgnt/getApiQuota.html ]]>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/getApiQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/getApiQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/apimgnt/getApiQuota.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/apimanage/api_getapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/apimanage/api_getapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/openApi-mgnt/api_getapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_getapiquota.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/openapi/api_getapiquota.html ]]> <br/>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,14 +102,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinOpenApiQuotaGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/openapi/quota/clear 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/clearApiQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/clearApiQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/apimgnt/clearApiQuota.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/apimanage/api_clearapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/apimanage/api_clearapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/openApi-mgnt/api_clearapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_clearapiquota.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_clearapiquota.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -130,11 +133,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/openapi/rid/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/openApi/get_rid_info.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/getRidInfo.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/openApi-mgnt/getRidInfo.html ]]>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/getRidInfo.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/getRidInfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/apimanage/api_getridinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/apimanage/api_getridinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/openApi-mgnt/api_getridinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getridinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/common/api_getridinfo.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/openapi/api_getridinfo.html ]]> <br/>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

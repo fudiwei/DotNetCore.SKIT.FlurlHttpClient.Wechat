@@ -1,10 +1,11 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示被动回复视频消息的数据。</para>
+    /// <para>表示 "video" 回调通知应答的数据</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html#3 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/product/message/Passive_user_reply_message.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/message/Passive_user_reply_message.html ]]>
     /// </para>
     /// </summary>
     public class VideoMessageReply : WechatApiEvent
@@ -45,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Video")]
         [System.Text.Json.Serialization.JsonPropertyName("Video")]
         [System.Xml.Serialization.XmlElement("Video")]
-        public Types.Video Video { get; set; }
+        public Types.Video? Video { get; set; }
 
         public VideoMessageReply()
         {

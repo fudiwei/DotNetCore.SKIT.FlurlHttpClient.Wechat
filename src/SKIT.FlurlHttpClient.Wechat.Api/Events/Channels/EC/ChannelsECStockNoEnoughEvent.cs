@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.channels_ec_stock_no_enough" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/callback_inventory.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/dev_before/locallife/callback/stock/Low_inventory_callback.html ]]>
     /// </para>
     /// </summary>
     public class ChannelsECStockNoEnoughEvent : WechatApiEvent

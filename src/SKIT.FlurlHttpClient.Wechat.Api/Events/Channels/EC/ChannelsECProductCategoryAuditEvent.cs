@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.product_category_audit" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/category/callback/ProductCategoryAudit.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/notify/category_callback/ProductCategoryAudit.html ]]>
     /// </para>
     /// </summary>
     public class ChannelsECProductCategoryAuditEvent : WechatApiEvent

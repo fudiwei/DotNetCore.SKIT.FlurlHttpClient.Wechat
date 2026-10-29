@@ -4,56 +4,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         #region Article
         /// <summary>
-        /// <para>异步调用 [POST] /datacube/getusersummary 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/User_Analysis_Data_Interface.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.DataCubeGetUserSummaryResponse> ExecuteDataCubeGetUserSummaryAsync(this WechatApiClient client, Models.DataCubeGetUserSummaryRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusersummary")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /datacube/getusercumulate 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/User_Analysis_Data_Interface.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.DataCubeGetUserCumulateResponse> ExecuteDataCubeGetUserCumulateAsync(this WechatApiClient client, Models.DataCubeGetUserCumulateRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusercumulate")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserCumulateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /datacube/getarticlesummary 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getarticlesummary.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getarticlesummary.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -76,7 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getarticletotal 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getarticletotal.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getarticletotal.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,10 +54,59 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region User
         /// <summary>
+        /// <para>异步调用 [POST] /datacube/getusersummary 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/user/api_getusersummary.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/user/api_getusersummary.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetUserSummaryResponse> ExecuteDataCubeGetUserSummaryAsync(this WechatApiClient client, Models.DataCubeGetUserSummaryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusersummary")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getusercumulate 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/user/api_getusercumulate.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/user/api_getusercumulate.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetUserCumulateResponse> ExecuteDataCubeGetUserCumulateAsync(this WechatApiClient client, Models.DataCubeGetUserCumulateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusercumulate")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserCumulateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /datacube/getuserread 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getuserread.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getuserread.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -124,7 +129,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getuserreadhour 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getuserreadhour.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getuserreadhour.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -147,7 +153,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getusershare 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getusershare.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getusershare.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -170,7 +177,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getusersharehour 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getusersharehour.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getusersharehour.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -195,7 +203,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsg 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsg.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsg.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -218,7 +227,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsghour 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsghour.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsghour.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -241,7 +251,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsgweek 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsgweek.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsgweek.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -264,7 +275,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsgmonth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsgmonth.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsgmonth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -287,7 +299,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsgdist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsgdist.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsgdist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -310,7 +323,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsgdistweek 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsgdistweek.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsgdistweek.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -333,7 +347,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getupstreammsgdistmonth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Message_analysis_data_interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/mess/api_getupstreammsgdistmonth.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/mess/api_getupstreammsgdistmonth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -358,7 +373,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getinterfacesummary 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Analytics_API.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/api/api_getinterfacesummary.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/api/api_getinterfacesummary.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -381,7 +397,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getinterfacesummaryhour 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Analytics/Analytics_API.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/api/api_getinterfacesummaryhour.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/api/api_getinterfacesummaryhour.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -406,7 +423,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getcardbizuininfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#10 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -429,7 +446,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getcardcardinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#11 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -452,7 +469,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getcardmembercardinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#12 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -475,7 +492,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getcardmembercarddetail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Managing_Coupons_Vouchers_and_Cards.html#13 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Managing_Coupons_Vouchers_and_Cards.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -500,7 +517,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappiddailyretaininfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getDailyRetain.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/visit-retain/api_getdailyretain.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -523,7 +540,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappidmonthlyretaininfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getMonthlyRetain.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/visit-retain/api_getmonthlyretain.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -546,7 +563,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappidweeklyretaininfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getWeeklyRetain.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/visit-retain/api_getweeklyretain.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -569,7 +586,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappiddailysummarytrend 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getDailySummary.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/others/api_getdailysummary.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -592,7 +609,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappiddailyvisittrend 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getDailyVisitTrend.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/visit-trend/api_getdailyvisittrend.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -615,7 +632,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappidmonthlyvisittrend 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getMonthlyVisitTrend.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/visit-trend/api_getmonthlyvisittrend.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -638,7 +655,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappidweeklyvisittrend 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getWeeklyVisitTrend.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/visit-trend/api_getweeklyvisittrend.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -661,7 +678,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappiduserportrait 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/others/api_getuserportrait.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -684,7 +701,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappidvisitdistribution 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getVisitDistribution.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/others/api_getvisitdistribution.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -707,7 +724,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getweanalysisappidvisitpage 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getVisitPage.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/data-analysis/others/api_getvisitpage.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -732,7 +749,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /datacube/getgameanalysisdata 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data-analysis/analysis.getGameAnalysisData.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/data-analysis/api_analysis.getgameanalysisdata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/game/content_spam/msg_sec_check 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/wxa-sec-check/gamesecurity.msgSecCheck.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/wxa-sec-check/api_gamemsgseccheck.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/game/content_spam/media_check_sync 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/wxa-sec-check/gamesecurity.mediaCheck.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/wxa-sec-check/api_gamesecurity.mediacheck.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment-v2/pay_v2.getBalance.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/game_currency/api_pay_v2.getbalance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -140,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment-v2/pay_v2.pay.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/game_currency/api_pay_v2.pay.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -169,7 +169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment-v2/pay_v2.cancelPay.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/game_currency/api_pay_v2.cancelpay.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -198,7 +198,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment-v2/pay_v2.present.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/game_currency/api_pay_v2.present.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -226,7 +226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/game/queryorderinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment-v2/pay_v2.queryOrder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/order/api_pay_v2.queryorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

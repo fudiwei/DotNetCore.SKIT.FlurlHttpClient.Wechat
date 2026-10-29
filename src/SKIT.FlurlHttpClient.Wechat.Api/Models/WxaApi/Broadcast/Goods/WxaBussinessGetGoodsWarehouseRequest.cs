@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxaapi/broadcast/getgoodswarehouse 接口的请求。</para>
+    /// <para>表示 [POST] /wxa/business/getgoodswarehouse 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGetGoodsWarehouseRequest : WechatApiRequest, IInferable<WxaApiBroadcastGetGoodsWarehouseRequest, WxaApiBroadcastGetGoodsWarehouseResponse>
+    public class WxaBussinessGetGoodsWarehouseRequest : WechatApiRequest, IInferable<WxaBussinessGetGoodsWarehouseRequest, WxaBussinessGetGoodsWarehouseResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID 列表。

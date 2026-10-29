@@ -8,7 +8,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/material/add_material 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Adding_Permanent_Assets.html#%E6%96%B0%E5%A2%9E%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E6%B0%B8%E4%B9%85%E7%B4%A0%E6%9D%90 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/material/permanent/api_addmaterial.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/material/permanent/api_addmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -63,7 +64,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/material/get_material 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Getting_Permanent_Assets.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/material/permanent/api_getmaterial.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/material/permanent/api_getmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -86,7 +88,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/material/get_material 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Getting_Permanent_Assets.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/material/permanent/api_getmaterial.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/material/permanent/api_getmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -109,7 +112,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/material/del_material 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Deleting_Permanent_Assets.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/material/permanent/api_delmaterial.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/material/permanent/api_delmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -132,7 +136,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/material/get_materialcount 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Get_the_total_of_all_materials.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/material/permanent/api_getmaterialcount.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/material/permanent/api_getmaterialcount.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -155,7 +160,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/material/batchget_material 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Get_materials_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/material/permanent/api_batchgetmaterial.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/material/permanent/api_batchgetmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

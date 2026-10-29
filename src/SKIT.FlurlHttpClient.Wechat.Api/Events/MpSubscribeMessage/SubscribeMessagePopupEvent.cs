@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.subscribe_msg_popup_event" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Subscription_Messages/api.html#%E4%BA%8B%E4%BB%B6%E6%8E%A8%E9%80%81 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/subscription_messages/push.html ]]>
     /// </para>
     /// </summary>
     public class SubscribeMessagePopupEvent : WechatApiEvent

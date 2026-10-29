@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.card_merchant_check_result" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#2 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
     /// </para>
     /// </summary>
     public class CardMerchantCheckResultEvent : CardPassCheckEvent

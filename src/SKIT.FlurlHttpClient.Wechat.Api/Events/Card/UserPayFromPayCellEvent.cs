@@ -4,8 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.user_pay_from_pay_cell" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Create_a_Coupon_Voucher_or_Card.html#13 ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#6 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Create_a_Coupon_Voucher_or_Card.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Coupons_Vouchers_and_Cards_Event_Push_Messages.html ]]>
     /// </para>
     /// </summary>
     public class UserPayFromPayCellEvent : WechatApiEvent

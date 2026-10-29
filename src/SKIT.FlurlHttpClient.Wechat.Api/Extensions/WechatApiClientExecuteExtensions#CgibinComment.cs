@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/open 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_openarticlecomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_openarticlecomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/close 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_closecomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_closecomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +54,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_listcomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_listcomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +78,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/markelect 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_electcomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_electcomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +102,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/unmarkelect 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_unelectcomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_unelectcomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -121,7 +126,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_delcomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_delcomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -145,7 +151,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/reply/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_replycomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_replycomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -168,7 +175,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/comment/reply/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/leaving/api_delreplycomment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/leaving/api_delreplycomment.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

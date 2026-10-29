@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/wxaauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/weapp-wxverify/secwxaapi_wxaauth.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/weapp-wxverify/api_secwxaapi_wxaauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/reauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/weapp-wxverify/secwxaapi_reauth.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/weapp-wxverify/api_secwxaapi_reauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/queryauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/weapp-wxverify/secwxaapi_queryauth.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/weapp-wxverify/api_secwxaapi_queryauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/uploadauthmaterial 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/weapp-wxverify/secwxaapi_uploadauthmaterial.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/weapp-wxverify/api_secwxaapi_uploadauthmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/authidentitytree 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/weapp-wxverify/secwxaapi_authidentitytree.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/weapp-wxverify/api_secwxaapi_authidentitytree.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -370,7 +370,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/authorizedrama 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_5-1-%E5%A2%9E%E5%8A%A0%E5%89%A7%E7%9B%AE%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizedrama/api_authorizedrama.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -393,7 +393,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/deauthorizedrama 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_5-2-%E8%A7%A3%E9%99%A4%E5%89%A7%E7%9B%AE%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizedrama/api_deauthorizedrama.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -416,7 +416,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getauthorizeobjects 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_5-3-%E6%9F%A5%E8%AF%A2%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizedrama/api_getauthorizeobjects.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -439,7 +439,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getauthorizedobjects 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_5-4-%E6%9F%A5%E8%AF%A2%E8%A2%AB%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizeapp/api_getauthorizedobjects.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -462,7 +462,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/authorizeapp 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-1-%E5%A2%9E%E5%8A%A0%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizeapp/api_authorizeapp.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -485,7 +485,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/deauthorizeapp 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-2-%E8%A7%A3%E9%99%A4%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizeapp/api_deauthorizeapp.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -508,7 +508,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxa/sec/vod/getauthorizeapps 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-2-%E8%A7%A3%E9%99%A4%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizeapp/api_getauthorizeapps.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -531,7 +531,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /wxa/sec/vod/getauthorizedapps 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-4-%E6%9F%A5%E8%AF%A2%E8%A2%AB%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizeapp/api_getauthorizedapps.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -554,7 +554,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/authorizecopyright 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-1-%E5%A2%9E%E5%8A%A0%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizecopyright/api_authorizecopyright.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -577,7 +577,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/deauthorizecopyright 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-2-%E8%A7%A3%E9%99%A4%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizecopyright/api_deauthorizecopyright.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -600,7 +600,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getcopyrightauthorizationlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-3-%E6%9F%A5%E8%AF%A2%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizecopyright/api_getcopyrightauthorizationlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -623,7 +623,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getcopyrightauthorizedlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-4-%E6%9F%A5%E8%AF%A2%E8%A2%AB%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/authorizecopyright/api_getcopyrightauthorizedlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -648,7 +648,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/singlefileupload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_1-1-%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_fileupload/api_singlefileupload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -676,7 +676,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/pullupload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_1-2-%E6%8B%89%E5%8F%96%E4%B8%8A%E4%BC%A0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_fileupload/api_pullupload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -699,7 +699,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/gettask 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_1-3-%E6%9F%A5%E8%AF%A2%E4%BB%BB%E5%8A%A1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_fileupload/api_gettask.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -722,7 +722,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/applyupload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_1-4-%E7%94%B3%E8%AF%B7%E5%88%86%E7%89%87%E4%B8%8A%E4%BC%A0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_fileupload/api_applyupload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -745,7 +745,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/uploadpart 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_1-5-%E4%B8%8A%E4%BC%A0%E5%88%86%E7%89%87 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_fileupload/api_uploadpart.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -773,7 +773,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/commitupload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_1-6-%E7%A1%AE%E8%AE%A4%E4%B8%8A%E4%BC%A0 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_fileupload/api_commitupload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -798,7 +798,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/listmedia 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_2-1-%E8%8E%B7%E5%8F%96%E5%AA%92%E8%B5%84%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_media/api_listmedia.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -821,7 +821,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getmedia 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_2-2-%E8%8E%B7%E5%8F%96%E5%AA%92%E8%B5%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_media/api_getmedia.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -844,7 +844,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getmedialink 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_2-3-%E8%8E%B7%E5%8F%96%E5%AA%92%E8%B5%84%E6%92%AD%E6%94%BE%E9%93%BE%E6%8E%A5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_media/api_getmedialink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -867,7 +867,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/deletemedia 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_2-4-%E5%88%A0%E9%99%A4%E5%AA%92%E8%B5%84 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/vod_media/api_deletemedia.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -892,7 +892,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/auditdrama 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-1-%E5%89%A7%E7%9B%AE%E6%8F%90%E5%AE%A1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_auditdrama.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -915,7 +915,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/listdramas 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-2-%E8%8E%B7%E5%8F%96%E5%89%A7%E7%9B%AE%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_listdramas.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -938,7 +938,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getdrama 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-3-%E8%8E%B7%E5%8F%96%E5%89%A7%E7%9B%AE%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_getdrama.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -961,7 +961,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/submitreplacedramamedias 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-4-%E6%8F%90%E4%BA%A4%E6%9B%BF%E6%8D%A2%E5%89%A7%E9%9B%86%E5%AE%A1%E6%A0%B8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_submitreplacemedias.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -984,7 +984,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/replacedramamedia 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-5-%E6%9B%BF%E6%8D%A2%E5%AE%A1%E6%A0%B8%E9%80%9A%E8%BF%87%E7%9A%84%E5%89%A7%E9%9B%86 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_replacedramamedia.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1007,7 +1007,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/modifydramabasicinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-6-%E4%BF%AE%E6%94%B9%E5%89%A7%E7%9B%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_submitmodifydramabasicinforeq.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1030,7 +1030,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/sec/vod/getdramalatestauditinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-7-%E6%9F%A5%E8%AF%A2%E5%89%A7%E7%9B%AE%E5%AE%A1%E6%A0%B8%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/minidrama/auditdrama/api_getdramalatestauditinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

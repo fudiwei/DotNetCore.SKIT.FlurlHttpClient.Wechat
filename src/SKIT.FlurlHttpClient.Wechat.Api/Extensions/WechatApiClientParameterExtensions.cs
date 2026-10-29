@@ -11,7 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成公众号 JS-SDK `wx.config` 所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/h5/jssdk.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/h5/jssdk.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -41,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成公众号 JS-SDK `wx.chooseInvoice` 接口所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Auto-print/API_Documentation.html#_6-4-%E5%8F%91%E7%A5%A8%E7%AD%BE%E5%90%8D%E6%96%B9%E6%B3%95 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Auto-print/API_Documentation.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -74,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成公众号网页授权 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/h5/auth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -91,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成公众号网页授权 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/h5/auth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -118,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成代公众号网页授权 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Official_Accounts/official_account_website_authorization.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/Before_Develop/Official_Accounts/official_account_website_authorization.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -136,7 +137,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成代公众号网页授权 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Official_Accounts/official_account_website_authorization.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/Before_Develop/Official_Accounts/official_account_website_authorization.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -165,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成公众号管理员向第三方平台授权 URL（H5 版）。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Authorization_Process_Technical_Description.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/Before_Develop/Authorization_Process_Technical_Description.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -195,7 +196,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>生成公众号管理员向第三方平台授权 URL（PC 版）。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Authorization_Process_Technical_Description.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/Before_Develop/Authorization_Process_Technical_Description.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

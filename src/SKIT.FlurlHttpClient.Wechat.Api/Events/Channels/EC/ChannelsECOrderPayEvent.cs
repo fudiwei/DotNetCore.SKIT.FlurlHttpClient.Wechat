@@ -4,8 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.channels_ec_order_pay" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_pay.html ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/callback_success.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/dev_before/locallife/callback/purchase/Order_payment_success_notification.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/notify/order_callback/channels_ec_order_pay.html ]]>
     /// </para>
     /// </summary>
     public class ChannelsECOrderPayEvent : WechatApiEvent

@@ -1,10 +1,11 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示被动回复图文消息的数据。</para>
+    /// <para>表示 "news" 回调通知应答的数据</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html#5 ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/guide/product/message/Passive_user_reply_message.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/message/Passive_user_reply_message.html ]]>
     /// </para>
     /// </summary>
     public class NewsMessageReply : WechatApiEvent
@@ -72,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Articles")]
         [System.Text.Json.Serialization.JsonPropertyName("Articles")]
         [System.Xml.Serialization.XmlElement("Articles")]
-        public Types.ArticleList ArticleList { get; set; }
+        public Types.ArticleList? ArticleList { get; set; }
 
         public NewsMessageReply()
         {

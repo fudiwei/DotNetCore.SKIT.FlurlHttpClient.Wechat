@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/business/register 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%88%9B%E5%BB%BA%E5%95%86%E6%88%B7 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/kf-mgnt/kf-management/api_registerbusiness.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/business/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E6%9B%B4%E6%96%B0%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/kf-mgnt/kf-management/api_updatebusiness.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/business/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E6%8B%89%E5%8F%96%E5%8D%95%E4%B8%AA%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/kf-mgnt/kf-management/api_getbusiness.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/business/list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E6%8B%89%E5%8F%96%E5%A4%9A%E4%B8%AA%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/kf-mgnt/kf-management/api_listbusiness.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

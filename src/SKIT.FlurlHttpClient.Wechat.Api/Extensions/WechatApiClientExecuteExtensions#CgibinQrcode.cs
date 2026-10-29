@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/qrcode/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/qrcode/qrcodes/api_createqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

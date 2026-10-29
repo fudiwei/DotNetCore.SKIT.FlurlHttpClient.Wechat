@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/marketcode/applycode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Unique_Item_Code/Unique_Item_Code_API_Documentation.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/onecode/api_intp_marketcode_applycode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/marketcode/applycodequery 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Unique_Item_Code/Unique_Item_Code_API_Documentation.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/onecode/api_intp_marketcode_applycodequery.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/marketcode/applycodedownload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Unique_Item_Code/Unique_Item_Code_API_Documentation.html#6 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/onecode/api_intp_marketcode_applycodedownload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/marketcode/codeactive 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Unique_Item_Code/Unique_Item_Code_API_Documentation.html#7 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/onecode/api_intp_marketcode_codeactive.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/marketcode/codeactivequery 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Unique_Item_Code/Unique_Item_Code_API_Documentation.html#8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/onecode/api_intp_marketcode_codeactivequery.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /intp/marketcode/tickettocode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Unique_Item_Code/Unique_Item_Code_API_Documentation.html#9 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/onecode/api_intp_marketcode_tickettocode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

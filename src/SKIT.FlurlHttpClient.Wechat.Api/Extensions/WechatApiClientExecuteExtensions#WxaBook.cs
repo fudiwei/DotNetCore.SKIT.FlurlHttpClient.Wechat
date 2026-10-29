@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/createbook 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E5%88%9B%E5%BB%BA%E4%BD%9C%E5%93%81 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_createbook.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/updatebook 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E7%BC%96%E8%BE%91%E4%BD%9C%E5%93%81 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_updatebook.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/deletebook 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E5%88%A0%E9%99%A4%E4%BD%9C%E5%93%81 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_deletebook.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/listbook 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%8E%B7%E5%8F%96%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_listbook.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/getbook 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%8E%B7%E5%8F%96%E4%BD%9C%E5%93%81%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_getbook.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/createchapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E4%B8%8A%E4%BC%A0%E7%AB%A0%E8%8A%82 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_createchapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/batchcreatechapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E7%AB%A0%E8%8A%82 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_batchcreatechapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/deletechapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E5%88%A0%E9%99%A4%E7%AB%A0%E8%8A%82 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_deletechapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -190,7 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/replacechapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E6%9B%BF%E6%8D%A2%E7%AB%A0%E8%8A%82 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_replacechapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -213,7 +213,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/listchapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%8E%B7%E5%8F%96%E7%AB%A0%E8%8A%82%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_listchapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -236,7 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/getchapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%8E%B7%E5%8F%96%E7%AB%A0%E8%8A%82%E4%BF%A1%E6%81%AF ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_getchapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -259,7 +259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/reorderchapter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%B0%83%E6%95%B4%E7%AB%A0%E8%8A%82%E9%A1%BA%E5%BA%8F ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_reorderchapter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -282,7 +282,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/updatechapterseq 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%B0%83%E6%95%B4%E7%AB%A0%E8%8A%82%E7%9B%B8%E5%AF%B9%E9%A1%BA%E5%BA%8F ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_updatechapterseq.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -305,7 +305,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/auditbook 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E4%BD%9C%E5%93%81%E6%8F%90%E5%AE%A1 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/business/api_auditbook.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -329,7 +329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/addbookauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E6%96%B0%E5%A2%9E%E8%B4%A6%E5%8F%B7-%E5%B0%8F%E8%AF%B4%E6%8E%88%E6%9D%83 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/auth/api_addbookauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -352,8 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/querybookauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E6%9F%A5%E7%9C%8B%E4%B8%BB%E6%8E%88%E6%9D%83%E5%85%B3%E7%B3%BB%E5%88%97%E8%A1%A8 ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E6%9F%A5%E7%9C%8B%E8%A2%AB%E6%8E%88%E6%9D%83%E5%85%B3%E7%B3%BB%E5%88%97%E8%A1%A8 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/auth/api_querybookauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -376,7 +375,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /wxa/book/delbookauth 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E7%9A%84%E6%8E%88%E6%9D%83%E5%85%B3%E7%B3%BB ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/novel/auth/api_delbookauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

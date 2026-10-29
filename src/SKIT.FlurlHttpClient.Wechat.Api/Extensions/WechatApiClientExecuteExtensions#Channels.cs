@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/genaftersaleorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/genaftersaleorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_genaftersaleorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -30,8 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/getaftersalelist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/getaftersalelist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/getaftersalelist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_getaftersalelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -54,9 +53,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/getaftersaleorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/getaftersaleorder.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/query_after-sales.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/getaftersaleorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/automatically/api_getaftersaleorder.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_getaftersaleorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -79,8 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/acceptapply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/acceptapply.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/acceptapply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_acceptapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -103,8 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/rejectapply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/rejectapply.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/rejectapply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_rejectapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -127,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/acceptexchangereship 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/acceptexchangereship.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_acceptexchangereship.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -150,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/rejectexchangereship 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/rejectexchangereship.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_rejectexchangereship.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -173,7 +169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/merchantupdateaftersale 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/merchantupdateaftersale.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_merchantupdateaftersale.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -196,8 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/uploadrefundcertificate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/uploadrefundcertificate.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/uploadrefundcertificate.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_uploadrefundcertificate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -220,7 +215,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/refundpricediff 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_refundpricediff.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_refundpricediff.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -336,8 +331,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/addcomplaintmaterial 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/complaint/addcomplaintmaterial.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/complaint/addcomplaintmaterial.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/complaint/api_addcomplaintmaterial.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -360,8 +354,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/addcomplaintproof 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/complaint/addcomplaintproof.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/complaint/addcomplaintproof.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/complaint/api_addcomplaintproof.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -384,8 +377,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/getcomplaintorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/complaint/getcomplaintorder.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/complaint/getcomplaintorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/complaint/api_getcomplaintorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -433,7 +425,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/searchguaranteeorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/searchguaranteeorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/guarantee/api_searchguaranteeorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -456,7 +448,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/getguaranteeorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/getguaranteeorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/guarantee/api_getguaranteeorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -479,7 +471,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/merchantacceptguarantee 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/merchantacceptguarantee.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/guarantee/api_merchantacceptguarantee.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -502,7 +494,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/merchantrefuseguarantee 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/merchantrefuseguarantee.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/guarantee/api_merchantrefuseguarantee.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -525,7 +517,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/merchantmodifyguarantee 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/merchantmodifyguarantee.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/guarantee/api_merchantmodifyguarantee.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -548,7 +540,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/merchantproofguarantee 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/merchantproofguarantee.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/guarantee/api_merchantproofguarantee.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -573,8 +565,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/reason/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/getaftersalereason.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/getaftersalereason.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_getaftersalereason.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -597,8 +588,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/rejectreason/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/getrejectreason.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/getrejectreason.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_getaftersalerejectreason.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -623,7 +613,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/applyvirtualtelnum 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/applyvirtualtelnumber.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_applyvirtualtelnum.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -699,8 +689,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /channels/ec/basics/info/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getbasicinfo.html ]]>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getbasicinfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/storemanage/api_mmecapi_basicinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -723,8 +712,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/img/upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/img_upload.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/img_upload.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_img_upload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -763,8 +751,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/qualification/upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/qualificationupload.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/qualificationupload.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_qualificationupload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -798,8 +785,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/addresscode/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getaddresscode.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getaddresscode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_getaddresscode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -822,7 +808,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /channels/ec/basics/media/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getdatabymediaid.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_getdatabymediaid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -943,7 +929,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/background/apply/submit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/submit_background_apply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/api_submitbackgroundapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -966,7 +952,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/background/apply/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/cancel_background_apply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/api_cancelbackgroundapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -989,7 +975,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/background/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/get_background.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/api_getbackground.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1012,7 +998,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/background/remove 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/remove_background.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/background/api_removebackground.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1037,7 +1023,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/banner/apply/submit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/submit_banner_apply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/api_submitbannerapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1060,7 +1046,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/banner/apply/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/cancel_banner_apply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/api_cancelbannerapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1083,7 +1069,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/banner/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/get_banner.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/api_getbanner.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1106,7 +1092,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/banner/remove 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/remove_banner.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/banner/api_removebanner.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1131,7 +1117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/shop/h5url/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getshoph5url.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/storemanage/api_getshoph5url.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1154,7 +1140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/shop/taglink/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getshoptaglink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/storemanage/api_getshoptaglink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1177,7 +1163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/basics/shop/qrcode/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/basics/getshopqrcode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/storemanage/api_getshopqrcode.html ]]>
         /// </para> 
         /// </summary>
         /// <param name="client"></param>
@@ -1203,8 +1189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/all 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/all_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/all_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_getallbrandslogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1227,8 +1212,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/add.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_addbrandlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1251,8 +1235,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_updatebrandlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1275,8 +1258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/audit/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/audit_cancel.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/audit_cancel.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_cancelauditbrandlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1299,8 +1281,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/delete.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/delete.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_deletebrandlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1323,8 +1304,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_getbrandlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1347,8 +1327,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/list_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_getbrandlistlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1371,8 +1350,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/brand/valid/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/brand/valid_list_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/valid_list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_getvalidbrandlistlogic.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1397,8 +1375,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/category/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/category/add.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/category/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-category/api_addcategory.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1421,7 +1398,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /channels/ec/category/league/all 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/basic/category/getallcategory.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/category/api_getallcategoryfromleague.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1446,7 +1423,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/commkf/cosupload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/kf/upload_cos/upload_cos_api.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/kf/api_cosupload.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1488,7 +1465,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/commkf/sendmsg 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/kf/send_msg/send_msg_api.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/kf/api_sendmsg.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1513,8 +1490,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/overall/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopoverall.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopoverall.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopoverall.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1537,8 +1513,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/finder/authorization/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/get_finder_authorization_list.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/get_finder_authorization_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderauthorizationlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1561,8 +1536,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/finder/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopfinderlist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopfinderlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1585,8 +1559,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/finder/overall/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopfinderoverall.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopfinderoverall.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderoverall.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1609,8 +1582,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/finder/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopfinderproductlist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopfinderproductlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1633,8 +1605,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/finder/product/overall/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopfinderproductoverall.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopfinderproductoverall.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopfinderproductoverall.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1657,8 +1628,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/live/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshoplivelist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshoplivelist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshoplivelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1681,8 +1651,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopproductlist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopproductlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1705,8 +1674,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/product/data/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopproductdata.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopproductdata.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopproductdata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1729,8 +1697,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/shop/sale/profile/data/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/shop/getshopsaleprofiledata.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/shop/getshopsaleprofiledata.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/compass/api_getshopsaleprofiledata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1753,7 +1720,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/finder/overall/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/finder/getfinderoverall.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/compass/api_getfinderoverall.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1776,7 +1743,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/finder/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/finder/getfinderproductlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/compass/api_getfinderproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1799,7 +1766,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/finder/product/data/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/finder/getfinderproductdata.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/compass/api_getfinderproductdata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1822,7 +1789,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/compass/finder/sale/profile/data/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/compass/finder/getfindersaleprofiledata.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/compass/api_getfindersaleprofiledata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1847,8 +1814,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/create.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/create.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_createcoupon.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1871,8 +1837,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_updatecoupon.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1895,8 +1860,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/update_status 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/update_status.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/update_status.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_updatecouponstatus.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1919,8 +1883,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_getcoupon.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1943,8 +1906,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/get_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/get_list.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/get_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_getcouponlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1967,8 +1929,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/get_user_coupon_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/get_user_coupon_list.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/get_user_coupon_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_getusercouponlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1991,8 +1952,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/coupon/get_user_coupon 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/coupon/get_user_coupon.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/get_user_coupon.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/coupon/api_getusercoupon.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2042,7 +2002,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/finderlive/getfinderliverecordlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/live/getfinderliverecordlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/live/api_getfinderliverecordlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2065,7 +2025,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/finderlive/getfinderlivenoticerecordlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/live/getfinderlivenoticerecordlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/live/api_getfinderlivenoticerecordlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2090,8 +2050,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/getbalance 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/getbalance.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/getbalance.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_getbalance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2114,9 +2073,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/getfundsflowlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/getfundsflowlist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/Fund.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/getfundsflowlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/funds/api_getfundsflowlist.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_getfundsflowlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2139,8 +2097,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/getfundsflowdetail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/getfundsflowdetail.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/getfundsflowdetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_getfundsflowdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2164,8 +2121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/getbankacct 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/getbankacct.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/getbankacct.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_getbankacct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2188,8 +2144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/setbankacct 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/setbankacct.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/setbankacct.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_setbankacct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2214,8 +2169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/getwithdrawdetail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/getwithdrawdetail.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/getwithdrawdetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_getwithdrawdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2238,8 +2192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/getwithdrawlist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/getwithdrawlist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/getwithdrawlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_getwithdrawlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2262,8 +2215,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/funds/submitwithdraw 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/funds/submitwithdraw.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/submitwithdraw.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/funds/funds/api_submitwithdraw.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2288,10 +2240,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region ECLeague/Funds
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/funds/getfundsflowdetail 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getfundsflowdetail.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -2311,10 +2259,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/funds/getfundsflowlist 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getfundsflowlist.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -2339,7 +2283,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/clue/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/clue/getcluelist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/clue/api_getcluelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2362,7 +2306,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/clue/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/clue/getclue.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/clue/api_getclue.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2387,7 +2331,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/cooperativeitem/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/addcooperativeitem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_addcooperativeitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2410,7 +2354,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/cooperativeitem/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getcooperativeitemlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_getcooperativeitemlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2435,7 +2379,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/funds/balance/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getbalance.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/balance/api_getbalance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2458,7 +2402,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/funds/flowdetail/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getfundsflowdeatail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/balance/api_getfundsflowdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2481,7 +2425,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/funds/flowlist/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getfundsflowlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/balance/api_getfundsflowlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2504,10 +2448,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region ECLeague/HeadSupplier/Item
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/list/get 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getitemlist.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -2527,10 +2467,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/get 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getitem.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -2550,10 +2486,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/upd 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/updateitem.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -2575,7 +2507,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/promotiondetail/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getpromotiondetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_getitempromotiondetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2600,7 +2532,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/liveprotection/getqrcode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_protection_qrcode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getliveprotectionqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2625,7 +2557,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/order/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getorderlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/order/api_getorderlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2648,7 +2580,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/order/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/order/api_getorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2673,7 +2605,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/productdetail/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getproductdetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/shop/api_getproductdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2794,7 +2726,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/selectionproducts/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/listselectionproducts.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_listselectionproducts.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2819,7 +2751,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/shop/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getshoplist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/headsupplier/api_getshoplist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2842,7 +2774,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/shop/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getshop.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/headsupplier/api_getshop.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2867,7 +2799,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subitem/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/addsubitem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_addsubitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2890,7 +2822,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subitem/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getsubitemlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_getsubitemlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2915,7 +2847,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subscription/subscribe 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/hs_subscribe.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/shop/api_subscribeproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2938,7 +2870,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subscription/unsubscribe 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/hs_unsubscribe.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/shop/api_unsubscribeproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2961,7 +2893,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subscription/getsubscribe 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/hs_getsubscribe.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/shop/api_getsubscribeproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2986,7 +2918,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/window/api_addwindow.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3009,7 +2941,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/remove 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/removewindow.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/window/api_removewindow.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3032,7 +2964,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/getall 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getallwindow.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/window/api_getallwindow.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3055,7 +2987,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/getdetail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getwindowdetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/window/api_getwindowdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3078,7 +3010,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/windowauth/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getauth.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/window/api_getwindowauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3101,7 +3033,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/windowauth/status/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getauthstatus.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/window/api_getwindowauthstatus.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3127,8 +3059,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/item/batchadd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_batchadditem.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_batchadditem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_batchadditem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3151,8 +3082,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/item/upd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_upditem.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_upditem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_upditem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3175,8 +3105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/item/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_deleteitem.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_upditem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_delitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3200,8 +3129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/item/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getitem.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_getitem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_getitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3224,8 +3152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/item/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getitemlist.htmll ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_getitemlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_getitemlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3248,8 +3175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/item/headsupplier/batchadd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_batchaddheadsupplieritem.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_batchaddheadsupplieritem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_batchaddheadsupplieritem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3274,8 +3200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/promoter/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_addpromoter.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_addpromoter.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_addpromoter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3298,8 +3223,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/promoter/upd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_updpromoter.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_updpromoter.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_updpromoter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3322,8 +3246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/promoter/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_deletepromoter.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_deletepromoter.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_deletepromoter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3346,7 +3269,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/promoter/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getpromoter.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_getpromoter.html ]]>
         /// </para>
         /// </summary>
@@ -3370,7 +3292,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/promoter/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getpromoterlist.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_getpromoterlist.html ]]>
         /// </para>
         /// </summary>
@@ -3494,8 +3415,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/phonenumberpool/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/logistics/delivery_virtual_number.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/logistics/delivery_virtual_number.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/phonenumber/api_getprivatenumberpool.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3518,8 +3438,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/phonenumber/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/logistics/delivery_virtual_number_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/logistics/delivery_virtual_number_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/phonenumber/api_getrealnumber.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3542,8 +3461,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/virtualnumber/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/logistics/delivery_virtual_number_get_virtual.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/logistics/delivery_virtual_number_get_virtual.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/phonenumber/api_getvirtualnumber.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3568,8 +3486,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/account/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_account.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_account.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_getacct.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_getacct.html ]]>
         /// </para>
         /// </summary>
@@ -3595,8 +3512,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/delivery/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_acctdeliverylist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_acctdeliverylist.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_getdeliverylist.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_getdeliverylist.html ]]>
         /// </para>
         /// </summary>
@@ -3622,8 +3538,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/precreate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/precreate_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/precreate_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_precreateorder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_precreateorder.html ]]>
         /// </para>
         /// </summary>
@@ -3647,8 +3562,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/create_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/create_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_createorder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_createorder.html ]]>
         /// </para>
         /// </summary>
@@ -3672,7 +3586,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/addsuborder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/add_suborder.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_addsuborder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_addsuborder.html ]]>
         /// </para>
         /// </summary>
@@ -3696,8 +3610,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/cancel_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/cancel_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_cancelorder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_cancelorder.html ]]>
         /// </para>
         /// </summary>
@@ -3721,8 +3634,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_getorder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_getorder.html ]]>
         /// </para>
         /// </summary>
@@ -3746,8 +3658,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/print 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/notify_print.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/notify_print.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_printorder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_printorder.html ]]>
         /// </para>
         /// </summary>
@@ -3771,8 +3682,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/batchprint 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/batchnotify_print.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/batchnotify_print.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_batchprintorder.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_batchprintorder.html ]]>
         /// </para>
         /// </summary>
@@ -3821,8 +3731,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/print/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_print_info.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_print_info.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_get_print_content.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3847,8 +3756,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/config 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_template_config.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_template_config.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_get_template_config.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_get_template_config.html ]]>
         /// </para>
         /// </summary>
@@ -3872,8 +3780,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/add_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/add_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_createtemplate.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_createtemplate.html ]]>
         /// </para>
         /// </summary>
@@ -3897,8 +3804,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/update_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/update_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_updatetemplate.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_updatetemplate.html ]]>
         /// </para>
         /// </summary>
@@ -3922,8 +3828,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/delete_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/delete_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_deltemplate.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_deltemplate.html ]]>
         /// </para>
         /// </summary>
@@ -3947,8 +3852,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_gettemplate.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_gettemplate.html ]]>
         /// </para>
         /// </summary>
@@ -3972,8 +3876,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/getbyid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_templatebyid.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_templatebyid.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_ewaybill_gettemplatebyid.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_gettemplatebyid.html ]]>
         /// </para>
         /// </summary>
@@ -4002,8 +3905,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/getfreighttemplatelist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/deliverycompanylist_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/getfreighttemplatelist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/merchant/api_getfreighttemplatelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4026,8 +3928,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/getfreighttemplatedetail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/getfreighttemplatedetail.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/getfreighttemplatedetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/merchant/api_getfreighttemplatedetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4050,8 +3951,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/addfreighttemplate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/addfreighttemplate.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/addfreighttemplate.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/merchant/api_addfreighttemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4074,8 +3974,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/updatefreighttemplate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/updatefreighttemplate.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/updatefreighttemplate.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/merchant/api_updatefreighttemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4100,8 +3999,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/address/list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/list.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/list.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/address/api_getaddresslist.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_getaddresslist.html ]]>
         /// </para>
         /// </summary>
@@ -4125,8 +4023,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/address/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/get.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/address/api_getaddress.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_getaddress.html ]]>
         /// </para>
         /// </summary>
@@ -4150,8 +4047,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/address/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/add.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/add.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/address/api_addaddress.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_addaddress.html ]]>
         /// </para>
         /// </summary>
@@ -4175,8 +4071,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/address/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/update.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/address/api_updateaddress.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_updateaddress.html ]]>
         /// </para>
         /// </summary>
@@ -4200,8 +4095,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/merchant/address/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/delete.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/delete.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/address/api_deleteaddress.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_deleteaddress.html ]]>
         /// </para>
         /// </summary>
@@ -4299,7 +4193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/open/get_download_url 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/get_download_url.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/basic/api_getdownloadurl.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4322,7 +4216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/open/upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/upload.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/basic/api_uploadec.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4365,8 +4259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/search 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/search.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/search.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_searchorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4389,8 +4282,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/list_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_getorderlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4413,9 +4305,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/query_coupon.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_getorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4438,8 +4328,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/price/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/price_update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/price_update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_changeorderprice.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4462,8 +4351,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/merchantnotes/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/merchantnotes_update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/merchantnotes_update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_changemerchantnotes.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4486,8 +4374,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/freshinspect/submit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/fresh_inspect_submit.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/fresh_inspect_submit.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_submitfreshinspectinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4510,7 +4397,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/presentnote/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/present_note_add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_presentnote.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4533,7 +4420,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/presentsuborder/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/get_by_presentid.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_getpresentsuborder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4556,8 +4443,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/sensitiveinfo/decode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/decode_order_sensitive_info.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/decode_order_sensitive_info.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_decodesensitiveinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4673,8 +4559,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/address/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/address_update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/address_update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_changeorderaddress.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4697,8 +4582,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/addressmodify/accept 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/accept_address_modify_apply.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/accept_address_modify_apply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_acceptorderaddressmodifyapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4721,8 +4605,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/addressmodify/reject 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/reject_address_modify_apply.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/reject_address_modify_apply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_rejectorderaddressmodifyapply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4747,8 +4630,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/deliveryinfo/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/deliveryinfo_update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/deliveryinfo_update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_changedeliveryinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4771,7 +4653,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/deliverycompanylist/new/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/deliverycompanylist_get_new.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/delivery/api_getdeliverycompanylistnew.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_getdeliverycompanylistnew.html ]]>
         /// </para>
         /// </summary>
@@ -4795,8 +4677,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/deliverycompanylist/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/deliverycompanylist_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/deliverycompanylist_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/delivery/api_getdeliverycompanylist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4819,8 +4700,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/delivery/send 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/delivery_send.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/delivery_send.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/delivery/api_senddelivery.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5078,7 +4958,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/order/api_dropship_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/dropship/dropship-order/api_dropship_list.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5101,7 +4981,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/search 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/order/api_dropship_search.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/dropship/dropship-order/api_dropship_search.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5124,7 +5004,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/order/api_dropship_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/dropship/dropship-order/api_dropship_get.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5196,7 +5076,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/presentorder/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/create_present_order.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_create_present_order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5290,7 +5170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/preshipmentchangesku/approve 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/preshipment_change_sku_approve.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_approvepreshipmentchangesku.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5313,7 +5193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/preshipmentchangesku/reject 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/preshipment_change_sku_reject.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_rejectpreshipmentchangesku.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5336,7 +5216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/preshipmentchangesku/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/preshipment_change_sku_reject.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_rejectpreshipmentchangesku.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5387,8 +5267,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/add.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_addproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5411,8 +5290,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_updateproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5435,10 +5313,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/delete.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/delete.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/delete.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_delete.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_deleteproduct.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_deleteproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5461,8 +5337,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5485,8 +5360,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/list_get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5509,10 +5383,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/listing 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/listing.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/listing.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/listing.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_listing.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_listingproduct.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_listingproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5535,10 +5407,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/delisting 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/delisting.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/removed.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/delisting.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_delisting.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_delistingproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5561,7 +5430,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/auditfree 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/audit_free.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_updateproductauditfree.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5584,10 +5453,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/audit/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/audit_cancel.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/withdraw.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/audit_cancel.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_audit_cancel.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_cancelauditproduct.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_cancelauditproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5610,8 +5477,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/h5url/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/get_h5url.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get_h5url.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproducth5url.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5634,8 +5500,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/taglink/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/get_taglink.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get_taglink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproducttaglink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5658,8 +5523,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/qrcode/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/get_qrcode.html ]]> <br />
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get_qrcode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproductqrcode.html ]]>
         /// </para> 
         /// </summary>
         /// <param name="client"></param>
@@ -5682,7 +5546,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/scheme/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get_scheme.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproductscheme.html ]]>
         /// </para> 
         /// </summary>
         /// <param name="client"></param>
@@ -5994,7 +5858,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/gift/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/gift/api_addgiftproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6017,7 +5881,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/gift/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/gift/api_updategiftproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6040,7 +5904,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/gift/onsale/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_onsale_set.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/gift/api_setproductasgift.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6063,7 +5927,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/gift/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/gift/api_getgiftproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6086,7 +5950,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/gift/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/gift/api_getgiftproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6109,7 +5973,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/gift/stock/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/gift/gift_update_stock.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/gift/api_updategiftstock.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6134,7 +5998,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/add.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/limiteddiscounttask/api_addlimiteddiscounttask.html ]]>
         /// </para>
         /// </summary>
@@ -6158,7 +6021,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/list_get.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/limiteddiscounttask/api_getlimiteddiscounttasklist.html ]]>
         /// </para>
         /// </summary>
@@ -6182,7 +6044,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/stop 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/stop.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/limiteddiscounttask/api_stoplimiteddiscounttask.html ]]>
         /// </para>
         /// </summary>
@@ -6206,7 +6067,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/delete.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/limiteddiscounttask/api_deletelimiteddiscounttask.html ]]>
         /// </para>
         /// </summary>
@@ -6255,9 +6115,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/stock/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/stock_update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/modify-stock.html ]]>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/stock_update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/voucher/api_updatestock.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/stock/api_updatestock ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6280,8 +6139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/stock/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/get_stock.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get_stock.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/stock/api_getstock.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6304,8 +6162,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/stock/batchget 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/batchget_stock.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/batchget_stock.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/stock/api_batchgetstock.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6328,8 +6185,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/stock/getflow 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/get_stock_flow.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/product/get_stock_flow.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/stock/api_getstockflow.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6355,7 +6211,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/locallife/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/query.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_getlocalproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6378,7 +6234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/locallife/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/query_details.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_getlocalproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6401,7 +6257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/locallife/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_addlocalproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6424,7 +6280,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/locallife/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_updatelocalproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6447,7 +6303,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/locallife/auditfree 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/review-free.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_updatelocalauditfree.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6473,7 +6329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_talent_biz_article_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/article/get_talent_biz_article_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/article/api_gettalentbizarticlelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6496,7 +6352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_mp_article_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/article/get_shop_mp_article_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/article/api_getshopmparticlelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6521,7 +6377,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_public_coupon_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/coupon/getpubliccouponlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/coupon/api_getpromotepublishcouponlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6544,7 +6400,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_cooperative_coupon_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/coupon/getcooperativecouponlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/coupon/api_getpromotecooperativecouponlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6567,7 +6423,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_coupon_detail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/coupon/getcoupondetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/coupon/api_getpromotecoupondetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6590,7 +6446,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_coupon_short_link 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/coupon/getcouponshortlink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/coupon/api_getpromotecouponshortlink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6613,7 +6469,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_coupon_qr_code 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/coupon/getcouponqrcode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/coupon/api_getpromotecouponqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6636,7 +6492,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_coupon_promoter_share_link 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/coupon/getcouponpromotersharelink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/coupon/api_getpromotecouponpromotersharelink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6707,7 +6563,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_feed_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/video/get_feed_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/video/api_getfeedlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6730,7 +6586,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_feed_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/video/get_shop_feed_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/video/api_getshopfeedlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6753,7 +6609,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_feed_promotion_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/video/get_feed_promotion_info.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/video/api_getfeedpromotioninfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6776,7 +6632,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_feed_promotion_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/video/get_shop_feed_promotion_info.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/video/api_getshopfeedpromotioninfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6801,7 +6657,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_live_record_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_record_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getliverecordlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6824,7 +6680,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_live_notice_record_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_notice_record_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getlivenoticerecordlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6847,7 +6703,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_live_record_qr_code 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_record_qr_code.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getliverecordqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6870,7 +6726,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_live_notice_record_qr_code 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_notice_record_qr_code.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getlivenoticerecordqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6893,7 +6749,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_live_commission_product_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_commission_product_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getlivecommissionproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6916,7 +6772,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_live_notice_reservation_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_live_notice_reservation_info.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getlivenoticereservationinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6962,7 +6818,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_record_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_shop_live_record_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getshopliverecordlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -6985,7 +6841,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_notice_record_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_shop_live_notice_record_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getshoplivenoticerecordlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7008,7 +6864,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_record_qr_code 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_shop_live_record_qr_code.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getshopliverecordqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7031,7 +6887,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_notice_record_qr_code 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_shop_live_notice_record_qr_code.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getshoplivenoticerecordqrcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7054,7 +6910,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_commission_product_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/content/live/get_shop_live_commission_product_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getshoplivecommissionproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7102,7 +6958,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/set_sharer_product_commission_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/setsharerproductcommissioninfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_setsharerproductcommissioninfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7125,7 +6981,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_sharer_product_commission_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/getsharerproductcommissioninfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_getsharerproductcommissioninfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7148,7 +7004,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_promote_product_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/getpromoteproductlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_getpromoteproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7171,7 +7027,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_promote_product_detail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/getpromoteproductdetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_getpromoteproductdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7194,7 +7050,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_product_promotion_link_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/getproductpromotionlinkinfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_getproductpromotionlinkinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7217,7 +7073,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_product_promotion_qrcode_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/getproductpromotionqrcodeinfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_getproductpromotionqrcodeinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7240,7 +7096,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_promoter_single_product_promotion_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/product/getpromotersingleproductpromotioninfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/getshop/api_getpromotersingleproductpromotioninfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7265,7 +7121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_promoter_register_and_bind_status 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/sharer/getpromoterregisterandbindstatus.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/account/api_getpromoterregisterandbindstatus.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7288,7 +7144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/set_sharer_commission_info 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/sharer/setsharercommissioninfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/account/api_setsharercommissioninfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7311,7 +7167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_bind_sharer_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/sharer/getbindsharerlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/account/api_getbindsharerlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7334,7 +7190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_bind_talent_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/sharer/get_bind_talent_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/account/api_getbindtalentlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7357,7 +7213,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_bind_shop_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/sharer/get_bind_shop_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/account/api_getbindshoplist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7380,7 +7236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_bind_shop_promoter_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/promotion/sharer/get_bind_shop_promoter_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/account/api_getbindshoppromoterlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7429,8 +7285,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /channels/ec/qic/inspect/config/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/qic/getinspectconfig.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/getinspectconfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/api_getinspectconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7453,8 +7308,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /channels/ec/qic/inspect/submitconfig/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/qic/getinspectsubmitconfig.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/getinspectsubmitconfig.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/api_getinspectsubmitconfig.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7478,8 +7332,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/qic/inspect/code/print 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/qic/printinspectcode.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/printinspectcode.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/api_printinspectcode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7502,8 +7355,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/qic/inspect/submit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/qic/submitinspectinfo.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/submitinspectinfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/api_submitinspectinfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7526,7 +7378,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/qic/inspect/register_logistics 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/registerlogistics.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/qic/api_registerlogistics.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7552,7 +7404,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/classification/tree/product/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/classification/addclassificationproduct.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/shoptype/api_addclassificationproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7575,7 +7427,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/classification/tree/product/del 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/classification/delclassificationproduct.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/shoptype/api_delclassificationproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7598,7 +7450,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/classification/tree/product/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/classification/getclassificationproductlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/shoptype/api_getclassificationproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7621,7 +7473,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/classification/tree/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/classification/setclassificationtree.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/shoptype/api_setclassificationtree.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7644,7 +7496,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/classification/tree/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/classification/getclassificationtree.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/shoptype/api_getclassificationtree.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7669,7 +7521,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/window/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/api_getstorewindowproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7692,7 +7544,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/window/product/reorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/reorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/api_reorderstorewindowproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7715,7 +7567,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/window/product/hide 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/set_hide.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/api_hidestorewindowproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7738,7 +7590,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/store/window/product/settop 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/set_top.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/homepage/storewindow/api_settopstorewindowproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7949,7 +7801,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/supplier/relation/get_ec_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/related/api_get_ec_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/dropship/dropship-relation/api_get_ec_list.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -7999,7 +7851,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/talent/get_order_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/order/get_order_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/order/api_get_order_list.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8022,7 +7874,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/talent/get_order_detail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/order/get_order_detail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/order/api_get_order_detail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8047,7 +7899,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/talent/window/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/window/get_product_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/window/api_get_product_list.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8070,7 +7922,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/talent/window/product/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/window/get_product_detail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/talent/openapi/window/api_get_product_detail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8096,7 +7948,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/vip/v3/wxa/info/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/wxamember/shop/get_wxa_bind_info.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/wxamember/shop/api_v3_getwxainfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8214,7 +8066,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/voucher/get_bill_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/query_voucher.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/funds/api_getvoucherbilllist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8239,7 +8091,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/voucher/codes/upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/upload.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/voucher/api_uploadvouchercode.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8263,7 +8115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/voucher/get_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/query_discount.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/useing/api_getvoucher.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8286,7 +8138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/voucher/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/purchase.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/useing/api_findvoucher.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8309,7 +8161,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/voucher/consume 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/api.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/useing/api_consumevoucher.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8332,7 +8184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/voucher/revoke 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/locallife/api/discount-cancel.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/cancel/api_withdrawconsume.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8357,8 +8209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/create 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/create.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/create.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_createwarehouse.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8381,8 +8232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/get_list.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/get_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_getwarehouselist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8405,8 +8255,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_getwarehouse.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8429,8 +8278,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/detail/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/update_detail.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/update_detail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_updatewarehousedetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8454,8 +8302,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/coverlocations/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/add_coverlocations.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/add_coverlocations.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_addcoverlocations.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8478,8 +8325,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/coverlocations/del 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/del_coverlocations.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/del_coverlocations.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_delcoverlocations.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8504,8 +8350,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/address/prioritysort/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/set_prioritysort.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/set_prioritysort.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_setaddressprioritysort.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8528,8 +8373,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/address/prioritysort/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/get_prioritysort.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/get_prioritysort.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_getaddressprioritysort.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8554,8 +8398,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/stock/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/update_stock.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/update_stock.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_updatewarehousestock.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8578,8 +8421,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/warehouse/stock/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/warehouse/get_stock.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/get_stock.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/warehouse/api_getwarehousestock.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8605,7 +8447,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/wecom/get_wecom_id 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/wecom/getwecomid.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/wecom/api_shop_get_wecom_openid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8630,7 +8472,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/window/product/add 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/windowproduct/api_addwindowproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8653,7 +8495,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/window/product/off 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/off.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/windowproduct/api_offwindowproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8676,7 +8518,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/window/product/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/windowproduct/api_getwindowproduct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8699,7 +8541,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/window/product/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/list_get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/windowproduct/api_getwindowproductlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8724,7 +8566,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/finderlive/get_finder_attr_by_appid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/live/get_finder_attr_by_appid.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leadslive/api_getfinderattrbyappid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8747,7 +8589,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/finderlive/get_finder_live_data_list 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/live/get_finder_live_data_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leadslive/api_getfinderlivedatalist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8770,7 +8612,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/finderlive/get_finder_live_leads_data 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/live/get_finder_live_leads_data.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leadslive/api_getfinderliveleadsdata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8795,7 +8637,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/leads/get_leads_info_by_component_id 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_info_by_component_id.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leads/api_getleadsinfobycomponentid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8818,7 +8660,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/leads/get_leads_info_by_request_id 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_info_by_request_id.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leads/api_getleadsinfobyrequestid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8841,7 +8683,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/leads/get_leads_request_id 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_request_id.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leads/api_getleadsrequestid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8864,7 +8706,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/leads/get_leads_component_promote_record 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_component_promote_record.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leads/api_getleadscomponentpromoterecord.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8887,7 +8729,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/leads/get_leads_component_id 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_component_id.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/leads/api_getleadscomponentid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8912,7 +8754,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/livedashboard/getlivelist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/livedashboard/getlivelist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/livedashboard/api_getlivelist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -8935,7 +8777,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/livedashboard/getlivedata 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/livedashboard/getlivedata.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/channels/livedashboard/api_getlivedata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

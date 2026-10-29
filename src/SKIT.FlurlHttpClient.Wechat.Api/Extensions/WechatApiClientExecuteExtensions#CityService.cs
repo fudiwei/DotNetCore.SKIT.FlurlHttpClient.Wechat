@@ -29,7 +29,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cityservice/sendchannelmsg 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/medicalassistant.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/medicalassistant/api_cityservice_sendchannelmsg.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/medicalassistant/api_cityservice_sendchannelmsg.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cityservice/getservicepath 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/cityservice/InterconnectionCapabilities/API/API.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cityservice/basic/api_cityserviceservicehomepath.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cityservice/getmedrealname 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/elderMedical/elderMedical-api.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cityservice/elderMedical/api_cityservice_getmedrealname.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -103,7 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cityservice/getmsgrelation 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/elderMedical/elderMedical-api.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/cityservice/elderMedical/api_cityservice_getmsgrelation.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

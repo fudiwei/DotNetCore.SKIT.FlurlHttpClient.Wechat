@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /tcb/getopendata 接口的响应。</para>
+    /// <para>表示 [POST] /wxa/getopendata 接口的响应。</para>
     /// </summary>
-    public class TCBGetOpenDataResponse : WechatApiResponse
+    public class WxaGetOpenDataResponse : WechatApiResponse
     {
         public static class Types
         {

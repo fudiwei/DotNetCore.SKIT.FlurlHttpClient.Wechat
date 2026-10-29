@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.update_business_bind_result" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/express/by-business/logistics.onBindResultUpdate.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/event_push/express/business/Bind_merchant_review_result_update_event.html ]]>
     /// </para>
     /// </summary>
     public class UpdateBusinessBindResultEvent : WechatApiEvent

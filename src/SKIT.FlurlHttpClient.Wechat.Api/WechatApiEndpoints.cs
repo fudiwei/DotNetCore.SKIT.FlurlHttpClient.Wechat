@@ -2,10 +2,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
     /// <para>微信 API 接口域名。</para>
-    /// <para>
-    /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Interface_field_description.html ]]>
-    /// </para>
     /// </summary>
     public static class WechatApiEndpoints
     {
