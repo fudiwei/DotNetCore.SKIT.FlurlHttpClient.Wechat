@@ -44,7 +44,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011937125 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012382179 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011983208 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013634893 ]]>
         /// </para>
