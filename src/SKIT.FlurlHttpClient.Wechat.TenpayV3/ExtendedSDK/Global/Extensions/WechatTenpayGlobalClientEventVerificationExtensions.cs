@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/wechatpay/wechatpay4_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357149 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/wechatpay/wechatpay4_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357149 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/wechatpay/wechatpay4_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357149 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/wechatpay/wechatpay4_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357149 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

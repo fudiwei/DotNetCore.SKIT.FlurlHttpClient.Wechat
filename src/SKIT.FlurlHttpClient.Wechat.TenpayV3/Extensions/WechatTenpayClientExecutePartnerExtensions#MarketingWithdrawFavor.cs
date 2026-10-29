@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/withdraw-favor/users/{openid}/coupons 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_2_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012069852 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/withdraw-favor/users/{openid}/coupons 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_2_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012069852 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

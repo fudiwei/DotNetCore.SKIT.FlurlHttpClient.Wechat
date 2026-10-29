@@ -6,8 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter3_3_12.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter3_5_12.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012356510 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012356546 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter3_4_12.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012356529 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter3_4_12.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012356529 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

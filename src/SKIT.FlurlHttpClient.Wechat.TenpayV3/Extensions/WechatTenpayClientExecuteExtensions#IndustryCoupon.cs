@@ -6,8 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /industry-coupon/tokens 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_9_1.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_9_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012553563 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715654 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

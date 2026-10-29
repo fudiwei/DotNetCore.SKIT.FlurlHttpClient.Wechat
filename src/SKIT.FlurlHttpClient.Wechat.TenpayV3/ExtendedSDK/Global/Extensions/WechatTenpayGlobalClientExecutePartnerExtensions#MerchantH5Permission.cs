@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [POST] /merchant/h5/permission/applications 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357001 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [GET] /merchant/h5/permission/applications/{applyment_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357003 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [PATCH] /merchant/h5/permission/applications/{applyment_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357006 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [POST] /merchant/h5/permission/domain/applications 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357010 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [GET] /merchant/h5/permission/domain/applications/{applyment_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357011 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [PATCH] /merchant/h5/permission/domain/applications/{applyment_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_6.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357013 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -146,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [GET] /merchant/h5/permission/{sub_mchid} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_4_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357016 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

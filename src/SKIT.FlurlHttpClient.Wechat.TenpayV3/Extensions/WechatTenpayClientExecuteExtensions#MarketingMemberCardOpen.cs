@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/upgrade 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_6.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/cards 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/cards/{card_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [PATCH] /marketing/membercard-open/cards/{card_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [DELETE] /marketing/membercard-open/cards/{card_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_11.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/deposit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -177,7 +177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/users/import 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_13.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -201,7 +201,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/phone-membercard/import 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_14.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -225,7 +225,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_12.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -250,7 +250,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/cards/{card_id}/codes/{code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -275,7 +275,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/user/cards 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -301,7 +301,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [PATCH] /marketing/membercard-open/cards/{card_id}/codes/{code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -328,7 +328,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/callback 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -350,7 +350,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/callback 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -374,7 +374,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/qrcode 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -398,7 +398,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/permission-tokens 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -422,7 +422,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/cards/{card_id}/decrypt-code 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -448,7 +448,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/membercard-open/activate-informations/{activate_ticket} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -472,7 +472,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/activate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_10.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -499,7 +499,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [PATCH] /marketing/membercard-open/cards/{card_id}/rights 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -523,7 +523,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [PATCH] /marketing/membercard-open/cards/{card_id}/codes/{code}/rights 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -548,7 +548,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/prepare 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -578,7 +578,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/commit 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

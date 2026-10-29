@@ -392,7 +392,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/pay 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_6.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012062524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
