@@ -261,7 +261,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/aftersale/getexchangeableskulist 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/api_mmecapi_getexchangeableskulist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-aftersale/aftersale/api_mmecapi_getexchangeableskulist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -709,79 +709,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/basics/img/upload 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_img_upload.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECBasicsImageUploadResponse> ExecuteChannelsECBasicsImageUploadAsync(this WechatApiClient client, Models.ChannelsECBasicsImageUploadRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "img", "upload")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("resp_type", request.ResponseType);
-
-            if (request.ImageUrl is not null)
-            {
-                flurlReq.SetQueryParam("upload_type", 1)
-                        .SetQueryParam("img_url", request.ImageUrl);
-
-                return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsImageUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-            }
-            else
-            {
-                flurlReq.SetQueryParam("upload_type", 0)
-                        .SetQueryParam("height", request.Height)
-                        .SetQueryParam("width", request.Width);
-
-                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "media");
-                return await client.SendFlurlRequestAsync<Models.ChannelsECBasicsImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
-            }
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/basics/qualification/upload 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_qualificationupload.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECBasicsQualificationUploadResponse> ExecuteChannelsECBasicsQualificationUploadAsync(this WechatApiClient client, Models.ChannelsECBasicsQualificationUploadRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            if (request.FileName is null)
-            {
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
-            }
-
-            if (request.FileContentType is null)
-            {
-                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName);
-            }
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "qualification", "upload")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
-            return await client.SendFlurlRequestAsync<Models.ChannelsECBasicsQualificationUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/basics/addresscode/get 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -829,7 +756,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/basics/video/initupload 接口。</para>
+        /// <para>异步调用 [POST] /shop/ec/basics/video/initupload 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_initupload.html ]]>
@@ -839,20 +766,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ChannelsECBasicsVideoInitUploadResponse> ExecuteChannelsECBasicsVideoInitUploadAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoInitUploadRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ShopECBasicsVideoInitUploadResponse> ExecuteShopECBasicsVideoInitUploadAsync(this WechatApiClient client, Models.ShopECBasicsVideoInitUploadRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "video", "initupload")
+                .CreateFlurlRequest(request, HttpMethod.Post, "shop", "ec", "basics", "video", "initupload")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsVideoInitUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ShopECBasicsVideoInitUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/basics/video/uploadpart 接口。</para>
+        /// <para>异步调用 [POST] /shop/ec/basics/video/uploadpart 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_uploadpart.html ]]>
@@ -862,23 +789,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ChannelsECBasicsVideoUploadPartResponse> ExecuteChannelsECBasicsVideoUploadPartAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoUploadPartRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ShopECBasicsVideoUploadPartResponse> ExecuteShopECBasicsVideoUploadPartAsync(this WechatApiClient client, Models.ShopECBasicsVideoUploadPartRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "video", "uploadpart")
+                .CreateFlurlRequest(request, HttpMethod.Post, "shop", "ec", "basics", "video", "uploadpart")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("video_upload_key", request.VideoUploadKey)
                 .SetQueryParam("partnum", request.PartNumber);
 
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: null, fileBytes: request.FileBytes, fileContentType: null, formDataName: "media");
-            return await client.SendFlurlRequestAsync<Models.ChannelsECBasicsVideoUploadPartResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsync<Models.ShopECBasicsVideoUploadPartResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/basics/video/finishupload 接口。</para>
+        /// <para>异步调用 [POST] /shop/ec/basics/video/finishupload 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_finishupload.html ]]>
@@ -888,20 +815,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ChannelsECBasicsVideoFinishUploadResponse> ExecuteChannelsECBasicsVideoFinishUploadAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoFinishUploadRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ShopECBasicsVideoFinishUploadResponse> ExecuteShopECBasicsVideoFinishUploadAsync(this WechatApiClient client, Models.ShopECBasicsVideoFinishUploadRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "video", "finishupload")
+                .CreateFlurlRequest(request, HttpMethod.Post, "shop", "ec", "basics", "video", "finishupload")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsVideoFinishUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ShopECBasicsVideoFinishUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /channels/ec/basics/video/getplayinfo 接口。</para>
+        /// <para>异步调用 [GET] /shop/ec/basics/video/getplayinfo 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_getplayinfo.html ]]>
@@ -911,17 +838,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ChannelsECBasicsVideoGetPlayInfoResponse> ExecuteChannelsECBasicsVideoGetPlayInfoAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoGetPlayInfoRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ShopECBasicsVideoGetPlayInfoResponse> ExecuteShopECBasicsVideoGetPlayInfoAsync(this WechatApiClient client, Models.ShopECBasicsVideoGetPlayInfoRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "channels", "ec", "basics", "video", "getplayinfo")
+                .CreateFlurlRequest(request, HttpMethod.Get, "shop", "ec", "basics", "video", "getplayinfo")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("video_upload_key", request.VideoUploadKey);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsVideoGetPlayInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ShopECBasicsVideoGetPlayInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region ECBasics/HomepageBackground
@@ -1186,52 +1113,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region ECBrand
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/brand/all 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_getallbrandslogic.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECBrandAllResponse> ExecuteChannelsECBrandAllAsync(this WechatApiClient client, Models.ChannelsECBrandAllRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "brand", "all")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBrandAllResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/brand/add 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_addbrandlogic.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECBrandAddResponse> ExecuteChannelsECBrandAddAsync(this WechatApiClient client, Models.ChannelsECBrandAddRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "brand", "add")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBrandAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/brand/update 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -1252,29 +1133,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBrandUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/brand/audit/cancel 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/brand/api_cancelauditbrandlogic.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECBrandAuditCancelResponse> ExecuteChannelsECBrandAuditCancelAsync(this WechatApiClient client, Models.ChannelsECBrandAuditCancelRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "brand", "audit", "cancel")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBrandAuditCancelResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2237,46 +2095,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
 
         #region ECLeague
-        #region ECLeague/Funds
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/league/funds/getfundsflowdetail 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECLeagueFundsGetFundsFlowDetailResponse> ExecuteChannelsECLeagueFundsGetFundsFlowDetailAsync(this WechatApiClient client, Models.ChannelsECLeagueFundsGetFundsFlowDetailRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "funds", "getfundsflowdetail")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueFundsGetFundsFlowDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/league/funds/getfundsflowlist 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECLeagueFundsGetFundsFlowListResponse> ExecuteChannelsECLeagueFundsGetFundsFlowListAsync(this WechatApiClient client, Models.ChannelsECLeagueFundsGetFundsFlowListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "funds", "getfundsflowlist")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueFundsGetFundsFlowListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
         #region ECLeague/HeadSupplier
         #region ECLeague/HeadSupplier/Clue
         /// <summary>
@@ -2446,63 +2264,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
 
         #region ECLeague/HeadSupplier/Item
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/list/get 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECLeagueHeadSupplierItemListGetResponse> ExecuteChannelsECLeagueHeadSupplierItemListGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierItemListGetRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "item", "list", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierItemListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/get 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECLeagueHeadSupplierItemGetResponse> ExecuteChannelsECLeagueHeadSupplierItemGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierItemGetRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "item", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierItemGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/upd 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECLeagueHeadSupplierItemUpdateResponse> ExecuteChannelsECLeagueHeadSupplierItemUpdateAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierItemUpdateRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "item", "upd")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierItemUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/promotiondetail/get 接口。</para>
         /// <para>
@@ -3102,30 +2863,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/league/item/delete 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_delitem.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        [Obsolete("相关接口或字段于 2026-06-18 下线。")]
-        public static async Task<Models.ChannelsECLeagueItemDeleteResponse> ExecuteChannelsECLeagueItemDeleteAsync(this WechatApiClient client, Models.ChannelsECLeagueItemDeleteRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "item", "delete")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueItemDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/item/get 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -3701,29 +3438,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLogisticsEWaybillOrderBatchPrintResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/getprintinfo 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_get_print_content.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECLogisticsEWaybillOrderGetPrintInfoResponse> ExecuteChannelsECLogisticsEWaybillOrderGetPrintInfoAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillOrderGetPrintInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "order", "getprintinfo")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLogisticsEWaybillOrderGetPrintInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
         #endregion
 
         #region ECLogistics/EWaybill/Print
@@ -3731,7 +3445,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/print/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_get_print_content.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-delivery/ewaybill/api_get_print_content_supplier.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -5407,6 +5121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/product/delisting 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/locallife/shop/api_delistingproduct ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_delistingproduct.html ]]>
         /// </para>
         /// </summary>

@@ -639,45 +639,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region Search
         /// <summary>
-        /// <para>异步调用 [POST] /wxa/imagesearch 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaImageSearchResponse> ExecuteWxaImageSearchAsync(this WechatApiClient client, Models.WxaImageSearchRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "imagesearch")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
-            return await client.SendFlurlRequestAsync<Models.WxaImageSearchResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/sitesearch 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaSiteSearchResponse> ExecuteWxaSiteSearchAsync(this WechatApiClient client, Models.WxaSiteSearchRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sitesearch")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSiteSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /wxa/search/wxaapi_submitpages 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -709,6 +670,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2026-07-13 下线。")]
         public static async Task<Models.WxaImageSecurityCheckResponse> ExecuteWxaImageSecurityCheckAsync(this WechatApiClient client, Models.WxaImageSecurityCheckRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));

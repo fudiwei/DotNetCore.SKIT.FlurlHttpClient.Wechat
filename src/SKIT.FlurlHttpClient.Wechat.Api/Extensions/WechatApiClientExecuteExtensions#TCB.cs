@@ -26,25 +26,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /tcb/createpressuretesttask 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBCreatePressureTestTaskResponse> ExecuteTCBCreatePressureTestTaskAsync(this WechatApiClient client, Models.TCBCreatePressureTestTaskRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "createpressuretesttask")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBCreatePressureTestTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /tcb/createsendsmstask 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -141,44 +122,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /tcb/getpressuretestreport 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBGetPressureTestReportResponse> ExecuteTCBGetPressureTestReportAsync(this WechatApiClient client, Models.TCBGetPressureTestReportRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "getpressuretestreport")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBGetPressureTestReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /tcb/getpressureteststatus 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBGetPressureTestStatusResponse> ExecuteTCBGetPressureTestStatusAsync(this WechatApiClient client, Models.TCBGetPressureTestStatusRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "getpressureteststatus")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBGetPressureTestStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /tcb/getstatistics 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -258,44 +201,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TCBCloudBaseReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /tcb/sendsms 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBSendSmsResponse> ExecuteTCBSendSmsAsync(this WechatApiClient client, Models.TCBSendSmsRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "sendsms")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBSendSmsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /tcb/sendsmsv2 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBSendSmsV2Response> ExecuteTCBSendSmsV2Async(this WechatApiClient client, Models.TCBSendSmsV2Request request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "sendsmsv2")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBSendSmsV2Response>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region ThirdPartyPlatforms
@@ -459,44 +364,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.TCBCheckMobileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /tcb/uploadappconfig 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBUploadAppConfigResponse> ExecuteTCBUploadAppConfigAsync(this WechatApiClient client, Models.TCBUploadAppConfigRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "uploadappconfig")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBUploadAppConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /tcb/getappconfig 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.TCBGetAppConfigResponse> ExecuteTCBGetAppConfigAsync(this WechatApiClient client, Models.TCBGetAppConfigRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "getappconfig")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.TCBGetAppConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

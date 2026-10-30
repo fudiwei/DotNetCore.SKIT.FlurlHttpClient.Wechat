@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "deliver_type": 0,
+            "acct_type": [
+                0
+            ]
+        }
+    ],
+    "deposit": 1000000
+}

@@ -3,6 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getpayfororder 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2026-06-05 下线。")]
     public class WxaBusinessGetPayForOrderRequest : WechatApiRequest, IInferable<WxaBusinessGetPayForOrderRequest, WxaBusinessGetPayForOrderResponse>
     {
         /// <summary>

@@ -3,6 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/img_sec_check 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2026-07-13 下线。")]
     public class WxaImageSecurityCheckRequest : WechatApiRequest, IInferable<WxaImageSecurityCheckRequest, WxaImageSecurityCheckResponse>
     {
         /// <summary>

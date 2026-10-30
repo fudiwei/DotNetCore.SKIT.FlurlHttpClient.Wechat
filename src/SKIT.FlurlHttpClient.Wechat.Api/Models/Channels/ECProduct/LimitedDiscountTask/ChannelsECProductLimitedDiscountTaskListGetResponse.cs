@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class SKU : ProductLimitedDiscountAddRequest.Types.SKU
+                    public class SKU
                     {
                         /// <summary>
                         /// 获取或设置所属商品 ID。
@@ -20,6 +20,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("product_id")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public long ProductId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sku_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
+                        public long SKUId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置抢购价格（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sale_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sale_price")]
+                        public int SalePrice { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置抢购库存。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sale_stock")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sale_stock")]
+                        public int SaleStock { get; set; }
 
                         /// <summary>
                         /// 获取或设置剩余抢购库存。

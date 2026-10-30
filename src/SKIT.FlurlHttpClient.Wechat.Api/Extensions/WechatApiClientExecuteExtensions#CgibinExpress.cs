@@ -696,75 +696,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExpressDeliveryReturnOpenReturnResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/add 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/express_sale_return.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExpressDeliveryReturnAddResponse> ExecuteCgibinExpressDeliveryReturnAddAsync(this WechatApiClient client, Models.CgibinExpressDeliveryReturnAddRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "return", "add")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExpressDeliveryReturnAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/get 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/express_sale_return.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExpressDeliveryReturnGetResponse> ExecuteCgibinExpressDeliveryReturnGetAsync(this WechatApiClient client, Models.CgibinExpressDeliveryReturnGetRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "return", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExpressDeliveryReturnGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/unbind 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/express_sale_return.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExpressDeliveryReturnUnbindResponse> ExecuteCgibinExpressDeliveryReturnUnbindAsync(this WechatApiClient client, Models.CgibinExpressDeliveryReturnUnbindRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "return", "unbind")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExpressDeliveryReturnUnbindResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
         #endregion
 
         #region Delivery/SingleWaybill
@@ -881,25 +812,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExpressDeliverySingleWaybillGetBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/express/delivery/single_waybill/evaluate_feedback 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExpressDeliverySingleWaybillEvaluateFeedbackResponse> ExecuteCgibinExpressDeliverySingleWaybillEvaluateFeedbackAsync(this WechatApiClient client, Models.CgibinExpressDeliverySingleWaybillEvaluateFeedbackRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "single_waybill", "evaluate_feedback")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExpressDeliverySingleWaybillEvaluateFeedbackResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
         #endregion

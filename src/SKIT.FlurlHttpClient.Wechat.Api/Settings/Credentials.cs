@@ -40,11 +40,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
         /// <summary>
         /// 初始化客户端时 <see cref="WechatApiClientOptions.MidasAppKey"/> 的副本。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public string? MidasAppKey { get; }
 
         /// <summary>
         /// 初始化客户端时 <see cref="WechatApiClientOptions.MidasOfferId"/> 的副本。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public string? MidasOfferId { get; }
 
         /// <summary>

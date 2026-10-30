@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
-    /// <para>表示被动回复文本消息的数据。</para>
+    /// <para>表示 "text" 回调通知应答的数据</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90241#%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF ]]> <br/>
@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Content")]
         [System.Text.Json.Serialization.JsonPropertyName("Content")]
         [System.Xml.Serialization.XmlElement("Content")]
-        public string Content { get; set; }
+        public string? Content { get; set; }
 
         public TextMessageReply()
         {

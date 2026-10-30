@@ -2,6 +2,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static partial class WechatApiClientExecuteExtensions
     {
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         private static T PreprocessRequestForCgibinMidas<T>(WechatApiClient client, ref T request)
             where T : Models.CgibinMidasRequestBase, new()
         {
@@ -53,6 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasGetBalanceResponse> ExecuteCgibinMidasGetBalanceAsync(this WechatApiClient client, Models.CgibinMidasGetBalanceRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -74,6 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasPayResponse> ExecuteCgibinMidasPayAsync(this WechatApiClient client, Models.CgibinMidasPayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -95,6 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasCancelPayResponse> ExecuteCgibinMidasCancelPayAsync(this WechatApiClient client, Models.CgibinMidasCancelPayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -116,6 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasPresentResponse> ExecuteCgibinMidasPresentAsync(this WechatApiClient client, Models.CgibinMidasPresentRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -133,15 +138,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Sandbox
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/getbalance 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.getBalance.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasSandboxGetBalanceResponse> ExecuteCgibinMidasSandboxGetBalanceAsync(this WechatApiClient client, Models.CgibinMidasSandboxGetBalanceRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -158,15 +160,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/pay 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.pay.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasSandboxPayResponse> ExecuteCgibinMidasSandboxPayAsync(this WechatApiClient client, Models.CgibinMidasSandboxPayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -183,15 +182,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/cancelpay 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.cancelPay.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasSandboxCancelPayResponse> ExecuteCgibinMidasSandboxCancelPayAsync(this WechatApiClient client, Models.CgibinMidasSandboxCancelPayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -208,15 +204,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/present 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.present.html ]]>
-        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public static async Task<Models.CgibinMidasSandboxPresentResponse> ExecuteCgibinMidasSandboxPresentAsync(this WechatApiClient client, Models.CgibinMidasSandboxPresentRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));

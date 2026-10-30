@@ -11,15 +11,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class RegisterDetail : ChannelsECBrandAddRequest.Types.Brand.Types.RegisterDetail
+                    public class RegisterDetail : ShopECBrandAddRequest.Types.Brand.Types.RegisterDetail
                     {
                     }
 
-                    public class ApplicationDetail : ChannelsECBrandAddRequest.Types.Brand.Types.ApplicationDetail
+                    public class ApplicationDetail : ShopECBrandAddRequest.Types.Brand.Types.ApplicationDetail
                     {
                     }
 
-                    public class GrantDetail : ChannelsECBrandAddRequest.Types.Brand.Types.GrantDetail
+                    public class GrantDetail : ShopECBrandAddRequest.Types.Brand.Types.GrantDetail
                     {
                     }
                 }

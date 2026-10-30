@@ -118,6 +118,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchGetEnvironmentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/usecloudaccesstoken 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_setcloudaccesstoken.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBUseCloudAccessTokenResponse> ExecuteComponentTCBUseCloudAccessTokenAsync(this WechatApiClient client, Models.ComponentTCBUseCloudAccessTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "usecloudaccesstoken")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUseCloudAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region SCF
@@ -307,278 +330,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             using var httpContent = new StringContent(request.Data!, Encoding.UTF8);
             return await client.SendFlurlRequestAsync<Models.ComponentTCBInvokeCloudFunctionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-        #endregion
-
-        #region ContainerService
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/opencontainerservice 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBOpenContainerServiceResponse> ExecuteComponentTCBOpenContainerServiceAsync(this WechatApiClient client, Models.ComponentTCBOpenContainerServiceRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "opencontainerservice")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBOpenContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /tcb/usecloudaccesstoken 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_setcloudaccesstoken.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBUseCloudAccessTokenResponse> ExecuteComponentTCBUseCloudAccessTokenAsync(this WechatApiClient client, Models.ComponentTCBUseCloudAccessTokenRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "usecloudaccesstoken")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUseCloudAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/createcontainerservice 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBCreateContainerServiceResponse> ExecuteComponentTCBCreateContainerServiceAsync(this WechatApiClient client, Models.ComponentTCBCreateContainerServiceRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcontainerservice")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/getcslist 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBGetContainerServiceListResponse> ExecuteComponentTCBGetContainerServiceListAsync(this WechatApiClient client, Models.ComponentTCBGetContainerServiceListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getcslist")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/delcontainerservice 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBDeleteContainerServiceResponse> ExecuteComponentTCBDeleteContainerServiceAsync(this WechatApiClient client, Models.ComponentTCBDeleteContainerServiceRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "delcontainerservice")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/createcsversion 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBCreateContainerServiceVersionResponse> ExecuteComponentTCBCreateContainerServiceVersionAsync(this WechatApiClient client, Models.ComponentTCBCreateContainerServiceVersionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcsversion")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/batchcreatecsversion 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBBatchCreateContainerServiceVersionResponse> ExecuteComponentTCBBatchCreateContainerServiceVersionAsync(this WechatApiClient client, Models.ComponentTCBBatchCreateContainerServiceVersionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchcreatecsversion")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchCreateContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/delcsversion 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBDeleteContainerServiceVersionResponse> ExecuteComponentTCBDeleteContainerServiceVersionAsync(this WechatApiClient client, Models.ComponentTCBDeleteContainerServiceVersionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "delcsversion")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/batchdelcsversion 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBBatchDeleteContainerServiceVersionResponse> ExecuteComponentTCBBatchDeleteContainerServiceVersionAsync(this WechatApiClient client, Models.ComponentTCBBatchDeleteContainerServiceVersionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchdelcsversion")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDeleteContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/getcsversionlist 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBGetContainerServiceVersionListResponse> ExecuteComponentTCBGetContainerServiceVersionListAsync(this WechatApiClient client, Models.ComponentTCBGetContainerServiceVersionListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getcsversionlist")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceVersionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/getcsversiondetail 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBGetContainerServiceVersionDetailResponse> ExecuteComponentTCBGetContainerServiceVersionDetailAsync(this WechatApiClient client, Models.ComponentTCBGetContainerServiceVersionDetailRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getcsversiondetail")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceVersionDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/setcsversionconfig 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBSetContainerServiceVersionConfigResponse> ExecuteComponentTCBSetContainerServiceVersionConfigAsync(this WechatApiClient client, Models.ComponentTCBSetContainerServiceVersionConfigRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "setcsversionconfig")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBSetContainerServiceVersionConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/setcspropotion 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBSetContainerServicePropotionResponse> ExecuteComponentTCBSetContainerServicePropotionAsync(this WechatApiClient client, Models.ComponentTCBSetContainerServicePropotionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "setcspropotion")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBSetContainerServicePropotionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/batchsetcspropotion 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBBatchSetContainerServicePropotionResponse> ExecuteComponentTCBBatchSetContainerServicePropotionAsync(this WechatApiClient client, Models.ComponentTCBBatchSetContainerServicePropotionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchsetcspropotion")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchSetContainerServicePropotionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -1141,25 +892,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBReleaseCloudBaseRunVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/createcloudbaserunresauth 接口。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBCreateCloudBaseRunResauthResponse> ExecuteComponentTCBCreateCloudBaseRunResauthAsync(this WechatApiClient client, Models.ComponentTCBCreateCloudBaseRunResauthRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunresauth")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunResauthResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

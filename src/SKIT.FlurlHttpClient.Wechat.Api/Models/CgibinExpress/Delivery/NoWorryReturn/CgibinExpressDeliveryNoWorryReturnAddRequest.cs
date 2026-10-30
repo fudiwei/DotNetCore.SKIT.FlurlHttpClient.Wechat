@@ -7,16 +7,73 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class ShopAddress : CgibinExpressDeliveryReturnAddRequest.Types.ShopAddress
+            public class Address
             {
+                /// <summary>
+                /// 获取或设置国家。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("country")]
+                [System.Text.Json.Serialization.JsonPropertyName("country")]
+                public string? Country { get; set; }
+
+                /// <summary>
+                /// 获取或设置省份。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("province")]
+                [System.Text.Json.Serialization.JsonPropertyName("province")]
+                public string? Province { get; set; }
+
+                /// <summary>
+                /// 获取或设置城市。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("city")]
+                [System.Text.Json.Serialization.JsonPropertyName("city")]
+                public string? City { get; set; }
+
+                /// <summary>
+                /// 获取或设置区县。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("area")]
+                [System.Text.Json.Serialization.JsonPropertyName("area")]
+                public string? District { get; set; }
+
+                /// <summary>
+                /// 获取或设置详细地址。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("address")]
+                [System.Text.Json.Serialization.JsonPropertyName("address")]
+                public string? Detail { get; set; }
+
+                /// <summary>
+                /// 获取或设置联系人。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("name")]
+                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                public string? Name { get; set; }
+
+                /// <summary>
+                /// 获取或设置联系电话。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mobile")]
+                [System.Text.Json.Serialization.JsonPropertyName("mobile")]
+                public string? MobileNumber { get; set; }
             }
 
-            public class UserAddress : CgibinExpressDeliveryReturnAddRequest.Types.UserAddress
+            public class Goods
             {
-            }
+                /// <summary>
+                /// 获取或设置商品名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("name")]
+                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                public string? Name { get; set; }
 
-            public class Goods : CgibinExpressDeliveryReturnAddRequest.Types.Goods
-            {
+                /// <summary>
+                /// 获取或设置商品图片 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("url")]
+                [System.Text.Json.Serialization.JsonPropertyName("url")]
+                public string? ImageUrl { get; set; }
             }
         }
 
@@ -32,14 +89,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("biz_addr")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_addr")]
-        public Types.ShopAddress? ShopAddress { get; set; }
+        public Types.Address? ShopAddress { get; set; }
 
         /// <summary>
         /// 获取或设置用户收货地址信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_addr")]
         [System.Text.Json.Serialization.JsonPropertyName("user_addr")]
-        public Types.UserAddress? UserAddress { get; set; }
+        public Types.Address? UserAddress { get; set; }
 
         /// <summary>
         /// 获取或设置退货用户的 OpenId。

@@ -59,11 +59,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// 获取或设置米大师平台 OfferId（用于小游戏虚拟支付 1.0 相关接口）。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public string? MidasOfferId { get; set; }
 
         /// <summary>
         /// 获取或设置米大师平台 AppKey（用于小游戏虚拟支付 1.0 相关接口）。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-11-05 下线。")]
         public string? MidasAppKey { get; set; }
 
         /// <summary>

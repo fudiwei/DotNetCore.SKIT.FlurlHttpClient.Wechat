@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
-    /// <para>表示被动回复语音消息的数据。</para>
+    /// <para>表示 "voice" 回调通知应答的数据</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90241#%E8%AF%AD%E9%9F%B3%E6%B6%88%E6%81%AF ]]> <br/>
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Voice")]
         [System.Text.Json.Serialization.JsonPropertyName("Voice")]
         [System.Xml.Serialization.XmlElement("Voice")]
-        public Types.Voice Voice { get; set; }
+        public Types.Voice? Voice { get; set; }
 
         public VoiceMessageReply()
         {

@@ -1,8 +1,0 @@
-{
-    "msg_type": 1,
-    "content": "{\"title\":\"今日优惠活动\",\"topic\":\"双十一大促\",\"desc\":\"三件五折，两件七折\",\"date\":\"2022/10/28\"}",
-    "appid": "xxxxx",
-    "path": "pages/index/xxxxx",
-    "id": "1",
-    "openid": "xxxxxxxxxxxx"
-}

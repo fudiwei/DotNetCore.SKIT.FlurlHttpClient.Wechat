@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ValidTimeRange")]
         [System.Text.Json.Serialization.JsonPropertyName("ValidTimeRange")]
         [System.Xml.Serialization.XmlElement("ValidTimeRange", Type = typeof(Types.ValidTimeRange))]
-        public List<Types.ValidTimeRange> ValidTimeRangeList { get; set; }
+        public List<Types.ValidTimeRange>? ValidTimeRangeList { get; set; }
 
         public WaybillQueryExpectTimeRangeReply()
         {

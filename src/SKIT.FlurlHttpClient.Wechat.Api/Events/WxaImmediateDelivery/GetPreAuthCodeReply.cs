@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("pre_auth_code")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_auth_code")]
         [System.Xml.Serialization.XmlElement("pre_auth_code")]
-        public string PreAuthCode { get; set; }
+        public string? PreAuthCode { get; set; }
 
         public GetPreAuthCodeReply()
         {

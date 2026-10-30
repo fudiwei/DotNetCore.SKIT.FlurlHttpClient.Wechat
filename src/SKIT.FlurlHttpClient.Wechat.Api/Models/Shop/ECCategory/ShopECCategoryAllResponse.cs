@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /shop/ec/category/all 接口的响应。</para>
+    /// <para>表示 [GET] /shop/ec/category/all 接口的响应。</para>
     /// </summary>
     public class ShopECCategoryAllResponse : WechatApiResponse
     {
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("mandatory")]
                                 [System.Text.Json.Serialization.JsonPropertyName("mandatory")]
-                                public bool IsApplyMandatory { get; set; }
+                                public bool IsMandatory { get; set; }
                             }
                         }
 

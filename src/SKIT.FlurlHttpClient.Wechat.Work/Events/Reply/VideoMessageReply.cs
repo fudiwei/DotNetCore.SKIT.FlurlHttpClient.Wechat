@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
-    /// <para>表示被动回复视频消息的数据。</para>
+    /// <para>表示 "video" 回调通知应答的数据</para>
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90241#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF ]]> <br/>
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Newtonsoft.Json.JsonProperty("Video")]
         [System.Text.Json.Serialization.JsonPropertyName("Video")]
         [System.Xml.Serialization.XmlElement("Video")]
-        public Types.Video Video { get; set; }
+        public Types.Video? Video { get; set; }
 
         public VideoMessageReply()
         {

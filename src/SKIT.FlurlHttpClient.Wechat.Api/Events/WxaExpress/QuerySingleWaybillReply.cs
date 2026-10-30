@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Sender")]
         [System.Text.Json.Serialization.JsonPropertyName("Sender")]
         [System.Xml.Serialization.XmlElement("Sender")]
-        public Types.Sender Sender { get; set; }
+        public Types.Sender? Sender { get; set; }
 
         /// <summary>
         /// 获取或设置收件人信息。
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Receiver")]
         [System.Text.Json.Serialization.JsonPropertyName("Receiver")]
         [System.Xml.Serialization.XmlElement("Receiver")]
-        public Types.Receiver Receiver { get; set; }
+        public Types.Receiver? Receiver { get; set; }
 
         /// <summary>
         /// 获取或设置包裹信息。
