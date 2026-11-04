@@ -53,7 +53,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E8%B5%84%E9%87%91%E8%B4%A6%E5%8D%95%E4%B8%8B%E8%BD%BD ]]> <br/>
         /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E4%BA%A4%E6%98%93%E8%B4%A6%E5%8D%95%E4%B8%8B%E8%BD%BD ]]>
         /// </para>
-        /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayBusinessClient" /> 时指定的 <see cref="WechatTenpayBusinessClientOptions.Endpoint"/> 参数控制。）</i></para>
+        /// <remarks>
+        /// （注意：该接口不受构造 <see cref="WechatTenpayBusinessClient" /> 时指定的 <see cref="WechatTenpayBusinessClientOptions.Endpoint"/> 参数控制。）
+        /// </remarks>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

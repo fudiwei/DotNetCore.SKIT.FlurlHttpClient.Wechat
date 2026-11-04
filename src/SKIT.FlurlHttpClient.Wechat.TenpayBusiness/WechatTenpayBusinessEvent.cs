@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// </summary>
         [Newtonsoft.Json.JsonProperty("event_id")]
         [System.Text.Json.Serialization.JsonPropertyName("event_id")]
-        public string EventId { get; set; } = default!;
+        public string? EventId { get; set; }
 
         /// <summary>
         /// 获取或设置通知类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("event_type")]
         [System.Text.Json.Serialization.JsonPropertyName("event_type")]
-        public string EventType { get; set; } = default!;
+        public string? EventType { get; set; }
 
         /// <summary>
         /// 获取或设置是否是生产环境。
@@ -64,6 +64,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// </summary>
         [Newtonsoft.Json.JsonProperty("event_content")]
         [System.Text.Json.Serialization.JsonPropertyName("event_content")]
-        public TEventContent EventContent { get; set; } = default!;
+        public TEventContent? EventContent { get; set; }
     }
 }

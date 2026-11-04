@@ -96,7 +96,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 public int Amount { get; set; }
             }
 
-            public class NotifyConfig
+            public abstract class __zz__NotifyConfig
+            {
+                /// <summary>
+                /// 获取或设置支付结果通知 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("server_notify_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("server_notify_url")]
+                public string? ServerNotifyUrl { get; set; }
+            }
+
+            public class NotifyConfig : __zz__NotifyConfig
             {
                 public static class Types
                 {
@@ -117,13 +127,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                         public string? iOSUrl { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置支付结果通知 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("server_notify_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("server_notify_url")]
-                public string? ServerNotifyUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置前端回跳信息。

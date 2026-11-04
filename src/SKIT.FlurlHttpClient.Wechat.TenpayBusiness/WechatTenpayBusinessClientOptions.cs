@@ -32,17 +32,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// 获取或设置微企付平台账号。
         /// </summary>
-        public string PlatformId { get; set; } = default!;
+        public string PlatformId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微企付平台 API 证书序列号。
         /// </summary>
-        public string PlatformCertificateSerialNumber { get; set; } = default!;
+        public string PlatformCertificateSerialNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微企付平台 API 证书私钥。
         /// </summary>
-        public string PlatformCertificatePrivateKey { get; set; } = default!;
+        public string PlatformCertificatePrivateKey { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微企付企业商户 ID。
@@ -62,12 +62,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// 获取或设置微企付 TBEP 证书序列号。
         /// </summary>
-        public string TBEPCertificateSerialNumber { get; set; } = default!;
+        public string TBEPCertificateSerialNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微企付 TBEP 证书公钥。
         /// </summary>
-        public string TBEPCertificatePublicKey { get; set; } = default!;
+        public string TBEPCertificatePublicKey { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置自动加密请求重敏感字段数据时使用的算法。
