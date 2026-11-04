@@ -5,16 +5,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// </summary>
     public class CreatePayMarketingTransfersPromotionTransferRequest : WechatTenpaySignableRequest
     {
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
         public override string? MerchantId { get; set; }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_appid")]
         public override string? AppId { get; set; }

@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Add(new StringContent(client.Credentials.MerchantId, Encoding.UTF8), $"\"mch_id\"");
-            httpContent.Add(new StringContent(request.FileHash, Encoding.UTF8), $"\"media_hash\"");
+            httpContent.Add(new StringContent(request.FileHash!, Encoding.UTF8), $"\"media_hash\"");
             httpContent.Add(new StringContent(sign, Encoding.UTF8), $"\"sign\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
 

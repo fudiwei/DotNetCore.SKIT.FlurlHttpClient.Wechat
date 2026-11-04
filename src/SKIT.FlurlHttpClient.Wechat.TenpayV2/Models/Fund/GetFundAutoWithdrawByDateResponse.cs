@@ -5,15 +5,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// </summary>
     public class GetFundAutoWithdrawByDateResponse : WechatTenpaySignableResponse
     {
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
         public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// <i>（冗余字段，请忽略）</i>
+        /// <remarks><i>（冗余字段，请忽略）</i></remarks>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

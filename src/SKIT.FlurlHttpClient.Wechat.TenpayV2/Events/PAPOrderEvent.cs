@@ -3,13 +3,13 @@ using System.Reflection;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示扣款服务扣款结果通知的模型。</para>
+    /// <para>表示扣款服务扣款结果回调通知事件的数据。</para>
     /// </summary>
     [Newtonsoft.Json.JsonConverter(typeof(PAPOrderEvent.Converters.EventClassNewtonsoftJsonConverter))]
     [System.Text.Json.Serialization.JsonConverter(typeof(PAPOrderEvent.Converters.EventClassSystemTextJsonConverter))]
     public class PAPOrderEvent : WechatTenpayEvent
     {
-        public static new class Types
+        public static class Types
         {
             public class Coupon : OrderEvent.Types.Coupon
             {

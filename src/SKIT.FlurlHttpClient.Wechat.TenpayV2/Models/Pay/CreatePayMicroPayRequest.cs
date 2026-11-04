@@ -7,12 +7,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     {
         public static class Types
         {
-            public class Detail : CreatePayUnifiedOrderRequest.Types.Detail
+            public class Detail : CreatePayUnifiedOrderRequest.Types.__zz__Detail
             {
+                public static class Types
+                {
+                    public class GoodsDetail : CreatePayUnifiedOrderRequest.Types.Detail.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
-            public class Scene : CreatePayUnifiedOrderRequest.Types.Scene
+            public class Scene
             {
+                public static class Types
+                {
+                    public class Store : CreatePayUnifiedOrderRequest.Types.Scene.Types.Store
+                    {
+                    }
+
+                    public class H5Info : CreatePayUnifiedOrderRequest.Types.Scene.Types.H5Info
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
+
+                /// <summary>
+                /// 获取或设置移动应用或网站应用信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("h5_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("h5_info")]
+                public Types.H5Info? H5Info { get; set; }
             }
         }
 
@@ -23,16 +60,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonPropertyName("version")]
         public string? Version { get; set; }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
         public override string? MerchantId { get; set; }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public override string? AppId { get; set; }

@@ -11,7 +11,45 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             {
                 public static class Types
                 {
-                    public class Promotion
+                    public abstract class __zz__Promotion
+                    {
+                        /// <summary>
+                        /// 获取或设置券或者立减优惠 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("promotion_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_id")]
+                        public string? PromotionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠范围。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("scope")]
+                        [System.Text.Json.Serialization.JsonPropertyName("scope")]
+                        public string? Scope { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public string? Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠券退款金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("refund_amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("refund_amount")]
+                        public int RefundAmount { get; set; }
+                    }
+
+                    public class Promotion : __zz__Promotion
                     {
                         public static class Types
                         {
@@ -51,41 +89,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置券或者立减优惠 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("promotion_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("promotion_id")]
-                        public string? PromotionId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置优惠名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置优惠范围。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("scope")]
-                        [System.Text.Json.Serialization.JsonPropertyName("scope")]
-                        public string? Scope { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置优惠类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string? Type { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置优惠券退款金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("refund_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("refund_amount")]
-                        public int RefundAmount { get; set; }
-
-                        /// <summary>
                         /// 获取或设置单品列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods_detail")]
@@ -103,16 +106,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             }
         }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
         public override string? MerchantId { get; set; }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public override string? AppId { get; set; }

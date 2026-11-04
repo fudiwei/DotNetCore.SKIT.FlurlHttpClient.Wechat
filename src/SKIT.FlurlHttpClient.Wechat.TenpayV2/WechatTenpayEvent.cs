@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     [Serializable]
     public class WechatTenpayEvent : ICommonWebhookEvent
     {
-        public static class Types
+        public static class Meta
         {
             public interface IDecryptedRequestInfo
             {
@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_code")]
         [System.Text.Json.Serialization.JsonPropertyName("return_code")]
-        public string ReturnCode { get; set; } = default!;
+        public string? ReturnCode { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付回调的状态描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_msg")]
         [System.Text.Json.Serialization.JsonPropertyName("return_msg")]
-        public string ReturnMessage { get; set; } = default!;
+        public string? ReturnMessage { get; set; }
 
         /// <summary>
         /// 获取微信支付 API 返回的错误码。

@@ -1,13 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
+    using SKIT.FlurlHttpClient.Internal.CodeAnalysis;
+
     /// <summary>
     /// <para>表示退款结果回调通知事件的数据。</para>
     /// </summary>
     public class RefundEvent : WechatTenpayEvent
     {
-        public static new class Types
+        public static class Types
         {
-            public class RefundInfo : WechatTenpayEvent.Types.IDecryptedRequestInfo
+            [DisallowAnalyzerRule("type-declaration/no-orphan-contract-nested-types")]
+            public class RefundInfo : WechatTenpayEvent.Meta.IDecryptedRequestInfo
             {
                 /// <summary>
                 /// 获取或设置子商户号。

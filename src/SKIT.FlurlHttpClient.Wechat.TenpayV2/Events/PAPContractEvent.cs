@@ -1,7 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示扣款服务签约、解约结果通知的模型。</para>
+    /// <para>表示扣款服务签约结果回调通知事件的数据。</para>
+    /// <para>表示扣款服务解约结果回调通知事件的数据。</para>
     /// </summary>
     public class PAPContractEvent : WechatTenpayEvent
     {

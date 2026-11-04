@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>验证回调通知事件签名。</para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookBody">微信回调通知中请求正文。</param>
+        /// <param name="webhookBody">回调通知中的请求正文。</param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignature(this WechatTenpayClient client, string webhookBody)
         {

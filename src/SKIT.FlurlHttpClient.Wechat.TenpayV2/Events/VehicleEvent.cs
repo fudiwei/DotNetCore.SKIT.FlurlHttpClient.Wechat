@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示车主平台通知的模型。</para>
+    /// <para>表示车主平台回调通知事件的数据。</para>
     /// </summary>
     public class VehicleEvent : WechatTenpayEvent
     {

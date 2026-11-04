@@ -5,15 +5,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// </summary>
     public class QueryRiskViolationRequest : WechatTenpaySignableRequest
     {
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
         public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// <i>（冗余字段，请忽略）</i>
+        /// <remarks><i>（冗余字段，请忽略）</i></remarks>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -54,7 +52,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public int PageNumber { get; set; } = 1;
 
         /// <summary>
-        /// <i>（使用默认值即可，无需修改）</i>
+        /// 获取或设置返回格式。
+        /// <para>默认值："json"</para>
+        /// <remarks><i>（使用默认值即可，无需修改）</i></remarks>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("violation_records_format")]
         [System.Text.Json.Serialization.JsonPropertyName("violation_records_format")]

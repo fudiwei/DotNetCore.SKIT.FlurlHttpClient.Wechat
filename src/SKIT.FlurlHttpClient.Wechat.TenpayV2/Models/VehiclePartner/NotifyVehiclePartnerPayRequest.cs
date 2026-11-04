@@ -3,13 +3,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// <summary>
     /// <para>表示 [POST] /vehicle/partnerpay/notification 接口的请求。</para>
     /// </summary>
-    public class NotifyVehiclePartnerPayRequest : NotifyVehiclePayRequest
+    public class NotifyVehiclePartnerPayRequest : WechatTenpaySignableRequest
     {
-        public static new class Types
+        public static class Types
         {
-            public class Scene : NotifyVehiclePayRequest.Types.Scene
+            public class Scene
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Data : NotifyVehiclePayRequest.Types.Scene.Types.Data
                     {
@@ -21,9 +21,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-                public new Types.Data? Data { get; set; }
+                public Types.Data? Data { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置接口版本号。
+        /// <para>默认值："3.0"</para>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("version")]
+        [System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; } = "3.0";
+
+        /// <inheritdoc/>
+        [Newtonsoft.Json.JsonProperty("mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
+        public override string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -31,6 +44,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonProperty("sub_mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
         public string? SubMerchantId { get; set; }
+
+        /// <inheritdoc/>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -40,12 +58,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string? SubAppId { get; set; }
 
         /// <summary>
+        /// <inheritdoc/>
+        /// <para>默认值：<see cref="Constants.SignTypes.HMAC_SHA256"/></para>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
+        public override string? SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
+
+        /// <summary>
+        /// 获取或设置交易场景值。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("trade_scene")]
+        [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
+        public string? TradeScene { get; set; }
+
+        /// <summary>
         /// 获取或设置场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public new Types.Scene? Scene { get; set; }
+        public Types.Scene? Scene { get; set; }
     }
 }

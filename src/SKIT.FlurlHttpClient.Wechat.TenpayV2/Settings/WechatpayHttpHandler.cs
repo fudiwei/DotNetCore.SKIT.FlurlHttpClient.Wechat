@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
 #endif
 
 #if NETCOREAPP2_1_OR_GREATER || NET5_0_OR_GREATER
-                handler.SslOptions.ClientCertificates = new X509CertificateCollection() { x509 };   
+                handler.SslOptions.ClientCertificates = new X509CertificateCollection() { x509 };
 #else
                 handler.ClientCertificates.Add(x509);
 #endif

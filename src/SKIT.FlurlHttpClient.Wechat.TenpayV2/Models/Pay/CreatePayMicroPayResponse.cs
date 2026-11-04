@@ -7,13 +7,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     {
         public static class Types
         {
-            public class PromotionDetail : GetPayOrderResponse.Types.PromotionDetail
+            public class PromotionDetail
             {
-                public static new class Types
+                public static class Types
                 {
-                    public class Promotion : GetPayOrderResponse.Types.PromotionDetail.Types.Promotion
+                    public class Promotion : GetPayOrderResponse.Types.PromotionDetail.Types.__zz__Promotion
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class GoodsDetail : GetPayOrderResponse.Types.PromotionDetail.Types.Promotion.Types.GoodsDetail
                             {
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("goods_detail")]
                         [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                        public new List<Types.GoodsDetail>? GoodsList { get; set; }
+                        public List<Types.GoodsDetail>? GoodsList { get; set; }
                     }
                 }
 
@@ -34,20 +34,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("promotion_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
-                public new List<Types.Promotion>? PromotionList { get; set; }
+                public List<Types.Promotion>? PromotionList { get; set; }
             }
         }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
         public override string? MerchantId { get; set; }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public override string? AppId { get; set; }

@@ -24,12 +24,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
-        public string MerchantId { get; set; } = default!;
+        public string MerchantId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信商户 API 密钥（注意与 API v3 密钥相区分）。
         /// </summary>
-        public string MerchantSecret { get; set; } = default!;
+        public string MerchantSecret { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信商户 API 证书内容字节数组。仅部分敏感接口需要传入此参数。

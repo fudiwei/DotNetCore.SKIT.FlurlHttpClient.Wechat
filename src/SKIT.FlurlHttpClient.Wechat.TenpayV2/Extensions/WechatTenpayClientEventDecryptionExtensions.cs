@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="webhookEvent"></param>
         /// <returns></returns>
         public static T DecryptEventRequestInfo<T>(this WechatTenpayClient client, WechatTenpayEvent webhookEvent)
-            where T : WechatTenpayEvent.Types.IDecryptedRequestInfo, new()
+            where T : WechatTenpayEvent.Meta.IDecryptedRequestInfo, new()
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (webhookEvent is null) throw new ArgumentNullException(nameof(webhookEvent));

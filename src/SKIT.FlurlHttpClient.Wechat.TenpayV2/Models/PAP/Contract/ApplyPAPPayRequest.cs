@@ -5,23 +5,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// </summary>
     public class ApplyPAPPayRequest : WechatTenpaySignableRequest
     {
-        public static class Types
-        {
-            public class Scene : CreatePayUnifiedOrderRequest.Types.Scene
-            {
-            }
-        }
-
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
         public override string? MerchantId { get; set; }
 
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public override string? AppId { get; set; }
@@ -103,14 +92,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonProperty("detail")]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
         public string? Detail { get; set; }
-
-        /// <summary>
-        /// 获取或设置场景信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("scene_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
-        public Types.Scene? Scene { get; set; }
     }
 }

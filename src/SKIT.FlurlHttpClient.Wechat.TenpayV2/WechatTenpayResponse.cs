@@ -63,8 +63,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// 获取或设置微信 AppId。
-        /// <para>注意：部分接口不支持获取，请直接忽略此字段。</para>
         /// </summary>
+        /// <remarks>
+        /// （注意：该属性在部分接口中不支持获取，请直接忽略。）
+        /// </remarks>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public abstract string? AppId { get; set; }
