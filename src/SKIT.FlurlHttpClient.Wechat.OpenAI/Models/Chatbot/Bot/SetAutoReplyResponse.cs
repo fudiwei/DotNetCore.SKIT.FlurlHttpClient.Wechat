@@ -5,9 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// </summary>
     public class SetAutoReplyResponse : WechatChatbotResponse
     {
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
         public override int? ReturnCode { get; set; }

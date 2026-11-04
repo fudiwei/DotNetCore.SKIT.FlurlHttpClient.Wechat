@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
             public class Data : WechatOpenAIResponseData
             {
                 /// <summary>
-                /// 获取或设置接口访问令牌。
+                /// 获取或设置接口调用凭证。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("access_token")]
                 [System.Text.Json.Serialization.JsonPropertyName("access_token")]

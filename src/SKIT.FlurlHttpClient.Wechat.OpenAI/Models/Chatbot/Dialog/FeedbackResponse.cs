@@ -6,9 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     [Obsolete("相关接口或字段于 2023-04-07 下线。")]
     public class FeedbackResponse : WechatChatbotResponse
     {
-        /// <summary>
         /// <inheritdoc/>
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]
         [System.Text.Json.Serialization.JsonPropertyName("code")]
         public override int? ReturnCode { get; set; }
