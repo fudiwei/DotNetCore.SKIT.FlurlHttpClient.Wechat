@@ -7,17 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Page : CgibinMeetingAdvancedLayoutAddRequest.Types.Layout.Types.Page
+            public class Page : CgibinMeetingAdvancedLayoutAddRequest.Types.Layout.Types.__zz__Page
             {
-                public static new class Types
+                public static class Types
                 {
                     public class PollingSettings : CgibinMeetingAdvancedLayoutAddRequest.Types.Layout.Types.Page.Types.PollingSettings
                     {
                     }
 
-                    public class UserSeat : CgibinMeetingAdvancedLayoutAddRequest.Types.Layout.Types.Page.Types.UserSeat
+                    public class UserSeat : CgibinMeetingAdvancedLayoutAddRequest.Types.Layout.Types.Page.Types.__zz__UserSeat
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class User : CgibinMeetingAdvancedLayoutAddRequest.Types.Layout.Types.Page.Types.UserSeat.Types.User
                             {
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                        public new List<Types.User>? UserList { get; set; }
+                        public List<Types.User>? UserList { get; set; }
                     }
                 }
 
@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("polling_setting")]
                 [System.Text.Json.Serialization.JsonPropertyName("polling_setting")]
-                public new Types.PollingSettings? PollingSettings { get; set; }
+                public Types.PollingSettings? PollingSettings { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户座次列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_seat_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_seat_list")]
-                public new List<Types.UserSeat>? UserSeatList { get; set; }
+                public List<Types.UserSeat>? UserSeatList { get; set; }
             }
         }
 

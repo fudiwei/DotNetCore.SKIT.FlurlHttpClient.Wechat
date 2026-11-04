@@ -11,7 +11,60 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Base
+                    public abstract class __zz__Base
+                    {
+                        /// <summary>
+                        /// 获取或设置日报日期时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("date")]
+                        [System.Text.Json.Serialization.JsonPropertyName("date")]
+                        public long DateTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置日报类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("day_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("day_type")]
+                        public int DayType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置记录类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("record_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("record_type")]
+                        public int RecordType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置打卡人成员账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("acctid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("acctid")]
+                        public string? UserId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置打卡人姓名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置打卡人别名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name_ex")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name_ex")]
+                        public string? Alias { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置打卡人所在部门。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("departs_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("departs_name")]
+                        public string? DepartmentsName { get; set; }
+
+                    }
+
+                    public class Base : __zz__Base
                     {
                         public static class Types
                         {
@@ -73,55 +126,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.CheckinTime>? CheckinTimeList { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置日报日期时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("date")]
-                        [System.Text.Json.Serialization.JsonPropertyName("date")]
-                        public long DateTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置日报类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("day_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("day_type")]
-                        public int DayType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置记录类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("record_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("record_type")]
-                        public int RecordType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人成员账号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("acctid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("acctid")]
-                        public string? UserId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人姓名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人别名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name_ex")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name_ex")]
-                        public string? Alias { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人所在部门。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("departs_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("departs_name")]
-                        public string? DepartmentsName { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡规则信息。

@@ -7,8 +7,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Conclusion : CgibinExternalContactAddContactWayRequest.Types.Conclusion
+            public class Conclusion
             {
+                public static class Types
+                {
+                    public class Text : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.Text
+                    {
+                    }
+
+                    public class Image : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.Image
+                    {
+                    }
+
+                    public class Link : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.Link
+                    {
+                    }
+
+                    public class MiniProgram : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.MiniProgram
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置文本类型结束语。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("text")]
+                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                public Types.Text? Text { get; set; }
+
+                /// <summary>
+                /// 获取或设置图片类型结束语。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("image")]
+                [System.Text.Json.Serialization.JsonPropertyName("image")]
+                public Types.Image? Image { get; set; }
+
+                /// <summary>
+                /// 获取或设置链接类型结束语。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("link")]
+                [System.Text.Json.Serialization.JsonPropertyName("link")]
+                public Types.Link? Link { get; set; }
+
+                /// <summary>
+                /// 获取或设置小程序类型结束语。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("miniprogram")]
+                [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
+                public Types.MiniProgram? MiniProgram { get; set; }
             }
         }
 

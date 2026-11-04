@@ -11,53 +11,43 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class QueryRequest
+                    public class QueryRequest : CgibinServiceContactBatchSearchRequest.Types.QueryRequest
                     {
-                        /// <summary>
-                        /// 获取或设置搜索关键词。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("query_word")]
-                        [System.Text.Json.Serialization.JsonPropertyName("query_word")]
-                        public string? QueryWord { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置查询类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("query_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("query_type")]
-                        public int? QueryType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置查询范围。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("query_range")]
-                        [System.Text.Json.Serialization.JsonPropertyName("query_range")]
-                        public int? QueryRange { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置精确匹配字段类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("full_match_field")]
-                        [System.Text.Json.Serialization.JsonPropertyName("full_match_field")]
-                        public int? FullMatchField { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置翻页标记。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("cursor")]
-                        [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-                        public string? Cursor { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置分页每页数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("limit")]
-                        [System.Text.Json.Serialization.JsonPropertyName("limit")]
-                        public int? Limit { get; set; }
                     }
 
-                    public class QueryResult : CgibinServiceContactSearchResponse.Types.QueryResult
+                    public class QueryResult
                     {
+                        public static class Types
+                        {
+                            public class User : CgibinServiceContactSearchResponse.Types.QueryResult.Types.User
+                            {
+                            }
+
+                            public class Department : CgibinServiceContactSearchResponse.Types.QueryResult.Types.Department
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置查询到的用户信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user")]
+                        public Types.User? User { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置查询到的部门信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("party")]
+                        [System.Text.Json.Serialization.JsonPropertyName("party")]
+                        public Types.Department? Department { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置查询到的已离职用户信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("dismiss_user")]
+                        [System.Text.Json.Serialization.JsonPropertyName("dismiss_user")]
+                        public Types.User? DismissUser { get; set; }
                     }
                 }
 

@@ -17,9 +17,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<Types.UserItem>? Items { get; set; }
             }
 
-            public class UserItem : CgibinOpenHardwareDeviceGetUserInfoByPageResponse.Types.UserItem
+            public class UserItem : CgibinOpenHardwareDeviceGetUserInfoByPageResponse.Types.__zz__UserItem
             {
-                public static new class Types
+                public static class Types
                 {
                     public class PassRuleList
                     {
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pass_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("pass_rule")]
-                public new Types.PassRuleList? PassRuleList { get; set; }
+                public Types.PassRuleList? PassRuleList { get; set; }
             }
         }
 

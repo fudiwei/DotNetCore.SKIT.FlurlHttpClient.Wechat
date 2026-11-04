@@ -7,56 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Enroll
+            public abstract class __zz__Enroll
             {
-                public static class Types
-                {
-                    public class Answer
-                    {
-                        /// <summary>
-                        /// 获取或设置内容列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("answer_content")]
-                        [System.Text.Json.Serialization.JsonPropertyName("answer_content")]
-                        public List<string>? ContentList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置必填类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_required")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_required")]
-                        public int RequiredType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("question_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("question_type")]
-                        public int QuestionType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置特殊问题类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("special_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("special_type")]
-                        public int SpecialType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题编号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("question_num")]
-                        [System.Text.Json.Serialization.JsonPropertyName("question_num")]
-                        public int QuestionNumber { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("question_title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("question_title")]
-                        public string? QuestionTitle { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置报名 ID。
                 /// </summary>
@@ -113,6 +65,57 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("enroll_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("enroll_code")]
                 public string? EnrollCode { get; set; }
+            }
+
+            public class Enroll : __zz__Enroll
+            {
+                public static class Types
+                {
+                    public class Answer
+                    {
+                        /// <summary>
+                        /// 获取或设置内容列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("answer_content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("answer_content")]
+                        public List<string>? ContentList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置必填类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_required")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_required")]
+                        public int RequiredType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_type")]
+                        public int QuestionType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置特殊问题类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("special_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("special_type")]
+                        public int SpecialType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题编号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_num")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_num")]
+                        public int QuestionNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_title")]
+                        public string? QuestionTitle { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置答题列表。

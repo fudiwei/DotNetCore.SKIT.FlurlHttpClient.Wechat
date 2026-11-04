@@ -104,49 +104,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class Watermark
+            public class Watermark : CgibinWedriveFileSecureSettingRequest.Types.Watermark
             {
-                /// <summary>
-                /// 获取或设置水印文字。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("text")]
-                [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string? Text { get; set; }
-
-                /// <summary>
-                /// 获取或设置水印类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("margin_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("margin_type")]
-                public int MarginType { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否开启水印文本。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("show_text")]
-                [System.Text.Json.Serialization.JsonPropertyName("show_text")]
-                public bool EnableShowText { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否开启水印访问人名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("show_visitor_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("show_visitor_name")]
-                public bool EnableShowVisitorName { get; set; }
-
-                /// <summary>
-                /// 获取或设置管理员是否强制要求使用水印。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("force_by_admin")]
-                [System.Text.Json.Serialization.JsonPropertyName("force_by_admin")]
-                public bool IsForceByAdmin { get; set; }
-
-                /// <summary>
-                /// 获取或设置空间管理员是否强制要求使用水印。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("force_by_space_admin")]
-                [System.Text.Json.Serialization.JsonPropertyName("force_by_space_admin")]
-                public bool IsForceBySpaceAdmin { get; set; }
             }
         }
 

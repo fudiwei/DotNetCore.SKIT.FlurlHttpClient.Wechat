@@ -11,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class Attachment : CgibinKfKnowledgeAddIntentRequest.Types.Attachment
+            public class Attachment : CgibinKfKnowledgeAddIntentRequest.Types.__zz__Attachment
             {
-                public new static class Types
+                public static class Types
                 {
                     public class Image : CgibinKfKnowledgeAddIntentRequest.Types.Attachment.Types.Image
                     {
@@ -37,75 +37,75 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image")]
                 [System.Text.Json.Serialization.JsonPropertyName("image")]
-                public new Types.Image? Image { get; set; }
+                public Types.Image? Image { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文消息附件信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("link")]
                 [System.Text.Json.Serialization.JsonPropertyName("link")]
-                public new Types.Link? Link { get; set; }
+                public Types.Link? Link { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频附件信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("video")]
                 [System.Text.Json.Serialization.JsonPropertyName("video")]
-                public new Types.Video? Video { get; set; }
+                public Types.Video? Video { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序附件信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("miniprogram")]
                 [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
-                public new Types.MiniProgram? MiniProgram { get; set; }
+                public Types.MiniProgram? MiniProgram { get; set; }
             }
 
-            public class Question : CgibinKfKnowledgeAddIntentRequest.Types.Question
+            public class Question
             {
                 /// <summary>
                 /// 获取或设置主问题文本信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public new Text? Text { get; set; }
+                public Text? Text { get; set; }
             }
 
-            public class SimilarQuestionList : CgibinKfKnowledgeAddIntentRequest.Types.SimilarQuestionList
+            public class SimilarQuestionList
             {
                 /// <summary>
                 /// 获取或设置相似问题列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("items")]
                 [System.Text.Json.Serialization.JsonPropertyName("items")]
-                public new List<SimilarQuestionItem>? Items { get; set; }
+                public List<SimilarQuestionItem>? Items { get; set; }
             }
 
-            public class SimilarQuestionItem : CgibinKfKnowledgeAddIntentRequest.Types.SimilarQuestionItem
+            public class SimilarQuestionItem
             {
                 /// <summary>
                 /// 获取或设置相似问题文本信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public new Text? Text { get; set; }
+                public Text? Text { get; set; }
             }
 
-            public class Answer : CgibinKfKnowledgeAddIntentRequest.Types.Answer
+            public class Answer
             {
                 /// <summary>
                 /// 获取或设置回答文本信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public new Text? Text { get; set; }
+                public Text? Text { get; set; }
 
                 /// <summary>
                 /// 获取或设置附件列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attachments")]
                 [System.Text.Json.Serialization.JsonPropertyName("attachments")]
-                public new List<Attachment>? AttachmentList { get; set; }
+                public List<Attachment>? AttachmentList { get; set; }
             }
         }
 

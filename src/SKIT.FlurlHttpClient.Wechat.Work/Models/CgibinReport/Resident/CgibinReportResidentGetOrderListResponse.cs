@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class WorkOrder : CgibinReportPatrolGetOrderListResponse.Types.WorkOrder
+            public abstract class __zz__WorkOrder : CgibinReportPatrolGetOrderListResponse.Types.__zz__WorkOrder
             {
                 /// <summary>
                 /// 获取或设置上报人名称。
@@ -29,6 +29,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("unionid")]
                 [System.Text.Json.Serialization.JsonPropertyName("unionid")]
                 public string? ReporterUnionId { get; set; }
+            }
+
+            public class WorkOrder : __zz__WorkOrder
+            {
+                public static class Types
+                {
+                    public class Location : CgibinReportPatrolGetOrderListResponse.Types.WorkOrder.Types.Location
+                    {
+                    }
+
+                    public class ProcessRecord : CgibinReportPatrolGetOrderListResponse.Types.WorkOrder.Types.ProcessRecord
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置位置信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("location")]
+                [System.Text.Json.Serialization.JsonPropertyName("location")]
+                public Types.Location? Location { get; set; }
+
+                /// <summary>
+                /// 获取或设置处理记录列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("process_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("process_list")]
+                public List<Types.ProcessRecord>? ProcessRecordList { get; set; }
             }
         }
 

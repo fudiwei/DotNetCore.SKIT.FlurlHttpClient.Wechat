@@ -236,8 +236,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                 try
                 {
                     int ret = /* 解密聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(encryptKey, request.EncryptedChatMessage, dataPtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(encryptKey, request.EncryptedChatMessage, dataPtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(encryptKey, request.EncryptedChatMessage!, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(encryptKey, request.EncryptedChatMessage!, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
@@ -327,8 +327,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                 try
                 {
                     int ret = /* 获取媒体文件数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId!, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId!, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
@@ -387,7 +387,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
             const int ATTAMPT_INTERVAL = 500; // 错误等待间隔（单位：毫秒）
             int retryCount = 0;               // 当前已重试次数，获取每个分片前都重置为 0
 
-            string fileId = request.FileId;
+            string fileId = request.FileId!;
             string? nextBufferIndex = null;
 
             Models.GetMediaFileResponse response = new Models.GetMediaFileResponse();

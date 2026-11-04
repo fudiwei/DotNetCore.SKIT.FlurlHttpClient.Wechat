@@ -15,86 +15,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                         public static class Types
                         {
-                            public class Text
+                            public class Text : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.Text
                             {
-                                /// <summary>
-                                /// 获取或设置文本内容。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("content")]
-                                [System.Text.Json.Serialization.JsonPropertyName("content")]
-                                public string? Content { get; set; }
                             }
 
-                            public class Image
+                            public class Image : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.Image
                             {
-                                /// <summary>
-                                /// 获取或设置图片 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("pic_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("pic_url")]
-                                public string? PictureUrl { get; set; }
                             }
 
-                            public class Link
+                            public class Link : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.Link
                             {
-                                /// <summary>
-                                /// 获取或设置图文消息 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("url")]
-                                public string? Url { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置图文消息标题。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("title")]
-                                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public string? Title { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置图文消息描述。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("desc")]
-                                [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                                public string? Description { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置图文消息封面 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("picurl")]
-                                [System.Text.Json.Serialization.JsonPropertyName("picurl")]
-                                public string? PictureUrl { get; set; }
                             }
 
-                            public class MiniProgram
+                            public class MiniProgram : CgibinExternalContactAddContactWayRequest.Types.Conclusion.Types.MiniProgram
                             {
-                                /// <summary>
-                                /// 获取或设置小程序 AppId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("appid")]
-                                [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                                public string? AppId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置小程序页面路径。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("page")]
-                                [System.Text.Json.Serialization.JsonPropertyName("page")]
-                                public string? PagePath { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置小程序标题。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("title")]
-                                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public string? Title { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置小程序缩略图 MediaId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("pic_media_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("pic_media_id")]
-                                public string? PictureMediaId { get; set; }
                             }
                         }
 

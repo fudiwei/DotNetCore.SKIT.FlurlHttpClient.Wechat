@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Page : CgibinMeetingLayoutAddRequest.Types.Layout.Types.Page
+            public class Page : CgibinMeetingLayoutAddRequest.Types.Layout.Types.__zz__Page
             {
-                public static new class Types
+                public static class Types
                 {
                     public class UserSeat : CgibinMeetingLayoutAddRequest.Types.Layout.Types.Page.Types.UserSeat
                     {
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_seat_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_seat_list")]
-                public new List<Types.UserSeat>? UserSeatList { get; set; }
+                public List<Types.UserSeat>? UserSeatList { get; set; }
             }
         }
 

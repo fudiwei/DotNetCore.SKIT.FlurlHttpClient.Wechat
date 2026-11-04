@@ -7,11 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class View
+            public class View : CgibinWedocSmartSheetAddViewResponse.Types.View
             {
                 public static class Types
                 {
-                    public class ViewProperty
+                    public class ViewProperty : CgibinWedocSmartSheetUpdateViewRequest.Types.__zz__ViewProperty
                     {
                         public static class Types
                         {
@@ -19,21 +19,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                                 public static class Types
                                 {
-                                    public class SortField
+                                    public class SortField : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.SortSpec.Types.SortField
                                     {
-                                        /// <summary>
-                                        /// 获取或设置字段 ID。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("field_id")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                                        public string? FieldId { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置是否降序。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("desc")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                                        public bool IsDescend { get; set; }
                                     }
                                 }
 
@@ -49,21 +36,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                                 public static class Types
                                 {
-                                    public class GroupField
+                                    public class GroupField : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.GroupSpec.Types.GroupField
                                     {
-                                        /// <summary>
-                                        /// 获取或设置字段 ID。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("field_id")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                                        public string? FieldId { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置是否降序。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("desc")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                                        public bool IsDescend { get; set; }
                                     }
                                 }
 
@@ -75,143 +49,82 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.GroupField>? GroupFieldList { get; set; }
                             }
 
-                            public class FilterSpec
+                            public class FieldCondition : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.__zz__FieldCondition
                             {
                                 public static class Types
                                 {
-                                    public class Condition
+                                    public class StringValue : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.FieldCondition.Types.StringValue
+                                    {
+                                    }
+
+                                    public class NumberValue : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.FieldCondition.Types.NumberValue
+                                    {
+                                    }
+
+                                    public class BoolValue : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.FieldCondition.Types.BoolValue
+                                    {
+                                    }
+
+                                    public class UserValue : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.FieldCondition.Types.UserValue
+                                    {
+                                    }
+
+                                    public class DateTimeValue
                                     {
                                         public static class Types
                                         {
-                                            public class StringValue
+                                            public class Value : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.FieldCondition.Types.DateTimeValue.Types.Value
                                             {
-                                                /// <summary>
-                                                /// 获取或设置值。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("value")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                                public List<string>? Value { get; set; }
-                                            }
-
-                                            public class NumberValue
-                                            {
-                                                /// <summary>
-                                                /// 获取或设置值。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("value")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                                public decimal Value { get; set; }
-                                            }
-
-                                            public class BoolValue
-                                            {
-                                                /// <summary>
-                                                /// 获取或设置值。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("value")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                                public bool Value { get; set; }
-                                            }
-
-                                            public class UserValue
-                                            {
-                                                /// <summary>
-                                                /// 获取或设置值。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("value")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                                public List<string>? Value { get; set; }
-                                            }
-
-                                            public class DateTimeValue
-                                            {
-                                                public static class Types
-                                                {
-                                                    public class Value
-                                                    {
-                                                        /// <summary>
-                                                        /// 获取或设置日期类型。
-                                                        /// </summary>
-                                                        [Newtonsoft.Json.JsonProperty("type")]
-                                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                                        public string? Type { get; set; }
-
-                                                        /// <summary>
-                                                        /// 获取或设置日期时间值。
-                                                        /// </summary>
-                                                        [Newtonsoft.Json.JsonProperty("value")]
-                                                        [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                                        public List<string>? DateTimes { get; set; }
-                                                    }
-                                                }
-
-                                                /// <summary>
-                                                /// 获取或设置值。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("value")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                                public Types.Value? Value { get; set; }
                                             }
                                         }
 
                                         /// <summary>
-                                        /// 获取或设置字段 ID。
+                                        /// 获取或设置值。
                                         /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("field_id")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                                        public string? FieldId { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置字段类型。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("field_type")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("field_type")]
-                                        public string? FieldType { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置判断类型。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("operator")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("operator")]
-                                        public string? Operator { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置文本值。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("string_value")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("string_value")]
-                                        public Types.StringValue? StringValue { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置数字值。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("number_value")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("number_value")]
-                                        public Types.NumberValue? NumberValue { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置布尔值。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("bool_value")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("bool_value")]
-                                        public Types.BoolValue? BoolValue { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置人员值。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("user_value")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("user_value")]
-                                        public Types.UserValue? UserValue { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置日期时间值。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("date_time_value")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("date_time_value")]
-                                        public Types.DateTimeValue? DateTimeValue { get; set; }
+                                        [Newtonsoft.Json.JsonProperty("value")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                        public Types.Value? Value { get; set; }
                                     }
                                 }
 
+                                /// <summary>
+                                /// 获取或设置文本值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("string_value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("string_value")]
+                                public Types.StringValue? StringValue { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置数字值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("number_value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("number_value")]
+                                public Types.NumberValue? NumberValue { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置布尔值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("bool_value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("bool_value")]
+                                public Types.BoolValue? BoolValue { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置人员值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("user_value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("user_value")]
+                                public Types.UserValue? UserValue { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置日期时间值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("date_time_value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("date_time_value")]
+                                public Types.DateTimeValue? DateTimeValue { get; set; }
+                            }
+
+                            public class FilterSpec
+                            {
                                 /// <summary>
                                 /// 获取或设置条件连词。
                                 /// </summary>
@@ -224,49 +137,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("conditions")]
                                 [System.Text.Json.Serialization.JsonPropertyName("conditions")]
-                                public List<Types.Condition>? ConditionList { get; set; }
+                                public List<Types.FieldCondition>? ConditionList { get; set; }
                             }
 
                             public class ColorConfig
                             {
                                 public static class Types
                                 {
-                                    public class ColorCondition
+                                    public class ColorCondition : CgibinWedocSmartSheetUpdateViewRequest.Types.ViewProperty.Types.ColorConfig.Types.__zz__ColorCondition
                                     {
-                                        public static class Types
-                                        {
-                                            public class Condition : FilterSpec.Types.Condition
-                                            {
-                                            }
-                                        }
-
-                                        /// <summary>
-                                        /// 获取或设置填色 ID。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("id")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                        public string? Id { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置填色类型。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("type")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                        public string? Type { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置颜色。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("color")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("color")]
-                                        public string? Color { get; set; }
-
                                         /// <summary>
                                         /// 获取或设置条件信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("condition")]
                                         [System.Text.Json.Serialization.JsonPropertyName("condition")]
-                                        public Types.Condition? Condition { get; set; }
+                                        public FieldCondition? Condition { get; set; }
                                     }
                                 }
 
@@ -278,20 +163,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.ColorCondition>? ColorConditionList { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置是否自动重新排序。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("auto_sort")]
-                        [System.Text.Json.Serialization.JsonPropertyName("auto_sort")]
-                        public bool IsAutoSort { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否使用数据统计。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_field_stat_enabled")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_field_stat_enabled")]
-                        public bool IsFieldStatEnabled { get; set; }
 
                         /// <summary>
                         /// 获取或设置排序设置。
@@ -315,20 +186,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public Types.FilterSpec? FilterSpec { get; set; }
 
                         /// <summary>
-                        /// 获取或设置字段可见性字典。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("field_visibility")]
-                        [System.Text.Json.Serialization.JsonPropertyName("field_visibility")]
-                        public Dictionary<string, bool>? FieldVisibilityMap { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置冻结列数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("frozen_field_count")]
-                        [System.Text.Json.Serialization.JsonPropertyName("frozen_field_count")]
-                        public int FrozenFieldCount { get; set; }
-
-                        /// <summary>
                         /// 获取或设置填色设置。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("color_config")]
@@ -336,27 +193,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public Types.ColorConfig? ColorConfig { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置视图 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("view_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("view_id")]
-                public string? ViewId { get; set; }
-
-                /// <summary>
-                /// 获取或设置视图名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("view_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("view_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置视图类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("view_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("view_type")]
-                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置视图属性信息。

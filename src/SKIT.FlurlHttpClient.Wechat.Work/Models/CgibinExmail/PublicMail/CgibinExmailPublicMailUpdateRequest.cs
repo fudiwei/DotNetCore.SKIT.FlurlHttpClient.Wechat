@@ -19,14 +19,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class AliasList
+            public class AliasList : CgibinExmailPublicMailCreateRequest.Types.AliasList
             {
-                /// <summary>
-                /// 获取或设置别名列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("list")]
-                [System.Text.Json.Serialization.JsonPropertyName("list")]
-                public List<string>? Items { get; set; }
             }
 
             public class AuthCodeInfo : CgibinExmailPublicMailCreateRequest.Types.AuthCodeInfo

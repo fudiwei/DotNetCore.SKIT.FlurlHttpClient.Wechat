@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class PassRule : CgibinDeviceDataAddAccessControlRuleRequest.Types.PassRule
+            public class PassRule : CgibinDeviceDataAddAccessControlRuleRequest.Types.__zz__PassRule
             {
+                public static class Types
+                {
+                    public class EffectUser : CgibinDeviceDataAddAccessControlRuleRequest.Types.PassRule.Types.EffectUser
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置生效成员列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("effect_open_userid_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("effect_open_userid_list")]
+                public List<Types.EffectUser>? EffectUserList { get; set; }
             }
         }
 

@@ -7,7 +7,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Field
+            public abstract class __zz__Field
+            {
+                /// <summary>
+                /// 获取或设置字段名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("field_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("field_title")]
+                public string? Title { get; set; }
+
+                /// <summary>
+                /// 获取或设置字段类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("field_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("field_type")]
+                public string? Type { get; set; }
+            }
+
+            public class Field : __zz__Field
             {
                 public static class Types
                 {
@@ -96,7 +113,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string? Type { get; set; }
                     }
 
-                    public class SelectFieldProperty
+                    public abstract class __zz__SelectFieldProperty
+                    {
+                        /// <summary>
+                        /// 获取或设置是否允许填写时新增选项。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_quick_add")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_quick_add")]
+                        public bool IsQuickAdd { get; set; }
+                    }
+
+                    public class SelectFieldProperty : __zz__SelectFieldProperty
                     {
                         public static class Types
                         {
@@ -124,13 +151,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public int Style { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置是否允许填写时新增选项。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_quick_add")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_quick_add")]
-                        public bool IsQuickAdd { get; set; }
 
                         /// <summary>
                         /// 获取或设置选项列表。
@@ -170,7 +190,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public int DecimalPlaces { get; set; }
                     }
 
-                    public class SingleSelectFieldProperty
+                    public abstract class __zz__SingleSelectFieldProperty
+                    {
+                        /// <summary>
+                        /// 获取或设置是否允许填写时新增选项。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_quick_add")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_quick_add")]
+                        public bool IsQuickAdd { get; set; }
+                    }
+
+                    public class SingleSelectFieldProperty : __zz__SingleSelectFieldProperty
                     {
                         public static class Types
                         {
@@ -178,13 +208,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置是否允许填写时新增选项。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_quick_add")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_quick_add")]
-                        public bool IsQuickAdd { get; set; }
 
                         /// <summary>
                         /// 获取或设置选项列表。
@@ -235,7 +258,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string? InputType { get; set; }
                     }
 
-                    public class AutoNumberFieldProperty
+                    public abstract class __zz__AutoNumberFieldProperty
+                    {
+                        /// <summary>
+                        /// 获取或设置输入类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("input_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("input_type")]
+                        public string? InputType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否应用于已有编号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("reformat_existing_record")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reformat_existing_record")]
+                        public bool IsReformatExistingRecord { get; set; }
+                    }
+
+                    public class AutoNumberFieldProperty : __zz__AutoNumberFieldProperty
                     {
                         public static class Types
                         {
@@ -258,25 +298,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置输入类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("input_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("input_type")]
-                        public string? InputType { get; set; }
-
-                        /// <summary>
                         /// 获取或设置自定义规则列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rules")]
                         [System.Text.Json.Serialization.JsonPropertyName("rules")]
                         public List<Types.Rule>? RuleList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否应用于已有编号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("reformat_existing_record")]
-                        [System.Text.Json.Serialization.JsonPropertyName("reformat_existing_record")]
-                        public bool IsReformatExistingRecord { get; set; }
                     }
 
                     public class CurrencyFieldProperty
@@ -340,20 +366,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public bool IsMobileScanOnly { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置字段名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_type")]
-                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置文本类型的字段属性。

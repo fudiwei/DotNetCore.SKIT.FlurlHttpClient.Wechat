@@ -17,12 +17,108 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<string>? Items { get; set; }
             }
 
-            public class ExtendedAttribute : CgibinUserCreateRequest.Types.ExtendedAttribute
+            public class ExtendedAttribute
             {
+                public static class Types
+                {
+                    public class Attribute : CgibinUserCreateRequest.Types.ExtendedAttribute.Types.__zz__Attribute
+                    {
+                        public static class Types
+                        {
+                            public class Text : CgibinUserCreateRequest.Types.ExtendedAttribute.Types.Attribute.Types.Text
+                            {
+                            }
+
+                            public class Web : CgibinUserCreateRequest.Types.ExtendedAttribute.Types.Attribute.Types.Web
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置文本属性值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("text")]
+                        public Types.Text? Text { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置网页属性值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("web")]
+                        [System.Text.Json.Serialization.JsonPropertyName("web")]
+                        public Types.Web? Web { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置自定义字段列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("attrs")]
+                [System.Text.Json.Serialization.JsonPropertyName("attrs")]
+                public List<Types.Attribute>? AttributeList { get; set; }
             }
 
-            public class ExternalProfile : CgibinUserCreateRequest.Types.ExternalProfile
+            public class ExternalProfile : CgibinUserCreateRequest.Types.__zz__ExternalProfile
             {
+                public static class Types
+                {
+                    public class Attribute : CgibinUserCreateRequest.Types.ExternalProfile.Types.__zz__Attribute
+                    {
+                        public static class Types
+                        {
+                            public class Text : CgibinUserCreateRequest.Types.ExternalProfile.Types.Attribute.Types.Text
+                            {
+                            }
+
+                            public class Web : CgibinUserCreateRequest.Types.ExternalProfile.Types.Attribute.Types.Web
+                            {
+                            }
+
+                            public class MiniProgram : CgibinUserCreateRequest.Types.ExternalProfile.Types.Attribute.Types.MiniProgram
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置文本属性值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("text")]
+                        public Types.Text? Text { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置网页属性值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("web")]
+                        [System.Text.Json.Serialization.JsonPropertyName("web")]
+                        public Types.Web? Web { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置小程序属性值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("miniprogram")]
+                        [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
+                        public Types.MiniProgram? MiniProgram { get; set; }
+                    }
+
+                    public class WechatChannels : CgibinUserCreateRequest.Types.ExternalProfile.Types.WechatChannels
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置视频号信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("wechat_channels")]
+                [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
+                public Types.WechatChannels? WechatChannels { get; set; }
+
+                /// <summary>
+                /// 获取或设置对外自定义字段列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("external_attr")]
+                [System.Text.Json.Serialization.JsonPropertyName("external_attr")]
+                public List<Types.Attribute>? AttributeList { get; set; }
             }
         }
 

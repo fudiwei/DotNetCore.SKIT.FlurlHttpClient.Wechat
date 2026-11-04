@@ -52,7 +52,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("remind_before_event_mins")]
                         [System.Text.Json.Serialization.JsonPropertyName("remind_before_event_mins")]
-                        public new int? RemindBeforeEventTime { get; set; }
+                        public new int? RemindBeforeEventTime
+                        {
+                            get { return base.RemindBeforeEventTime / 60; }
+                            set { base.RemindBeforeEventTime = value * 60; }
+                        }
 
                         /// <summary>
                         /// 获取或设置每月哪几周重复。

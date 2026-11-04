@@ -170,10 +170,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">企业微信回调通知中的 "timestamp" 查询参数。</param>
-        /// <param name="webhookNonce">企业微信回调通知中的 "nonce" 查询参数。</param>
-        /// <param name="webhookEcho">企业微信回调通知中的 "echostr" 查询参数。</param>
-        /// <param name="webhookSignature">企业微信回调通知中的 "msg_signature" 查询参数。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="webhookNonce">回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="webhookEcho">回调通知中的 "echostr" 查询参数。</param>
+        /// <param name="webhookSignature">回调通知中的 "msg_signature" 查询参数。</param>
         /// <param name="replyEcho"></param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignatureForEcho(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookEcho, string webhookSignature, out string? replyEcho)
@@ -222,10 +222,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">企业微信回调通知中的 "timestamp" 查询参数。</param>
-        /// <param name="webhookNonce">企业微信回调通知中的 "nonce" 查询参数。</param>
-        /// <param name="webhookJson">企业微信回调通知中请求正文（JSON 格式）。</param>
-        /// <param name="webhookSignature">企业微信回调通知中的 "msg_signature" 查询参数。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="webhookNonce">回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="webhookJson">回调通知中的请求正文（JSON 格式）。</param>
+        /// <param name="webhookSignature">回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignatureFromJson(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookJson, string webhookSignature)
         {
@@ -240,7 +240,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: webhookTimestamp,
                     sNonce: webhookNonce,
-                    sMsgEncrypt: encryptedEvent.EncryptedData,
+                    sMsgEncrypt: encryptedEvent.EncryptedData!,
                     sMsgSign: webhookSignature
                 );
 
@@ -267,10 +267,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">企业微信回调通知中的 "timestamp" 查询参数。</param>
-        /// <param name="webhookNonce">企业微信回调通知中的 "nonce" 查询参数。</param>
-        /// <param name="webhookXml">企业微信回调通知中请求正文（XML 格式）。</param>
-        /// <param name="webhookSignature">企业微信回调通知中的 "msg_signature" 查询参数。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="webhookNonce">回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="webhookXml">回调通知中的请求正文（XML 格式）。</param>
+        /// <param name="webhookSignature">回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignatureFromXml(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookXml, string webhookSignature)
         {
@@ -311,20 +311,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         {
             [Newtonsoft.Json.JsonProperty("Encrypt")]
             [System.Text.Json.Serialization.JsonPropertyName("Encrypt")]
-            public string EncryptedData { get; set; } = default!;
+            public string? EncryptedData { get; set; }
 
             [Newtonsoft.Json.JsonProperty("TimeStamp")]
             [System.Text.Json.Serialization.JsonPropertyName("TimeStamp")]
             [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-            public string TimestampString { get; set; } = default!;
+            public string? TimestampString { get; set; }
 
             [Newtonsoft.Json.JsonProperty("Nonce")]
             [System.Text.Json.Serialization.JsonPropertyName("Nonce")]
-            public string Nonce { get; set; } = default!;
+            public string? Nonce { get; set; }
 
             [Newtonsoft.Json.JsonProperty("MsgSignature")]
             [System.Text.Json.Serialization.JsonPropertyName("MsgSignature")]
-            public string Signature { get; set; } = default!;
+            public string? Signature { get; set; }
         }
 
         private static TEvent InnerDeserializeEventFromJson<TEvent>(this WechatWorkClient client, string webhookJson)
@@ -338,7 +338,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                     throw new WechatWorkException("Failed to decrypt event data, because the push encoding AES key is empty.");
 
                 InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(webhookJson);
-                webhookJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                webhookJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
 
                 return client.JsonSerializer.Deserialize<TEvent>(webhookJson);
             }

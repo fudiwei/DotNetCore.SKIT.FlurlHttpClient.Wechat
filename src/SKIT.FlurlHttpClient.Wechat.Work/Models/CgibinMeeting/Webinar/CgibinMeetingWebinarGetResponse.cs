@@ -7,80 +7,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Host
+            public class Host : CgibinMeetingWebinarCreateRequest.Types.Host
             {
-                /// <summary>
-                /// 获取或设置成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
             }
 
-            public class MediaSettings
+            public class MediaSettings : CgibinMeetingWebinarCreateRequest.Types.MediaSettings
             {
-                /// <summary>
-                /// 获取或设置是否入会时静音。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("enable_enter_mute")]
-                [System.Text.Json.Serialization.JsonPropertyName("enable_enter_mute")]
-                public bool EnableEnterMute { get; set; }
-
-                /// <summary>
-                /// 获取或设置允许参会者取消静音。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("allow_unmute_self")]
-                [System.Text.Json.Serialization.JsonPropertyName("allow_unmute_self")]
-                public bool AllowUnmuteSelf { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否允许嘉宾在主持人进会前加入会议。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("allow_enter_before_host")]
-                [System.Text.Json.Serialization.JsonPropertyName("allow_enter_before_host")]
-                public bool AllowEnterBeforeHost { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否开启屏幕共享水印。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("enable_screen_watermark")]
-                [System.Text.Json.Serialization.JsonPropertyName("enable_screen_watermark")]
-                public bool EnableScreenWatermark { get; set; }
-
-                /// <summary>
-                /// 获取或设置水印样式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("watermark_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("watermark_type")]
-                public int WatermarkType { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否仅企业内部成员可入会。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("allow_external_user")]
-                [System.Text.Json.Serialization.JsonPropertyName("allow_external_user")]
-                public bool AllowExternalUser { get; set; }
-
-                /// <summary>
-                /// 获取或设置自动会议录制类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("auto_record_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("auto_record_type")]
-                public string? AutoRecordType { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否当有参会成员入会时立即开启云录制。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("attendee_join_auto_record")]
-                [System.Text.Json.Serialization.JsonPropertyName("attendee_join_auto_record")]
-                public bool IsAttendeeJoinAutoRecord { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否允许主持人暂停或者停止云录制。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("enable_host_pause_auto_record")]
-                [System.Text.Json.Serialization.JsonPropertyName("enable_host_pause_auto_record")]
-                public bool EnableHostPauseAutoRecord { get; set; }
             }
         }
 

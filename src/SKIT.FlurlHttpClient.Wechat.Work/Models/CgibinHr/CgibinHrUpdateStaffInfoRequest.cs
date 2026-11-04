@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class UpdatedItem
+            public class Field
             {
                 public static class Types
                 {
@@ -103,15 +103,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.FileValue? FileValue { get; set; }
             }
 
+            public class UpdatedItem : Field
+            {
+            }
+
             public class InsertedItem
             {
-                public static class Types
-                {
-                    public class Field : UpdatedItem
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置字段组类型。
                 /// </summary>
@@ -124,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("item")]
                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                public List<Types.Field>? FieldList { get; set; }
+                public List<Field>? FieldList { get; set; }
             }
 
             public class RemovedItem

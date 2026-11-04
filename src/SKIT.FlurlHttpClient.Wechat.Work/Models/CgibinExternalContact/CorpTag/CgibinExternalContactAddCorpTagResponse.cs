@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class TagGroup : CgibinExternalContactGetCorpTagListResponse.Types.TagGroup
+            public class TagGroup : CgibinExternalContactGetCorpTagListResponse.Types.__zz__TagGroup
             {
+                public static class Types
+                {
+                    public class Tag : CgibinExternalContactGetCorpTagListResponse.Types.TagGroup.Types.Tag
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置企业标签列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("tag")]
+                [System.Text.Json.Serialization.JsonPropertyName("tag")]
+                public List<Types.Tag>? TagList { get; set; }
             }
         }
 

@@ -31,6 +31,39 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 {
                     public class Attribute
                     {
+                        public static class Types
+                        {
+                            public class Text
+                            {
+                                /// <summary>
+                                /// 获取或设置文本内容。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("Value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("Value")]
+                                [System.Xml.Serialization.XmlElement("Value")]
+                                public string? Value { get; set; }
+                            }
+
+                            public class Web
+                            {
+                                /// <summary>
+                                /// 获取或设置网页标题。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("Title")]
+                                [System.Text.Json.Serialization.JsonPropertyName("Title")]
+                                [System.Xml.Serialization.XmlElement("Title")]
+                                public string? Title { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置网页 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("Url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("Url")]
+                                [System.Xml.Serialization.XmlElement("Url")]
+                                public string? Url { get; set; }
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置属性类型。
                         /// </summary>
@@ -53,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("Text")]
                         [System.Text.Json.Serialization.JsonPropertyName("Text")]
                         [System.Xml.Serialization.XmlElement("Text", IsNullable = true)]
-                        public TextAttribute? Text { get; set; }
+                        public Types.Text? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置网页属性值。
@@ -61,37 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         [Newtonsoft.Json.JsonProperty("Web")]
                         [System.Text.Json.Serialization.JsonPropertyName("Web")]
                         [System.Xml.Serialization.XmlElement("Web", IsNullable = true)]
-                        public WebAttribute? Web { get; set; }
-                    }
-
-                    public class TextAttribute
-                    {
-                        /// <summary>
-                        /// 获取或设置文本内容。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("Value")]
-                        [System.Text.Json.Serialization.JsonPropertyName("Value")]
-                        [System.Xml.Serialization.XmlElement("Value")]
-                        public string? Value { get; set; }
-                    }
-
-                    public class WebAttribute
-                    {
-                        /// <summary>
-                        /// 获取或设置网页标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("Title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("Title")]
-                        [System.Xml.Serialization.XmlElement("Title")]
-                        public string? Title { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置网页 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("Url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("Url")]
-                        [System.Xml.Serialization.XmlElement("Url")]
-                        public string? Url { get; set; }
+                        public Types.Web? Web { get; set; }
                     }
                 }
 

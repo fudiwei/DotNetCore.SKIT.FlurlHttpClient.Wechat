@@ -11,7 +11,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Page
+                    public abstract class __zz__Page : CgibinMeetingLayoutAddRequest.Types.Layout.Types.__zz__Page
+                    {
+                        /// <summary>
+                        /// 获取或设置是否开启轮询。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("enable_polling")]
+                        [System.Text.Json.Serialization.JsonPropertyName("enable_polling")]
+                        public bool? EnablePolling { get; set; }
+                    }
+
+                    public class Page : __zz__Page
                     {
                         public static class Types
                         {
@@ -46,7 +56,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public bool IsIgnoreUserAbsence { get; set; }
                             }
 
-                            public class UserSeat
+                            public abstract class __zz__UserSeat
+                            {
+                                /// <summary>
+                                /// 获取或设置宫格 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("grid_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
+                                public string? GridId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置宫格类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("grid_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("grid_type")]
+                                public int GridType { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置视频画面来源。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("video_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("video_type")]
+                                public int? VideoType { get; set; }
+                            }
+
+                            public class UserSeat : __zz__UserSeat
                             {
                                 public static class Types
                                 {
@@ -76,27 +110,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 }
 
                                 /// <summary>
-                                /// 获取或设置宫格 ID。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("grid_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-                                public string? GridId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置宫格类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("grid_type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("grid_type")]
-                                public int GridType { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置视频画面来源。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("video_type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("video_type")]
-                                public int? VideoType { get; set; }
-
-                                /// <summary>
                                 /// 获取或设置用户列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("user_list")]
@@ -104,20 +117,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.User>? UserList { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置布局模板 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("layout_template_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("layout_template_id")]
-                        public string? LayoutTemplateId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否开启轮询。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("enable_polling")]
-                        [System.Text.Json.Serialization.JsonPropertyName("enable_polling")]
-                        public bool? EnablePolling { get; set; }
 
                         /// <summary>
                         /// 获取或设置轮询配置信息。

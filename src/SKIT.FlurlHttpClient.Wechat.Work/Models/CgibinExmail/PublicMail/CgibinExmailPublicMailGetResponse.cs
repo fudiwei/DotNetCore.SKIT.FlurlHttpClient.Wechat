@@ -11,32 +11,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class UserIdList
-                    {
-                        /// <summary>
-                        /// 获取或设置成员账号列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("list")]
-                        public List<string>? Items { get; set; }
-                    }
-
-                    public class TagIdList : CgibinExmailGroupGetResponse.Types.TagIdList
+                    public class UserIdList : CgibinExmailPublicMailCreateRequest.Types.UserIdList
                     {
                     }
 
-                    public class DepartmentIdList : CgibinExmailGroupGetResponse.Types.DepartmentIdList
+                    public class TagIdList : CgibinExmailPublicMailCreateRequest.Types.TagIdList
                     {
                     }
 
-                    public class AliasList
+                    public class DepartmentIdList : CgibinExmailPublicMailCreateRequest.Types.DepartmentIdList
                     {
-                        /// <summary>
-                        /// 获取或设置别名列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("list")]
-                        public List<string>? Items { get; set; }
+                    }
+
+                    public class AliasList : CgibinExmailPublicMailCreateRequest.Types.AliasList
+                    {
                     }
                 }
 

@@ -7,26 +7,190 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Form
+            public class Form : CgibinWedocCreateFormRequest.Types.__zz__Form
             {
                 public static class Types
                 {
-                    public class QuestionList : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionList
+                    public class QuestionList
                     {
                         /// <summary>
                         /// 获取或设置问题列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("items")]
                         [System.Text.Json.Serialization.JsonPropertyName("items")]
-                        public new List<QuestionItem>? Items { get; set; }
+                        public List<QuestionItem>? Items { get; set; }
                     }
 
-                    public class QuestionItem : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem
+                    public class QuestionItem : CgibinWedocCreateFormRequest.Types.Form.Types.__zz__QuestionItem
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class Option : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.Option
                             {
+                            }
+
+                            public class ExtendedSettings
+                            {
+                                public static class Types
+                                {
+                                    public class TextSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.TextSettings
+                                    {
+                                    }
+
+                                    public class RadioSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.RadioSettings
+                                    {
+                                    }
+
+                                    public class CheckboxSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.CheckboxSettings
+                                    {
+                                    }
+
+                                    public class LocationSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.LocationSettings
+                                    {
+                                    }
+
+                                    public class ImageSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.__zz__ImageSettings
+                                    {
+                                        public static class Types
+                                        {
+                                            public class UploadLimitation : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.ImageSettings.Types.UploadLimitation
+                                            {
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置上传限制信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("upload_image_limit")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("upload_image_limit")]
+                                        public Types.UploadLimitation? UploadLimitation { get; set; }
+                                    }
+
+                                    public class FileSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.__zz__FileSettings
+                                    {
+                                        public static class Types
+                                        {
+                                            public class UploadLimitation : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.FileSettings.Types.UploadLimitation
+                                            {
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置上传限制信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("upload_image_limit")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("upload_image_limit")]
+                                        public Types.UploadLimitation? UploadLimitation { get; set; }
+                                    }
+
+                                    public class DateSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.DateSettings
+                                    {
+                                    }
+
+                                    public class TimeSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.TimeSettings
+                                    {
+                                    }
+
+                                    public class DurationSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.DurationSettings
+                                    {
+                                    }
+
+                                    public class TemperatureSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.TemperatureSettings
+                                    {
+                                    }
+
+                                    public class DepartmentSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.DepartmentSettings
+                                    {
+                                    }
+
+                                    public class MemberSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings.Types.MemberSettings
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置文本题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text_setting")]
+                                public Types.TextSettings? TextSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置单选题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("radio_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("radio_setting")]
+                                public Types.RadioSettings? RadioSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置多选题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("checkbox_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("checkbox_setting")]
+                                public Types.CheckboxSettings? CheckboxSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置位置题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("location_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("location_setting")]
+                                public Types.LocationSettings? LocationSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置图片题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("image_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("image_setting")]
+                                public Types.ImageSettings? ImageSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置文件题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("file_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("file_setting")]
+                                public Types.FileSettings? FileSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置日期题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("date_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("date_setting")]
+                                public Types.DateSettings? DateSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置时间题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("time_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("time_setting")]
+                                public Types.TimeSettings? TimeSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置时长题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("duration_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("duration_setting")]
+                                public Types.DurationSettings? DurationSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置体温题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("temperature_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("temperature_setting")]
+                                public Types.TemperatureSettings? TemperatureSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置部门题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("department_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("department_setting")]
+                                public Types.DepartmentSettings? DepartmentSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置成员题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("member_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("member_setting")]
+                                public Types.MemberSettings? MemberSettings { get; set; }
                             }
                         }
 
@@ -35,12 +199,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_item")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_item")]
-                        public new List<Types.Option>? OptionList { get; set; }
+                        public List<Types.Option>? OptionList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题的额外设置。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_extend_setting")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_extend_setting")]
+                        public Types.ExtendedSettings? ExtendedSettings { get; set; }
                     }
 
-                    public class Settings : CgibinWedocCreateFormRequest.Types.Form.Types.Settings
+                    public class Settings : CgibinWedocCreateFormRequest.Types.Form.Types.__zz__Settings
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class FillInRange : CgibinWedocCreateFormRequest.Types.Form.Types.Settings.Types.FillInRange
                             {
@@ -60,44 +231,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("fill_in_range")]
                         [System.Text.Json.Serialization.JsonPropertyName("fill_in_range")]
-                        public new Types.FillInRange? FillInRange { get; set; }
+                        public Types.FillInRange? FillInRange { get; set; }
 
                         /// <summary>
                         /// 获取或设置管理员范围信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("setting_manager_range")]
                         [System.Text.Json.Serialization.JsonPropertyName("setting_manager_range")]
-                        public new Types.ManagerRange? ManagerRange { get; set; }
+                        public Types.ManagerRange? ManagerRange { get; set; }
 
                         /// <summary>
                         /// 获取或设置定时重复设置信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("timed_repeat_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("timed_repeat_info")]
-                        public new Types.Repetition? Repetition { get; set; }
+                        public Types.Repetition? Repetition { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置收集表标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("form_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("form_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置收集表描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("form_desc")]
-                [System.Text.Json.Serialization.JsonPropertyName("form_desc")]
-                public string? Description { get; set; }
-
-                /// <summary>
-                /// 获取或设置收集表表头背景图 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("form_header")]
-                [System.Text.Json.Serialization.JsonPropertyName("form_header")]
-                public string? HeaderImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置收集表问题列表。

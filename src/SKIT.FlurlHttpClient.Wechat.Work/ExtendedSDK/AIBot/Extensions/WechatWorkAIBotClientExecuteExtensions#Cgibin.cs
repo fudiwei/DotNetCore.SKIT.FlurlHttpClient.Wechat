@@ -8,6 +8,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         /// REF: <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101138 ]]>
         /// </para>
+        /// <remarks>
+        /// （注意：该接口不受构造 <see cref="WechatWorkAIBotClient" /> 时指定的 <see cref="WechatWorkAIBotClientOptions.Endpoint"/> 参数控制。）
+        /// </remarks>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

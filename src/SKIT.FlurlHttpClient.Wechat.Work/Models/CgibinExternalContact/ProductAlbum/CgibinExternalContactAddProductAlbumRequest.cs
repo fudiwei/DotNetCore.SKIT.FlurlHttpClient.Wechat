@@ -7,7 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Attachment
+            public abstract class __zz__Attachment
+            {
+                /// <summary>
+                /// 获取或设置附件类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public string? Type { get; set; }
+            }
+
+            public class Attachment : __zz__Attachment
             {
                 public static class Types
                 {
@@ -21,13 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string? MediaId { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置附件类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置图片附件信息。

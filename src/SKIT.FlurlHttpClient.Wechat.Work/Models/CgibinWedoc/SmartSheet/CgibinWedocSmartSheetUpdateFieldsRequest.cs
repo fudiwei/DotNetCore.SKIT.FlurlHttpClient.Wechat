@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Field
+            public class Field : CgibinWedocSmartSheetAddFieldsRequest.Types.__zz__Field
             {
                 public static class Types
                 {
@@ -39,9 +39,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                     }
 
-                    public class SelectFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.SelectFieldProperty
+                    public class SelectFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.__zz__SelectFieldProperty
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class Option : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.SelectFieldProperty.Types.Option
                             {
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("options")]
                         [System.Text.Json.Serialization.JsonPropertyName("options")]
-                        public new List<Types.Option>? OptionList { get; set; }
+                        public List<Types.Option>? OptionList { get; set; }
                     }
 
                     public class CreatedTimeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CreatedTimeFieldProperty
@@ -68,9 +68,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                     }
 
-                    public class SingleSelectFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.SingleSelectFieldProperty
+                    public class SingleSelectFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.__zz__SingleSelectFieldProperty
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class Option : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.SingleSelectFieldProperty.Types.Option
                             {
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("options")]
                         [System.Text.Json.Serialization.JsonPropertyName("options")]
-                        public new List<Types.Option>? OptionList { get; set; }
+                        public List<Types.Option>? OptionList { get; set; }
                     }
 
                     public class ReferenceFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.ReferenceFieldProperty
@@ -93,9 +93,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                     }
 
-                    public class AutoNumberFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.AutoNumberFieldProperty
+                    public class AutoNumberFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.__zz__AutoNumberFieldProperty
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class Rule : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.AutoNumberFieldProperty.Types.Rule
                             {
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("rules")]
                         [System.Text.Json.Serialization.JsonPropertyName("rules")]
-                        public new List<Types.Rule>? RuleList { get; set; }
+                        public List<Types.Rule>? RuleList { get; set; }
                     }
 
                     public class CurrencyFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CurrencyFieldProperty
@@ -133,20 +133,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("field_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_id")]
                 public string? FieldId { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_type")]
-                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置文本类型的字段属性。

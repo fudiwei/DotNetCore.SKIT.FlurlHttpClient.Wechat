@@ -11,35 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class KeyDataItem
+                    public class KeyDataItem : CgibinAgentGetWorkbenchTemplateResponse.Types.KeyDataTemplate.Types.KeyDataItem
                     {
-                        /// <summary>
-                        /// 获取或设置关键数据名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("key")]
-                        [System.Text.Json.Serialization.JsonPropertyName("key")]
-                        public string? Key { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置关键数据。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("data")]
-                        [System.Text.Json.Serialization.JsonPropertyName("data")]
-                        public string? Data { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置点击跳转链接。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("jump_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("jump_url")]
-                        public string? JumpUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序页面路径。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pagepath")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                        public string? MiniProgramPagePath { get; set; }
                     }
                 }
 
@@ -51,101 +24,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<Types.KeyDataItem>? Items { get; set; }
             }
 
-            public class ImageTemplate
+            public class ImageTemplate : CgibinAgentGetWorkbenchTemplateResponse.Types.ImageTemplate
             {
-                /// <summary>
-                /// 获取或设置图片 Url。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("url")]
-                [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string? Url { get; set; }
-
-                /// <summary>
-                /// 获取或设置点击跳转链接。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("jump_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("jump_url")]
-                public string? JumpUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置小程序页面路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("pagepath")]
-                [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                public string? MiniProgramPagePath { get; set; }
             }
 
-            public class WebviewTemplate
+            public class WebviewTemplate : CgibinAgentGetWorkbenchTemplateResponse.Types.WebviewTemplate
             {
-                /// <summary>
-                /// 获取或设置渲染展示 Url。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("url")]
-                [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string? Url { get; set; }
-
-                /// <summary>
-                /// 获取或设置点击跳转链接。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("jump_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("jump_url")]
-                public string? JumpUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置小程序页面路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("pagepath")]
-                [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                public string? MiniProgramPagePath { get; set; }
-
-                /// <summary>
-                /// 获取或设置高度类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("height")]
-                [System.Text.Json.Serialization.JsonPropertyName("height")]
-                public string? HeightType { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否隐藏标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("hide_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("hide_title")]
-                public bool? RequireHideTitle { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否开启 WebView 内的链接跳转能力。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("enable_webview_click")]
-                [System.Text.Json.Serialization.JsonPropertyName("enable_webview_click")]
-                public bool? EnableWebviewClick { get; set; }
             }
 
             public class ListTemplate
             {
                 public static class Types
                 {
-                    public class ListItem
+                    public class ListItem : CgibinAgentGetWorkbenchTemplateResponse.Types.ListTemplate.Types.ListItem
                     {
-                        /// <summary>
-                        /// 获取或设置列表显示文字。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string? Title { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置点击跳转链接。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("jump_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("jump_url")]
-                        public string? JumpUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序页面路径。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pagepath")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                        public string? MiniProgramPagePath { get; set; }
                     }
                 }
 

@@ -3,9 +3,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/webinar/enroll/query_by_tmp_openid 接口的响应。</para>
     /// </summary>
-    public class CgibinMeetingWebinarEnrollQueryByTempOpenIdResponse : CgibinMeetingEnrollQueryByTempOpenIdResponse
+    public class CgibinMeetingWebinarEnrollQueryByTempOpenIdResponse : WechatWorkResponse
     {
-        public static new class Types
+        public static class Types
         {
             public class Result : CgibinMeetingEnrollQueryByTempOpenIdResponse.Types.Result
             {
@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enroll_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("enroll_id_list")]
-        public new List<Types.Result>? ResultList { get; set; }
+        public List<Types.Result>? ResultList { get; set; }
     }
 }

@@ -25,6 +25,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
+            public class AliasList
+            {
+                /// <summary>
+                /// 获取或设置别名列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("list")]
+                [System.Text.Json.Serialization.JsonPropertyName("list")]
+                public List<string>? Items { get; set; }
+            }
+
             public class AuthCodeInfo
             {
                 /// <summary>
@@ -70,6 +80,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("department_list")]
         [System.Text.Json.Serialization.JsonPropertyName("department_list")]
         public Types.DepartmentIdList? AllowDepartmentIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业邮箱别名列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("alias_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("alias_list")]
+        public Types.AliasList? AliasList { get; set; }
 
         /// <summary>
         /// 获取或设置是否创建客户端专用密码。

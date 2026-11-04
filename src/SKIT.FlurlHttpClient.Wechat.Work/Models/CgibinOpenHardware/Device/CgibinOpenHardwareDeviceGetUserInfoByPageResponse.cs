@@ -17,7 +17,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<Types.UserItem>? Items { get; set; }
             }
 
-            public class UserItem
+            public abstract class __zz__UserItem
+            {
+                /// <summary>
+                /// 获取或设置用户的 OpenUserId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("open_userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
+                public string? OpenUserId { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_type")]
+                public int UserType { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户名。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_name")]
+                public string? UserName { get; set; }
+            }
+
+            public class UserItem : __zz__UserItem
             {
                 public static class Types
                 {
@@ -55,27 +79,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public long EffectTimestamp { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置用户的 OpenUserId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("open_userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("open_userid")]
-                public string? OpenUserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("user_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("user_type")]
-                public int UserType { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户名。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("user_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                public string? UserName { get; set; }
 
                 /// <summary>
                 /// 获取或设置门禁规则列表。

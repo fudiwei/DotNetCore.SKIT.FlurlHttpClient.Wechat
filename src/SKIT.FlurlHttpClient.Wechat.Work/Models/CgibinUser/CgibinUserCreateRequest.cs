@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Attribute
+                    public abstract class __zz__Attribute
                     {
                         /// <summary>
                         /// 获取或设置属性类型。
@@ -26,47 +26,53 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         public string? Name { get; set; }
+                    }
+
+                    public class Attribute : __zz__Attribute
+                    {
+                        public static class Types
+                        {
+                            public class Text
+                            {
+                                /// <summary>
+                                /// 获取或设置文本内容。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public string? Value { get; set; }
+                            }
+
+                            public class Web
+                            {
+                                /// <summary>
+                                /// 获取或设置网页标题。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("title")]
+                                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                                public string? Title { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置网页 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("url")]
+                                public string? Url { get; set; }
+                            }
+                        }
 
                         /// <summary>
                         /// 获取或设置文本属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text")]
                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                        public TextAttribute? Text { get; set; }
+                        public Types.Text? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置网页属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("web")]
                         [System.Text.Json.Serialization.JsonPropertyName("web")]
-                        public WebAttribute? Web { get; set; }
-                    }
-
-                    public class TextAttribute
-                    {
-                        /// <summary>
-                        /// 获取或设置文本内容。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("value")]
-                        [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string? Value { get; set; }
-                    }
-
-                    public class WebAttribute
-                    {
-                        /// <summary>
-                        /// 获取或设置网页标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string? Title { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置网页 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string? Url { get; set; }
+                        public Types.Web? Web { get; set; }
                     }
                 }
 
@@ -78,11 +84,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<Types.Attribute>? AttributeList { get; set; }
             }
 
-            public class ExternalProfile
+            public abstract class __zz__ExternalProfile
+            {
+                /// <summary>
+                /// 获取或设置对外企业简称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("external_corp_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("external_corp_name")]
+                public string? ExternalCorpName { get; set; }
+
+            }
+
+            public class ExternalProfile : __zz__ExternalProfile
             {
                 public static class Types
                 {
-                    public class Attribute
+                    public abstract class __zz__Attribute
                     {
                         /// <summary>
                         /// 获取或设置属性类型。
@@ -97,59 +114,65 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         public string? Name { get; set; }
+                    }
+
+                    public class Attribute : __zz__Attribute
+                    {
+                        public static class Types
+                        {
+                            public class Text : ExtendedAttribute.Types.Attribute.Types.Text
+                            {
+                            }
+
+                            public class Web : ExtendedAttribute.Types.Attribute.Types.Web
+                            {
+                            }
+
+                            public class MiniProgram
+                            {
+                                /// <summary>
+                                /// 获取或设置小程序 AppId。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("appid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                                public string? AppId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序页面路径。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("pagepath")]
+                                [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
+                                public string? PagePath { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序页面标题。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("title")]
+                                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                                public string? Title { get; set; }
+                            }
+                        }
 
                         /// <summary>
                         /// 获取或设置文本属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text")]
                         [System.Text.Json.Serialization.JsonPropertyName("text")]
-                        public TextAttribute? Text { get; set; }
+                        public Types.Text? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置网页属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("web")]
                         [System.Text.Json.Serialization.JsonPropertyName("web")]
-                        public WebAttribute? Web { get; set; }
+                        public Types.Web? Web { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("miniprogram")]
                         [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
-                        public MiniProgramAttribute? MiniProgram { get; set; }
-                    }
-
-                    public class TextAttribute : ExtendedAttribute.Types.TextAttribute
-                    {
-                    }
-
-                    public class WebAttribute : ExtendedAttribute.Types.WebAttribute
-                    {
-                    }
-
-                    public class MiniProgramAttribute
-                    {
-                        /// <summary>
-                        /// 获取或设置小程序 AppId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("appid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string? AppId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序页面路径。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pagepath")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                        public string? PagePath { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序页面标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string? Title { get; set; }
+                        public Types.MiniProgram? MiniProgram { get; set; }
                     }
 
                     public class WechatChannels
@@ -162,13 +185,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string? Nickname { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置对外企业简称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("external_corp_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("external_corp_name")]
-                public string? CorpName { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频号信息。

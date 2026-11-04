@@ -63,35 +63,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Watermark
+                    public class Watermark : CgibinWedocModifyDocumentSafeSettingRequest.Types.Watermark
                     {
-                        /// <summary>
-                        /// 获取或设置水印文字。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("text")]
-                        [System.Text.Json.Serialization.JsonPropertyName("text")]
-                        public string? Text { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置水印类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("margin_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("margin_type")]
-                        public int MarginType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否开启水印文本。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("show_text")]
-                        [System.Text.Json.Serialization.JsonPropertyName("show_text")]
-                        public bool EnableShowText { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否开启水印访问人名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("show_visitor_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("show_visitor_name")]
-                        public bool EnableShowVisitorName { get; set; }
                     }
                 }
 
@@ -117,42 +90,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.Watermark? Watermark { get; set; }
             }
 
-            public class Authority
+            public class Authority : CgibinWedocModifyDocumentJoinRuleRequest.Types.Authority
             {
-                /// <summary>
-                /// 获取或设置类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public int Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置外部联系人临时 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("tmp_external_userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("tmp_external_userid")]
-                public string? TempExternalUserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置部门 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("departmentid")]
-                [System.Text.Json.Serialization.JsonPropertyName("departmentid")]
-                public long? DepartmentId { get; set; }
-
-                /// <summary>
-                /// 获取或设置权限类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("auth")]
-                [System.Text.Json.Serialization.JsonPropertyName("auth")]
-                public int AuthType { get; set; }
             }
         }
 

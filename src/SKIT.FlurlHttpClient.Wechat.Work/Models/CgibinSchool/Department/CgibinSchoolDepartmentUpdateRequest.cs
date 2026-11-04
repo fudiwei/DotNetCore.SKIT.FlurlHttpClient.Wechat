@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Administrator
+            public class Administrator : CgibinSchoolDepartmentCreateRequest.Types.Administrator
             {
                 /// <summary>
                 /// 获取或设置操作类型。
@@ -15,27 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("op")]
                 [System.Text.Json.Serialization.JsonPropertyName("op")]
                 public int OperationType { get; set; }
-
-                /// <summary>
-                /// 获取或设置管理员成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置管理员类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public int? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置教师科目。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("subject")]
-                [System.Text.Json.Serialization.JsonPropertyName("subject")]
-                public string? Subject { get; set; }
             }
         }
 

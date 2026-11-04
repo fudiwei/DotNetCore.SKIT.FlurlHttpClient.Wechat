@@ -52,38 +52,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public long CreateTimestamp { get; set; }
             }
 
-            public class Range
+            public class Range : CgibinExternalContactCustomerAcquisitionCreateLinkRequest.Types.Range
             {
-                /// <summary>
-                /// 获取或设置使用范围的成员 UserId 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("user_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("user_list")]
-                public List<string>? UserIdList { get; set; }
-
-                /// <summary>
-                /// 获取或设置使用范围的部门 ID 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("department_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                public List<long>? DepartmentId { get; set; }
             }
 
-            public class PriorityOption
+            public class PriorityOption : CgibinExternalContactCustomerAcquisitionCreateLinkRequest.Types.PriorityOption
             {
-                /// <summary>
-                /// 获取或设置优先分配类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("priority_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("priority_type")]
-                public int PriorityType { get; set; }
-
-                /// <summary>
-                /// 获取或设置成员账号列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("priority_userid_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("priority_userid_list")]
-                public List<string>? PriorityUserIdList { get; set; }
             }
         }
 

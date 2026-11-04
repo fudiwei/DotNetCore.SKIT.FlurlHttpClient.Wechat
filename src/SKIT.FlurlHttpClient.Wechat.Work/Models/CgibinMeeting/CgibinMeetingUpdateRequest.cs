@@ -15,9 +15,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class Settings : CgibinMeetingCreateRequest.Types.Settings
+            public class Settings : CgibinMeetingCreateRequest.Types.__zz__Settings
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Host : CgibinMeetingCreateRequest.Types.Settings.Types.Host
                     {
@@ -33,14 +33,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("hosts")]
                 [System.Text.Json.Serialization.JsonPropertyName("hosts")]
-                public new Types.Host? Host { get; set; }
+                public Types.Host? Host { get; set; }
 
                 /// <summary>
                 /// 获取或设置响铃用户信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ring_users")]
                 [System.Text.Json.Serialization.JsonPropertyName("ring_users")]
-                public new Types.RingUser? RingUser { get; set; }
+                public Types.RingUser? RingUser { get; set; }
             }
 
             public class Reminder : CgibinMeetingCreateRequest.Types.Reminder

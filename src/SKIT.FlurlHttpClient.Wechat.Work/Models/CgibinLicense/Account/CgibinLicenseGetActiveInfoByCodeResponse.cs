@@ -7,45 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class ActiveInfo
+            public abstract class __zz__ActiveInfo
             {
-                public static class Types
-                {
-                    public class MergeInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置新激活码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("to_active_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("to_active_code")]
-                        public string? ToActiveCode { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置原激活码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("from_active_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("from_active_code")]
-                        public string? FromActiveCode { get; set; }
-                    }
-
-                    public class ShareInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置新企业 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("to_corpid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("to_corpid")]
-                        public string? ToCorpId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置原企业 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("from_corpid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("from_corpid")]
-                        public string? FromCorpId { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置账号激活码。
                 /// </summary>
@@ -94,6 +57,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("expire_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("expire_time")]
                 public long? ExpireTimestamp { get; set; }
+            }
+
+            public class ActiveInfo : __zz__ActiveInfo
+            {
+                public static class Types
+                {
+                    public class MergeInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置新激活码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("to_active_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("to_active_code")]
+                        public string? ToActiveCode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置原激活码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("from_active_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("from_active_code")]
+                        public string? FromActiveCode { get; set; }
+                    }
+
+                    public class ShareInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置新企业 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("to_corpid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("to_corpid")]
+                        public string? ToCorpId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置原企业 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("from_corpid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("from_corpid")]
+                        public string? FromCorpId { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置合并信息。

@@ -11,21 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Privilege
+                    public class Privilege : CgibinExternalContactMomentStrategyCreateRequest.Types.Privilege
                     {
-                        /// <summary>
-                        /// 获取或设置是否可以查看成员的全部客户朋友圈发表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("view_moment_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("view_moment_list")]
-                        public bool EnableViewMomentList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否可以成员发表客户朋友圈。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("send_moment")]
-                        [System.Text.Json.Serialization.JsonPropertyName("send_moment")]
-                        public bool EnableSendMoment { get; set; }
                     }
                 }
 

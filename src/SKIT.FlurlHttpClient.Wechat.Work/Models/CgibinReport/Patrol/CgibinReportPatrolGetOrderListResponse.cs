@@ -7,7 +7,80 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class WorkOrder
+            public abstract class __zz__WorkOrder
+            {
+                /// <summary>
+                /// 获取或设置工单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                public string? WorkOrderId { get; set; }
+
+                /// <summary>
+                /// 获取或设置事件描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("desc")]
+                [System.Text.Json.Serialization.JsonPropertyName("desc")]
+                public string? Description { get; set; }
+
+                /// <summary>
+                /// 获取或设置紧急类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("urge_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("urge_type")]
+                public int UrgencyType { get; set; }
+
+                /// <summary>
+                /// 获取或设置分类名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("case_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("case_name")]
+                public string? CategoryName { get; set; }
+
+                /// <summary>
+                /// 获取或设置网格 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("grid_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
+                public string? GridId { get; set; }
+
+                /// <summary>
+                /// 获取或设置网格名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("grid_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("grid_name")]
+                public string? GridName { get; set; }
+
+                /// <summary>
+                /// 获取或设置创建时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置图片 URL 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("image_urls")]
+                [System.Text.Json.Serialization.JsonPropertyName("image_urls")]
+                public List<string>? ImageUrlList { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频 MediaId 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("video_media_ids")]
+                [System.Text.Json.Serialization.JsonPropertyName("video_media_ids")]
+                public List<string>? VideoMediaIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置处理人用户 UserId 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("processor_userids")]
+                [System.Text.Json.Serialization.JsonPropertyName("processor_userids")]
+                public List<string>? ProcessorUserIdList { get; set; }
+            }
+
+            public class WorkOrder : __zz__WorkOrder
             {
                 public static class Types
                 {
@@ -96,81 +169,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置工单 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string? WorkOrderId { get; set; }
-
-                /// <summary>
-                /// 获取或设置事件描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("desc")]
-                [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                public string? Description { get; set; }
-
-                /// <summary>
-                /// 获取或设置紧急类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("urge_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("urge_type")]
-                public int UrgencyType { get; set; }
-
-                /// <summary>
-                /// 获取或设置分类名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("case_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("case_name")]
-                public string? CategoryName { get; set; }
-
-                /// <summary>
-                /// 获取或设置网格 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("grid_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("grid_id")]
-                public string? GridId { get; set; }
-
-                /// <summary>
-                /// 获取或设置网格名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("grid_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("grid_name")]
-                public string? GridName { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置图片 URL 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("image_urls")]
-                [System.Text.Json.Serialization.JsonPropertyName("image_urls")]
-                public List<string>? ImageUrlList { get; set; }
-
-                /// <summary>
-                /// 获取或设置视频 MediaId 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("video_media_ids")]
-                [System.Text.Json.Serialization.JsonPropertyName("video_media_ids")]
-                public List<string>? VideoMediaIdList { get; set; }
-
-                /// <summary>
                 /// 获取或设置位置信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("location")]
                 [System.Text.Json.Serialization.JsonPropertyName("location")]
                 public Types.Location? Location { get; set; }
-
-                /// <summary>
-                /// 获取或设置处理人用户 UserId 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("processor_userids")]
-                [System.Text.Json.Serialization.JsonPropertyName("processor_userids")]
-                public List<string>? ProcessorUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置处理记录列表。

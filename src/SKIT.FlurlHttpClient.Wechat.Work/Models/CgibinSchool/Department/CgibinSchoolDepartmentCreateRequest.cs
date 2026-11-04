@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public int Type { get; set; }
+                public int? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置教师科目。

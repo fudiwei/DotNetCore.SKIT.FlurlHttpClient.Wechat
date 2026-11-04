@@ -7,128 +7,56 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class KeywordList
+            public class KeywordList : CgibinChatDataKeywordCreateRuleRequest.Types.KeywordList
             {
-                /// <summary>
-                /// 获取或设置关键词列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("word_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("word_list")]
-                public List<string>? Items { get; set; }
             }
 
-            public class SemanticsList
+            public class SemanticsList : CgibinChatDataKeywordCreateRuleRequest.Types.SemanticsList
             {
-                /// <summary>
-                /// 获取或设置关键行为列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("semantics_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("semantics_list")]
-                public List<int>? Items { get; set; }
             }
 
             public class ApplicableRange
             {
                 public static class Types
                 {
-                    public class TargetTypeInfo
+                    public class TargetTypeInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.TargetTypeInfo
                     {
-                        /// <summary>
-                        /// 获取或设置对象类型列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type_list")]
-                        public List<int>? TypeList { get; set; }
                     }
 
-                    public class ChatTypeInfo
+                    public class ChatTypeInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.ChatTypeInfo
                     {
-                        /// <summary>
-                        /// 获取或设置会话类型列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type_list")]
-                        public List<int>? TypeList { get; set; }
                     }
 
-                    public class DepartmentInfo
+                    public class DepartmentInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.DepartmentInfo
                     {
-                        /// <summary>
-                        /// 获取或设置部门 ID 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public List<long>? DepartmentIdList { get; set; }
                     }
 
-                    public class GroupChatInfo
+                    public class GroupChatInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.GroupChatInfo
                     {
-                        /// <summary>
-                        /// 获取或设置群 ID 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public List<string>? GroupChatIdList { get; set; }
                     }
 
-                    public class UserInfo
+                    public class UserInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.UserInfo
                     {
-                        /// <summary>
-                        /// 获取或设置成员账号列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public List<string>? UserIdList { get; set; }
                     }
 
-                    public class ExternalContactInfo
+                    public class ExternalContactInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.ExternalContactInfo
                     {
-                        /// <summary>
-                        /// 获取或设置外部联系人 UserId 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_list")]
-                        public List<string>? ExternalUserIdList { get; set; }
                     }
 
-                    public class SessionTypeInfo
+                    public class SessionTypeInfo : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.SessionTypeInfo
                     {
-                        /// <summary>
-                        /// 获取或设置会话范围列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("session_type_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("session_type_list")]
-                        public List<int>? SessionTypeList { get; set; }
                     }
 
-                    public class ExcludeMobileList
+                    public class ExcludeMobileList : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.ExcludeMobileList
                     {
-                        /// <summary>
-                        /// 获取或设置手机号码列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("mobile_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("mobile_list")]
-                        public List<string>? Items { get; set; }
                     }
 
-                    public class ExcludeEmailList
+                    public class ExcludeEmailList : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.ExcludeEmailList
                     {
-                        /// <summary>
-                        /// 获取或设置邮箱列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("email_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("email_list")]
-                        public List<string>? Items { get; set; }
                     }
 
-                    public class ExcludeBankCardList
+                    public class ExcludeBankCardList : CgibinChatDataKeywordCreateRuleRequest.Types.ApplicableRange.Types.ExcludeBankCardList
                     {
-                        /// <summary>
-                        /// 获取或设置银行卡号列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("bank_card_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("bank_card_list")]
-                        public List<string>? Items { get; set; }
                     }
                 }
 

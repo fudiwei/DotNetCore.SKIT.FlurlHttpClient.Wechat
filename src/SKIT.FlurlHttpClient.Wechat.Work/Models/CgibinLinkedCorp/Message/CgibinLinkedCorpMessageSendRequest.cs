@@ -31,20 +31,59 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class NewsMessage : CgibinMessageSendRequest.Types.NewsMessage
+            public class NewsMessage
             {
+                public static class Types
+                {
+                    public class Article : CgibinMessageSendRequest.Types.NewsMessage.Types.Article
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图文消息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("articles")]
+                [System.Text.Json.Serialization.JsonPropertyName("articles")]
+                public List<Types.Article>? ArticleList { get; set; }
             }
 
-            public class MpNewsMessage : CgibinMessageSendRequest.Types.MpNewsMessage
+            public class MpNewsMessage
             {
+                public static class Types
+                {
+                    public class Article : CgibinMessageSendRequest.Types.MpNewsMessage.Types.Article
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图文消息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("articles")]
+                [System.Text.Json.Serialization.JsonPropertyName("articles")]
+                public List<Types.Article>? ArticleList { get; set; }
             }
 
             public class MarkdownMessage : CgibinMessageSendRequest.Types.MarkdownMessage
             {
             }
 
-            public class MiniProgramNoticeMessage : CgibinMessageSendRequest.Types.MiniProgramNoticeMessage
+            public class MiniProgramNoticeMessage : CgibinMessageSendRequest.Types.__zz__MiniProgramNoticeMessage
             {
+                public static class Types
+                {
+                    public class KeyValue : CgibinMessageSendRequest.Types.MiniProgramNoticeMessage.Types.KeyValue
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置消息内容键值对列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("content_item")]
+                [System.Text.Json.Serialization.JsonPropertyName("content_item")]
+                public List<Types.KeyValue>? ContentKeyValueList { get; set; }
             }
         }
 

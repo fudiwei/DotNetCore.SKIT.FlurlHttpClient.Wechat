@@ -24,21 +24,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? Name { get; set; }
             }
 
-            public class AuthorizerCorp : DealerCorp
+            public abstract class __zz__AuthorizerCorp : DealerCorp
             {
-                public static class Types
-                {
-                    public class CorpExtraName
-                    {
-                        /// <summary>
-                        /// 获取或设置企业简称列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name_list")]
-                        public List<string>? NameList { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置企业类型。
                 /// </summary>
@@ -122,6 +109,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("location")]
                 [System.Text.Json.Serialization.JsonPropertyName("location")]
                 public string? Location { get; set; }
+            }
+
+            public class AuthorizerCorp : __zz__AuthorizerCorp
+            {
+                public static class Types
+                {
+                    public class CorpExtraName
+                    {
+                        /// <summary>
+                        /// 获取或设置企业简称列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name_list")]
+                        public List<string>? NameList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置企业其他简称。
@@ -135,7 +138,53 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Agent
+                    public abstract class __zz__Agent
+                    {
+                        /// <summary>
+                        /// 获取或设置应用 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("agentid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
+                        public int AgentId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置应用名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置应用方形头像 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("square_logo_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("square_logo_url")]
+                        public string? SquareLogoUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置应用圆形头像 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("round_logo_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("round_logo_url")]
+                        public string? RoundLogoUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置第三方套件应用 AppId。
+                        /// </summary>
+                        [Obsolete("相关接口或字段于 2020-01-13 下线。")]
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public int? AppId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置授权模式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("auth_mode")]
+                        [System.Text.Json.Serialization.JsonPropertyName("auth_mode")]
+                        public int AuthMode { get; set; }
+                    }
+
+                    public class Agent : __zz__Agent
                     {
                         public static class Types
                         {
@@ -203,49 +252,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置应用 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("agentid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
-                        public int AgentId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置应用名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置应用方形头像 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("square_logo_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("square_logo_url")]
-                        public string? SquareLogoUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置应用圆形头像 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("round_logo_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("round_logo_url")]
-                        public string? RoundLogoUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置第三方套件应用 AppId。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2020-01-13 下线。")]
-                        [Newtonsoft.Json.JsonProperty("appid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public int? AppId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置授权模式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("auth_mode")]
-                        [System.Text.Json.Serialization.JsonPropertyName("auth_mode")]
-                        public int AuthMode { get; set; }
-
-                        /// <summary>
                         /// 获取或设置应用权限信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("privilege")]
@@ -269,9 +275,76 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<Types.Agent>? AgentList { get; set; }
             }
 
-            public class Edition : CgibinServiceGetPermanentCodeResponse.Types.Edition
+            public class Edition
             {
+                public static class Types
+                {
+                    public class Agent
+                    {
+                        /// <summary>
+                        /// 获取或设置应用 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("agentid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
+                        public int AgentId { get; set; }
 
+                        /// <summary>
+                        /// 获取或设置版本 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("edition_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("edition_id")]
+                        public string? EditionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置版本名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("edition_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("edition_name")]
+                        public string? EditionName { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置应用状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("app_status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("app_status")]
+                        public int AppStatus { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置用户上限。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_limit")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_limit")]
+                        public long UserLimit { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置过期时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("expired_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("expired_time")]
+                        public long ExpireTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否是虚拟版本。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_virtual_version")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_virtual_version")]
+                        public bool IsVirtualVersion { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否由企业互联或上下游分享安装。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_shared_from_other_corp")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_shared_from_other_corp")]
+                        public bool IsSharedFromOtherCorp { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置授权的应用信息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("agent")]
+                [System.Text.Json.Serialization.JsonPropertyName("agent")]
+                public List<Types.Agent>? AgentList { get; set; }
             }
         }
 

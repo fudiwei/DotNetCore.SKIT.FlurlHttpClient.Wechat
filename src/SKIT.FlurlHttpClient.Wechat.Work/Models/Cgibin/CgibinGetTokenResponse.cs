@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinGetTokenResponse : WechatWorkResponse
     {
         /// <summary>
-        /// 获取或设置凭证。
+        /// 获取或设置接口调用凭证。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("access_token")]

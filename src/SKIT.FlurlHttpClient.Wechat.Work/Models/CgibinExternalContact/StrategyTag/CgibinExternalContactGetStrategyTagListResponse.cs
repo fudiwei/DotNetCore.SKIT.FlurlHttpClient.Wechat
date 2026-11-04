@@ -7,42 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class TagGroup
+            public abstract class __zz__TagGroup
             {
-                public static class Types
-                {
-                    public class Tag
-                    {
-                        /// <summary>
-                        /// 获取或设置企业标签 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public string? TagId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置企业标签名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置次序值。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("order")]
-                        [System.Text.Json.Serialization.JsonPropertyName("order")]
-                        public long Order { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置创建时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("create_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                        public long CreateTimestamp { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置规则组 ID。
                 /// </summary>
@@ -77,6 +43,43 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 public long CreateTimestamp { get; set; }
+            }
+
+            public class TagGroup : __zz__TagGroup
+            {
+                public static class Types
+                {
+                    public class Tag
+                    {
+                        /// <summary>
+                        /// 获取或设置企业标签 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("id")]
+                        public string? TagId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置企业标签名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置次序值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("order")]
+                        [System.Text.Json.Serialization.JsonPropertyName("order")]
+                        public long Order { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置创建时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("create_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                        public long CreateTimestamp { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置标签列表。

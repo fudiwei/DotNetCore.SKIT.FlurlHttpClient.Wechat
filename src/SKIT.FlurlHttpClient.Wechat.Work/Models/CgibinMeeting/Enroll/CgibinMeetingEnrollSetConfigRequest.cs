@@ -7,21 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Question
+            public abstract class __zz__Question
             {
-                public static class Types
-                {
-                    public class Option
-                    {
-                        /// <summary>
-                        /// 获取或设置选项内容。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("content")]
-                        [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string? Content { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置必填类型。
                 /// </summary>
@@ -49,6 +36,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("question_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("question_title")]
                 public string? QuestionTitle { get; set; }
+            }
+
+            public class Question : __zz__Question
+            {
+                public static class Types
+                {
+                    public class Option
+                    {
+                        /// <summary>
+                        /// 获取或设置选项内容。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("content")]
+                        public string? Content { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置选项列表。

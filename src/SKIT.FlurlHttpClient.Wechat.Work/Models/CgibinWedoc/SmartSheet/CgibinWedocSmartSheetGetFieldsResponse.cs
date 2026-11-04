@@ -7,130 +7,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Field
+            public class Field : CgibinWedocSmartSheetAddFieldsRequest.Types.__zz__Field
             {
                 public static class Types
                 {
-                    public class TextFieldProperty
+                    public class TextFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.TextFieldProperty
                     {
                     }
 
-                    public class NumberFieldProperty
+                    public class NumberFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.NumberFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置小数点的位数。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("decimal_places")]
-                        [System.Text.Json.Serialization.JsonPropertyName("decimal_places")]
-                        public int DecimalPlaces { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否使用千位符。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("use_separate")]
-                        [System.Text.Json.Serialization.JsonPropertyName("use_separate")]
-                        public bool IsUseSeparate { get; set; }
                     }
 
-                    public class CheckboxFieldProperty
+                    public class CheckboxFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CheckboxFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置是否默认勾选。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("checked")]
-                        [System.Text.Json.Serialization.JsonPropertyName("checked")]
-                        public bool IsChecked { get; set; }
                     }
 
-                    public class DateTimeFieldProperty
+                    public class DateTimeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.DateTimeFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置日期格式字符串。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("format")]
-                        [System.Text.Json.Serialization.JsonPropertyName("format")]
-                        public string? FormatString { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否自动填充。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("auto_fill")]
-                        [System.Text.Json.Serialization.JsonPropertyName("auto_fill")]
-                        public bool IsAutoFill { get; set; }
                     }
 
-                    public class AttachmentFieldProperty
+                    public class AttachmentFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.AttachmentFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置显示模式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("display_mode")]
-                        [System.Text.Json.Serialization.JsonPropertyName("display_mode")]
-                        public string? DisplayMode { get; set; }
                     }
 
-                    public class UserFieldProperty
+                    public class UserFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.UserFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置是否允许添加多个。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_multiple")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_multiple")]
-                        public bool IsMultiple { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否通知用户。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_notified")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_notified")]
-                        public bool IsNotified { get; set; }
                     }
 
-                    public class UrlFieldProperty
+                    public class UrlFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.UrlFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置超链接展示样式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string? Type { get; set; }
                     }
 
-                    public class SelectFieldProperty
+                    public class SelectFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.__zz__SelectFieldProperty
                     {
                         public static class Types
                         {
-                            public class Option
+                            public class Option : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.SelectFieldProperty.Types.Option
                             {
-                                /// <summary>
-                                /// 获取或设置选项 ID。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string? Id { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置选项内容。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("text")]
-                                [System.Text.Json.Serialization.JsonPropertyName("text")]
-                                public string? Text { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置选项颜色。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("style")]
-                                [System.Text.Json.Serialization.JsonPropertyName("style")]
-                                public int Style { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置是否允许填写时新增选项。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_quick_add")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_quick_add")]
-                        public bool IsQuickAdd { get; set; }
 
                         /// <summary>
                         /// 获取或设置选项列表。
@@ -140,51 +56,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public List<Types.Option>? OptionList { get; set; }
                     }
 
-                    public class CreatedTimeFieldProperty
+                    public class CreatedTimeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CreatedTimeFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置日期格式字符串。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("format")]
-                        [System.Text.Json.Serialization.JsonPropertyName("format")]
-                        public string? FormatString { get; set; }
                     }
 
-                    public class ModifiedTimeFieldProperty
+                    public class ModifiedTimeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.ModifiedTimeFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置日期格式字符串。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("format")]
-                        [System.Text.Json.Serialization.JsonPropertyName("format")]
-                        public string? FormatString { get; set; }
                     }
 
-                    public class ProgressFieldProperty
+                    public class ProgressFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.ProgressFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置小数点的位数。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("decimal_places")]
-                        [System.Text.Json.Serialization.JsonPropertyName("decimal_places")]
-                        public int DecimalPlaces { get; set; }
                     }
 
-                    public class SingleSelectFieldProperty
+                    public class SingleSelectFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.__zz__SingleSelectFieldProperty
                     {
                         public static class Types
                         {
-                            public class Option : SelectFieldProperty.Types.Option
+                            public class Option : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.SingleSelectFieldProperty.Types.Option
                             {
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置是否允许填写时新增选项。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_quick_add")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_quick_add")]
-                        public bool IsQuickAdd { get; set; }
 
                         /// <summary>
                         /// 获取或设置选项列表。
@@ -194,75 +85,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public List<Types.Option>? OptionList { get; set; }
                     }
 
-                    public class ReferenceFieldProperty
+                    public class ReferenceFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.ReferenceFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置视图 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("view_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("view_id")]
-                        public string? Viewid { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置关联的子表 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("sub_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("sub_id")]
-                        public string? SheetId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置关联的字段 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("field_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("field_id")]
-                        public string? FieldId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否允许多选。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_multiple")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_multiple")]
-                        public bool IsMultiple { get; set; }
                     }
 
-                    public class LocationFieldProperty
+                    public class LocationFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.LocationFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置输入类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("input_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("input_type")]
-                        public string? InputType { get; set; }
                     }
 
-                    public class AutoNumberFieldProperty
+                    public class AutoNumberFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.__zz__AutoNumberFieldProperty
                     {
                         public static class Types
                         {
-                            public class Rule
+                            public class Rule : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.AutoNumberFieldProperty.Types.Rule
                             {
-                                /// <summary>
-                                /// 获取或设置规则类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置值。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("value")]
-                                [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                public string? Value { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置输入类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("input_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("input_type")]
-                        public string? InputType { get; set; }
 
                         /// <summary>
                         /// 获取或设置自定义规则列表。
@@ -270,74 +108,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("rules")]
                         [System.Text.Json.Serialization.JsonPropertyName("rules")]
                         public List<Types.Rule>? RuleList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否应用于已有编号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("reformat_existing_record")]
-                        [System.Text.Json.Serialization.JsonPropertyName("reformat_existing_record")]
-                        public bool IsReformatExistingRecord { get; set; }
                     }
 
-                    public class CurrencyFieldProperty
+                    public class CurrencyFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.CurrencyFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置货币类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("currency_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("currency_type")]
-                        public string? CurrencyType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小数点的位数。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("decimal_places")]
-                        [System.Text.Json.Serialization.JsonPropertyName("decimal_places")]
-                        public int DecimalPlaces { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否使用千位符。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("use_separate")]
-                        [System.Text.Json.Serialization.JsonPropertyName("use_separate")]
-                        public bool IsUseSeparate { get; set; }
                     }
 
-                    public class GroupChatFieldProperty
+                    public class GroupChatFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.GroupChatFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置是否允许多个群聊。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("allow_multiple")]
-                        [System.Text.Json.Serialization.JsonPropertyName("allow_multiple")]
-                        public bool IsAllowMultiple { get; set; }
                     }
 
-                    public class PercentageFieldProperty
+                    public class PercentageFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.PercentageFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置小数点的位数。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("decimal_places")]
-                        [System.Text.Json.Serialization.JsonPropertyName("decimal_places")]
-                        public int DecimalPlaces { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否使用千位符。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("use_separate")]
-                        [System.Text.Json.Serialization.JsonPropertyName("use_separate")]
-                        public bool IsUseSeparate { get; set; }
                     }
 
-                    public class BarcodeFieldProperty
+                    public class BarcodeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.BarcodeFieldProperty
                     {
-                        /// <summary>
-                        /// 获取或设置是否仅限手机扫描录入。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("mobile_scan_only")]
-                        [System.Text.Json.Serialization.JsonPropertyName("mobile_scan_only")]
-                        public bool IsMobileScanOnly { get; set; }
                     }
                 }
 
@@ -347,20 +133,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("field_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_id")]
                 public string? FieldId { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_type")]
-                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置文本类型的字段属性。

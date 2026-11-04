@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Order
+            public class Order : CgibinAdvancedApiListOrderResponse.Types.Order
             {
                 public static class Types
                 {
@@ -58,13 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置订单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string? OrderId { get; set; }
-
-                /// <summary>
                 /// 获取或设置购买的高级接口类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("advanced_api_type")]
@@ -84,27 +77,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("buyer_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("buyer_userid")]
                 public string? BuyerUserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置订单类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_type")]
-                public int OrderType { get; set; }
-
-                /// <summary>
-                /// 获取或设置订单状态。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_status")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_status")]
-                public int OrderStatus { get; set; }
-
-                /// <summary>
-                /// 获取或设置下单时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置应付金额（单位：分）。

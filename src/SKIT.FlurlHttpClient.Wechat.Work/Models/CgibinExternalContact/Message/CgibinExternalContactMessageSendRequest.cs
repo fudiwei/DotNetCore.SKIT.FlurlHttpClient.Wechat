@@ -31,12 +31,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class NewsMessage : CgibinMessageSendRequest.Types.NewsMessage
+            public class NewsMessage
             {
+                public static class Types
+                {
+                    public class Article : CgibinMessageSendRequest.Types.NewsMessage.Types.Article
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图文消息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("articles")]
+                [System.Text.Json.Serialization.JsonPropertyName("articles")]
+                public List<Types.Article>? ArticleList { get; set; }
             }
 
-            public class MpNewsMessage : CgibinMessageSendRequest.Types.MpNewsMessage
+            public class MpNewsMessage
             {
+                public static class Types
+                {
+                    public class Article : CgibinMessageSendRequest.Types.MpNewsMessage.Types.Article
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图文消息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("articles")]
+                [System.Text.Json.Serialization.JsonPropertyName("articles")]
+                public List<Types.Article>? ArticleList { get; set; }
             }
 
             public class MiniProgramMessage

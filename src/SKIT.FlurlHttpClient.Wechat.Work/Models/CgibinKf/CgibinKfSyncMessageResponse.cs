@@ -55,8 +55,61 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                         public static class Types
                         {
-                            public class MenuItem : CgibinKfSendMessageRequest.Types.MenuMessage.Types.MenuItem
+                            public class MenuItem
                             {
+                                public static class Types
+                                {
+                                    public class Text : CgibinKfSendMessageRequest.Types.MenuMessage.Types.MenuItem.Types.Text
+                                    {
+                                    }
+
+                                    public class Click : CgibinKfSendMessageRequest.Types.MenuMessage.Types.MenuItem.Types.Click
+                                    {
+                                    }
+
+                                    public class View : CgibinKfSendMessageRequest.Types.MenuMessage.Types.MenuItem.Types.View
+                                    {
+                                    }
+
+                                    public class MiniProgram : CgibinKfSendMessageRequest.Types.MenuMessage.Types.MenuItem.Types.MiniProgram
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置菜单类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                public string? Type { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置文本信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                public Types.Text? Text { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置点击项信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("click")]
+                                [System.Text.Json.Serialization.JsonPropertyName("click")]
+                                public Types.Click? Click { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置跳转项信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("view")]
+                                [System.Text.Json.Serialization.JsonPropertyName("view")]
+                                public Types.View? View { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序项信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("miniprogram")]
+                                [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
+                                public Types.MiniProgram? MiniProgram { get; set; }
                             }
                         }
 

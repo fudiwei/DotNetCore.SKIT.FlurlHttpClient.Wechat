@@ -7,7 +7,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Form
+            public abstract class __zz__Form
+            {
+                /// <summary>
+                /// 获取或设置收集表标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("form_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("form_title")]
+                public string? Title { get; set; }
+
+                /// <summary>
+                /// 获取或设置收集表描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("form_desc")]
+                [System.Text.Json.Serialization.JsonPropertyName("form_desc")]
+                public string? Description { get; set; }
+
+                /// <summary>
+                /// 获取或设置收集表表头背景图 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("form_header")]
+                [System.Text.Json.Serialization.JsonPropertyName("form_header")]
+                public string? HeaderImageUrl { get; set; }
+            }
+
+            public class Form : __zz__Form
             {
                 public static class Types
                 {
@@ -21,7 +45,66 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public List<QuestionItem>? Items { get; set; }
                     }
 
-                    public class QuestionItem
+                    public abstract class __zz__QuestionItem
+                    {
+                        /// <summary>
+                        /// 获取或设置问题 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_id")]
+                        public int QuestionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题序号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pos")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pos")]
+                        public int Sequence { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string? Title { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("status")]
+                        public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置回答类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("reply_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reply_type")]
+                        public int ReplyType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否必答。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("must_reply")]
+                        [System.Text.Json.Serialization.JsonPropertyName("must_reply")]
+                        public bool IsMustReply { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("note")]
+                        [System.Text.Json.Serialization.JsonPropertyName("note")]
+                        public string? Note { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置编辑提示。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("placeholder")]
+                        [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
+                        public string? Placeholder { get; set; }
+                    }
+
+                    public class QuestionItem : __zz__QuestionItem
                     {
                         public static class Types
                         {
@@ -142,7 +225,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         public int? DistanceType { get; set; }
                                     }
 
-                                    public class ImageSettings
+                                    public abstract class __zz__ImageSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否仅限手机拍照。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("camera_only")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("camera_only")]
+                                        public bool? IsCameraOnly { get; set; }
+                                    }
+
+                                    public class ImageSettings : __zz__ImageSettings
                                     {
                                         public static class Types
                                         {
@@ -172,13 +265,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         }
 
                                         /// <summary>
-                                        /// 获取或设置是否仅限手机拍照。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("camera_only")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("camera_only")]
-                                        public bool? IsCameraOnly { get; set; }
-
-                                        /// <summary>
                                         /// 获取或设置上传限制信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("upload_image_limit")]
@@ -186,7 +272,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         public Types.UploadLimitation? UploadLimitation { get; set; }
                                     }
 
-                                    public class FileSettings
+                                    public abstract class __zz__FileSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否仅限手机拍照。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("camera_only")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("camera_only")]
+                                        public bool? IsCameraOnly { get; set; }
+                                    }
+
+                                    public class FileSettings : __zz__FileSettings
                                     {
                                         public static class Types
                                         {
@@ -194,13 +290,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                             {
                                             }
                                         }
-
-                                        /// <summary>
-                                        /// 获取或设置是否仅限手机拍照。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("camera_only")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("camera_only")]
-                                        public bool? IsCameraOnly { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置上传限制信息。
@@ -372,67 +461,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置问题 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("question_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("question_id")]
-                        public int QuestionId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题序号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pos")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pos")]
-                        public int Sequence { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题描述。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string? Title { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("status")]
-                        public int Status { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置回答类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("reply_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("reply_type")]
-                        public int ReplyType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否必答。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("must_reply")]
-                        [System.Text.Json.Serialization.JsonPropertyName("must_reply")]
-                        public bool IsMustReply { get; set; }
-
-                        /// <summary>
                         /// 获取或设置选项列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_item")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_item")]
                         public List<Types.Option>? OptionList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置问题备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("note")]
-                        [System.Text.Json.Serialization.JsonPropertyName("note")]
-                        public string? Note { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置编辑提示。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("placeholder")]
-                        [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
-                        public string? Placeholder { get; set; }
 
                         /// <summary>
                         /// 获取或设置问题的额外设置。
@@ -442,7 +475,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public Types.ExtendedSettings? ExtendedSettings { get; set; }
                     }
 
-                    public class Settings
+                    public abstract class __zz__Settings
+                    {
+                        /// <summary>
+                        /// 获取或设置填写权限类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("fill_out_auth")]
+                        [System.Text.Json.Serialization.JsonPropertyName("fill_out_auth")]
+                        public int? FillOutAuthType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置最多填写数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("max_fill_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("max_fill_cnt")]
+                        public int? MaxFillCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置定时关闭时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("timed_finish")]
+                        [System.Text.Json.Serialization.JsonPropertyName("timed_finish")]
+                        public long? FinishTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否支持匿名填写。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("can_anonymous")]
+                        [System.Text.Json.Serialization.JsonPropertyName("can_anonymous")]
+                        public bool? EnableAnonymous { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否有回复时提醒。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("can_notify_submit")]
+                        [System.Text.Json.Serialization.JsonPropertyName("can_notify_submit")]
+                        public bool? EnableNotifySubmit { get; set; }
+                    }
+
+                    public class Settings : __zz__Settings
                     {
                         public static class Types
                         {
@@ -527,13 +598,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置填写权限类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("fill_out_auth")]
-                        [System.Text.Json.Serialization.JsonPropertyName("fill_out_auth")]
-                        public int? FillOutAuthType { get; set; }
-
-                        /// <summary>
                         /// 获取或设置填写范围信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("fill_in_range")]
@@ -553,57 +617,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("timed_repeat_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("timed_repeat_info")]
                         public Types.Repetition? Repetition { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置最多填写数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("max_fill_cnt")]
-                        [System.Text.Json.Serialization.JsonPropertyName("max_fill_cnt")]
-                        public int? MaxFillCount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置定时关闭时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("timed_finish")]
-                        [System.Text.Json.Serialization.JsonPropertyName("timed_finish")]
-                        public long? FinishTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否支持匿名填写。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("can_anonymous")]
-                        [System.Text.Json.Serialization.JsonPropertyName("can_anonymous")]
-                        public bool? EnableAnonymous { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否有回复时提醒。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("can_notify_submit")]
-                        [System.Text.Json.Serialization.JsonPropertyName("can_notify_submit")]
-                        public bool? EnableNotifySubmit { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置收集表标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("form_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("form_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置收集表描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("form_desc")]
-                [System.Text.Json.Serialization.JsonPropertyName("form_desc")]
-                public string? Description { get; set; }
-
-                /// <summary>
-                /// 获取或设置收集表表头背景图 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("form_header")]
-                [System.Text.Json.Serialization.JsonPropertyName("form_header")]
-                public string? HeaderImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置收集表问题列表。

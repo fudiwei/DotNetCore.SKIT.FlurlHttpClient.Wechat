@@ -7,7 +7,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Space
+            public abstract class __zz__Space
+            {
+                /// <summary>
+                /// 获取或设置空间 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("spaceid")]
+                [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
+                public string? SpaceId { get; set; }
+
+                /// <summary>
+                /// 获取或设置空间标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("space_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("space_name")]
+                public string? SpaceName { get; set; }
+
+                /// <summary>
+                /// 获取或设置空间类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("space_sub_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("space_sub_type")]
+                public int SpaceSubType { get; set; }
+            }
+
+            public class Space : __zz__Space
             {
                 public static class Types
                 {
@@ -34,32 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置空间 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("spaceid")]
-                [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-                public string? SpaceId { get; set; }
-
-                /// <summary>
-                /// 获取或设置空间标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("space_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("space_name")]
-                public string? SpaceName { get; set; }
-
-                /// <summary>
                 /// 获取或设置访问控制信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_list")]
                 public Types.ACL? ACL { get; set; }
-
-                /// <summary>
-                /// 获取或设置空间类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("space_sub_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("space_sub_type")]
-                public int SpaceSubType { get; set; }
             }
         }
 

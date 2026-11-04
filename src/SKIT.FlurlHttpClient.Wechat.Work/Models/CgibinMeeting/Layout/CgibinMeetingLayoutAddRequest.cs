@@ -11,7 +11,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Page
+                    public abstract class __zz__Page
+                    {
+                        /// <summary>
+                        /// 获取或设置布局模板 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("layout_template_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("layout_template_id")]
+                        public string? LayoutTemplateId { get; set; }
+                    }
+
+                    public class Page : __zz__Page
                     {
                         public static class Types
                         {
@@ -60,13 +70,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public string? ToolSdkId { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置布局模板 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("layout_template_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("layout_template_id")]
-                        public string? LayoutTemplateId { get; set; }
 
                         /// <summary>
                         /// 获取或设置用户座次列表。

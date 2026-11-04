@@ -6,8 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [GET] /cgi-bin/auth/getuserinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91023 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91437 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91023 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

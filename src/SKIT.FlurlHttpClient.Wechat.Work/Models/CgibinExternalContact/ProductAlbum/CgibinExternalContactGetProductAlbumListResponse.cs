@@ -7,41 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Product
+            public abstract class __zz__Product
             {
-                public static class Types
-                {
-                    public class Attachment
-                    {
-                        public static class Types
-                        {
-                            public class Image
-                            {
-                                /// <summary>
-                                /// 获取或设置图片 MediaId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("media_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                                public string? MediaId { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置附件类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string? Type { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置图片附件信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("image")]
-                        [System.Text.Json.Serialization.JsonPropertyName("image")]
-                        public Types.Image? Image { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置商品 ID。
                 /// </summary>
@@ -69,6 +36,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("product_sn")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_sn")]
                 public string? SerialNumber { get; set; }
+            }
+
+            public class Product : __zz__Product
+            {
+                public static class Types
+                {
+                    public class Attachment : CgibinExternalContactAddProductAlbumRequest.Types.__zz__Attachment
+                    {
+                        public static class Types
+                        {
+                            public class Image : CgibinExternalContactAddProductAlbumRequest.Types.Attachment.Types.Image
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置图片附件信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("image")]
+                        [System.Text.Json.Serialization.JsonPropertyName("image")]
+                        public Types.Image? Image { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置商品附件列表。

@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class KeyDataTemplate : CgibinAgentSetWorkbenchTemplateRequest.Types.KeyDataTemplate
+            public class KeyDataTemplate
             {
+                public static class Types
+                {
+                    public class KeyDataItem : CgibinAgentSetWorkbenchTemplateRequest.Types.KeyDataTemplate.Types.KeyDataItem
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置关键数据项。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("items")]
+                [System.Text.Json.Serialization.JsonPropertyName("items")]
+                public List<Types.KeyDataItem>? Items { get; set; }
             }
 
             public class ImageTemplate : CgibinAgentSetWorkbenchTemplateRequest.Types.ImageTemplate
@@ -19,8 +32,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class ListTemplate : CgibinAgentSetWorkbenchTemplateRequest.Types.ListTemplate
+            public class ListTemplate
             {
+                public static class Types
+                {
+                    public class ListItem : CgibinAgentSetWorkbenchTemplateRequest.Types.ListTemplate.Types.ListItem
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置列表项。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("items")]
+                [System.Text.Json.Serialization.JsonPropertyName("items")]
+                public List<Types.ListItem>? Items { get; set; }
             }
         }
 

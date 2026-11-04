@@ -7,54 +7,120 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class CheckinGroup : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup
+            public class CheckinGroup : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.__zz__CheckinGroup
             {
-                public new static class Types
+                public static class Types
                 {
-                    public class Range
+                    public class CheckinDate : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.__zz__CheckinDate
+                    {
+                        public static class Types
+                        {
+                            public class BiWeekly : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.CheckinDate.Types.BiWeekly
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置工作日上下班打卡时间列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("checkintime")]
+                        [System.Text.Json.Serialization.JsonPropertyName("checkintime")]
+                        public List<CheckinTime>? CheckinTimeList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置大小周信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("biweekly")]
+                        [System.Text.Json.Serialization.JsonPropertyName("biweekly")]
+                        public Types.BiWeekly? BiWeekly { get; set; }
+                    }
+
+                    public class CheckinTime : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.__zz__CheckinTime
+                    {
+                        public static class Types
+                        {
+                            public class RestTime : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.CheckinTime.Types.RestTime
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置多组休息时间列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("rest_times")]
+                        [System.Text.Json.Serialization.JsonPropertyName("rest_times")]
+                        public List<Types.RestTime>? RestTimeList { get; set; }
+                    }
+
+                    public class SpecialCheckinDate : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.__zz__SpecialCheckinDate
                     {
                         /// <summary>
-                        /// 获取或设置成员账号列表。
+                        /// 获取或设置特殊日期上下班打卡时间列表。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("userid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public List<string>? UserIdList { get; set; }
+                        [Newtonsoft.Json.JsonProperty("checkintime")]
+                        [System.Text.Json.Serialization.JsonPropertyName("checkintime")]
+                        public List<CheckinTime>? CheckinTimeList { get; set; }
+                    }
+
+                    public class WiFiMac : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.WiFiMac
+                    {
+                    }
+
+                    public class Location : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.Location
+                    {
+                    }
+
+                    public class Schedule : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.__zz__Schedule
+                    {
+                        public static class Types
+                        {
+                            public class TimeSection : CheckinTime
+                            {
+                            }
+
+                            public class LateRule : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.Schedule.Types.__zz__LateRule
+                            {
+                                public static class Types
+                                {
+                                    public class TimeRule : CgibinCheckinGetCheckinOptionResponse.Types.CheckinOption.Types.CheckinGroup.Types.Schedule.Types.LateRule.Types.TimeRule
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置迟到规则列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("timerules")]
+                                [System.Text.Json.Serialization.JsonPropertyName("timerules")]
+                                public List<Types.TimeRule>? TimeRuleList { get; set; }
+                            }
+                        }
 
                         /// <summary>
-                        /// 获取或设置部门 ID 列表。
+                        /// 获取或设置班次上下班时段列表。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("party_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("party_id")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public List<long>? DepartmentIdList { get; set; }
+                        [Newtonsoft.Json.JsonProperty("time_section")]
+                        [System.Text.Json.Serialization.JsonPropertyName("time_section")]
+                        public List<Types.TimeSection>? TimeSectionList { get; set; }
 
                         /// <summary>
-                        /// 获取或设置标签 ID 列表。
+                        /// 获取或设置晚走晚到时间规则信息。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("tagid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                        public List<int>? TagIdList { get; set; }
+                        [Newtonsoft.Json.JsonProperty("late_rule")]
+                        [System.Text.Json.Serialization.JsonPropertyName("late_rule")]
+                        public Types.LateRule? LateRule { get; set; }
+                    }
+
+                    public class Range : CgibinCheckinAddCheckinOptionRequest.Types.CheckinGroup.Types.Range
+                    {
                     }
 
                     public class Reporter
                     {
                         public static class Types
                         {
-                            public class ReportUser
+                            public class ReportUser : CgibinCheckinAddCheckinOptionRequest.Types.CheckinGroup.Types.Reporter.Types.ReportUser
                             {
-                                /// <summary>
-                                /// 获取或设置成员账号。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("userid")]
-                                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                                public string? UserId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置标签 ID。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("tagid")]
-                                [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                                public int? TagId { get; set; }
                             }
                         }
 
@@ -298,11 +364,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置打卡方式。
+                /// 获取或设置打卡时间配置列表。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public int Type { get; set; }
+                [Newtonsoft.Json.JsonProperty("checkindate")]
+                [System.Text.Json.Serialization.JsonPropertyName("checkindate")]
+                public List<Types.CheckinDate>? CheckinDateList { get; set; }
+
+                /// <summary>
+                /// 获取或设置特殊日期必须打卡日期列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("spe_workdays")]
+                [System.Text.Json.Serialization.JsonPropertyName("spe_workdays")]
+                public List<Types.SpecialCheckinDate>? SpecialCheckinDateList { get; set; }
+
+                /// <summary>
+                /// 获取或设置特殊日期不用打卡日期列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("spe_offdays")]
+                [System.Text.Json.Serialization.JsonPropertyName("spe_offdays")]
+                public List<Types.SpecialCheckinDate>? SpecialNonCheckinDateList { get; set; }
+
+                /// <summary>
+                /// 获取或设置 Wi-Fi 打卡地点列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("wifimac_infos")]
+                [System.Text.Json.Serialization.JsonPropertyName("wifimac_infos")]
+                public List<Types.WiFiMac>? WiFiMacList { get; set; }
+
+                /// <summary>
+                /// 获取或设置位置打卡地点列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("loc_infos")]
+                [System.Text.Json.Serialization.JsonPropertyName("loc_infos")]
+                public List<Types.Location>? LocationList { get; set; }
+
+                /// <summary>
+                /// 获取或设置排班列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("schedulelist")]
+                [System.Text.Json.Serialization.JsonPropertyName("schedulelist")]
+                public List<Types.Schedule>? ScheduleList { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡人员信息。
@@ -310,13 +411,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("range")]
                 [System.Text.Json.Serialization.JsonPropertyName("range")]
                 public Types.Range? Range { get; set; }
-
-                /// <summary>
-                /// 获取或设置白名单成员账号列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("white_users")]
-                [System.Text.Json.Serialization.JsonPropertyName("white_users")]
-                public List<string>? UserIdWhiteList { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报对象信息。
@@ -331,34 +425,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("ot_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("ot_info")]
                 public Types.Overtime? Overtime { get; set; }
-
-                /// <summary>
-                /// 获取或设置范围外打卡处理方式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("option_out_range")]
-                [System.Text.Json.Serialization.JsonPropertyName("option_out_range")]
-                public int OutRangeOption { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否开启人脸识别。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("use_face_detect")]
-                [System.Text.Json.Serialization.JsonPropertyName("use_face_detect")]
-                public bool IsUseFaceDetect { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否开启人脸活体识别。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("open_face_live_detect")]
-                [System.Text.Json.Serialization.JsonPropertyName("open_face_live_detect")]
-                public bool IsOpenFaceLiveDetect { get; set; }
-
-                /// <summary>
-                /// 获取或设置自由签到时间（单位：秒）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("offwork_interval_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("offwork_interval_time")]
-                public int OffWorkIntervalTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建人成员账号。

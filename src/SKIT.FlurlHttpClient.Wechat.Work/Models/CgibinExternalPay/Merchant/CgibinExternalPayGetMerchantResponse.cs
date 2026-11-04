@@ -7,28 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class UseScope
+            public class UseScope : CgibinExternalPaySetMerchantUseScopeRequest.Types.UseScope
             {
-                /// <summary>
-                /// 获取或设置成员账号列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("user")]
-                [System.Text.Json.Serialization.JsonPropertyName("user")]
-                public List<string>? UserIdList { get; set; }
-
-                /// <summary>
-                /// 获取或设置部门 ID 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("partyid")]
-                [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public List<long>? DepartmentIdList { get; set; }
-
-                /// <summary>
-                /// 获取或设置标签 ID 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("tagid")]
-                [System.Text.Json.Serialization.JsonPropertyName("tagid")]
-                public List<int>? TagIdList { get; set; }
             }
         }
 

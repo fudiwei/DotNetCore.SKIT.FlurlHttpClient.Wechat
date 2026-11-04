@@ -258,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>生成企业微信第三方单点登录扫码授权 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/10991 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98170 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

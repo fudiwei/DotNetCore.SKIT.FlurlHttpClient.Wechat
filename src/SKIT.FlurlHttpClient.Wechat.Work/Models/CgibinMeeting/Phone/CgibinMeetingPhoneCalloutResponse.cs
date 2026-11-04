@@ -7,30 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Callout
+            public class Callout : CgibinMeetingPhoneCalloutRequest.Types.Callout
             {
-                /// <summary>
-                /// 获取或设置国家地区代码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("area")]
-                [System.Text.Json.Serialization.JsonPropertyName("area")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string? AreaCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置电话号码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("phone")]
-                [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                public string? PhoneNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置分机号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("extension_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("extension_number")]
-                public string? ExtensionNumber { get; set; }
-
                 /// <summary>
                 /// 获取或设置外呼状态。
                 /// </summary>

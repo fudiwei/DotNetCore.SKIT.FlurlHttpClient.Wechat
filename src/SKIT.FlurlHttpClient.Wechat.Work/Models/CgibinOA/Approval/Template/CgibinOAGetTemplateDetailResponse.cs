@@ -7,21 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class MultiLangText
+            public class MultiLangText : CgibinOAApprovalCreateTemplateRequest.Types.MultiLangText
             {
-                /// <summary>
-                /// 获取或设置语言类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("lang")]
-                [System.Text.Json.Serialization.JsonPropertyName("lang")]
-                public string? Language { get; set; }
-
-                /// <summary>
-                /// 获取或设置文本信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("text")]
-                [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string? Text { get; set; }
             }
 
             public class TemplateContent
@@ -32,22 +19,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                         public static class Types
                         {
-                            public class Property
+                            public class Property : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.__zz__Property
                             {
-                                /// <summary>
-                                /// 获取或设置控件类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("control")]
-                                [System.Text.Json.Serialization.JsonPropertyName("control")]
-                                public string? Control { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置控件 ID。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string? ControlId { get; set; }
-
                                 /// <summary>
                                 /// 获取或设置控件名称。
                                 /// </summary>
@@ -61,24 +34,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("placeholder")]
                                 [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
                                 public List<MultiLangText>? Placeholder { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置是否为必填项。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("require")]
-                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                                [System.Text.Json.Serialization.JsonPropertyName("require")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                                public bool IsRequired { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置是否不可打印。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("un_print")]
-                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                                [System.Text.Json.Serialization.JsonPropertyName("un_print")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                                public bool IsUnprintable { get; set; }
                             }
 
                             public class Config
@@ -105,18 +60,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public ContactControlConfig? Contact { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置 File 控件配置信息。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("file")]
-                                [System.Text.Json.Serialization.JsonPropertyName("file")]
-                                public FileControlConfig? File { get; set; }
-
-                                /// <summary>
                                 /// 获取或设置 Tips 控件配置信息。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("tips")]
                                 [System.Text.Json.Serialization.JsonPropertyName("tips")]
                                 public TipsControlConfig? Tips { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 File 控件配置信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("file")]
+                                [System.Text.Json.Serialization.JsonPropertyName("file")]
+                                public FileControlConfig? File { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置 Table 控件配置信息。
@@ -161,29 +116,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public RelatedApprovalControlConfig? RelatedApproval { get; set; }
                             }
 
-                            public class DateControlConfig
+                            public class DateControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.DateControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置时间展示类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
                             }
 
-                            public class SelectorControlConfig
+                            public class SelectorControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.__zz__SelectorControlConfig
                             {
                                 public static class Types
                                 {
-                                    public class Option
+                                    public class Option : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.SelectorControlConfig.Types.__zz__Option
                                     {
-                                        /// <summary>
-                                        /// 获取或设置选项 Key。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("key")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("key")]
-                                        public string? Key { get; set; }
-
                                         /// <summary>
                                         /// 获取或设置选项值。
                                         /// </summary>
@@ -194,13 +136,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 }
 
                                 /// <summary>
-                                /// 获取或设置选择类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
-
-                                /// <summary>
                                 /// 获取或设置选择列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("options")]
@@ -208,28 +143,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.Option>? OptionList { get; set; }
                             }
 
-                            public class ContactControlConfig
+                            public class ContactControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.ContactControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置选择方式。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置选择对象。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("mode")]
-                                [System.Text.Json.Serialization.JsonPropertyName("mode")]
-                                public string? Mode { get; set; }
                             }
 
                             public class TipsControlConfig
                             {
                                 public static class Types
                                 {
-                                    public class TipsContent
+                                    public class TipsContent : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.TipsControlConfig.Types.__zz__TipsContent
                                     {
                                         public static class Types
                                         {
@@ -237,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                             {
                                                 public static class Types
                                                 {
-                                                    public class SubText
+                                                    public class SubText : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.TipsControlConfig.Types.TipsContent.Types.Text.Types.__zz__SubText
                                                     {
                                                         public static class Types
                                                         {
@@ -245,31 +167,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                             {
                                                                 public static class Types
                                                                 {
-                                                                    public class PlainText
+                                                                    public class PlainText : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.TipsControlConfig.Types.TipsContent.Types.Text.Types.SubText.Types.Content.Types.PlainText
                                                                     {
-                                                                        /// <summary>
-                                                                        /// 获取或设置纯文本文字。
-                                                                        /// </summary>
-                                                                        [Newtonsoft.Json.JsonProperty("content")]
-                                                                        [System.Text.Json.Serialization.JsonPropertyName("content")]
-                                                                        public string? Content { get; set; }
                                                                     }
 
-                                                                    public class Link
+                                                                    public class Link : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.TipsControlConfig.Types.TipsContent.Types.Text.Types.SubText.Types.Content.Types.Link
                                                                     {
-                                                                        /// <summary>
-                                                                        /// 获取或设置链接标题。
-                                                                        /// </summary>
-                                                                        [Newtonsoft.Json.JsonProperty("title")]
-                                                                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                                                        public string? Title { get; set; }
-
-                                                                        /// <summary>
-                                                                        /// 获取或设置链接 URL。
-                                                                        /// </summary>
-                                                                        [Newtonsoft.Json.JsonProperty("url")]
-                                                                        [System.Text.Json.Serialization.JsonPropertyName("url")]
-                                                                        public string? URL { get; set; }
                                                                     }
                                                                 }
 
@@ -290,13 +193,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                                         }
 
                                                         /// <summary>
-                                                        /// 获取或设置文本类型。
-                                                        /// </summary>
-                                                        [Newtonsoft.Json.JsonProperty("type")]
-                                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                                        public int Type { get; set; }
-
-                                                        /// <summary>
                                                         /// 获取或设置文本内容。
                                                         /// </summary>
                                                         [Newtonsoft.Json.JsonProperty("content")]
@@ -315,13 +211,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         }
 
                                         /// <summary>
-                                        /// 获取或设置语言类型。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("lang")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("lang")]
-                                        public string? Language { get; set; }
-
-                                        /// <summary>
                                         /// 获取或设置说明文字信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("text")]
@@ -338,27 +227,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.TipsContent>? TipsList { get; set; }
                             }
 
-                            public class FileControlConfig
+                            public class FileControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.FileControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置是否只允许拍照。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("is_only_photo")]
-                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                                [System.Text.Json.Serialization.JsonPropertyName("is_only_photo")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                                public bool IsOnlyPhoto { get; set; }
                             }
 
-                            public class TableControlConfig
+                            public class TableControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.__zz__TableControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置打印格式。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("print_format")]
-                                [System.Text.Json.Serialization.JsonPropertyName("print_format")]
-                                public int PrintFormat { get; set; }
-
                                 /// <summary>
                                 /// 获取或设置子控件。
                                 /// </summary>
@@ -367,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Control>? Children { get; set; }
                             }
 
-                            public class AttendanceControlConfig
+                            public class AttendanceControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.__zz__AttendanceControlConfig
                             {
                                 public static class Types
                                 {
@@ -375,13 +249,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                     {
                                     }
                                 }
-
-                                /// <summary>
-                                /// 获取或设置假勤类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public int Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置时间选择范围。
@@ -395,15 +262,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                                 public static class Types
                                 {
-                                    public class Vacation
+                                    public class Vacation : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.VacationControlConfig.Types.__zz__Vacation
                                     {
-                                        /// <summary>
-                                        /// 获取或设置假期类型标识。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("id")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                        public int VacationId { get; set; }
-
                                         /// <summary>
                                         /// 获取或设置假期类型名称。
                                         /// </summary>
@@ -421,48 +281,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public List<Types.Vacation>? VacationList { get; set; }
                             }
 
-                            public class DateRangeControlConfig
+                            public class DateRangeControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.DateRangeControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置时间刻度。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置自然日或工作日。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("official_holiday")]
-                                [System.Text.Json.Serialization.JsonPropertyName("official_holiday")]
-                                public int? OfficialHoliday { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置一天的时长（单位：秒）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("perday_duration")]
-                                [System.Text.Json.Serialization.JsonPropertyName("perday_duration")]
-                                public int? PerdayDuration { get; set; }
                             }
 
-                            public class LocationControlConfig
+                            public class LocationControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.LocationControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置距离（单位：米）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("distance")]
-                                [System.Text.Json.Serialization.JsonPropertyName("distance")]
-                                public int Distance { get; set; }
                             }
 
-                            public class RelatedApprovalControlConfig
+                            public class RelatedApprovalControlConfig : CgibinOAApprovalCreateTemplateRequest.Types.TemplateContent.Types.Control.Types.RelatedApprovalControlConfig
                             {
-                                /// <summary>
-                                /// 获取或设置审批单模板 ID 列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("template_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                                public List<string>? TemplateIdList { get; set; }
                             }
                         }
 

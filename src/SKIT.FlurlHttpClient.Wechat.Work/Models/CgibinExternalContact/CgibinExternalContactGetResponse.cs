@@ -7,39 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class ExternalContact
+            public abstract class __zz__ExternalContact
             {
-                public static class Types
-                {
-                    public class Subscriber
-                    {
-                        /// <summary>
-                        /// 获取或设置学校为家长设置的企业标签 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("tag_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
-                        public List<string>? TagId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置学校为家长设置的备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("remark")]
-                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                        public string? Remark { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置学校为家长设置的备注手机号码列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("remark_mobiles")]
-                        [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
-                        public List<string>? RemarkMobileNumberList { get; set; }
-                    }
-
-                    public class ExternalProfile : CgibinUserGetResponse.Types.ExternalProfile
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置外部联系人账号。
                 /// </summary>
@@ -119,6 +88,99 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool? IsSubscribe { get; set; }
+            }
+
+            public class ExternalContact : __zz__ExternalContact
+            {
+                public static class Types
+                {
+                    public class Subscriber
+                    {
+                        /// <summary>
+                        /// 获取或设置学校为家长设置的企业标签 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("tag_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
+                        public List<string>? TagId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置学校为家长设置的备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("remark")]
+                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                        public string? Remark { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置学校为家长设置的备注手机号码列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("remark_mobiles")]
+                        [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
+                        public List<string>? RemarkMobileNumberList { get; set; }
+                    }
+
+                    public class ExternalProfile : CgibinUserCreateRequest.Types.__zz__ExternalProfile
+                    {
+                        public static class Types
+                        {
+                            public class Attribute : CgibinUserCreateRequest.Types.ExternalProfile.Types.__zz__Attribute
+                            {
+                                public static class Types
+                                {
+                                    public class Text : CgibinUserCreateRequest.Types.ExternalProfile.Types.Attribute.Types.Text
+                                    {
+                                    }
+
+                                    public class Web : CgibinUserCreateRequest.Types.ExternalProfile.Types.Attribute.Types.Web
+                                    {
+                                    }
+
+                                    public class MiniProgram : CgibinUserCreateRequest.Types.ExternalProfile.Types.Attribute.Types.MiniProgram
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置文本属性值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                public Types.Text? Text { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置网页属性值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("web")]
+                                [System.Text.Json.Serialization.JsonPropertyName("web")]
+                                public Types.Web? Web { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序属性值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("miniprogram")]
+                                [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
+                                public Types.MiniProgram? MiniProgram { get; set; }
+                            }
+
+                            public class WechatChannels : CgibinUserCreateRequest.Types.ExternalProfile.Types.WechatChannels
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置视频号信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wechat_channels")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
+                        public Types.WechatChannels? WechatChannels { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置对外自定义字段列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("external_attr")]
+                        [System.Text.Json.Serialization.JsonPropertyName("external_attr")]
+                        public List<Types.Attribute>? AttributeList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置学校为家长设置的信息。
@@ -135,7 +197,80 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.ExternalProfile? ExternalProfile { get; set; }
             }
 
-            public class FollowUser
+            public abstract class __zz__FollowUser
+            {
+                /// <summary>
+                /// 获取或设置成员账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                public string? UserId { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员对外部联系人的备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("remark")]
+                [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                public string? Remark { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员对外部联系人的备注企业名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("remark_corp_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("remark_corp_name")]
+                public string? RemarkCorpName { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员对外部联系人的备注手机号码列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("remark_mobiles")]
+                [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
+                public List<string>? RemarkMobileNumberList { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员对外部联系人的描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("description")]
+                [System.Text.Json.Serialization.JsonPropertyName("description")]
+                public string? Description { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员添加外部联系人所打企业标签 ID 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("tag_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
+                public List<string>? TagIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员添加外部联系人的来源。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("add_way")]
+                [System.Text.Json.Serialization.JsonPropertyName("add_way")]
+                public int AddWay { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员添加外部联系人的时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("createtime")]
+                [System.Text.Json.Serialization.JsonPropertyName("createtime")]
+                public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置企业自定义渠道参数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("state")]
+                [System.Text.Json.Serialization.JsonPropertyName("state")]
+                public string? State { get; set; }
+
+                /// <summary>
+                /// 获取或设置操作人的成员账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("oper_userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("oper_userid")]
+                public string? OperatorUserId { get; set; }
+            }
+
+            public class FollowUser : __zz__FollowUser
             {
                 public static class Types
                 {
@@ -189,81 +324,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员对外部联系人的备注。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("remark")]
-                [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                public string? Remark { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员对外部联系人的备注企业名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("remark_corp_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("remark_corp_name")]
-                public string? RemarkCorpName { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员对外部联系人的备注手机号码列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("remark_mobiles")]
-                [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
-                public List<string>? RemarkMobileNumberList { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员对外部联系人的描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("description")]
-                [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string? Description { get; set; }
-
-                /// <summary>
                 /// 获取或设置该成员添加外部联系人所打企业标签列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tags")]
                 [System.Text.Json.Serialization.JsonPropertyName("tags")]
                 public List<Types.Tag>? TagList { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员添加外部联系人所打企业标签 ID 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("tag_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
-                public List<string>? TagIdList { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员添加外部联系人的来源。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("add_way")]
-                [System.Text.Json.Serialization.JsonPropertyName("add_way")]
-                public int AddWay { get; set; }
-
-                /// <summary>
-                /// 获取或设置该成员添加外部联系人的时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("createtime")]
-                [System.Text.Json.Serialization.JsonPropertyName("createtime")]
-                public long CreateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置企业自定义渠道参数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("state")]
-                [System.Text.Json.Serialization.JsonPropertyName("state")]
-                public string? State { get; set; }
-
-                /// <summary>
-                /// 获取或设置操作人的成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("oper_userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("oper_userid")]
-                public string? OperatorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频号信息。

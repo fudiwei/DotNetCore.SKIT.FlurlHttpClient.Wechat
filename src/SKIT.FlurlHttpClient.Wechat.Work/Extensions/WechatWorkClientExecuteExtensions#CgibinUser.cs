@@ -238,7 +238,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91023 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91437 ]]> <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91707 ]]> <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91711 ]]>
         /// </para>
@@ -333,7 +332,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [GET] /cgi-bin/user/list_selected_ticket_user 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://work.weixin.qq.com/api/doc/90001/90143/94894 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/90001/90143/94894 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -357,7 +356,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/user/list_id 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/40856 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96067 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

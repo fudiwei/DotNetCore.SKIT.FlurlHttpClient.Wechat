@@ -7,28 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Range
+            public class Range : CgibinExternalContactCustomerStrategyCreateRequest.Types.Range
             {
-                /// <summary>
-                /// 获取或设置节点类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public int Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置管理范围内配置的成员 UserId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置管理范围内配置的部门 UserId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("partyid")]
-                [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public long? DepartmentId { get; set; }
             }
         }
 

@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Attachment : CgibinExternalContactAddProductAlbumRequest.Types.Attachment
+            public class Attachment : CgibinExternalContactAddProductAlbumRequest.Types.__zz__Attachment
             {
+                public static class Types
+                {
+                    public class Image : CgibinExternalContactAddProductAlbumRequest.Types.Attachment.Types.Image
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图片附件信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("image")]
+                [System.Text.Json.Serialization.JsonPropertyName("image")]
+                public Types.Image? Image { get; set; }
             }
         }
 

@@ -7,36 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class CorpUser
+            public abstract class __zz__CorpUser : CgibinLinkedCorpUserSimpleListResponse.Types.CorpUser
             {
-                public static class Types
-                {
-                    public class ExtendedAttribute : CgibinUserGetResponse.Types.ExtendedAttribute
-                    {
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置所属企业 CorpId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("corpid")]
-                [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-                public string? CorpId { get; set; }
-
-                /// <summary>
-                /// 获取或设置成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置成员名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
                 /// <summary>
                 /// 获取或设置手机号码。
                 /// </summary>
@@ -64,13 +36,53 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("position")]
                 [System.Text.Json.Serialization.JsonPropertyName("position")]
                 public string? Position { get; set; }
+            }
 
-                /// <summary>
-                /// 获取或设置互联企业部门 ID（格式："LinkedId/DepartmentId"）列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("department")]
-                [System.Text.Json.Serialization.JsonPropertyName("department")]
-                public List<string>? LinkedDepartmentIdList { get; set; }
+            public class CorpUser : __zz__CorpUser
+            {
+                public static class Types
+                {
+                    public class ExtendedAttribute
+                    {
+                        public static class Types
+                        {
+                            public class Attribute : CgibinUserCreateRequest.Types.ExtendedAttribute.Types.__zz__Attribute
+                            {
+                                public static class Types
+                                {
+                                    public class Text : CgibinUserCreateRequest.Types.ExtendedAttribute.Types.Attribute.Types.Text
+                                    {
+                                    }
+
+                                    public class Web : CgibinUserCreateRequest.Types.ExtendedAttribute.Types.Attribute.Types.Web
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置文本属性值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                public Types.Text? Text { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置网页属性值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("web")]
+                                [System.Text.Json.Serialization.JsonPropertyName("web")]
+                                public Types.Web? Web { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置自定义字段列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("attrs")]
+                        [System.Text.Json.Serialization.JsonPropertyName("attrs")]
+                        public List<Types.Attribute>? AttributeList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置自定义字段信息。

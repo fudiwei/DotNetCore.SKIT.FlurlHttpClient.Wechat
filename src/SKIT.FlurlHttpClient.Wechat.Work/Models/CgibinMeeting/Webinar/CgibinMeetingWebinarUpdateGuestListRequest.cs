@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Guest
+            public class Guest : CgibinMeetingCreateRequest.Types.Guest
             {
                 /// <summary>
                 /// 获取或设置嘉宾类型。
@@ -24,33 +24,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? UserId { get; set; }
 
                 /// <summary>
-                /// 获取或设置国家地区代码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("area")]
-                [System.Text.Json.Serialization.JsonPropertyName("area")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string? AreaCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置电话号码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("phone_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                public string? PhoneNumber { get; set; }
-
-                /// <summary>
                 /// 获取或设置电子邮箱。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("email")]
                 [System.Text.Json.Serialization.JsonPropertyName("email")]
                 public string? Email { get; set; }
-
-                /// <summary>
-                /// 获取或设置会议嘉宾姓名。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("guest_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("guest_name")]
-                public string? GuestName { get; set; }
             }
         }
 

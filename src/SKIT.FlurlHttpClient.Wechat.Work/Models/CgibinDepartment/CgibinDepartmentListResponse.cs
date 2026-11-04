@@ -7,15 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Department
+            public class Department : CgibinDepartmentSimpleListResponse.Types.Department
             {
-                /// <summary>
-                /// 获取或设置部门 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("id")]
-                [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public long DepartmentId { get; set; }
-
                 /// <summary>
                 /// 获取或设置部门名称。
                 /// </summary>
@@ -29,20 +22,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("name_en")]
                 [System.Text.Json.Serialization.JsonPropertyName("name_en")]
                 public string? EnglishName { get; set; }
-
-                /// <summary>
-                /// 获取或设置上级部门 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("parentid")]
-                [System.Text.Json.Serialization.JsonPropertyName("parentid")]
-                public long ParentDepartmentId { get; set; }
-
-                /// <summary>
-                /// 获取或设置在上级部门中的次序值。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order")]
-                [System.Text.Json.Serialization.JsonPropertyName("order")]
-                public long DepartmentOrder { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门负责人成员账号列表。

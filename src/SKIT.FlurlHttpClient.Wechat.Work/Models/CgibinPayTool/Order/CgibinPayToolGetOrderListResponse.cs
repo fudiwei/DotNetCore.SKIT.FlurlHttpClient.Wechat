@@ -24,6 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? CustomCorpId { get; set; }
 
                 /// <summary>
+                /// 获取或设置客户企业简称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("custom_corp_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("custom_corp_name")]
+                public string? CustomCorpName { get; set; }
+
+                /// <summary>
                 /// 获取或设置创建订单时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]

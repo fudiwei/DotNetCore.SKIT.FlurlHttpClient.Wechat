@@ -7,49 +7,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Record
+            public class Record : CgibinSecurityMemberOperateLogListResponse.Types.Record
             {
-                /// <summary>
-                /// 获取或设置操作者 UserId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置操作类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("oper_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("oper_type")]
-                public int OperateType { get; set; }
-
-                /// <summary>
-                /// 获取或设置时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("time")]
-                [System.Text.Json.Serialization.JsonPropertyName("time")]
-                public long Timestamp { get; set; }
-
                 /// <summary>
                 /// 获取或设置操作行为类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_type")]
                 public int DetailType { get; set; }
-
-                /// <summary>
-                /// 获取或设置相关数据。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("detail_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("detail_info")]
-                public string? DetailInfo { get; set; }
-
-                /// <summary>
-                /// 获取或设置操作者 IP。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ip")]
-                [System.Text.Json.Serialization.JsonPropertyName("ip")]
-                public string? Ip { get; set; }
             }
         }
 

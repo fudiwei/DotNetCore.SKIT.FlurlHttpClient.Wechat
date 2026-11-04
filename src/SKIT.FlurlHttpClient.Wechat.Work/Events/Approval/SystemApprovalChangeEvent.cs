@@ -196,6 +196,66 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         {
                             public class Node
                             {
+                                public static class Types
+                                {
+                                    public class SubNode
+                                    {
+                                        public static class Types
+                                        {
+                                            public class User
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置处理人成员账号。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("UserId")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("UserId")]
+                                                [System.Xml.Serialization.XmlElement("UserId")]
+                                                public string? UserId { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置处理人信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("UserInfo")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("UserInfo")]
+                                        [System.Xml.Serialization.XmlElement("UserInfo")]
+                                        public Types.User? User { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置审批状态。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("SpYj")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("SpYj")]
+                                        [System.Xml.Serialization.XmlElement("SpYj", IsNullable = true)]
+                                        public int? ApproveStatus { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置操作时间。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("Sptime")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("Sptime")]
+                                        [System.Xml.Serialization.XmlElement("Sptime", IsNullable = true)]
+                                        public long? ApproveTimestamp { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置审批意见。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("Speech")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("Speech")]
+                                        [System.Xml.Serialization.XmlElement("Speech", IsNullable = true)]
+                                        public string? Speech { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置审批意见附件 MediaId 列表。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("MediaIds")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("MediaIds")]
+                                        [System.Xml.Serialization.XmlElement("MediaIds", Type = typeof(string), IsNullable = true)]
+                                        public List<string>? AttachmentMediaIdList { get; set; }
+                                    }
+                                }
+
                                 /// <summary>
                                 /// 获取或设置节点类型。
                                 /// </summary>
@@ -227,63 +287,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 [System.Text.Json.Serialization.JsonPropertyName("SubNodeList")]
                                 [System.Xml.Serialization.XmlElement("SubNodeList", Type = typeof(Types.SubNode))]
                                 public List<Types.SubNode>? SubNodeList { get; set; }
-                            }
-
-                            public class SubNode
-                            {
-                                public static class Types
-                                {
-                                    public class User
-                                    {
-                                        /// <summary>
-                                        /// 获取或设置处理人成员账号。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("UserId")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("UserId")]
-                                        [System.Xml.Serialization.XmlElement("UserId")]
-                                        public string? UserId { get; set; }
-                                    }
-                                }
-
-                                /// <summary>
-                                /// 获取或设置处理人信息。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("UserInfo")]
-                                [System.Text.Json.Serialization.JsonPropertyName("UserInfo")]
-                                [System.Xml.Serialization.XmlElement("UserInfo")]
-                                public Types.User? User { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置审批状态。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("SpYj")]
-                                [System.Text.Json.Serialization.JsonPropertyName("SpYj")]
-                                [System.Xml.Serialization.XmlElement("SpYj", IsNullable = true)]
-                                public int? ApproveStatus { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置操作时间。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("Sptime")]
-                                [System.Text.Json.Serialization.JsonPropertyName("Sptime")]
-                                [System.Xml.Serialization.XmlElement("Sptime", IsNullable = true)]
-                                public long? ApproveTimestamp { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置审批意见。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("Speech")]
-                                [System.Text.Json.Serialization.JsonPropertyName("Speech")]
-                                [System.Xml.Serialization.XmlElement("Speech", IsNullable = true)]
-                                public string? Speech { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置审批意见附件 MediaId 列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("MediaIds")]
-                                [System.Text.Json.Serialization.JsonPropertyName("MediaIds")]
-                                [System.Xml.Serialization.XmlElement("MediaIds", Type = typeof(string), IsNullable = true)]
-                                public List<string>? AttachmentMediaIdList { get; set; }
                             }
                         }
 

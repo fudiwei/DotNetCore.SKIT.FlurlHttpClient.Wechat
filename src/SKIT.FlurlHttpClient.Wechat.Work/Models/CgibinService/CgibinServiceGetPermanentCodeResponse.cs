@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
             }
 
-            public class AuthorizerCorp : CgibinServiceGetAuthInfoResponse.Types.AuthorizerCorp
+            public class AuthorizerCorp : CgibinServiceGetAuthInfoResponse.Types.__zz__AuthorizerCorp
             {
                 /// <summary>
                 /// 获取或设置授权模式。
@@ -21,8 +21,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public int AuthType { get; set; }
             }
 
-            public class Authorization : CgibinServiceGetAuthInfoResponse.Types.Authorization
+            public class Authorization
             {
+                public static class Types
+                {
+                    public class Agent : CgibinServiceGetAuthInfoResponse.Types.Authorization.Types.__zz__Agent
+                    {
+                        public static class Types
+                        {
+                            public class Privilege : CgibinServiceGetAuthInfoResponse.Types.Authorization.Types.Agent.Types.Privilege
+                            {
+                            }
+
+                            public class SharedFrom : CgibinServiceGetAuthInfoResponse.Types.Authorization.Types.Agent.Types.SharedFrom
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置应用权限信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("privilege")]
+                        [System.Text.Json.Serialization.JsonPropertyName("privilege")]
+                        public Types.Privilege? Privilege { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置共享了应用的互联企业信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("shared_from")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shared_from")]
+                        public Types.SharedFrom? SharedFrom { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置授权的应用列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("agent")]
+                [System.Text.Json.Serialization.JsonPropertyName("agent")]
+                public List<Types.Agent>? AgentList { get; set; }
             }
 
             public class AuthorizerUser
@@ -84,63 +121,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Agent
+                    public class Agent : CgibinServiceGetAuthInfoResponse.Types.Edition.Types.Agent
                     {
-                        /// <summary>
-                        /// 获取或设置应用 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("agentid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
-                        public int AgentId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置版本 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("edition_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("edition_id")]
-                        public string? EditionId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置版本名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("edition_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("edition_name")]
-                        public string? EditionName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置应用状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("app_status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("app_status")]
-                        public int AppStatus { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置用户上限。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("user_limit")]
-                        [System.Text.Json.Serialization.JsonPropertyName("user_limit")]
-                        public long UserLimit { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置过期时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("expired_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("expired_time")]
-                        public long ExpireTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否是虚拟版本。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_virtual_version")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_virtual_version")]
-                        public bool IsVirtualVersion { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否由企业互联或上下游分享安装。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_shared_from_other_corp")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_shared_from_other_corp")]
-                        public bool IsSharedFromOtherCorp { get; set; }
                     }
                 }
 
@@ -161,14 +143,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string? PermanentAuthCode { get; set; }
 
         /// <summary>
-        /// 获取或设置授权方凭证。
+        /// 获取或设置授权方接口调用凭证凭证。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("access_token")]
         [System.Text.Json.Serialization.JsonPropertyName("access_token")]
         public string? AccessToken { get; set; }
 
         /// <summary>
-        /// 获取或设置授权方凭证有效期（单位：秒）。
+        /// 获取或设置凭证有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expires_in")]
         [System.Text.Json.Serialization.JsonPropertyName("expires_in")]

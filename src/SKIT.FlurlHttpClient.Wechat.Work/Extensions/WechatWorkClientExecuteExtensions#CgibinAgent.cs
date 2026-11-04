@@ -7,8 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90227 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90363 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90845 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90363 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -38,8 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90227 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90363 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90845 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90363 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -90,8 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/agent/set_scope 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90583 ]]> <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90807 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90583 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -116,26 +113,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/agent/migrate_to_customized_app 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/agent/claim_customized_app 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96072 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99617 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinAgentMigrateToCustomizedAppResponse> ExecuteCgibinAgentMigrateToCustomizedAppAsync(this WechatWorkClient client, Models.CgibinAgentMigrateToCustomizedAppRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinAgentClaimCustomizedAppResponse> ExecuteCgibinAgentClaimCustomizedAppAsync(this WechatWorkClient client, Models.CgibinAgentClaimCustomizedAppRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "migrate_to_customized_app")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "claim_customized_app")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinAgentMigrateToCustomizedAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinAgentClaimCustomizedAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

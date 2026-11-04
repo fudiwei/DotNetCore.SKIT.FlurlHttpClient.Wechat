@@ -7,7 +7,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class HealthInfo
+            public abstract class __zz__HealthInfo
+            {
+                /// <summary>
+                /// 获取或设置用户 UserId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                public string? UserId { get; set; }
+
+                /// <summary>
+                /// 获取或设置健康码状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("health_qrcode_status")]
+                [System.Text.Json.Serialization.JsonPropertyName("health_qrcode_status")]
+                public int HealthQrcodeStatus { get; set; }
+
+                /// <summary>
+                /// 获取或设置健康状态是否为本人填写。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("self_submit")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("self_submit")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
+                public bool IsSelfSubmit { get; set; }
+            }
+
+            public class HealthInfo : __zz__HealthInfo
             {
                 public static class Types
                 {
@@ -37,29 +63,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置用户 UserId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string? UserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置健康码状态。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("health_qrcode_status")]
-                [System.Text.Json.Serialization.JsonPropertyName("health_qrcode_status")]
-                public int HealthQrcodeStatus { get; set; }
-
-                /// <summary>
-                /// 获取或设置健康状态是否为本人填写。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("self_submit")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("self_submit")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                public bool IsSelfSubmit { get; set; }
-
-                /// <summary>
                 /// 获取或设置填写答案列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("report_values")]
@@ -67,28 +70,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public List<Types.ReportValue>? ReportValueList { get; set; }
             }
 
-            public class QuestionTemplate
+            public abstract class __zz__QuestionTemplate
             {
-                public static class Types
-                {
-                    public class Option
-                    {
-                        /// <summary>
-                        /// 获取或设置选项 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("option_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("option_id")]
-                        public int OptionId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置选项文本。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("option_text")]
-                        [System.Text.Json.Serialization.JsonPropertyName("option_text")]
-                        public string? Text { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置问题 ID。
                 /// </summary>
@@ -127,6 +110,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("is_not_display")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool IsHidden { get; set; }
+            }
+
+            public class QuestionTemplate : __zz__QuestionTemplate
+            {
+                public static class Types
+                {
+                    public class Option
+                    {
+                        /// <summary>
+                        /// 获取或设置选项 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("option_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("option_id")]
+                        public int OptionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置选项文本。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("option_text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("option_text")]
+                        public string? Text { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置选项列表。

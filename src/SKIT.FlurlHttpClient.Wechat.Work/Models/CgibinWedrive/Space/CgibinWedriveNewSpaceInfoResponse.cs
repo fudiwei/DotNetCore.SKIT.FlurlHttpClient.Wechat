@@ -7,18 +7,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Space : CgibinWedriveSpaceInfoResponse.Types.Space
+            public class Space : CgibinWedriveSpaceInfoResponse.Types.__zz__Space
             {
-                public static new class Types
+                public static class Types
                 {
-                    public class ACL : CgibinWedriveSpaceInfoResponse.Types.Space.Types.ACL
+                    public class ACL
                     {
                         /// <summary>
                         /// 获取或设置空间授权信息列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("auth_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
-                        public new List<Authority>? AuthorityList { get; set; }
+                        public List<Authority>? AuthorityList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置空间无权限成员列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("quit_userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("quit_userid")]
+                        public List<string>? QuitUserIdList { get; set; }
                     }
 
                     public class Authority : CgibinWedriveSpaceInfoResponse.Types.Space.Types.Authority
@@ -76,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_list")]
-                public new Types.ACL? ACL { get; set; }
+                public Types.ACL? ACL { get; set; }
 
                 /// <summary>
                 /// 获取或设置安全设置信息。

@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Base
+                    public class Base : CgibinCheckinGetCheckinDayDataResponse.Types.Data.Types.__zz__Base
                     {
                         public static class Types
                         {
@@ -32,41 +32,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public string? GroupName { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置记录类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("record_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("record_type")]
-                        public int RecordType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人成员账号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("acctid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("acctid")]
-                        public string? UserId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人姓名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人别名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name_ex")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name_ex")]
-                        public string? Alias { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打卡人所在部门。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("departs_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("departs_name")]
-                        public string? DepartmentsName { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡规则信息。

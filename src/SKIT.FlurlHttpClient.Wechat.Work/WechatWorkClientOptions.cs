@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// 获取或设置企业微信 CorpId。
         /// </summary>
-        public string CorpId { get; set; } = default!;
+        public string CorpId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置企业微信应用的 AgentId。仅限企业内部开发时使用。

@@ -7,7 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class FileList : CgibinWedriveFileListResponse.Types.FileList
+            public class FileList
+            {
+                /// <summary>
+                /// 获取或设置文件列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("item")]
+                [System.Text.Json.Serialization.JsonPropertyName("item")]
+                public List<FileItem>? Items { get; set; }
+            }
+
+            public class FileItem : CgibinWedriveFileListResponse.Types.FileItem
             {
             }
         }

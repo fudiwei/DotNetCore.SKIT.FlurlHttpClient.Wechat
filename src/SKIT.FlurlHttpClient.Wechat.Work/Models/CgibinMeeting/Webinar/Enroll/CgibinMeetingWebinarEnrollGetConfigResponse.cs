@@ -3,15 +3,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/webinar/enroll/get_config 接口的响应。</para>
     /// </summary>
-    public class CgibinMeetingWebinarEnrollGetConfigResponse : CgibinMeetingEnrollGetConfigResponse
+    public class CgibinMeetingWebinarEnrollGetConfigResponse : WechatWorkResponse
     {
-        public static new class Types
+        public static class Types
         {
-            public class Question : CgibinMeetingEnrollGetConfigResponse.Types.Question
+            public class Question : CgibinMeetingEnrollSetConfigRequest.Types.__zz__Question
             {
-                public static new class Types
+                public static class Types
                 {
-                    public class Option : CgibinMeetingEnrollGetConfigResponse.Types.Question.Types.Option
+                    public class Option : CgibinMeetingEnrollSetConfigRequest.Types.Question.Types.Option
                     {
                     }
                 }
@@ -21,15 +21,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("option_list")]
-                public new List<Types.Option>? OptionList { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置审批类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("approve_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("approve_type")]
+        public int ApproveType { get; set; }
+
+        /// <summary>
+        /// 获取或设置收集问题类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("is_collect_question")]
+        [System.Text.Json.Serialization.JsonPropertyName("is_collect_question")]
+        public int CollectQuestionType { get; set; }
 
         /// <summary>
         /// 获取或设置问题列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("question_list")]
         [System.Text.Json.Serialization.JsonPropertyName("question_list")]
-        public new List<Types.Question>? QuestionList { get; set; }
+        public List<Types.Question>? QuestionList { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否本企业成员无需报名。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("no_registration_needed_for_staff")]
+        [System.Text.Json.Serialization.JsonPropertyName("no_registration_needed_for_staff")]
+        public bool IsNoRegistrationNeededForStaff { get; set; }
     }
 }

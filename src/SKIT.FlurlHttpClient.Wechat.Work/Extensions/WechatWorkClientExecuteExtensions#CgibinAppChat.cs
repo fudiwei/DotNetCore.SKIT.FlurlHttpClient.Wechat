@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/appchat/update 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90246 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98913 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [GET] /cgi-bin/appchat/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90247 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98914 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

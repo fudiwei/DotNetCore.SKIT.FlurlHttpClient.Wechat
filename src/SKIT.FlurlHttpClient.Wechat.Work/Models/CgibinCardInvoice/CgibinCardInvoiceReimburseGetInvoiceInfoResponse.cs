@@ -7,42 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Invoice
+            public abstract class __zz__Invoice
             {
-                public static class Types
-                {
-                    public class InvoiceItem
-                    {
-                        /// <summary>
-                        /// 获取或设置项目名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置计量单位。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("unit")]
-                        [System.Text.Json.Serialization.JsonPropertyName("unit")]
-                        public string? Unit { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置项目数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("num")]
-                        [System.Text.Json.Serialization.JsonPropertyName("num")]
-                        public int? Count { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置项目单价（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("price")]
-                        [System.Text.Json.Serialization.JsonPropertyName("price")]
-                        public int Price { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置发票抬头。
                 /// </summary>
@@ -91,13 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("billing_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("billing_time")]
                 public long InvoiceTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置发票行项目数据列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("info")]
-                [System.Text.Json.Serialization.JsonPropertyName("info")]
-                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
 
                 /// <summary>
                 /// 获取或设置校验码。
@@ -196,6 +155,50 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("cashier")]
                 [System.Text.Json.Serialization.JsonPropertyName("cashier")]
                 public string? Cashier { get; set; }
+            }
+
+            public class Invoice : __zz__Invoice
+            {
+                public static class Types
+                {
+                    public class InvoiceItem
+                    {
+                        /// <summary>
+                        /// 获取或设置项目名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置计量单位。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("unit")]
+                        [System.Text.Json.Serialization.JsonPropertyName("unit")]
+                        public string? Unit { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置项目数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("num")]
+                        [System.Text.Json.Serialization.JsonPropertyName("num")]
+                        public int? Count { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置项目单价（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("price")]
+                        public int Price { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置发票行项目数据列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("info")]
+                [System.Text.Json.Serialization.JsonPropertyName("info")]
+                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
             }
         }
 

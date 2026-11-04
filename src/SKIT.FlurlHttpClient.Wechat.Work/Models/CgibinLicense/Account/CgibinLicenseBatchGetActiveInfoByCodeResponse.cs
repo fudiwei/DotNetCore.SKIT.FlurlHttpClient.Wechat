@@ -7,8 +7,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class ActiveInfo : CgibinLicenseGetActiveInfoByCodeResponse.Types.ActiveInfo
+            public class ActiveInfo : CgibinLicenseGetActiveInfoByCodeResponse.Types.__zz__ActiveInfo
             {
+                public static class Types
+                {
+                    public class MergeInfo : CgibinLicenseGetActiveInfoByCodeResponse.Types.ActiveInfo.Types.MergeInfo
+                    {
+                    }
+
+                    public class ShareInfo : CgibinLicenseGetActiveInfoByCodeResponse.Types.ActiveInfo.Types.ShareInfo
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置合并信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("merge_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("merge_info")]
+                public Types.MergeInfo? MergeInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置分享信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("share_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("share_info")]
+                public Types.ShareInfo? ShareInfo { get; set; }
             }
         }
 

@@ -7,7 +7,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class TagGroup
+            public abstract class __zz__TagGroup
+            {
+                /// <summary>
+                /// 获取或设置企业标签分组 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("group_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("group_id")]
+                public string? TagGroupId { get; set; }
+
+                /// <summary>
+                /// 获取或设置企业标签分组名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("group_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("group_name")]
+                public string? Name { get; set; }
+
+                /// <summary>
+                /// 获取或设置次序值。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order")]
+                [System.Text.Json.Serialization.JsonPropertyName("order")]
+                public long Order { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否已经被删除。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("deleted")]
+                [System.Text.Json.Serialization.JsonPropertyName("deleted")]
+                public bool? IsDeleted { get; set; }
+
+                /// <summary>
+                /// 获取或设置创建时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
+            }
+
+            public class TagGroup : __zz__TagGroup
             {
                 public static class Types
                 {
@@ -51,46 +89,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置企业标签分组 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("group_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                public string? TagGroupId { get; set; }
-
-                /// <summary>
-                /// 获取或设置企业标签分组名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("group_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("group_name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置次序值。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order")]
-                [System.Text.Json.Serialization.JsonPropertyName("order")]
-                public long Order { get; set; }
-
-                /// <summary>
                 /// 获取或设置企业标签列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tag")]
                 [System.Text.Json.Serialization.JsonPropertyName("tag")]
                 public List<Types.Tag>? TagList { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否已经被删除。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("deleted")]
-                [System.Text.Json.Serialization.JsonPropertyName("deleted")]
-                public bool? IsDeleted { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
             }
         }
 

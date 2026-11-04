@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/agent/migrate_to_customized_app 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/agent/claim_customized_app 接口的请求。</para>
     /// </summary>
-    public class CgibinAgentMigrateToCustomizedAppRequest : WechatWorkRequest
+    public class CgibinAgentClaimCustomizedAppRequest : WechatWorkRequest
     {
         /// <summary>
         /// 获取或设置代开发应用模版接口调用凭证。

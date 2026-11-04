@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string? UserId { get; set; }
                     }
 
-                    public class MultiLangText : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.MultiLangText
+                    public class MultiLangText : CgibinOAApplyEventRequest.Types.MultiLangText
                     {
                     }
 
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                         public static class Types
                         {
-                            public class ApplyContent
+                            public class ApplyContent : CgibinOAApplyEventRequest.Types.ApplyData.Types.__zz__ApplyContent
                             {
                                 public static class Types
                                 {
@@ -176,16 +176,56 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         public List<WedriveFileControlValue>? WedriveFiles { get; set; }
                                     }
 
-                                    public class DateControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.DateControlValue
+                                    public class DateControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.DateControlValue
                                     {
+                                        public static class Types
+                                        {
+                                            public class Timezone
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置时区偏移量。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("zone_offset")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("zone_offset")]
+                                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                                public int Offset { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置时区描述。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("zone_desc")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("zone_desc")]
+                                                public string? Description { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置时区信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("timezone_info")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("timezone_info")]
+                                        public Types.Timezone? Timezone { get; set; }
                                     }
 
-                                    public class SelectorControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.SelectorControlValue
+                                    public class SelectorControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.__zz__SelectorControlValue
                                     {
-                                        public new static class Types
+                                        public static class Types
                                         {
-                                            public class Option : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.SelectorControlValue.Types.Option
+                                            public class Option
                                             {
+                                                /// <summary>
+                                                /// 获取或设置选项 Key。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("key")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("key")]
+                                                public string? Key { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置选项值。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("value")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                                public List<MultiLangText>? Value { get; set; }
                                             }
                                         }
 
@@ -194,26 +234,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("options")]
                                         [System.Text.Json.Serialization.JsonPropertyName("options")]
-                                        public new List<Types.Option>? OptionList { get; set; }
+                                        public List<Types.Option>? OptionList { get; set; }
                                     }
 
-                                    public class ContactControlValueAsUser : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueAsUser
+                                    public class ContactControlValueAsUser : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueAsUser
                                     {
                                     }
 
-                                    public class ContactControlValueAsDepartment : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueAsDepartment
+                                    public class ContactControlValueAsDepartment : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueAsDepartment
                                     {
                                     }
 
-                                    public class FileControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.FileControlValue
+                                    public class FileControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.FileControlValue
                                     {
                                     }
 
-                                    public class TableControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.TableControlValue
+                                    public class TableControlValue
                                     {
-                                        public new static class Types
+                                        public static class Types
                                         {
-                                            public class TableDetail : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.TableControlValue.Types.TableDetail
+                                            public class TableDetail : ApplyContent
                                             {
                                             }
                                         }
@@ -223,59 +263,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("list")]
                                         [System.Text.Json.Serialization.JsonPropertyName("list")]
-                                        public new List<Types.TableDetail>? TableDetailList { get; set; }
+                                        public List<Types.TableDetail>? TableDetailList { get; set; }
                                     }
 
-                                    public class AttendanceControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.AttendanceControlValue
+                                    public class VacationControlValue
                                     {
-                                        public new static class Types
+                                        public static class Types
                                         {
-                                            public class DateRange : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.AttendanceControlValue.Types.DateRange
+                                            public class Selector : SelectorControlValue
                                             {
                                             }
 
-                                            public class Slice : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.AttendanceControlValue.Types.Slice
-                                            {
-                                                public new static class Types
-                                                {
-                                                    public class DayItem : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.AttendanceControlValue.Types.Slice.Types.DayItem
-                                                    {
-                                                    }
-                                                }
-
-                                                /// <summary>
-                                                /// 获取或设置每一天的分片时长列表。
-                                                /// </summary>
-                                                [Newtonsoft.Json.JsonProperty("day_items")]
-                                                [System.Text.Json.Serialization.JsonPropertyName("day_items")]
-                                                public new List<Types.DayItem>? DayItems { get; set; }
-                                            }
-                                        }
-
-                                        /// <summary>
-                                        /// 获取或设置时间选择范围。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("date_range")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("date_range")]
-                                        public new Types.DateRange? DateRange { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置时长按天分片信息。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("slice_info")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("slice_info")]
-                                        public new Types.Slice? Slice { get; set; }
-                                    }
-
-                                    public class VacationControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.VacationControlValue
-                                    {
-                                        public new static class Types
-                                        {
-                                            public class Selector : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.VacationControlValue.Types.Selector
-                                            {
-                                            }
-
-                                            public class Attendance : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.VacationControlValue.Types.Attendance
+                                            public class Attendance : AttendanceControlValue
                                             {
                                             }
                                         }
@@ -285,33 +284,115 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("selector")]
                                         [System.Text.Json.Serialization.JsonPropertyName("selector")]
-                                        public new Types.Selector? Selector { get; set; }
+                                        public Types.Selector? Selector { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置假勤内容填写信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("attendance")]
                                         [System.Text.Json.Serialization.JsonPropertyName("attendance")]
-                                        public new Types.Attendance? Attendance { get; set; }
+                                        public Types.Attendance? Attendance { get; set; }
                                     }
 
-                                    public class LocationControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.LocationControlValue
+                                    public class AttendanceControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.__zz__AttendanceControlValue
+                                    {
+                                        public static class Types
+                                        {
+                                            public class DateRange : DateRangeControlValue
+                                            {
+                                            }
+
+                                            public class Slice
+                                            {
+                                                public static class Types
+                                                {
+                                                    public class DayItem : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.AttendanceControlValue.Types.Slice.Types.DayItem
+                                                    {
+                                                    }
+                                                }
+
+                                                /// <summary>
+                                                /// 获取或设置时长计算来源类型。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("state")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("state")]
+                                                public int State { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置每一天的分片时长列表。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("day_items")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("day_items")]
+                                                public List<Types.DayItem>? DayItems { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置总时长（单位：秒）。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("duration")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("duration")]
+                                                public int TotalDuration { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置时间选择范围。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("date_range")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("date_range")]
+                                        public Types.DateRange? DateRange { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置时长按天分片信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("slice_info")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("slice_info")]
+                                        public Types.Slice? Slice { get; set; }
+                                    }
+
+                                    public class LocationControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.LocationControlValue
                                     {
                                     }
 
-                                    public class RelatedApprovalControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.RelatedApprovalControlValue
+                                    public class RelatedApprovalControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.RelatedApprovalControlValue
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置模板名称。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("template_names")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("template_names")]
+                                        public List<MultiLangText>? TemplateName { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置审批单名称。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("name")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                        public string? Name { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置审批单状态。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("sp_status")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("sp_status")]
+                                        public int Status { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置提单时间戳。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("create_time")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                                        public long CreateTimestamp { get; set; }
+                                    }
+
+                                    public class FormulaControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.FormulaControlValue
                                     {
                                     }
 
-                                    public class FormulaControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.FormulaControlValue
+                                    public class CheckinControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.CheckinControlValue
                                     {
                                     }
 
-                                    public class DateRangeControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.DateRangeControlValue
-                                    {
-                                    }
-
-                                    public class CheckinControlValue : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.CheckinControlValue
+                                    public class DateRangeControlValue : CgibinOAApplyEventRequest.Types.ApplyData.Types.ApplyContent.Types.DateRangeControlValue
                                     {
                                     }
 
@@ -345,20 +426,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         public string? FileId { get; set; }
                                     }
                                 }
-
-                                /// <summary>
-                                /// 获取或设置控件类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("control")]
-                                [System.Text.Json.Serialization.JsonPropertyName("control")]
-                                public string? Control { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置控件 ID。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string? ControlId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置控件名称。

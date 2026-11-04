@@ -7,7 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class PassRule
+            public abstract class __zz__PassRule
+            {
+                /// <summary>
+                /// 获取或设置门禁放行规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("rule_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
+                public List<string>? RuleList { get; set; }
+            }
+
+            public class PassRule : __zz__PassRule
             {
                 public static class Types
                 {
@@ -28,13 +38,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public int? UserType { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置门禁放行规则列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("rule_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("rule_list")]
-                public List<string>? RuleList { get; set; }
 
                 /// <summary>
                 /// 获取或设置生效成员列表。

@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Field
+            public class Field : CgibinWedocSmartSheetAddFieldsRequest.Types.__zz__Field
             {
                 /// <summary>
                 /// 获取或设置字段 ID。
@@ -15,20 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("field_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("field_id")]
                 public string? FieldId { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置字段类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("field_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("field_type")]
-                public string? Type { get; set; }
             }
         }
 

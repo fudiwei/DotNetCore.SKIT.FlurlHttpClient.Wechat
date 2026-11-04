@@ -48,31 +48,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? GuestName { get; set; }
             }
 
-            public class Settings
+            public abstract class __zz__Settings
             {
-                public static class Types
-                {
-                    public class Host
-                    {
-                        /// <summary>
-                        /// 获取或设置企业成员的 UserId 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("userid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public List<string>? UserIdList { get; set; }
-                    }
-
-                    public class RingUser
-                    {
-                        /// <summary>
-                        /// 获取或设置企业成员的 UserId 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("userid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public List<string>? UserIdList { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置入会密码。
                 /// </summary>
@@ -198,6 +175,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("remind_scope")]
                 [System.Text.Json.Serialization.JsonPropertyName("remind_scope")]
                 public int? RemindScope { get; set; }
+            }
+
+            public class Settings : __zz__Settings
+            {
+                public static class Types
+                {
+                    public class Host
+                    {
+                        /// <summary>
+                        /// 获取或设置企业成员的 UserId 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                        public List<string>? UserIdList { get; set; }
+                    }
+
+                    public class RingUser
+                    {
+                        /// <summary>
+                        /// 获取或设置企业成员的 UserId 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                        public List<string>? UserIdList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置会议主持人信息。

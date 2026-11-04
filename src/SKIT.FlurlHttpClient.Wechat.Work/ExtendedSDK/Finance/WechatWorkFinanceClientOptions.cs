@@ -24,12 +24,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
         /// <summary>
         /// 获取或设置企业微信 CorpId。
         /// </summary>
-        public string CorpId { get; set; } = default!;
+        public string CorpId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置企业微信会话内容存档 SecretKey。
         /// </summary>
-        public string SecretKey { get; set; } = default!;
+        public string SecretKey { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置企业微信会话内容存档消息加解密密钥管理器。

@@ -93,14 +93,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101033 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101909 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">企业微信回调通知中的 "timestamp" 查询参数。</param>
-        /// <param name="webhookNonce">企业微信回调通知中的 "nonce" 查询参数。</param>
-        /// <param name="webhookEcho">企业微信回调通知中的 "echostr" 查询参数。</param>
-        /// <param name="webhookSignature">企业微信回调通知中的 "msg_signature" 查询参数。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="webhookNonce">回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="webhookEcho">回调通知中的 "echostr" 查询参数。</param>
+        /// <param name="webhookSignature">回调通知中的 "msg_signature" 查询参数。</param>
         /// <param name="replyEcho"></param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignatureForEcho(this WechatWorkAIBotClient client, string webhookTimestamp, string webhookNonce, string webhookEcho, string webhookSignature, out string? replyEcho)
@@ -147,10 +147,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">企业微信回调通知中的 "timestamp" 查询参数。</param>
-        /// <param name="webhookNonce">企业微信回调通知中的 "nonce" 查询参数。</param>
-        /// <param name="webhookJson">企业微信回调通知中请求正文（JSON 格式）。</param>
-        /// <param name="webhookSignature">企业微信回调通知中的 "msg_signature" 查询参数。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="webhookNonce">回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="webhookJson">回调通知中的请求正文（JSON 格式）。</param>
+        /// <param name="webhookSignature">回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignatureFromJson(this WechatWorkAIBotClient client, string webhookTimestamp, string webhookNonce, string webhookJson, string webhookSignature)
         {
@@ -165,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: webhookTimestamp,
                     sNonce: webhookNonce,
-                    sMsgEncrypt: encryptedEvent.EncryptedData,
+                    sMsgEncrypt: encryptedEvent.EncryptedData!,
                     sMsgSign: webhookSignature
                 );
 
@@ -189,20 +189,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         {
             [Newtonsoft.Json.JsonProperty("encrypt")]
             [System.Text.Json.Serialization.JsonPropertyName("encrypt")]
-            public string EncryptedData { get; set; } = default!;
+            public string? EncryptedData { get; set; }
 
             [Newtonsoft.Json.JsonProperty("timestamp")]
             [System.Text.Json.Serialization.JsonPropertyName("timestamp")]
             [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-            public string TimestampString { get; set; } = default!;
+            public string? TimestampString { get; set; }
 
             [Newtonsoft.Json.JsonProperty("nonce")]
             [System.Text.Json.Serialization.JsonPropertyName("nonce")]
-            public string Nonce { get; set; } = default!;
+            public string? Nonce { get; set; }
 
             [Newtonsoft.Json.JsonProperty("msgsignature")]
             [System.Text.Json.Serialization.JsonPropertyName("msgsignature")]
-            public string Signature { get; set; } = default!;
+            public string? Signature { get; set; }
         }
 
         private static TEvent InnerDeserializeEventFromJson<TEvent>(this WechatWorkAIBotClient client, string webhookJson)
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
                     throw new WechatWorkAIBotException("Failed to decrypt event data, because the push encoding AES key is empty.");
 
                 InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(webhookJson);
-                webhookJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                webhookJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
 
                 return client.JsonSerializer.Deserialize<TEvent>(webhookJson);
             }

@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class FieldGroup : CgibinWedocSmartSheetAddFieldGroupResponse.Types.FieldGroup
+            public class FieldGroup : CgibinWedocSmartSheetAddFieldGroupResponse.Types.__zz__FieldGroup
             {
+                public static class Types
+                {
+                    public class Field : CgibinWedocSmartSheetAddFieldGroupResponse.Types.FieldGroup.Types.Field
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置字段列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("children")]
+                [System.Text.Json.Serialization.JsonPropertyName("children")]
+                public List<Types.Field>? FieldList { get; set; }
             }
         }
 
