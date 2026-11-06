@@ -11,8 +11,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class AdUnit : WxaOperationAMSAgencyGetAdUnitListResponse.Types.AdUnit
+                    public class AdUnit : WxaOperationAMSAgencyGetAdUnitListResponse.Types.__zz__AdUnit
                     {
+                        public static class Types
+                        {
+                            public class Size : WxaOperationAMSAgencyGetAdUnitListResponse.Types.AdUnit.Types.Size
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置尺寸列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("ad_unit_size")]
+                        [System.Text.Json.Serialization.JsonPropertyName("ad_unit_size")]
+                        public List<Types.Size>? SizeList { get; set; }
                     }
                 }
 

@@ -7,8 +7,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Button : CgibinMenuCreateRequest.Types.Button
+            public class Button : CgibinMenuCreateRequest.Types.__zz__Button
             {
+                /// <summary>
+                /// 获取或设置子菜单列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_button")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_button")]
+                public List<Button>? SubButtonList { get; set; }
             }
 
             public class MatchRule

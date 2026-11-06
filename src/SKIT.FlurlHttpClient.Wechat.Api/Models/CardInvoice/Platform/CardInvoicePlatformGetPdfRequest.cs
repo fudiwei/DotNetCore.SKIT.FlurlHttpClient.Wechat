@@ -6,7 +6,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CardInvoicePlatformGetPdfRequest : WechatApiRequest, IInferable<CardInvoicePlatformGetPdfRequest, CardInvoicePlatformGetPdfResponse>
     {
         /// <summary>
-        /// <i>（使用默认值即可，无需修改）</i>
+        /// 获取或设置操作类型。
+        /// <para>默认值："get_url"</para>
+        /// <remarks><i>（使用默认值即可，无需修改）</i></remarks>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]

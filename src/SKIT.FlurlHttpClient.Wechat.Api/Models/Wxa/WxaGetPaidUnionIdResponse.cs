@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class WxaGetPaidUnionIdResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置用户全局标识。
+        /// 获取或设置用户 UnionId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]

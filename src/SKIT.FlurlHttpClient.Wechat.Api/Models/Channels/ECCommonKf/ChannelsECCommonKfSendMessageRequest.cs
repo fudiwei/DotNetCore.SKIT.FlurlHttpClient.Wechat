@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cos_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("cos_url")]
-                public string? CosUrl { get; set; }
+                public string? COSUrl { get; set; }
             }
 
             public class VoiceMessage
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cos_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("cos_url")]
-                public string? CosUrl { get; set; }
+                public string? COSUrl { get; set; }
             }
 
             public class OrderShareMessage
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? RequestId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_id")]
         [System.Text.Json.Serialization.JsonPropertyName("open_id")]

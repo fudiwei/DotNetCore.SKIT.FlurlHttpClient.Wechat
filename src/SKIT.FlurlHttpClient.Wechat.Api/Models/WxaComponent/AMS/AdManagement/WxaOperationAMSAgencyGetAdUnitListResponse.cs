@@ -7,28 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class AdUnit
+            public abstract class __zz__AdUnit
             {
-                public static class Types
-                {
-                    public class Size
-                    {
-                        /// <summary>
-                        /// 获取或设置宽度（单位：宽度）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("width")]
-                        [System.Text.Json.Serialization.JsonPropertyName("width")]
-                        public int Width { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置高度（单位：宽度）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("height")]
-                        [System.Text.Json.Serialization.JsonPropertyName("height")]
-                        public int Height { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置广告单元 ID。
                 /// </summary>
@@ -72,13 +52,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int Status { get; set; }
 
                 /// <summary>
-                /// 获取或设置尺寸列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ad_unit_size")]
-                [System.Text.Json.Serialization.JsonPropertyName("ad_unit_size")]
-                public List<Types.Size>? SizeList { get; set; }
-
-                /// <summary>
                 /// 获取或设置小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
@@ -98,6 +71,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("video_duration_max")]
                 [System.Text.Json.Serialization.JsonPropertyName("video_duration_max")]
                 public int? MaxVideoDuration { get; set; }
+            }
+
+            public class AdUnit : __zz__AdUnit
+            {
+                public static class Types
+                {
+                    public class Size
+                    {
+                        /// <summary>
+                        /// 获取或设置宽度（单位：宽度）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("width")]
+                        [System.Text.Json.Serialization.JsonPropertyName("width")]
+                        public int Width { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置高度（单位：宽度）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("height")]
+                        [System.Text.Json.Serialization.JsonPropertyName("height")]
+                        public int Height { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置尺寸列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ad_unit_size")]
+                [System.Text.Json.Serialization.JsonPropertyName("ad_unit_size")]
+                public List<Types.Size>? SizeList { get; set; }
             }
         }
 

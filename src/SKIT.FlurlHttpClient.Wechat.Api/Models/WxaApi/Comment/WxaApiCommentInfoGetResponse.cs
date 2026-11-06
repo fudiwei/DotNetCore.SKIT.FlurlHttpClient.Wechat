@@ -11,8 +11,102 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Comment : WxaApiCommentMpCommentListGetResponse.Types.Comment
+                    public class Comment : WxaApiCommentMpCommentListGetResponse.Types.__zz__Comment
                     {
+                        public static class Types
+                        {
+                            public class OrderInfo : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.OrderInfo
+                            {
+                            }
+
+                            public class UserInfo : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.UserInfo
+                            {
+                            }
+
+                            public class BusinessInfo : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.BusinessInfo
+                            {
+                            }
+
+                            public class ContentInfo : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.__zz__ContentInfo
+                            {
+                                public static class Types
+                                {
+                                    public class Media : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.ContentInfo.Types.Media
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置媒体文件列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("media")]
+                                [System.Text.Json.Serialization.JsonPropertyName("media")]
+                                public List<Types.Media>? MediaList { get; set; }
+                            }
+
+                            public class ExtraInfo : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.ExtraInfo
+                            {
+                            }
+
+                            public class ProductInfo
+                            {
+                                public static class Types
+                                {
+                                    public class Product : WxaApiCommentMpCommentListGetResponse.Types.Comment.Types.ProductInfo.Types.Product
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置商品列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("productList")]
+                                [System.Text.Json.Serialization.JsonPropertyName("productList")]
+                                public List<Types.Product>? ProductList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置评价商品信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("productInfo")]
+                        [System.Text.Json.Serialization.JsonPropertyName("productInfo")]
+                        public Types.ProductInfo? ProductInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商家订单信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("orderInfo")]
+                        [System.Text.Json.Serialization.JsonPropertyName("orderInfo")]
+                        public Types.OrderInfo? OrderInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置评价订单信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userInfo")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userInfo")]
+                        public Types.UserInfo? UserInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商家小程序信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("bizInfo")]
+                        [System.Text.Json.Serialization.JsonPropertyName("bizInfo")]
+                        public Types.BusinessInfo? BusinessInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置评价内容信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("content")]
+                        public Types.ContentInfo? ContentInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置评价额外信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("extInfo")]
+                        [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
+                        public Types.ExtraInfo? ExtraInfo { get; set; }
                     }
                 }
 
@@ -99,7 +193,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("content")]
                 public Types.ContentInfo? ContentInfo { get; set; }
             }
-
         }
 
         /// <summary>

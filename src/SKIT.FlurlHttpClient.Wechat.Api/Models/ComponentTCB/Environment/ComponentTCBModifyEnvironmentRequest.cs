@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/modifyenv 接口的请求。</para>
     /// </summary>
-    public class ComponentTCBModifyEnvironmentRequest : WechatApiRequest, IInferable<ComponentTCBModifyEnvironmentRequest, ComponentTCBModifyEnvironmentResponse>
+    public class ComponentTCBModifyEnvironmentRequest : TCBModifyEnvironmentRequest, IInferable<ComponentTCBModifyEnvironmentRequest, ComponentTCBModifyEnvironmentResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。
@@ -11,12 +11,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? ComponentAccessToken { get; set; }
-
-        /// <summary>
-        /// 获取或设置环境 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("env")]
-        [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string? EnvironmentId { get; set; }
     }
 }

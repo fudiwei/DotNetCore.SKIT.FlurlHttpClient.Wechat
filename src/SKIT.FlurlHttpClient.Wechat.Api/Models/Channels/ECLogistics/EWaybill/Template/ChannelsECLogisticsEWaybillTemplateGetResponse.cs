@@ -28,86 +28,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_list")]
-                public List<Types.Template>? Items { get; set; }
+                public List<Template>? Items { get; set; }
             }
 
-            public class Template
+            public abstract class __zz__Template : ChannelsECLogisticsEWaybillTemplateCreateRequest.Types.__zz__Template
             {
-                public static class Types
-                {
-                    public class Option
-                    {
-                        /// <summary>
-                        /// 获取或设置信息类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("option_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("option_id")]
-                        public int OptionId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置打印字号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("font_size")]
-                        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-                        public int FontSize { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置字体是否加粗。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_bold")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_bold")]
-                        public bool IsBold { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否选用此信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_open")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_open")]
-                        public bool IsOpen { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置模板 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
                 public string? TemplateId { get; set; }
-
-                /// <summary>
-                /// 获取或设置模板类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_type")]
-                public string? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置模板名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置模板描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_desc")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_desc")]
-                public string? Description { get; set; }
-
-                /// <summary>
-                /// 获取或设置模板信息选项列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("options")]
-                [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public List<Types.Option>? Options { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为该快递公司默认模板。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("is_default")]
-                [System.Text.Json.Serialization.JsonPropertyName("is_default")]
-                public bool IsDefault { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。
@@ -122,6 +53,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("update_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                 public long UpdateTimestamp { get; set; }
+            }
+
+            public class Template : __zz__Template
+            {
+                public static class Types
+                {
+                    public class Option : ChannelsECLogisticsEWaybillTemplateCreateRequest.Types.Template.Types.Option
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置模板信息选项列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("options")]
+                [System.Text.Json.Serialization.JsonPropertyName("options")]
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 

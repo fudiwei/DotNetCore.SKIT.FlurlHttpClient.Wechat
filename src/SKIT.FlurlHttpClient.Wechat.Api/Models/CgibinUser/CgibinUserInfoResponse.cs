@@ -6,21 +6,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinUserInfoResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户全局标识。只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。
+        /// 获取或设置用户 UnionId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]
         public string? UnionId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的昵称。
+        /// 获取或设置用户昵称。
         /// </summary>
         [Obsolete("相关接口或字段于 2021-12-27 下线。")]
         [Newtonsoft.Json.JsonProperty("nickname")]
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? Nickname { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的性别。
+        /// 获取或设置用户性别。
         /// </summary>
         [Obsolete("相关接口或字段于 2021-12-31 下线。")]
         [Newtonsoft.Json.JsonProperty("sex")]
@@ -60,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? City { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的语言。
+        /// 获取或设置用户语言。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("language")]
         [System.Text.Json.Serialization.JsonPropertyName("language")]
         public string? Language { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的头像 URL。
+        /// 获取或设置用户头像 URL。
         /// </summary>
         [Obsolete("相关接口或字段于 2021-12-27 下线。")]
         [Newtonsoft.Json.JsonProperty("headimgurl")]

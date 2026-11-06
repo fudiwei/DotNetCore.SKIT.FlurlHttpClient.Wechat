@@ -24,12 +24,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
-        public string AppId { get; set; } = default!;
+        public string AppId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信 AppSecret。
         /// </summary>
-        public string AppSecret { get; set; } = default!;
+        public string AppSecret { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信服务器推送的 EncodingAESKey。

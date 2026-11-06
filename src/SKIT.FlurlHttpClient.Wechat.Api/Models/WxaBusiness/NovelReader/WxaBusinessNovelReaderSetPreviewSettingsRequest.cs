@@ -7,7 +7,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Settings
+            public abstract class __zz__Settings
+            {
+                /// <summary>
+                /// 获取或设置作品 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("book_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("book_id")]
+                public string? BookId { get; set; }
+
+                /// <summary>
+                /// 获取或设置默认预览字数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("default_words")]
+                [System.Text.Json.Serialization.JsonPropertyName("default_words")]
+                public int DefaultWordCount { get; set; }
+            }
+
+            public class Settings : __zz__Settings
             {
                 public static class Types
                 {
@@ -28,20 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int? WordCount { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置作品 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("book_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("book_id")]
-                public string? BookId { get; set; }
-
-                /// <summary>
-                /// 获取或设置默认预览字数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("default_words")]
-                [System.Text.Json.Serialization.JsonPropertyName("default_words")]
-                public int DefaultWordCount { get; set; }
 
                 /// <summary>
                 /// 获取或设置章节列表。

@@ -7,15 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Delivery
+            public abstract class __zz__Delivery
             {
-                public static class Types
-                {
-                    public class Product : ChannelsECOrderDeliverySendRequest.Types.Delivery.Types.Product
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置快递公司 ID。
                 /// </summary>
@@ -29,6 +22,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
                 public string? WaybillId { get; set; }
+            }
+
+            public class Delivery : __zz__Delivery
+            {
+                public static class Types
+                {
+                    public class Product : ChannelsECOrderDeliverySendRequest.Types.Delivery.Types.Product
+                    {
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置商品列表。

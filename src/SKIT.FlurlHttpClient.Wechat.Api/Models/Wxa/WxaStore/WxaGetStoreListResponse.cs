@@ -11,8 +11,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Base : WxaGetStoreInfoResponse.Types.POI.Types.Base
+                    public class BaseInfo : WxaGetStoreInfoResponse.Types.POI.Types.__zz__BaseInfo
                     {
+                        public static class Types
+                        {
+                            public class Picture : WxaGetStoreInfoResponse.Types.POI.Types.BaseInfo.Types.Picture
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置门店图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("photo_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("photo_list")]
+                        public List<Types.Picture>? PictureList { get; set; }
                     }
                 }
 
@@ -21,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base? Base { get; set; }
+                public Types.BaseInfo? BaseInfo { get; set; }
             }
         }
 

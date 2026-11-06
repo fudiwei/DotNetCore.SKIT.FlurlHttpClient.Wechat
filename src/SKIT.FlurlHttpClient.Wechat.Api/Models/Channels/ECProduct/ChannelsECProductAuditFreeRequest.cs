@@ -27,10 +27,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("num")]
                         public int DiffCount { get; set; }
                     }
-
-                    public class SKUDeliverInfo : ChannelsECProductAddRequest.Types.SKUDeliverInfo
-                    {
-                    }
                 }
 
                 /// <summary>
@@ -66,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
-                public Types.SKUDeliverInfo? SKUDeliverInfo { get; set; }
+                public SKUDeliverInfo? SKUDeliverInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否删除。
@@ -86,29 +82,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class ExtraService : ChannelsECProductAddRequest.Types.ExtraService
-            {
-            }
-
-            public class TimingOnSale : ChannelsECProductUpdateRequest.Types.TimingOnSale
-            {
-            }
-
-            public class SPUDeliverInfo
+            public class SPUDeliverInfo : ChannelsECProductAddRequest.Types.__zz__SPUDeliverInfo
             {
                 public static class Types
                 {
-                    public class SKUDeliverInfo : ChannelsECProductUpdateRequest.Types.SKUDeliverInfo
+                    public class SKUDeliverInfo : ChannelsECProductAddRequest.Types.SKUDeliverInfo
                     {
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置是否生效。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("is_spu_range")]
-                [System.Text.Json.Serialization.JsonPropertyName("is_spu_range")]
-                public bool? IsSPURange { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品预售信息。
@@ -118,7 +99,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.SKUDeliverInfo? SKUDeliverInfo { get; set; }
             }
 
-            public class Aftersale : ChannelsECProductUpdateRequest.Types.Aftersale
+            public class SKUDeliverInfo : ChannelsECProductAddRequest.Types.SKUDeliverInfo
+            {
+            }
+
+            public class ExtraService : ChannelsECProductAddRequest.Types.ExtraService
+            {
+            }
+
+            public class Aftersale : ChannelsECProductAddRequest.Types.Aftersale
+            {
+            }
+
+            public class TimingOnSale : ChannelsECProductAddRequest.Types.TimingOnSale
             {
             }
         }

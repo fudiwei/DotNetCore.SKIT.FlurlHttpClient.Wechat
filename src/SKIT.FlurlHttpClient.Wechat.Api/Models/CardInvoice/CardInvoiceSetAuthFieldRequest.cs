@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class UserField
+                    public abstract class __zz__UserField
                     {
                         /// <summary>
                         /// 获取或设置是否填写抬头。
@@ -39,7 +39,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("show_email")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                         public bool? IsShowEmail { get; set; }
+                    }
 
+                    public class UserField : __zz__UserField
+                    {
                         /// <summary>
                         /// 获取或设置自定义字段列表。
                         /// </summary>
@@ -48,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<CustomField>? CustomFieldList { get; set; }
                     }
 
-                    public class BusinessField
+                    public abstract class __zz__BusinessField
                     {
                         /// <summary>
                         /// 获取或设置是否填写抬头。
@@ -103,7 +106,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("show_bank_no")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                         public bool? IsShowBankNumber { get; set; }
+                    }
 
+                    public class BusinessField : __zz__BusinessField
+                    {
                         /// <summary>
                         /// 获取或设置自定义字段列表。
                         /// </summary>

@@ -6,8 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/token 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/access-token/api_getaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getaccesstoken.html ]]> <br/>
@@ -37,8 +37,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/stable_token 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getstableaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getstableaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getstableaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getstableaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/access-token/api_getstableaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getstableaccesstoken.html ]]> <br/>
@@ -74,8 +74,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/ticket/getticket 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/webdev/js/api_getticket.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/webdev/jssdk/api_getticket.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/webdev/js/api_getticket.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_getticket.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_getticket.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -99,8 +101,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/getcallbackip 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getcallbackip.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getcallbackip.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getcallbackip.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getcallbackip.html ]]>
         /// </para>
         /// </summary>
@@ -124,8 +126,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/get_api_domain_ip 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getapidomainip.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_getapidomainip.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_getapidomainip.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_getapidomainip.html ]]>
         /// </para>
         /// </summary>
@@ -149,8 +151,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/callback/check 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_callbackcheck.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/base/api_callbackcheck.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/base/api_callbackcheck.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/api/basic/api_callbackcheck.html ]]>
         /// </para>
         /// </summary>

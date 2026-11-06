@@ -20,7 +20,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? AppSecret { get; set; }
 
         /// <summary>
-        /// <i>（使用默认值即可，无需修改）</i>
+        /// 获取或设置授权类型。
+        /// <para>默认值："client_credential"</para>
+        /// <remarks><i>（使用默认值即可，无需修改）</i></remarks>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grant_type")]
         [System.Text.Json.Serialization.JsonPropertyName("grant_type")]

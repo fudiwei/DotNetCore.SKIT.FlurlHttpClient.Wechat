@@ -11,64 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Button
+                    public class Button : CgibinMenuCreateRequest.Types.__zz__Button
                     {
-                        /// <summary>
-                        /// 获取或设置菜单的响应动作类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string? Type { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置菜单标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置菜单 KEY 值。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("key")]
-                        [System.Text.Json.Serialization.JsonPropertyName("key")]
-                        public string? Key { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置网页链接。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string? Url { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置媒体文件标识。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("media_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                        public string? MediaId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置图文消息的 ArticleId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("article_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("article_id")]
-                        public string? ArticleId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序 AppId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("appid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string? MiniProgramAppId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序的页面路径。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pagepath")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                        public string? MiniProgramPagePath { get; set; }
-
                         /// <summary>
                         /// 获取或设置子菜单列表。
                         /// </summary>
@@ -79,24 +23,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置菜单列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("button")]
-                [System.Text.Json.Serialization.JsonPropertyName("button")]
-                public List<Types.Button>? ButtonList { get; set; }
-
-                /// <summary>
                 /// 获取或设置菜单 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("menuid")]
                 [System.Text.Json.Serialization.JsonPropertyName("menuid")]
                 public int? MenuId { get; set; }
+
+                /// <summary>
+                /// 获取或设置菜单列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("button")]
+                [System.Text.Json.Serialization.JsonPropertyName("button")]
+                public List<Types.Button>? ButtonList { get; set; }
             }
 
-            public class ConditionalMenu : Menu
+            public class ConditionalMenu
             {
-                public static new class Types
+                public static class Types
                 {
+                    public class Button : CgibinMenuCreateRequest.Types.__zz__Button
+                    {
+                        /// <summary>
+                        /// 获取或设置子菜单列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sub_button")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sub_button")]
+                        public List<Button>? SubButtonList { get; set; }
+                    }
+
                     public class MatchRule
                     {
                         /// <summary>
@@ -163,11 +117,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
+                /// 获取或设置菜单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("menuid")]
+                [System.Text.Json.Serialization.JsonPropertyName("menuid")]
+                public int? MenuId { get; set; }
+
+                /// <summary>
                 /// 获取或设置菜单匹配规则。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("matchrule")]
                 [System.Text.Json.Serialization.JsonPropertyName("matchrule")]
                 public Types.MatchRule? MatchRule { get; set; }
+
+                /// <summary>
+                /// 获取或设置菜单列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("button")]
+                [System.Text.Json.Serialization.JsonPropertyName("button")]
+                public List<Types.Button>? ButtonList { get; set; }
             }
         }
 

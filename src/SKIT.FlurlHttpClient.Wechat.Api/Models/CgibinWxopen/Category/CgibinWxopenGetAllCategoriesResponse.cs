@@ -17,61 +17,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public List<CategoryItem>? Items { get; set; }
             }
 
-            public class CategoryItem
+            public abstract class __zz__CategoryItem
             {
-                public static class Types
-                {
-                    public class Qualification
-                    {
-                        public static class Types
-                        {
-                            public class File
-                            {
-                                public static class Types
-                                {
-                                    public class Example
-                                    {
-                                        /// <summary>
-                                        /// 获取或设置资质文件名称。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("name")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public string? Name { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置资质文件示例 URL。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("url")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("url")]
-                                        public string? ExampleUrl { get; set; }
-                                    }
-                                }
-
-                                /// <summary>
-                                /// 获取或设置资质文件示例列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("inner_list")]
-                                [System.Text.Json.Serialization.JsonPropertyName("inner_list")]
-                                public List<Types.Example>? ExampleList { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置资质文件列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("exter_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("exter_list")]
-                        public List<Types.File>? FileList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置资质备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("remark")]
-                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                        public string? Remark { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置类目 ID。
                 /// </summary>
@@ -113,6 +60,65 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("sensitive_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("sensitive_type")]
                 public int? SensitiveType { get; set; }
+            }
+
+            public class CategoryItem : __zz__CategoryItem
+            {
+                public static class Types
+                {
+                    public abstract class __zz__Qualification
+                    {
+                        /// <summary>
+                        /// 获取或设置资质备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("remark")]
+                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                        public string? Remark { get; set; }
+                    }
+
+                    public class Qualification : __zz__Qualification
+                    {
+                        public static class Types
+                        {
+                            public class File
+                            {
+                                public static class Types
+                                {
+                                    public class Example
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置资质文件名称。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("name")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                        public string? Name { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置资质文件示例 URL。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("url")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                                        public string? ExampleUrl { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置资质文件示例列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("inner_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("inner_list")]
+                                public List<Types.Example>? ExampleList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置资质文件列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("exter_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("exter_list")]
+                        public List<Types.File>? FileList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置资质信息。

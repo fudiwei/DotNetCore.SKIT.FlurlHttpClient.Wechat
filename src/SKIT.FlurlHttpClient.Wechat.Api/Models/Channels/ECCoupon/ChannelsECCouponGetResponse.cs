@@ -7,40 +7,69 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Coupon
+            public abstract class __zz__Coupon
+            {
+                /// <summary>
+                /// 获取或设置优惠券 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long CouponId { get; set; }
+
+                /// <summary>
+                /// 获取或设置优惠券类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public int Type { get; set; }
+
+                /// <summary>
+                /// 获取或设置优惠券状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("status")]
+                [System.Text.Json.Serialization.JsonPropertyName("status")]
+                public int Status { get; set; }
+
+                /// <summary>
+                /// 获取或设置创建时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置更新时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("update_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
+                public long UpdateTimestamp { get; set; }
+            }
+
+            public class Coupon : __zz__Coupon
             {
                 public static class Types
                 {
-                    public class CouponInfo
+                    public abstract class __zz__CouponInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置优惠券名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+                    }
+
+                    public class CouponInfo : __zz__CouponInfo
                     {
                         public static class Types
                         {
-                            public class Discount
+                            public class Discount : ChannelsECCouponCreateRequest.Types.__zz__Discount
                             {
                                 public static class Types
                                 {
-                                    public class DiscountCondidtion
+                                    public class DiscountCondidtion : ChannelsECCouponCreateRequest.Types.Discount.Types.DiscountCondidtion
                                     {
-                                        /// <summary>
-                                        /// 获取或设置商品数量。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("product_cnt")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
-                                        public int? ProductCount { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置商品 ID 列表。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("product_ids")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("product_ids")]
-                                        public List<long>? ProductIdList { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置商品价格（单位：分）。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("product_price")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("product_price")]
-                                        public int? ProductPrice { get; set; }
                                     }
                                 }
 
@@ -50,20 +79,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("discount_condition")]
                                 [System.Text.Json.Serialization.JsonPropertyName("discount_condition")]
                                 public Types.DiscountCondidtion? DiscountCondidtion { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置满减金额（单位：分）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("discount_fee")]
-                                [System.Text.Json.Serialization.JsonPropertyName("discount_fee")]
-                                public int? DiscountFee { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置折扣数值（范围：1000～10000）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("discount_num")]
-                                [System.Text.Json.Serialization.JsonPropertyName("discount_num")]
-                                public int? DiscountNumber { get; set; }
                             }
 
                             public class Extra : ChannelsECCouponCreateRequest.Types.Extra
@@ -82,13 +97,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置优惠券名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
 
                         /// <summary>
                         /// 获取或设置优惠信息。
@@ -152,28 +160,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置优惠券 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long CouponId { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠券类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public int Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠券状态。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("status")]
-                [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public int Status { get; set; }
-
-                /// <summary>
                 /// 获取或设置优惠券详细信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_info")]
@@ -186,20 +172,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("stock_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_info")]
                 public Types.StockInfo? StockInfo { get; set; }
-
-                /// <summary>
-                /// 获取或设置更新时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("update_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
-                public long UpdateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
             }
         }
 

@@ -1,5 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
+    using SKIT.FlurlHttpClient.Internal.CodeAnalysis;
+
     /// <summary>
     /// <para>表示 [POST] /cityservice/sendchannelmsg 接口的请求。</para>
     /// </summary>
@@ -64,6 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             /// <summary>
             /// 就医助手业务（<see cref="BusinessId"/>: 150）参数。
             /// </summary>
+            [DisallowAnalyzerRule("type-declaration/no-orphan-contract-nested-types")]
             public class BusinessInfoAs150 : BusinessInfo
             {
                 /// <summary>
@@ -615,7 +618,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_id")]
         [System.Text.Json.Serialization.JsonPropertyName("open_id")]

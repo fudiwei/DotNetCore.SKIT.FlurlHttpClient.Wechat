@@ -11,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class Order : ChannelsECLogisticsEWaybillOrderPrecreateRequest.Types.Order
+            public class Order : ChannelsECLogisticsEWaybillOrderPrecreateRequest.Types.__zz__Order
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Goods : ChannelsECLogisticsEWaybillOrderPrecreateRequest.Types.Order.Types.Goods
                     {
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_list")]
-                public new List<Types.Goods>? GoodsList { get; set; }
+                public List<Types.Goods>? GoodsList { get; set; }
             }
 
             public class OrderVas

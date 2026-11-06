@@ -7,343 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class GuaranteeOrder
+            public abstract class __zz__GuaranteeOrder
             {
-                public static class Types
-                {
-                    public class ProductInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置商品 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("product_id")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberReadOnlyConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberReadOnlyConverter))]
-                        public long? ProductId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 SKU ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("sku_id")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberReadOnlyConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberReadOnlyConverter))]
-                        public long? SKUId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string? Title { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品缩略图 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("thumb_img")]
-                        [System.Text.Json.Serialization.JsonPropertyName("thumb_img")]
-                        public string? ThumbnailUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品详情。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("detail")]
-                        [System.Text.Json.Serialization.JsonPropertyName("detail")]
-                        public string? Detail { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品价格（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("real_price")]
-                        [System.Text.Json.Serialization.JsonPropertyName("real_price")]
-                        public int RealPrice { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("product_cnt")]
-                        [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
-                        public int Count { get; set; }
-                    }
-
-                    public class PayInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置微信交易单号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("transaction_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                        public string? TransactionId { get; set; }
-                    }
-
-                    public class PresentInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置礼物单号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("present_order_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                        public string? PresentOrderId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置送礼微信昵称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("giver_nickname")]
-                        [System.Text.Json.Serialization.JsonPropertyName("giver_nickname")]
-                        public string? GiverNickname { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置收礼时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("accept_present_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("accept_present_time")]
-                        public long AcceptPresentTimestamp { get; set; }
-                    }
-
-                    public class Fake1Pay4Info
-                    {
-                        /// <summary>
-                        /// 获取或设置鉴定费用（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("identify_fee")]
-                        [System.Text.Json.Serialization.JsonPropertyName("identify_fee")]
-                        public int? IdentifyFee { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品费用（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("product_fee")]
-                        [System.Text.Json.Serialization.JsonPropertyName("product_fee")]
-                        public int ProductFee { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置预计赔付金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("total_pay_fee")]
-                        [System.Text.Json.Serialization.JsonPropertyName("total_pay_fee")]
-                        public int? TotalPayFee { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置最终赔付金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("acctual_pay")]
-                        [System.Text.Json.Serialization.JsonPropertyName("acctual_pay")]
-                        public int? ActualPayFee { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置鉴定凭证 MediaId 列表。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
-                        [Newtonsoft.Json.JsonProperty("identify_proof_pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("identify_proof_pic_list")]
-                        public List<string>? IdentifyProofPictureMediaIdList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置鉴定凭证列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("new_identify_proof_pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("new_identify_proof_pic_list")]
-                        public List<MediaFile>? NewIdentifyProofPictureMediaList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置费用凭证 MediaId 列表。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
-                        [Newtonsoft.Json.JsonProperty("fee_proof_pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("fee_proof_pic_list")]
-                        public List<string>? FeeProofPictureMediaIdList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置费用凭证列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("new_fee_proof_pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("new_fee_proof_pic_list")]
-                        public List<MediaFile>? NewFeeProofPictureMediaList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置申请原因类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("apply_reason")]
-                        [System.Text.Json.Serialization.JsonPropertyName("apply_reason")]
-                        public int? ApplyReasonType { get; set; }
-                    }
-
-                    public class BadPayInfo
-                    {
-                        public static class Types
-                        {
-                            public class TitlePicture
-                            {
-                                /// <summary>
-                                /// 获取或设置凭证类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("title")]
-                                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public int Type { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置凭证图片 MediaId 列表。
-                                /// </summary>
-                                [Obsolete("相关接口或字段于 2026-10-12 下线。")]
-                                [Newtonsoft.Json.JsonProperty("pic_list")]
-                                [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-                                public List<string>? PictureMediaIdList { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置凭证图片列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("new_media_list")]
-                                [System.Text.Json.Serialization.JsonPropertyName("new_media_list")]
-                                public List<MediaFile>? NewMediaList { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置损坏程度。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("bad_level")]
-                        [System.Text.Json.Serialization.JsonPropertyName("bad_level")]
-                        public int BadLevel { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置损坏凭证文字。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("content")]
-                        [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string? Content { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置损坏凭证图片 MediaId 列表。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
-                        [Newtonsoft.Json.JsonProperty("pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-                        public List<string>? PictureMediaIdList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置损坏凭证图片列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("new_pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("new_pic_list")]
-                        public List<MediaFile>? NewPictureMediaList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置赔付金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pay_fee")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pay_fee")]
-                        public int PayFee { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商家协商损坏程度。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("merchant_modify_level")]
-                        [System.Text.Json.Serialization.JsonPropertyName("merchant_modify_level")]
-                        public int? MerchantModifyLevel { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商家备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("merchant_remark")]
-                        [System.Text.Json.Serialization.JsonPropertyName("merchant_remark")]
-                        public string? MerchantRemark { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置平台调整损坏程度。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("platform_modify_level")]
-                        [System.Text.Json.Serialization.JsonPropertyName("platform_modify_level")]
-                        public int? PlatformModifyLevel { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置退款类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("refund_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("refund_type")]
-                        public int RefundType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置收货类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("receive_product")]
-                        [System.Text.Json.Serialization.JsonPropertyName("receive_product")]
-                        public int? ReceiveType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置退款原因类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("refund_reason")]
-                        [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
-                        public int? RefundReasonType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置退款原因。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("refund_reason_text")]
-                        [System.Text.Json.Serialization.JsonPropertyName("refund_reason_text")]
-                        public string? RefundReason { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置凭证图片列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title_pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title_pic_list")]
-                        public List<Types.TitlePicture>? TitlePictureList { get; set; }
-                    }
-
-                    public class History
-                    {
-                        /// <summary>
-                        /// 获取或设置事件类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("event")]
-                        [System.Text.Json.Serialization.JsonPropertyName("event")]
-                        public int EventType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置事件时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("time")]
-                        public int Timestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置客服名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("kf_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("kf_name")]
-                        public string? KfName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置文字内容。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("content")]
-                        [System.Text.Json.Serialization.JsonPropertyName("content")]
-                        public string? Content { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置凭证图片 MediaId 列表。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
-                        [Newtonsoft.Json.JsonProperty("pic_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-                        public List<string>? PictureMediaIdList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置凭证图片列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("new_media_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("new_media_list")]
-                        public List<MediaFile>? NewPictureMediaList { get; set; }
-                    }
-
-                    public class MediaFile : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置保障单 ID。
                 /// </summary>
@@ -425,25 +90,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long? CompleteTimestamp { get; set; }
 
                 /// <summary>
-                /// 获取或设置商品信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("product_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("product_info")]
-                public List<Types.ProductInfo>? ProductList { get; set; }
-
-                /// <summary>
                 /// 获取或设置退款金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pay_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("pay_amount")]
                 public int PayAmount { get; set; }
-
-                /// <summary>
-                /// 获取或设置支付信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_pay_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_pay_info")]
-                public Types.PayInfo? PayInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序会员已经优惠金额（单位：分）。
@@ -460,11 +111,394 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? MerchantRefuseReason { get; set; }
 
                 /// <summary>
+                /// 获取或设置创建时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置更新时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("update_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
+                public long UpdateTimestamp { get; set; }
+            }
+
+            public class GuaranteeOrder : __zz__GuaranteeOrder
+            {
+                public static class Types
+                {
+                    public class ProductInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置商品 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_id")]
+                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberReadOnlyConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_id")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberReadOnlyConverter))]
+                        public long? ProductId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sku_id")]
+                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberReadOnlyConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberReadOnlyConverter))]
+                        public long? SKUId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string? Title { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品缩略图 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("thumb_img")]
+                        [System.Text.Json.Serialization.JsonPropertyName("thumb_img")]
+                        public string? ThumbnailUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品详情。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("detail")]
+                        [System.Text.Json.Serialization.JsonPropertyName("detail")]
+                        public string? Detail { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品价格（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("real_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("real_price")]
+                        public int RealPrice { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
+                        public int Count { get; set; }
+                    }
+
+                    public class OrderPayInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置微信交易单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("transaction_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+                        public string? TransactionId { get; set; }
+                    }
+
+                    public class OrderPresentInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置礼物单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_order_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
+                        public string? PresentOrderId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置送礼微信昵称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("giver_nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("giver_nickname")]
+                        public string? GiverNickname { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置收礼时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("accept_present_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("accept_present_time")]
+                        public long AcceptPresentTimestamp { get; set; }
+                    }
+
+                    public abstract class __zz__Fake1Pay4Info
+                    {
+                        /// <summary>
+                        /// 获取或设置鉴定费用（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("identify_fee")]
+                        [System.Text.Json.Serialization.JsonPropertyName("identify_fee")]
+                        public int? IdentifyFee { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品费用（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_fee")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_fee")]
+                        public int ProductFee { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置预计赔付金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("total_pay_fee")]
+                        [System.Text.Json.Serialization.JsonPropertyName("total_pay_fee")]
+                        public int? TotalPayFee { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置最终赔付金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("acctual_pay")]
+                        [System.Text.Json.Serialization.JsonPropertyName("acctual_pay")]
+                        public int? ActualPayFee { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置鉴定凭证 MediaId 列表。
+                        /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
+                        [Newtonsoft.Json.JsonProperty("identify_proof_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("identify_proof_pic_list")]
+                        public List<string>? IdentifyProofPictureMediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置费用凭证 MediaId 列表。
+                        /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
+                        [Newtonsoft.Json.JsonProperty("fee_proof_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("fee_proof_pic_list")]
+                        public List<string>? FeeProofPictureMediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置申请原因类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("apply_reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("apply_reason")]
+                        public int? ApplyReasonType { get; set; }
+                    }
+
+                    public class Fake1Pay4Info : __zz__Fake1Pay4Info
+                    {
+                        /// <summary>
+                        /// 获取或设置鉴定凭证列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_identify_proof_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_identify_proof_pic_list")]
+                        public List<MediaFile>? NewIdentifyProofPictureMediaList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置费用凭证列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_fee_proof_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_fee_proof_pic_list")]
+                        public List<MediaFile>? NewFeeProofPictureMediaList { get; set; }
+                    }
+
+                    public abstract class __zz__BadPayInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置损坏程度。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("bad_level")]
+                        [System.Text.Json.Serialization.JsonPropertyName("bad_level")]
+                        public int BadLevel { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置损坏凭证文字。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("content")]
+                        public string? Content { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置损坏凭证图片 MediaId 列表。
+                        /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
+                        [Newtonsoft.Json.JsonProperty("pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
+                        public List<string>? PictureMediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置赔付金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pay_fee")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pay_fee")]
+                        public int PayFee { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商家协商损坏程度。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("merchant_modify_level")]
+                        [System.Text.Json.Serialization.JsonPropertyName("merchant_modify_level")]
+                        public int? MerchantModifyLevel { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商家备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("merchant_remark")]
+                        [System.Text.Json.Serialization.JsonPropertyName("merchant_remark")]
+                        public string? MerchantRemark { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置平台调整损坏程度。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("platform_modify_level")]
+                        [System.Text.Json.Serialization.JsonPropertyName("platform_modify_level")]
+                        public int? PlatformModifyLevel { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置退款类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("refund_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("refund_type")]
+                        public int RefundType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置收货类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("receive_product")]
+                        [System.Text.Json.Serialization.JsonPropertyName("receive_product")]
+                        public int? ReceiveType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置退款原因类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("refund_reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
+                        public int? RefundReasonType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置退款原因。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("refund_reason_text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("refund_reason_text")]
+                        public string? RefundReason { get; set; }
+
+                    }
+
+                    public class BadPayInfo : __zz__BadPayInfo
+                    {
+                        public static class Types
+                        {
+                            public abstract class __zz__TitlePicture
+                            {
+                                /// <summary>
+                                /// 获取或设置凭证类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("title")]
+                                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                                public int Type { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置凭证图片 MediaId 列表。
+                                /// </summary>
+                                [Obsolete("相关接口或字段于 2026-10-12 下线。")]
+                                [Newtonsoft.Json.JsonProperty("pic_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
+                                public List<string>? PictureMediaIdList { get; set; }
+                            }
+
+                            public class TitlePicture : __zz__TitlePicture
+                            {
+                                /// <summary>
+                                /// 获取或设置凭证图片列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("new_media_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("new_media_list")]
+                                public List<MediaFile>? NewMediaList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置损坏凭证图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_pic_list")]
+                        public List<MediaFile>? NewPictureMediaList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置凭证图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title_pic_list")]
+                        public List<Types.TitlePicture>? TitlePictureList { get; set; }
+                    }
+
+                    public abstract class __zz__MediaFile
+                    {
+                        /// <summary>
+                        /// 获取或设置媒体文件类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频时长（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("video_play_length")]
+                        [System.Text.Json.Serialization.JsonPropertyName("video_play_length")]
+                        public int? VideoPlayLength { get; set; }
+                    }
+
+                    public class MediaFile : __zz__MediaFile
+                    {
+                        public static class Types
+                        {
+                            public class Picture
+                            {
+                                /// <summary>
+                                /// 获取或设置图片临时 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ticket_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
+                                public string? TicketUrl { get; set; }
+                            }
+
+                            public class Video
+                            {
+                                /// <summary>
+                                /// 获取或设置视频临时 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ticket_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
+                                public string? TicketUrl { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("picture")]
+                        [System.Text.Json.Serialization.JsonPropertyName("picture")]
+                        public Types.Picture? Picture { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("video")]
+                        [System.Text.Json.Serialization.JsonPropertyName("video")]
+                        public Types.Video? Video { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商品信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_info")]
+                public List<Types.ProductInfo>? ProductList { get; set; }
+
+                /// <summary>
+                /// 获取或设置支付信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_pay_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_pay_info")]
+                public Types.OrderPayInfo? OrderPayInfo { get; set; }
+
+                /// <summary>
                 /// 获取或设置礼物信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_present_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_present_info")]
-                public Types.PresentInfo? PresentInfo { get; set; }
+                public Types.OrderPresentInfo? OrderPresentInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置假一赔四信息。
@@ -479,27 +513,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("bad_pay_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("bad_pay_info")]
                 public Types.BadPayInfo? BadPayInfo { get; set; }
-
-                /// <summary>
-                /// 获取或设置更新时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("update_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
-                public long UpdateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置协商历史列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("history_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("history_list")]
-                public List<Types.History>? HistoryList { get; set; }
             }
         }
 

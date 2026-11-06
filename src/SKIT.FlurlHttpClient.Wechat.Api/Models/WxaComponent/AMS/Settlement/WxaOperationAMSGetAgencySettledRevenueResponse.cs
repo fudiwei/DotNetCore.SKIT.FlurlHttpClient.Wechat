@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Settlement : WxaOperationAMSAgencyGetSettlementResponse.Types.Settlement
+            public class Settlement : WxaOperationAMSAgencyGetSettlementResponse.Types.__zz__Settlement
             {
-                public static new class Types
+                public static class Types
                 {
                     public class SlotRevenue : WxaOperationAMSAgencyGetSettlementResponse.Types.Settlement.Types.SlotRevenue
                     {
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("slot_revenue")]
                 [System.Text.Json.Serialization.JsonPropertyName("slot_revenue")]
-                public new List<Types.SlotRevenue>? SlotRevenueList { get; set; }
+                public List<Types.SlotRevenue>? SlotRevenueList { get; set; }
             }
         }
 

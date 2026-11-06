@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<Level1ClassificationTreeNode>? Level1Nodes { get; set; }
                     }
 
-                    public abstract class ClassificationTreeNode
+                    public abstract class ClassificationTreeNodeBase
                     {
                         /// <summary>
                         /// 获取或设置分类 ID。
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public bool IsDisplayed { get; set; }
                     }
 
-                    public class Level1ClassificationTreeNode : ClassificationTreeNode
+                    public class Level1ClassificationTreeNode : ClassificationTreeNodeBase
                     {
                         /// <summary>
                         /// 获取或设置二级分类节点信息。
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<Level2ClassificationTreeNode>? Level2Nodes { get; set; }
                     }
 
-                    public class Level2ClassificationTreeNode : ClassificationTreeNode
+                    public class Level2ClassificationTreeNode : ClassificationTreeNodeBase
                     {
                     }
                 }

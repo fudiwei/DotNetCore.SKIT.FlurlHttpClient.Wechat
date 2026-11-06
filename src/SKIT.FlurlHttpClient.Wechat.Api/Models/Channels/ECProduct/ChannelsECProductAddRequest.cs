@@ -41,6 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long CategoryId { get; set; }
             }
 
@@ -85,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? ExpressType { get; set; }
             }
 
-            public class SKU
+            public abstract class __zz__SKU
             {
                 /// <summary>
                 /// 获取或设置商家自定义 SKU ID。
@@ -135,7 +136,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("bar_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("bar_code")]
                 public string? BarCode { get; set; }
+            }
 
+            public class SKU : __zz__SKU
+            {
                 /// <summary>
                 /// 获取或设置商品属性列表。
                 /// </summary>
@@ -145,6 +149,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 /// <summary>
                 /// 获取或设置商品配送信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                public SKUDeliverInfo? SKUDeliverInfo { get; set; }
+            }
+
+            public abstract class __zz__SPUDeliverInfo
+            {
+                /// <summary>
+                /// 获取或设置是否生效。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_spu_range")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_spu_range")]
+                public bool? IsSPURange { get; set; }
+            }
+
+            public class SPUDeliverInfo : __zz__SPUDeliverInfo
+            {
+                /// <summary>
+                /// 获取或设置商品预售信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
@@ -302,11 +326,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public List<string>? PictureUrlList { get; set; }
             }
 
-            public class SizeChart
+            public abstract class __zz__SizeChart
+            {
+                /// <summary>
+                /// 获取或设置是否启用。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable")]
+                public bool IsEnabled { get; set; }
+            }
+
+            public class SizeChart : __zz__SizeChart
             {
                 public static class Types
                 {
-                    public class Specification
+                    public abstract class __zz__Specification
+                    {
+                        /// <summary>
+                        /// 获取或设置名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置单位。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("unit")]
+                        [System.Text.Json.Serialization.JsonPropertyName("unit")]
+                        public string? Unit { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置属性值是否为区间。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_range")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_range")]
+                        public bool IsRange { get; set; }
+                    }
+
+                    public class Specification : __zz__Specification
                     {
                         public static class Types
                         {
@@ -343,27 +401,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置单位。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("unit")]
-                        [System.Text.Json.Serialization.JsonPropertyName("unit")]
-                        public string? Unit { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置属性值是否为区间。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_range")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_range")]
-                        public bool IsRange { get; set; }
-
-                        /// <summary>
                         /// 获取或设置属性值映射列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_list")]
@@ -371,13 +408,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<Types.SpecificationValue>? ValueList { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置是否启用。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("enable")]
-                [System.Text.Json.Serialization.JsonPropertyName("enable")]
-                public bool IsEnabled { get; set; }
 
                 /// <summary>
                 /// 获取或设置尺码规格列表。
@@ -411,23 +441,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("is_hide_price")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool? IsHidePrice { get; set; }
-            }
-
-            public class SPUDeliverInfo
-            {
-                /// <summary>
-                /// 获取或设置是否生效。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("is_spu_range")]
-                [System.Text.Json.Serialization.JsonPropertyName("is_spu_range")]
-                public bool IsSPURange { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品预售信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
-                public SKUDeliverInfo? SKUDeliverInfo { get; set; }
             }
 
             public class SupplySource

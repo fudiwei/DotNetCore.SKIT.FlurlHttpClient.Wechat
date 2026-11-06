@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class Picture
                             {
                                 /// <summary>
-                                /// 获取或设置媒体文件 ID。
+                                /// 获取或设置图片 MediaId。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("media_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
                                 public string? MediaId { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置临时访问 URL。
+                                /// 获取或设置图片临时 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("ticket_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
@@ -35,14 +35,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class Video
                             {
                                 /// <summary>
-                                /// 获取或设置媒体文件 ID。
+                                /// 获取或设置视频 MediaId。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("media_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
                                 public string? MediaId { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置临时访问 URL。
+                                /// 获取或设置视频临时 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("ticket_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public int MediaType { get; set; }
+                        public int Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片信息。

@@ -15,6 +15,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
+                            public class HeadVideo : ChannelsECProductGetResponse.Types.Product.Types.HeadVideo
+                            {
+                            }
+
                             public class Detail : ChannelsECProductGetResponse.Types.Product.Types.Detail
                             {
                             }
@@ -23,12 +27,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                             }
 
-                            public class HeadVideo : ChannelsECProductGetResponse.Types.Product.Types.HeadVideo
+                            public class Attribute : ChannelsECProductGetResponse.Types.Product.Types.Attribute
                             {
                             }
 
-                            public class SKU : ChannelsECProductGetResponse.Types.Product.Types.SKU
+                            public class SKU : ChannelsECProductGetResponse.Types.Product.Types.__zz__SKU
                             {
+                                /// <summary>
+                                /// 获取或设置商品属性列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sku_attrs")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
+                                public List<Attribute>? AttributeList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品配送信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                                public SKUDeliverInfo? SKUDeliverInfo { get; set; }
+
                                 /// <summary>
                                 /// 获取或设置用户视角普惠价（单位：分）。
                                 /// </summary>
@@ -38,6 +56,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             }
 
                             public class ExtraService : ChannelsECProductGetResponse.Types.Product.Types.ExtraService
+                            {
+                            }
+
+                            public class SKUDeliverInfo : ChannelsECProductGetResponse.Types.Product.Types.SKUDeliverInfo
                             {
                             }
 
@@ -318,6 +340,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<string>? HeadImageUrlList { get; set; }
 
                         /// <summary>
+                        /// 获取或设置商品头图视频列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("head_video_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("head_video_info")]
+                        public List<Types.HeadVideo>? HeadVideoList { get; set; }
+
+                        /// <summary>
                         /// 获取或设置商品详情信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("desc_info")]
@@ -330,13 +359,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("cats_v2")]
                         [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
                         public List<Types.Category>? CategoryV2List { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品头图视频列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("head_video_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("head_video_info")]
-                        public List<Types.HeadVideo>? HeadVideoList { get; set; }
 
                         /// <summary>
                         /// 获取或设置 SKU 列表。

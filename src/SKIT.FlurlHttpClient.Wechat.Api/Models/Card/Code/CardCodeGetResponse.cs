@@ -59,8 +59,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? Balance { get; set; }
             }
 
-            public class MemberUser : CardMemberCardUserInfoGetResponse.Types.MemberUser
+            public class MemberUser
             {
+                public static class Types
+                {
+                    public class CustomField : CardMemberCardUserInfoGetResponse.Types.MemberUser.Types.CustomField
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置内置会员信息类目列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("common_field_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
+                public List<Types.CustomField>? CommonFieldList { get; set; }
+
+                /// <summary>
+                /// 获取或设置自定义会员信息类目列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("custom_field_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
+                public List<Types.CustomField>? CustomFieldList { get; set; }
             }
         }
 

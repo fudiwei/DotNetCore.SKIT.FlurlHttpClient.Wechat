@@ -9,60 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         {
             public class CodeResult
             {
-                public static class Types
-                {
-                    public class Position
-                    {
-                        public static class Types
-                        {
-                            public class Point
-                            {
-                                /// <summary>
-                                /// 获取或设置 X 轴坐标（单位：像素）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("x")]
-                                [System.Text.Json.Serialization.JsonPropertyName("x")]
-                                public int X { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置 Y 轴桌标（单位：像素）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("y")]
-                                [System.Text.Json.Serialization.JsonPropertyName("y")]
-                                public int Y { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置左上角坐标信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("left_top")]
-                        [System.Text.Json.Serialization.JsonPropertyName("left_top")]
-                        public Types.Point? LeftTop { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置右上角坐标信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("right_top")]
-                        [System.Text.Json.Serialization.JsonPropertyName("right_top")]
-                        public Types.Point? RightTop { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置右下角坐标信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("right_bottom")]
-                        [System.Text.Json.Serialization.JsonPropertyName("right_bottom")]
-                        public Types.Point? RightBottom { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置左下角坐标信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("left_bottom")]
-                        [System.Text.Json.Serialization.JsonPropertyName("left_bottom")]
-                        public Types.Point? LeftBottom { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置识别类型名称。
                 /// </summary>
@@ -82,7 +28,58 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pos")]
                 [System.Text.Json.Serialization.JsonPropertyName("pos")]
-                public Types.Position? Position { get; set; }
+                public ImagePosition? Position { get; set; }
+            }
+
+            public class ImagePosition
+            {
+                public static class Types
+                {
+                    public class Point
+                    {
+                        /// <summary>
+                        /// 获取或设置 X 轴坐标（单位：像素）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("x")]
+                        [System.Text.Json.Serialization.JsonPropertyName("x")]
+                        public int X { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 Y 轴桌标（单位：像素）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("y")]
+                        [System.Text.Json.Serialization.JsonPropertyName("y")]
+                        public int Y { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置左上角坐标信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("left_top")]
+                [System.Text.Json.Serialization.JsonPropertyName("left_top")]
+                public Types.Point? LeftTop { get; set; }
+
+                /// <summary>
+                /// 获取或设置右上角坐标信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("right_top")]
+                [System.Text.Json.Serialization.JsonPropertyName("right_top")]
+                public Types.Point? RightTop { get; set; }
+
+                /// <summary>
+                /// 获取或设置右下角坐标信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("right_bottom")]
+                [System.Text.Json.Serialization.JsonPropertyName("right_bottom")]
+                public Types.Point? RightBottom { get; set; }
+
+                /// <summary>
+                /// 获取或设置左下角坐标信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("left_bottom")]
+                [System.Text.Json.Serialization.JsonPropertyName("left_bottom")]
+                public Types.Point? LeftBottom { get; set; }
             }
 
             public class ImageSize

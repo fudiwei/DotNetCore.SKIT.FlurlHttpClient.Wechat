@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class ImageMessage
             {
                 /// <summary>
-                /// 获取或设置媒体文件标识。
+                /// 获取或设置图片 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
@@ -112,14 +112,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? ThumbnailUrl { get; set; }
             }
 
-            public class VoiceMessage : ImageMessage
-            {
-            }
-
-            public class VideoMessage : ImageMessage
+            public class VoiceMessage
             {
                 /// <summary>
-                /// 获取或设置视频缩略图媒体文件标识。
+                /// 获取或设置音频 MediaId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+                public string? MediaId { get; set; }
+            }
+
+            public class VideoMessage
+            {
+                /// <summary>
+                /// 获取或设置视频 MediaId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+                public string? MediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频缩略图 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_media_id")]
@@ -143,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class MusicMessage
             {
                 /// <summary>
-                /// 获取或设置音乐缩略图媒体文件标识。
+                /// 获取或设置音乐缩略图 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_media_id")]
@@ -188,7 +201,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? CardId { get; set; }
             }
 
-            public class MenuMessage
+            public abstract class __zz__MenuMessage
+            {
+                /// <summary>
+                /// 获取或设置头部内容。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("head_content")]
+                [System.Text.Json.Serialization.JsonPropertyName("head_content")]
+                public string? HeadContent { get; set; }
+
+                /// <summary>
+                /// 获取或设置尾部内容。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("tail_content")]
+                [System.Text.Json.Serialization.JsonPropertyName("tail_content")]
+                public string? TailContent { get; set; }
+            }
+
+            public class MenuMessage : __zz__MenuMessage
             {
                 public static class Types
                 {
@@ -211,31 +241,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置头部内容。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("head_content")]
-                [System.Text.Json.Serialization.JsonPropertyName("head_content")]
-                public string? HeadContent { get; set; }
-
-                /// <summary>
                 /// 获取或设置菜单列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("list")]
                 [System.Text.Json.Serialization.JsonPropertyName("list")]
                 public List<Types.MenuItem>? List { get; set; }
-
-                /// <summary>
-                /// 获取或设置尾部内容。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("tail_content")]
-                [System.Text.Json.Serialization.JsonPropertyName("tail_content")]
-                public string? TailContent { get; set; }
             }
 
             public class MiniProgramMessage
             {
                 /// <summary>
-                /// 获取或设置小程序缩略图媒体文件标识。
+                /// 获取或设置小程序缩略图 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_media_id")]
@@ -261,6 +277,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("pagepath")]
                 [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
                 public string? PagePath { get; set; }
+            }
+
+            public class AIMessageContext
+            {
+                /// <summary>
+                /// 获取或设置是否内容由 AI 生成。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_ai_msg")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_ai_msg")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
+                public bool? IsAIMessage { get; set; }
             }
 
             public class CustomService
@@ -371,5 +399,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("customservice")]
         [System.Text.Json.Serialization.JsonPropertyName("customservice")]
         public Types.CustomService? CustomService { get; set; }
+
+        /// <summary>
+        /// 获取或设置 AI 消息上下文信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("aimsgcontext")]
+        [System.Text.Json.Serialization.JsonPropertyName("aimsgcontext")]
+        public Types.AIMessageContext? AIMessageContext { get; set; }
     }
 }

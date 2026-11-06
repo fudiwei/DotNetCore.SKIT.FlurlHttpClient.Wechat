@@ -7,15 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Chapter
+            public abstract class __zz__Chapter
             {
-                public static class Types
-                {
-                    public class AuditInfo : WxaBookListBookResponse.Types.Book.Types.AuditInfo
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置章节 ID。
                 /// </summary>
@@ -66,18 +59,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? CustomInfo { get; set; }
 
                 /// <summary>
-                /// 获取或设置审核信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("audit_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("audit_info")]
-                public Types.AuditInfo? AuditInfo { get; set; }
-
-                /// <summary>
                 /// 获取或设置创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 public long CreateTimestamp { get; set; }
+            }
+
+            public class Chapter : __zz__Chapter
+            {
+                public static class Types
+                {
+                    public class AuditInfo : WxaBookListBookResponse.Types.Book.Types.AuditInfo
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置审核信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("audit_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("audit_info")]
+                public Types.AuditInfo? AuditInfo { get; set; }
             }
         }
 

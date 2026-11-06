@@ -310,7 +310,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/getbillauthurl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_notaxinvoicegetauthurl.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -338,7 +338,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/createbillcard 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_notaxinvoicecreatecard.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -361,7 +361,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /nontax/insertbill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_notaxinvoiceinsert.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

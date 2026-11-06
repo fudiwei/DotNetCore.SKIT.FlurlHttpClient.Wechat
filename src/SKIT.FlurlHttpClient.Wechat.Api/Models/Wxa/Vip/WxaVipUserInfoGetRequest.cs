@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class WxaVipUserInfoGetRequest : WechatApiRequest, IInferable<WxaVipUserInfoGetRequest, WxaVipUserInfoGetResponse>
     {
         /// <summary>
-        /// 获取或设置小程序用户的 OpenId。
+        /// 获取或设置小程序用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_openid")]

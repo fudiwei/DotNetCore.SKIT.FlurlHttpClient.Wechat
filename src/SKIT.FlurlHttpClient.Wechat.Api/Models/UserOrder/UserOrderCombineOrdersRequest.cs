@@ -19,8 +19,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                     }
 
-                    public class Item : UserOrderOrdersRequest.Types.Order.Types.Item
+                    public class Item : UserOrderOrdersRequest.Types.Order.Types.__zz__Item
                     {
+                        /// <summary>
+                        /// 获取或设置商户交易商品详情页链接信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("item_detail_jump_link")]
+                        [System.Text.Json.Serialization.JsonPropertyName("item_detail_jump_link")]
+                        public JumpLink? ItemDetailJumpLink { get; set; }
                     }
                 }
 

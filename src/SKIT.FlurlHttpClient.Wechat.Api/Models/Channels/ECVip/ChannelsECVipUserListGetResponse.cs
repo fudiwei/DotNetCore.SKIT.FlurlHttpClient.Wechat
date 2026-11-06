@@ -7,7 +7,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class User
+            public abstract class __zz__User
+            {
+                /// <summary>
+                /// 获取或设置用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("openid")]
+                public string? OpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户 UnionId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("unionid")]
+                [System.Text.Json.Serialization.JsonPropertyName("unionid")]
+                public string? UnionId { get; set; }
+            }
+
+            public class User : __zz__User
             {
                 public static class Types
                 {
@@ -28,20 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int ExperienceValue { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置用户的 OpenId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string? OpenId { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户的 UnionId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("unionid")]
-                [System.Text.Json.Serialization.JsonPropertyName("unionid")]
-                public string? UnionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户等级信息。

@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     public class Picture
                                     {
                                         /// <summary>
-                                        /// 获取或设置媒体文件 ID。
+                                        /// 获取或设置图片 MediaId。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("tmp_media_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("tmp_media_id")]
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public int MediaType { get; set; }
+                                public int Type { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置图片信息。

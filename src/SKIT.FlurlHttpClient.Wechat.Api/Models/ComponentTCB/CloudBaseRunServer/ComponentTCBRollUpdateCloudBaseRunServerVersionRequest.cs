@@ -11,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class Code : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.Code
+            public class Code : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.__zz__Code
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Repository : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.Code.Types.Repository
                     {
@@ -25,12 +25,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public new Types.Repository? Repository { get; set; }
+                public Types.Repository? Repository { get; set; }
             }
 
-            public class VolumeMount : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.VolumeMount
+            public class VolumeMount : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.__zz__VolumeMount
             {
-                public static new class Types
+                public static class Types
                 {
                     public class NFSVolumeSource : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.VolumeMount.Types.NFSVolumeSource
                     {
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nfs_volumes")]
                 [System.Text.Json.Serialization.JsonPropertyName("nfs_volumes")]
-                public new List<Types.NFSVolumeSource>? NFSVolumes { get; set; }
+                public List<Types.NFSVolumeSource>? NFSVolumes { get; set; }
             }
 
             public class HPAPolicy : ComponentTCBCreateCloudBaseRunServerVersionRequest.Types.HPAPolicy

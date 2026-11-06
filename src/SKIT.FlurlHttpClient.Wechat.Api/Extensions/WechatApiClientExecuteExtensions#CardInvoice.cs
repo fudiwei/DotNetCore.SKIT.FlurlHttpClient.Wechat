@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/getauthurl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizgetauthurl.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizgetauthdata.html.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_invoicebizgetauthdata.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -59,8 +59,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/rejectinsert 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizrejectinsert.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_invoicebizrejectinsert.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -80,80 +80,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /card/invoice/makeoutinvoice 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CardInvoiceMakeOutInvoiceResponse> ExecuteCardInvoiceMakeOutInvoiceAsync(this WechatApiClient client, Models.CardInvoiceMakeOutInvoiceRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "card", "invoice", "makeoutinvoice")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CardInvoiceMakeOutInvoiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /card/invoice/clearoutinvoice 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CardInvoiceClearOutInvoiceResponse> ExecuteCardInvoiceClearOutInvoiceAsync(this WechatApiClient client, Models.CardInvoiceClearOutInvoiceRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "card", "invoice", "clearoutinvoice")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CardInvoiceClearOutInvoiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /card/invoice/queryinvoceinfo 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CardInvoiceQueryInvoiceInfoResponse> ExecuteCardInvoiceQueryInvoiceInfoAsync(this WechatApiClient client, Models.CardInvoiceQueryInvoiceInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "card", "invoice", "queryinvoceinfo")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.CardInvoiceQueryInvoiceInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /card/invoice/seturl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/platform/api_setinvoiceurl.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_setinvoiceurl.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -176,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/insert 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/platform/api_insertinvoice.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -211,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizsetattr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -236,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizsetattr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -260,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/setbizattr?action=set_contact 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizsetattr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -284,7 +215,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/setbizattr?action=get_contact 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizsetattr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -309,7 +240,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizsetattr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -334,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/gift_card.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Vendor_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/auth/api_invoicebizsetattr.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -360,7 +291,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/platform/createcard 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/platform/api_invoiceplatformcreatecard.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -383,8 +314,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/platform/setpdf 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/platform/api_invoiceplatformsetpdf.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_invoiceplatformsetpdf.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -408,8 +339,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/platform/getpdf 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/platform/api_invoiceplatformgetpdf.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_invoiceplatformgetpdf.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -434,8 +365,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/platform/updatestatus 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/E_Invoice/Invoicing_Platform_API_List.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/weixin_invoice/Nontax_Bill/API_list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/platform/api_invoicekpupdatainvoicestatus.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/FiscalReceipt/api_invoicekpupdatainvoicestatus.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -460,6 +391,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/reimburse/getinvoiceinfo 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimburser/api_invoicebxgetinvoice.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimbursement/api_invoicebxgetinvoice.html ]]>
         /// </para>
         /// </summary>
@@ -483,6 +415,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/reimburse/getinvoicebatch 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimburser/api_invoicereimburseupdatestatusbatch.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimbursement/api_invoicereimburseupdatestatusbatch.html ]]>
         /// </para>
         /// </summary>
@@ -506,6 +439,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/reimburse/updatestatusbatch 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimburser/api_invoicereimburseupdatestatusbatch.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimbursement/api_invoicereimburseupdatestatusbatch.html ]]>
         /// </para>
         /// </summary>
@@ -529,6 +463,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /card/invoice/reimburse/updateinvoicestatus 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimburser/api_invoicebxupdatainvoicestatus.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/invoice/reimbursement/api_invoicebxupdatainvoicestatus.html ]]>
         /// </para>
         /// </summary>

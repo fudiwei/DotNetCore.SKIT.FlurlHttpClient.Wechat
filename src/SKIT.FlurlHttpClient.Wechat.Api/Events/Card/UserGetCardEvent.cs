@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         public string? OldCardCode { get; set; }
 
         /// <summary>
-        /// 获取或设置领券用户的 UnionId。
+        /// 获取或设置领券用户 UnionId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("UnionId")]
         [System.Text.Json.Serialization.JsonPropertyName("UnionId")]
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         public bool IsTransferedByFriend { get; set; }
 
         /// <summary>
-        /// 获取或设置转赠用户的 OpenId。
+        /// 获取或设置转赠用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("FriendUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("FriendUserName")]

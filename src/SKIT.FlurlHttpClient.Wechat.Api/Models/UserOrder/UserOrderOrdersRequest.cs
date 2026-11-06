@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? Url { get; set; }
                     }
 
-                    public class Item
+                    public abstract class __zz__Item
                     {
                         /// <summary>
                         /// 获取或设置商户侧商品 ID。
@@ -116,7 +116,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("image_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("image_url")]
                         public List<string>? ImageUrlList { get; set; }
+                    }
 
+                    public class Item : __zz__Item
+                    {
                         /// <summary>
                         /// 获取或设置商户交易商品详情页链接信息。
                         /// </summary>

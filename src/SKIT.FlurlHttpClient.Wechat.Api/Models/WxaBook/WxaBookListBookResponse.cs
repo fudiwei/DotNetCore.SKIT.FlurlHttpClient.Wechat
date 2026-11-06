@@ -7,49 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Book
+            public abstract class __zz__Book
             {
-                public static class Types
-                {
-                    public class AuditInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置审核状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("audit_status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("audit_status")]
-                        public int AuditStatus { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置提审时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("create_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                        public long CreateTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置审核原因。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("reason")]
-                        [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                        public string? Reason { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置修改建议。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("suggestion")]
-                        [System.Text.Json.Serialization.JsonPropertyName("suggestion")]
-                        public string? Suggestion { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置审核时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("audit_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("audit_time")]
-                        public long? AuditTimestamp { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置作品 ID。
                 /// </summary>
@@ -163,18 +122,62 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? CustomInfo { get; set; }
 
                 /// <summary>
-                /// 获取或设置审核信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("audit_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("audit_info")]
-                public Types.AuditInfo? AuditInfo { get; set; }
-
-                /// <summary>
                 /// 获取或设置创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 public long CreateTimestamp { get; set; }
+            }
+
+            public class Book : __zz__Book
+            {
+                public static class Types
+                {
+                    public class AuditInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置审核状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("audit_status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("audit_status")]
+                        public int AuditStatus { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置提审时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("create_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                        public long CreateTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置审核原因。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reason")]
+                        public string? Reason { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置修改建议。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("suggestion")]
+                        [System.Text.Json.Serialization.JsonPropertyName("suggestion")]
+                        public string? Suggestion { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置审核时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("audit_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("audit_time")]
+                        public long? AuditTimestamp { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置审核信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("audit_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("audit_info")]
+                public Types.AuditInfo? AuditInfo { get; set; }
             }
         }
 

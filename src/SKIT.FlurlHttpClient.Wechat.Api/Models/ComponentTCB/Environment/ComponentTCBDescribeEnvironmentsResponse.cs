@@ -7,43 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Environment
+            public class Environment : TCBGetEnvironmentInfoResponse.Types.Environment
             {
-                /// <summary>
-                /// 获取或设置环境 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("env")]
-                [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string? EnvironmentId { get; set; }
-
-                /// <summary>
-                /// 获取或设置环境别名。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("alias")]
-                [System.Text.Json.Serialization.JsonPropertyName("alias")]
-                public string? Alias { get; set; }
-
-                /// <summary>
-                /// 获取或设置环境状态。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("status")]
-                [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string? Status { get; set; }
-
-                /// <summary>
-                /// 获取或设置产品套餐 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("package_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("package_id")]
-                public string? PackageId { get; set; }
-
-                /// <summary>
-                /// 获取或设置产品套餐名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("package_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("package_name")]
-                public string? PackageName { get; set; }
-
                 /// <summary>
                 /// 获取或设置数据库实例 ID。
                 /// </summary>
@@ -57,24 +22,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("bucket_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("bucket_id")]
                 public string? BucketId { get; set; }
-
-                /// <summary>
-                /// 获取或设置修改时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("update_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset UpdateTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset CreateTime { get; set; }
             }
         }
 

@@ -670,7 +670,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public Types.CustomInfo? CustomInfo { get; set; }
                             }
 
-                            public class Payment
+                            public class PayInfo
                             {
                                 /// <summary>
                                 /// 获取或设置预支付单号。
@@ -708,7 +708,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? PaymentMethod { get; set; }
                             }
 
-                            public class Amount
+                            public class PriceInfo
                             {
                                 /// <summary>
                                 /// 获取或设置商品金额（单位：分）。
@@ -1642,14 +1642,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("pay_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_info")]
-                        public Types.Payment? Payment { get; set; }
+                        public Types.PayInfo? PayInfo { get; set; }
 
                         /// <summary>
                         /// 获取或设置金额信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("price_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("price_info")]
-                        public Types.Amount? Amount { get; set; }
+                        public Types.PriceInfo? PriceInfo { get; set; }
 
                         /// <summary>
                         /// 获取或设置快递信息。
@@ -1957,18 +1957,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? UnionId { get; set; }
 
                 /// <summary>
-                /// 获取或设置更新时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("update_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
-                public long UpdateTimestamp { get; set; }
-
-                /// <summary>
                 /// 获取或设置创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置更新时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("update_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
+                public long UpdateTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否礼物订单。

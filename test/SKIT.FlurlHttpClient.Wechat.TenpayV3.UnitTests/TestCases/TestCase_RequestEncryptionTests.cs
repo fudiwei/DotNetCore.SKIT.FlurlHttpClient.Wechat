@@ -95,6 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                         IdNumber = MOCK_PLAIN_STR,
                         IdAddress = MOCK_PLAIN_STR
                     },
+#pragma warning disable CS0618
                     UBOList = new List<Models.CreateApplyForSubjectApplymentRequest.Types.UBO>()
                     {
                         new Models.CreateApplyForSubjectApplymentRequest.Types.UBO()
@@ -104,6 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                             IdAddress = MOCK_PLAIN_STR
                         }
                     }
+#pragma warning restore CS0618
                 };
             }
 
@@ -115,18 +117,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.NotEqual(MOCK_PLAIN_STR, request.Identification!.IdName!);
                 Assert.NotEqual(MOCK_PLAIN_STR, request.Identification!.IdNumber!);
                 Assert.NotEqual(MOCK_PLAIN_STR, request.Identification!.IdAddress!);
+#pragma warning disable CS0618
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdName!);
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdNumber!);
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdAddress!);
+#pragma warning restore CS0618
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.ContactName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.IdNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.MobileNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identification!.IdName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identification!.IdNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identification!.IdAddress!));
+#pragma warning disable CS0618
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdAddress!));
+#pragma warning restore CS0618
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 

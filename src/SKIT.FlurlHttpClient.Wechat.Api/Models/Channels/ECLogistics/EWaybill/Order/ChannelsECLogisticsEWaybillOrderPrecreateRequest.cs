@@ -59,7 +59,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? MobileNumber { get; set; }
             }
 
-            public class Order
+            public abstract class __zz__Order
+            {
+                /// <summary>
+                /// 获取或设置订单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ec_order_id")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("ec_order_id")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
+                public string? OrderId { get; set; }
+
+                /// <summary>
+                /// 获取或设置代发的订单密文。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ewaybill_order_code")]
+                [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_code")]
+                public string? EWaybillOrderCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置代发的订单所属小店 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ewaybill_order_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_appid")]
+                public string? EWaybillOrderAppId { get; set; }
+            }
+
+            public class Order : __zz__Order
             {
                 public static class Types
                 {
@@ -96,34 +122,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置订单 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ec_order_id")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("ec_order_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
-                public string? OrderId { get; set; }
-
-                /// <summary>
                 /// 获取或设置商品列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_list")]
                 public List<Types.Goods>? GoodsList { get; set; }
-
-                /// <summary>
-                /// 获取或设置代发的订单密文。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ewaybill_order_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_code")]
-                public string? EWaybillOrderCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置代发的订单所属小店 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ewaybill_order_appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_appid")]
-                public string? EWaybillOrderAppId { get; set; }
             }
         }
 

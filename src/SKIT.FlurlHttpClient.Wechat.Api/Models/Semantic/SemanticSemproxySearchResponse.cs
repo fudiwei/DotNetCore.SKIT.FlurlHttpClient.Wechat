@@ -1,8 +1,12 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
+    using SKIT.FlurlHttpClient.Internal.CodeAnalysis;
+
     /// <summary>
     /// <para>表示 [POST] /semantic/semproxy/search 接口的响应。</para>
     /// </summary>
+    [DisallowAnalyzerRule("type-declaration/no-orphan-contract-nested-types")]
+    [DisallowAnalyzerRule("type-declaration/no-external-contract-nested-types")]
     public class SemanticSemproxySearchResponse : WechatApiResponse
     {
         public static class Types
@@ -1242,6 +1246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /semantic/semproxy/search 接口的响应。</para>
     /// </summary>
+    [DisallowAnalyzerRule("type-declaration/no-external-contract-nested-types")]
     public class SemanticSemproxySearchResponse<T> : SemanticSemproxySearchResponse
         where T : SemanticSemproxySearchResponse.Types.IDetail
     {

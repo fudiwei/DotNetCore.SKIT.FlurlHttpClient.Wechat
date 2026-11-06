@@ -7,7 +7,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Product
+            public abstract class __zz__Product
+            {
+                /// <summary>
+                /// 获取或设置商品 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("pid")]
+                [System.Text.Json.Serialization.JsonPropertyName("pid")]
+                public string? ProductId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("title")]
+                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                public string? Title { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品附标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
+                public string? SubTitle { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品品牌。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("brand")]
+                [System.Text.Json.Serialization.JsonPropertyName("brand")]
+                public string? Brand { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("desc")]
+                [System.Text.Json.Serialization.JsonPropertyName("desc")]
+                public string? Description { get; set; }
+            }
+
+            public class Product : __zz__Product
             {
                 public static class Types
                 {
@@ -219,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<SKUItem>? Items { get; set; }
                     }
 
-                    public class SKUItem
+                    public abstract class __zz__SKUItem
                     {
                         /// <summary>
                         /// 获取或设置 SKU ID。
@@ -250,18 +288,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int? Source { get; set; }
 
                         /// <summary>
-                        /// 获取或设置商品图片信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("image_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("image_info")]
-                        public ImageList? Image { get; set; }
-
-                        /// <summary>
                         /// 获取或设置关联的小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("link_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("link_url")]
                         public string? LinkMiniProgramPagePath { get; set; }
+                    }
+
+                    public class SKUItem : __zz__SKUItem
+                    {
+                        /// <summary>
+                        /// 获取或设置商品图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("image_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("image_info")]
+                        public ImageList? Image { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品价格信息。
@@ -292,13 +333,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public AttributeList? Attribute { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置商品 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("pid")]
-                [System.Text.Json.Serialization.JsonPropertyName("pid")]
-                public string? ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品图片信息。
@@ -336,39 +370,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.Link? Link { get; set; }
 
                 /// <summary>
-                /// 获取或设置商品标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("title")]
-                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品附标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sub_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
-                public string? SubTitle { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品品牌。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("brand")]
-                [System.Text.Json.Serialization.JsonPropertyName("brand")]
-                public string? Brand { get; set; }
-
-                /// <summary>
                 /// 获取或设置店铺信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shop_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("shop_info")]
                 public Types.Shop? Shop { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("desc")]
-                [System.Text.Json.Serialization.JsonPropertyName("desc")]
-                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置价格信息。

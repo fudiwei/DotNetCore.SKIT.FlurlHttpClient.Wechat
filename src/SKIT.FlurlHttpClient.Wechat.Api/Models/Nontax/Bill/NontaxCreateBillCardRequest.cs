@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Base
+                    public class BaseInfo
                     {
                         /// <summary>
                         /// 获取或设置商家 Logo URL。
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base? Base { get; set; }
+                public Types.BaseInfo? BaseInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置开票方全称。

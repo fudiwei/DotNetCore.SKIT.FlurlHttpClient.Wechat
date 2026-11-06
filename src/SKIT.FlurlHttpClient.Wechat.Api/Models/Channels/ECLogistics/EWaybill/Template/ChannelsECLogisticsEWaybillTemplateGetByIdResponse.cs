@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Template : ChannelsECLogisticsEWaybillTemplateGetResponse.Types.Template
+            public class Template : ChannelsECLogisticsEWaybillTemplateGetResponse.Types.__zz__Template
             {
+                public static class Types
+                {
+                    public class Option : ChannelsECLogisticsEWaybillTemplateCreateRequest.Types.Template.Types.Option
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置模板信息选项列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("options")]
+                [System.Text.Json.Serialization.JsonPropertyName("options")]
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 

@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/dbimport 接口的请求。</para>
     /// </summary>
-    public class ComponentTCBDbImportRequest : WechatApiRequest, IInferable<ComponentTCBDbImportRequest, ComponentTCBDbImportResponse>
+    public class ComponentTCBDbImportRequest : TCBDatabaseMigrateImportRequest, IInferable<ComponentTCBDbImportRequest, ComponentTCBDbImportResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。
@@ -11,47 +11,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? ComponentAccessToken { get; set; }
-
-        /// <summary>
-        /// 获取或设置环境 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("env")]
-        [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string? EnvironmentId { get; set; }
-
-        /// <summary>
-        /// 获取或设置集合名称。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("collection_name")]
-        [System.Text.Json.Serialization.JsonPropertyName("collection_name")]
-        public string? CollectionName { get; set; }
-
-        /// <summary>
-        /// 获取或设置导入文件路径。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("file_path")]
-        [System.Text.Json.Serialization.JsonPropertyName("file_path")]
-        public string? FilePath { get; set; }
-
-        /// <summary>
-        /// 获取或设置导入文件类型。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("file_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("file_type")]
-        public int FileType { get; set; }
-
-        /// <summary>
-        /// 获取或设置是否在遇到错误时停止导入。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("stop_on_error")]
-        [System.Text.Json.Serialization.JsonPropertyName("stop_on_error")]
-        public bool RequireStopOnError { get; set; }
-
-        /// <summary>
-        /// 获取或设置冲突处理模式。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("conflict_mode")]
-        [System.Text.Json.Serialization.JsonPropertyName("conflict_mode")]
-        public int ConflictMode { get; set; }
     }
 }

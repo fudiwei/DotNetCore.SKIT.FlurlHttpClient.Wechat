@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class WxaGetPluginOpenIdResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置插件用户唯一标识。
+        /// 获取或设置插件用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openpid")]
         [System.Text.Json.Serialization.JsonPropertyName("openpid")]

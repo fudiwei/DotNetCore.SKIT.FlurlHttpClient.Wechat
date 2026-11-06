@@ -7,167 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Comment
+            public abstract class __zz__Comment
             {
-                public static class Types
-                {
-                    public class OrderInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置商户单号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("busiOrderId")]
-                        [System.Text.Json.Serialization.JsonPropertyName("busiOrderId")]
-                        public string? BusinessOrderId { get; set; }
-                    }
-
-                    public class UserInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置用户的 OpenId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("openid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                        public string? OpenId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置用户的昵称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("nickName")]
-                        [System.Text.Json.Serialization.JsonPropertyName("nickName")]
-                        public string? Nickname { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置用户的头像 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("headImg")]
-                        [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-                        public string? HeadImageUrl { get; set; }
-                    }
-
-                    public class BusinessInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置小程序 AppId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("appid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                        public string? OpenId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序的昵称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("nickName")]
-                        [System.Text.Json.Serialization.JsonPropertyName("nickName")]
-                        public string? Nickname { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序的头像 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("headImg")]
-                        [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-                        public string? HeadImageUrl { get; set; }
-                    }
-
-                    public class ContentInfo
-                    {
-                        public static class Types
-                        {
-                            public class Media
-                            {
-                                /// <summary>
-                                /// 获取或设置图片 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("img")]
-                                [System.Text.Json.Serialization.JsonPropertyName("img")]
-                                public string? ImageUrl { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置缩略图 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("thumbImg")]
-                                [System.Text.Json.Serialization.JsonPropertyName("thumbImg")]
-                                public string? ImageThumbnailUrl { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置视频 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("video")]
-                                [System.Text.Json.Serialization.JsonPropertyName("video")]
-                                public string? VideoUrl { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置视频封面 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("videoCover")]
-                                [System.Text.Json.Serialization.JsonPropertyName("videoCover")]
-                                public string? VideoCoverUrl { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置视频时长（单位:秒)。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("videoDuration")]
-                                [System.Text.Json.Serialization.JsonPropertyName("videoDuration")]
-                                public int? VideoDuration { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置评价内容。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("txt")]
-                        [System.Text.Json.Serialization.JsonPropertyName("txt")]
-                        public string? Text { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置媒体文件列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("media")]
-                        [System.Text.Json.Serialization.JsonPropertyName("media")]
-                        public List<Types.Media>? MediaList { get; set; }
-                    }
-
-                    public class ExtraInfo
-                    {
-                        /// <summary>
-                        /// 获取或设置是否已发过差评客服会话。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("isAlreadySendTmpl")]
-                        [System.Text.Json.Serialization.JsonPropertyName("isAlreadySendTmpl")]
-                        public bool IsAlreadySendTemplate { get; set; }
-                    }
-
-                    public class ProductInfo
-                    {
-                        public static class Types
-                        {
-                            public class Product
-                            {
-                                /// <summary>
-                                /// 获取或设置商品名称。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("name")]
-                                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string? Name { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置商品图片 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("picUrl")]
-                                [System.Text.Json.Serialization.JsonPropertyName("picUrl")]
-                                public string? PictureUrl { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置商品列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("productList")]
-                        [System.Text.Json.Serialization.JsonPropertyName("productList")]
-                        public List<Types.Product>? ProductList { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置评价 ID。
                 /// </summary>
@@ -218,6 +59,171 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("score")]
                 [System.Text.Json.Serialization.JsonPropertyName("score")]
                 public int Score { get; set; }
+            }
+
+            public class Comment : __zz__Comment
+            {
+                public static class Types
+                {
+                    public class OrderInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置商户单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("busiOrderId")]
+                        [System.Text.Json.Serialization.JsonPropertyName("busiOrderId")]
+                        public string? BusinessOrderId { get; set; }
+                    }
+
+                    public class UserInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置用户 OpenId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("openid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+                        public string? OpenId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置用户昵称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("nickName")]
+                        [System.Text.Json.Serialization.JsonPropertyName("nickName")]
+                        public string? Nickname { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置用户头像 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("headImg")]
+                        [System.Text.Json.Serialization.JsonPropertyName("headImg")]
+                        public string? HeadImageUrl { get; set; }
+                    }
+
+                    public class BusinessInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置小程序 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string? OpenId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置小程序的昵称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("nickName")]
+                        [System.Text.Json.Serialization.JsonPropertyName("nickName")]
+                        public string? Nickname { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置小程序的头像 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("headImg")]
+                        [System.Text.Json.Serialization.JsonPropertyName("headImg")]
+                        public string? HeadImageUrl { get; set; }
+                    }
+
+                    public abstract class __zz__ContentInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置评价内容。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("txt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("txt")]
+                        public string? Text { get; set; }
+                    }
+
+                    public class ContentInfo : __zz__ContentInfo
+                    {
+                        public static class Types
+                        {
+                            public class Media
+                            {
+                                /// <summary>
+                                /// 获取或设置图片 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("img")]
+                                [System.Text.Json.Serialization.JsonPropertyName("img")]
+                                public string? ImageUrl { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置缩略图 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("thumbImg")]
+                                [System.Text.Json.Serialization.JsonPropertyName("thumbImg")]
+                                public string? ImageThumbnailUrl { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置视频 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("video")]
+                                [System.Text.Json.Serialization.JsonPropertyName("video")]
+                                public string? VideoUrl { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置视频封面 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("videoCover")]
+                                [System.Text.Json.Serialization.JsonPropertyName("videoCover")]
+                                public string? VideoCoverUrl { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置视频时长（单位:秒)。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("videoDuration")]
+                                [System.Text.Json.Serialization.JsonPropertyName("videoDuration")]
+                                public int? VideoDuration { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置媒体文件列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media")]
+                        public List<Types.Media>? MediaList { get; set; }
+                    }
+
+                    public class ExtraInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置是否已发过差评客服会话。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("isAlreadySendTmpl")]
+                        [System.Text.Json.Serialization.JsonPropertyName("isAlreadySendTmpl")]
+                        public bool IsAlreadySendTemplate { get; set; }
+                    }
+
+                    public class ProductInfo
+                    {
+                        public static class Types
+                        {
+                            public class Product
+                            {
+                                /// <summary>
+                                /// 获取或设置商品名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                public string? Name { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品图片 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("picUrl")]
+                                [System.Text.Json.Serialization.JsonPropertyName("picUrl")]
+                                public string? PictureUrl { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置商品列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("productList")]
+                        [System.Text.Json.Serialization.JsonPropertyName("productList")]
+                        public List<Types.Product>? ProductList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置评价商品信息。

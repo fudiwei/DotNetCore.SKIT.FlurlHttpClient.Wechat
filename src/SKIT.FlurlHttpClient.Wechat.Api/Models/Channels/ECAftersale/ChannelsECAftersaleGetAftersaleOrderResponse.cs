@@ -518,8 +518,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class Address : ChannelsECOrderGetResponse.Types.Order.Types.OrderDetail.Types.Delivery.Types.Address
+                            public class UserAddress : ChannelsECMerchantAddressGetResponse.Types.AddressDetail.Types.Address
                             {
+                                /// <summary>
+                                /// 获取或设置虚拟号码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("virtual_order_tel_number")]
+                                [System.Text.Json.Serialization.JsonPropertyName("virtual_order_tel_number")]
+                                public string? VirtualTelNumber { get; set; }
                             }
                         }
 
@@ -547,9 +553,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置地址信息。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("address_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                        public Types.Address? Address { get; set; }
+                        [Newtonsoft.Json.JsonProperty("user_address_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_address_info")]
+                        public Types.UserAddress? UserAddress { get; set; }
                     }
 
                     public class ExchangeInfo
@@ -640,20 +646,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class Picture
                             {
                                 /// <summary>
-                                /// 获取或设置临时访问 URL。
+                                /// 获取或设置图片临时 URL。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("ticket_url")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
                                 public string? TicketUrl { get; set; }
                             }
 
-                            public class Video : Picture
+                            public class Video
                             {
+                                /// <summary>
+                                /// 获取或设置视频临时 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ticket_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
+                                public string? TicketUrl { get; set; }
                             }
                         }
 
                         /// <summary>
-                        /// 获取或设置多媒体文件类型。
+                        /// 获取或设置媒体文件类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -674,7 +686,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.Video? Video { get; set; }
 
                         /// <summary>
-                        /// 获取或设置视频时长（单位：秒秒）。
+                        /// 获取或设置视频时长（单位：秒）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("video_play_length")]
                         [System.Text.Json.Serialization.JsonPropertyName("video_play_length")]

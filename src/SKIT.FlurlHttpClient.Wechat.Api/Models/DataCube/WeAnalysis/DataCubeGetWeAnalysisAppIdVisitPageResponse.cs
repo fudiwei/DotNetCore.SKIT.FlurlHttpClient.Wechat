@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ref_date")]
         [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-        public virtual string? RefDateString { get; set; }
+        public string? RefDateString { get; set; }
 
         /// <summary>
         /// 获取或设置用户访问分布数据列表。

@@ -7,7 +7,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Buyer
+            public abstract class __zz__Buyer
+            {
+                /// <summary>
+                /// 获取或设置小程序 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                public string? AppId { get; set; }
+
+                /// <summary>
+                /// 获取或设置服务 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("service_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("service_id")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
+                public string? ServiceId { get; set; }
+            }
+
+            public class Buyer : __zz__Buyer
             {
                 public static class Types
                 {
@@ -28,21 +46,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long ExpireTime { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string? AppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置服务 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("service_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
-                public string? ServiceId { get; set; }
 
                 /// <summary>
                 /// 获取或设置规格列表。

@@ -7,53 +7,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class AddressDetail
+            public class AddressDetail : ChannelsECMerchantAddressAddRequest.Types.__zz__AddressDetail
             {
                 public static class Types
                 {
-                    public class Address : ChannelsECMerchantGetFreightTemplateDetailResponse.Types.FreightTemplate.Types.Address
+                    public class Address : ChannelsECMerchantAddressAddRequest.Types.AddressDetail.Types.Address
                     {
-                        /// <summary>
-                        /// 获取或设置门牌号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("house_number")]
-                        [System.Text.Json.Serialization.JsonPropertyName("house_number")]
-                        public string? HouseNumber { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置经度。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("lng")]
-                        [System.Text.Json.Serialization.JsonPropertyName("lng")]
-                        public decimal? Longitude { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置纬度。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("lat")]
-                        [System.Text.Json.Serialization.JsonPropertyName("lat")]
-                        public decimal? Latitude { get; set; }
                     }
 
-                    public class AddressType
+                    public class AddressType : ChannelsECMerchantAddressAddRequest.Types.AddressDetail.Types.AddressType
                     {
-                        /// <summary>
-                        /// 获取或设置是否为同城配送地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("same_city")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("same_city")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                        public bool IsSupportSameCity { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否为线下自提地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pickup")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("pickup")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                        public bool IsSupportPickup { get; set; }
                     }
                 }
 
@@ -80,54 +43,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.AddressType? AddressType { get; set; }
 
                 /// <summary>
-                /// 获取或设置座机。
+                /// 获取或设置创建时间戳。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("landline")]
-                [System.Text.Json.Serialization.JsonPropertyName("landline")]
-                public string? Landline { get; set; }
-
-                /// <summary>
-                /// 获取或设置备注。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("remark")]
-                [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                public string? Remark { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为发货地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("send_addr")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("send_addr")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                public bool IsSendAddress { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为默认发货地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("default_send")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("default_send")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                public bool IsDefaultSendAddress { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为收货地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("recv_addr")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("recv_addr")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                public bool IsReceiveAddress { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为默认收货地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("default_recv")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("default_recv")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-                public bool IsDefaultReceiveAddress { get; set; }
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
@@ -135,13 +55,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("update_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                 public long UpdateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
             }
         }
 

@@ -156,18 +156,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public List<Types.Member>? MemberList { get; set; }
 
                 /// <summary>
-                /// 获取或设置最近更新时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("update_timestamp")]
-                [System.Text.Json.Serialization.JsonPropertyName("update_timestamp")]
-                public long UpdateTimestamp { get; set; }
-
-                /// <summary>
                 /// 获取或设置创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_timestamp")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_timestamp")]
                 public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置最近更新时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("update_timestamp")]
+                [System.Text.Json.Serialization.JsonPropertyName("update_timestamp")]
+                public long UpdateTimestamp { get; set; }
             }
         }
 

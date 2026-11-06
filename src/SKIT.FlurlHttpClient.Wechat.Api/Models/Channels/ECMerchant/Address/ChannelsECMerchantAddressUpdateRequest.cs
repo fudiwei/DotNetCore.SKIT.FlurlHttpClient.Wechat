@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class AddressDetail : ChannelsECMerchantAddressAddRequest.Types.AddressDetail
+            public class AddressDetail : ChannelsECMerchantAddressAddRequest.Types.__zz__AddressDetail
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Address : ChannelsECMerchantAddressAddRequest.Types.AddressDetail.Types.Address
                     {
@@ -32,14 +32,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                public new Types.Address? Address { get; set; }
+                public Types.Address? Address { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址类型信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_type")]
-                public new Types.AddressType? AddressType { get; set; }
+                public Types.AddressType? AddressType { get; set; }
             }
         }
 

@@ -45,7 +45,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? ImageUrl { get; set; }
             }
 
-            public class Code
+            public abstract class __zz__Code
+            {
+                /// <summary>
+                /// 获取或设置仓库地址。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("url")]
+                [System.Text.Json.Serialization.JsonPropertyName("url")]
+                public string? Url { get; set; }
+            }
+
+            public class Code : __zz__Code
             {
                 public static class Types
                 {
@@ -73,13 +83,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 public Types.Repository? Repository { get; set; }
-
-                /// <summary>
-                /// 获取或设置仓库地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("url")]
-                [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string? Url { get; set; }
             }
 
             public class ImageSecret
@@ -113,7 +116,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? Email { get; set; }
             }
 
-            public class VolumeMount
+            public abstract class __zz__VolumeMount
+            {
+                /// <summary>
+                /// 获取或设置资源名。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("name")]
+                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                public string? Name { get; set; }
+
+                /// <summary>
+                /// 获取或设置挂载路径。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mount_path")]
+                [System.Text.Json.Serialization.JsonPropertyName("mount_path")]
+                public string? MountPath { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否只读。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("read_only")]
+                [System.Text.Json.Serialization.JsonPropertyName("read_only")]
+                public bool? IsReadOnly { get; set; }
+            }
+
+            public class VolumeMount : __zz__VolumeMount
             {
                 public static class Types
                 {
@@ -155,27 +182,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public bool? EnableEmptyDirectoryVolume { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置资源名。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置挂载路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mount_path")]
-                [System.Text.Json.Serialization.JsonPropertyName("mount_path")]
-                public string? MountPath { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否只读。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("read_only")]
-                [System.Text.Json.Serialization.JsonPropertyName("read_only")]
-                public bool? IsReadOnly { get; set; }
 
                 /// <summary>
                 /// 获取或设置 NFS 挂载信息。

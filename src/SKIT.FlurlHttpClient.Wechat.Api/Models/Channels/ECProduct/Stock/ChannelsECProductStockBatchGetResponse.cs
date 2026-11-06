@@ -15,8 +15,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class SKUStock : ChannelsECProductStockGetResponse.Types.Data
+                            public class SKUStock : ChannelsECProductStockGetResponse.Types.__zz__Data
                             {
+                                public static class Types
+                                {
+                                    public class WarehouseStock : ChannelsECProductStockGetResponse.Types.Data.Types.WarehouseStock
+                                    {
+                                    }
+                                }
+
                                 /// <summary>
                                 /// 获取或设置 SKU ID。
                                 /// </summary>
@@ -24,6 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                                 public long SKUId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置区域库存列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("warehouse_stocks")]
+                                [System.Text.Json.Serialization.JsonPropertyName("warehouse_stocks")]
+                                public List<Types.WarehouseStock>? WarehouseStock { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置达人专属计划营销库存。

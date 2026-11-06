@@ -71,9 +71,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     }
                 }
 
-                public static class Convertes
+                public static class Converters
                 {
-                    internal class NewtonsoftJsonPOIConverter : Newtonsoft.Json.JsonConverter<Types.POI?>
+                    internal class ResponsePropertyPOINewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.POI?>
                     {
                         public override bool CanRead
                         {
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         }
                     }
 
-                    internal class SystemTextJsonPOIConverter : System.Text.Json.Serialization.JsonConverter<Types.POI?>
+                    internal class ResponsePropertyPOISystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.POI?>
                     {
                         public override Types.POI? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                         {
@@ -161,9 +161,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置附近地点信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]
-                [Newtonsoft.Json.JsonConverter(typeof(Convertes.NewtonsoftJsonPOIConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPOINewtonsoftJsonConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(Convertes.SystemTextJsonPOIConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPOISystemTextJsonConverter))]
                 public Types.POI? POI { get; set; }
             }
         }

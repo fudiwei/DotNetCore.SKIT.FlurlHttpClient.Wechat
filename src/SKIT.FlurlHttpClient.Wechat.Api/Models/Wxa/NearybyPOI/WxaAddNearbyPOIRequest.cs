@@ -108,13 +108,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? POIId { get; set; }
 
         /// <summary>
-        /// <i>（使用默认值即可，无需修改）</i>
+        /// 获取或设置是否是商业地点。
+        /// <para>默认值：true</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_comm_nearby")]
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_comm_nearby")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
-        public bool IsCommonNearby { get; set; } = true;
+        public bool IsCommercialNearby { get; set; } = true;
 
         /// <summary>
         /// 获取或设置腾讯地图的位置点 ID。

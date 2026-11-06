@@ -165,7 +165,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? RroductDescriptionRequirement { get; set; }
                     }
 
-                    public class SizeChart
+                    public abstract class __zz__SizeChart
+                    {
+                        /// <summary>
+                        /// 获取或设置是否支持。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_support")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_support")]
+                        public bool IsSupported { get; set; }
+                    }
+
+                    public class SizeChart : __zz__SizeChart
                     {
                         public static class Types
                         {
@@ -214,13 +224,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public bool IsRequired { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置是否支持。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_support")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_support")]
-                        public bool IsSupported { get; set; }
 
                         /// <summary>
                         /// 获取或设置尺码项列表。

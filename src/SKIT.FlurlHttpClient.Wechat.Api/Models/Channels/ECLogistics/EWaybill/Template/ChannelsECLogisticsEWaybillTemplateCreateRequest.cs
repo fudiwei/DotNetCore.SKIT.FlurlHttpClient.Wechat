@@ -7,7 +7,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Template
+            public abstract class __zz__Template
+            {
+                /// <summary>
+                /// 获取或设置模板类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("template_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("template_type")]
+                public string? Type { get; set; }
+
+                /// <summary>
+                /// 获取或设置模板名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("template_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("template_name")]
+                public string? Name { get; set; }
+
+                /// <summary>
+                /// 获取或设置模板描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("template_desc")]
+                [System.Text.Json.Serialization.JsonPropertyName("template_desc")]
+                public string? Description { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否为该快递公司默认模板。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_default")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_default")]
+                public bool IsDefault { get; set; }
+            }
+
+            public class Template : __zz__Template
             {
                 public static class Types
                 {
@@ -44,39 +75,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置模板类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_type")]
-                public string? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置模板名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置模板描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_desc")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_desc")]
-                public string? Description { get; set; }
-
-                /// <summary>
                 /// 获取或设置模板信息选项。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("options")]
                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public List<Types.Option>? Options { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为该快递公司默认模板。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("is_default")]
-                [System.Text.Json.Serialization.JsonPropertyName("is_default")]
-                public bool IsDefault { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 

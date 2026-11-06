@@ -11,21 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Base
+                    public abstract class __zz__BaseInfo
                     {
-                        public static class Types
-                        {
-                            public class Picture
-                            {
-                                /// <summary>
-                                /// 获取或设置图片 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("photo_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("photo_url")]
-                                public string? PictureUrl { get; set; }
-                            }
-                        }
-
                         /// <summary>
                         /// 获取或设置门店 ID。
                         /// </summary>
@@ -97,18 +84,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? BusinessHours { get; set; }
 
                         /// <summary>
-                        /// 获取或设置门店图片列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("photo_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("photo_list")]
-                        public List<Types.Picture>? PictureList { get; set; }
-
-                        /// <summary>
                         /// 获取或设置审核状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
                         public int Status { get; set; }
+                    }
+
+                    public class BaseInfo : __zz__BaseInfo
+                    {
+                        public static class Types
+                        {
+                            public class Picture
+                            {
+                                /// <summary>
+                                /// 获取或设置图片 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("photo_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("photo_url")]
+                                public string? PictureUrl { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置门店图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("photo_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("photo_list")]
+                        public List<Types.Picture>? PictureList { get; set; }
                     }
                 }
 
@@ -117,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_info")]
-                public Types.Base? Base { get; set; }
+                public Types.BaseInfo? BaseInfo { get; set; }
             }
         }
 

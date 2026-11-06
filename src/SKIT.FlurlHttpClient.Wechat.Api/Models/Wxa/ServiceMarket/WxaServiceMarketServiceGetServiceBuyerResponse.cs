@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Buyer : WxaServiceMarketServiceGetServiceBuyerListResponse.Types.Buyer
+            public class Buyer : WxaServiceMarketServiceGetServiceBuyerListResponse.Types.__zz__Buyer
             {
+                public static class Types
+                {
+                    public class Specification : WxaServiceMarketServiceGetServiceBuyerListResponse.Types.Buyer.Types.Specification
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置规格列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("spec_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("spec_list")]
+                public List<Types.Specification>? SpecificationList { get; set; }
             }
         }
 

@@ -7,7 +7,59 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class FreightTemplate
+            public abstract class __zz__FreightTemplate
+            {
+                /// <summary>
+                /// 获取或设置模板名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("name")]
+                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                public string? Name { get; set; }
+
+                /// <summary>
+                /// 获取或设置计费类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("valuation_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("valuation_type")]
+                public string? ValuationType { get; set; }
+
+                /// <summary>
+                /// 获取或设置发货时间类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("send_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("send_time")]
+                public string? SendTimeType { get; set; }
+
+                /// <summary>
+                /// 获取或设置快递方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("delivery_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("delivery_type")]
+                public string? DeliveryType { get; set; }
+
+                /// <summary>
+                /// 获取或设置快递公司 ID 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("delivery_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
+                public List<string>? DeliveryIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置配送方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("shipping_method")]
+                [System.Text.Json.Serialization.JsonPropertyName("shipping_method")]
+                public string? ShippingMethod { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否为默认模版。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_default")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_default")]
+                public bool? IsDefault { get; set; }
+            }
+
+            public class FreightTemplate : __zz__FreightTemplate
             {
                 public static class Types
                 {
@@ -74,15 +126,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<Address>? AddressList { get; set; }
                     }
 
-                    public class ConditionFreeDetailItem
+                    public abstract class __zz__ConditionFreeDetailItem
                     {
-                        /// <summary>
-                        /// 获取或设置包邮地址列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("address_infos")]
-                        [System.Text.Json.Serialization.JsonPropertyName("address_infos")]
-                        public List<Address>? AddressList { get; set; }
-
                         /// <summary>
                         /// 获取或设置包邮最低件数。
                         /// </summary>
@@ -123,6 +168,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public bool? HasSetAmount { get; set; }
                     }
 
+                    public class ConditionFreeDetailItem : __zz__ConditionFreeDetailItem
+                    {
+                        /// <summary>
+                        /// 获取或设置包邮地址列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("address_infos")]
+                        [System.Text.Json.Serialization.JsonPropertyName("address_infos")]
+                        public List<Address>? AddressList { get; set; }
+                    }
+
                     public class ConditionFreeDetailList
                     {
                         /// <summary>
@@ -133,15 +188,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<ConditionFreeDetailItem>? Items { get; set; }
                     }
 
-                    public class FreightCalculateMethodItem
+                    public abstract class __zz__FreightCalculateMethodItem
                     {
-                        /// <summary>
-                        /// 获取或设置指定地址列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("address_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                        public List<Address>? AddressList { get; set; }
-
                         /// <summary>
                         /// 获取或设置是否为默认运费。
                         /// </summary>
@@ -185,6 +233,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int SecondValuePrice { get; set; }
                     }
 
+                    public class FreightCalculateMethodItem : __zz__FreightCalculateMethodItem
+                    {
+                        /// <summary>
+                        /// 获取或设置指定地址列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("address_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("address_info")]
+                        public List<Address>? AddressList { get; set; }
+                    }
+
                     public class FreightCalculateMethodList
                     {
                         /// <summary>
@@ -195,48 +253,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<FreightCalculateMethodItem>? Items { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置模板名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置计费类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("valuation_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("valuation_type")]
-                public string? ValuationType { get; set; }
-
-                /// <summary>
-                /// 获取或设置发货时间类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("send_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("send_time")]
-                public string? SendTimeType { get; set; }
-
-                /// <summary>
-                /// 获取或设置快递方式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("delivery_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("delivery_type")]
-                public string? DeliveryType { get; set; }
-
-                /// <summary>
-                /// 获取或设置快递公司 ID 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("delivery_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
-                public List<string>? DeliveryIdList { get; set; }
-
-                /// <summary>
-                /// 获取或设置配送方式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("shipping_method")]
-                [System.Text.Json.Serialization.JsonPropertyName("shipping_method")]
-                public string? ShippingMethod { get; set; }
 
                 /// <summary>
                 /// 获取或设置发货地址信息。
@@ -251,13 +267,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("not_send_area")]
                 [System.Text.Json.Serialization.JsonPropertyName("not_send_area")]
                 public Types.Area? NotSupportedArea { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否为默认模版。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("is_default")]
-                [System.Text.Json.Serialization.JsonPropertyName("is_default")]
-                public bool? IsDefault { get; set; }
 
                 /// <summary>
                 /// 获取或设置条件包邮详情信息。

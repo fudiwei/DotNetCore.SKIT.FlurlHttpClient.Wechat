@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public Types.Data? Data { get; set; }
 
         /// <summary>
-        /// 获取或设置拉取列表的最后一个用户的 OpenId。
+        /// 获取或设置拉取列表的最后一个用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("next_openid")]

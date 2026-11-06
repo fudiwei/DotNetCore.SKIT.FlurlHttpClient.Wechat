@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class RedPacketCoverWxAppCoverUrlGetByTokenRequest : WechatApiRequest, IInferable<RedPacketCoverWxAppCoverUrlGetByTokenRequest, RedPacketCoverWxAppCoverUrlGetByTokenResponse>
     {
         /// <summary>
-        /// 获取或设置可领取用户的 OpenId。
+        /// 获取或设置可领取用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

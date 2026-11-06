@@ -290,8 +290,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Function : CgibinComponentApiQueryAuthResponse.Types.Authorization.Types.Function
+                    public class Function
                     {
+                        public static class Types
+                        {
+                            public class ScopeCategory : CgibinComponentApiQueryAuthResponse.Types.Authorization.Types.Function.Types.ScopeCategory
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置权限集信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("funcscope_category")]
+                        [System.Text.Json.Serialization.JsonPropertyName("funcscope_category")]
+                        public Types.ScopeCategory? ScopeCategory { get; set; }
                     }
                 }
 

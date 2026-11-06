@@ -90,114 +90,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
             public class ProductAttribute : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductAttribute
             {
-                public static class Types
-                {
-                    public class RequiredRule
-                    {
-                        public static class Types
-                        {
-                            public class OrCombinator
-                            {
-                                /// <summary>
-                                /// 获取或设置规则组合列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("and_combinators")]
-                                [System.Text.Json.Serialization.JsonPropertyName("and_combinators")]
-                                public List<Types.AndCombinator>? AndCombinatorList { get; set; }
-                            }
-
-                            public class AndCombinator
-                            {
-                                /// <summary>
-                                /// 获取或设置组合类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("combine_type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("combine_type")]
-                                public int CombineType { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置检查参数列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("text_conditions")]
-                                [System.Text.Json.Serialization.JsonPropertyName("text_conditions")]
-                                public List<Types.TextCondition>? TextConditionList { get; set; }
-                            }
-
-                            public class TextCondition
-                            {
-                                /// <summary>
-                                /// 获取或设置检查的字段。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("check_field")]
-                                [System.Text.Json.Serialization.JsonPropertyName("check_field")]
-                                public int CheckField { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置操作类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("oper_type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("oper_type")]
-                                public int OperateType { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置关键字列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("keywords")]
-                                [System.Text.Json.Serialization.JsonPropertyName("keywords")]
-                                public List<string>? Keywords { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置规则类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("rule_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("rule_type")]
-                        public int RuleType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置规则组合列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("or_combinators")]
-                        [System.Text.Json.Serialization.JsonPropertyName("or_combinators")]
-                        public List<Types.OrCombinator>? OrCombinatorList { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置填写规则。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("required_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("required_rule")]
-                public Types.RequiredRule? RequiredRule { get; set; }
+                public RequiredRule? RequiredRule { get; set; }
             }
 
             public class SaleAttribute : ProductAttribute
             {
-                public static new class Types
-                {
-                    public class RequiredRule : ProductAttribute.Types.RequiredRule
-                    {
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置填写规则。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("required_rule")]
-                [System.Text.Json.Serialization.JsonPropertyName("required_rule")]
-                public new Types.RequiredRule? RequiredRule { get; set; }
             }
 
             public class ProductQualification
             {
-                public static class Types
-                {
-                    public class RequiredRule : ProductAttribute.Types.RequiredRule
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置资质 ID。
                 /// </summary>
@@ -224,15 +130,99 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("required_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("required_rule")]
-                public Types.RequiredRule? RequiredRule { get; set; }
+                public RequiredRule? RequiredRule { get; set; }
+            }
+
+            public class RequiredRule
+            {
+                public static class Types
+                {
+                    public class OrCombinator
+                    {
+                        /// <summary>
+                        /// 获取或设置规则组合列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("and_combinators")]
+                        [System.Text.Json.Serialization.JsonPropertyName("and_combinators")]
+                        public List<Types.AndCombinator>? AndCombinatorList { get; set; }
+                    }
+
+                    public class AndCombinator
+                    {
+                        /// <summary>
+                        /// 获取或设置组合类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("combine_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("combine_type")]
+                        public int CombineType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置检查参数列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("text_conditions")]
+                        [System.Text.Json.Serialization.JsonPropertyName("text_conditions")]
+                        public List<Types.TextCondition>? TextConditionList { get; set; }
+                    }
+
+                    public class TextCondition
+                    {
+                        /// <summary>
+                        /// 获取或设置检查的字段。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("check_field")]
+                        [System.Text.Json.Serialization.JsonPropertyName("check_field")]
+                        public int CheckField { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置操作类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("oper_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("oper_type")]
+                        public int OperateType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置关键字列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("keywords")]
+                        [System.Text.Json.Serialization.JsonPropertyName("keywords")]
+                        public List<string>? Keywords { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置规则类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("rule_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("rule_type")]
+                public int RuleType { get; set; }
+
+                /// <summary>
+                /// 获取或设置规则组合列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("or_combinators")]
+                [System.Text.Json.Serialization.JsonPropertyName("or_combinators")]
+                public List<Types.OrCombinator>? OrCombinatorList { get; set; }
             }
 
             public class ProductRequirement : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductRequirement
             {
             }
 
-            public class SizeChart : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.SizeChart
+            public class SizeChart : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.__zz__SizeChart
             {
+                public static class Types
+                {
+                    public class Item : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.SizeChart.Types.Item
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置尺码项列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("item_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("item_list")]
+                public List<Types.Item>? ItemList { get; set; }
             }
 
             public class ExtraService

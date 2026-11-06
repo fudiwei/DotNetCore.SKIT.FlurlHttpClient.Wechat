@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Button
+            public abstract class __zz__Button
             {
                 /// <summary>
                 /// 获取或设置菜单的响应动作类型。
@@ -64,7 +64,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("pagepath")]
                 [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
                 public string? MiniProgramPagePath { get; set; }
+            }
 
+            public class Button : __zz__Button
+            {
                 /// <summary>
                 /// 获取或设置子菜单列表。
                 /// </summary>

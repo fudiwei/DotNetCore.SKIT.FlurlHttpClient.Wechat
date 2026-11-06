@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinUserInfoRequest : WechatApiRequest, IInferable<CgibinUserInfoRequest, CgibinUserInfoResponse>
     {
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         public string? OpenId { get; set; }
 

@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? Nickname { get; set; }
 
         /// <summary>
-        /// 获取或设置管理员用户的 OpenId。
+        /// 获取或设置管理员用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -11,8 +11,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Invoice : CardInvoiceReimburseGetInvoiceInfoResponse.Types.Invoice
+                    public class Invoice : CardInvoiceReimburseGetInvoiceInfoResponse.Types.__zz__Invoice
                     {
+                        public static class Types
+                        {
+                            public class InvoiceItem : CardInvoiceReimburseGetInvoiceInfoResponse.Types.Invoice.Types.InvoiceItem
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置发票行项目数据列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("info")]
+                        public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
                     }
                 }
 

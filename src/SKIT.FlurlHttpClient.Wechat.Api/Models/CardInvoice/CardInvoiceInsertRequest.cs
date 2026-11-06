@@ -15,41 +15,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class Invoice
+                            public abstract class __zz__Invoice
                             {
-                                public static class Types
-                                {
-                                    public class InvoiceItem
-                                    {
-                                        /// <summary>
-                                        /// 获取或设置项目名称。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("name")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public string? Name { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置计量单位。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("unit")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("unit")]
-                                        public string? Unit { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置项目数量。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("num")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("num")]
-                                        public int Count { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置项目单价（单位：分）。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("price")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("price")]
-                                        public int Price { get; set; }
-                                    }
-                                }
 
                                 /// <summary>
                                 /// 获取或设置发票抬头。
@@ -98,14 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("billing_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("billing_time")]
-                                public long DateTimestamp { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置发票行项目数据列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("info")]
-                                [System.Text.Json.Serialization.JsonPropertyName("info")]
-                                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
+                                public long BillingTimestamp { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置校验码。
@@ -113,20 +73,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("check_code")]
                                 [System.Text.Json.Serialization.JsonPropertyName("check_code")]
                                 public string? CheckCode { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置发票文件标识。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("s_pdf_media_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("s_pdf_media_id")]
-                                public string? PdfSpMediaId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置其它消费附件文件标识。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("s_trip_pdf_media_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("s_trip_pdf_media_id")]
-                                public string? TripSpMediaId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置购买方纳税人识别号。
@@ -190,6 +136,64 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("cashier")]
                                 [System.Text.Json.Serialization.JsonPropertyName("cashier")]
                                 public string? Cashier { get; set; }
+                            }
+
+                            public class Invoice : __zz__Invoice
+                            {
+                                public static class Types
+                                {
+                                    public class InvoiceItem
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置项目名称。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("name")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                        public string? Name { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置计量单位。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("unit")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("unit")]
+                                        public string? Unit { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置项目数量。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("num")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("num")]
+                                        public int Count { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置项目单价（单位：分）。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("price")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("price")]
+                                        public int Price { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置发票文件标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("s_pdf_media_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("s_pdf_media_id")]
+                                public string? PdfSpMediaId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置其它消费附件文件标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("s_trip_pdf_media_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("s_trip_pdf_media_id")]
+                                public string? TripSpMediaId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置发票行项目数据列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("info")]
+                                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
                             }
                         }
 

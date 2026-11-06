@@ -31,15 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? Status { get; set; }
 
                 /// <summary>
-                /// 获取或设置修改时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mod_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("mod_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset UpdateTime { get; set; }
-
-                /// <summary>
                 /// 获取或设置创建时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("add_time")]
@@ -47,6 +38,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("add_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
                 public DateTimeOffset CreateTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置修改时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mod_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("mod_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                public DateTimeOffset UpdateTime { get; set; }
             }
         }
 

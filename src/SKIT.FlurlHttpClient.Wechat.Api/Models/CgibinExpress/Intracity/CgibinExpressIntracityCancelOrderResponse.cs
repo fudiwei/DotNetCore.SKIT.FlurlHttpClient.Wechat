@@ -45,6 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("deductfee")]
         [System.Text.Json.Serialization.JsonPropertyName("deductfee")]
-        public int? DeductFee { get; set; }
+        public int DeductFee { get; set; }
     }
 }

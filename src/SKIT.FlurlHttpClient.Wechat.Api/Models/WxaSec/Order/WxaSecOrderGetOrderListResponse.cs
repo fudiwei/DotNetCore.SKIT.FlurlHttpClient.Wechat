@@ -7,117 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Order
+            public abstract class __zz__Order
             {
-                public static class Types
-                {
-                    public class Shipping
-                    {
-                        public static class Types
-                        {
-                            public class Shipping
-                            {
-                                public static class Types
-                                {
-                                    public class Contact
-                                    {
-                                        /// <summary>
-                                        /// 获取或设置寄件人联系方式。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("consignor_contact")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("consignor_contact")]
-                                        public string? ConsignorContact { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置收件人联系方式。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("receiver_contact")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("receiver_contact")]
-                                        public string? ReceiverContact { get; set; }
-                                    }
-                                }
-
-                                /// <summary>
-                                /// 获取或设置物流公司编码。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("express_company")]
-                                [System.Text.Json.Serialization.JsonPropertyName("express_company")]
-                                public string? ExpressCompany { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置物流单号。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("tracking_no")]
-                                [System.Text.Json.Serialization.JsonPropertyName("tracking_no")]
-                                public string? TrackingNumber { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置商品信息。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("goods_desc")]
-                                [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
-                                public string? ItemDescription { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置联系信息。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("contact")]
-                                [System.Text.Json.Serialization.JsonPropertyName("contact")]
-                                public Types.Contact? Contact { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置上传时间戳。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("upload_time")]
-                                [System.Text.Json.Serialization.JsonPropertyName("upload_time")]
-                                public long UploadTimestamp { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置物流形式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("logistics_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("logistics_type")]
-                        public int LogisticsType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置发货模式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("delivery_mode")]
-                        [System.Text.Json.Serialization.JsonPropertyName("delivery_mode")]
-                        public int DeliveryMode { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品描述。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_desc")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
-                        public string? ItemDescription { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置发货模式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finish_shipping")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finish_shipping")]
-                        public bool IsFinishAll { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置已完成全部发货的次数。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finish_shipping_count")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finish_shipping_count")]
-                        public int FinishCount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置物流信息列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("shipping_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("shipping_list")]
-                        public List<Types.Shipping>? ShippingList { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置支付下单商户的商户号。
                 /// </summary>
@@ -194,6 +85,124 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("in_complaint")]
                 [System.Text.Json.Serialization.JsonPropertyName("in_complaint")]
                 public bool IsInComplaint { get; set; }
+            }
+
+            public class Order : __zz__Order
+            {
+                public static class Types
+                {
+                    public abstract class __zz__Shipping
+                    {
+                        /// <summary>
+                        /// 获取或设置物流形式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("logistics_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("logistics_type")]
+                        public int LogisticsType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置发货模式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("delivery_mode")]
+                        [System.Text.Json.Serialization.JsonPropertyName("delivery_mode")]
+                        public int DeliveryMode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_desc")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
+                        public string? ItemDescription { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置发货模式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finish_shipping")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finish_shipping")]
+                        public bool IsFinishAll { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置已完成全部发货的次数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finish_shipping_count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finish_shipping_count")]
+                        public int FinishCount { get; set; }
+                    }
+
+                    public class Shipping : __zz__Shipping
+                    {
+                        public static class Types
+                        {
+                            public abstract class __zz__Shipping
+                            {
+                                /// <summary>
+                                /// 获取或设置物流公司编码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("express_company")]
+                                [System.Text.Json.Serialization.JsonPropertyName("express_company")]
+                                public string? ExpressCompany { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置物流单号。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("tracking_no")]
+                                [System.Text.Json.Serialization.JsonPropertyName("tracking_no")]
+                                public string? TrackingNumber { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("goods_desc")]
+                                [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
+                                public string? ItemDescription { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置上传时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("upload_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("upload_time")]
+                                public long UploadTimestamp { get; set; }
+                            }
+
+                            public class Shipping : __zz__Shipping
+                            {
+                                public static class Types
+                                {
+                                    public class Contact
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置寄件人联系方式。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("consignor_contact")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("consignor_contact")]
+                                        public string? ConsignorContact { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置收件人联系方式。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("receiver_contact")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("receiver_contact")]
+                                        public string? ReceiverContact { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置联系信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("contact")]
+                                [System.Text.Json.Serialization.JsonPropertyName("contact")]
+                                public Types.Contact? Contact { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置物流信息列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("shipping_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shipping_list")]
+                        public List<Types.Shipping>? ShippingList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置发货信息。

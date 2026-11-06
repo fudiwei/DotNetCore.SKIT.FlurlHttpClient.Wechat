@@ -7,35 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class File
+            public class File : TCBBatchDownloadFileResponse.Types.File
             {
-                /// <summary>
-                /// 获取或设置文件 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fileid")]
-                [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                public string? FileId { get; set; }
-
-                /// <summary>
-                /// 获取或设置下载链接。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("download_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("download_url")]
-                public string? DownloadUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置错误码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("status")]
-                [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public int ErrorCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置错误描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("errmsg")]
-                [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-                public string? ErrorMessage { get; set; }
             }
         }
 

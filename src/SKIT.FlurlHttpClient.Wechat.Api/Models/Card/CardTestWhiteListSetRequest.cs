@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CardTestWhiteListSetRequest : WechatApiRequest, IInferable<CardTestWhiteListSetRequest, CardTestWhiteListSetResponse>
     {
         /// <summary>
-        /// 获取或设置测试用户的 OpenId 列表。
+        /// 获取或设置测试用户 OpenId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -7,7 +7,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Data
+            public abstract class __zz__Data
+            {
+                /// <summary>
+                /// 获取或设置通用库存数量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("normal_stock_num")]
+                [System.Text.Json.Serialization.JsonPropertyName("normal_stock_num")]
+                public int NormalStock { get; set; }
+
+                /// <summary>
+                /// 获取或设置限时抢购库存数量。
+                /// </summary>
+                [Obsolete("相关接口或字段于 2026-04-08 下线。")]
+                [Newtonsoft.Json.JsonProperty("limited_discount_stock_num")]
+                [System.Text.Json.Serialization.JsonPropertyName("limited_discount_stock_num")]
+                public int LimitedDiscountStock { get; set; }
+
+                /// <summary>
+                /// 获取或设置库存总量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("total_stock_num")]
+                [System.Text.Json.Serialization.JsonPropertyName("total_stock_num")]
+                public int TotalStock { get; set; }
+            }
+
+            public class Data : __zz__Data
             {
                 public static class Types
                 {
@@ -37,33 +62,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置通用库存数量。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("normal_stock_num")]
-                [System.Text.Json.Serialization.JsonPropertyName("normal_stock_num")]
-                public int NormalStock { get; set; }
-
-                /// <summary>
-                /// 获取或设置限时抢购库存数量。
-                /// </summary>
-                [Obsolete("相关接口或字段于 2026-04-08 下线。")]
-                [Newtonsoft.Json.JsonProperty("limited_discount_stock_num")]
-                [System.Text.Json.Serialization.JsonPropertyName("limited_discount_stock_num")]
-                public int LimitedDiscountStock { get; set; }
-
-                /// <summary>
                 /// 获取或设置区域库存列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("warehouse_stocks")]
                 [System.Text.Json.Serialization.JsonPropertyName("warehouse_stocks")]
                 public List<Types.WarehouseStock>? WarehouseStock { get; set; }
-
-                /// <summary>
-                /// 获取或设置库存总量。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("total_stock_num")]
-                [System.Text.Json.Serialization.JsonPropertyName("total_stock_num")]
-                public int TotalStock { get; set; }
             }
         }
 

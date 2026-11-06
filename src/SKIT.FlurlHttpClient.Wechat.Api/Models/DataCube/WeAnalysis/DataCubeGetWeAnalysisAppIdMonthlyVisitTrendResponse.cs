@@ -14,7 +14,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ref_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("ref_date")]
-                public override string? RefDateString { get; set; }
+                public new string? RefDateString
+                {
+                    get { return base.RefDateString; }
+                    set { base.RefDateString = value; }
+                }
             }
         }
 

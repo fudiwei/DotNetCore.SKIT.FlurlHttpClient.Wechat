@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class GrayRelease
+            public class GrayReleasePlan
             {
                 /// <summary>
                 /// 获取或设置发布状态。
@@ -51,6 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("gray_release_plan")]
         [System.Text.Json.Serialization.JsonPropertyName("gray_release_plan")]
-        public Types.GrayRelease? GrayRelease { get; set; }
+        public Types.GrayReleasePlan? GrayReleasePlan { get; set; }
     }
 }

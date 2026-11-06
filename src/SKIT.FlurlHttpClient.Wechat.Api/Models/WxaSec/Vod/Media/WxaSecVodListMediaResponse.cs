@@ -7,49 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class MediaInfo
+            public abstract class __zz__MediaInfo
             {
-                public static class Types
-                {
-                    public class AuditDetail
-                    {
-                        /// <summary>
-                        /// 获取或设置状态。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("status")]
-                        [System.Text.Json.Serialization.JsonPropertyName("status")]
-                        public int Status { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置提审时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("create_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                        public long CreateTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置审核时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("audit_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("audit_time")]
-                        public long? AuditTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置审核备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("reason")]
-                        [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                        public string? Reason { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置审核证据截图 MediaId 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("evidence_material_id_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("evidence_material_id_list")]
-                        public List<string>? EvidenceMaterialMediaIdList { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置所属剧目 ID。
                 /// </summary>
@@ -136,6 +95,50 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("hls_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("hls_url")]
                 public string? VideoHlsUrl { get; set; }
+            }
+
+            public class MediaInfo : __zz__MediaInfo
+            {
+                public static class Types
+                {
+                    public class AuditDetail
+                    {
+                        /// <summary>
+                        /// 获取或设置状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("status")]
+                        public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置提审时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("create_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                        public long CreateTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置审核时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("audit_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("audit_time")]
+                        public long? AuditTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置审核备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reason")]
+                        public string? Reason { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置审核证据截图 MediaId 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("evidence_material_id_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("evidence_material_id_list")]
+                        public List<string>? EvidenceMaterialMediaIdList { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置审核详细信息。

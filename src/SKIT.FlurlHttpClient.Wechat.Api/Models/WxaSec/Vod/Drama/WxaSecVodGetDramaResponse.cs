@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class DramaInfo : WxaSecVodListDramasResponse.Types.DramaInfo
+            public class DramaInfo : WxaSecVodListDramasResponse.Types.__zz__DramaInfo
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Media : WxaSecVodListDramasResponse.Types.DramaInfo.Types.Media
                     {
@@ -19,14 +19,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                     }
 
-                    public class ActorList : WxaSecVodListDramasResponse.Types.DramaInfo.Types.ActorList
+                    public class ActorList
                     {
                         /// <summary>
                         /// 获取或设置演员列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("actor")]
                         [System.Text.Json.Serialization.JsonPropertyName("actor")]
-                        public new List<ActorItem>? Items { get; set; }
+                        public List<ActorItem>? Items { get; set; }
                     }
 
                     public class ActorItem : WxaSecVodListDramasResponse.Types.DramaInfo.Types.ActorItem
@@ -39,21 +39,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-                public new List<Types.Media>? MediaList { get; set; }
+                public List<Types.Media>? MediaList { get; set; }
 
                 /// <summary>
                 /// 获取或设置演员列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("actor_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("actor_list")]
-                public new Types.ActorList? ActorList { get; set; }
+                public Types.ActorList? ActorList { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核详细信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
-                public new Types.AuditDetail? AuditDetail { get; set; }
+                public Types.AuditDetail? AuditDetail { get; set; }
             }
         }
 

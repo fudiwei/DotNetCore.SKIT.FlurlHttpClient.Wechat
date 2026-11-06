@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class WxaBusinessInsuranceFreightGetOrderListRequest : WechatApiRequest, IInferable<WxaBusinessInsuranceFreightGetOrderListRequest, WxaBusinessInsuranceFreightGetOrderListResponse>
     {
         /// <summary>
-        /// 获取或设置买家用户的 OpenId。
+        /// 获取或设置买家用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

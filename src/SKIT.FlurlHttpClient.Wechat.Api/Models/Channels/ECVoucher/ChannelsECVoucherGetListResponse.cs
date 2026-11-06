@@ -131,21 +131,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long? RefundTimestamp { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户的 OpenId。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 public string? OpenId { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户的 UnionId。
+                /// 获取或设置用户 UnionId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("union_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("union_id")]
                 public string? UnionId { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户的手机号码。
+                /// 获取或设置用户手机号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("telphone_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("telphone_no")]
@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -11,28 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Detail
+                    public class Detail : CgibinExpressDeliveryOpenMessageFollowWaybillRequest.Types.Goods.Types.Detail
                     {
-                        /// <summary>
-                        /// 获取或设置商品名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                        public string? GoodsName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品图片 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_img_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_img_url")]
-                        public string? GoodsImageUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品详情描述。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_desc")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
-                        public string? GoodsDescription { get; set; }
                     }
                 }
 

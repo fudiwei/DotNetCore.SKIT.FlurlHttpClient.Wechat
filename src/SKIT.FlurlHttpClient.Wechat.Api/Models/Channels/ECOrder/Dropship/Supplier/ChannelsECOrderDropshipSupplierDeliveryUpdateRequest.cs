@@ -11,8 +11,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Delivery : ChannelsECOrderDropshipSupplierDeliverySendRequest.Types.Delivery
+                    public class Delivery : ChannelsECOrderDropshipSupplierDeliverySendRequest.Types.__zz__Delivery
                     {
+                        public static class Types
+                        {
+                            public class Product : ChannelsECOrderDeliverySendRequest.Types.Delivery.Types.Product
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置商品列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_infos")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_infos")]
+                        public List<Types.Product>? ProductList { get; set; }
                     }
                 }
 

@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                     }
 
-                    public class Shipping : WxaSecOrderUploadShippingInfoRequest.Types.Shipping
+                    public class Shipping : WxaSecOrderUploadShippingInfoRequest.Types.__zz__Shipping
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class Contact : WxaSecOrderUploadShippingInfoRequest.Types.Shipping.Types.Contact
                             {
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact")]
-                        public new Types.Contact? Contact { get; set; }
+                        public Types.Contact? Contact { get; set; }
                     }
                 }
 

@@ -7,7 +7,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Discount
+            public abstract class __zz__Discount
+            {
+                /// <summary>
+                /// 获取或设置满减金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_fee")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_fee")]
+                public int? DiscountFee { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣数值（范围：1000～10000）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_num")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_num")]
+                public int? DiscountNumber { get; set; }
+            }
+
+            public class Discount : __zz__Discount
             {
                 public static class Types
                 {
@@ -42,20 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("discount_condition")]
                 [System.Text.Json.Serialization.JsonPropertyName("discount_condition")]
                 public Types.DiscountCondidtion? DiscountCondidtion { get; set; }
-
-                /// <summary>
-                /// 获取或设置满减金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("discount_fee")]
-                [System.Text.Json.Serialization.JsonPropertyName("discount_fee")]
-                public int? DiscountFee { get; set; }
-
-                /// <summary>
-                /// 获取或设置折扣数值（范围：1000～10000）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("discount_num")]
-                [System.Text.Json.Serialization.JsonPropertyName("discount_num")]
-                public int? DiscountNumber { get; set; }
             }
 
             public class Extra

@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class CommonField
+                    public class CustomField
                     {
                         /// <summary>
                         /// 获取或设置会员信息类目名称。
@@ -27,10 +27,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
                         public string? Value { get; set; }
                     }
-
-                    public class CustomField : CommonField
-                    {
-                    }
                 }
 
                 /// <summary>
@@ -38,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public List<Types.CommonField>? CommonFieldList { get; set; }
+                public List<Types.CustomField>? CommonFieldList { get; set; }
 
                 /// <summary>
                 /// 获取或设置自定义会员信息类目列表。

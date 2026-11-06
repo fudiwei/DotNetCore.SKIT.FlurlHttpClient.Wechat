@@ -70,7 +70,73 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class Cargo
+            public abstract class __zz__Cargo
+            {
+                /// <summary>
+                /// 获取或设置货物价格（单位：元）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_value")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_value")]
+                public decimal GoodsVaue { get; set; }
+
+                /// <summary>
+                /// 获取或设置货物高度（单位：厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_height")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_height")]
+                public decimal? GoodsHeight { get; set; }
+
+                /// <summary>
+                /// 获取或设置货物长度（单位：厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_length")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_length")]
+                public decimal? GoodsLength { get; set; }
+
+                /// <summary>
+                /// 获取或设置货物宽度（单位：厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_width")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_width")]
+                public decimal? GoodsWidth { get; set; }
+
+                /// <summary>
+                /// 获取或设置货物重量（单位：千克）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_weight")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_weight")]
+                public decimal? GoodsWeight { get; set; }
+
+                /// <summary>
+                /// 获取或设置货物取货信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_pickup_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_pickup_info")]
+                public string? GoodsPickupInformation { get; set; }
+
+                /// <summary>
+                /// 获取或设置货物交付信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_delivery_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_delivery_info")]
+                public string? GoodsDeliveryInformation { get; set; }
+
+                /// <summary>
+                /// 获取或设置品类一级类目。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cargo_first_class")]
+                [System.Text.Json.Serialization.JsonPropertyName("cargo_first_class")]
+                public string? CargoFirstClass { get; set; }
+
+                /// <summary>
+                /// 获取或设置品类二级类目。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cargo_second_class")]
+                [System.Text.Json.Serialization.JsonPropertyName("cargo_second_class")]
+                public string? CargoSecondClass { get; set; }
+            }
+
+            public class Cargo : __zz__Cargo
             {
                 public static class Types
                 {
@@ -120,74 +186,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置货物价格（单位：元）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_value")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_value")]
-                public decimal GoodsVaue { get; set; }
-
-                /// <summary>
-                /// 获取或设置货物高度（单位：厘米）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_height")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_height")]
-                public decimal? GoodsHeight { get; set; }
-
-                /// <summary>
-                /// 获取或设置货物长度（单位：厘米）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_length")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_length")]
-                public decimal? GoodsLength { get; set; }
-
-                /// <summary>
-                /// 获取或设置货物宽度（单位：厘米）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_width")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_width")]
-                public decimal? GoodsWidth { get; set; }
-
-                /// <summary>
-                /// 获取或设置货物重量（单位：千克）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_weight")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_weight")]
-                public decimal? GoodsWeight { get; set; }
-
-                /// <summary>
                 /// 获取或设置货物详情信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
                 public Types.GoodsDetail? GoodsDetail { get; set; }
-
-                /// <summary>
-                /// 获取或设置货物取货信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_pickup_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_pickup_info")]
-                public string? GoodsPickupInformation { get; set; }
-
-                /// <summary>
-                /// 获取或设置货物交付信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_delivery_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_delivery_info")]
-                public string? GoodsDeliveryInformation { get; set; }
-
-                /// <summary>
-                /// 获取或设置品类一级类目。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("cargo_first_class")]
-                [System.Text.Json.Serialization.JsonPropertyName("cargo_first_class")]
-                public string? CargoFirstClass { get; set; }
-
-                /// <summary>
-                /// 获取或设置品类二级类目。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("cargo_second_class")]
-                [System.Text.Json.Serialization.JsonPropertyName("cargo_second_class")]
-                public string? CargoSecondClass { get; set; }
             }
 
             public class Order
@@ -374,7 +377,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? DeliveryId { get; set; }
 
         /// <summary>
-        /// 获取或设置下单用户的 OpenId。
+        /// 获取或设置下单用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

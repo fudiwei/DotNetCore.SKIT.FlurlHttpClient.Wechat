@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wx_token")]
         [System.Text.Json.Serialization.JsonPropertyName("wx_token")]
-        public string? Token { get; set; }
+        public string? WxToken { get; set; }
 
         /// <summary>
         /// 获取或设置商家 ID。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.ImmeDeliveryAppSecret"/> 参数。

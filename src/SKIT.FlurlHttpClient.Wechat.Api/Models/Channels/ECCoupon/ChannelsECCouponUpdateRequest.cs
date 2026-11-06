@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Discount : ChannelsECCouponCreateRequest.Types.Discount
+            public class Discount : ChannelsECCouponCreateRequest.Types.__zz__Discount
             {
-                public static new class Types
+                public static class Types
                 {
                     public class DiscountCondidtion : ChannelsECCouponCreateRequest.Types.Discount.Types.DiscountCondidtion
                     {
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("discount_condition")]
                 [System.Text.Json.Serialization.JsonPropertyName("discount_condition")]
-                public new Types.DiscountCondidtion? DiscountCondidtion { get; set; }
+                public Types.DiscountCondidtion? DiscountCondidtion { get; set; }
             }
 
             public class Extra : ChannelsECCouponCreateRequest.Types.Extra

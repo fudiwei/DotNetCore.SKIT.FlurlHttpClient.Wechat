@@ -7,78 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Invoice
+            public abstract class __zz__Invoice : CardInvoiceInsertRequest.Types.CardExtra.Types.InvoiceCard.Types.__zz__Invoice
             {
-                public static class Types
-                {
-                    public class InvoiceItem : CardInvoiceInsertRequest.Types.CardExtra.Types.InvoiceCard.Types.Invoice.Types.InvoiceItem
-                    {
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置发票抬头。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("title")]
-                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置不含税金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fee_without_tax")]
-                [System.Text.Json.Serialization.JsonPropertyName("fee_without_tax")]
-                public int FeeWithoutTax { get; set; }
-
-                /// <summary>
-                /// 获取或设置发票金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fee")]
-                [System.Text.Json.Serialization.JsonPropertyName("fee")]
-                public int Fee { get; set; }
-
-                /// <summary>
-                /// 获取或设置税额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("tax")]
-                [System.Text.Json.Serialization.JsonPropertyName("tax")]
-                public int Tax { get; set; }
-
-                /// <summary>
-                /// 获取或设置发票代码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("billing_no")]
-                [System.Text.Json.Serialization.JsonPropertyName("billing_no")]
-                public string? InvoiceCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置发票号码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("billing_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("billing_code")]
-                public string? InvoiceNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置开票时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("billing_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("billing_time")]
-                public long InvoiceTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置发票行项目数据列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("info")]
-                [System.Text.Json.Serialization.JsonPropertyName("info")]
-                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
-
-                /// <summary>
-                /// 获取或设置校验码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("check_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("check_code")]
-                public string? CheckCode { get; set; }
-
                 /// <summary>
                 /// 获取或设置发票报销状态。
                 /// </summary>
@@ -106,69 +36,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
                 public string? OrderId { get; set; }
+            }
+
+            public class Invoice : __zz__Invoice
+            {
+                public static class Types
+                {
+                    public class InvoiceItem : CardInvoiceInsertRequest.Types.CardExtra.Types.InvoiceCard.Types.Invoice.Types.InvoiceItem
+                    {
+                    }
+                }
 
                 /// <summary>
-                /// 获取或设置购买方纳税人识别号。
+                /// 获取或设置发票行项目数据列表。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("buyer_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("buyer_number")]
-                public string? BuyerTaxNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置购买方地址、电话。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("buyer_address_and_phone")]
-                [System.Text.Json.Serialization.JsonPropertyName("buyer_address_and_phone")]
-                public string? BuyerAddressAndPhoneNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置购买方开户行、银行账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("buyer_bank_account")]
-                [System.Text.Json.Serialization.JsonPropertyName("buyer_bank_account")]
-                public string? BuyerBankAccount { get; set; }
-
-                /// <summary>
-                /// 获取或设置销售方纳税人识别号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("seller_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("seller_number")]
-                public string? SellerTaxNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置销售方纳税人地址、电话。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("seller_address_and_phone")]
-                [System.Text.Json.Serialization.JsonPropertyName("seller_address_and_phone")]
-                public string? SellerAddressAndPhoneNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置销售方开户行、银行账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("seller_bank_account")]
-                [System.Text.Json.Serialization.JsonPropertyName("seller_bank_account")]
-                public string? SellerBankAccount { get; set; }
-
-                /// <summary>
-                /// 获取或设置备注。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("remarks")]
-                [System.Text.Json.Serialization.JsonPropertyName("remarks")]
-                public string? Remark { get; set; }
-
-                /// <summary>
-                /// 获取或设置开票人。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("maker")]
-                [System.Text.Json.Serialization.JsonPropertyName("maker")]
-                public string? Drawer { get; set; }
-
-                /// <summary>
-                /// 获取或设置收款人。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("cashier")]
-                [System.Text.Json.Serialization.JsonPropertyName("cashier")]
-                public string? Cashier { get; set; }
+                [Newtonsoft.Json.JsonProperty("info")]
+                [System.Text.Json.Serialization.JsonPropertyName("info")]
+                public List<Types.InvoiceItem>? InvoiceItemList { get; set; }
             }
         }
 

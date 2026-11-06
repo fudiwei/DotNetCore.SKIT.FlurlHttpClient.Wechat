@@ -7,21 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class File
+            public class File : TCBBatchDownloadFileRequest.Types.File
             {
-                /// <summary>
-                /// 获取或设置文件 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fileid")]
-                [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-                public string? FileId { get; set; }
-
-                /// <summary>
-                /// 获取或设置下载链接有效期（单位：秒）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("max_age")]
-                [System.Text.Json.Serialization.JsonPropertyName("max_age")]
-                public int MaxAge { get; set; }
             }
         }
 

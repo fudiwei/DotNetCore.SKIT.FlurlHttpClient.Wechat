@@ -15,28 +15,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class Shipping
+            public abstract class __zz__Shipping
             {
-                public static class Types
-                {
-                    public class Contact
-                    {
-                        /// <summary>
-                        /// 获取或设置寄件人联系方式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("consignor_contact")]
-                        [System.Text.Json.Serialization.JsonPropertyName("consignor_contact")]
-                        public string? ConsignorContact { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置收件人联系方式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("receiver_contact")]
-                        [System.Text.Json.Serialization.JsonPropertyName("receiver_contact")]
-                        public string? ReceiverContact { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置物流公司编码。
                 /// </summary>
@@ -57,6 +37,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("item_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("item_desc")]
                 public string? ItemDescription { get; set; }
+            }
+
+            public class Shipping : __zz__Shipping
+            {
+                public static class Types
+                {
+                    public class Contact
+                    {
+                        /// <summary>
+                        /// 获取或设置寄件人联系方式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("consignor_contact")]
+                        [System.Text.Json.Serialization.JsonPropertyName("consignor_contact")]
+                        public string? ConsignorContact { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置收件人联系方式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("receiver_contact")]
+                        [System.Text.Json.Serialization.JsonPropertyName("receiver_contact")]
+                        public string? ReceiverContact { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置联系信息。

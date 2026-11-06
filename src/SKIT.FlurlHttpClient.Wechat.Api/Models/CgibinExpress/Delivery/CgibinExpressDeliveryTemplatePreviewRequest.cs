@@ -32,16 +32,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                     }
 
-                    public class Receiver : CgibinExpressBusinessOrderAddRequest.Types.Receiver
+                    public class Receiver : Sender
                     {
                     }
 
-                    public class Cargo : CgibinExpressBusinessOrderAddRequest.Types.Cargo
+                    public class Cargo : CgibinExpressBusinessOrderAddRequest.Types.__zz__Cargo
                     {
+                        public static class Types
+                        {
+                            public class GoodsDetail : CgibinExpressBusinessOrderAddRequest.Types.Cargo.Types.GoodsDetail
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置商品详情列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("detail_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("detail_list")]
+                        public List<Types.GoodsDetail>? GoodsDetailList { get; set; }
                     }
 
-                    public class Shop : CgibinExpressBusinessOrderAddRequest.Types.Shop
+                    public class Shop : CgibinExpressBusinessOrderAddRequest.Types.__zz__Shop
                     {
+                        public static class Types
+                        {
+                            public class GoodsDetail : CgibinExpressBusinessOrderAddRequest.Types.Shop.Types.GoodsDetail
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置商品详情列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("detail_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("detail_list")]
+                        public List<Types.GoodsDetail>? GoodsDetailList { get; set; }
                     }
 
                     public class Insurance : CgibinExpressBusinessOrderAddRequest.Types.Insurance

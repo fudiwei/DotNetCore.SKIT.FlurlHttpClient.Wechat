@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class MediaInfo : WxaSecVodListMediaResponse.Types.MediaInfo
+            public class MediaInfo : WxaSecVodListMediaResponse.Types.__zz__MediaInfo
             {
-                public static new class Types
+                public static class Types
                 {
                     public class AuditDetail : WxaSecVodListMediaResponse.Types.MediaInfo.Types.AuditDetail
                     {
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
-                public new Types.AuditDetail? AuditDetail { get; set; }
+                public Types.AuditDetail? AuditDetail { get; set; }
             }
         }
 

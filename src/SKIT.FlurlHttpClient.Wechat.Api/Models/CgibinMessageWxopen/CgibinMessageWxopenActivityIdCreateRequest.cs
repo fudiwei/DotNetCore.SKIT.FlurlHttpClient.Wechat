@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinMessageWxopenActivityIdCreateRequest : WechatApiRequest, IInferable<CgibinMessageWxopenActivityIdCreateRequest, CgibinMessageWxopenActivityIdCreateResponse>
     {
         /// <summary>
-        /// 获取或设置分享者用户唯一标识。
+        /// 获取或设置分享者用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置分享者用户统一标识。
+        /// 获取或设置分享者用户 UnionId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]

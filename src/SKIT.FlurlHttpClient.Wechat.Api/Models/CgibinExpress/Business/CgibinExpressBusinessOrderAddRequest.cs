@@ -84,28 +84,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class Cargo
+            public abstract class __zz__Cargo
             {
-                public static class Types
-                {
-                    public class GoodsDetail
-                    {
-                        /// <summary>
-                        /// 获取或设置商品名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("count")]
-                        [System.Text.Json.Serialization.JsonPropertyName("count")]
-                        public int Count { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置包裹数量。
                 /// </summary>
@@ -140,6 +120,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("weight")]
                 [System.Text.Json.Serialization.JsonPropertyName("weight")]
                 public decimal? Weight { get; set; }
+            }
+
+            public class Cargo : __zz__Cargo
+            {
+                public static class Types
+                {
+                    public class GoodsDetail
+                    {
+                        /// <summary>
+                        /// 获取或设置商品名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("count")]
+                        public int Count { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置商品详情列表。
@@ -149,35 +152,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public List<Types.GoodsDetail>? GoodsDetailList { get; set; }
             }
 
-            public class Shop
+            public abstract class __zz__Shop
             {
-                public static class Types
-                {
-                    public class GoodsDetail
-                    {
-                        /// <summary>
-                        /// 获取或设置商品名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品缩略图 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_img_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_img_url")]
-                        public string? ImageUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品详情描述。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_desc")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
-                        public string? Description { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置商家小程序的路径。
                 /// </summary>
@@ -205,6 +181,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("goods_count")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_count")]
                 public int? GoodsCount { get; set; }
+            }
+
+            public class Shop : __zz__Shop
+            {
+                public static class Types
+                {
+                    public class GoodsDetail
+                    {
+                        /// <summary>
+                        /// 获取或设置商品名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品缩略图 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_img_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_img_url")]
+                        public string? ImageUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品详情描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_desc")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_desc")]
+                        public string? Description { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置商品详情列表。

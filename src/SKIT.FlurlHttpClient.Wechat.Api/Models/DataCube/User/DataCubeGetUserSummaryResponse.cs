@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? RefDateString { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户的渠道。
+                /// 获取或设置用户渠道。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_source")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_source")]

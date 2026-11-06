@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? EmailAddress { get; set; }
 
         /// <summary>
-        /// 获取或设置用户手机号。
+        /// 获取或设置用户手机号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile_no")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile_no")]

@@ -11,8 +11,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Position : CVImageQrcodeResponse.Types.CodeResult.Types.Position
+                    public class Position
                     {
+                        public static class Types
+                        {
+                            public class Point : CVImageQrcodeResponse.Types.ImagePosition.Types.Point
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置左上角坐标信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("left_top")]
+                        [System.Text.Json.Serialization.JsonPropertyName("left_top")]
+                        public Types.Point? LeftTop { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置右上角坐标信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("right_top")]
+                        [System.Text.Json.Serialization.JsonPropertyName("right_top")]
+                        public Types.Point? RightTop { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置右下角坐标信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("right_bottom")]
+                        [System.Text.Json.Serialization.JsonPropertyName("right_bottom")]
+                        public Types.Point? RightBottom { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置左下角坐标信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("left_bottom")]
+                        [System.Text.Json.Serialization.JsonPropertyName("left_bottom")]
+                        public Types.Point? LeftBottom { get; set; }
                     }
                 }
 

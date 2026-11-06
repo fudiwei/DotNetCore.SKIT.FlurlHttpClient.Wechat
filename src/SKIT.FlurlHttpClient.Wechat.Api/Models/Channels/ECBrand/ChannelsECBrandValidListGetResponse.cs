@@ -7,8 +7,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Brand : ChannelsECBrandListGetResponse.Types.Brand
+            public class Brand : ChannelsECBrandGetResponse.Types.__zz__Brand
             {
+                public static class Types
+                {
+                    public class RegisterDetail : ChannelsECBrandGetResponse.Types.Brand.Types.RegisterDetail
+                    {
+                    }
+
+                    public class ApplicationDetail : ChannelsECBrandGetResponse.Types.Brand.Types.ApplicationDetail
+                    {
+                    }
+
+                    public class GrantDetail : ChannelsECBrandGetResponse.Types.Brand.Types.GrantDetail
+                    {
+                    }
+
+                    public class AuditResult : ChannelsECBrandGetResponse.Types.Brand.Types.AuditResult
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商标注册详细信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("register_details")]
+                [System.Text.Json.Serialization.JsonPropertyName("register_details")]
+                public Types.RegisterDetail? RegisterDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置商标申请详细信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("application_details")]
+                [System.Text.Json.Serialization.JsonPropertyName("application_details")]
+                public Types.ApplicationDetail? ApplicationDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置商标授权详细信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("grant_details")]
+                [System.Text.Json.Serialization.JsonPropertyName("grant_details")]
+                public Types.GrantDetail? GrantDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置审核结果。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("audit_result")]
+                [System.Text.Json.Serialization.JsonPropertyName("audit_result")]
+                public Types.AuditResult? AuditResult { get; set; }
             }
         }
 

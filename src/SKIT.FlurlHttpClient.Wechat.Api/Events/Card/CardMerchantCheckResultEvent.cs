@@ -7,8 +7,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <![CDATA[ https://developers.weixin.qq.com/doc/service/guide/product/card/Third-party_developer_mode.html ]]>
     /// </para>
     /// </summary>
-    public class CardMerchantCheckResultEvent : CardPassCheckEvent
+    public class CardMerchantCheckResultEvent : WechatApiEvent
     {
+        /// <summary>
+        /// 获取或设置卡券模板编号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CardId")]
+        [System.Text.Json.Serialization.JsonPropertyName("CardId")]
+        [System.Xml.Serialization.XmlElement("CardId")]
+        public string? CardId { get; set; }
+
         /// <summary>
         /// 获取或设置子商户 ID。
         /// </summary>

@@ -11,7 +11,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class Shipping
+            public abstract class __zz__Shipping
+            {
+                /// <summary>
+                /// 获取或设置物流公司编码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("express_company")]
+                [System.Text.Json.Serialization.JsonPropertyName("express_company")]
+                public string? ExpressCompanyCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置物流单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("tracking_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("tracking_no")]
+                public string? TrackingNumber { get; set; }
+            }
+
+            public class Shipping : __zz__Shipping
             {
                 public static class Types
                 {
@@ -42,20 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? MerchantItemId { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置物流公司编码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("express_company")]
-                [System.Text.Json.Serialization.JsonPropertyName("express_company")]
-                public string? ExpressCompanyCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置物流单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("tracking_no")]
-                [System.Text.Json.Serialization.JsonPropertyName("tracking_no")]
-                public string? TrackingNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置联系方式。

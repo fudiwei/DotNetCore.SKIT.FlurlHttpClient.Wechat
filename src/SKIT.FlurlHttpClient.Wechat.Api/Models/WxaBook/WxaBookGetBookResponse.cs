@@ -7,10 +7,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Book : WxaBookListBookResponse.Types.Book
+            public class Book : WxaBookListBookResponse.Types.__zz__Book
             {
-                public static new class Types
+                public static class Types
                 {
+                    public class AuditInfo : WxaBookListBookResponse.Types.Book.Types.AuditInfo
+                    {
+                    }
+
                     public class Volumn
                     {
                         /// <summary>
@@ -56,6 +60,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("third_category_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("third_category_name")]
                 public string? ThirdCategoryName { get; set; }
+
+                /// <summary>
+                /// 获取或设置审核信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("audit_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("audit_info")]
+                public Types.AuditInfo? AuditInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置分卷列表。

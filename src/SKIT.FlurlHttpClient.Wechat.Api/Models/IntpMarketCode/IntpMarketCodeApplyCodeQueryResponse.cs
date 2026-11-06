@@ -54,17 +54,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public List<Types.CodeGeneration>? CodeGenerationList { get; set; }
 
         /// <summary>
-        /// 获取或设置更新时间戳。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("update_time")]
-        [System.Text.Json.Serialization.JsonPropertyName("update_time")]
-        public long? UpdateTimestamp { get; set; }
-
-        /// <summary>
         /// 获取或设置创建时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         public long? CreateTimestamp { get; set; }
+
+        /// <summary>
+        /// 获取或设置更新时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("update_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("update_time")]
+        public long? UpdateTimestamp { get; set; }
     }
 }

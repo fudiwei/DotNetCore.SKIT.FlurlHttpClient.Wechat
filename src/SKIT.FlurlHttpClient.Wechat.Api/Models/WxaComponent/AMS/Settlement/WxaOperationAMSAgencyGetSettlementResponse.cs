@@ -7,28 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Settlement
+            public abstract class __zz__Settlement
             {
-                public static class Types
-                {
-                    public class SlotRevenue
-                    {
-                        /// <summary>
-                        /// 获取或设置广告位类型 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("slot_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("slot_id")]
-                        public string? AdSlotId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置广告位结算收入（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("slot_settled_revenue")]
-                        [System.Text.Json.Serialization.JsonPropertyName("slot_settled_revenue")]
-                        public int SettledRevenue { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置日期字符串（格式：yyyyMMdd）。
                 /// </summary>
@@ -84,6 +64,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("mail_send_cnt")]
                 [System.Text.Json.Serialization.JsonPropertyName("mail_send_cnt")]
                 public int MailSendCount { get; set; }
+            }
+
+            public class Settlement : __zz__Settlement
+            {
+                public static class Types
+                {
+                    public class SlotRevenue
+                    {
+                        /// <summary>
+                        /// 获取或设置广告位类型 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("slot_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("slot_id")]
+                        public string? AdSlotId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置广告位结算收入（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("slot_settled_revenue")]
+                        [System.Text.Json.Serialization.JsonPropertyName("slot_settled_revenue")]
+                        public int SettledRevenue { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置广告位收入列表。

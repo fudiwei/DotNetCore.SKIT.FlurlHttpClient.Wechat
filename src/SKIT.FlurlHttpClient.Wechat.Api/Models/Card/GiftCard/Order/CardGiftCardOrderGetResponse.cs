@@ -7,7 +7,80 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Order
+            public abstract class __zz__Order
+            {
+                /// <summary>
+                /// 获取或设置订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                public string? OrderId { get; set; }
+
+                /// <summary>
+                /// 获取或设置货架 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("page_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("page_id")]
+                public string? PageId { get; set; }
+
+                /// <summary>
+                /// 获取或设置微信支付交易订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("trans_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("trans_id")]
+                public string? TransactionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置购买者的 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("open_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("open_id")]
+                public string? OpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置接收者的 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("accepter_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("accepter_openid")]
+                public string? AccepterOpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置全部金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("total_price")]
+                [System.Text.Json.Serialization.JsonPropertyName("total_price")]
+                public int TotalFee { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否是群转增。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("IsChatRoom")]
+                [System.Text.Json.Serialization.JsonPropertyName("IsChatRoom")]
+                public bool? IsFromChatroom { get; set; }
+
+                /// <summary>
+                /// 获取或设置支付完成时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("pay_finish_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("pay_finish_time")]
+                public long? PayTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置创建时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户自定义字符串。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("outer_str")]
+                [System.Text.Json.Serialization.JsonPropertyName("outer_str")]
+                public string? OuterString { get; set; }
+            }
+
+            public class Order : __zz__Order
             {
                 public static class Types
                 {
@@ -65,81 +138,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置订单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string? OrderId { get; set; }
-
-                /// <summary>
-                /// 获取或设置货架 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("page_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("page_id")]
-                public string? PageId { get; set; }
-
-                /// <summary>
-                /// 获取或设置微信支付交易订单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("trans_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("trans_id")]
-                public string? TransactionId { get; set; }
-
-                /// <summary>
-                /// 获取或设置购买者的 OpenId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("open_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("open_id")]
-                public string? OpenId { get; set; }
-
-                /// <summary>
-                /// 获取或设置接收者的 OpenId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("accepter_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("accepter_openid")]
-                public string? AccepterOpenId { get; set; }
-
-                /// <summary>
-                /// 获取或设置全部金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("total_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("total_price")]
-                public int TotalFee { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否是群转增。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("IsChatRoom")]
-                [System.Text.Json.Serialization.JsonPropertyName("IsChatRoom")]
-                public bool? IsFromChatroom { get; set; }
-
-                /// <summary>
                 /// 获取或设置礼品卡列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_list")]
                 public List<Types.Card>? Card { get; set; }
-
-                /// <summary>
-                /// 获取或设置支付完成时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("pay_finish_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("pay_finish_time")]
-                public long? PayTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置商户自定义字符串。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("outer_str")]
-                [System.Text.Json.Serialization.JsonPropertyName("outer_str")]
-                public string? OuterString { get; set; }
             }
         }
 

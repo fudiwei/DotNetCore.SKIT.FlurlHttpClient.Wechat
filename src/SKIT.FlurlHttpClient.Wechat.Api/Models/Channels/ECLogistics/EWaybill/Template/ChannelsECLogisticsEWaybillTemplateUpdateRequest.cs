@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Template : ChannelsECLogisticsEWaybillTemplateCreateRequest.Types.Template
+            public class Template : ChannelsECLogisticsEWaybillTemplateCreateRequest.Types.__zz__Template
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Option : ChannelsECLogisticsEWaybillTemplateCreateRequest.Types.Template.Types.Option
                     {
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("options")]
                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                public new List<Types.Option>? Options { get; set; }
+                public List<Types.Option>? OptionList { get; set; }
             }
         }
 

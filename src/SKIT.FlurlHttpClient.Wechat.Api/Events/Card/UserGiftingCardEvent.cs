@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         public string? CardCode { get; set; }
 
         /// <summary>
-        /// 获取或设置接收卡券用户的 OpenId。
+        /// 获取或设置接收卡券用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("FriendUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("FriendUserName")]

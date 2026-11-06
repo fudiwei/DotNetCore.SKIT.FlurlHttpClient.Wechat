@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class SKU
+            public class SKU : ChannelsECProductAddRequest.Types.__zz__SKU
             {
                 /// <summary>
                 /// 获取或设置 SKU ID。
@@ -35,55 +35,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("sku_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
                 public long? SKUId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家自定义 SKU ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("out_sku_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
-                public string? OutSKUId { get; set; }
-
-                /// <summary>
-                /// 获取或设置缩略图 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("thumb_img")]
-                [System.Text.Json.Serialization.JsonPropertyName("thumb_img")]
-                public string? ThumbnailUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置售价（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sale_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("sale_price")]
-                public int SalePrice { get; set; }
-
-                /// <summary>
-                /// 获取或设置市场价（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("market_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("market_price")]
-                public int MarketPrice { get; set; }
-
-                /// <summary>
-                /// 获取或设置库存。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("stock_num")]
-                [System.Text.Json.Serialization.JsonPropertyName("stock_num")]
-                public int? Stock { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品编码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sku_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("sku_code")]
-                public string? SKUCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品条形码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("bar_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("bar_code")]
-                public string? BarCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品属性列表。
@@ -94,6 +45,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 /// <summary>
                 /// 获取或设置商品配送信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                public SKUDeliverInfo? SKUDeliverInfo { get; set; }
+            }
+
+            public class SPUDeliverInfo : ChannelsECProductAddRequest.Types.__zz__SPUDeliverInfo
+            {
+                /// <summary>
+                /// 获取或设置商品预售信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
@@ -120,13 +81,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class SizeChart : ChannelsECProductAddRequest.Types.SizeChart
+            public class SizeChart : ChannelsECProductAddRequest.Types.__zz__SizeChart
             {
-                public static new class Types
+                public static class Types
                 {
-                    public class Specification : ChannelsECProductAddRequest.Types.SizeChart.Types.Specification
+                    public class Specification : ChannelsECProductAddRequest.Types.SizeChart.Types.__zz__Specification
                     {
-                        public static new class Types
+                        public static class Types
                         {
                             public class SpecificationValue : ChannelsECProductAddRequest.Types.SizeChart.Types.Specification.Types.SpecificationValue
                             {
@@ -138,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("value_list")]
-                        public new List<Types.SpecificationValue>? ValueList { get; set; }
+                        public List<Types.SpecificationValue>? ValueList { get; set; }
                     }
                 }
 
@@ -147,14 +108,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("specification_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("specification_list")]
-                public new List<Types.Specification>? SpecificationList { get; set; }
+                public List<Types.Specification>? SpecificationList { get; set; }
             }
 
             public class TimingOnSale : ChannelsECProductAddRequest.Types.TimingOnSale
-            {
-            }
-
-            public class SPUDeliverInfo : ChannelsECProductAddRequest.Types.SPUDeliverInfo
             {
             }
 

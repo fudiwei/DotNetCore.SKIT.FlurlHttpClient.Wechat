@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? AppId { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户唯一标识。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openId")]
                 [System.Text.Json.Serialization.JsonPropertyName("openId")]

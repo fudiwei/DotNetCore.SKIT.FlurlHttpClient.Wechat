@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long RecordId { get; set; }
 
                 /// <summary>
-                /// 获取或设置反馈用户唯一标识。
+                /// 获取或设置反馈用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]

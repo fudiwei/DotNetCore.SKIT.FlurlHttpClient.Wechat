@@ -11,6 +11,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         //   如果在 Visual Studio 打开时遇到 “缺少 SKIT.FlurlHttpClient.Tools.CodeAnalyzer 包” 的错误，
         //   请参考此 Issue：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/issues/8
 
+        private readonly ITestOutputHelper _outputHelper;
+
+        public CodeAnalysis(ITestOutputHelper outputHelper)
+        {
+            _outputHelper = outputHelper;
+        }
+
         [Fact(DisplayName = "代码分析：类型声明")]
         public void CodeAnalysis_TypeDeclaration()
         {
@@ -46,6 +53,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                     });
 
                 var issues = analyzer.Analyze();
+#if DEBUG
+                if (issues.Count > 0)
+                {
+                    foreach (var issue in issues)
+                        _outputHelper.WriteLine(issue.ToString());
+                }
+#endif
                 Assert.Empty(issues);
             });
         }
@@ -69,6 +83,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                 var analyzer = new StaticFileAnalyzer(options);
 
                 var issues = analyzer.Analyze();
+#if DEBUG
+                if (issues.Count > 0)
+                {
+                    foreach (var issue in issues)
+                        _outputHelper.WriteLine(issue.ToString());
+                }
+#endif
                 Assert.Empty(issues);
             });
         }

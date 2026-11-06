@@ -11,7 +11,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Field
+                    public abstract class __zz__Field
+                    {
+                        /// <summary>
+                        /// 获取或设置维度类别名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("field_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("field_name")]
+                        public string? FieldName { get; set; }
+                    }
+
+                    public class Field : __zz__Field
                     {
                         public static class Types
                         {
@@ -33,13 +43,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public decimal Value { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置维度类别名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("field_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("field_name")]
-                        public string? FieldName { get; set; }
 
                         /// <summary>
                         /// 获取或设置维度指标列表。

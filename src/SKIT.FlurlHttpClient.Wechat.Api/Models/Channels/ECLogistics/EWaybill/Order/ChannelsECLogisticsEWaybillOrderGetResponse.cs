@@ -225,7 +225,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? Remark { get; set; }
 
                 /// <summary>
-                /// 获取或设置网点编码。
+                /// 获取或设置面单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]

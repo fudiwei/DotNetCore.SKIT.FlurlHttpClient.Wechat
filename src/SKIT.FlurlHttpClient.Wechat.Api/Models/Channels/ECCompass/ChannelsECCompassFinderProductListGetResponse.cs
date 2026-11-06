@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Product
+            public class Product : ChannelsECCompassShopProductListGetResponse.Types.__zz__Product
             {
                 public static class Types
                 {
@@ -215,60 +215,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long PredictCommission { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置商品 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("product_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long ProductId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("title")]
-                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品头图 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("head_img_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
-                public string? HeadImageUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品价格（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("price")]
-                [System.Text.Json.Serialization.JsonPropertyName("price")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int Price { get; set; }
-
-                /// <summary>
-                /// 获取或设置一级分类 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("first_category_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("first_category_id")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long FirstCategoryId { get; set; }
-
-                /// <summary>
-                /// 获取或设置二级分类 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("second_category_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("second_category_id")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long SecondCategoryId { get; set; }
-
-                /// <summary>
-                /// 获取或设置三级分类 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("third_category_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("third_category_id")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long ThirdCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置统计数据。
