@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置业务申请编号。
+        /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class UseMarketingBusifavorCouponResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置批次号。
+        /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
         public string? StockId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

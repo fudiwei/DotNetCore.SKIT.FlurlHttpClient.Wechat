@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     /// <summary>
     /// <para>表示 [PATCH] /customs/orders 接口的响应。</para>
     /// </summary>
-    public class ModifyCustomsOrderResponse : CreateCustomsOrderResponse
+    public class UpdateCustomsOrderResponse : CreateCustomsOrderResponse
     {
         /// <summary>
         /// 获取或设置最后更新时间。

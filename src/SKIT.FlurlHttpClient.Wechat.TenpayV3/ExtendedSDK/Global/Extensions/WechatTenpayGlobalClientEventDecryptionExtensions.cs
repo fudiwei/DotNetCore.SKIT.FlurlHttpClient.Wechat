@@ -1,5 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
     public static class WechatTenpayGlobalClientEventDecryptionExtensions
     {
         /// <summary>
@@ -24,9 +26,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="webhookEvent"></param>
         /// <returns></returns>
         public static T DecryptEventResource<T>(this WechatTenpayGlobalClient client, WechatTenpayGlobalEvent webhookEvent)
-            where T : WechatTenpayGlobalEvent.Types.IDecryptedResource, new()
+            where T : WechatTenpayGlobalEvent.Meta.IDecryptedResource, new()
         {
-            return WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client.ProxyClient, webhookEvent.Resource);
+            return __zroot__.WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client.ProxyClient, webhookEvent.Resource!);
         }
 
         /// <summary>
@@ -37,9 +39,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="webhookEventResource"></param>
         /// <returns></returns>
         public static T DecryptEventResource<T>(this WechatTenpayGlobalClient client, WechatTenpayGlobalEvent.Types.Resource webhookEventResource)
-            where T : WechatTenpayGlobalEvent.Types.IDecryptedResource, new()
+            where T : WechatTenpayGlobalEvent.Meta.IDecryptedResource, new()
         {
-            return WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client.ProxyClient, webhookEventResource);
+            return __zroot__.WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client.ProxyClient, webhookEventResource);
         }
     }
 }

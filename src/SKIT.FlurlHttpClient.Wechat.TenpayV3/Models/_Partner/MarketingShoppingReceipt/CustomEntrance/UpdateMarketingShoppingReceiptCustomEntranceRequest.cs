@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [PATCH] /marketing/shopping-receipt/customentrances/{brand_id} 接口的请求。</para>
     /// </summary>
-    public class ModifyMarketingShoppingReceiptCustomEntranceRequest : WechatTenpayRequest
+    public class UpdateMarketingShoppingReceiptCustomEntranceRequest : WechatTenpayRequest
     {
         public static class Types
         {

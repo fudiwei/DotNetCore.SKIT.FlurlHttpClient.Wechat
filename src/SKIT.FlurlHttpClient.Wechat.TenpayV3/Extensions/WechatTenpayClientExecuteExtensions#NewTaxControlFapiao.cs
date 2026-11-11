@@ -188,7 +188,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012071750 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015792569 ]]>
         /// </para>
-        /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）</i></para>
+        /// <remarks>
+        /// （注意：该接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）
+        /// </remarks>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -409,7 +411,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ModifyNewTaxControlFapiaoMerchantDevelopmentConfigResponse> ExecuteModifyNewTaxControlFapiaoMerchantDevelopmentConfigAsync(this WechatTenpayClient client, Models.ModifyNewTaxControlFapiaoMerchantDevelopmentConfigRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.UpdateNewTaxControlFapiaoMerchantDevelopmentConfigResponse> ExecuteUpdateNewTaxControlFapiaoMerchantDevelopmentConfigAsync(this WechatTenpayClient client, Models.UpdateNewTaxControlFapiaoMerchantDevelopmentConfigRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -417,7 +419,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "new-tax-control-fapiao", "merchant", "development-config");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ModifyNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

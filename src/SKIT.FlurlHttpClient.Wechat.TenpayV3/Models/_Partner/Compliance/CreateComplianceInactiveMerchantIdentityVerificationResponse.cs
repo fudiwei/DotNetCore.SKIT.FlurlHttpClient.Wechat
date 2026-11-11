@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class CreateComplianceInactiveMerchantIdentityVerificationResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置核实单号。
+        /// 获取或设置微信支付核实单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("verification_id")]
         [System.Text.Json.Serialization.JsonPropertyName("verification_id")]

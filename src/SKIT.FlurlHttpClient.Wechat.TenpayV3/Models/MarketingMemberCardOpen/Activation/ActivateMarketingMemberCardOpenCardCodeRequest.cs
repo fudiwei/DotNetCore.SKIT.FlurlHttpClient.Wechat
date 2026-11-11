@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? Code { get; set; }
 
         /// <summary>
-        /// 获取或设置会员编号。
+        /// 获取或设置会员卡编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("membership_number")]
         [System.Text.Json.Serialization.JsonPropertyName("membership_number")]

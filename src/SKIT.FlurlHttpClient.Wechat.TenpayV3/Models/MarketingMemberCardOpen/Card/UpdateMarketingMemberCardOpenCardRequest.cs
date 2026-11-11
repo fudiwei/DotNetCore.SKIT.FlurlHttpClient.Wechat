@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
-            public class UserForm
+            public class UserForm : CreateMarketingMemberCardOpenCardRequest.Types.__zz__UserForm
             {
                 public static class Types
                 {
@@ -23,20 +23,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     {
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置是否允许修改。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("can_modify_after_activate")]
-                [System.Text.Json.Serialization.JsonPropertyName("can_modify_after_activate")]
-                public bool? CanModifyAfterActivate { get; set; }
-
-                /// <summary>
-                /// 获取或设置平台提供的通用开卡信息字段名称列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("common_field_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public List<string>? CommonFieldNameList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户自定义的开卡信息字段列表。

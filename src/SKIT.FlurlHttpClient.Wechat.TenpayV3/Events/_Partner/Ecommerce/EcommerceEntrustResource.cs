@@ -4,21 +4,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 "ECOMMERCE_ENTRUST.SIGN" 回调通知事件的数据。</para>
     /// <para>表示 "ECOMMERCE_ENTRUST.TERMINATE" 回调通知事件的数据。</para>
     /// </summary>
-    public class EcommerceEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class EcommerceEntrustResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string? AppId { get; set; }
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户侧签约协议号。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public long PlanId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -7,21 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class RechargeAmount
+            public class RechargeAmount : ApplyBankTransferRechargeRequest.Types.RechargeAmount
             {
-                /// <summary>
-                /// 获取或设置金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public int? Amount { get; set; }
-
-                /// <summary>
-                /// 获取或设置币种。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("currency")]
-                [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string? Currency { get; set; }
             }
 
             public class BankTransferInfo

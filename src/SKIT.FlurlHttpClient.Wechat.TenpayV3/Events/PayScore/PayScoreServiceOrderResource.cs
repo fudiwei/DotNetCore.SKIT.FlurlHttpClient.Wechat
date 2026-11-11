@@ -9,98 +9,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012587960 ]]>
     /// </para>
     /// </summary>
-    public class PayScoreServiceOrderResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PayScoreServiceOrderResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
-            public class Payment
+            public class PostPayment : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.PostPayment
             {
-                /// <summary>
-                /// 获取或设置付费项目名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置付费说明。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("description")]
-                [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string? Description { get; set; }
-
-                /// <summary>
-                /// 获取或设置付费金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public int? Amount { get; set; }
-
-                /// <summary>
-                /// 获取或设置付费数量。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("count")]
-                [System.Text.Json.Serialization.JsonPropertyName("count")]
-                public int? Count { get; set; }
             }
 
-            public class Discount
+            public class PostDiscount : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.PostDiscount
             {
-                /// <summary>
-                /// 获取或设置优惠名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠说明。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("description")]
-                [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string? Description { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public int? Amount { get; set; }
             }
 
-            public class TimeRange
+            public class TimeRange : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.TimeRange
             {
-                /// <summary>
-                /// 获取或设置服务开始时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("start_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("start_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
-                public DateTimeOffset StartTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置服务开始时间备注。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("start_time_remark")]
-                [System.Text.Json.Serialization.JsonPropertyName("start_time_remark")]
-                public string? StartTimeRemark { get; set; }
-
-                /// <summary>
-                /// 获取或设置服务结束时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("end_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.ISO8601CompactDateTimeOffsetConverter))]
-                public DateTimeOffset? EndTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置服务结束时间备注。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("end_time_remark")]
-                [System.Text.Json.Serialization.JsonPropertyName("end_time_remark")]
-                public string? EndTimeRemark { get; set; }
             }
 
             public class Location : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.Location
@@ -111,8 +33,60 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             {
             }
 
-            public class Collection : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.Collection
+            public abstract class __zz__Collection : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.__zz__Collection
             {
+            }
+
+            public class Collection : __zz__Collection
+            {
+                public static class Types
+                {
+                    public abstract class __zz__CollectionDetail : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.Collection.Types.__zz__CollectionDetail
+                    {
+                    }
+
+                    public class CollectionDetail : __zz__CollectionDetail
+                    {
+                        public static class Types
+                        {
+                            public abstract class __zz__Promotion : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.Collection.Types.CollectionDetail.Types.__zz__Promotion
+                            {
+
+                            }
+
+                            public class Promotion : __zz__Promotion
+                            {
+                                public static class Types
+                                {
+                                    public class GoodsDetail : Models.GetPayScoreServiceOrderByOutOrderNumberResponse.Types.Collection.Types.CollectionDetail.Types.Promotion.Types.GoodsDetail
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置单品列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                                public List<Types.GoodsDetail>? GoodsList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置优惠信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("promotion_detail")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
+                        public List<Types.Promotion>? PromotionList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置收款明细列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("details")]
+                [System.Text.Json.Serialization.JsonPropertyName("details")]
+                public List<Types.CollectionDetail>? DetailList { get; set; }
             }
         }
 
@@ -159,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? ServiceIntroduction { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
@@ -198,14 +172,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_payments")]
         [System.Text.Json.Serialization.JsonPropertyName("post_payments")]
-        public List<Types.Payment>? PostPaymentList { get; set; }
+        public List<Types.PostPayment>? PostPaymentList { get; set; }
 
         /// <summary>
         /// 获取或设置商户优惠列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_discounts")]
         [System.Text.Json.Serialization.JsonPropertyName("post_discounts")]
-        public List<Types.Discount>? PostDiscountList { get; set; }
+        public List<Types.PostDiscount>? PostDiscountList { get; set; }
 
         /// <summary>
         /// 获取或设置服务时间段信息。

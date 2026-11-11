@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付退款单号。

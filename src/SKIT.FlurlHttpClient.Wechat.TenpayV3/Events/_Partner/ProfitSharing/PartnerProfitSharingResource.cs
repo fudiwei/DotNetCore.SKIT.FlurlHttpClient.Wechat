@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012075400 ]]>
     /// </para>
     /// </summary>
-    public class PartnerProfitSharingResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PartnerProfitSharingResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? MerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

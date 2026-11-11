@@ -7,7 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class TagInfo
+            public abstract class __zz__TagInfo
+            {
+                /// <summary>
+                /// 获取或设置用户商品券标签列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_tag_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_tag_list")]
+                public List<string>? CouponTagList { get; set; }
+            }
+
+            public class TagInfo : __zz__TagInfo
             {
                 public static class Types
                 {
@@ -21,13 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? MemberCardId { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置用户商品券标签列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_tag_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_tag_list")]
-                public List<string>? CouponTagList { get; set; }
 
                 /// <summary>
                 /// 获取或设置会员标签信息。
@@ -67,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

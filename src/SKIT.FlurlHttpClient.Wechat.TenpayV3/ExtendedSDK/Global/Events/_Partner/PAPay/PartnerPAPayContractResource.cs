@@ -4,34 +4,87 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
     /// <para>表示 PAPAY.SIGN （仅限服务商）回调通知事件的数据。</para>
     /// <para>表示 PAPAY.TERMINATE （仅限服务商）回调通知事件的数据。</para>
     /// </summary>
-    public class PartnerPAPayContractResource : PAPayContractResource, WechatTenpayGlobalEvent.Types.IDecryptedResource
+    public class PartnerPAPayContractResource : WechatTenpayGlobalEvent.Meta.IDecryptedResource
     {
         /// <summary>
-        /// <inheritdoc />
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public override string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
-        /// <inheritdoc />
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sp_appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public override string? AppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sp_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户侧签约协议号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_contract_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
+        public string? OutContractCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置委托代扣协议 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contract_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
+        public string? ContractId { get; set; }
+
+        /// <summary>
+        /// 获取或设置模板 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("plan_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
+        public long PlanId { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户 OpenId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+        public string? OpenId { get; set; }
+
+        /// <summary>
+        /// 获取或设置操作时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("operate_time")]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("operate_time")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+        public DateTimeOffset OperateTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置到期时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contract_expire_time")]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("contract_expire_time")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+        public DateTimeOffset? ExpireTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置解约方式。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contract_termination_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("contract_termination_mode")]
+        public string? TerminationMode { get; set; }
     }
 }

@@ -1,7 +1,5 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
 {
-    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
-
     /// <summary>
     /// <para>表示 [POST] /transactions/app 接口的请求。</para>
     /// </summary>
@@ -12,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             public class Payer
             {
                 /// <summary>
-                /// 获取或设置用户唯一标识。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
@@ -37,7 +35,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 public string? Currency { get; set; } = "HKD";
             }
 
-            public class Detail
+            public abstract class __zz__Detail
+            {
+                /// <summary>
+                /// 获取或设置订单原价（单位：指定货币的最小单位）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cost_price")]
+                [System.Text.Json.Serialization.JsonPropertyName("cost_price")]
+                public int? CostPrice { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品小票 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("receipt_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("receipt_id")]
+                public string? ReceiptId { get; set; }
+            }
+
+            public class Detail : __zz__Detail
             {
                 public static class Types
                 {
@@ -81,20 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 }
 
                 /// <summary>
-                /// 获取或设置订单原价（单位：指定货币的最小单位）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("cost_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("cost_price")]
-                public int? CostPrice { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品小票 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("receipt_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("receipt_id")]
-                public string? ReceiptId { get; set; }
-
-                /// <summary>
                 /// 获取或设置单品列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_detail")]
@@ -102,15 +103,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
-            public class Scene
+            public abstract class __zz__Scene
             {
-                public static class Types
-                {
-                    public class Store : _ROOT_.Models.CreatePayTransactionAppRequest.Types.Scene.Types.Store
-                    {
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置用户终端 IP。
                 /// </summary>
@@ -138,6 +132,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 [Newtonsoft.Json.JsonProperty("operator_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("operator_id")]
                 public string? OperatorId { get; set; }
+            }
+
+            public class Scene : __zz__Scene
+            {
+                public static class Types
+                {
+                    public class Store
+                    {
+                        /// <summary>
+                        /// 获取或设置门店编号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("id")]
+                        public string? Id { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置门店名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置详细地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("address")]
+                        [System.Text.Json.Serialization.JsonPropertyName("address")]
+                        public string? Address { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置商户门店信息。

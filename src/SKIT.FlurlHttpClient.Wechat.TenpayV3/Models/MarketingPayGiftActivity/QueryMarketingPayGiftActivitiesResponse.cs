@@ -11,15 +11,78 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class ActivityBase : GetMarketingPayGiftActivityByActivityIdResponse.Types.ActivityBase
+                    public class ActivityBase : CreateMarketingPayGiftActivityUniqueThresholdActivityRequest.Types.__zz__ActivityBase
                     {
+                        public static class Types
+                        {
+                            public class AvailablePeriods
+                            {
+                                public static class Types
+                                {
+                                    public class AvailableTime : CreateMarketingPayGiftActivityUniqueThresholdActivityRequest.Types.ActivityBase.Types.AvailablePeriods.Types.AvailableTime
+                                    {
+                                    }
+
+                                    public class AvailableDayTime : CreateMarketingPayGiftActivityUniqueThresholdActivityRequest.Types.ActivityBase.Types.AvailablePeriods.Types.AvailableDayTime
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置可用时间列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("available_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("available_time")]
+                                public List<Types.AvailableTime>? AvailableTimeList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置每日可用时间列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("available_day_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("available_day_time")]
+                                public List<Types.AvailableDayTime>? AvailableDayTimeList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置可用时间段信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("available_periods")]
+                        [System.Text.Json.Serialization.JsonPropertyName("available_periods")]
+                        public Types.AvailablePeriods? AvailablePeriods { get; set; }
                     }
 
-                    public class AwardSendRule : GetMarketingPayGiftActivityByActivityIdResponse.Types.AwardSendRule
+                    public class AwardSendRule
                     {
+                        public static class Types
+                        {
+                            public class FullSendRule : CreateMarketingPayGiftActivityUniqueThresholdActivityRequest.Types.__zz__AwardSendRule
+                            {
+                                public static class Types
+                                {
+                                    public class Award : CreateMarketingPayGiftActivityUniqueThresholdActivityRequest.Types.AwardSendRule.Types.Award
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置奖品基本信息列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("award_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("award_list")]
+                                public List<Types.Award>? AwardList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置满送活动奖品发放规则选项。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("full_send_rule")]
+                        [System.Text.Json.Serialization.JsonPropertyName("full_send_rule")]
+                        public Types.FullSendRule? FullSendRule { get; set; }
                     }
 
-                    public class AdvancedSetting : GetMarketingPayGiftActivityByActivityIdResponse.Types.AdvancedSetting
+                    public class AdvancedSetting : CreateMarketingPayGiftActivityUniqueThresholdActivityRequest.Types.AdvancedSetting
                     {
                     }
                 }

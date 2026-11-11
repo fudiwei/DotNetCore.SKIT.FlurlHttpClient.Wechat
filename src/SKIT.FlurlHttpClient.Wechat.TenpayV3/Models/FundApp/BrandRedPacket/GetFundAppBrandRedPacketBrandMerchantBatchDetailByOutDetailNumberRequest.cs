@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置商家批次单号。
+        /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? OutBatchNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置商家明细单号。
+        /// 获取或设置商户明细单号
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

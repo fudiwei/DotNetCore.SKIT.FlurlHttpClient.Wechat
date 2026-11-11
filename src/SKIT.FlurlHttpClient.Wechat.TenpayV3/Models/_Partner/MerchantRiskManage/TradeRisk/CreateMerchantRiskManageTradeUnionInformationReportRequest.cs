@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
@@ -114,15 +114,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutTradeNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户手机号（需使用平台公钥/证书加密）。
+        /// 获取或设置用户手机号。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("phone")]
         [System.Text.Json.Serialization.JsonPropertyName("phone")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -130,8 +133,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? PhoneNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置用户实名证件号（需使用平台公钥/证书加密）。
+        /// 获取或设置用户实名证件号。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("certificates_number")]
         [System.Text.Json.Serialization.JsonPropertyName("certificates_number")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]

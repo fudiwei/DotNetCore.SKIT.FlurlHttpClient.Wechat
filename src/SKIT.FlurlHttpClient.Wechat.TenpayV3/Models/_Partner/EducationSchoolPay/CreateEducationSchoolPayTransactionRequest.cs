@@ -7,8 +7,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : CreateEducationPAPayTransactionRequest.Types.Amount
+            public class Amount
             {
+                /// <summary>
+                /// 获取或设置总金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("total")]
+                [System.Text.Json.Serialization.JsonPropertyName("total")]
+                public int Total { get; set; }
+
+                /// <summary>
+                /// 获取或设置币种。
+                /// <para>默认值："CNY"</para>
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("currency")]
+                [System.Text.Json.Serialization.JsonPropertyName("currency")]
+                public string? Currency { get; set; } = "CNY";
             }
 
             public class Scene
@@ -37,12 +51,38 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? SceneType { get; set; }
             }
 
-            public class Device : CreateEducationPAPayTransactionRequest.Types.Device
+            public class Device
             {
+                /// <summary>
+                /// 获取或设置商户端设备号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("device_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("device_id")]
+                public string? DeviceId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户端设备 IP。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("device_ip")]
+                [System.Text.Json.Serialization.JsonPropertyName("device_ip")]
+                public string? DeviceIp { get; set; }
             }
 
-            public class Settlement : CreatePayPartnerTransactionAppRequest.Types.Settlement
+            public class Settlement
             {
+                /// <summary>
+                /// 获取或设置是否分账。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("profit_sharing")]
+                [System.Text.Json.Serialization.JsonPropertyName("profit_sharing")]
+                public bool? IsProfitSharing { get; set; }
+
+                /// <summary>
+                /// 获取或设置补差金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subsidy_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("subsidy_amount")]
+                public int? SubsidyAmount { get; set; }
             }
         }
 
@@ -61,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

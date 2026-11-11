@@ -298,6 +298,72 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             });
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /bank-transfer/batches）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateBankTransferBatchRequest()
+        {
+            static Models.CreateBankTransferBatchRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateBankTransferBatchRequest()
+                {
+                    TransferDetailList = new List<Models.CreateBankTransferBatchRequest.Types.TransferDetail>()
+                    {
+                        new Models.CreateBankTransferBatchRequest.Types.TransferDetail()
+                        {
+                            UserName = MOCK_PLAIN_STR,
+                            UserIdCardNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateBankTransferBatchRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserIdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserIdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateBankTransferBatchAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateBankTransferBatchAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /brand/applyments）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateBrandApplymentRequest()
         {
@@ -1684,14 +1750,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return new Models.CreateMerchantOperateRiskWithdrawlApplyRequest()
                 {
-                    PayeeInfo = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.PayeeInfo()
+                    Payee = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.Payee()
                     {
-                        BankAccount = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.PayeeInfo.Types.BankAccount()
+                        BankAccount = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.Payee.Types.BankAccount()
                         {
                             AccountName = MOCK_PLAIN_STR,
                             AccountNumber = MOCK_PLAIN_STR
                         },
-                        Identity = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.PayeeInfo.Types.Identity()
+                        Identity = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.Payee.Types.Identity()
                         {
                             IdName = MOCK_PLAIN_STR,
                             IdNumber = MOCK_PLAIN_STR,
@@ -1702,14 +1768,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockRequestModel(Models.CreateMerchantOperateRiskWithdrawlApplyRequest request, Func<string, string> decryptor)
             {
-                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.BankAccount!.AccountName);
-                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.BankAccount!.AccountNumber);
-                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.Identity!.IdName!);
-                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.Identity!.IdNumber!);
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.BankAccount!.AccountName!));
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.BankAccount!.AccountNumber!));
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.Identity!.IdName!));
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.Identity!.IdNumber!));
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.BankAccount!.AccountName);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.BankAccount!.AccountNumber);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.BankAccount!.AccountName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.BankAccount!.AccountNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.Identity!.IdNumber!));
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
@@ -2465,6 +2531,72 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             });
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /partner-transfer/batches）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePartnerTransferBatchRequest()
+        {
+            static Models.CreatePartnerTransferBatchRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePartnerTransferBatchRequest()
+                {
+                    TransferDetailList = new List<Models.CreatePartnerTransferBatchRequest.Types.TransferDetail>()
+                    {
+                        new Models.CreatePartnerTransferBatchRequest.Types.TransferDetail()
+                        {
+                            UserName = MOCK_PLAIN_STR,
+                            UserIdCardNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePartnerTransferBatchRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserIdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserIdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePartnerTransferBatchAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePartnerTransferBatchAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /payroll-card/authentications/pre-order-with-auth）")]
         public async Task TestEncryptRequestSensitiveProperty_PreorderPayrollCardAuthenticationRequest()
         {
@@ -2950,16 +3082,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 return new Models.CreateSmartGuideRequest()
                 {
                     UserName = MOCK_PLAIN_STR,
-                    UserMobile = MOCK_PLAIN_STR
+                    UserMobileNumber = MOCK_PLAIN_STR
                 };
             }
 
             static void AssertMockRequestModel(Models.CreateSmartGuideRequest request, Func<string, string> decryptor)
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
-                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobileNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobileNumber!));
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
@@ -3009,14 +3141,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return new Models.QuerySmartGuidesRequest()
                 {
-                    UserMobile = MOCK_PLAIN_STR
+                    UserMobileNumber = MOCK_PLAIN_STR
                 };
             }
 
             static void AssertMockRequestModel(Models.QuerySmartGuidesRequest request, Func<string, string> decryptor)
             {
-                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobileNumber!));
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
@@ -3068,16 +3200,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 {
                     GuideId = "TEST",
                     UserName = MOCK_PLAIN_STR,
-                    UserMobile = MOCK_PLAIN_STR
+                    UserMobileNumber = MOCK_PLAIN_STR
                 };
             }
 
             static void AssertMockRequestModel(Models.UpdateSmartGuideRequest request, Func<string, string> decryptor)
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
-                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobileNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
-                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobileNumber!));
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 

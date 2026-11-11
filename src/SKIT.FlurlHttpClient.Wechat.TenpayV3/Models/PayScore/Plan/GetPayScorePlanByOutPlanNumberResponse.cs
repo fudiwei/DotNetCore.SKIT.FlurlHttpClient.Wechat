@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class PlanDetail
+            public class PlanDetail : CreatePayScorePlanRequest.Types.PlanDetail
             {
                 /// <summary>
                 /// 获取或设置明细序号。
@@ -15,34 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("plan_detail_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("plan_detail_no")]
                 public int DetailNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置明细名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("plan_detail_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("plan_detail_name")]
-                public string? DetailName { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠说明。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("plan_discount_description")]
-                [System.Text.Json.Serialization.JsonPropertyName("plan_discount_description")]
-                public string? DiscountDescription { get; set; }
-
-                /// <summary>
-                /// 获取或设置原支付金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("original_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("original_price")]
-                public int OriginalPrice { get; set; }
-
-                /// <summary>
-                /// 获取或设置实际支付金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("actual_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("actual_price")]
-                public int ActualPrice { get; set; }
             }
         }
 

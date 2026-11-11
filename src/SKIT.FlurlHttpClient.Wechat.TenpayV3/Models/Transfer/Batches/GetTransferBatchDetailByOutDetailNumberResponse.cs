@@ -7,6 +7,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetTransferBatchDetailByOutDetailNumberResponse : WechatTenpayResponse
     {
         /// <summary>
+        /// 获取或设置微信商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("mchid")]
+        public string? MerchantId { get; set; }
+
+        /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
@@ -21,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutBatchNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信批次单号。
+        /// 获取或设置微信支付批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
@@ -35,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutDetailNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信明细单号。
+        /// 获取或设置微信支付明细单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail_id")]
         [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
@@ -77,13 +84,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户姓名（需使用商户私钥解密）。
+        /// 获取或设置收款用户姓名。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用商户私钥解密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-        public virtual string? UserName { get; set; }
+        public string? UserName { get; set; }
 
         /// <summary>
         /// 获取或设置转账发起时间。

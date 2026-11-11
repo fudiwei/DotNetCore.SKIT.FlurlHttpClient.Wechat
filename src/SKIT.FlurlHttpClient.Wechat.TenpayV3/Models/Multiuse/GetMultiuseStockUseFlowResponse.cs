@@ -6,10 +6,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetMultiuseStockUseFlowResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置下载链接。
+        /// 获取或设置流水文件下载地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string? Url { get; set; }
+        public string? DownloadUrl { get; set; }
     }
 }

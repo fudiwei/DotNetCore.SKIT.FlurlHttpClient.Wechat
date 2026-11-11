@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012285807 ]]>
     /// </para>
     /// </summary>
-    public class MarketingFavorCouponResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class MarketingFavorCouponResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? CouponId { get; set; }
 
         /// <summary>
-        /// 获取或设置批次号。
+        /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public DateTimeOffset CreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置核销用户的 OpenId。
+        /// 获取或设置核销用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

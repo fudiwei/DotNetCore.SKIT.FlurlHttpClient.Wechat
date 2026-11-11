@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Payer
             {
                 /// <summary>
-                /// 获取或设置用户唯一标识。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("acquiring_bank_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("acquiring_bank_openid")]
                 public string? OpenId { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户在特约商户下的唯一标识。
+                /// 获取或设置子商户用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_openid")]
@@ -31,6 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? PhoneNumberHash { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置渠道商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("channel_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
+        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置从业机构号。
@@ -54,18 +61,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_appid")]
         public string? SubAppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置渠道商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("channel_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

@@ -5,6 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities;
 
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
     public static class WechatTenpayGlobalClientResponseDecryptionExtensions
     {
         /// <summary>
@@ -67,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 return (DecryptResponseSensitiveProperty(client, queryCertificatesResponse) as TResponse)!;
             }
 
-            return WechatTenpayClientResponseDecryptionExtensions.DecryptResponseSensitiveProperty(client.ProxyClient, response);
+            return __zroot__.WechatTenpayClientResponseDecryptionExtensions.DecryptResponseSensitiveProperty(client.ProxyClient, response);
         }
     }
 }

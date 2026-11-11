@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class ModifyApplyForSubMerchantSettlementResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置申请单号。
+        /// 获取或设置微信支付申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("application_no")]
         [System.Text.Json.Serialization.JsonPropertyName("application_no")]

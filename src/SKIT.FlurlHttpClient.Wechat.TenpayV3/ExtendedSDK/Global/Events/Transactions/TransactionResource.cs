@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
     /// <summary>
     /// <para>表示 TRANSACTION.SUCCESS （仅限直连商户）回调通知事件的数据。</para>
     /// </summary>
-    public class TransactionResource : WechatTenpayGlobalEvent.Types.IDecryptedResource
+    public class TransactionResource : WechatTenpayGlobalEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -11,12 +11,38 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
             {
             }
 
-            public class Amount : Models.GetTransactionByOutTradeNumberResponse.Types.Amount
+            public class Amount : Models.GetTransactionByOutTradeNumberResponse.Types.__zz__Amount
             {
+                public static class Types
+                {
+                    public class ExchangeRate : Models.GetTransactionByOutTradeNumberResponse.Types.Amount.Types.ExchangeRate
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置汇率信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_rate")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_rate")]
+                public Types.ExchangeRate? ExchangeRate { get; set; }
             }
 
-            public class Promotion : Models.GetTransactionByOutTradeNumberResponse.Types.Promotion
+            public class Promotion : Models.GetTransactionByOutTradeNumberResponse.Types.__zz__Promotion
             {
+                public static class Types
+                {
+                    public class GoodsDetail : Models.GetTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
         }
 
@@ -25,14 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string? AppId { get; set; }
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

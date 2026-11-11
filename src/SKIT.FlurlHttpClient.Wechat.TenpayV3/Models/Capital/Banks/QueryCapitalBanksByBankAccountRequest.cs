@@ -7,8 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class QueryCapitalBanksByBankAccountRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置银行卡号（需使用平台公钥/证书加密）。
+        /// 获取或设置银行卡号。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]

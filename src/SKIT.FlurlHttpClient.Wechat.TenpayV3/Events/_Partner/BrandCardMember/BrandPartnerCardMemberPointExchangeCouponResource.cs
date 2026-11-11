@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015878622 ]]>
     /// </para>
     /// </summary>
-    public class BrandPartnerCardMemberPointExchangeCouponResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class BrandPartnerCardMemberPointExchangeCouponResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置积分兑券 ID。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class DeactivateMarketingBusifavorCouponRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置批次号。
+        /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]

@@ -7,21 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class DeductSchedule : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.DeductSchedule
+            public class DeductSchedule : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.__zz__DeductSchedule
             {
-                public static new class Types
+                public static class Types
                 {
-                    public class Amount : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.DeductSchedule.Types.Amount
+                    public class EstimatedDeductAmount : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.DeductSchedule.Types.EstimatedDeductAmount
                     {
                     }
                 }
 
                 /// <summary>
-                /// 获取或设置预计的扣费金额信息。
+                /// 获取或设置预计扣费金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
-                public new Types.Amount? EstimatedDeductAmount { get; set; }
+                public Types.EstimatedDeductAmount? EstimatedDeductAmount { get; set; }
             }
 
             public class JumpControl
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutContractCode { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

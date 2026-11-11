@@ -311,7 +311,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012467251 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012467223 ]]>
         /// </para>
-        /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）</i></para>
+        /// <remarks>
+        /// （注意：该接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）
+        /// </remarks>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

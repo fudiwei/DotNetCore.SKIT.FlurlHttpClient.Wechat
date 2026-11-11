@@ -179,7 +179,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/modify 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012458146 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012691363 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

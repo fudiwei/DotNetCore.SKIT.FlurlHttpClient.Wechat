@@ -12,8 +12,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
-            public class PolicyPeriod : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.PolicyPeriod
+            public class PolicyPeriod : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.__zz__PolicyPeriod
             {
+                public static class Types
+                {
+                    public class EstimatedDeductAmount : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.PolicyPeriod.Types.EstimatedDeductAmount
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置预计扣费金额信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
+                public Types.EstimatedDeductAmount? EstimatedDeductAmount { get; set; }
             }
 
             public class RealIdentity : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.RealIdentity
@@ -53,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutContractCode { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

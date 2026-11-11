@@ -7,14 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Payer
+            public class Payer : CreatePayTransactionAppRequest.Types.Payer
             {
-                /// <summary>
-                /// 获取或设置用户唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string? OpenId { get; set; }
             }
 
             public class Amount
@@ -58,49 +52,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? DeviceId { get; set; }
             }
 
-            public class Promotion
+            public abstract class __zz__Promotion
             {
-                public static class Types
-                {
-                    public class GoodsDetail
-                    {
-                        /// <summary>
-                        /// 获取或设置商品编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
-                        public string? GoodsId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("quantity")]
-                        [System.Text.Json.Serialization.JsonPropertyName("quantity")]
-                        public int Quantity { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品单价（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("unit_price")]
-                        [System.Text.Json.Serialization.JsonPropertyName("unit_price")]
-                        public int UnitPrice { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品优惠金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("discount_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
-                        public int DiscountAmount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_remark")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_remark")]
-                        public string? GoodsRemark { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置券 ID。
                 /// </summary>
@@ -170,6 +123,50 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
                 public string? Currency { get; set; }
+            }
+
+            public class Promotion : __zz__Promotion
+            {
+                public static class Types
+                {
+                    public class GoodsDetail
+                    {
+                        /// <summary>
+                        /// 获取或设置商品编码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
+                        public string? GoodsId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("quantity")]
+                        [System.Text.Json.Serialization.JsonPropertyName("quantity")]
+                        public int Quantity { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品单价（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("unit_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("unit_price")]
+                        public int UnitPrice { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品优惠金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("discount_amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
+                        public int DiscountAmount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_remark")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_remark")]
+                        public string? GoodsRemark { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置单品列表。
@@ -202,14 +199,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string? AppId { get; set; }
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

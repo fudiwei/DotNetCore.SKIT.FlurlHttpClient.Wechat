@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /marketing/weekly-discount/activities 接口的请求。</para>
     /// </summary>
-    public class QueryApplyMarketingWeeklyDiscountActivitiesRequest : WechatTenpayRequest
+    public class QueryMarketingWeeklyDiscountActivitiesRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置投放场景。

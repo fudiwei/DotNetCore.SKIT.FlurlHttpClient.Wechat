@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013070368 ]]>
     /// </para>
     /// </summary>
-    public class TransactionResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class TransactionResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -29,8 +29,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             {
             }
 
-            public class Promotion : Models.GetPayTransactionByOutTradeNumberResponse.Types.Promotion
+            public class Promotion : Models.GetPayTransactionByOutTradeNumberResponse.Types.__zz__Promotion
             {
+                public static class Types
+                {
+                    public class GoodsDetail : Models.GetPayTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
             public class Installment : Models.GetPayTransactionByOutTradeNumberResponse.Types.Installment

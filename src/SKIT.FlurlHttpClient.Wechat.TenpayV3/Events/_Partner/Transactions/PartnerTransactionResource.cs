@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012237246 ]]>
     /// </para>
     /// </summary>
-    public class PartnerTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PartnerTransactionResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -29,8 +29,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             {
             }
 
-            public class Promotion : Models.GetPayPartnerTransactionByOutTradeNumberResponse.Types.Promotion
+            public class Promotion : Models.GetPayPartnerTransactionByOutTradeNumberResponse.Types.__zz__Promotion
             {
+                public static class Types
+                {
+                    public class GoodsDetail : Models.GetPayPartnerTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
             public class Installment : Models.GetPayPartnerTransactionByOutTradeNumberResponse.Types.Installment
@@ -39,28 +52,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
         public string? MerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置服务商 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

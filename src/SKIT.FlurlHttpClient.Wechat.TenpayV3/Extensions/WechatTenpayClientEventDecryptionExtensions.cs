@@ -27,12 +27,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="webhookEvent"></param>
         /// <returns></returns>
         public static T DecryptEventResource<T>(this WechatTenpayClient client, WechatTenpayEvent webhookEvent)
-            where T : WechatTenpayEvent.Types.IDecryptedResource, new()
+            where T : WechatTenpayEvent.Meta.IDecryptedResource, new()
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (webhookEvent is null) throw new ArgumentNullException(nameof(webhookEvent));
 
-            return DecryptEventResource<T>(client, webhookEvent.Resource);
+            return DecryptEventResource<T>(client, webhookEvent.Resource!);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="webhookEventResource"></param>
         /// <returns></returns>
         public static T DecryptEventResource<T>(this WechatTenpayClient client, WechatTenpayEvent.Types.Resource webhookEventResource)
-            where T : WechatTenpayEvent.Types.IDecryptedResource, new()
+            where T : WechatTenpayEvent.Meta.IDecryptedResource, new()
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (webhookEventResource is null) throw new ArgumentNullException(nameof(webhookEventResource));
@@ -57,9 +57,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         {
                             plainJson = Utilities.AESUtility.DecryptWithGCM(
                                 encodingKey: new EncodedString(client.Credentials.MerchantV3Secret, EncodingKinds.Literal),
-                                encodingNonce: new EncodedString(webhookEventResource.Nonce, EncodingKinds.Literal),
-                                encodingAssociatedData: new EncodedString(webhookEventResource.AssociatedData, EncodingKinds.Literal),
-                                encodingCipher: new EncodedString(webhookEventResource.CipherText, EncodingKinds.Base64)
+                                encodingNonce: new EncodedString(webhookEventResource.Nonce!, EncodingKinds.Literal),
+                                encodingAssociatedData: new EncodedString(webhookEventResource.AssociatedData!, EncodingKinds.Literal),
+                                encodingCipher: new EncodedString(webhookEventResource.CipherText!, EncodingKinds.Base64)
                             )!;
                         }
                         catch (Exception ex)
@@ -81,9 +81,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                             byte[] plainBytes = Utilities.SM4Utility.DecryptWithGCM(
                                 keyBytes: keyBytes,
-                                nonceBytes: EncodedString.FromLiteralString(webhookEventResource.Nonce),
-                                associatedDataBytes: EncodedString.FromLiteralString(webhookEventResource.AssociatedData),
-                                cipherBytes: EncodedString.FromBase64String(webhookEventResource.CipherText)
+                                nonceBytes: EncodedString.FromLiteralString(webhookEventResource.Nonce!),
+                                associatedDataBytes: EncodedString.FromLiteralString(webhookEventResource.AssociatedData!),
+                                cipherBytes: EncodedString.FromBase64String(webhookEventResource.CipherText!)
                             );
                             plainJson = EncodedString.ToLiteralString(plainBytes).Value!;
                         }

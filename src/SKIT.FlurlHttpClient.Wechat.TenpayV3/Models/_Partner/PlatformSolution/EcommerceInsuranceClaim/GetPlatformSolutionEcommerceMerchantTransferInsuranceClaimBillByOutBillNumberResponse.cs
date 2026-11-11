@@ -11,34 +11,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class Receiver
+                    public class Receiver : CreatePlatformSolutionEcommerceMerchantTransferCompensationBillRequest.Types.__zz__Receiver
                     {
                         public static class Types
                         {
-                            public class TransactionInfo
+                            public class TransactionInfo : CreatePlatformSolutionEcommerceMerchantTransferCompensationBillRequest.Types.Receiver.Types.TransactionInfo
                             {
-                                /// <summary>
-                                /// 获取或设置转账接收方订单类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置微信交易订单号。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("transaction_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                                public string? TransactionId { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置转账接收方类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string? Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置转账接收方订单信息。
@@ -78,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]

@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.OutDetailNumber, "out_detail_no");
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber!);
+                .CreateFlurlRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber!, "details", "out-detail-no", request.OutDetailNumber!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -137,7 +137,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /transfer/bill-receipt 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458946 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458946 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012721664 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -159,7 +160,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /transfer/bill-receipt/{out_batch_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458950 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458950 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012721812 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -185,7 +187,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /transfer-detail/electronic-receipts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458967 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458967 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012727951 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -207,7 +210,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /transfer-detail/electronic-receipts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458972 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012458972 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012721353 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

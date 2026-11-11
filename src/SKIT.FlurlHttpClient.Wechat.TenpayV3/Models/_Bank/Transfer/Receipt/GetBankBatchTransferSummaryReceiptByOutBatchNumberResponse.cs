@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetBankBatchTransferSummaryReceiptByOutBatchNumberResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置银行批次单号。
+        /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]
         public string? OutBatchNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置电子回单申请单号。
+        /// 获取或设置电子回单受理单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("receipt_no")]
         [System.Text.Json.Serialization.JsonPropertyName("receipt_no")]
@@ -27,25 +27,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? ReceiptStatus { get; set; }
 
         /// <summary>
-        /// 获取或设置电子回单文件的哈希方法。
+        /// 获取或设置电子回单文件下载地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("download_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("download_url")]
+        public string? DownloadUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置电子回单文件哈希类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hash_type")]
         [System.Text.Json.Serialization.JsonPropertyName("hash_type")]
         public string? HashType { get; set; }
 
         /// <summary>
-        /// 获取或设置电子回单文件的哈希值。
+        /// 获取或设置电子回单文件哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hash_value")]
         [System.Text.Json.Serialization.JsonPropertyName("hash_value")]
         public string? HashValue { get; set; }
-
-        /// <summary>
-        /// 获取或设置电子回单文件的下载地址。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("download_url")]
-        [System.Text.Json.Serialization.JsonPropertyName("download_url")]
-        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间。
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset? CreateTime { get; set; }
+        public DateTimeOffset CreateTime { get; set; }
 
         /// <summary>
         /// 获取或设置更新时间。
@@ -63,6 +63,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("update_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset? UpdateTime { get; set; }
+        public DateTimeOffset UpdateTime { get; set; }
     }
 }

@@ -13,14 +13,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutOrderNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置保险订单 ID。
+        /// 获取或设置微信支付保险订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
         public string? OrderId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

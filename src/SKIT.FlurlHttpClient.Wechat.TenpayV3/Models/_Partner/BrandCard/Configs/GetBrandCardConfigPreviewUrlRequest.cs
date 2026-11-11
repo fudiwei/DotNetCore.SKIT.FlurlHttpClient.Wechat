@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetBrandCardConfigPreviewUrlRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置业务申请编号。与字段 <see cref="ApplymentId"/> 二选一。
+        /// 获取或设置商户业务申请单号。与字段 <see cref="ApplymentId"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

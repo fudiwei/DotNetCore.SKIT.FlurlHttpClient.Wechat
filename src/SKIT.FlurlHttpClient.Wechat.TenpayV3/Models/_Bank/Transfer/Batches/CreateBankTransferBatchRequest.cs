@@ -3,6 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /bank-transfer/batches 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreateBankTransferBatchRequest : WechatTenpayRequest
     {
         public static class Types
@@ -48,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? UserAuthorizedAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置银行批次单号。
+        /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]

@@ -3,9 +3,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /payscore/sign-plan/partner/serviceorder 接口的请求。</para>
     /// </summary>
-    public class CreatePayScorePartnerSignPlanServiceOrderRequest : CreatePayScoreSignPlanServiceOrderRequest
+    public class CreatePayScorePartnerSignPlanServiceOrderRequest : WechatTenpayRequest
     {
-        public static new class Types
+        public static class Types
         {
             public class TimeRange : CreatePayScorePartnerServiceOrderRequest.Types.TimeRange
             {
@@ -24,31 +24,94 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户在子商户下的唯一标识。
+        /// 获取或设置待签约支付分计划 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign_plan_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign_plan_id")]
+        public string? SignPlanId { get; set; }
+
+        /// <summary>
+        /// 获取或设置签约计划明细序号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("plan_detail_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("plan_detail_no")]
+        public int PlanDetailNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置服务 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("service_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("service_id")]
+        public string? ServiceId { get; set; }
+
+        /// <summary>
+        /// 获取或设置服务信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("service_introduction")]
+        [System.Text.Json.Serialization.JsonPropertyName("service_introduction")]
+        public string? ServiceInstruction { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
+        public string? OutTradeNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户 OpenId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+        public string? OpenId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
         public string? SubOpenId { get; set; }
 
         /// <summary>
+        /// 获取或设置附加数据。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attach")]
+        [System.Text.Json.Serialization.JsonPropertyName("attach")]
+        public string? Attachment { get; set; }
+
+        /// <summary>
+        /// 获取或设置回调通知地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("notify_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
+        public string? NotifyUrl { get; set; }
+
+        /// <summary>
         /// 获取或设置服务时间段信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("time_range")]
         [System.Text.Json.Serialization.JsonPropertyName("time_range")]
-        public new Types.TimeRange? TimeRange { get; set; }
+        public Types.TimeRange? TimeRange { get; set; }
 
         /// <summary>
         /// 获取或设置服务位置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("location")]
         [System.Text.Json.Serialization.JsonPropertyName("location")]
-        public new Types.Location? Location { get; set; }
+        public Types.Location? Location { get; set; }
     }
 }

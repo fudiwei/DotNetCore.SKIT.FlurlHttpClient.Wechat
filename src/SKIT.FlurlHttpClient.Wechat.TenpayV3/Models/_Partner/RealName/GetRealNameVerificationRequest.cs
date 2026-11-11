@@ -15,8 +15,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? CredentialType { get; set; } = "1";
 
         /// <summary>
-        /// 获取或设置下单用户证件号（需使用平台公钥/证书加密）。
+        /// 获取或设置下单用户证件号。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
         [Newtonsoft.Json.JsonIgnore]
@@ -24,8 +27,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? CredentialId { get; set; }
 
         /// <summary>
-        /// 获取或设置下单用户姓名（需使用平台公钥/证书加密）。
+        /// 获取或设置下单用户姓名。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
         [Newtonsoft.Json.JsonIgnore]

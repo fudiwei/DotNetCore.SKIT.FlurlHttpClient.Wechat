@@ -6,6 +6,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class CreateMerchantSettlementSettleRuleApplymentRequest : WechatTenpayRequest
     {
         /// <summary>
+        /// 获取或设置渠道商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("channel_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
+        public string? ChannelId { get; set; }
+
+        /// <summary>
         /// 获取或设置从业机构号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("acquiring_bank_id")]
@@ -18,13 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
         public string? SubMerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置渠道商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("channel_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置结算规则 ID。

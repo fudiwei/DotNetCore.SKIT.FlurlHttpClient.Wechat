@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信支付注销提现申请单号。
+        /// 获取或设置微信支付申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applyment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("applyment_id")]
         public string? ApplymentId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户注销申请单号。
+        /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]

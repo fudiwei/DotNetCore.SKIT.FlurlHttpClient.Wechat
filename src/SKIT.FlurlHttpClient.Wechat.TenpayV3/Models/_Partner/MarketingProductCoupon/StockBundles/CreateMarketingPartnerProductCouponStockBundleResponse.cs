@@ -1,5 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
+    using SKIT.FlurlHttpClient.Internal.CodeAnalysis;
+
     /// <summary>
     /// <para>表示 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stock-bundles 接口的响应。</para>
     /// </summary>
@@ -7,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
+            [DisallowAnalyzerRule("type-declaration/no-external-contract-nested-types", Addition = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Models." + nameof(QueryMarketingPartnerProductCouponStocksResponse) + "+" + nameof(QueryMarketingPartnerProductCouponStocksResponse.Types) + "+" + nameof(QueryMarketingPartnerProductCouponStocksResponse.Types.Stock))]
             public class Stock : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock
             {
             }

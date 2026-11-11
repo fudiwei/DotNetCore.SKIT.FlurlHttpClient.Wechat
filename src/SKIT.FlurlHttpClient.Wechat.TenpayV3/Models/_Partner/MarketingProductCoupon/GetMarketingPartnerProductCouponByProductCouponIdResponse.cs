@@ -11,38 +11,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class NormalCoupon
+                    public class NormalCoupon : CreateMarketingPartnerProductCouponRequest.Types.SingleUsageInfo.Types.NormalCoupon
                     {
-                        /// <summary>
-                        /// 获取或设置门槛金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("threshold")]
-                        [System.Text.Json.Serialization.JsonPropertyName("threshold")]
-                        public int Threshold { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置固定减免金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("discount_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
-                        public int DiscountAmount { get; set; }
                     }
 
-                    public class DiscountCoupon
+                    public class DiscountCoupon : CreateMarketingPartnerProductCouponRequest.Types.SingleUsageInfo.Types.DiscountCoupon
                     {
-                        /// <summary>
-                        /// 获取或设置门槛金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("threshold")]
-                        [System.Text.Json.Serialization.JsonPropertyName("threshold")]
-                        public int Threshold { get; set; }
+                    }
 
-                        /// <summary>
-                        /// 获取或设置固定减免百分比（单位：百分数）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("percent_off")]
-                        [System.Text.Json.Serialization.JsonPropertyName("percent_off")]
-                        public int PercentOff { get; set; }
+                    public class ExchangeCoupon : CreateMarketingPartnerProductCouponRequest.Types.SingleUsageInfo.Types.ExchangeCoupon
+                    {
                     }
                 }
 
@@ -59,123 +37,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("discount_coupon")]
                 [System.Text.Json.Serialization.JsonPropertyName("discount_coupon")]
                 public Types.DiscountCoupon? DiscountCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置兑换券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon")]
+                public Types.ExchangeCoupon? ExchangeCoupon { get; set; }
             }
 
-            public class SequentialUsageInfo
+            public class SequentialUsageInfo : CreateMarketingPartnerProductCouponRequest.Types.SequentialUsageInfo
             {
-                /// <summary>
-                /// 获取或设置多次优惠规则类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置可使用次数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("count")]
-                [System.Text.Json.Serialization.JsonPropertyName("count")]
-                public int Count { get; set; }
-
-                /// <summary>
-                /// 获取或设置有效天数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("available_days")]
-                [System.Text.Json.Serialization.JsonPropertyName("available_days")]
-                public int? AvailableDays { get; set; }
-
-                /// <summary>
-                /// 获取或设置使用间隔天数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("interval_days")]
-                [System.Text.Json.Serialization.JsonPropertyName("interval_days")]
-                public int? IntervalDays { get; set; }
             }
 
-            public class ProgressiveBundleUsageInfo
+            public class ProgressiveBundleUsageInfo : CreateMarketingPartnerProductCouponRequest.Types.ProgressiveBundleUsageInfo
             {
-                /// <summary>
-                /// 获取或设置可使用次数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("count")]
-                [System.Text.Json.Serialization.JsonPropertyName("count")]
-                public int Count { get; set; }
-
-                /// <summary>
-                /// 获取或设置使用间隔天数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("interval_days")]
-                [System.Text.Json.Serialization.JsonPropertyName("interval_days")]
-                public int? IntervalDays { get; set; }
             }
 
-            public class DisplayInfo
+            public class DisplayInfo : CreateMarketingPartnerProductCouponRequest.Types.__zz__DisplayInfo
             {
                 public static class Types
                 {
-                    public class ComboPackage
+                    public class ComboPackage : CreateMarketingPartnerProductCouponRequest.Types.DisplayInfo.Types.__zz__ComboPackage
                     {
                         public static class Types
                         {
-                            public class Choice
+                            public class Choice : CreateMarketingPartnerProductCouponRequest.Types.DisplayInfo.Types.ComboPackage.Types.Choice
                             {
-                                /// <summary>
-                                /// 获取或设置单品名称。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("name")]
-                                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                public string? Name { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置单品图片 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("image_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                                public string? ImageUrl { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置跳转小程序 AppId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("mini_program_appid")]
-                                [System.Text.Json.Serialization.JsonPropertyName("mini_program_appid")]
-                                public string? MiniProgramAppId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置跳转小程序页面路径。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("mini_program_path")]
-                                [System.Text.Json.Serialization.JsonPropertyName("mini_program_path")]
-                                public string? MiniProgramPagePath { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置单品价格（单位：分）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("price")]
-                                [System.Text.Json.Serialization.JsonPropertyName("price")]
-                                public int Price { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置单品数量。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("count")]
-                                [System.Text.Json.Serialization.JsonPropertyName("count")]
-                                public int Count { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置套餐名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置可选单品数量。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pick_count")]
-                        [System.Text.Json.Serialization.JsonPropertyName("pick_count")]
-                        public int PickCount { get; set; }
 
                         /// <summary>
                         /// 获取或设置单品列表。
@@ -185,41 +75,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public List<Types.Choice>? ChoiceList { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置商品券名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品图片 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("image_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("image_url")]
-                public string? ImageUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置背景图片 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("background_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("background_url")]
-                public string? BackgroundUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置详情图片 URL 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("detail_image_url_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("detail_image_url_list")]
-                public List<string>? DetailImageUrlList { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品原价。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("original_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("original_price")]
-                public int? OriginalPrice { get; set; }
 
                 /// <summary>
                 /// 获取或设置套餐组合列表。

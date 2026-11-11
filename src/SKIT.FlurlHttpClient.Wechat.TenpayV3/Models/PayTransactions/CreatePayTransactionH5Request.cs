@@ -7,18 +7,39 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
+            public class Payer : CreatePayTransactionAppRequest.Types.Payer
+            {
+            }
+
             public class Amount : CreatePayTransactionAppRequest.Types.Amount
             {
             }
 
-            public class Detail : CreatePayTransactionAppRequest.Types.Detail
+            public class Detail : CreatePayTransactionAppRequest.Types.__zz__Detail
             {
+                public static class Types
+                {
+                    public class GoodsDetail : CreatePayTransactionAppRequest.Types.Detail.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
-            public class Scene : CreatePayTransactionAppRequest.Types.Scene
+            public class Scene : CreatePayTransactionAppRequest.Types.__zz__Scene
             {
-                public static new class Types
+                public static class Types
                 {
+                    public class Store : CreatePayTransactionAppRequest.Types.Scene.Types.Store
+                    {
+                    }
+
                     public class H5Info
                     {
                         /// <summary>
@@ -60,6 +81,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 }
 
                 /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
+
+                /// <summary>
                 /// 获取或设置 H5 场景信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("h5_info")]
@@ -69,6 +97,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
             public class Settlement : CreatePayTransactionAppRequest.Types.Settlement
             {
+            }
+
+            public class Subsidy
+            {
+                public static class Types
+                {
+                    public class SubsidyDetail : CreatePayTransactionAppRequest.Types.Subsidy.Types.__zz__SubsidyDetail
+                    {
+                        public static class Types
+                        {
+                            public class SubsidyPlan : CreatePayTransactionAppRequest.Types.Subsidy.Types.SubsidyDetail.Types.SubsidyPlan
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置还款计划列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("subsidy_plan")]
+                        [System.Text.Json.Serialization.JsonPropertyName("subsidy_plan")]
+                        public List<Types.SubsidyPlan>? SubsidyPlanList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置贴息详情列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subsidy_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("subsidy_detail")]
+                public List<Types.SubsidyDetail>? SubsidyDetailList { get; set; }
             }
         }
 
@@ -138,6 +196,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public bool? IsSupportFapiao { get; set; }
 
         /// <summary>
+        /// 获取或设置支付者信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("payer")]
+        [System.Text.Json.Serialization.JsonPropertyName("payer")]
+        public Types.Payer? Payer { get; set; }
+
+        /// <summary>
         /// 获取或设置金额信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
@@ -164,5 +229,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("settle_info")]
         [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
         public Types.Settlement? Settlement { get; set; }
+
+        /// <summary>
+        /// 获取或设置贴息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("subsidy_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("subsidy_info")]
+        public Types.Subsidy? Subsidy { get; set; }
     }
 }

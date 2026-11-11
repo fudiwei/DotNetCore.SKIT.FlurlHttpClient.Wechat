@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 public string? Type { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置微信交易订单号。
+                                /// 获取或设置微信支付订单号。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]

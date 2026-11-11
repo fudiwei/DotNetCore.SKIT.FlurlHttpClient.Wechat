@@ -59,11 +59,70 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public bool? IsShareable { get; set; }
             }
 
-            public class CouponUseRule
+            public abstract class __zz__CouponUseRule
+            {
+                /// <summary>
+                /// 获取或设置核销方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("use_method")]
+                [System.Text.Json.Serialization.JsonPropertyName("use_method")]
+                public string? UseMethod { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家小程序 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mini_programs_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_appid")]
+                public string? MiniProgramAppId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家小程序路径。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mini_programs_path")]
+                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_path")]
+                public string? MiniProgramPath { get; set; }
+            }
+
+            public class CouponUseRule : __zz__CouponUseRule
             {
                 public static class Types
                 {
-                    public class CouponAvailableTime
+                    public abstract class __zz__CouponAvailableTime
+                    {
+                        /// <summary>
+                        /// 获取或设置批次开始时间。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("available_begin_time")]
+                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("available_begin_time")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                        public DateTimeOffset AvailableBeginTime { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置批次结束时间。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("available_end_time")]
+                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("available_end_time")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                        public DateTimeOffset AvailableEndTime { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置生效后 N 天内有效。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("available_day_after_receive")]
+                        [System.Text.Json.Serialization.JsonPropertyName("available_day_after_receive")]
+                        public int? AvailableDaysAfterReceive { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置领取后 N 天开始生效。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wait_days_after_receive")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wait_days_after_receive")]
+                        public int? WaitDaysAfterReceive { get; set; }
+                    }
+
+                    public class CouponAvailableTime : __zz__CouponAvailableTime
                     {
                         public static class Types
                         {
@@ -127,24 +186,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置批次开始时间。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("available_begin_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("available_begin_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        public DateTimeOffset AvailableBeginTime { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置批次结束时间。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("available_end_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("available_end_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        public DateTimeOffset AvailableEndTime { get; set; }
-
-                        /// <summary>
                         /// 获取或设置固定周期有效时间段信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("available_week")]
@@ -157,20 +198,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("irregulary_avaliable_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("irregulary_avaliable_time")]
                         public List<Types.AvailableTime>? IrregularyAvailableTimeList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置生效后 N 天内有效。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("available_day_after_receive")]
-                        [System.Text.Json.Serialization.JsonPropertyName("available_day_after_receive")]
-                        public int? AvailableDaysAfterReceive { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置领取后 N 天开始生效。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("wait_days_after_receive")]
-                        [System.Text.Json.Serialization.JsonPropertyName("wait_days_after_receive")]
-                        public int? WaitDaysAfterReceive { get; set; }
                     }
 
                     public class NormalCoupon
@@ -233,49 +260,59 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public Types.CouponAvailableTime? CouponAvailableTime { get; set; }
 
                 /// <summary>
-                /// 获取或设置固定面额满减券使用规则信息。与字段 <see cref="DiscountCoupon"/>、<see cref="ExchangeCoupon"/> 三选一。
+                /// 获取或设置固定面额满减券使用规则信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fixed_normal_coupon")]
                 [System.Text.Json.Serialization.JsonPropertyName("fixed_normal_coupon")]
                 public Types.NormalCoupon? NormalCoupon { get; set; }
 
                 /// <summary>
-                /// 获取或设置折扣券使用规则信息。与字段 <see cref="NormalCoupon"/>、<see cref="ExchangeCoupon"/> 三选一。
+                /// 获取或设置折扣券使用规则信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("discount_coupon")]
                 [System.Text.Json.Serialization.JsonPropertyName("discount_coupon")]
                 public Types.DiscountCoupon? DiscountCoupon { get; set; }
 
                 /// <summary>
-                /// 获取或设置换购券使用规则信息。与字段 <see cref="NormalCoupon"/>、<see cref="DiscountCoupon"/> 三选一。
+                /// 获取或设置换购券使用规则信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exchange_coupon")]
                 [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon")]
                 public Types.ExchangeCoupon? ExchangeCoupon { get; set; }
-
-                /// <summary>
-                /// 获取或设置核销方式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("use_method")]
-                [System.Text.Json.Serialization.JsonPropertyName("use_method")]
-                public string? UseMethod { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mini_programs_appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_appid")]
-                public string? MiniProgramAppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家小程序路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mini_programs_path")]
-                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_path")]
-                public string? MiniProgramPath { get; set; }
             }
 
-            public class CustomEntrance
+            public abstract class __zz__CustomEntrance
+            {
+                /// <summary>
+                /// 获取或设置商家公众号 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                public string? AppId { get; set; }
+
+                /// <summary>
+                /// 获取或设置营销馆 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("hall_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("hall_id")]
+                public string? HallId { get; set; }
+
+                /// <summary>
+                /// 获取或设置可用门店 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_id")]
+                public string? StoreId { get; set; }
+
+                /// <summary>
+                /// 获取或设置展示模式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("code_display_mode")]
+                [System.Text.Json.Serialization.JsonPropertyName("code_display_mode")]
+                public string? CodeDisplayMode { get; set; }
+            }
+
+            public class CustomEntrance : __zz__CustomEntrance
             {
                 public static class Types
                 {
@@ -317,65 +354,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("mini_programs_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("mini_programs_info")]
                 public Types.MiniProgram? MiniProgram { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家公众号 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string? AppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置营销馆 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("hall_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("hall_id")]
-                public string? HallId { get; set; }
-
-                /// <summary>
-                /// 获取或设置可用门店 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("store_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("store_id")]
-                public string? StoreId { get; set; }
-
-                /// <summary>
-                /// 获取或设置展示模式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("code_display_mode")]
-                [System.Text.Json.Serialization.JsonPropertyName("code_display_mode")]
-                public string? CodeDisplayMode { get; set; }
             }
 
-            public class DisplayPattern
+            public abstract class __zz__DisplayPattern
             {
-                public static class Types
-                {
-                    public class Finder
-                    {
-                        /// <summary>
-                        /// 获取或设置视频号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finder_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-                        public string? FinderId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置视频封面图片媒体文件地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finder_video_cover_image_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finder_video_cover_image_url")]
-                        public string? FinderVideoCoverImageMediaUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置视频 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finder_video_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finder_video_id")]
-                        public string? FinderVideoId { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置使用须知。
                 /// </summary>
@@ -410,13 +392,43 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("coupon_image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_image_url")]
                 public string? CouponImageMediaUrl { get; set; }
+            }
+
+            public class DisplayPattern : __zz__DisplayPattern
+            {
+                public static class Types
+                {
+                    public class FinderInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置视频号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
+                        public string? FinderId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频封面图片媒体文件地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_video_cover_image_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_video_cover_image_url")]
+                        public string? FinderVideoCoverImageMediaUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_video_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_video_id")]
+                        public string? FinderVideoId { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置视频号信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finder_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("finder_info")]
-                public Types.Finder? Finder { get; set; }
+                public Types.FinderInfo? FinderInfo { get; set; }
             }
 
             public class NotifyConfig

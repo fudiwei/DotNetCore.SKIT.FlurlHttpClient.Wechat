@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     /// <summary>
     /// <para>表示 [PUT] /merchants 接口的请求。</para>
     /// </summary>
-    public class ModifySubMerchantRequest : WechatTenpayGlobalRequest
+    public class UpdateSubMerchantRequest : WechatTenpayGlobalRequest
     {
         public static class Types
         {
@@ -29,7 +29,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         }
 
         /// <summary>
-        /// 获取或设置机构商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
+        /// 获取或设置渠道号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("channel_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
+        public string? ChannelId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
@@ -43,18 +50,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
         public string? SubMerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置渠道号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("channel_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置商户类型。

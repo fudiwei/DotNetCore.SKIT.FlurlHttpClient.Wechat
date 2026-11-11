@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286082 ]]>
     /// </para>
     /// </summary>
-    public class FapiaoResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class FapiaoResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {

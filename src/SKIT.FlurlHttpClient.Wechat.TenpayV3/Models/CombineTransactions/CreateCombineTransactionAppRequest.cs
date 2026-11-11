@@ -8,45 +8,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class SubOrder
+            public abstract class __zz__SubOrder
             {
-                public static class Types
-                {
-                    public class Amount
-                    {
-                        /// <summary>
-                        /// 获取或设置标价金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("total_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
-                        public int Total { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置标价币种。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("currency")]
-                        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                        public string? Currency { get; set; } = "CNY";
-                    }
-
-                    public class Settlement
-                    {
-                        /// <summary>
-                        /// 获取或设置是否指定分账。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("profit_sharing")]
-                        [System.Text.Json.Serialization.JsonPropertyName("profit_sharing")]
-                        public bool? IsProfitSharing { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置补差金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("subsidy_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("subsidy_amount")]
-                        public int? SubsidyAmount { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置子单微信商户号。如果不指定将使用合单微信商户号。
                 /// </summary>
@@ -62,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? SubMerchantId { get; set; }
 
                 /// <summary>
-                /// 获取或设置子单子商户 AppId。
+                /// 获取或设置子单子商户微信 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
@@ -111,6 +74,37 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? OutTradeNumber { get; set; }
 
                 /// <summary>
+                /// 获取或设置订单优惠标记。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_tag")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
+                public string? GoodsTag { get; set; }
+            }
+
+            public class SubOrder : __zz__SubOrder
+            {
+                public static class Types
+                {
+                    public class Amount : CreatePayTransactionAppRequest.Types.Amount
+                    {
+                        /// <summary>
+                        /// 获取或设置标价金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("total_amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
+                        public new int Total
+                        {
+                            get { return base.Total; }
+                            set { base.Total = value; }
+                        }
+                    }
+
+                    public class Settlement : CreatePayTransactionAppRequest.Types.Settlement
+                    {
+                    }
+                }
+
+                /// <summary>
                 /// 获取或设置金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
@@ -123,16 +117,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("settle_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
                 public Types.Settlement? Settlement { get; set; }
-
-                /// <summary>
-                /// 获取或设置订单优惠标记。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_tag")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
-                public string? GoodsTag { get; set; }
             }
 
-            public class Payer
+            public abstract class __zz__Payer : CreatePayTransactionAppRequest.Types.Payer
+            {
+                /// <summary>
+                /// 获取或设置子商户用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
+                public string? SubOpenId { get; set; }
+            }
+
+            public class Payer : __zz__Payer
             {
                 public static class Types
                 {
@@ -146,8 +143,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? IdentityType { get; set; }
 
                         /// <summary>
-                        /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
+                        /// 获取或设置证件姓名。
                         /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                        /// </remarks>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -155,8 +155,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? IdName { get; set; }
 
                         /// <summary>
-                        /// 获取或设置证件号码（需使用平台公钥/证书加密）。
+                        /// 获取或设置证件号码。
                         /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                        /// </remarks>
                         [Newtonsoft.Json.JsonProperty("number")]
                         [System.Text.Json.Serialization.JsonPropertyName("number")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -164,20 +167,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? IdNumber { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置用户唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string? OpenId { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户在子商户下的唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sub_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
-                public string? SubOpenId { get; set; }
 
                 /// <summary>
                 /// 获取或设置实名支付信息。
@@ -204,8 +193,38 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? DeviceId { get; set; }
             }
 
-            public class Subsidy : CreatePayTransactionAppRequest.Types.Subsidy
+            public class Subsidy
             {
+                public static class Types
+                {
+                    public abstract class __zz__SubsidyDetail : CreatePayTransactionAppRequest.Types.Subsidy.Types.__zz__SubsidyDetail
+                    {
+                    }
+
+                    public class SubsidyDetail : __zz__SubsidyDetail
+                    {
+                        public static class Types
+                        {
+                            public class SubsidyPlan : CreatePayTransactionAppRequest.Types.Subsidy.Types.SubsidyDetail.Types.SubsidyPlan
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置还款计划列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("subsidy_plan")]
+                        [System.Text.Json.Serialization.JsonPropertyName("subsidy_plan")]
+                        public List<Types.SubsidyPlan>? SubsidyPlanList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置贴息详情列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subsidy_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("subsidy_detail")]
+                public List<Types.SubsidyDetail>? SubsidyDetailList { get; set; }
             }
         }
 
@@ -277,17 +296,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public Types.Scene? Scene { get; set; }
 
         /// <summary>
-        /// 获取或设置交易场景。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("trade_scenario")]
-        [System.Text.Json.Serialization.JsonPropertyName("trade_scenario")]
-        public string? TradeScenario { get; set; }
-
-        /// <summary>
         /// 获取或设置贴息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("subsidy_info")]
         [System.Text.Json.Serialization.JsonPropertyName("subsidy_info")]
         public Types.Subsidy? Subsidy { get; set; }
+
+        /// <summary>
+        /// 获取或设置交易场景。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("trade_scenario")]
+        [System.Text.Json.Serialization.JsonPropertyName("trade_scenario")]
+        public string? TradeScenario { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示教育续费通 ENTRUST.SIGNING 回调通知事件的数据。</para>
     /// <para>表示教育续费通 ENTRUST.RELEASE 回调通知事件的数据。</para>
     /// </summary>
-    public class EducationEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class EducationEntrustResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? PlanId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -11,24 +11,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             public class Contact
             {
                 /// <summary>
-                /// 获取或设置联系人姓名（需使用商户私钥解密）。
+                /// 获取或设置联系人姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
                 public string? ContactName { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系电话号码（需使用商户私钥解密）。
+                /// 获取或设置联系电话号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
                 public string? MobileNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系邮箱（需使用商户私钥解密）。
+                /// 获取或设置联系邮箱。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("email")]
                 [System.Text.Json.Serialization.JsonPropertyName("email")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
@@ -191,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

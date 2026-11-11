@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("store_id", request.StoreId)
                 .SetQueryParam("userid", request.UserId)
-                .SetQueryParam("mobile", request.UserMobile)
+                .SetQueryParam("mobile", request.UserMobileNumber)
                 .SetQueryParam("work_id", request.UserWorkId)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);

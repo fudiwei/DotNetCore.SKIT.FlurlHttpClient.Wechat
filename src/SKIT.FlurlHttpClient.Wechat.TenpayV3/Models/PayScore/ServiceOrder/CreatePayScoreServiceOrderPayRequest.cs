@@ -6,18 +6,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class CreatePayScoreServiceOrderPayRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置商户服务订单号。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? OutOrderNumber { get; set; }
-
-        /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户服务单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? OutOrderNumber { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。

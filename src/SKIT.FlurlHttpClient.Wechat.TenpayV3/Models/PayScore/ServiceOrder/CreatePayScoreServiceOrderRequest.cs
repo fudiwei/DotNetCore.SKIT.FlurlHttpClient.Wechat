@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Payment
+            public class PostPayment
             {
                 /// <summary>
                 /// 获取或设置付费项目名称。
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int? Count { get; set; }
             }
 
-            public class Discount
+            public class PostDiscount
             {
                 /// <summary>
                 /// 获取或设置优惠名称。
@@ -171,10 +171,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string? AppId { get; set; }
+        public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户服务订单号。
+        /// 获取或设置商户服务单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_order_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
@@ -209,11 +209,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? NotifyUrl { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public virtual string? OpenId { get; set; }
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置是否需要用户确认。
@@ -227,14 +227,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_payments")]
         [System.Text.Json.Serialization.JsonPropertyName("post_payments")]
-        public List<Types.Payment>? PostPaymentList { get; set; }
+        public List<Types.PostPayment>? PostPaymentList { get; set; }
 
         /// <summary>
         /// 获取或设置商户优惠列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_discounts")]
         [System.Text.Json.Serialization.JsonPropertyName("post_discounts")]
-        public List<Types.Discount>? PostDiscountList { get; set; }
+        public List<Types.PostDiscount>? PostDiscountList { get; set; }
 
         /// <summary>
         /// 获取或设置服务时间段信息。

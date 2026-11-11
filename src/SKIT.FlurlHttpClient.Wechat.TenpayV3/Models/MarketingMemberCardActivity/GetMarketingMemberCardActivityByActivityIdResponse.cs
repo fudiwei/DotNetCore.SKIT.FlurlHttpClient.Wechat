@@ -11,53 +11,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class AwardSendTime
+                    public class AwardSendTime : CreateMarketingMemberCardActivityRequest.Types.AwardSendPeriod.Types.AwardSendTime
                     {
-                        /// <summary>
-                        /// 获取或设置开始时间。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("begin_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        public DateTimeOffset BeginTime { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置结束时间。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("end_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                        public DateTimeOffset EndTime { get; set; }
                     }
 
                     public class AwardSendDayTime
                     {
                         public static class Types
                         {
-                            public class DayTime
+                            public class DayTime : CreateMarketingMemberCardActivityRequest.Types.AwardSendPeriod.Types.AwardSendDayTime.Types.DayTime
                             {
-                                /// <summary>
-                                /// 获取或设置时。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("hours")]
-                                [System.Text.Json.Serialization.JsonPropertyName("hours")]
-                                public int Hours { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置时。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("minutes")]
-                                [System.Text.Json.Serialization.JsonPropertyName("minutes")]
-                                public int Minutes { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置时。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("seconds")]
-                                [System.Text.Json.Serialization.JsonPropertyName("seconds")]
-                                public int Seconds { get; set; }
                             }
                         }
 
@@ -92,62 +55,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public List<Types.AwardSendDayTime>? AwardSendDayTimeList { get; set; }
             }
 
-            public class Stock
+            public class Stock : CreateMarketingMemberCardActivityRequest.Types.Stock
             {
-                /// <summary>
-                /// 获取或设置批次号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("stock_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-                public string? StockId { get; set; }
-
-                /// <summary>
-                /// 获取或设置创建批次的商户号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("stock_creator_mchid")]
-                [System.Text.Json.Serialization.JsonPropertyName("stock_creator_mchid")]
-                public string? StockCreatorMerchantId { get; set; }
             }
 
-            public class PayActivitySetting
+            public class PayActivitySetting : CreateMarketingMemberCardActivityRequest.Types.__zz__PayActivitySetting
             {
                 public static class Types
                 {
-                    public class ActivateSetting
+                    public class ActivateSetting : CreateMarketingMemberCardActivityRequest.Types.PayActivitySetting.Types.__zz__ActivateSetting
                     {
                         public static class Types
                         {
-                            public class MiniProgram
+                            public class MiniProgram : CreateMarketingMemberCardActivityRequest.Types.PayActivitySetting.Types.ActivateSetting.Types.MiniProgram
                             {
-                                /// <summary>
-                                /// 获取或设置小程序 AppId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("activate_appid")]
-                                [System.Text.Json.Serialization.JsonPropertyName("activate_appid")]
-                                public string? AppId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置小程序页面路径。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("activate_path")]
-                                [System.Text.Json.Serialization.JsonPropertyName("activate_path")]
-                                public string? Path { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置激活类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("activate_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("activate_type")]
-                        public string? ActivateType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置激活跳转的 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("activate_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("activate_url")]
-                        public string? ActivateUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置激活跳转的小程序信息。
@@ -157,18 +80,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public Types.MiniProgram? ActivateMiniProgram { get; set; }
                     }
 
-                    public class PaymentSetting
+                    public class PaymentSetting : CreateMarketingMemberCardActivityRequest.Types.PayActivitySetting.Types.__zz__PaymentSetting
                     {
                         public static class Types
                         {
-                            public class PaymentMode
+                            public class PaymentMode : CreateMarketingMemberCardActivityRequest.Types.PayActivitySetting.Types.PaymentSetting.Types.PaymentMode
                             {
-                                /// <summary>
-                                /// 获取或设置支付场景值列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("payment_scene_list")]
-                                [System.Text.Json.Serialization.JsonPropertyName("payment_scene_list")]
-                                public List<string>? PaymentSceneList { get; set; }
                             }
                         }
 
@@ -178,43 +95,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("payment_mode")]
                         [System.Text.Json.Serialization.JsonPropertyName("payment_mode")]
                         public Types.PaymentMode? LimitPaymentMode { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置限定银行简称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("limit_bank")]
-                        [System.Text.Json.Serialization.JsonPropertyName("limit_bank")]
-                        public string? LimitBankName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置限定订单优惠标记列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_tags")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_tags")]
-                        public List<string>? LimitGoodsTagList { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置会员卡 Logo 媒体文件地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("logo_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("logo_url")]
-                public string? LogoMediaUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置支付结果页活动副标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("activity_second_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("activity_second_title")]
-                public string? ActivitySecondTitle { get; set; }
-
-                /// <summary>
-                /// 获取或设置活动曝光商户号列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mchid_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("mchid_list")]
-                public List<string>? MerchantIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置激活方式设置。
@@ -231,41 +113,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public Types.PaymentSetting? PaymentSetting { get; set; }
             }
 
-            public class MiniProgramActivitySetting
+            public class MiniProgramActivitySetting : CreateMarketingMemberCardActivityRequest.Types.__zz__MiniProgramActivitySetting
             {
                 public static class Types
                 {
-                    public class AwardSetting
+                    public class AwardSetting : CreateMarketingMemberCardActivityRequest.Types.MiniProgramActivitySetting.Types.AwardSetting
                     {
-                        /// <summary>
-                        /// 获取或设置跳转按钮文案。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("button_text")]
-                        [System.Text.Json.Serialization.JsonPropertyName("button_text")]
-                        public string? ButtonText { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序 AppId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("mini_program_appid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("mini_program_appid")]
-                        public string? MiniProgramAppId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小程序页面路径。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("mini_program_path")]
-                        [System.Text.Json.Serialization.JsonPropertyName("mini_program_path")]
-                        public string? MiniProgramPath { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置领取渠道列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("outer_str")]
-                [System.Text.Json.Serialization.JsonPropertyName("outer_str")]
-                public List<string>? OuterStringList { get; set; }
 
                 /// <summary>
                 /// 获取或设置领奖页面跳转配置信息。

@@ -21,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置还款服务商商户号。
+        /// 获取或设置还款微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("combine_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_mchid")]
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? IndividualAuthId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信退款单号。
+        /// 获取或设置微信支付退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -77,8 +77,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? BankName { get; set; }
 
         /// <summary>
-        /// 获取或设置收款银行卡号（需使用平台公钥/证书加密）。
+        /// 获取或设置收款银行卡号。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("bank_account")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_account")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -86,8 +89,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? BankAccountNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户姓名（需使用平台公钥/证书加密）。
+        /// 获取或设置收款用户姓名。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("real_name")]
         [System.Text.Json.Serialization.JsonPropertyName("real_name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]

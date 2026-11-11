@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 "DISCOUNT_CARD.AGREEMENT_ENDED" 回调通知事件的数据。</para>
     /// <para>表示 "DISCOUNT_CARD.USER_PAID" 回调通知事件的数据。</para>
     /// </summary>
-    public class DiscountCardResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class DiscountCardResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? CardId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
@@ -125,12 +125,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? SharerOpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置创卡时间。
+        /// 获取或设置创建时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset? CreateTime { get; set; }
+        public DateTimeOffset CreateTime { get; set; }
     }
 }

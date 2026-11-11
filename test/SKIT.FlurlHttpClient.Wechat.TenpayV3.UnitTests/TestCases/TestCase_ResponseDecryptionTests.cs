@@ -24,9 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetBillSubMerchantFundflowBillResponse()
                 {
-                    DownloadBillList = new List<Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill>()
+                    BillList = new List<Models.GetBillSubMerchantFundflowBillResponse.Types.Bill>()
                     {
-                        new Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill()
+                        new Models.GetBillSubMerchantFundflowBillResponse.Types.Bill()
                         {
                             EncryptKey = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockResponseModel(Models.GetBillSubMerchantFundflowBillResponse response)
             {
-                Assert.Equal(MOCK_PLAIN_STR, response.DownloadBillList![0].EncryptKey!);
+                Assert.Equal(MOCK_PLAIN_STR, response.BillList![0].EncryptKey!);
             }
 
             await Assert.MultipleAsync(async () =>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
-                
+
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetBillSubMerchantFundflowBillRequest();
@@ -300,9 +300,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetEcommerceBillFundflowBillResponse()
                 {
-                    DownloadBillList = new List<Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill>()
+                    BillList = new List<Models.GetEcommerceBillFundflowBillResponse.Types.Bill>()
                     {
-                        new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill()
+                        new Models.GetEcommerceBillFundflowBillResponse.Types.Bill()
                         {
                             EncryptKey = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
@@ -312,7 +312,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockResponseModel(Models.GetEcommerceBillFundflowBillResponse response)
             {
-                Assert.Equal(MOCK_PLAIN_STR, response.DownloadBillList![0].EncryptKey!);
+                Assert.Equal(MOCK_PLAIN_STR, response.BillList![0].EncryptKey!);
             }
 
             await Assert.MultipleAsync(async () =>
@@ -1101,9 +1101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             {
                 return SetMockResponseRawStatusAsOk(new Models.GetPayScoreMerchantBillResponse()
                 {
-                    DownloadBillList = new List<Models.GetPayScoreMerchantBillResponse.Types.DownloadBill>()
+                    BillList = new List<Models.GetPayScoreMerchantBillResponse.Types.Bill>()
                     {
-                        new Models.GetPayScoreMerchantBillResponse.Types.DownloadBill()
+                        new Models.GetPayScoreMerchantBillResponse.Types.Bill()
                         {
                             EncryptKey = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
@@ -1113,7 +1113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
 
             static void AssertMockResponseModel(Models.GetPayScoreMerchantBillResponse response)
             {
-                Assert.Equal(MOCK_PLAIN_STR, response.DownloadBillList![0].EncryptKey!);
+                Assert.Equal(MOCK_PLAIN_STR, response.BillList![0].EncryptKey!);
             }
 
             await Assert.MultipleAsync(async () =>
@@ -1277,7 +1277,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                         new Models.QuerySmartGuidesResponse.Types.Guide()
                         {
                             UserName = encryptor.Invoke(MOCK_PLAIN_STR),
-                            UserMobile = encryptor.Invoke(MOCK_PLAIN_STR)
+                            UserMobileNumber = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
                 });
@@ -1286,7 +1286,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             static void AssertMockResponseModel(Models.QuerySmartGuidesResponse response)
             {
                 Assert.Equal(MOCK_PLAIN_STR, response.GuideList![0].UserName!);
-                Assert.Equal(MOCK_PLAIN_STR, response.GuideList![0].UserMobile!);
+                Assert.Equal(MOCK_PLAIN_STR, response.GuideList![0].UserMobileNumber!);
             }
 
             await Assert.MultipleAsync(async () =>

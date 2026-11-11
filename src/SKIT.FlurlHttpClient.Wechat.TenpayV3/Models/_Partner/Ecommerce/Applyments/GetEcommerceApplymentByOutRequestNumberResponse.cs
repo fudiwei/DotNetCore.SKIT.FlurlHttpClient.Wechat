@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class AccountValidation
             {
                 /// <summary>
-                /// 获取或设置付款户名（需使用商户私钥解密）。
+                /// 获取或设置付款户名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -20,8 +23,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? AccountName { get; set; }
 
                 /// <summary>
-                /// 获取或设置付款卡号（需使用商户私钥解密）。
+                /// 获取或设置付款卡号。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("account_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_no")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -99,14 +105,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置业务申请编号。
+        /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
         public string? OutRequestNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置申请单编号。
+        /// 获取或设置微信支付申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applyment_id")]
         [System.Text.Json.Serialization.JsonPropertyName("applyment_id")]

@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014301851 ]]> <br/>
     /// </para>
     /// </summary>
-    public class MerchantTransferQQWalletBillFinishedResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class MerchantTransferQQWalletBillFinishedResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置微信商户号。
@@ -59,22 +59,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? TransferRemark { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户的 OpenId。
+        /// 获取或设置收款用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户的 QQ 号。
+        /// 获取或设置收款用户 QQ 号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_qq")]
         [System.Text.Json.Serialization.JsonPropertyName("user_qq")]
         public string? UserQQ { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户姓名（需使用商户私钥解密）。
+        /// 获取或设置收款用户姓名。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用商户私钥解密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
         public string? UserName { get; set; }

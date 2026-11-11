@@ -7,7 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Receiver
+            public abstract class __zz__Receiver
+            {
+                /// <summary>
+                /// 获取或设置转账接收方类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public string? Type { get; set; }
+            }
+
+            public class Receiver : __zz__Receiver
             {
                 public static class Types
                 {
@@ -21,20 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? Type { get; set; }
 
                         /// <summary>
-                        /// 获取或设置微信交易订单号。
+                        /// 获取或设置微信支付订单号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("transaction_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
                         public string? TransactionId { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置转账接收方类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string? Type { get; set; }
 
                 /// <summary>
                 /// 获取或设置转账接收方订单信息。

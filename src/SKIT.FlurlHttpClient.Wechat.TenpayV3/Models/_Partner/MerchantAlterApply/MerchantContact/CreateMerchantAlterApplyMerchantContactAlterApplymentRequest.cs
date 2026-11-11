@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Contact
             {
                 /// <summary>
-                /// 获取或设置超级管理员姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置超级管理员姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("contact_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -27,8 +30,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdentityType { get; set; }
 
                 /// <summary>
-                /// 获取或设置超级管理员证件号码（需使用平台公钥/证书加密）。
+                /// 获取或设置超级管理员证件号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -64,8 +70,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdPeriodEndDateString { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系人手机号（需使用平台公钥/证书加密）。
+                /// 获取或设置联系人手机号。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -82,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置业务申请编号。
+        /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]

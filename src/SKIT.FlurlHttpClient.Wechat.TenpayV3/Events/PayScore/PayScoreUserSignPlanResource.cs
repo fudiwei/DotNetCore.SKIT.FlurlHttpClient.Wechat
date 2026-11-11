@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286193 ]]>
     /// </para>
     /// </summary>
-    public class PayScoreUserSignPlanResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PayScoreUserSignPlanResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? SignState { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

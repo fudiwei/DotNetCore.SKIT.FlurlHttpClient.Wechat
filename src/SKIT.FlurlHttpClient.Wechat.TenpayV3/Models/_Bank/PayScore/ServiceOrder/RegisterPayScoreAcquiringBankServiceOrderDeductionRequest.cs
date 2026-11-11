@@ -6,25 +6,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class RegisterPayScoreAcquiringBankServiceOrderDeductionRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置商户服务订单号。
+        /// 获取或设置渠道商商户号。
         /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? OutOrderNumber { get; set; }
-
-        /// <summary>
-        /// 获取或设置微信 AppId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string? AppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置服务 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("service_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-        public string? ServiceId { get; set; }
+        [Newtonsoft.Json.JsonProperty("channel_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
+        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -34,6 +20,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
         /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
@@ -41,11 +34,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置渠道商商户号。
+        /// 获取或设置商户服务单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("channel_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string? ChannelId { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? OutOrderNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置服务 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("service_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("service_id")]
+        public string? ServiceId { get; set; }
 
         /// <summary>
         /// 获取或设置商户扣款单号。

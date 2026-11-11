@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012269028 ]]> <br/>
     /// </para>
     /// </summary>
-    public class MerchantTransferBatchFinishedResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class MerchantTransferBatchFinishedResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置微信商户号。
@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? OutTradeNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信批次单号。
+        /// 获取或设置微信支付批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
         public string? BatchId { get; set; }
 
         /// <summary>
-        /// 获取或设置批次状态。
+        /// 获取或设置批次单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_status")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_status")]

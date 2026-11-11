@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016168699 ]]>
     /// </para>
     /// </summary>
-    public class MarketingPartnerDeliveryPlanResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class MarketingPartnerDeliveryPlanResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置投放计划 ID。

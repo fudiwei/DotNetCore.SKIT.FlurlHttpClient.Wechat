@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? ProofId { get; set; }
 
         /// <summary>
-        /// 获取或设置账单下载地址。
+        /// 获取或设置账单文件下载地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("download_url")]
         [System.Text.Json.Serialization.JsonPropertyName("download_url")]

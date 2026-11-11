@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class PolicyPeriod : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.PolicyPeriod
+            public class PolicyPeriod : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.__zz__PolicyPeriod
             {
+                public static class Types
+                {
+                    public class EstimatedDeductAmount : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.PolicyPeriod.Types.EstimatedDeductAmount
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置预计扣费金额信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
+                public Types.EstimatedDeductAmount? EstimatedDeductAmount { get; set; }
             }
         }
 

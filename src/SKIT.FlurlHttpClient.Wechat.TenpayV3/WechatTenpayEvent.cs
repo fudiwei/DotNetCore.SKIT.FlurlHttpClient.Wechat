@@ -6,6 +6,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     [Serializable]
     public class WechatTenpayEvent : ICommonWebhookEvent
     {
+        public static class Meta
+        {
+            public interface IDecryptedResource : ICommonWebhookEvent
+            {
+            }
+        }
+
         public static class Types
         {
             public class Resource
@@ -15,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("algorithm")]
                 [System.Text.Json.Serialization.JsonPropertyName("algorithm")]
-                public string Algorithm { get; set; } = default!;
+                public string? Algorithm { get; set; }
 
                 /// <summary>
                 /// 获取或设置加密前的对象类型。
@@ -36,18 +43,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nonce")]
                 [System.Text.Json.Serialization.JsonPropertyName("nonce")]
-                public string Nonce { get; set; } = default!;
+                public string? Nonce { get; set; }
 
                 /// <summary>
                 /// 获取或设置 Base64 编码后的密文。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ciphertext")]
                 [System.Text.Json.Serialization.JsonPropertyName("ciphertext")]
-                public string CipherText { get; set; } = default!;
-            }
-
-            public interface IDecryptedResource : ICommonWebhookEvent
-            {
+                public string? CipherText { get; set; }
             }
         }
 
@@ -56,14 +59,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id")]
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         /// <summary>
         /// 获取或设置通知类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("event_type")]
         [System.Text.Json.Serialization.JsonPropertyName("event_type")]
-        public string EventType { get; set; } = default!;
+        public string? EventType { get; set; }
 
         /// <summary>
         /// 获取或设置通知简要说明。
@@ -77,14 +80,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resource_type")]
         [System.Text.Json.Serialization.JsonPropertyName("resource_type")]
-        public string ResourceType { get; set; } = default!;
+        public string? ResourceType { get; set; }
 
         /// <summary>
         /// 获取或设置通知数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resource")]
         [System.Text.Json.Serialization.JsonPropertyName("resource")]
-        public Types.Resource Resource { get; set; } = default!;
+        public Types.Resource? Resource { get; set; }
 
         /// <summary>
         /// 获取或设置通知创建时间。

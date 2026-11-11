@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 }
 
                 /// <summary>
-                /// 获取或设置保险扣费周期编号。
+                /// 获取或设置保险保单扣费周期编号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("policy_period_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("policy_period_id")]
                 public int PolicyPeriodId { get; set; }
 
                 /// <summary>
-                /// 获取或设置保险扣费周期编号。
+                /// 获取或设置保险保单扣费周期编号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_date")]

@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? AppId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置用户唯一标识。
+                        /// 获取或设置用户 OpenId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("card_openid")]
                         [System.Text.Json.Serialization.JsonPropertyName("card_openid")]
@@ -142,8 +142,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? BankAccountNumber { get; set; }
 
                         /// <summary>
-                        /// 获取或设置用户手机号码（需使用商户私钥解密）。
+                        /// 获取或设置用户手机号码。
                         /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                        /// </remarks>
                         [Newtonsoft.Json.JsonProperty("phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("phone")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -151,8 +154,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? UserMobileNumber { get; set; }
 
                         /// <summary>
-                        /// 获取或设置用户邮箱地址（需使用商户私钥解密）。
+                        /// 获取或设置用户邮箱地址。
                         /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                        /// </remarks>
                         [Newtonsoft.Json.JsonProperty("email")]
                         [System.Text.Json.Serialization.JsonPropertyName("email")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]

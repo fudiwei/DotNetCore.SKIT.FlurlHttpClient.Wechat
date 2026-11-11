@@ -11,23 +11,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class Brand : GetMarketingMemberCardOpenCardByCardIdResponse.Types.Brand
+                    public class Brand : CreateMarketingMemberCardOpenCardRequest.Types.Brand
                     {
                     }
 
-                    public class Date : GetMarketingMemberCardOpenCardByCardIdResponse.Types.Date
+                    public class Date : CreateMarketingMemberCardOpenCardRequest.Types.Date
                     {
                     }
 
-                    public class Balance : GetMarketingMemberCardOpenCardByCardIdResponse.Types.Balance
+                    public class Balance : CreateMarketingMemberCardOpenCardRequest.Types.Balance
                     {
                     }
 
-                    public class UserForm : GetMarketingMemberCardOpenCardByCardIdResponse.Types.UserForm
+                    public class UserForm : CreateMarketingMemberCardOpenCardRequest.Types.__zz__UserForm
                     {
+                        public static class Types
+                        {
+                            public class CustomField : CreateMarketingMemberCardOpenCardRequest.Types.UserForm.Types.CustomField
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置商户自定义的开卡信息字段列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("custom_field_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("custom_field_list")]
+                        public List<Types.CustomField>? CustomFieldList { get; set; }
                     }
 
-                    public class AdditionalStatement : GetMarketingMemberCardOpenCardByCardIdResponse.Types.AdditionalStatement
+                    public class AdditionalStatement : CreateMarketingMemberCardOpenCardRequest.Types.AdditionalStatement
                     {
                     }
                 }

@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class AddEcommerceProfitSharingReceiverRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置电商平台 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
@@ -35,8 +35,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? MerchantName { get; set; }
 
         /// <summary>
-        /// 获取或设置接收方个人姓名（需使用平台公钥/证书加密）。
+        /// 获取或设置接收方个人姓名。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("encrypted_name")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypted_name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]

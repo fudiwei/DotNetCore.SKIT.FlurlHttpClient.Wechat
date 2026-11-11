@@ -24,36 +24,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public bool? IsPreventApiAbuse { get; set; }
             }
 
-            public class CouponUseRule
-            {
-                /// <summary>
-                /// 获取或设置核销方式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("use_method")]
-                [System.Text.Json.Serialization.JsonPropertyName("use_method")]
-                public string? UseMethod { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mini_programs_appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_appid")]
-                public string? MiniProgramAppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家小程序路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mini_programs_path")]
-                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_path")]
-                public string? MiniProgramPath { get; set; }
-            }
-
-            public class CustomEntrance : CreateMarketingBusifavorStockRequest.Types.CustomEntrance
+            public class CouponUseRule : CreateMarketingBusifavorStockRequest.Types.__zz__CouponUseRule
             {
             }
 
-            public class DisplayPattern : CreateMarketingBusifavorStockRequest.Types.DisplayPattern
+            public class CustomEntrance : CreateMarketingBusifavorStockRequest.Types.__zz__CustomEntrance
             {
+                public static class Types
+                {
+                    public class MiniProgram : CreateMarketingBusifavorStockRequest.Types.CustomEntrance.Types.MiniProgram
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商家小程序入口信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mini_programs_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_info")]
+                public Types.MiniProgram? MiniProgram { get; set; }
+            }
+
+            public class DisplayPattern : CreateMarketingBusifavorStockRequest.Types.__zz__DisplayPattern
+            {
+                public static class Types
+                {
+                    public class FinderInfo : CreateMarketingBusifavorStockRequest.Types.DisplayPattern.Types.FinderInfo
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置视频号信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("finder_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("finder_info")]
+                public Types.FinderInfo? FinderInfo { get; set; }
             }
 
             public class NotifyConfig : CreateMarketingBusifavorStockRequest.Types.NotifyConfig
@@ -62,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置批次号。
+        /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

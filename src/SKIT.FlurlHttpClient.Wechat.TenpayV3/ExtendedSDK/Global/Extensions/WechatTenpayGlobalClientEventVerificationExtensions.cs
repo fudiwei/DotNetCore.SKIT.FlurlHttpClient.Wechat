@@ -2,6 +2,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
     using SKIT.FlurlHttpClient.Primitives;
 
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
     public static class WechatTenpayGlobalClientEventVerificationExtensions
     {
         /// <summary>
@@ -12,15 +14,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
-        /// <param name="webhookNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
-        /// <param name="webhookBody">微信回调通知中请求正文。</param>
-        /// <param name="webhookSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
-        /// <param name="webhookSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="webhookNonce">回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
+        /// <param name="webhookBody">回调通知中的请求正文。</param>
+        /// <param name="webhookSignature">回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="webhookSerialNumber">回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignature(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSerialNumber)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber);
+            return __zroot__.WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber);
         }
 
         /// <summary>
@@ -31,16 +33,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
-        /// <param name="webhookNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
-        /// <param name="webhookBody">微信回调通知中请求正文。</param>
-        /// <param name="webhookSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
-        /// <param name="webhookSignatureType">微信回调通知中的 "Wechatpay-Signature-Type" 请求标头。</param>
-        /// <param name="webhookSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="webhookNonce">回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
+        /// <param name="webhookBody">回调通知中的请求正文。</param>
+        /// <param name="webhookSignature">回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="webhookSignatureType">回调通知中的 "Wechatpay-Signature-Type" 请求标头。</param>
+        /// <param name="webhookSerialNumber">回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <returns></returns>
         public static ErroredResult VerifyEventSignature(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSignatureType, string webhookSerialNumber)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber);
+            return __zroot__.WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber);
         }
 
         /// <summary>
@@ -51,16 +53,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
-        /// <param name="webhookNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
-        /// <param name="webhookBody">微信回调通知中请求正文。</param>
-        /// <param name="webhookSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
-        /// <param name="webhookSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="webhookNonce">回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
+        /// <param name="webhookBody">回调通知中的请求正文。</param>
+        /// <param name="webhookSignature">回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="webhookSerialNumber">回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static Task<ErroredResult> VerifyEventSignatureAsync(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSerialNumber, CancellationToken cancellationToken = default)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber, cancellationToken);
+            return __zroot__.WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber, cancellationToken);
         }
 
         /// <summary>
@@ -71,17 +73,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="webhookTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
-        /// <param name="webhookNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
-        /// <param name="webhookBody">微信回调通知中请求正文。</param>
-        /// <param name="webhookSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
-        /// <param name="webhookSignatureType">微信回调通知中的 "Wechatpay-Signature-Type" 请求标头。</param>
-        /// <param name="webhookSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
+        /// <param name="webhookTimestamp">回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="webhookNonce">回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
+        /// <param name="webhookBody">回调通知中的请求正文。</param>
+        /// <param name="webhookSignature">回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="webhookSignatureType">回调通知中的 "Wechatpay-Signature-Type" 请求标头。</param>
+        /// <param name="webhookSerialNumber">回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static Task<ErroredResult> VerifyEventSignatureAsync(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSignatureType, string webhookSerialNumber, CancellationToken cancellationToken = default)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber, cancellationToken);
+            return __zroot__.WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber, cancellationToken);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_id")]
         [System.Text.Json.Serialization.JsonPropertyName("store_id")]
-        public int StoreId { get; set; }
+        public long StoreId { get; set; }
 
         /// <summary>
         /// 获取或设置企业微信的员工 ID。
@@ -35,8 +35,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? UserId { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信的员工姓名（需使用平台公钥/证书加密）。
+        /// 获取或设置企业微信的员工姓名。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -44,13 +47,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? UserName { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信的员工手机号码（需使用平台公钥/证书加密）。
+        /// 获取或设置企业微信的员工手机号码。
         /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("mobile")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
-        public string? UserMobile { get; set; }
+        public string? UserMobileNumber { get; set; }
 
         /// <summary>
         /// 获取或设置企业微信的员工个人二维码地址。

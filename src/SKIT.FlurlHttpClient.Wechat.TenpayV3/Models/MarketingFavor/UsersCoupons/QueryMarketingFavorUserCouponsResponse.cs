@@ -11,11 +11,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class CutToMessage : GetMarketingFavorUserCouponByCouponIdResponse.Types.CutToMessage
+                    public class CutToMessage : QueryMarketingFavorStocksResponse.Types.Stock.Types.CutToMessage
                     {
                     }
 
-                    public class NormalCoupon : GetMarketingFavorUserCouponByCouponIdResponse.Types.NormalCoupon
+                    public class NormalCoupon : QueryMarketingFavorStocksResponse.Types.Stock.Types.StockUseRule.Types.NormalCoupon
+                    {
+                    }
+
+                    public class DiscountCoupon : QueryMarketingFavorStocksResponse.Types.Stock.Types.StockUseRule.Types.DiscountCoupon
                     {
                     }
 
@@ -95,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? CouponId { get; set; }
 
                 /// <summary>
-                /// 获取或设置批次号。
+                /// 获取或设置批次 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
@@ -195,6 +199,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("normal_coupon_information")]
                 [System.Text.Json.Serialization.JsonPropertyName("normal_coupon_information")]
                 public Types.NormalCoupon? NormalCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣券信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_msg")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_msg")]
+                public Types.DiscountCoupon? DiscountCoupon { get; set; }
 
                 /// <summary>
                 /// 获取或设置已实扣代金券核销信息。

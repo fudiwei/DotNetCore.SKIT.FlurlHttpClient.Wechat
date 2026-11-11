@@ -4,37 +4,83 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 PAYSCORE.USER_CONFIRM（针对从业机构）回调通知事件的数据。</para>
     /// <para>表示 PAYSCORE.USER_PAID（针对从业机构）回调通知事件的数据。</para>
     /// </summary>
-    public class PayScoreAcquiringBankServiceOrderResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PayScoreAcquiringBankServiceOrderResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
-            public class Payment : PayScorePartnerServiceOrderResource.Types.Payment
+            public class PostPayment : PayScoreServiceOrderResource.Types.PostPayment
             {
             }
 
-            public class Discount : PayScorePartnerServiceOrderResource.Types.Discount
+            public class PostDiscount : PayScoreServiceOrderResource.Types.PostDiscount
             {
             }
 
-            public class TimeRange : PayScorePartnerServiceOrderResource.Types.TimeRange
+            public class TimeRange : PayScoreServiceOrderResource.Types.TimeRange
             {
             }
 
-            public class Location : PayScorePartnerServiceOrderResource.Types.Location
+            public class Location : PayScoreServiceOrderResource.Types.Location
             {
             }
 
-            public class RiskFund : PayScorePartnerServiceOrderResource.Types.RiskFund
+            public class RiskFund : PayScoreServiceOrderResource.Types.RiskFund
             {
             }
 
-            public class Collection : PayScorePartnerServiceOrderResource.Types.Collection
+            public class Collection : PayScoreServiceOrderResource.Types.__zz__Collection
             {
+                public static class Types
+                {
+                    public class CollectionDetail : PayScoreServiceOrderResource.Types.Collection.Types.__zz__CollectionDetail
+                    {
+                        public static class Types
+                        {
+                            public class Promotion : PayScoreServiceOrderResource.Types.Collection.Types.CollectionDetail.Types.__zz__Promotion
+                            {
+                                public static class Types
+                                {
+                                    public class GoodsDetail : PayScoreServiceOrderResource.Types.Collection.Types.CollectionDetail.Types.Promotion.Types.GoodsDetail
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置单品列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                                public List<Types.GoodsDetail>? GoodsList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置优惠信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("promotion_detail")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
+                        public List<Types.Promotion>? PromotionList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置收款明细列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("details")]
+                [System.Text.Json.Serialization.JsonPropertyName("details")]
+                public List<Types.CollectionDetail>? DetailList { get; set; }
             }
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置渠道商商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("channel_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
+        public string? ChannelId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
@@ -48,25 +94,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置服务商 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置渠道商商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("channel_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置商户服务订单号。
@@ -97,14 +136,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? ServiceIntroduction { get; set; }
 
         /// <summary>
-        /// 获取或设置用户在服务商下唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户在子商户下唯一标识。
+        /// 获取或设置子商户用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
@@ -143,14 +182,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_payments")]
         [System.Text.Json.Serialization.JsonPropertyName("post_payments")]
-        public List<Types.Payment>? PostPaymentList { get; set; }
+        public List<Types.PostPayment>? PostPaymentList { get; set; }
 
         /// <summary>
         /// 获取或设置商户优惠列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_discounts")]
         [System.Text.Json.Serialization.JsonPropertyName("post_discounts")]
-        public List<Types.Discount>? PostDiscountList { get; set; }
+        public List<Types.PostDiscount>? PostDiscountList { get; set; }
 
         /// <summary>
         /// 获取或设置服务时间段信息。

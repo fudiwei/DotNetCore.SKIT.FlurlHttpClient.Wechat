@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [PATCH] /new-tax-control-fapiao/merchant/development-config 接口的请求。</para>
     /// </summary>
-    public class ModifyNewTaxControlFapiaoMerchantDevelopmentConfigRequest : WechatTenpayRequest
+    public class UpdateNewTaxControlFapiaoMerchantDevelopmentConfigRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置子商户号。

@@ -11,24 +11,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             public class Contact
             {
                 /// <summary>
-                /// 获取或设置联系人姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置联系人姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
                 public string? ContactName { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系电话号码（需使用平台公钥/证书加密）。
+                /// 获取或设置联系电话号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
                 public string? MobileNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系邮箱（需使用平台公钥/证书加密）。
+                /// 获取或设置联系邮箱。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("email")]
                 [System.Text.Json.Serialization.JsonPropertyName("email")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
@@ -154,7 +163,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         public string? IdempotencyKey { get; set; }
 
         /// <summary>
-        /// 获取或设置机构商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
+        /// 获取或设置渠道号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("channel_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
+        public string? ChannelId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
@@ -166,13 +182,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
         public string? AppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置渠道号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("channel_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
-        public string? ChannelId { get; set; }
 
         /// <summary>
         /// 获取或设置商户类型。

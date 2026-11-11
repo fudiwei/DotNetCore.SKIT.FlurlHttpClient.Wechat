@@ -7,29 +7,110 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
+            public class Payer
+            {
+                /// <summary>
+                /// 获取或设置用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sp_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sp_openid")]
+                public string? OpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置子商户用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
+                public string? SubOpenId { get; set; }
+            }
+
             public class Amount : CreatePayTransactionAppRequest.Types.Amount
             {
             }
 
-            public class Detail : CreatePayTransactionAppRequest.Types.Detail
+            public abstract class __zz__Detail : CreatePayTransactionAppRequest.Types.__zz__Detail
             {
             }
 
-            public class Scene : CreatePayTransactionAppRequest.Types.Scene
+            public class Detail : __zz__Detail
             {
+                public static class Types
+                {
+                    public class GoodsDetail : CreatePayTransactionAppRequest.Types.Detail.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
+            }
+
+            public abstract class __zz__Scene : CreatePayTransactionAppRequest.Types.__zz__Scene
+            {
+            }
+
+            public class Scene : __zz__Scene
+            {
+                public static class Types
+                {
+                    public class Store : CreatePayTransactionAppRequest.Types.Scene.Types.Store
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
             }
 
             public class Settlement : CreatePayTransactionAppRequest.Types.Settlement
             {
             }
 
-            public class Subsidy : CreatePayTransactionAppRequest.Types.Subsidy
+            public class Subsidy
             {
+                public static class Types
+                {
+                    public abstract class __zz__SubsidyDetail : CreatePayTransactionAppRequest.Types.Subsidy.Types.__zz__SubsidyDetail
+                    {
+                    }
+
+                    public class SubsidyDetail : __zz__SubsidyDetail
+                    {
+                        public static class Types
+                        {
+                            public class SubsidyPlan : CreatePayTransactionAppRequest.Types.Subsidy.Types.SubsidyDetail.Types.SubsidyPlan
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置还款计划列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("subsidy_plan")]
+                        [System.Text.Json.Serialization.JsonPropertyName("subsidy_plan")]
+                        public List<Types.SubsidyPlan>? SubsidyPlanList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置贴息详情列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subsidy_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("subsidy_detail")]
+                public List<Types.SubsidyDetail>? SubsidyDetailList { get; set; }
             }
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
@@ -43,14 +124,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置服务商 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
@@ -106,6 +187,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("support_fapiao")]
         [System.Text.Json.Serialization.JsonPropertyName("support_fapiao")]
         public bool? IsSupportFapiao { get; set; }
+
+        /// <summary>
+        /// 获取或设置支付者信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("payer")]
+        [System.Text.Json.Serialization.JsonPropertyName("payer")]
+        public Types.Payer? Payer { get; set; }
 
         /// <summary>
         /// 获取或设置金额信息。

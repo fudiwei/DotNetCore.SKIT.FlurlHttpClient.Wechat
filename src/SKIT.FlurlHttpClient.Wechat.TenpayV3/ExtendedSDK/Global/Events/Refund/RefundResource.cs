@@ -5,12 +5,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
     /// <para>表示 REFUND.ABNORMAL （仅限直连商户）回调通知事件的数据。</para>
     /// <para>表示 REFUND.CLOSED （仅限直连商户）回调通知事件的数据。</para>
     /// </summary>
-    public class RefundResource : WechatTenpayGlobalEvent.Types.IDecryptedResource
+    public class RefundResource : WechatTenpayGlobalEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
-            public class Amount : Models.GetRefundByOutRefundNumberResponse.Types.Amount
+            public class Amount : Models.GetRefundByOutRefundNumberResponse.Types.__zz__Amount
             {
+                public static class Types
+                {
+                    public class ExchangeRate : Models.GetRefundByOutRefundNumberResponse.Types.Amount.Types.ExchangeRate
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置汇率信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_rate")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_rate")]
+                public Types.ExchangeRate? ExchangeRate { get; set; }
             }
         }
 
@@ -19,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

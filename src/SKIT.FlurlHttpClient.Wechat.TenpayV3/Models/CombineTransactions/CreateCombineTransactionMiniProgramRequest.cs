@@ -7,16 +7,87 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class SubOrder : CreateCombineTransactionJsapiRequest.Types.SubOrder
+            public class SubOrder : CreateCombineTransactionAppRequest.Types.__zz__SubOrder
             {
+                public static class Types
+                {
+                    public class Amount : CreateCombineTransactionAppRequest.Types.SubOrder.Types.Amount
+                    {
+                    }
+
+                    public class Settlement : CreateCombineTransactionAppRequest.Types.SubOrder.Types.Settlement
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置金额信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                public Types.Amount? Amount { get; set; }
+
+                /// <summary>
+                /// 获取或设置结算信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("settle_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
+                public Types.Settlement? Settlement { get; set; }
             }
 
-            public class Payer : CreateCombineTransactionJsapiRequest.Types.Payer
+            public class Payer : CreateCombineTransactionAppRequest.Types.__zz__Payer
             {
+                public static class Types
+                {
+                    public class Identity : CreateCombineTransactionAppRequest.Types.Payer.Types.Identity
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置实名支付信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("identity")]
+                [System.Text.Json.Serialization.JsonPropertyName("identity")]
+                public Types.Identity? Identity { get; set; }
             }
 
             public class Scene : CreateCombineTransactionJsapiRequest.Types.Scene
             {
+            }
+
+            public class Subsidy
+            {
+                public static class Types
+                {
+                    public abstract class __zz__SubsidyDetail : CreateCombineTransactionAppRequest.Types.Subsidy.Types.__zz__SubsidyDetail
+                    {
+                    }
+
+                    public class SubsidyDetail : __zz__SubsidyDetail
+                    {
+                        public static class Types
+                        {
+                            public class SubsidyPlan : CreateCombineTransactionAppRequest.Types.Subsidy.Types.SubsidyDetail.Types.SubsidyPlan
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置还款计划列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("subsidy_plan")]
+                        [System.Text.Json.Serialization.JsonPropertyName("subsidy_plan")]
+                        public List<Types.SubsidyPlan>? SubsidyPlanList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置贴息详情列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subsidy_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("subsidy_detail")]
+                public List<Types.SubsidyDetail>? SubsidyDetailList { get; set; }
             }
         }
 
@@ -86,6 +157,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
         public Types.Scene? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置贴息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("subsidy_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("subsidy_info")]
+        public Types.Subsidy? Subsidy { get; set; }
 
         /// <summary>
         /// 获取或设置交易场景。

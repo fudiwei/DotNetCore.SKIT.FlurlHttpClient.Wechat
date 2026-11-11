@@ -13,14 +13,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置用户的微信昵称。
+        /// 获取或设置用户昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
         public string? Nickname { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的微信头像 URL。
+        /// 获取或设置用户头像 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_image_url")]
         [System.Text.Json.Serialization.JsonPropertyName("head_image_url")]

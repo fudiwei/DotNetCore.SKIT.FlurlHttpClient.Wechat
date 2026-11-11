@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289719 ]]>
     /// </para>
     /// </summary>
-    public class ComplaintResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class ComplaintResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置投诉单号。

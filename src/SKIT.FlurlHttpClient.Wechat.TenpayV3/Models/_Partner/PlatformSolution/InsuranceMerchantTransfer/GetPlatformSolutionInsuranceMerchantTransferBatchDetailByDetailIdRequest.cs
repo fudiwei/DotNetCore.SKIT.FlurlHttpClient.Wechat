@@ -13,14 +13,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信批次单号。
+        /// 获取或设置微信支付批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? BatchId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信明细单号。
+        /// 获取或设置微信支付明细单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

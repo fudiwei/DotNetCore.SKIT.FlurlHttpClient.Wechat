@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public virtual string? AppId { get; set; }
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置委托代扣协议 ID。

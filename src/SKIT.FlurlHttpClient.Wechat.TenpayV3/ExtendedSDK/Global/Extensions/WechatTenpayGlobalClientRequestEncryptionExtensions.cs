@@ -1,5 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
     public static class WechatTenpayGlobalClientRequestEncryptionExtensions
     {
         /// <summary>
@@ -11,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public static TRequest EncryptRequestSensitiveProperty<TRequest>(this WechatTenpayGlobalClient client, TRequest request)
             where TRequest : WechatTenpayGlobalRequest
         {
-            return WechatTenpayClientRequestEncryptionExtensions.EncryptRequestSensitiveProperty<TRequest>(client.ProxyClient, request);
+            return __zroot__.WechatTenpayClientRequestEncryptionExtensions.EncryptRequestSensitiveProperty<TRequest>(client.ProxyClient, request);
         }
 
         /// <summary>
@@ -24,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public static Task<TRequest> EncryptRequestSensitivePropertyAsync<TRequest>(this WechatTenpayGlobalClient client, TRequest request, CancellationToken cancellationToken = default)
             where TRequest : WechatTenpayGlobalRequest
         {
-            return WechatTenpayClientRequestEncryptionExtensions.EncryptRequestSensitivePropertyAsync<TRequest>(client.ProxyClient, request, cancellationToken);
+            return __zroot__.WechatTenpayClientRequestEncryptionExtensions.EncryptRequestSensitivePropertyAsync<TRequest>(client.ProxyClient, request, cancellationToken);
         }
     }
 }

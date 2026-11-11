@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289679 ]]>
     /// </para>
     /// </summary>
-    public class ProfitSharingResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class ProfitSharingResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {

@@ -25,28 +25,51 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? Currency { get; set; }
             }
 
-            public class PolicyPeriod
+            public abstract class __zz__PolicyPeriod
             {
                 /// <summary>
-                /// 获取或设置保险扣费周期编号。
+                /// 获取或设置保险保单扣费周期编号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("policy_period_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("policy_period_id")]
                 public int PolicyPeriodId { get; set; }
 
                 /// <summary>
-                /// 获取或设置保险扣费周期编号。
+                /// 获取或设置保险保单扣费周期编号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_date")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_date")]
                 public string? EstimatedDeductDateString { get; set; }
+            }
+
+            public class PolicyPeriod : __zz__PolicyPeriod
+            {
+                public static class Types
+                {
+                    public class EstimatedDeductAmount
+                    {
+                        /// <summary>
+                        /// 获取或设置金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("total")]
+                        [System.Text.Json.Serialization.JsonPropertyName("total")]
+                        public int Total { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置货币类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("currency")]
+                        [System.Text.Json.Serialization.JsonPropertyName("currency")]
+                        public string? Currency { get; set; }
+                    }
+                }
 
                 /// <summary>
                 /// 获取或设置预计扣费金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
-                public Types.Amount? EstimatedDeductAmount { get; set; }
+                public Types.EstimatedDeductAmount? EstimatedDeductAmount { get; set; }
             }
 
             public class RealIdentity
@@ -60,8 +83,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdentityType { get; set; } = "ID_CARD";
 
                 /// <summary>
-                /// 获取或设置真实姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置真实姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("real_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("real_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -69,8 +95,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? RealName { get; set; }
 
                 /// <summary>
-                /// 获取或设置身份证号码（需使用平台公钥/证书加密）。
+                /// 获取或设置身份证号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -101,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutContractCode { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

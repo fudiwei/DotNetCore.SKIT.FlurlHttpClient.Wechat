@@ -7,29 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount
+            public class Amount : CreateRefundDomesticRefundRequest.Types.__zz__Amount
             {
-                /// <summary>
-                /// 获取或设置原订单金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("total")]
-                [System.Text.Json.Serialization.JsonPropertyName("total")]
-                public int Total { get; set; }
-
-                /// <summary>
-                /// 获取或设置退款金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("refund")]
-                [System.Text.Json.Serialization.JsonPropertyName("refund")]
-                public int Refund { get; set; }
-
-                /// <summary>
-                /// 获取或设置退款币种。
-                /// <para>默认值："CNY"</para>
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("currency")]
-                [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string? Currency { get; set; } = "CNY";
             }
         }
 
@@ -41,14 +20,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置电商平台 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置二级商户 AppId。
+        /// 获取或设置子商户 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
@@ -62,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutTradeNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
+        /// 获取或设置微信支付订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]

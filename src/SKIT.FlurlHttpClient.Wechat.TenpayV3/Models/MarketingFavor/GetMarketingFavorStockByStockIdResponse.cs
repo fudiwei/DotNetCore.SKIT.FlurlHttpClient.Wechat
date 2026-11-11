@@ -7,150 +7,45 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class StockUseRule
+            public class StockUseRule : QueryMarketingFavorStocksResponse.Types.Stock.Types.__zz__StockUseRule
             {
                 public static class Types
                 {
-                    public class NormalCoupon
+                    public class NormalCoupon : QueryMarketingFavorStocksResponse.Types.Stock.Types.StockUseRule.Types.NormalCoupon
                     {
-                        /// <summary>
-                        /// 获取或设置券面额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("coupon_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("coupon_amount")]
-                        public int CouponAmount { get; set; }
+                    }
 
-                        /// <summary>
-                        /// 获取或设置使用门槛（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("transaction_minimum")]
-                        [System.Text.Json.Serialization.JsonPropertyName("transaction_minimum")]
-                        public int TransactionMinimum { get; set; }
+                    public class DiscountCoupon : QueryMarketingFavorStocksResponse.Types.Stock.Types.StockUseRule.Types.DiscountCoupon
+                    {
                     }
                 }
 
                 /// <summary>
-                /// 获取或设置发放总上限。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("max_coupons")]
-                [System.Text.Json.Serialization.JsonPropertyName("max_coupons")]
-                public int MaxCoupons { get; set; }
-
-                /// <summary>
-                /// 获取或设置发放总预算（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("max_amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("max_amount")]
-                public long MaxAmount { get; set; }
-
-                /// <summary>
-                /// 获取或设置单天预算发放上限（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("max_amount_by_day")]
-                [System.Text.Json.Serialization.JsonPropertyName("max_amount_by_day")]
-                public long MaxAmountPerDay { get; set; }
-
-                /// <summary>
-                /// 获取或设置单个用户可领个数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("max_coupons_per_user")]
-                [System.Text.Json.Serialization.JsonPropertyName("max_coupons_per_user")]
-                public int MaxCouponsPerUser { get; set; }
-
-                /// <summary>
-                /// 获取或设置固定面额批次特定信息。
+                /// 获取或设置满减券使用规则信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fixed_normal_coupon")]
                 [System.Text.Json.Serialization.JsonPropertyName("fixed_normal_coupon")]
                 public Types.NormalCoupon? NormalCoupon { get; set; }
 
                 /// <summary>
-                /// 获取或设置券类型。
+                /// 获取或设置折扣券使用规则信息。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_type")]
-                public string? CouponType { get; set; }
-
-                /// <summary>
-                /// 获取或设置订单优惠标记。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_tag")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
-                public List<string>? GoodsTagList { get; set; }
-
-                /// <summary>
-                /// 获取或设置指定支付方式列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("trade_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-                public List<string>? TradeTypeList { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否可叠加其他优惠。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("combine_use")]
-                [System.Text.Json.Serialization.JsonPropertyName("combine_use")]
-                public bool? AllowCombineUse { get; set; }
+                [Newtonsoft.Json.JsonProperty("fixed_discount_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("fixed_discount_coupon")]
+                public Types.DiscountCoupon? DiscountCoupon { get; set; }
             }
 
-            public class CutToMessage
+            public class CutToMessage : QueryMarketingFavorStocksResponse.Types.Stock.Types.CutToMessage
             {
-                /// <summary>
-                /// 获取或设置可用优惠的商品最高单价（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("single_price_max")]
-                [System.Text.Json.Serialization.JsonPropertyName("single_price_max")]
-                public int SinglePriceMax { get; set; }
-
-                /// <summary>
-                /// 获取或设置减至后的优惠单价（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("cut_to_price")]
-                [System.Text.Json.Serialization.JsonPropertyName("cut_to_price")]
-                public int CutToPrice { get; set; }
             }
 
-            public class AvailableRegion
+            public class AvailableRegion : QueryMarketingFavorStocksResponse.Types.Stock.Types.AvailableRegion
             {
-                /// <summary>
-                /// 获取或设置类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置国家。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("country")]
-                [System.Text.Json.Serialization.JsonPropertyName("country")]
-                public string? Country { get; set; }
-
-                /// <summary>
-                /// 获取或设置省份。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("province")]
-                [System.Text.Json.Serialization.JsonPropertyName("province")]
-                public string? Province { get; set; }
-
-                /// <summary>
-                /// 获取或设置城市。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("city")]
-                [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public string? City { get; set; }
-
-                /// <summary>
-                /// 获取或设置区县。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("district")]
-                [System.Text.Json.Serialization.JsonPropertyName("district")]
-                public string? District { get; set; }
             }
         }
 
         /// <summary>
-        /// 获取或设置批次号。
+        /// 获取或设置批次 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_id")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_id")]

@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置保单的扣费周期编号。
+        /// 获取或设置保险保单扣费周期编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_period_id")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_period_id")]

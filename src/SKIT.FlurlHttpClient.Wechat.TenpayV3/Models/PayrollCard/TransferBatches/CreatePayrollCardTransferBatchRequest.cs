@@ -8,8 +8,47 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class TransferDetail : CreateTransferBatchRequest.Types.TransferDetail
+            public class TransferDetail
             {
+                /// <summary>
+                /// 获取或设置商户明细单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_detail_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_detail_no")]
+                public string? OutDetailNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置转账金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("transfer_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("transfer_amount")]
+                public int TransferAmount { get; set; }
+
+                /// <summary>
+                /// 获取或设置转账备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("transfer_remark")]
+                [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
+                public string? TransferRemark { get; set; }
+
+                /// <summary>
+                /// 获取或设置收款用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("openid")]
+                public string? OpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置收款用户姓名。
+                /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
+                [Newtonsoft.Json.JsonProperty("user_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_name")]
+                [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
+                public string? UserName { get; set; }
             }
         }
 
@@ -28,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

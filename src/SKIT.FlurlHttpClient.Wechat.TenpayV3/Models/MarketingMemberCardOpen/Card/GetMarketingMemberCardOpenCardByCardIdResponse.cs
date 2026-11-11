@@ -7,138 +7,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Brand
+            public class Brand : CreateMarketingMemberCardOpenCardRequest.Types.Brand
             {
-                /// <summary>
-                /// 获取或设置品牌 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("brand_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-                public string? BrandId { get; set; }
-
-                /// <summary>
-                /// 获取或设置展示名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("display_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("display_name")]
-                public string? DisplayName { get; set; }
             }
 
-            public class Date
+            public class Date : CreateMarketingMemberCardOpenCardRequest.Types.Date
             {
-                /// <summary>
-                /// 获取或设置有效期类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置有效期开始时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("available_begin_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("available_begin_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset? AvailableBeginTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置有效期结束时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("available_end_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("available_end_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset? AvailableEndTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置领取后 N 天内有效。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("available_day_after_receive")]
-                [System.Text.Json.Serialization.JsonPropertyName("available_day_after_receive")]
-                public int? AvailableDaysAfterReceive { get; set; }
-
-                /// <summary>
-                /// 获取或设置领取后 N 天后生效。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("wait_days_after_receive")]
-                [System.Text.Json.Serialization.JsonPropertyName("wait_days_after_receive")]
-                public int? WaitDaysAfterReceive { get; set; }
             }
 
-            public class Balance
+            public class Balance : CreateMarketingMemberCardOpenCardRequest.Types.Balance
             {
-                /// <summary>
-                /// 获取或设置是否支持储值。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("need_balance")]
-                [System.Text.Json.Serialization.JsonPropertyName("need_balance")]
-                public bool? RequireBalance { get; set; }
-
-                /// <summary>
-                /// 获取或设置储值小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("balance_appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("balance_appid")]
-                public string? MiniProgramAppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置储值小程序页面路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("balance_path")]
-                [System.Text.Json.Serialization.JsonPropertyName("balance_path")]
-                public string? MiniProgramPath { get; set; }
-
-                /// <summary>
-                /// 获取或设置储值 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("balance_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("balance_url")]
-                public string? Url { get; set; }
             }
 
-            public class UserForm
+            public class UserForm : CreateMarketingMemberCardOpenCardRequest.Types.__zz__UserForm
             {
                 public static class Types
                 {
-                    public class CustomField
+                    public class CustomField : CreateMarketingMemberCardOpenCardRequest.Types.UserForm.Types.CustomField
                     {
-                        /// <summary>
-                        /// 获取或设置字段类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string? Type { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置字段名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置字段值。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("values")]
-                        [System.Text.Json.Serialization.JsonPropertyName("values")]
-                        public List<string>? Values { get; set; }
                     }
                 }
-
-                /// <summary>
-                /// 获取或设置是否允许修改。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("can_modify_after_activate")]
-                [System.Text.Json.Serialization.JsonPropertyName("can_modify_after_activate")]
-                public bool? CanModifyAfterActivate { get; set; }
-
-                /// <summary>
-                /// 获取或设置平台提供的通用开卡信息字段名称列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("common_field_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public List<string>? CommonFieldNameList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户自定义的开卡信息字段列表。
@@ -148,35 +36,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public List<Types.CustomField>? CustomFieldList { get; set; }
             }
 
-            public class AdditionalStatement
+            public class AdditionalStatement : CreateMarketingMemberCardOpenCardRequest.Types.AdditionalStatement
             {
-                /// <summary>
-                /// 获取或设置标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("title")]
-                [System.Text.Json.Serialization.JsonPropertyName("title")]
-                public string? Title { get; set; }
-
-                /// <summary>
-                /// 获取或设置小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string? MiniProgramAppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置小程序页面路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("path")]
-                [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string? MiniProgramPath { get; set; }
-
-                /// <summary>
-                /// 获取或设置 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("url")]
-                [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string? Url { get; set; }
             }
 
             public class Bonus

@@ -55,14 +55,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? SubMerchantId { get; set; }
 
                 /// <summary>
-                /// 获取或设置商户服务订单号。
+                /// 获取或设置商户服务单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
                 public string? OutOrderNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置微信支付服务订单号。
+                /// 获取或设置微信支付服务单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

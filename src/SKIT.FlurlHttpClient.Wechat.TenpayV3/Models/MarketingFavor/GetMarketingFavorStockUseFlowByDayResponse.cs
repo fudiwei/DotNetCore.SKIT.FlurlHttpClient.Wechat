@@ -10,10 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string? Url { get; set; }
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
-        /// 获取或设置哈希值。
+        /// 获取或设置流水文件哈希值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_useflow_hash")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_useflow_hash")]
@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_useflow_count")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_useflow_count")]
-        public int FlowCount { get; set; }
+        public int UseFlowCount { get; set; }
     }
 }

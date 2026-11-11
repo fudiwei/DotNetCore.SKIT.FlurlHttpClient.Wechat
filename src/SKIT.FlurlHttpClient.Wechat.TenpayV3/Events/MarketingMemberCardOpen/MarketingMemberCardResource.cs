@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 "MEMBERCARD.ACTIVATE_CARD" 回调通知事件的数据。</para>
     /// <para>表示 "MEMBERCARD.USERCARD_MANAGE" 回调通知事件的数据。</para>
     /// </summary>
-    public class MarketingMemberCardResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class MarketingMemberCardResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置事件类型。
@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? Code { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户统一标识。
+        /// 获取或设置用户 UnionId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]

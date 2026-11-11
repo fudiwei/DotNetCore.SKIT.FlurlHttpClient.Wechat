@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class SubOrder : CreateCombineTransactionAppRequest.Types.SubOrder
+            public class SubOrder : CreateCombineTransactionAppRequest.Types.__zz__SubOrder
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Amount : CreateCombineTransactionAppRequest.Types.SubOrder.Types.Amount
                     {
@@ -25,14 +25,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public new Types.Amount? Amount { get; set; }
+                public Types.Amount? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置结算信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
-                public new Types.Settlement? Settlement { get; set; }
+                public Types.Settlement? Settlement { get; set; }
             }
         }
 

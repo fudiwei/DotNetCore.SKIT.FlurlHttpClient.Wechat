@@ -183,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         /// <returns></returns>
         public static CertificateEntry Parse(string algorithmType, Models.QueryCertificatesResponse.Types.Certificate certificate)
         {
-            return new CertificateEntry(algorithmType, certificate.SerialNumber, certificate.EncryptCertificate.CipherText, certificate.EffectiveTime, certificate.ExpireTime);
+            return new CertificateEntry(algorithmType, certificate.SerialNumber!, certificate.EncryptCertificate!.CipherText!, certificate.EffectiveTime, certificate.ExpireTime);
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             {
                 try
                 {
-                    Utilities.RSAUtility.ExportPublicKeyFromCertificate(certificate.EncryptCertificate.CipherText);
+                    Utilities.RSAUtility.ExportPublicKeyFromCertificate(certificate.EncryptCertificate!.CipherText!);
                     algorithmType = ALGORITHM_TYPE_RSA;
                 }
                 catch { }
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             {
                 try
                 {
-                    Utilities.SM2Utility.ExportPublicKeyFromCertificate(certificate.EncryptCertificate.CipherText);
+                    Utilities.SM2Utility.ExportPublicKeyFromCertificate(certificate.EncryptCertificate!.CipherText!);
                     algorithmType = ALGORITHM_TYPE_SM2;
                 }
                 catch { }

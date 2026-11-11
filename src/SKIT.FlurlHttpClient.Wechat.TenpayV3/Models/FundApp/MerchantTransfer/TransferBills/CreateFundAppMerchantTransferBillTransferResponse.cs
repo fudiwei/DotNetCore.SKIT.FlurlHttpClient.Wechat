@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutBillNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信转账单号。
+        /// 获取或设置微信支付转账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transfer_bill_no")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_bill_no")]
@@ -56,15 +56,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? TransferRemark { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户 OpenId。
+        /// 获取或设置收款用户姓名。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("openid")]
-        [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenId { get; set; }
-
-        /// <summary>
-        /// 获取或设置收款用户姓名（需使用商户私钥解密）。
-        /// </summary>
+        /// <remarks>
+        /// 该属性是敏感数据字段，需要使用商户私钥解密。
+        /// </remarks>
         [Newtonsoft.Json.JsonProperty("user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]

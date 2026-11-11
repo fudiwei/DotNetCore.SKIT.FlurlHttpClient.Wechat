@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutBatchNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信批次单号。
+        /// 获取或设置微信支付批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public DateTimeOffset CreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置批次状态。
+        /// 获取或设置批次单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_status")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_status")]

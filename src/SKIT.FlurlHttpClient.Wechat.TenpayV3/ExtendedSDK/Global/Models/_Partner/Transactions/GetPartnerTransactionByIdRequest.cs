@@ -1,11 +1,15 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
 {
-    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
-
     /// <summary>
     /// <para>表示 [GET] /transactions/id/{transaction_id} 接口的请求。</para>
     /// </summary>
-    public class GetPartnerTransactionByIdRequest : _ROOT_.Models.GetPayPartnerTransactionByIdRequest
+    public class GetPartnerTransactionByIdRequest : GetTransactionByIdRequest
     {
+        /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? SubMerchantId { get; set; }
     }
 }

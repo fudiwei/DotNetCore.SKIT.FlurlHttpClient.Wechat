@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetBankBatchTransferSummaryReceiptByOutBatchNumberRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置银行批次单号。
+        /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

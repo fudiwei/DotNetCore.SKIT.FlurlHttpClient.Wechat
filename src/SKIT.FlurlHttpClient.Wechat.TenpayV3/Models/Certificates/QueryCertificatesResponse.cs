@@ -36,8 +36,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? Nonce { get; set; }
 
                         /// <summary>
-                        /// 获取或设置 Base64 编码后的密文（需使用商户 API v3 密钥解密）。
+                        /// 获取或设置 Base64 编码后的密文。
                         /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用商户 API v3 密钥解密。
+                        /// </remarks>
                         [Newtonsoft.Json.JsonProperty("ciphertext")]
                         [System.Text.Json.Serialization.JsonPropertyName("ciphertext")]
                         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.AEAD_AES_256_GCM)]

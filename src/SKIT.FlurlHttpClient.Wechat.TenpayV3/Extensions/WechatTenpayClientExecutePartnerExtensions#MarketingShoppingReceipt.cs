@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ModifyMarketingShoppingReceiptCustomEntranceResponse> ExecuteModifyMarketingShoppingReceiptCustomEntranceAsync(this WechatTenpayClient client, Models.ModifyMarketingShoppingReceiptCustomEntranceRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.UpdateMarketingShoppingReceiptCustomEntranceResponse> ExecuteUpdateMarketingShoppingReceiptCustomEntranceAsync(this WechatTenpayClient client, Models.UpdateMarketingShoppingReceiptCustomEntranceRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -136,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "shopping-receipt", "customentrances", request.BrandId!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ModifyMarketingShoppingReceiptCustomEntranceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingShoppingReceiptCustomEntranceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

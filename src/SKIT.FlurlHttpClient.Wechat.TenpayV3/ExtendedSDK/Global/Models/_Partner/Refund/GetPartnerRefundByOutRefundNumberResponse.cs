@@ -7,11 +7,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     {
         public static class Types
         {
-            public class Amount : GetRefundByOutRefundNumberResponse.Types.Amount
+            public abstract class __zz__Amount : GetRefundByOutRefundNumberResponse.Types.__zz__Amount
             {
             }
 
-            public class Promotion : GetRefundByOutRefundNumberResponse.Types.Promotion
+            public class Amount : __zz__Amount
+            {
+                public static class Types
+                {
+                    public class ExchangeRate : QueryPartnerRefundsResponse.Types.Refund.Types.Amount.Types.ExchangeRate
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置汇率信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_rate")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_rate")]
+                public Types.ExchangeRate? ExchangeRate { get; set; }
+            }
+
+            public class Promotion : QueryPartnerRefundsResponse.Types.Refund.Types.Promotion
             {
             }
         }

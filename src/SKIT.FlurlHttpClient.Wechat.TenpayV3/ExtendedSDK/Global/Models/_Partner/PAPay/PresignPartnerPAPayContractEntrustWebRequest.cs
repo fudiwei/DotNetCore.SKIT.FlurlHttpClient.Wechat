@@ -6,21 +6,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     public class PresignPartnerPAPayContractEntrustWebRequest : PresignPAPayContractEntrustWebRequest
     {
         /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sp_appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public override string? AppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sp_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
+        public new string? AppId
+        {
+            get { return base.AppId; }
+            set { base.AppId = value; }
+        }
+
+        /// <summary>
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

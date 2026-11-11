@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.FileName is null)
             {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() +
-                    ((request.FileBytes.Length >= 5 && request.FileBytes[0] == 0x25 && request.FileBytes[1] == 0x50 && request.FileBytes[2] == 0x44 && request.FileBytes[3] == 0x46 && request.FileBytes[4] == 0x2D) ? ".pdf" : ".jpg");
+                    ((request.FileBytes?.Length >= 5 && request.FileBytes[0] == 0x25 && request.FileBytes[1] == 0x50 && request.FileBytes[2] == 0x44 && request.FileBytes[3] == 0x46 && request.FileBytes[4] == 0x2D) ? ".pdf" : ".jpg");
             }
 
             if (request.FileContentType is null)

@@ -7,7 +7,84 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class ActivityBase
+            public abstract class __zz__ActivityBase
+            {
+                /// <summary>
+                /// 获取或设置活动名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("activity_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("activity_name")]
+                public string? ActivityName { get; set; }
+
+                /// <summary>
+                /// 获取或设置活动副标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("activity_second_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("activity_second_title")]
+                public string? ActivitySecondTitle { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户请求单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_request_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
+                public string? OutRequestNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置品牌 Logo 媒体文件地址。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("merchant_logo_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("merchant_logo_url")]
+                public string? MerchantLogoMediaUrl { get; set; }
+
+                /// <summary>
+                /// 获取或设置背景颜色。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("background_color")]
+                [System.Text.Json.Serialization.JsonPropertyName("background_color")]
+                public string? BackgroundColor { get; set; }
+
+                /// <summary>
+                /// 获取或设置活动开始时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("begin_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                public DateTimeOffset BeginTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置活动结束时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("end_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                public DateTimeOffset EndTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置投放目的。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("delivery_purpose")]
+                [System.Text.Json.Serialization.JsonPropertyName("delivery_purpose")]
+                public string? DeliveryPurpose { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家小程序 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mini_programs_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_appid")]
+                public string? MiniProgramAppId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家小程序路径。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mini_programs_path")]
+                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_path")]
+                public string? MiniProgramPath { get; set; }
+            }
+
+            public class ActivityBase : __zz__ActivityBase
             {
                 public static class Types
                 {
@@ -71,116 +148,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 }
 
                 /// <summary>
-                /// 获取或设置活动名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("activity_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("activity_name")]
-                public string? ActivityName { get; set; }
-
-                /// <summary>
-                /// 获取或设置活动副标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("activity_second_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("activity_second_title")]
-                public string? ActivitySecondTitle { get; set; }
-
-                /// <summary>
-                /// 获取或设置商户请求单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("out_request_no")]
-                [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
-                public string? OutRequestNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置品牌 Logo 媒体文件地址。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("merchant_logo_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("merchant_logo_url")]
-                public string? MerchantLogoMediaUrl { get; set; }
-
-                /// <summary>
-                /// 获取或设置背景颜色。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("background_color")]
-                [System.Text.Json.Serialization.JsonPropertyName("background_color")]
-                public string? BackgroundColor { get; set; }
-
-                /// <summary>
-                /// 获取或设置活动开始时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("begin_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset BeginTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置活动结束时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("end_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset EndTime { get; set; }
-
-                /// <summary>
                 /// 获取或设置可用时间段信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("available_periods")]
                 [System.Text.Json.Serialization.JsonPropertyName("available_periods")]
                 public Types.AvailablePeriods? AvailablePeriods { get; set; }
-
-                /// <summary>
-                /// 获取或设置投放目的。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("delivery_purpose")]
-                [System.Text.Json.Serialization.JsonPropertyName("delivery_purpose")]
-                public string? DeliveryPurpose { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mini_programs_appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_appid")]
-                public string? MiniProgramAppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商家小程序路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mini_programs_path")]
-                [System.Text.Json.Serialization.JsonPropertyName("mini_programs_path")]
-                public string? MiniProgramPath { get; set; }
             }
 
-            public class AwardSendRule
+            public abstract class __zz__AwardSendRule
             {
-                public static class Types
-                {
-                    public class Award
-                    {
-                        /// <summary>
-                        /// 获取或设置批次号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("stock_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
-                        public string? StockId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置奖品原始图媒体文件地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("original_image_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("original_image_url")]
-                        public string? OriginalImageMediaUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置奖品缩略图媒体文件地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("thumbnail_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("thumbnail_url")]
-                        public string? ThumbnailMediaUrl { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置消费金额门槛（单位：分）。
                 /// </summary>
@@ -203,13 +179,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? AwardType { get; set; }
 
                 /// <summary>
-                /// 获取或设置奖品基本信息列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("award_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("award_list")]
-                public List<Types.Award>? AwardList { get; set; }
-
-                /// <summary>
                 /// 获取或设置发券商户号选项。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_option")]
@@ -222,6 +191,43 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("merchant_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id_list")]
                 public List<string>? MerchantIdList { get; set; }
+            }
+
+            public class AwardSendRule : __zz__AwardSendRule
+            {
+                public static class Types
+                {
+                    public class Award
+                    {
+                        /// <summary>
+                        /// 获取或设置批次 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("stock_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
+                        public string? StockId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置奖品原始图媒体文件地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("original_image_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("original_image_url")]
+                        public string? OriginalImageMediaUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置奖品缩略图媒体文件地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("thumbnail_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("thumbnail_url")]
+                        public string? ThumbnailMediaUrl { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置奖品基本信息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("award_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("award_list")]
+                public List<Types.Award>? AwardList { get; set; }
             }
 
             public class AdvancedSetting

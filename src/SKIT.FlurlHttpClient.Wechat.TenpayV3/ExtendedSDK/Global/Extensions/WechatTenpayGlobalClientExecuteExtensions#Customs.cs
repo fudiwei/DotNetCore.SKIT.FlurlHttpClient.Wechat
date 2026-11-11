@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ModifyCustomsOrderResponse> ExecuteModifyCustomsOrderAsync(this WechatTenpayGlobalClient client, Models.ModifyCustomsOrderRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.UpdateCustomsOrderResponse> ExecuteUpdateCustomsOrderAsync(this WechatTenpayGlobalClient client, Models.UpdateCustomsOrderRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "customs", "orders");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ModifyCustomsOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateCustomsOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

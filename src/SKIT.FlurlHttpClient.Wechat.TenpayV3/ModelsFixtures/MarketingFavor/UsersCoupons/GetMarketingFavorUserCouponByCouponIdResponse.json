@@ -21,5 +21,10 @@
     },
     "out_request_no": "example_out_request_no",
     "available_balance": 10000,
-    "business_type": "MULTIUSE"
+    "business_type": "MULTIUSE",
+    "discount_msg": {
+        "discount_amount_max": 100,
+        "discount_percent": 88,
+        "transaction_minimum": 100
+    }
 }

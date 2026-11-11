@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013894240 ]]>
     /// </para>
     /// </summary>
-    public class RiskTradeIdentificationResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class RiskTradeIdentificationResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置微信商户号。

@@ -18,11 +18,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
                 /// <summary>
                 /// 获取或设置预计扣费币种。
-                /// <para>默认值："CNY"</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string? Currency { get; set; } = "CNY";
+                public string? Currency { get; set; }
             }
         }
 

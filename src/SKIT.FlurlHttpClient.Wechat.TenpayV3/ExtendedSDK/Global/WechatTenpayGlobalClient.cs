@@ -1,7 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
-    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
 
     /// <summary>
     /// 一个微信支付 Global API HTTP 客户端。
@@ -18,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <summary>
         /// 获取当前客户端使用的微信支付平台证书管理器。
         /// </summary>
-        public _ROOT_.Settings.ICertificateManager PlatformCertificateManager { get; }
+        public __zroot__.Settings.ICertificateManager PlatformCertificateManager { get; }
 
         /// <summary>
         /// 获取是否自动加密请求中的敏感信息字段。
@@ -60,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 MerchantV3Secret = options.MerchantV3Secret,
                 MerchantCertificateSerialNumber = options.MerchantCertificateSerialNumber,
                 MerchantCertificatePrivateKey = options.MerchantCertificatePrivateKey,
-                PlatformAuthScheme = _ROOT_.Settings.PlatformAuthScheme.Certificate,
+                PlatformAuthScheme = __zroot__.Settings.PlatformAuthScheme.Certificate,
                 PlatformCertificateManager = options.PlatformCertificateManager,
                 AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty,
                 AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty,

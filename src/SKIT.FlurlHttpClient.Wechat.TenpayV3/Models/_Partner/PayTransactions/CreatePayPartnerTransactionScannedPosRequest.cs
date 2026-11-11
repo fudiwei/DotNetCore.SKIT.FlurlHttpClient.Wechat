@@ -7,29 +7,55 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : CreatePayPartnerTransactionJsapiRequest.Types.Amount
+            public class Payer : CreatePayPartnerTransactionAppRequest.Types.Payer
             {
             }
 
-            public class Payer : CreatePayPartnerTransactionJsapiRequest.Types.Payer
+            public class Amount : CreatePayPartnerTransactionAppRequest.Types.Amount
             {
             }
 
-            public class Detail : CreatePayPartnerTransactionJsapiRequest.Types.Detail
+            public class Detail : CreatePayPartnerTransactionAppRequest.Types.__zz__Detail
             {
+                public static class Types
+                {
+                    public class GoodsDetail : CreatePayPartnerTransactionAppRequest.Types.Detail.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
-            public class Scene : CreatePayPartnerTransactionJsapiRequest.Types.Scene
+            public class Scene : CreatePayPartnerTransactionAppRequest.Types.__zz__Scene
             {
+                public static class Types
+                {
+                    public class Store : CreatePayPartnerTransactionAppRequest.Types.Scene.Types.Store
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
             }
 
-            public class Settlement : CreatePayPartnerTransactionJsapiRequest.Types.Settlement
+            public class Settlement : CreatePayPartnerTransactionAppRequest.Types.Settlement
             {
             }
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
@@ -43,14 +69,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置服务商 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

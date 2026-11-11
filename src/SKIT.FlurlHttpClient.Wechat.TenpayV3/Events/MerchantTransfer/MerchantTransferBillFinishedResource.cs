@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012712115 ]]> <br/>
     /// </para>
     /// </summary>
-    public class MerchantTransferBillFinishedResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class MerchantTransferBillFinishedResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置微信商户号。
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public int TransferAmount { get; set; }
 
         /// <summary>
-        /// 获取或设置收款用户的 OpenId。
+        /// 获取或设置收款用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

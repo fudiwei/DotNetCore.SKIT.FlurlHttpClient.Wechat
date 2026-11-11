@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 }
 
                 /// <summary>
-                /// 获取或设置付汇批次号。
+                /// 获取或设置微信支付批次单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("batch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("batch_id")]

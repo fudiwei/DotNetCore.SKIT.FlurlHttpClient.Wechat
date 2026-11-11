@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Termination
+            public class TerminateInfo
             {
                 /// <summary>
                 /// 获取或设置解约时间。
@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public DateTimeOffset? ExpireTime { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
@@ -172,7 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_terminate_info")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_terminate_info")]
-        public Types.Termination? Termination { get; set; }
+        public Types.TerminateInfo? TerminateInfo { get; set; }
 
         /// <summary>
         /// 获取或设置预约扣费场景的预约信息。

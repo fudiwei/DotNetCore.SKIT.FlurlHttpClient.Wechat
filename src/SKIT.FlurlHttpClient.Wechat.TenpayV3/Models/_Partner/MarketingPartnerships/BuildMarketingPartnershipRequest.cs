@@ -17,18 +17,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? Type { get; set; }
 
                 /// <summary>
-                /// 获取或设置合作方 AppId。与字段 <see cref="MerchantId"/> 二选一。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string? AppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置合作方商户号。与字段 <see cref="AppId"/> 二选一。
+                /// 获取或设置合作方商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
                 public string? MerchantId { get; set; }
+
+                /// <summary>
+                /// 获取或设置合作方 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                public string? AppId { get; set; }
             }
 
             public class AuthorizedData

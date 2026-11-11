@@ -7,8 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Receiver : CreatePlatformSolutionEcommerceMerchantTransferInsuranceClaimBillRequest.Types.Receiver
+            public class Receiver : CreatePlatformSolutionEcommerceMerchantTransferCompensationBillRequest.Types.__zz__Receiver
             {
+                public static class Types
+                {
+                    public class TransactionInfo : CreatePlatformSolutionEcommerceMerchantTransferCompensationBillRequest.Types.Receiver.Types.TransactionInfo
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置转账接收方订单信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("transaction_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("transaction_info")]
+                public Types.TransactionInfo? TransactionInfo { get; set; }
             }
         }
 

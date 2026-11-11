@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? ContractId { get; set; }
 
         /// <summary>
-        /// 获取或设置保单的扣费周期编号。
+        /// 获取或设置保险保单扣费周期编号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

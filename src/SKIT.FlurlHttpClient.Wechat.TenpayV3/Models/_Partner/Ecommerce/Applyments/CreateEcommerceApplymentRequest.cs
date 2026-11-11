@@ -101,8 +101,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdCardBackCopyMediaId { get; set; }
 
                 /// <summary>
-                /// 获取或设置身份证姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置身份证姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_card_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -110,8 +113,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdCardName { get; set; }
 
                 /// <summary>
-                /// 获取或设置身份证号码（需使用平台公钥/证书加密）。
+                /// 获取或设置身份证号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -119,8 +125,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdCardNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置身份证地址（需使用平台公钥/证书加密）。
+                /// 获取或设置身份证地址。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_card_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_address")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -159,8 +168,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdDocumentBackCopyMediaId { get; set; }
 
                 /// <summary>
-                /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置证件姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_doc_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -168,8 +180,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdDocumentName { get; set; }
 
                 /// <summary>
-                /// 获取或设置证件号码（需使用平台公钥/证书加密）。
+                /// 获取或设置证件号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_doc_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -177,8 +192,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdDocumentNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置证件地址（需使用平台公钥/证书加密）。
+                /// 获取或设置证件地址。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("id_doc_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_address")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -210,8 +228,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? ContactType { get; set; }
 
                 /// <summary>
-                /// 获取或设置超级管理员姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置超级管理员姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("contact_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -226,8 +247,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdentityType { get; set; }
 
                 /// <summary>
-                /// 获取或设置超级管理员证件号码（需使用平台公钥/证书加密）。
+                /// 获取或设置超级管理员证件号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -270,8 +294,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? BusinessAuthorizeLetterCopyMediaId { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系人手机号（需使用平台公钥/证书加密）。
+                /// 获取或设置联系人手机号。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -279,8 +306,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? MobileNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系邮箱（需使用平台公钥/证书加密）。
+                /// 获取或设置联系邮箱。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("contact_email")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_email")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -298,8 +328,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdentityType { get; set; }
 
                 /// <summary>
-                /// 获取或设置受益人姓名（需使用平台公钥/证书加密）。
+                /// 获取或设置受益人姓名。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("ubo_id_doc_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -321,8 +354,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdBackCopyMediaId { get; set; }
 
                 /// <summary>
-                /// 获取或设置证件号码（需使用平台公钥/证书加密）。
+                /// 获取或设置证件号码。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("ubo_id_doc_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -330,8 +366,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置证件地址（需使用平台公钥/证书加密）。
+                /// 获取或设置证件地址。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("ubo_id_doc_address")]
                 [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_address")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -363,8 +402,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? AccountType { get; set; }
 
                 /// <summary>
-                /// 获取或设置开户名称（需使用平台公钥/证书加密）。
+                /// 获取或设置开户名称。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -372,8 +414,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? AccountName { get; set; }
 
                 /// <summary>
-                /// 获取或设置银行账号（需使用平台公钥/证书加密）。
+                /// 获取或设置银行账号。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("account_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_number")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -419,14 +464,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? StoreName { get; set; }
 
                 /// <summary>
-                /// 获取或设置店铺链接。与字段 <see cref="StoreQrcodeMediaId"/> 二选一。
+                /// 获取或设置店铺链接。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_url")]
                 public string? StoreUrl { get; set; }
 
                 /// <summary>
-                /// 获取或设置店铺二维码媒体文件标识 ID。与字段 <see cref="StoreUrl"/> 二选一。
+                /// 获取或设置店铺二维码媒体文件标识 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("store_qr_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("store_qr_code")]
@@ -459,7 +504,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置业务申请编号。
+        /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]

@@ -7,35 +7,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class TransferDetail
+            public class TransferDetail : GetTransferBatchByOutBatchNumberResponse.Types.TransferDetail
             {
-                /// <summary>
-                /// 获取或设置商户明细单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("out_detail_no")]
-                [System.Text.Json.Serialization.JsonPropertyName("out_detail_no")]
-                public string? OutDetailNumber { get; set; }
-
-                /// <summary>
-                /// 获取或设置微信明细单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("detail_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
-                public string? DetailId { get; set; }
-
                 /// <summary>
                 /// 获取或设置明细状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_state")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_state")]
-                public string? DetailStatus { get; set; }
-
-                /// <summary>
-                /// 获取或设置失败原因。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fail_reason")]
-                [System.Text.Json.Serialization.JsonPropertyName("fail_reason")]
-                public string? FailReason { get; set; }
+                public new string? DetailStatus
+                {
+                    get { return base.DetailStatus; }
+                    set { base.DetailStatus = value; }
+                }
             }
         }
 
@@ -82,21 +65,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? UserAuthorizedAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置银行批次单号。
+        /// 获取或设置商户批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_batch_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_batch_no")]
         public string? OutBatchNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信批次单号。
+        /// 获取或设置微信支付批次单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
         public string? BatchId { get; set; }
 
         /// <summary>
-        /// 获取或设置批次状态。
+        /// 获取或设置批次单状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("batch_state")]
         [System.Text.Json.Serialization.JsonPropertyName("batch_state")]
@@ -160,7 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("update_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-        public DateTimeOffset? UpdateTime { get; set; }
+        public DateTimeOffset UpdateTime { get; set; }
 
         /// <summary>
         /// 获取或设置转账成功金额（单位：分）。

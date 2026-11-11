@@ -7,11 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Payment : CreatePayScorePartnerServiceOrderRequest.Types.Payment
+            public class PostPayment : CreatePayScorePartnerServiceOrderRequest.Types.PostPayment
             {
             }
 
-            public class Discount : CreatePayScorePartnerServiceOrderRequest.Types.Discount
+            public class PostDiscount : CreatePayScorePartnerServiceOrderRequest.Types.PostDiscount
             {
             }
         }
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户服务订单号。
+        /// 获取或设置商户服务单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_payments")]
         [System.Text.Json.Serialization.JsonPropertyName("post_payments")]
-        public List<Types.Payment>? PostPaymentList { get; set; }
+        public List<Types.PostPayment>? PostPaymentList { get; set; }
 
         /// <summary>
         /// 获取或设置商户优惠列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("post_discounts")]
         [System.Text.Json.Serialization.JsonPropertyName("post_discounts")]
-        public List<Types.Discount>? PostDiscountList { get; set; }
+        public List<Types.PostDiscount>? PostDiscountList { get; set; }
 
         /// <summary>
         /// 获取或设置总金额。

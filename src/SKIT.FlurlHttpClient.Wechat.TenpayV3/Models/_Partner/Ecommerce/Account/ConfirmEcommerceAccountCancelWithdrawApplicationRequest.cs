@@ -13,18 +13,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信支付注销提现申请单号。与字段 <see cref="OutRequestNumber"/> 二选一。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("applyment_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("applyment_id")]
-        public string? ApplymentId { get; set; }
-
-        /// <summary>
-        /// 获取或设置商户注销申请单号。与字段 <see cref="ApplymentId"/> 二选一。
+        /// 获取或设置商户申请单号。与字段 <see cref="ApplymentId"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
         public string? OutRequestNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信支付申请单号。与字段 <see cref="OutRequestNumber"/> 二选一。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("applyment_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("applyment_id")]
+        public string? ApplymentId { get; set; }
 
         /// <summary>
         /// 获取或设置平台确认操作人标识。

@@ -11,31 +11,247 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
-            public class SingleUsageRule : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.SingleUsageRule
+            public class BaseUsageRule
             {
+                public static class Types
+                {
+                    public class AvailablePeriod : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.__zz__AvailablePeriod
+                    {
+                        public static class Types
+                        {
+                            public class WeeklyPeriod : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.AvailablePeriod.Types.__zz__WeeklyPeriod
+                            {
+                                public static class Types
+                                {
+                                    public class DayPeriod : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.AvailablePeriod.Types.WeeklyPeriod.Types.DayPeriod
+                                    {
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置当天可用时间段列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("day_period_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("day_period_list")]
+                                public List<Types.DayPeriod>? DayPeriodList { get; set; }
+                            }
+
+                            public class IrregularPeriod : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.AvailablePeriod.Types.IrregularPeriod
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置每周固定可用时间信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("weekly_available_period")]
+                        [System.Text.Json.Serialization.JsonPropertyName("weekly_available_period")]
+                        public Types.WeeklyPeriod? WeeklyPeriod { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置无规律的可用时间段信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("irregular_available_period_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("irregular_available_period_list")]
+                        public List<Types.IrregularPeriod>? IrregularPeriodList { get; set; }
+                    }
+
+                    public class NormalCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.NormalCoupon
+                    {
+                    }
+
+                    public class DiscountCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.DiscountCoupon
+                    {
+                    }
+
+                    public class ExchangeCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.ExchangeCoupon
+                    {
+                    }
+                }
             }
 
-            public class SequentialUsageRule : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.SequentialUsageRule
+            public class SingleUsageRule : BaseUsageRule
             {
+                /// <summary>
+                /// 获取或设置券可核销时间信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_available_period")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_available_period")]
+                public Types.AvailablePeriod? AvailablePeriod { get; set; }
+
+                /// <summary>
+                /// 获取或设置满减券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("normal_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("normal_coupon")]
+                public Types.NormalCoupon? NormalCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_coupon")]
+                public Types.DiscountCoupon? DiscountCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置兑换券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon")]
+                public Types.ExchangeCoupon? ExchangeCoupon { get; set; }
             }
 
-            public class ProgressiveBundleUsageRule : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.ProgressiveBundleUsageRule
+            public class SequentialUsageRule : BaseUsageRule
             {
+                /// <summary>
+                /// 获取或设置券可核销时间信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_available_period")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_available_period")]
+                public Types.AvailablePeriod? AvailablePeriod { get; set; }
+
+                /// <summary>
+                /// 获取或设置满减券使用规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("normal_coupon_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("normal_coupon_list")]
+                public List<Types.NormalCoupon>? NormalCouponList { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣券使用规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_coupon_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_coupon_list")]
+                public List<Types.DiscountCoupon>? DiscountCouponList { get; set; }
+
+                /// <summary>
+                /// 获取或设置兑换券使用规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_coupon_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon_list")]
+                public List<Types.ExchangeCoupon>? ExchangeCouponList { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否提供首笔特惠。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("special_first")]
+                [System.Text.Json.Serialization.JsonPropertyName("special_first")]
+                public bool? IsSpecialFirst { get; set; }
+            }
+
+            public class ProgressiveBundleUsageRule : BaseUsageRule
+            {
+                /// <summary>
+                /// 获取或设置券可核销时间信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_available_period")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_available_period")]
+                public Types.AvailablePeriod? AvailablePeriod { get; set; }
+
+                /// <summary>
+                /// 获取或设置满减券使用规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("normal_coupon_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("normal_coupon_list")]
+                public List<Types.NormalCoupon>? NormalCouponList { get; set; }
+
+                /// <summary>
+                /// 获取或设置满减券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("normal_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("normal_coupon")]
+                public Types.NormalCoupon? NormalCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_coupon")]
+                public Types.DiscountCoupon? DiscountCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣券使用规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("discount_coupon_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("discount_coupon_list")]
+                public List<Types.DiscountCoupon>? DiscountCouponList { get; set; }
+
+                /// <summary>
+                /// 获取或设置兑换券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon")]
+                public Types.ExchangeCoupon? ExchangeCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置兑换券使用规则列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_coupon_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon_list")]
+                public List<Types.ExchangeCoupon>? ExchangeCouponList { get; set; }
             }
 
             public class StockBundleInfo : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.StockBundleInfo
             {
             }
 
-            public class UsageRuleDisplayInfo : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.UsageRuleDisplayInfo
+            public class UsageRuleDisplayInfo : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.__zz__UsageRuleDisplayInfo
             {
+                public static class Types
+                {
+                    public class AvailableStore : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.UsageRuleDisplayInfo.Types.AvailableStore
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置可用门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_available_store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_available_store_info")]
+                public Types.AvailableStore? AvailableStore { get; set; }
             }
 
-            public class CouponDisplayInfo : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.CouponDisplayInfo
+            public class CouponDisplayInfo : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.__zz__CouponDisplayInfo
             {
+                public static class Types
+                {
+                    public class EntranceMiniProgram : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.CouponDisplayInfo.Types.EntranceMiniProgram
+                    {
+                    }
+
+                    public class EntranceOfficalAccount : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.CouponDisplayInfo.Types.EntranceOfficalAccount
+                    {
+                    }
+
+                    public class EntranceFinder : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.CouponDisplayInfo.Types.EntranceFinder
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置小程序入口信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("entrance_mini_program")]
+                [System.Text.Json.Serialization.JsonPropertyName("entrance_mini_program")]
+                public Types.EntranceMiniProgram? EntranceMiniProgram { get; set; }
+
+                /// <summary>
+                /// 获取或设置公众号入口信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("entrance_official_account")]
+                [System.Text.Json.Serialization.JsonPropertyName("entrance_official_account")]
+                public Types.EntranceOfficalAccount? EntranceOfficalAccount { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频号入口信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("entrance_finder")]
+                [System.Text.Json.Serialization.JsonPropertyName("entrance_finder")]
+                public Types.EntranceFinder? EntranceFinder { get; set; }
             }
 
-            public class NotifyConfig : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.NotifyConfig
+            public class NotifyConfig : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.NotifyConfig
             {
             }
 

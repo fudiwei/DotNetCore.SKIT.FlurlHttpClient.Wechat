@@ -7,21 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Payer
+            public class Payer : CreatePayPartnerTransactionAppRequest.Types.Payer
             {
-                /// <summary>
-                /// 获取或设置用户在服务商下唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sp_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sp_openid")]
-                public string? OpenId { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户在子商户下唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sub_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
-                public string? SubOpenId { get; set; }
             }
 
             public class Amount : GetPayTransactionByOutTradeNumberResponse.Types.Amount
@@ -32,8 +19,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
-            public class Promotion : GetPayTransactionByOutTradeNumberResponse.Types.Promotion
+            public abstract class __zz__Promotion : GetPayTransactionByOutTradeNumberResponse.Types.__zz__Promotion
             {
+            }
+
+            public class Promotion : __zz__Promotion
+            {
+                public static class Types
+                {
+                    public class GoodsDetail : GetPayTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
             public class Installment : GetPayTransactionByOutTradeNumberResponse.Types.Installment
@@ -42,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
@@ -56,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置服务商 AppId。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

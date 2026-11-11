@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetMerchantFundWithdrawByOutRequestNumberRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置商户提现单号。
+        /// 获取或设置商户申请单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

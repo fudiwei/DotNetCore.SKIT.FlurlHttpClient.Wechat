@@ -7,8 +7,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class DisplayInfo : CreateMarketingPartnerProductCouponRequest.Types.DisplayInfo
+            public class DisplayInfo : CreateMarketingPartnerProductCouponRequest.Types.__zz__DisplayInfo
             {
+                public static class Types
+                {
+                    public class ComboPackage : CreateMarketingPartnerProductCouponRequest.Types.DisplayInfo.Types.__zz__ComboPackage
+                    {
+                        public static class Types
+                        {
+                            public class Choice : CreateMarketingPartnerProductCouponRequest.Types.DisplayInfo.Types.ComboPackage.Types.Choice
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置单品列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("choice_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("choice_list")]
+                        public List<Types.Choice>? ChoiceList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置套餐组合列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("combo_package_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("combo_package_list")]
+                public List<Types.ComboPackage>? ComboPackageList { get; set; }
             }
         }
 

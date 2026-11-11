@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.DeductSchedule.Types.Amount
+            public class Amount : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.DeductSchedule.Types.EstimatedDeductAmount
             {
             }
         }

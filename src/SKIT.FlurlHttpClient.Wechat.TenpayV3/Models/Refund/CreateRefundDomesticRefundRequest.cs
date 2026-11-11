@@ -7,28 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount
+            public abstract class __zz__Amount
             {
-                public static class Types
-                {
-                    public class From
-                    {
-                        /// <summary>
-                        /// 获取或设置出资金额	（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                        public int Amount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置出资账户。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("account")]
-                        [System.Text.Json.Serialization.JsonPropertyName("account")]
-                        public string? Account { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置原订单金额（单位：分）。
                 /// </summary>
@@ -52,18 +32,41 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? Currency { get; set; } = "CNY";
 
                 /// <summary>
-                /// 获取或设置退款出资账户及金额列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("from")]
-                [System.Text.Json.Serialization.JsonPropertyName("from")]
-                public List<Types.From>? FromList { get; set; }
-
-                /// <summary>
                 /// 获取或设置手续费退款金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_fee")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_fee")]
                 public int? RefundFee { get; set; }
+            }
+
+            public class Amount : __zz__Amount
+            {
+                public static class Types
+                {
+                    public class From
+                    {
+                        /// <summary>
+                        /// 获取或设置出资金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                        public int Amount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置出资账户。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("account")]
+                        [System.Text.Json.Serialization.JsonPropertyName("account")]
+                        public string? Account { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置退款出资账户及金额列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("from")]
+                [System.Text.Json.Serialization.JsonPropertyName("from")]
+                public List<Types.From>? FromList { get; set; }
             }
 
             public class GoodsDetail
@@ -120,18 +123,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("transaction_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string? TransactionId { get; set; }
-
-        /// <summary>
         /// 获取或设置商户订单号。与字段 <see cref="TransactionId"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
         public string? OutTradeNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transaction_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置商户退款单号。

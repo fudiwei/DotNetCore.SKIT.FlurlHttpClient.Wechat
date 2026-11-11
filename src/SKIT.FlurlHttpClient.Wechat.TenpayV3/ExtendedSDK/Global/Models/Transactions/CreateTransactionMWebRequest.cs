@@ -15,24 +15,38 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             {
             }
 
-            public class Detail : CreateTransactionAppRequest.Types.Detail
+            public class Detail : CreateTransactionAppRequest.Types.__zz__Detail
             {
-                public static new class Types
+                public static class Types
                 {
                     public class GoodsDetail : CreateTransactionAppRequest.Types.Detail.Types.GoodsDetail
                     {
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
-            public class Scene : CreateTransactionAppRequest.Types.Scene
+            public class Scene : CreateTransactionAppRequest.Types.__zz__Scene
             {
-                public static new class Types
+                public static class Types
                 {
                     public class Store : CreateTransactionAppRequest.Types.Scene.Types.Store
                     {
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
             }
         }
 

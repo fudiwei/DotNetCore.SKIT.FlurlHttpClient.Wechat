@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutOrderNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信分账单号。
+        /// 获取或设置微信支付分账单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutReturnNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信回退单号。
+        /// 获取或设置微信支付回退单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("return_id")]
         [System.Text.Json.Serialization.JsonPropertyName("return_id")]

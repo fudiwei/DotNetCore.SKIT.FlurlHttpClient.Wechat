@@ -336,7 +336,7 @@
     - 品牌门店
         - 创建门店：`CreateMerchantStore`
         - 查询门店：`GetMerchantStoreByStoreId`
-        - 修改门店：`ModifyMerchantStore`
+        - 修改门店：`UpdateMerchantStore`
         - 绑定门店收款信息：`BindMerchantStoreRecipient`
         - 解除门店收款信息绑定：`UnbindMerchantStoreRecipient`
     - 品牌红包
@@ -368,7 +368,7 @@
     - 微信电子发票
         - 公共 API
             - 创建电子发票卡券模板：`CreateNewTaxControlFapiaoCardTemplate`
-            - 配置开发选项：`ModifyNewTaxControlFapiaoMerchantDevelopmentConfig`
+            - 配置开发选项：`UpdateNewTaxControlFapiaoMerchantDevelopmentConfig`
             - 查询商户配置的开发选项：`GetNewTaxControlFapiaoMerchantDevelopmentConfig`
             - 查询电子发票：`GetNewTaxControlFapiaoApplicationByFapiaoApplyId`
             - 获取抬头填写链接：`GetNewTaxControlFapiaoUserTitleUrl`
@@ -405,9 +405,9 @@
         - 为用户发银行提现免费券：`SendMarketingWithdrawFavorUserCoupon`
         - 查询批次下用户银行提现免费券列表：`QueryMarketingWithdrawFavorUserCoupons`
     - 银行周周惠
-        - 报名周周惠活动：`ApplyMarketingWeeklyDiscountActivity`
-        - 查询周周惠活动列表：`QueryApplyMarketingWeeklyDiscountActivities`
-        - 查询周周惠活动详情：`GetApplyMarketingWeeklyDiscountActivityByActivityId`
+        - 报名周周惠活动：`CreateMarketingWeeklyDiscountActivityApplyment`
+        - 查询周周惠活动列表：`QueryMarketingWeeklyDiscountActivities`
+        - 查询周周惠活动详情：`GetMarketingWeeklyDiscountActivityByActivityId`
     - 银行组件：
         - 获取对私银行卡号开户银行：`QueryCapitalBanksByBankAccount`
         - 查询支持个人业务的银行列表：`QueryCapitalBanksPersonalBanking`
@@ -671,7 +671,7 @@
     - 品牌门店
         - 创建品牌门店：`CreateBrandPartnerStore`
         - 查询品牌门店：`GetBrandPartnerStoreByStoreId`
-        - 更新品牌门店：`ModifyBrandPartnerStore`
+        - 更新品牌门店：`UpdateBrandPartnerStore`
         - 删除品牌门店：`DeleteBrandPartnerStore`
         - 绑定收款商户号：`BindBrandPartnerStoreRecipient`
         - 解绑收款商户号：`UnbindBrandPartnerStoreRecipient`
@@ -838,7 +838,7 @@
         - 电子发票商户信息
             - 获取商户开票基础信息：`GetNewTaxControlFapiaoMerchantBaseInformation`
             - 查询商户配置的开发选项：`GetNewTaxControlFapiaoMerchantDevelopmentConfig`
-            - 配置开发选项：`ModifyNewTaxControlFapiaoMerchantDevelopmentConfig`
+            - 配置开发选项：`UpdateNewTaxControlFapiaoMerchantDevelopmentConfig`
             - 获取商品和服务税收分类对照表：`QueryNewTaxControlFapiaoMerchantTaxCodes`
             - 检查子商户开票功能状态：`CheckNewTaxControlFapiaoMerchant` / `CheckNewTaxControlFapiaoMerchantStatus`
         - 用户抬头
@@ -859,7 +859,7 @@
         - 自定义入口
             - 创建自定义入口：`CreateMarketingShoppingReceiptCustomEntrance`
             - 查询自定义入口：`GetMarketingShoppingReceiptCustomEntranceByBrandId`
-            - 更新自定义入口：`ModifyMarketingShoppingReceiptCustomEntrance`
+            - 更新自定义入口：`UpdateMarketingShoppingReceiptCustomEntrance`
         - 电子小票
             - 上传电子小票：`UploadMarketingShoppingReceipt`
         - 商家电子小票跳转信息
@@ -1229,7 +1229,7 @@
     - Merchant Onboarding
         - Onboarding Sub-merchant：`AddSubMerchant`
         - Query Sub-merchant：`GetSubMerchant`
-        - Sub Merchant Modifying：`ModifySubMerchant`
+        - Sub Merchant Modifying：`UpdateSubMerchant`
         - Upload Image：`UploadMerchantMediaImage`
     - H5 Payment Authorization Application
         - Create Authorization Application：`CreateMerchantH5PermissionApplication`

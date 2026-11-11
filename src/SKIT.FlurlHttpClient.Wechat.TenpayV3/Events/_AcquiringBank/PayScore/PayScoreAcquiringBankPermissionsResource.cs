@@ -4,42 +4,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 PAYSCORE.USER_OPEN_SERVICE（针对从业机构）回调通知事件的数据。</para>
     /// <para>表示 PAYSCORE.USER_CLOSE_SERVICE（针对从业机构）回调通知事件的数据。</para>
     /// </summary>
-    public class PayScoreAcquiringBankPermissionsResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PayScoreAcquiringBankPermissionsResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
-        /// <summary>
-        /// 获取或设置服务商商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("mch_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string? MerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置微信子商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_mch_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
-        public string? SubMerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置服务商 AppId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string? AppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置子商户 AppId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
-        public string? SubAppId { get; set; }
-
         /// <summary>
         /// 获取或设置渠道商商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("channel_id")]
         [System.Text.Json.Serialization.JsonPropertyName("channel_id")]
         public string? ChannelId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
+        public string? MerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
+        public string? SubMerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
+        public string? SubAppId { get; set; }
 
         /// <summary>
         /// 获取或设置授权协议号。
@@ -56,14 +56,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? ServiceId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户在服务商下唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户在子商户下唯一标识。
+        /// 获取或设置子商户用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]

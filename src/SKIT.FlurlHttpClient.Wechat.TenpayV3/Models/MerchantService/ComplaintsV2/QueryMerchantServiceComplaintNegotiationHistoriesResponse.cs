@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class ComplaintMedia : GetMerchantServiceComplaintByComplaintIdResponse.Types.ComplaintMedia
+                    public class ComplaintMedia : QueryMerchantServiceComplaintsResponse.Types.Complaint.Types.ComplaintMedia
                     {
                     }
                 }

@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760229 ]]><br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760672 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080243 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080596 ]]> 
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080596 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -134,11 +134,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085803 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085877 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012124894 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012163403 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012163705 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012231933 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080230 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080597 ]]>
         /// </para>
-        /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）</i></para>
+        /// <remarks>
+        /// （注意：该接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）
+        /// </remarks>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

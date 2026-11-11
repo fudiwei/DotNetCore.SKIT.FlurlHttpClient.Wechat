@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? OutBatchNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置微信批次单号。
+                /// 获取或设置微信支付批次单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("batch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("batch_id")]
                 public string? BatchId { get; set; }
 
                 /// <summary>
-                /// 获取或设置批次状态。
+                /// 获取或设置批次单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("batch_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("batch_status")]
@@ -102,7 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset? UpdateTime { get; set; }
+                public DateTimeOffset UpdateTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置转账成功金额（单位：分）。
@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? OutDetailNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置微信明细单号。
+                /// 获取或设置微信支付明细单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
@@ -162,6 +162,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("detail_status")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_status")]
                 public string? DetailStatus { get; set; }
+
+                /// <summary>
+                /// 获取或设置失败原因。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("fail_reason")]
+                [System.Text.Json.Serialization.JsonPropertyName("fail_reason")]
+                public string? FailReason { get; set; }
             }
         }
 

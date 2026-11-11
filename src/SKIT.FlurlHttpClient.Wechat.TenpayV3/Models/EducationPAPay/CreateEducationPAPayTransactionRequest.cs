@@ -7,8 +7,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : CreatePayTransactionAppRequest.Types.Amount
+            public class Amount
             {
+                /// <summary>
+                /// 获取或设置总金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("total")]
+                [System.Text.Json.Serialization.JsonPropertyName("total")]
+                public int Total { get; set; }
+
+                /// <summary>
+                /// 获取或设置币种。
+                /// <para>默认值："CNY"</para>
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("currency")]
+                [System.Text.Json.Serialization.JsonPropertyName("currency")]
+                public string? Currency { get; set; } = "CNY";
             }
 
             public class Device
@@ -44,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

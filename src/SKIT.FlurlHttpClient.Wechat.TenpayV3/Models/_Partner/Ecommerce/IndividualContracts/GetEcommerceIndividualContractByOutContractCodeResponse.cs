@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? IndividualAuthId { get; set; }
 
         /// <summary>
-        /// 获取或设置个人收款方用户的 OpenId。
+        /// 获取或设置个人收款方用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("individual_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("individual_openid")]

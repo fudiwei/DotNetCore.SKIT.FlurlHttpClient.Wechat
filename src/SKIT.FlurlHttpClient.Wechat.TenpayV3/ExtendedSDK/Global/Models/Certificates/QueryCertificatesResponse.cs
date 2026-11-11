@@ -1,7 +1,5 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
 {
-    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
-
     /// <summary>
     /// <para>表示 [GET] /certificates 接口的响应。</para>
     /// </summary>
@@ -10,8 +8,77 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     {
         public static class Types
         {
-            public class Certificate : _ROOT_.Models.QueryCertificatesResponse.Types.Certificate
+            public class Certificate
             {
+                public static class Types
+                {
+                    public class EncryptCertificate
+                    {
+                        /// <summary>
+                        /// 获取或设置加密算法。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("algorithm")]
+                        [System.Text.Json.Serialization.JsonPropertyName("algorithm")]
+                        public string? Algorithm { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置加密使用的附加数据。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("associated_data")]
+                        [System.Text.Json.Serialization.JsonPropertyName("associated_data")]
+                        public string? AssociatedData { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置加密使用的随机串初始化向量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("nonce")]
+                        [System.Text.Json.Serialization.JsonPropertyName("nonce")]
+                        public string? Nonce { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 Base64 编码后的密文。
+                        /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用商户 API v3 密钥解密。
+                        /// </remarks>
+                        [Newtonsoft.Json.JsonProperty("ciphertext")]
+                        [System.Text.Json.Serialization.JsonPropertyName("ciphertext")]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.AEAD_AES_256_GCM)]
+                        public string? CipherText { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置证书生效时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("effective_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("effective_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                public DateTimeOffset EffectiveTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置证书过期时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("expire_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("expire_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                public DateTimeOffset ExpireTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置证书序列号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("serial_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("serial_no")]
+                public string? SerialNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置证书信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("encrypt_certificate")]
+                [System.Text.Json.Serialization.JsonPropertyName("encrypt_certificate")]
+                public Types.EncryptCertificate? EncryptCertificate { get; set; }
             }
         }
 

@@ -11,15 +11,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class NormalCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.UsageRule.Types.NormalCoupon
+                    public class NormalCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.NormalCoupon
                     {
                     }
 
-                    public class DiscountCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.UsageRule.Types.DiscountCoupon
+                    public class DiscountCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.DiscountCoupon
                     {
                     }
 
-                    public class ExchangeCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.UsageRule.Types.ExchangeCoupon
+                    public class ExchangeCoupon : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo.Types.BaseUsageRule.Types.ExchangeCoupon
                     {
                     }
                 }

@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /payscore/acquiringbank/permissions 接口的响应。</para>
     /// </summary>
-    public class ApplyPayScoreAcquiringBankPermissionsResponse : ApplyPayScorePartnerPermissionsResponse
+    public class ApplyPayScoreAcquiringBankPermissionsResponse : ApplyPayScorePermissionsResponse
     {
     }
 }

@@ -11,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             {
             }
 
-            public class Amount : GetTransactionByOutTradeNumberResponse.Types.Amount
+            public class Amount : GetTransactionByOutTradeNumberResponse.Types.__zz__Amount
             {
-                public static new class Types
+                public static class Types
                 {
                     public class ExchangeRate : GetTransactionByOutTradeNumberResponse.Types.Amount.Types.ExchangeRate
                     {
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exchange_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("exchange_rate")]
-                public new Types.ExchangeRate? ExchangeRate { get; set; }
+                public Types.ExchangeRate? ExchangeRate { get; set; }
             }
 
             public class Scene
@@ -45,9 +45,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 public string? DeviceIp { get; set; }
             }
 
-            public class Promotion : GetTransactionByOutTradeNumberResponse.Types.Promotion
+            public class Promotion : GetTransactionByOutTradeNumberResponse.Types.__zz__Promotion
             {
-                public static new class Types
+                public static class Types
                 {
                     public class GoodsDetail : GetTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
                     {
@@ -59,14 +59,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wxpay_contribute_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxpay_contribute_amount")]
-                public new int? WechatpayContribute { get; set; }
+                public new int? WechatpayContribute
+                {
+                    get { return base.WechatpayContribute; }
+                    set { base.WechatpayContribute = value; }
+                }
 
                 /// <summary>
                 /// 获取或设置单品列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                public new List<Types.GoodsDetail>? GoodsList { get; set; }
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
         }
 
@@ -75,14 +79,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string? AppId { get; set; }
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

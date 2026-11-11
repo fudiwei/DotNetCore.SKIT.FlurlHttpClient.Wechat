@@ -7,26 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     {
         public static class Types
         {
-            public class Payer
+            public class Payer : CreatePartnerTransactionAppRequest.Types.Payer
             {
-                /// <summary>
-                /// 获取或设置用户在服务商下唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sp_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sp_openid")]
-                public string? OpenId { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户在子商户下唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sub_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
-                public string? SubOpenId { get; set; }
             }
 
-            public class Amount : GetTransactionByOutTradeNumberResponse.Types.Amount
+            public abstract class __zz__Amount : GetTransactionByOutTradeNumberResponse.Types.__zz__Amount
             {
-                public static new class Types
+            }
+
+            public class Amount : __zz__Amount
+            {
+                public static class Types
                 {
                     public class ExchangeRate : GetTransactionByOutTradeNumberResponse.Types.Amount.Types.ExchangeRate
                     {
@@ -38,12 +29,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exchange_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("exchange_rate")]
-                public new Types.ExchangeRate? ExchangeRate { get; set; }
+                public Types.ExchangeRate? ExchangeRate { get; set; }
             }
 
-            public class Promotion : GetTransactionByOutTradeNumberResponse.Types.Promotion
+            public abstract class __zz__Promotion : GetTransactionByOutTradeNumberResponse.Types.__zz__Promotion
             {
-                public static new class Types
+            }
+
+            public class Promotion : __zz__Promotion
+            {
+                public static class Types
                 {
                     public class GoodsDetail : GetTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
                     {
@@ -55,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                public new List<Types.GoodsDetail>? GoodsList { get; set; }
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
         }
 
@@ -67,6 +62,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         public string? MerchantId { get; set; }
 
         /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
+        public string? SubMerchantId { get; set; }
+
+        /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
@@ -74,14 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string? SubMerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

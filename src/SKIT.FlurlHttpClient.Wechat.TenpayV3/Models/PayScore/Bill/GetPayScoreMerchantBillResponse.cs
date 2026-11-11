@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class DownloadBill
+            public class Bill
             {
                 /// <summary>
                 /// 获取或设置账单文件序号。
@@ -18,29 +18,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int BillSequence { get; set; }
 
                 /// <summary>
-                /// 获取或设置哈希类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("hash_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("hash_type")]
-                public string? HashType { get; set; }
-
-                /// <summary>
-                /// 获取或设置哈希值。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("hash_value")]
-                [System.Text.Json.Serialization.JsonPropertyName("hash_value")]
-                public string? HashValue { get; set; }
-
-                /// <summary>
-                /// 获取或设置账单下载地址。
+                /// 获取或设置账单文件下载地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("download_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("download_url")]
                 public string? DownloadUrl { get; set; }
 
                 /// <summary>
-                /// 获取或设置账单加密密钥（需使用商户私钥解密）。
+                /// 获取或设置账单文件哈希类型。
                 /// </summary>
+                [Newtonsoft.Json.JsonProperty("hash_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("hash_type")]
+                public string? HashType { get; set; }
+
+                /// <summary>
+                /// 获取或设置账单文件哈希值。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("hash_value")]
+                [System.Text.Json.Serialization.JsonPropertyName("hash_value")]
+                public string? HashValue { get; set; }
+
+                /// <summary>
+                /// 获取或设置账单加密密钥。
+                /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("encrypt_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_key")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
@@ -57,17 +60,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置下载信息总数。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("download_bill_count")]
-        [System.Text.Json.Serialization.JsonPropertyName("download_bill_count")]
-        public int DownloadBillCount { get; set; }
-
-        /// <summary>
         /// 获取或设置下载信息明细列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("download_bill_list")]
         [System.Text.Json.Serialization.JsonPropertyName("download_bill_list")]
-        public List<Types.DownloadBill>? DownloadBillList { get; set; }
+        public List<Types.Bill>? BillList { get; set; }
+
+        /// <summary>
+        /// 获取或设置下载信息总数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("download_bill_count")]
+        [System.Text.Json.Serialization.JsonPropertyName("download_bill_count")]
+        public int BillCount { get; set; }
     }
 }

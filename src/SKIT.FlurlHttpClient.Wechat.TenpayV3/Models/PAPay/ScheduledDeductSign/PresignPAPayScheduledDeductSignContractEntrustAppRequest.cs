@@ -7,11 +7,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class DeductSchedule
+            public abstract class __zz__DeductSchedule
+            {
+                /// <summary>
+                /// 获取或设置商品描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("description")]
+                [System.Text.Json.Serialization.JsonPropertyName("description")]
+                public string? Description { get; set; }
+
+                /// <summary>
+                /// 获取或设置预计扣费的日期字符串（格式：yyyy-MM-dd）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("estimated_deduct_date")]
+                [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_date")]
+                public string? EstimatedDeductDateString { get; set; }
+            }
+
+            public class DeductSchedule : __zz__DeductSchedule
             {
                 public static class Types
                 {
-                    public class Amount
+                    public class EstimatedDeductAmount
                     {
                         /// <summary>
                         /// 获取或设置金额（单位：分）。
@@ -30,25 +47,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 }
 
                 /// <summary>
-                /// 获取或设置预计扣费的日期字符串（格式：yyyy-MM-dd）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("estimated_deduct_date")]
-                [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_date")]
-                public string? EstimatedDeductDateString { get; set; }
-
-                /// <summary>
-                /// 获取或设置预计的扣费金额信息。
+                /// 获取或设置预计扣费金额信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("estimated_deduct_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("estimated_deduct_amount")]
-                public Types.Amount? EstimatedDeductAmount { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品描述。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("description")]
-                [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string? Description { get; set; }
+                public Types.EstimatedDeductAmount? EstimatedDeductAmount { get; set; }
             }
         }
 
@@ -74,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutContractCode { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

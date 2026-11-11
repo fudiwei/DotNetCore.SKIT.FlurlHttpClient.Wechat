@@ -4,11 +4,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示委托代扣 ENTRUST.SIGN （仅限直连商户）回调通知事件的数据。</para>
     /// <para>表示委托代扣 ENTRUST.TERMINATE （仅限直连商户）回调通知事件的数据。</para>
     /// </summary>
-    public class PAPayEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PAPayEntrustResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
-            public class Termination : Models.GetPAPaySignContractByOutContractCodeResponse.Types.Termination
+            public class TerminateInfo : Models.GetPAPaySignContractByOutContractCodeResponse.Types.TerminateInfo
             {
             }
 
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public DateTimeOffset? ExpireTime { get; set; }
 
         /// <summary>
-        /// 获取或设置用户唯一标识。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_terminate_info")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_terminate_info")]
-        public Types.Termination? Termination { get; set; }
+        public Types.TerminateInfo? TerminateInfo { get; set; }
 
         /// <summary>
         /// 获取或设置预约扣费场景的预约信息。

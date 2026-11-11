@@ -1,12 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
+    using SKIT.FlurlHttpClient.Internal.CodeAnalysis;
+
     /// <summary>
     /// <para>表示 [POST] /marketing/partner/product-coupon/product-coupons 接口的响应。</para>
     /// </summary>
+    [DisallowAnalyzerRule("type-declaration/no-external-contract-nested-types", Addition = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Models." + nameof(GetMarketingPartnerProductCouponByProductCouponIdResponse))]
     public class CreateMarketingPartnerProductCouponResponse : GetMarketingPartnerProductCouponByProductCouponIdResponse
     {
         public static new class Types
         {
+            [DisallowAnalyzerRule("type-declaration/no-external-contract-nested-types", Addition = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Models." + nameof(QueryMarketingPartnerProductCouponStocksResponse) + "+" + nameof(QueryMarketingPartnerProductCouponStocksResponse.Types) + "+" + nameof(QueryMarketingPartnerProductCouponStocksResponse.Types.Stock))]
             public class StockInfo : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock
             {
             }
@@ -15,6 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
+                    [DisallowAnalyzerRule("type-declaration/no-external-contract-nested-types", Addition = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Models." + nameof(QueryMarketingPartnerProductCouponStocksResponse) + "+" + nameof(QueryMarketingPartnerProductCouponStocksResponse.Types) + "+" + nameof(QueryMarketingPartnerProductCouponStocksResponse.Types.Stock))]
                     public class Stock : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock
                     {
                     }

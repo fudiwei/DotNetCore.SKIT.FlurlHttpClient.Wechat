@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Payer
             {
                 /// <summary>
-                /// 获取或设置用户的唯一标识。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 public string? OpenId { get; set; }
 
                 /// <summary>
-                /// 获取或设置用户在子商户下唯一标识。
+                /// 获取或设置子商户用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
@@ -214,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

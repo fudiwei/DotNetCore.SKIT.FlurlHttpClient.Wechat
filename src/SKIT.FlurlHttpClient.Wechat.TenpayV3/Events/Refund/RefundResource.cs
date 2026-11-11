@@ -17,11 +17,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012083103 ]]>
     /// </para>
     /// </summary>
-    public class RefundResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class RefundResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         public static class Types
         {
-            public class Amount : Models.GetRefundDomesticRefundByOutRefundNumberResponse.Types.Amount
+            public class Amount : Models.GetRefundDomesticRefundByOutRefundNumberResponse.Types.__zz__Amount
             {
             }
         }

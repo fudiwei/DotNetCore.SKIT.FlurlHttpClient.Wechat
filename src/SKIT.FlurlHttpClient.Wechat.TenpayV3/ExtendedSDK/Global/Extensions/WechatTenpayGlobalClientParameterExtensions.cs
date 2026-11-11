@@ -1,5 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
     public static class WechatTenpayGlobalClientParameterExtensions
     {
         /// <summary>
@@ -16,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForJsapiPayRequest(this WechatTenpayGlobalClient client, string appId, string prepayId)
         {
-            return WechatTenpayClientParameterExtensions.GenerateParametersForJsapiPayRequest(client.ProxyClient, appId, prepayId);
+            return __zroot__.WechatTenpayClientParameterExtensions.GenerateParametersForJsapiPayRequest(client.ProxyClient, appId, prepayId);
         }
 
         /// <summary>
@@ -32,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayGlobalClient client, string appId, string prepayId)
         {
-            return WechatTenpayClientParameterExtensions.GenerateParametersForAppPayRequest(client.ProxyClient, appId, prepayId);
+            return __zroot__.WechatTenpayClientParameterExtensions.GenerateParametersForAppPayRequest(client.ProxyClient, appId, prepayId);
         }
 
         /// <summary>
@@ -49,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayGlobalClient client, string merchantId, string appId, string prepayId)
         {
-            return WechatTenpayClientParameterExtensions.GenerateParametersForAppPayRequest(client.ProxyClient, merchantId, appId, prepayId);
+            return __zroot__.WechatTenpayClientParameterExtensions.GenerateParametersForAppPayRequest(client.ProxyClient, merchantId, appId, prepayId);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetEcommerceRefundReturnAdvanceResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置微信退款单号。
+        /// 获取或设置微信支付退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_id")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_id")]

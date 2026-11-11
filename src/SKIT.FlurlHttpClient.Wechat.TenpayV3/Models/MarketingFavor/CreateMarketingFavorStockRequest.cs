@@ -52,110 +52,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public bool? IsPreventApiAbuse { get; set; }
             }
 
-            public class CouponUseRule
+            public abstract class __zz__CouponUseRule
             {
-                public static class Types
-                {
-                    public class CouponAvailableTime
-                    {
-                        public static class Types
-                        {
-                            public class AvailableTime
-                            {
-                                /// <summary>
-                                /// 获取或设置可用星期数。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("available_week_day")]
-                                [System.Text.Json.Serialization.JsonPropertyName("available_week_day")]
-                                public int? AvailableWeekDay { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置当天开始时间（单位：秒）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("begin_time")]
-                                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-                                public int? BeginTimeSeconds { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置当天结束时间（单位：秒）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("end_time")]
-                                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                                public int? EndTimeSeconds { get; set; }
-                            }
-                        }
-
-                        /// <summary>
-                        /// 获取或设置固定时间段可用信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("fix_available_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("fix_available_time")]
-                        public Types.AvailableTime? FixedAvailableTime { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置是否领取后 N 天有效。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("second_day_available")]
-                        [System.Text.Json.Serialization.JsonPropertyName("second_day_available")]
-                        public bool? IsSecondDayAvailable { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置领取后有效时间（单位：分钟）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("available_time_after_receive")]
-                        [System.Text.Json.Serialization.JsonPropertyName("available_time_after_receive")]
-                        public int? AvailableMinutesAfterReceive { get; set; }
-                    }
-
-                    public class NormalCoupon
-                    {
-                        /// <summary>
-                        /// 获取或设置券面额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("coupon_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("coupon_amount")]
-                        public int CouponAmount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置使用门槛（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("transaction_minimum")]
-                        [System.Text.Json.Serialization.JsonPropertyName("transaction_minimum")]
-                        public int TransactionMinimum { get; set; }
-                    }
-
-                    public class LimitCard
-                    {
-                        /// <summary>
-                        /// 获取或设置银行卡名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置指定卡 BIN 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("bin")]
-                        [System.Text.Json.Serialization.JsonPropertyName("bin")]
-                        public List<string>? BinList { get; set; }
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置券生效时间信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_available_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_available_time")]
-                public Types.CouponAvailableTime? CouponAvailableTime { get; set; }
-
-                /// <summary>
-                /// 获取或设置固定面额满减券使用规则信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fixed_normal_coupon")]
-                [System.Text.Json.Serialization.JsonPropertyName("fixed_normal_coupon")]
-                public Types.NormalCoupon? NormalCoupon { get; set; }
-
                 /// <summary>
                 /// 获取或设置订单优惠标记列表。
                 /// </summary>
@@ -169,13 +67,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("limit_pay")]
                 [System.Text.Json.Serialization.JsonPropertyName("limit_pay")]
                 public List<string>? LimitPayCodeList { get; set; }
-
-                /// <summary>
-                /// 获取或设置指定银行卡信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("limit_card")]
-                [System.Text.Json.Serialization.JsonPropertyName("limit_card")]
-                public Types.LimitCard? LimitCard { get; set; }
 
                 /// <summary>
                 /// 获取或设置指定支付方式列表。
@@ -211,6 +102,152 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("available_merchants")]
                 [System.Text.Json.Serialization.JsonPropertyName("available_merchants")]
                 public List<string>? AvailableMerchantIdList { get; set; }
+            }
+
+            public class CouponUseRule : __zz__CouponUseRule
+            {
+                public static class Types
+                {
+                    public abstract class __zz__CouponAvailableTime
+                    {
+                        /// <summary>
+                        /// 获取或设置是否领取后 N 天有效。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("second_day_available")]
+                        [System.Text.Json.Serialization.JsonPropertyName("second_day_available")]
+                        public bool? IsSecondDayAvailable { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置领取后有效时间（单位：分钟）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("available_time_after_receive")]
+                        [System.Text.Json.Serialization.JsonPropertyName("available_time_after_receive")]
+                        public int? AvailableMinutesAfterReceive { get; set; }
+                    }
+
+                    public class CouponAvailableTime : __zz__CouponAvailableTime
+                    {
+                        public static class Types
+                        {
+                            public class AvailableTime
+                            {
+                                /// <summary>
+                                /// 获取或设置可用星期数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("available_week_day")]
+                                [System.Text.Json.Serialization.JsonPropertyName("available_week_day")]
+                                public int? AvailableWeekDay { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置当天开始时间（单位：秒）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("begin_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
+                                public int? BeginTimeSeconds { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置当天结束时间（单位：秒）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("end_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
+                                public int? EndTimeSeconds { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置固定时间段可用信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("fix_available_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("fix_available_time")]
+                        public Types.AvailableTime? FixedAvailableTime { get; set; }
+                    }
+
+                    public class NormalCoupon
+                    {
+                        /// <summary>
+                        /// 获取或设置券面额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("coupon_amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("coupon_amount")]
+                        public int CouponAmount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置使用门槛（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("transaction_minimum")]
+                        [System.Text.Json.Serialization.JsonPropertyName("transaction_minimum")]
+                        public int TransactionMinimum { get; set; }
+                    }
+
+                    public class DiscountCoupon
+                    {
+                        /// <summary>
+                        /// 获取或设置最高折扣金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("discount_amount_max")]
+                        [System.Text.Json.Serialization.JsonPropertyName("discount_amount_max")]
+                        public int DiscountAmountMax { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置折扣百分比（范围：1～99）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("discount_percent")]
+                        [System.Text.Json.Serialization.JsonPropertyName("discount_percent")]
+                        public int DiscountPercent { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置使用门槛（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("transaction_minimum")]
+                        [System.Text.Json.Serialization.JsonPropertyName("transaction_minimum")]
+                        public int? TransactionMinimum { get; set; }
+                    }
+
+                    public class LimitCard
+                    {
+                        /// <summary>
+                        /// 获取或设置银行卡名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置指定卡 BIN 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("bin")]
+                        [System.Text.Json.Serialization.JsonPropertyName("bin")]
+                        public List<string>? BinList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置券生效时间信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("coupon_available_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("coupon_available_time")]
+                public Types.CouponAvailableTime? CouponAvailableTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置满减券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("fixed_normal_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("fixed_normal_coupon")]
+                public Types.NormalCoupon? NormalCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置折扣券使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("fixed_discount_coupon")]
+                [System.Text.Json.Serialization.JsonPropertyName("fixed_discount_coupon")]
+                public Types.DiscountCoupon? DiscountCoupon { get; set; }
+
+                /// <summary>
+                /// 获取或设置指定银行卡信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limit_card")]
+                [System.Text.Json.Serialization.JsonPropertyName("limit_card")]
+                public Types.LimitCard? LimitCard { get; set; }
             }
 
             public class Pattern

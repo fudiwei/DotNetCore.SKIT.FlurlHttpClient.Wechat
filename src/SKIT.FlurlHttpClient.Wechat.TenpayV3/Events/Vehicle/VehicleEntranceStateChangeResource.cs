@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <summary>
     /// <para>表示 "VEHICLE.ENTRANCE_STATE_CHANGE" 回调通知事件的数据。</para>
     /// </summary>
-    public class VehicleEntranceStateChangeResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class VehicleEntranceStateChangeResource : WechatTenpayEvent.Meta.IDecryptedResource
     {
         /// <summary>
         /// 获取或设置微信商户号。
@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? MerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

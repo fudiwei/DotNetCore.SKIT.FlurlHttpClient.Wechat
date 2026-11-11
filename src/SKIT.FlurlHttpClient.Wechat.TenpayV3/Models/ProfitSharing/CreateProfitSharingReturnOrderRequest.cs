@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutOrderNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信分账单号。与字段 <see cref="OutOrderNumber"/> 二选一。
+        /// 获取或设置微信支付分账单号。与字段 <see cref="OutOrderNumber"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]

@@ -7,17 +7,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
     {
         public static class Types
         {
-            public class Payer
+            public class Payer : CreateTransactionAppRequest.Types.Payer
             {
                 /// <summary>
-                /// 获取或设置用户在机构商户下的唯一标识。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sp_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sp_openid")]
-                public string? OpenId { get; set; }
+                public new string? OpenId
+                {
+                    get { return base.OpenId; }
+                    set { base.OpenId = value; }
+                }
 
                 /// <summary>
-                /// 获取或设置用户在子商户下的唯一标识。
+                /// 获取或设置子商户用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
@@ -28,21 +32,62 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             {
             }
 
-            public class Detail : CreateTransactionAppRequest.Types.Detail
+            public abstract class __zz__Detail : CreateTransactionAppRequest.Types.__zz__Detail
             {
             }
 
-            public class Scene : CreateTransactionAppRequest.Types.Scene
+            public class Detail : __zz__Detail
             {
+                public static class Types
+                {
+                    public class GoodsDetail : CreateTransactionAppRequest.Types.Detail.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
+            }
+
+            public abstract class __zz__Scene : CreateTransactionAppRequest.Types.__zz__Scene
+            {
+            }
+
+            public class Scene : __zz__Scene
+            {
+                public static class Types
+                {
+                    public class Store : CreateTransactionAppRequest.Types.Scene.Types.Store
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
             }
         }
 
         /// <summary>
-        /// 获取或设置机构商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
         public string? MerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置机构 AppId。
@@ -52,14 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信子商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string? SubMerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置子商户 AppId。
+        /// 获取或设置子商户微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]

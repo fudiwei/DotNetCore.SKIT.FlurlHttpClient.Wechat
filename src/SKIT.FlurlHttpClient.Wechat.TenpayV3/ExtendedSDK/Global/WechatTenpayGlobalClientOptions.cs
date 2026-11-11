@@ -1,6 +1,6 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
-    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+    using __zroot__ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
 
     /// <summary>
     /// 一个用于构造 <see cref="WechatTenpayGlobalClient"/> 时使用的配置项。
@@ -45,25 +45,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <summary>
         /// 获取或设置微信支付商户号。
         /// </summary>
-        public string MerchantId { get; set; } = default!;
+        public string MerchantId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信支付商户 API v3 密钥（注意与 API 密钥相区分）。
         /// </summary>
-        public string MerchantV3Secret { get; set; } = default!;
+        public string MerchantV3Secret { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信支付商户 API 证书序列号。
         /// </summary>
-        public string MerchantCertificateSerialNumber { get; set; } = default!;
+        public string MerchantCertificateSerialNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信支付商户 API 证书私钥（通常为 `apiclient_key.pem` 文件内容）。
         /// </summary>
-        public string MerchantCertificatePrivateKey { get; set; } = default!;
+        public string MerchantCertificatePrivateKey { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置是否自动加密请求中的敏感字段数据。
+        /// 获取或设置是否自动加密请求中的敏感数据字段。
         /// <para>
         /// 注意：启用该功能需配合 <see cref="PlatformCertificateManager"/> 使用。
         /// </para>
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public bool AutoEncryptRequestSensitiveProperty { get; set; }
 
         /// <summary>
-        /// 获取或设置是否自动解密响应中的敏感字段数据。
+        /// 获取或设置是否自动解密响应中的敏感数据字段。
         /// <para>
         /// 注意：启用该功能需配合 <see cref="PlatformCertificateManager"/> 使用。
         /// </para>
@@ -81,9 +81,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <summary>
         /// 获取或设置微信支付平台证书管理器。
         /// <para>
-        /// 默认值：<see cref="_ROOT_.Settings.InMemoryCertificateManager"/>
+        /// 默认值：<see cref="__zroot__.Settings.InMemoryCertificateManager"/>
         /// </para>
         /// </summary>
-        public _ROOT_.Settings.ICertificateManager PlatformCertificateManager { get; set; } = new _ROOT_.Settings.InMemoryCertificateManager();
+        public __zroot__.Settings.ICertificateManager PlatformCertificateManager { get; set; } = new __zroot__.Settings.InMemoryCertificateManager();
     }
 }

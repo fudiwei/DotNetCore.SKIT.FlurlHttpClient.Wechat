@@ -17,7 +17,14 @@
                     "transaction_minimum": 100
                 },
                 "max_coupons_per_user": 3,
-                "trade_type": [ "OTHER", "APPPAY" ]
+                "goods_tag": ["123456"],
+                "trade_type": ["OTHER", "APPPAY"],
+                "combine_use": true,
+                "fixed_discount_coupon": {
+                    "discount_amount_max": 100,
+                    "discount_percent": 88,
+                    "transaction_minimum": 100
+                }
             },
             "available_begin_time": "2015-05-20T13:29:35.120+08:00",
             "available_end_time": "2015-05-20T13:29:35.120+08:00",
@@ -35,9 +42,7 @@
                     "country": "中国大陆"
                 }
             ],
-            "available_industry_list": [
-                "餐饮"
-            ]
+            "available_industry_list": ["餐饮"]
         }
     ],
     "limit": 8,

@@ -12,20 +12,152 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class ComplaintOrder : GetMerchantServiceComplaintByComplaintIdResponse.Types.ComplaintOrder
+                    public class ComplaintOrder
                     {
+                        /// <summary>
+                        /// 获取或设置微信支付订单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("transaction_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+                        public string? TransactionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商户订单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("out_trade_no")]
+                        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
+                        public string? OutTradeNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置订单金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                        public int Amount { get; set; }
                     }
 
-                    public class ComplaintMedia : GetMerchantServiceComplaintByComplaintIdResponse.Types.ComplaintMedia
+                    public class ComplaintMedia
                     {
+                        /// <summary>
+                        /// 获取或设置媒体文件业务类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_type")]
+                        public string? MediaType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置媒体文件 URL 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_url")]
+                        public List<string>? MediaUrlList { get; set; }
                     }
 
-                    public class ServiceOrder : GetMerchantServiceComplaintByComplaintIdResponse.Types.ServiceOrder
+                    public class ServiceOrder
                     {
+                        /// <summary>
+                        /// 获取或设置商户服务单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("out_order_no")]
+                        [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
+                        public string? OutOrderNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置微信支付服务单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("order_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                        public string? OrderId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置服务单状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("state")]
+                        [System.Text.Json.Serialization.JsonPropertyName("state")]
+                        public string? State { get; set; }
                     }
 
-                    public class AdditionalInfomation : GetMerchantServiceComplaintByComplaintIdResponse.Types.AdditionalInfomation
+                    public abstract class __zz__AdditionalInfomation
                     {
+                        /// <summary>
+                        /// 获取或设置补充信息类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public string? Type { get; set; }
+                    }
+
+                    public class AdditionalInfomation : __zz__AdditionalInfomation
+                    {
+                        public static class Types
+                        {
+                            public abstract class __zz__SharePowerInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置归还时间。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("return_time")]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+                                [System.Text.Json.Serialization.JsonPropertyName("return_time")]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+                                public DateTimeOffset? ReturnTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否归还同一柜机。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("is_returned_to_same_machine")]
+                                [System.Text.Json.Serialization.JsonPropertyName("is_returned_to_same_machine")]
+                                public bool? IsReturnedToSameMachine { get; set; }
+                            }
+
+                            public class SharePowerInfo : __zz__SharePowerInfo
+                            {
+                                public static class Types
+                                {
+                                    public class ReturnAddress
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置地址。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("return_address")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("return_address")]
+                                        public string? Address { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置经度。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("longitude")]
+                                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberReadOnlyConverter))]
+                                        [System.Text.Json.Serialization.JsonPropertyName("longitude")]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberReadOnlyConverter))]
+                                        public decimal? Longitude { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置纬度。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("latitude")]
+                                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberReadOnlyConverter))]
+                                        [System.Text.Json.Serialization.JsonPropertyName("latitude")]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberReadOnlyConverter))]
+                                        public decimal? Latitude { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置归还地点信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("return_address_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("return_address_info")]
+                                public Types.ReturnAddress? ReturnAddress { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置共享充电宝投诉相关信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("share_power_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("share_power_info")]
+                        public Types.SharePowerInfo? SharePowerInfo { get; set; }
                     }
                 }
 
@@ -68,8 +200,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? ComplaintedMerchantId { get; set; }
 
                 /// <summary>
-                /// 获取或设置投诉人联系方式（需使用商户私钥解密）。
+                /// 获取或设置投诉人联系方式。
                 /// </summary>
+                /// <remarks>
+                /// 该属性是敏感数据字段，需要使用商户私钥解密。
+                /// </remarks>
                 [Newtonsoft.Json.JsonProperty("payer_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("payer_phone")]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
