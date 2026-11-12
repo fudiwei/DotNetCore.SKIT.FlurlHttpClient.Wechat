@@ -1363,25 +1363,6 @@
 
 ---
 
-### 模块 `SKIT.FlurlHttpClient.Wechat.Ads` 更新日志
-
-<details>
-
-<summary>[展开查看]</summary>
-
-- Release 3.1.0 (2024-07-13)
-    - **变更**：升级公共组件至 v3.1.0。
-
-- Release 3.0.0 (2024-02-07)
-    - **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
-
-- Release 2.0.0 (2022-12-06)
-    - 首次发布。
-
-</details>
-
----
-
 ### 模块 `SKIT.FlurlHttpClient.Wechat.OpenAI` 更新日志
 
 <details>

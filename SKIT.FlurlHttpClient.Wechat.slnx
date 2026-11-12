@@ -5,7 +5,6 @@
     <Project Path="samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_NetFramework48/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_NetFramework48.csproj" Id="dfa229ff-0a4b-411e-9a11-681ba55dfbae" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/SKIT.FlurlHttpClient.Wechat.Ads/SKIT.FlurlHttpClient.Wechat.Ads.csproj" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.Api/SKIT.FlurlHttpClient.Wechat.Api.csproj" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.OpenAI/SKIT.FlurlHttpClient.Wechat.OpenAI.csproj" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.TenpayBusiness/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.csproj" />
@@ -14,7 +13,6 @@
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.Work/SKIT.FlurlHttpClient.Wechat.Work.csproj" />
   </Folder>
   <Folder Name="/test/">
-    <Project Path="test/SKIT.FlurlHttpClient.Wechat.Ads.UnitTests/SKIT.FlurlHttpClient.Wechat.Ads.UnitTests.csproj" />
     <Project Path="test/SKIT.FlurlHttpClient.Wechat.Api.UnitTests/SKIT.FlurlHttpClient.Wechat.Api.UnitTests.csproj" />
     <Project Path="test/SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests/SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests.csproj" />
     <Project Path="test/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.UnitTests/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.UnitTests.csproj" />

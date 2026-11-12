@@ -15,14 +15,14 @@
 
 ## 特性
 
--   基于 `Flurl.Http`。
--   支持 .NET Framework 4.6.2+、.NET Core 3.1+、.NET 5.0+ 多目标框架。
--   支持 Windows / Linux / macOS 多平台部署。
--   支持 `System.Text.Json`（默认）和 `Newtonsoft.Json` 两种序列化方式。
--   强类型接口模型。
--   全异步式编程。
--   提供 SourceLink 调试符号文件。
--   完整、完善、完全的微信 HTTP API 封装。
+- 基于 `Flurl.Http`。
+- 支持 .NET Framework 4.6.2+、.NET Core 3.1+、.NET 5.0+ 多目标框架。
+- 支持 Windows / Linux / macOS 多平台部署。
+- 支持 `System.Text.Json`（默认）和 `Newtonsoft.Json` 两种序列化方式。
+- 强类型接口模型。
+- 全异步式编程。
+- 提供 SourceLink 调试符号文件。
+- 完整、完善、完全的微信 HTTP API 封装。
 
 ---
 
@@ -34,7 +34,7 @@
 |    商户平台（微信支付）模块 <br> （针对 v3 版接口）    |             [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3)             | [开发文档](./docs/WechatTenpayV3/README.md)｜[示例项目](./docs/WechatTenpayV3/Sample.md) |
 |    商户平台（微信支付）模块 <br> （针对 v2 版接口）    |             [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV2.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV2) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.TenpayV2.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV2)             |                       [开发文档](./docs/WechatTenpayV2/README.md)                        |
 |                 企业微信（企业号）模块                 |                     [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Work.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Work.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work)                     |                         [开发文档](./docs/WechatWork/README.md)                          |
-|                 广告平台（广点通）模块                 |                       [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)                       |                          [开发文档](./docs/WechatAds/README.md)                          |
+|                 广告平台（广点通）模块                 |                                                                                                                                                                                                _已停止维护_                                                                                                                                                                                                |                                                                                          |
 |            对话开放平台（微信智能对话）模块            |                 [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.OpenAI.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.OpenAI) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.OpenAI.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.OpenAI)                 |                        [开发文档](./docs/WechatOpenAI/README.md)                         |
 |                     腾讯微企付模块                     | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayBusiness) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayBusiness) |                    [开发文档](./docs/WechatTenpayBusiness/README.md)                     |
 
@@ -50,11 +50,11 @@
 
 > 注：[盛派微信 SDK](https://github.com/JeffreySu/WeiXinMPSDK) 是由苏震巍先生发起的国内知名的 .NET 开源项目。
 
--   本库专注于 API 本身的封装，捎带提供了一些用于加解密、序列化的工具类，使用起来更加灵活，不限任何框架或项目类型；盛派微信 SDK 提供了大而全的功能，与 MVC / WebAPI 深度集成。
+- 本库专注于 API 本身的封装，捎带提供了一些用于加解密、序列化的工具类，使用起来更加灵活，不限任何框架或项目类型；盛派微信 SDK 提供了大而全的功能，与 MVC / WebAPI 深度集成。
 
--   本库的接口模型遵循的是微软官方推荐的 C# 属性命名方式（帕斯卡命名法）；盛派微信 SDK 提供的是微信接口本身的命名方式（蛇形命名法和驼峰命名法混杂）。
+- 本库的接口模型遵循的是微软官方推荐的 C# 属性命名方式（帕斯卡命名法）；盛派微信 SDK 提供的是微信接口本身的命名方式（蛇形命名法和驼峰命名法混杂）。
 
--   本库封装了目前微信官方提供的几乎所有 API（极个别不支持的已在各模块文档中列出具体原因）；盛派微信 SDK 只提供了常用的 API。
+- 本库封装了目前微信官方提供的几乎所有 API（极个别不支持的已在各模块文档中列出具体原因）；盛派微信 SDK 只提供了常用的 API。
 
 ### 3. 看了源码，发现模型定义里很多同样的代码是复制粘贴的，为什么不使用面向对象中的继承？
 
@@ -89,8 +89,8 @@
 
 ## 参与贡献
 
--   GitHub Repo：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
--   Gitee Repo：https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
+- GitHub Repo：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
+- Gitee Repo：https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
 
 以上仓库地址同步更新，均可接受 Issue 或 Pull Request。
 
