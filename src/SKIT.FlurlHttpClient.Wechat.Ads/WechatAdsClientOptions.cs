@@ -24,16 +24,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         /// <summary>
         /// 获取或设置微信广告平台服务商 ID。
         /// </summary>
-        public string AgencyId { get; set; } = default!;
+        public string AgencyId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信广告平台服务商 AppId。
         /// </summary>
-        public string AgencyAppId { get; set; } = default!;
+        public string AgencyAppId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微信广告平台服务商 ApiKey。
         /// </summary>
-        public string AgencyApiKey { get; set; } = default!;
+        public string AgencyApiKey { get; set; } = string.Empty;
     }
 }
