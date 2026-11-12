@@ -24,7 +24,7 @@
 	</ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
         <PackageReference Include="System.ValueTuple" Version="4.6.2" Condition="'$(TargetFramework)' == 'net462'" />
 		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="4.0.0" />
         <PackageReference Include="SKIT.JsonConv.NewtonsoftJson" Version="0.1.2" />
