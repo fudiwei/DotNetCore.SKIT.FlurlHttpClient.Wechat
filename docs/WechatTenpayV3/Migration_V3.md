@@ -70,27 +70,27 @@ var client = new WechatTenpayClient(options);
 
 公共组件中提供了如下的异常类型：
 
--   `CommonException`：异常基类。
--   `CommonHttpException`：执行 HTTP 请求时引发的异常。
--   `CommonTimeoutException`：超时引发的异常。
--   `CommonSerializationException`：序列化或反序列化时引发的异常。
--   `CommonInterceptorCallException`：拦截器引发的异常。
+- `CommonException`：异常基类。
+- `CommonHttpException`：执行 HTTP 请求时引发的异常。
+- `CommonTimeoutException`：超时引发的异常。
+- `CommonSerializationException`：序列化或反序列化时引发的异常。
+- `CommonInterceptorCallException`：拦截器引发的异常。
 
 模块内更加细化的异常信息，统一由 `WechatTenpayException` 异常类型包装，但废弃并移除了其派生的异常类型：
 
--   `WechatTenpayRequestTimeoutException`
--   `WechatTenpayRequestEncryptionException`
--   `WechatTenpayRequestSignatureException`
--   `WechatTenpayResponseDecryptionException`
--   `WechatTenpayResponseVerificationException`
--   `WechatTenpayEventDecryptionException`
--   `WechatTenpayEventVerificationException`
+- `WechatTenpayRequestTimeoutException`
+- `WechatTenpayRequestEncryptionException`
+- `WechatTenpayRequestSignatureException`
+- `WechatTenpayResponseDecryptionException`
+- `WechatTenpayResponseVerificationException`
+- `WechatTenpayEventDecryptionException`
+- `WechatTenpayEventVerificationException`
 
 ### 基础类型：`SKIT.FlurlHttpClient.Primitives.EncodedeString`
 
 在进行加解密或哈希等操作时，参与运算的数据和最终得到的结果通常是字节数组（即 `byte[]`）形式。而在实际应用中，我们常常需要将这些字节序列转换成文本格式。我们发现即便是同一种加解密或哈希算法，在不同平台上所需要的编码方式也可能不同。比如同为 SHA256，在某些接口中需要转换为十六进制（HEX）编码传参，而在另一些接口中却需要转换为 Base64 编码传参。
 
-在过往的版本中，我们在不同的模块中针对不同平台的要求提供了单独的封装方法，这使得代码更加分散且不易维护。
+在之前的版本中，我们在不同的模块中针对不同平台的要求提供了单独的封装方法，这使得代码更加分散且不易维护。
 
 为了统一处理并简化这些差异，我们在公共组件中引入了 `EncodedString` 这一类型。`EncodedString` 类型是一个封装结构，它提供了统一的接口来处理不同编码方式的字符串。通过该类型，开发者可以不必关心底层使用的是哪种编码方式，从而使代码更加简洁和清晰。
 
@@ -112,7 +112,7 @@ string str = (string)estr;
 
 在进行数据验签等操作时，由于传入了错误的参数导致抛出异常，通常需要被视为验签失败。
 
-在过往的版本中，我们在相应的方法内部 `try-catch` 捕获所有异常，并直接返回 `false`。然而，这种做法虽然简化了返回值的处理，但却严重限制了开发者错误调试的能力，因为它无法提供关于异常的详细信息。虽然有部分方法提供了带有 `(..., out Exception error)` 引用参数的重载，但却不能在异步方法中所使用。
+在之前的版本中，我们在相应的方法内部 `try-catch` 捕获所有异常，并直接返回 `false`。然而，这种做法虽然简化了返回值的处理，但却严重限制了开发者错误调试的能力，因为它无法提供关于异常的详细信息。虽然有部分方法提供了带有 `(..., out Exception error)` 引用参数的重载，但却不能在异步方法中所使用。
 
 为了解决这一问题，我们在公共组件中引入了 `ErroredResult` 这一类型。`ErroredResult` 类型是一个封装结构，它不仅可以在逻辑上表示操作的成功与否，而且能够携带发生的异常信息，极大地便利了异常处理和调试过程。
 
