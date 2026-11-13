@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_trans_id")]
         [System.Text.Json.Serialization.JsonPropertyName("service_trans_id")]
-        public string? ServiceTransId { get; set; }
+        public string? ServiceTransportId { get; set; }
 
         /// <summary>
         /// 获取或设置开始时间戳。

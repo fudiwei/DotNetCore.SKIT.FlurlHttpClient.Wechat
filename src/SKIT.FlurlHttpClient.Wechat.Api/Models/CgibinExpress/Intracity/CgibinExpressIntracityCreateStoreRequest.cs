@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_trans_prefer")]
         [System.Text.Json.Serialization.JsonPropertyName("service_trans_prefer")]
-        public string? ServiceTransIdPrefer { get; set; }
+        public string? ServiceTransportIdPrefer { get; set; }
 
         /// <summary>
         /// 获取或设置门店地址信息。
