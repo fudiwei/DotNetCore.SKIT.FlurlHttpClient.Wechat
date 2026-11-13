@@ -4,8 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
     /// <para>表示企业微信智能机器人回调事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100719 ]]> <br/>
-    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101027 ]]>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101918 ]]>
     /// </para>
     /// </summary>
     public class AIBotEvent : WechatWorkAIBotEvent

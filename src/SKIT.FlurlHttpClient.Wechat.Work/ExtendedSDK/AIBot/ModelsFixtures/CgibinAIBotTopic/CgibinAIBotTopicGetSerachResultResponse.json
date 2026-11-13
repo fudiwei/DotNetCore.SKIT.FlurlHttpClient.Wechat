@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "result_list": [
+        {
+            "post_id": "POST_ID",
+            "brief_content": "POST_BRIEF_CONTENT",
+            "reply_list": [
+                {
+                    "reply_id": "REPLY_ID",
+                    "brief_content": "REPLY_BRIEF_CONTENT"
+                }
+            ]
+        }
+    ],
+    "has_more": true,
+    "next_cursor": "NEXT_CURSOR"
+}

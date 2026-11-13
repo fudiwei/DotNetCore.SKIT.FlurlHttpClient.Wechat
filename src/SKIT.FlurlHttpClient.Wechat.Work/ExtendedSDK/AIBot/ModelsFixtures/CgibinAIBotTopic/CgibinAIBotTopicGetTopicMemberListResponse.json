@@ -1,0 +1,16 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "member_list": [
+        {
+            "type": 0,
+            "userid": "USER_ID"
+        },
+        {
+            "type": 1,
+            "aibotid": "BOT_ID"
+        }
+    ],
+    "has_more": true,
+    "next_cursor": "NEXT_CURSOR"
+}

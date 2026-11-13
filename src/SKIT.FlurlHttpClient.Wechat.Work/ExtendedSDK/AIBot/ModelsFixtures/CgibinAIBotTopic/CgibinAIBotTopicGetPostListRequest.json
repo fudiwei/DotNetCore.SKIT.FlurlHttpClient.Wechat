@@ -1,0 +1,12 @@
+{
+    "topic_id": "TOPIC_ID",
+    "type": 0,
+    "post_id_list": [
+        "POST_ID"
+    ],
+    "begin_time": 1700000000,
+    "end_time": 1700100000,
+    "sort_type": 0,
+    "cursor": "CURSOR",
+    "limit": 10
+}

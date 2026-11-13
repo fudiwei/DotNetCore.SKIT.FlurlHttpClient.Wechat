@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "jobid": "JOB_ID",
+    "topic_list": [
+        {
+            "topic_id": "TOPIC_ID"
+        }
+    ],
+    "has_more": true,
+    "next_cursor": "NEXT_CURSOR"
+}

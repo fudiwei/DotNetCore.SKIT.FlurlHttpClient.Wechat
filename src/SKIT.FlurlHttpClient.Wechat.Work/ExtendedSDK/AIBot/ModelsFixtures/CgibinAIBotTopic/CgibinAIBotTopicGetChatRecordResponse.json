@@ -1,0 +1,66 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "status": 0,
+    "msgtype": "merged_msg",
+    "merged_msg": {
+        "msg_item": [
+            {
+                "from": {
+                    "type": 0,
+                    "id": "USERID"
+                },
+                "send_time": 1700000000,
+                "msgtype": "type",
+                "text": {
+                    "content": "这是今日的测试情况"
+                },
+                "image": {
+                    "url": "IMAGE_URL",
+                    "file_name": "FILE_NAME"
+                },
+                "file": {
+                    "url": "FILE_URL",
+                    "file_name": "FILE_NAME",
+                    "file_size": 1024
+                },
+                "video": {
+                    "url": "VIDEO_URL",
+                    "file_name": "FILE_NAME"
+                },
+                "mixed": {
+                    "msg_item": [
+                        {
+                            "msgtype": "text",
+                            "text": {
+                                "content": "这是今日的测试截图"
+                            }
+                        },
+                        {
+                            "msgtype": "image",
+                            "image": {
+                                "url": "IMAGE_URL",
+                                "file_name": "FILE_NAME"
+                            }
+                        }
+                    ]
+                },
+                "merged_msg": {
+                    "msg_item": [
+                        {
+                            "from": {
+                                "type": 100,
+                                "id": "TMP_ID"
+                            },
+                            "send_time": 1690000000,
+                            "msgtype": "text",
+                            "text": {
+                                "content": "这是之前的讨论记录"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "topic_list": [
+        {
+            "topic_id": "TOPIC_ID",
+            "topic_name": "TOPIC_NAME",
+            "topic_desc": "TOPIC_DESC",
+            "permission": 0,
+            "creator": {
+                "type": 0,
+                "userid": "USER_ID"
+            },
+            "create_time": 1758518400
+        }
+    ],
+    "has_more": true,
+    "next_cursor": "NEXT_CURSOR"
+}

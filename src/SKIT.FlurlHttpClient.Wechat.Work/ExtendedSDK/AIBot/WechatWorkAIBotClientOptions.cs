@@ -18,6 +18,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         public string Endpoint { get; set; } = WechatWorkAIBotEndpoints.DEFAULT;
 
         /// <summary>
+        /// 获取或设置企业微信智能机器人 ID。
+        /// </summary>
+        public string BotId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置企业微信智能机器人 Secret。
+        /// </summary>
+        public string BotSecret { get; set; } = string.Empty;
+
+        /// <summary>
         /// 获取或设置企业微信服务器推送的 EncodingAESKey。
         /// </summary>
         public string? PushEncodingAESKey { get; set; }

@@ -1,0 +1,74 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "post_list": [
+        {
+            "post_id": "POST_ID",
+            "creator_info": {
+                "type": 0,
+                "userid": "USER_ID",
+                "aibotid": "BOT_ID"
+            },
+            "create_time": 1700000000,
+            "is_recalled": false,
+            "is_modified": false,
+            "modify_time": 1700000000,
+            "content": "带占位符的 markdown 内容",
+            "inline_file_list": [
+                {
+                    "placeholder": "PLACE_HOLDER",
+                    "file_name": "FILE_NAME",
+                    "download_url": "DOWNLOAD_URL",
+                    "cookie_name": "COOKIE_NAME",
+                    "cookie_value": "COOKIE_VALUE"
+                }
+            ],
+            "inline_mention_list": [
+                {
+                    "placeholder": "PLACE_HOLDER1",
+                    "member": {
+                        "type": 0,
+                        "userid": "USERID"
+                    }
+                },
+                {
+                    "placeholder": "PLACE_HOLDER2",
+                    "member": {
+                        "type": 1,
+                        "aibotid": "BOTID"
+                    }
+                }
+            ],
+            "inline_chat_record_list": [
+                {
+                    "placeholder": "PLACE_HOLDER",
+                    "chat_record_id": "CHAT_RECORD_ID"
+                }
+            ],
+            "image_list": [
+                {
+                    "download_url": "DOWNLOAD_URL",
+                    "cookie_name": "COOKIE_NAME",
+                    "cookie_value": "COOKIE_VALUE"
+                }
+            ],
+            "emoji_list": [
+                {
+                    "emoji_type": 1,
+                    "user_list": [
+                        {
+                            "type": 0,
+                            "userid": "USERID"
+                        },
+                        {
+                            "type": 1,
+                            "aibotid": "BOTID"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "has_more": true,
+    "next_cursor": "NEXT_CURSOR"
+}

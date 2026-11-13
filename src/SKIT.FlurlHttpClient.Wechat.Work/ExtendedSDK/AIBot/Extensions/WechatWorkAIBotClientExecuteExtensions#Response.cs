@@ -6,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         /// <para>异步调用 [POST] /cgi-bin/aibot/response 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101138 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101138 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101845 ]]>
         /// </para>
         /// <remarks>
         /// （注意：该接口不受构造 <see cref="WechatWorkAIBotClient" /> 时指定的 <see cref="WechatWorkAIBotClientOptions.Endpoint"/> 参数控制。）

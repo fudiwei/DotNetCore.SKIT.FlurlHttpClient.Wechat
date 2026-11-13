@@ -1,0 +1,29 @@
+{
+    "topic_id": "TOPIC_ID",
+    "post_id": "POST_ID",
+    "parent_reply_id": "可选，对某条评论进行回复",
+    "content": "带占位符的 markdown 内容",
+    "inline_file_list": [
+        {
+            "placeholder": "PLACE_HOLDER",
+            "media_id": "MEDIA_ID"
+        }
+    ],
+    "inline_mention_list": [
+        {
+            "placeholder": "PLACE_HOLDER",
+            "member": {
+                "type": 0,
+                "userid": "USERID"
+            }
+        }
+    ],
+    "image_list": [
+        {
+            "media_id": "MEDIA_ID"
+        }
+    ],
+    "feedback": {
+        "id": "FEEDBACK_ID"
+    }
+}

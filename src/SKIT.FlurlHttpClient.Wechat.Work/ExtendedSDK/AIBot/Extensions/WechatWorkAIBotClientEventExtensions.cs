@@ -93,6 +93,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101033 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101841 ]]> <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101909 ]]>
         /// </para>
         /// </summary>
@@ -143,7 +145,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101033 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101033 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101841 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101909 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

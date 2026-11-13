@@ -1,0 +1,8 @@
+{
+    "type": 0,
+    "topic_id_list": [
+        "TOPIC_ID"
+    ],
+    "cursor": "CURSOR",
+    "limit": 20
+}
