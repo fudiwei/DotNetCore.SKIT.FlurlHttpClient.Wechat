@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /wxaapi/comment/commentinfo/get 接口的请求。</para>
     /// </summary>
-    public class WxaApiCommentInfoGetRequest : WechatApiRequest, IInferable<WxaApiCommentInfoGetRequest, WxaApiCommentInfoGetResponse>
+    public class WxaApiCommentCommentInfoGetRequest : WechatApiRequest, IInferable<WxaApiCommentCommentInfoGetRequest, WxaApiCommentCommentInfoGetResponse>
     {
         /// <summary>
         /// 获取或设置评价 ID。

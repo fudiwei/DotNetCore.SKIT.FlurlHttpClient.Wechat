@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /wxaapi/comment/commentinfo/get 接口的响应。</para>
     /// </summary>
-    public class WxaApiCommentInfoGetResponse : WechatApiResponse
+    public class WxaApiCommentCommentInfoGetResponse : WechatApiResponse
     {
         public static class Types
         {

@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxaapi/comment/commentreply/add 接口的请求。</para>
+    /// <para>表示 [POST] /wxaapi/comment/reply/add 接口的请求。</para>
     /// </summary>
     public class WxaApiCommentReplyAddRequest : WechatApiRequest, IInferable<WxaApiCommentReplyAddRequest, WxaApiCommentReplyAddResponse>
     {
