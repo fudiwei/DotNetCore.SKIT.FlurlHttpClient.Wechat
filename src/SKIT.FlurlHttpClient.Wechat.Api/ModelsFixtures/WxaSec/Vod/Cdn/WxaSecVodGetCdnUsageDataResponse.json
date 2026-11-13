@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data_interval": 5,
+    "item_list": [
+        {
+            "time": 1682870400,
+            "value": 123
+        }
+    ]
+}

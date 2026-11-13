@@ -1,0 +1,21 @@
+{
+    "domestic_cdn_logs": [
+        {
+            "date": "2024-03-28",
+            "end_time": 1711627199,
+            "name": "2024032819-1500020822.vod2.myqcloud.com-mainland",
+            "start_time": 1711623600,
+            "url": "https://log-download.cdn.qcloud.com/20240328/19/2024032819-1500020822.vod2.myqcloud.com.gz?st=WdyksvfNz23NWKgEvcLQ&e=1711715411"
+        },
+        {
+            "date": "2024-03-28",
+            "end_time": 1711623599,
+            "name": "2024032818-1500020822.vod2.myqcloud.com-mainland",
+            "start_time": 1711620000,
+            "url": "https://log-download.cdn.qcloud.com/20240328/18/2024032818-1500020822.vod2.myqcloud.com.gz?st=QmphynCTcO1G23-Ol-SlAg&e=1711715411"
+        }
+    ],
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_count": 2
+}
