@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public List<Types.Goods>? GoodsList { get; set; }
 
         /// <summary>
-        /// 获取或设置商品数数。
+        /// 获取或设置商品数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total")]
         [System.Text.Json.Serialization.JsonPropertyName("total")]
