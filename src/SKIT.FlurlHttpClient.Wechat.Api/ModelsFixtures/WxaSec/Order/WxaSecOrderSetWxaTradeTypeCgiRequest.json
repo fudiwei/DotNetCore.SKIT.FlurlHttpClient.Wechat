@@ -1,0 +1,14 @@
+{
+    "trade_type": 3,
+    "material_list": [
+        {
+            "type": 1,
+            "media_id": "media_id_sample_1"
+        },
+        {
+            "type": 2,
+            "media_id": "media_id_sample_2"
+        }
+    ],
+    "reason": "申请理由"
+}
