@@ -1,0 +1,11 @@
+{
+    "ToUserName": "oABCD",
+    "FromUserName": "gh_abcdefg",
+    "CreateTime": 1533042556,
+    "MsgType": "event",
+    "Event": "get_quota",
+    "BizID": "xyz",
+    "ResultCode": 0,
+    "ResultMsg": "success",
+    "Quota": 0
+}

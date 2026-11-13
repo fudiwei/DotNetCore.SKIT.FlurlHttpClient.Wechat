@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.update_waybill_status" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-business/immediateDelivery.onOrderStatus.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/event_push/deliver/deliver_by_business/Delivery_order_delivery_status_update_notification_interface.html ]]>
     /// </para>
     /// </summary>
     public class UpdateWaybillStatusEvent : WechatApiEvent

@@ -1,0 +1,10 @@
+<xml>
+    <ToUserName><![CDATA[oABCD]]></ToUserName>
+    <FromUserName><![CDATA[gh_abcdefg]]></FromUserName>
+    <CreateTime>1533042556</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[check_biz]]></Event>
+    <BizID><![CDATA[xyz]]></BizID>
+    <ResultCode>0</ResultCode>
+    <ResultMsg><![CDATA[success]]></ResultMsg>
+</xml>

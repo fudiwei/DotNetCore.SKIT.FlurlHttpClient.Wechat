@@ -1,0 +1,10 @@
+{
+    "ToUserName": "oABCD",
+    "FromUserName": "gh_abcdefg",
+    "CreateTime": 1533042556,
+    "MsgType": "event",
+    "Event": "check_biz",
+    "BizID": "xyz",
+    "ResultCode": 0,
+    "ResultMsg": "success"
+}

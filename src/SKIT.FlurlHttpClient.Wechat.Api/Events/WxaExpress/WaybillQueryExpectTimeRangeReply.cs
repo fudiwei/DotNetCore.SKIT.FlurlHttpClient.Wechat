@@ -48,6 +48,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         }
 
         /// <summary>
+        /// 获取或设置可预约时间段列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ValidTimeRange")]
+        [System.Text.Json.Serialization.JsonPropertyName("ValidTimeRange")]
+        [System.Xml.Serialization.XmlElement("ValidTimeRange", Type = typeof(Types.ValidTimeRange))]
+        public List<Types.ValidTimeRange>? ValidTimeRangeList { get; set; }
+
+        /// <summary>
         /// 获取或设置处理结果错误码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ResultCode")]
@@ -62,14 +70,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Text.Json.Serialization.JsonPropertyName("ResultMsg")]
         [System.Xml.Serialization.XmlElement("ResultMsg", IsNullable = true)]
         public string? ResultMessage { get; set; }
-
-        /// <summary>
-        /// 获取或设置可预约时间段列表。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("ValidTimeRange")]
-        [System.Text.Json.Serialization.JsonPropertyName("ValidTimeRange")]
-        [System.Xml.Serialization.XmlElement("ValidTimeRange", Type = typeof(Types.ValidTimeRange))]
-        public List<Types.ValidTimeRange>? ValidTimeRangeList { get; set; }
 
         public WaybillQueryExpectTimeRangeReply()
         {

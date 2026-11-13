@@ -1,0 +1,12 @@
+<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>oABCD</FromUserName>
+    <CreateTime>1234455555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>wxainsurance_claim_result</Event>
+    <upload_event>
+        <OrderNo><![CDATA[42000021662024041000000000000]]></OrderNo>
+        <Status>5</Status>
+        <FinishTime>1234455555</FinishTime>
+    </upload_event>
+</xml>

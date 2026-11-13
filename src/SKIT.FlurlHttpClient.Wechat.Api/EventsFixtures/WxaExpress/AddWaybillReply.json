@@ -1,0 +1,14 @@
+{
+    "ToUserName": "oABCD",
+    "FromUserName": "gh_abcdefg",
+    "CreateTime": 1533042556,
+    "MsgType": "event",
+    "Event": "add_waybill",
+    "Token": "1234ABC234523451",
+    "OrderID": "012345678901234567890123456789",
+    "BizID": "xyz",
+    "WayBillID": "123456789",
+    "ResultCode": 0,
+    "ResultMsg": "success",
+    "WaybillData": "##ZTO_bagAddr##广州##ZTO_mark##888-666-666##"
+}

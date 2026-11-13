@@ -1,0 +1,14 @@
+<xml>
+    <ToUserName><![CDATA[oABCD]]></ToUserName>
+    <FromUserName><![CDATA[gh_abcdefg]]></FromUserName>
+    <CreateTime>1533042556</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[add_waybill]]></Event>
+    <Token>1234ABC234523451</Token>
+    <OrderID><![CDATA[012345678901234567890123456789]]></OrderID>
+    <BizID><![CDATA[xyz]]></BizID>
+    <WayBillID><![CDATA[123456789]]></WayBillID>
+    <ResultCode>0</ResultCode>
+    <ResultMsg><![CDATA[success]]></ResultMsg>
+    <WaybillData><![CDATA[##ZTO_bagAddr##广州##ZTO_mark##888-666-666##]]></WaybillData>
+</xml>

@@ -1,0 +1,12 @@
+<xml>
+    <ToUserName><![CDATA[oABCD]]></ToUserName>
+    <FromUserName><![CDATA[gh_abcdefg]]></FromUserName>
+    <CreateTime>1533042556</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[cancel_waybill]]></Event>
+    <BizID><![CDATA[xyz]]></BizID>
+    <OrderID><![CDATA[012345678901234567890123456789]]></OrderID>
+    <WayBillID><![CDATA[123456789]]></WayBillID>
+    <ResultCode>0</ResultCode>
+    <ResultMsg><![CDATA[success]]></ResultMsg>
+</xml>
