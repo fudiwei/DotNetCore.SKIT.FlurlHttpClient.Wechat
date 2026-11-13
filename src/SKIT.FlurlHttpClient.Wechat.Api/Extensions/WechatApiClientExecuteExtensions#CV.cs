@@ -358,6 +358,40 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 return await client.SendFlurlRequestAsync<Models.CVOCRPlateNumberResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cv/ocr/menu 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/openpoc/ocr/api_menuocr.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/openpoc/ocr/api_menuocr.html ]]> <br/>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CVOCRMenuResponse> ExecuteCVOCRMenuAsync(this WechatApiClient client, Models.CVOCRMenuRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cv", "ocr", "menu")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.ImageUrl is not null)
+            {
+                flurlReq.SetQueryParam("img_url", request.ImageUrl);
+
+                return await client.SendFlurlRequestAsJsonAsync<Models.CVOCRMenuResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
+                return await client.SendFlurlRequestAsync<Models.CVOCRMenuResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
         #endregion
     }
 }
