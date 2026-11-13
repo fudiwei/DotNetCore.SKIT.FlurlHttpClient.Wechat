@@ -1,0 +1,16 @@
+{
+    "activity_id": "966_NGiqxxxxxxxxxx...xxxxxxxxE33BlwX",
+    "target_state": 1,
+    "template_id": "4A68CBB88A92B0A9311848DBA1E94A199B166463",
+    "version_type": 0,
+    "participator_info_list": [
+        {
+            "group_openid": "aaaaaaaaaa",
+            "state": 1
+        },
+        {
+            "group_openid": "bbbbbbbbb",
+            "state": 1
+        }
+    ]
+}
