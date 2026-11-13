@@ -1,0 +1,22 @@
+{
+    "list": [
+        {
+            "ref_date": "2025-11-01",
+            "msgid": "10000050_1",
+            "detail": {
+                "read_user": 4123,
+                "read_user_source": [
+                    {
+                        "user_count": 4123,
+                        "scene_desc": "全部"
+                    },
+                    {
+                        "user_count": 234,
+                        "scene_desc": "公众号消息"
+                    }
+                ]
+            }
+        }
+    ],
+    "is_delay": false
+}

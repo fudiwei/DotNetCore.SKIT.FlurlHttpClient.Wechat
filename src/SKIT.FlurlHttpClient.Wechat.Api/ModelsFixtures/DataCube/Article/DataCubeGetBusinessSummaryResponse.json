@@ -1,0 +1,28 @@
+{
+    "list": [
+        {
+            "ref_date": "2025-11-01",
+            "detail": {
+                "read_user": 4123,
+                "read_user_source": [
+                    {
+                        "user_count": 4123,
+                        "scene_desc": "全部"
+                    },
+                    {
+                        "user_count": 234,
+                        "scene_desc": "公众号消息"
+                    }
+                ],
+                "share_user": 366,
+                "zaikan_user": 191,
+                "like_user": 386,
+                "comment_count": 33,
+                "collection_user": 233,
+                "redirect_ori_page_user": 369,
+                "send_page_count": 512
+            }
+        }
+    ],
+    "is_delay": false
+}

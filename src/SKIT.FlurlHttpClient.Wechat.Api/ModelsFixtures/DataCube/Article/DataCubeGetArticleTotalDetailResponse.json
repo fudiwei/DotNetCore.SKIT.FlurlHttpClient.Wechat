@@ -1,0 +1,82 @@
+{
+    "list": [
+        {
+            "ref_date": "2025-11-01",
+            "msgid": "2247490098_1",
+            "publish_type": 0,
+            "title": "标题",
+            "content_url": "https://...",
+            "detail_list": [
+                {
+                    "stat_date": "2025-11-01",
+                    "read_user": 4123,
+                    "read_user_source": [
+                        {
+                            "user_count": 4123,
+                            "scene_desc": "全部"
+                        },
+                        {
+                            "user_count": 234,
+                            "scene_desc": "公众号消息"
+                        }
+                    ],
+                    "share_user": 366,
+                    "zaikan_user": 191,
+                    "like_user": 386,
+                    "comment_count": 33,
+                    "collection_user": 233,
+                    "praise_money": 361,
+                    "read_subscribe_user": 327,
+                    "read_delivery_rate": 0.0271002,
+                    "read_finish_rate": 0.6304348,
+                    "read_avg_activetime": 1.0588236,
+                    "read_jump_position": [
+                        {
+                            "position": 1,
+                            "rate": 0.5304147
+                        },
+                        {
+                            "position": 2,
+                            "rate": 0.1023412
+                        }
+                    ]
+                },
+                {
+                    "stat_date": "2025-11-02",
+                    "read_user": 4125,
+                    "read_user_source": [
+                        {
+                            "user_count": 4125,
+                            "scene_desc": "全部"
+                        },
+                        {
+                            "user_count": 236,
+                            "scene_desc": "公众号消息"
+                        }
+                    ],
+                    "share_user": 366,
+                    "zaikan_user": 195,
+                    "like_user": 389,
+                    "comment_count": 33,
+                    "collection_user": 235,
+                    "praise_money": 362,
+                    "read_subscribe_user": 337,
+                    "read_delivery_rate": 0.0271002,
+                    "read_finish_rate": 0.6304348,
+                    "read_avg_activetime": 1.0588236,
+                    "read_jump_position": [
+                        {
+                            "position": 1,
+                            "rate": 0.5304147
+                        },
+                        {
+                            "position": 2,
+                            "rate": 0.1023412
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "is_delay": false
+}

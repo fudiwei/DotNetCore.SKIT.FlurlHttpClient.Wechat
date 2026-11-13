@@ -50,56 +50,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetArticleTotalResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-        #endregion
-
-        #region User
-        /// <summary>
-        /// <para>异步调用 [POST] /datacube/getusersummary 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/user/api_getusersummary.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/user/api_getusersummary.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.DataCubeGetUserSummaryResponse> ExecuteDataCubeGetUserSummaryAsync(this WechatApiClient client, Models.DataCubeGetUserSummaryRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusersummary")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /datacube/getusercumulate 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/user/api_getusercumulate.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/user/api_getusercumulate.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.DataCubeGetUserCumulateResponse> ExecuteDataCubeGetUserCumulateAsync(this WechatApiClient client, Models.DataCubeGetUserCumulateRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusercumulate")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserCumulateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
 
         /// <summary>
         /// <para>异步调用 [POST] /datacube/getuserread 接口。</para>
@@ -195,6 +145,152 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserShareHourResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getarticleread 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getarticleread.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getarticleread.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetArticleReadResponse> ExecuteDataCubeGetArticleReadAsync(this WechatApiClient client, Models.DataCubeGetArticleReadRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getarticleread")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetArticleReadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getarticleshare 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getarticleshare.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getarticleshare.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetArticleShareResponse> ExecuteDataCubeGetArticleShareAsync(this WechatApiClient client, Models.DataCubeGetArticleShareRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getarticleshare")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetArticleShareResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getbizsummary 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getbizsummary.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getbizsummary.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetBusinessSummaryResponse> ExecuteDataCubeGetBusinessSummaryAsync(this WechatApiClient client, Models.DataCubeGetBusinessSummaryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getbizsummary")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetBusinessSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getarticletotaldetail 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/news/api_getarticletotaldetail.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/news/api_getarticletotaldetail.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetArticleTotalDetailResponse> ExecuteDataCubeGetArticleTotalDetailAsync(this WechatApiClient client, Models.DataCubeGetArticleTotalDetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getarticletotaldetail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetArticleTotalDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region User
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getusersummary 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/user/api_getusersummary.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/user/api_getusersummary.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetUserSummaryResponse> ExecuteDataCubeGetUserSummaryAsync(this WechatApiClient client, Models.DataCubeGetUserSummaryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusersummary")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /datacube/getusercumulate 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/wedata/user/api_getusercumulate.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/wedata/user/api_getusercumulate.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DataCubeGetUserCumulateResponse> ExecuteDataCubeGetUserCumulateAsync(this WechatApiClient client, Models.DataCubeGetUserCumulateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "datacube", "getusercumulate")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DataCubeGetUserCumulateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
