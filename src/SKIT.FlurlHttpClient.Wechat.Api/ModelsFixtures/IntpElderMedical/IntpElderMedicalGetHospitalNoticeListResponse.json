@@ -1,0 +1,18 @@
+{
+    "notice_list": [
+        {
+            "notice_id": 1,
+            "content": "Hello World!",
+            "status": "PUBLIC",
+            "preview_openid": []
+        },
+        {
+            "notice_id": 2,
+            "content": "Hello World",
+            "status": "DRAFT",
+            "preview_openid": ["ont-9vhrWCkLFRNKw_8SkWFdmUnc"]
+        }
+    ],
+    "errcode": 0,
+    "errmsg": "ok"
+}
