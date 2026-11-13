@@ -15,6 +15,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("errcode")]
                 [System.Text.Json.Serialization.JsonPropertyName("errcode")]
                 public int ErrorCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置错误信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("errmsg")]
+                [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
+                public string? ErrorMessage { get; set; }
             }
         }
 

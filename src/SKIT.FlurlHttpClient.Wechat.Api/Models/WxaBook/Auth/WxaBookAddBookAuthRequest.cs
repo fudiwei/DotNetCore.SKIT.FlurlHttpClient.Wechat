@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Book
+            public class Authorization
             {
                 /// <summary>
                 /// 获取或设置作品 ID。
@@ -33,10 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置作品列表。
+        /// 获取或设置授权列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("books")]
         [System.Text.Json.Serialization.JsonPropertyName("books")]
-        public List<Types.Book>? BookList { get; set; }
+        public List<Types.Authorization>? AuthorizationList { get; set; }
     }
 }

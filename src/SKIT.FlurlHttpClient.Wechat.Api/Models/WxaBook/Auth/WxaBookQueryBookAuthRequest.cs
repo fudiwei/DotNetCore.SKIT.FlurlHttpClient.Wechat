@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_sum")]
         [System.Text.Json.Serialization.JsonPropertyName("is_sum")]
-        public bool? IsNeedTotalCount { get; set; }
+        public bool? RequireTotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置查询类型。

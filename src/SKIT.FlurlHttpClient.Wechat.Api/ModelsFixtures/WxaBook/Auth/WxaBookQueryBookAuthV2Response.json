@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "appid_results": [
+        {
+            "grantor_appid": "wx001",
+            "grantee_appid": "wx004",
+            "expire_time": 1704259146
+        },
+        {
+            "grantor_appid": "wx001",
+            "grantee_appid": "wx005",
+            "expire_time": 1801698644
+        }
+    ],
+    "next_cursor": "123456"
+}
