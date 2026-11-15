@@ -9,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         {
             public class Object
             {
+                /// <summary>
                 /// 获取或设置授权方小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("authorizer_appid")]

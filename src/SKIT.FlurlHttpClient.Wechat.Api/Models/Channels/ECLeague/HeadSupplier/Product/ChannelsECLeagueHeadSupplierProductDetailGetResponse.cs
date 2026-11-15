@@ -120,6 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 {
                                     public class Address
                                     {
+                                        /// <summary>
                                         /// 获取或设置省份。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("province_name")]
