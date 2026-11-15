@@ -6,7 +6,7 @@
 
     <PropertyGroup>
         <PackageId>SKIT.FlurlHttpClient.Wechat.Api</PackageId>
-        <PackageVersion>4.0.0</PackageVersion>
+        <PackageVersion>4.0.1</PackageVersion>
 		<PackageIcon>LOGO.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
