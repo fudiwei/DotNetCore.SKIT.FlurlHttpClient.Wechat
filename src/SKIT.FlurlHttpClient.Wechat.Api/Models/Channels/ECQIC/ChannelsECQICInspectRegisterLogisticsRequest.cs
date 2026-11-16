@@ -40,14 +40,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置快递物流信息。
+        /// 获取或设置订单 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id_list")]
         public List<string>? OrderIdList { get; set; }
 
         /// <summary>
-        /// 获取或设置订单 ID 列表。
+        /// 获取或设置快递物流信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("logistics_info")]
         [System.Text.Json.Serialization.JsonPropertyName("logistics_info")]

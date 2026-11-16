@@ -11,56 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Address
+                    public class Address : ChannelsECLogisticsEWaybillOrderPrecreateRequest.Types.Address
                     {
-                        /// <summary>
-                        /// 获取或设置省份。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("province")]
-                        [System.Text.Json.Serialization.JsonPropertyName("province")]
-                        public string? Province { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置城市。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("city")]
-                        [System.Text.Json.Serialization.JsonPropertyName("city")]
-                        public string? City { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置区县。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("county")]
-                        [System.Text.Json.Serialization.JsonPropertyName("county")]
-                        public string? District { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置街道。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("street")]
-                        [System.Text.Json.Serialization.JsonPropertyName("street")]
-                        public string? Street { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置详细地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("address")]
-                        [System.Text.Json.Serialization.JsonPropertyName("address")]
-                        public string? DetailAddress { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置联系人。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string? Name { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置联系电话。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("mobile")]
-                        [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-                        public string? MobileNumber { get; set; }
                     }
 
                     public class Order
