@@ -1,0 +1,35 @@
+{
+    "merchant_ticket": {
+        "ticket_id": "123",
+        "ticket_class_type": 9,
+        "ticket_state": 2,
+        "ticket_begin_time": 1771987997,
+        "ticket_deal_end_time": 1772074398,
+        "merchant_operate_time": 0,
+        "platform_operate_time": 0,
+        "description": "订单承诺发货时间：2026-01-23 14:33:17，发货已超时，且用户催发货，为避免“缺货”违规，请尽快处理工单。（当前仅预警，2026年3月起将逐步执行「缺货」赔付规则）",
+        "order_id": "123",
+        "aftersale_id": "",
+        "platform_review_result": 0,
+        "order_info": {
+            "order_id": "123",
+            "actual_price": 11,
+            "goods_list": [
+                {
+                    "good_name": "123",
+                    "good_count": 1,
+                    "product_id": 123,
+                    "sku_id": 123,
+                    "thumb_img": ""
+                }
+            ]
+        },
+        "user_info": {
+            "description": "订单承诺发货时间：2026-01-23 14:33:17，发货已超时，且用户催发货，为避免“缺货”违规，请尽快处理工单。（当前仅预警，2026年3月起将逐步执行「缺货」赔付规则）"
+        },
+        "create_time": 1771987998,
+        "update_time": 1772340800
+    },
+    "errcode": 0,
+    "errmsg": "ok"
+}

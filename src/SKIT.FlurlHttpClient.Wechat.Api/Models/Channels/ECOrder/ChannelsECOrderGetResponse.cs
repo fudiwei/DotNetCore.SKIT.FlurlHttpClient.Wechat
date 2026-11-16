@@ -493,7 +493,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("thumb_img")]
                                 [System.Text.Json.Serialization.JsonPropertyName("thumb_img")]
-                                public string? ThumbnailImageUrl { get; set; }
+                                public string? ThumbnailUrl { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置商品常量编号。

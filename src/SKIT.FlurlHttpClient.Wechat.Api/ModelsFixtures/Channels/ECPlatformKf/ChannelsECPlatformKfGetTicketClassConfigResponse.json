@@ -1,0 +1,35 @@
+{
+    "mch_reply_options": {
+        "conf_list": [
+            {
+                "ticket_class_type": 9,
+                "ticket_class_name": "催发货",
+                "option_list": [
+                    {
+                        "option_id": 1,
+                        "option_name": "3天内能发货",
+                        "is_must_description": false,
+                        "is_must_urls": false,
+                        "is_must_confer_time": false
+                    },
+                    {
+                        "option_id": 2,
+                        "option_name": "和用户协商更晚发货（4-15天）",
+                        "is_must_description": false,
+                        "is_must_urls": false,
+                        "is_must_confer_time": true
+                    },
+                    {
+                        "option_id": 3,
+                        "option_name": "无法发货",
+                        "is_must_description": true,
+                        "is_must_urls": false,
+                        "is_must_confer_time": false
+                    }
+                ]
+            }
+        ]
+    },
+    "errcode": 0,
+    "errmsg": "ok"
+}

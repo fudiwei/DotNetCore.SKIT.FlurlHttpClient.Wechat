@@ -1,0 +1,49 @@
+{
+    "ticket_item_list": [
+        {
+            "ticket_id": "10202604141126472",
+            "ticket_class_type": 9,
+            "ticket_state": 3,
+            "ticket_begin_time": 1776137206,
+            "ticket_deal_end_time": 1776223607,
+            "merchant_operate_time": 0,
+            "platform_operate_time": 1776223612,
+            "description": "",
+            "order_id": "123",
+            "aftersale_id": "",
+            "platform_review_result": 4,
+            "order_info": {
+                "order_id": "123",
+                "actual_price": 1,
+                "goods_list": [
+                    {
+                        "good_name": "123！",
+                        "good_count": 1,
+                        "product_id": 123,
+                        "sku_id": 123,
+                        "thumb_img": ""
+                    }
+                ]
+            },
+            "user_info": {
+                "description": "订单承诺发货时间：2026-04-14 11:26:46，发货已超时，且用户催发货，为避免“缺货”违规，请尽快处理工单。（当前仅预警，2026年3月起将逐步执行「缺货」赔付规则）"
+            },
+            "merchant_operate": {
+                "merchant_reply": 2,
+                "description": "",
+                "confer_time": 1776223607
+            },
+            "platform_operate": {
+                "audit_result": 4,
+                "reason": "超时未处理，默认支持用户",
+                "platform_reply_time": 1776223612,
+                "reply_description": "商家超时未回复工单，未在缺货时限内如期发货，已“缺货”违规。"
+            },
+            "create_time": 1776137207,
+            "update_time": 1776223612
+        }
+    ],
+    "total": 8,
+    "errcode": 0,
+    "errmsg": "ok"
+}
