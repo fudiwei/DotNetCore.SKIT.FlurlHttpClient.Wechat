@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class ImageInfo
+            public class Data
             {
                 /// <summary>
                 /// 获取或设置图片 URL。
@@ -19,10 +19,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置图片信息。
+        /// 获取或设置返回数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("img_info")]
         [System.Text.Json.Serialization.JsonPropertyName("img_info")]
-        public Types.ImageInfo? ImageInfo { get; set; }
+        public Types.Data? Data { get; set; }
     }
 }

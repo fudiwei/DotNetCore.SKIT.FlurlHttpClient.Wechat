@@ -5,6 +5,37 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ChannelsECAftersaleRejectExchangeReshipRequest : WechatApiRequest, IInferable<ChannelsECAftersaleRejectExchangeReshipRequest, ChannelsECAftersaleRejectExchangeReshipResponse>
     {
+        public static class Types
+        {
+            public class MediaFile : ChannelsECAftersaleMerchantUpdateAftersaleRequest.Types.__zz__MediaFile
+            {
+                public static class Types
+                {
+                    public class Picture : ChannelsECAftersaleMerchantUpdateAftersaleRequest.Types.MediaFile.Types.Picture
+                    {
+                    }
+
+                    public class Video : ChannelsECAftersaleMerchantUpdateAftersaleRequest.Types.MediaFile.Types.Video
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图片信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("picture")]
+                [System.Text.Json.Serialization.JsonPropertyName("picture")]
+                public Types.Picture? Picture { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("video")]
+                [System.Text.Json.Serialization.JsonPropertyName("video")]
+                public Types.Video? Video { get; set; }
+            }
+        }
+
         /// <summary>
         /// 获取或设置售后单 ID。
         /// </summary>
@@ -27,10 +58,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? RejectReason { get; set; }
 
         /// <summary>
-        /// 获取或设置退款凭证 MediaId。
+        /// 获取或设置拒绝凭证 MediaId。
         /// </summary>
+        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
         [Newtonsoft.Json.JsonProperty("reject_certificates")]
         [System.Text.Json.Serialization.JsonPropertyName("reject_certificates")]
-        public List<string>? RejectCertificateMediaIdList { get; set; }
+        public List<string>? MediaIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置拒绝凭证列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("media_files")]
+        [System.Text.Json.Serialization.JsonPropertyName("media_files")]
+        public List<Types.MediaFile>? MediaFileList { get; set; }
     }
 }

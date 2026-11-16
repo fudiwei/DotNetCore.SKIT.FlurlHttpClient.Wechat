@@ -36,6 +36,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("reject_scene")]
                 [System.Text.Json.Serialization.JsonPropertyName("reject_scene")]
                 public int RejectScene { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否需要凭证。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("need_proof")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("need_proof")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
+                public bool RequireProof { get; set; }
             }
         }
 

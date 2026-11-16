@@ -1,8 +1,19 @@
 {
     "guarantee_order_id": 2000001077270153,
     "content": "并无损坏",
-    "pic_list": [
-        "id1",
-        "id2"
+    "media_files": [
+        {
+            "type": 1,
+            "picture": {
+                "c2c_url": "https://170.wxapp.tc.qq.com/170/20304/snscosdownload/..."
+            }
+        },
+        {
+            "type": 2,
+            "video": {
+                "c2c_url": "https://173.wxapp.tc.qq.com/173/20302/snssvpdownload/..."
+            },
+            "video_play_length": 15
+        }
     ]
 }

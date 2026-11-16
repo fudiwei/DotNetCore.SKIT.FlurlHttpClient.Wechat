@@ -5,6 +5,53 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ChannelsECAftersaleMerchantUpdateAftersaleRequest : WechatApiRequest, IInferable<ChannelsECAftersaleMerchantUpdateAftersaleRequest, ChannelsECAftersaleMerchantUpdateAftersaleResponse>
     {
+        public static class Types
+        {
+            public class __zz__MediaFile : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.__zz__MediaFile
+            {
+            }
+
+            public class MediaFile : __zz__MediaFile
+            {
+                public static class Types
+                {
+                    public class Picture
+                    {
+                        /// <summary>
+                        /// 获取或设置图片 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("c2c_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("c2c_url")]
+                        public string? C2CUrl { get; set; }
+                    }
+
+                    public class Video
+                    {
+                        /// <summary>
+                        /// 获取或设置视频 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("c2c_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("c2c_url")]
+                        public string? C2CUrl { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置图片信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("picture")]
+                [System.Text.Json.Serialization.JsonPropertyName("picture")]
+                public Types.Picture? Picture { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("video")]
+                [System.Text.Json.Serialization.JsonPropertyName("video")]
+                public Types.Video? Video { get; set; }
+            }
+        }
+
         /// <summary>
         /// 获取或设置售后单 ID。
         /// </summary>
@@ -50,9 +97,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置协商凭证 MediaId。
         /// </summary>
+        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
         [Newtonsoft.Json.JsonProperty("media_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("media_ids")]
-        public List<string>? CertificateMediaIdList { get; set; }
+        public List<string>? MediaIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置协商凭证列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("media_files")]
+        [System.Text.Json.Serialization.JsonPropertyName("media_files")]
+        public List<Types.MediaFile>? MediaFileList { get; set; }
 
         /// <summary>
         /// 获取或设置换货 SKU ID。

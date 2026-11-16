@@ -639,7 +639,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long? VirtualTelNumberExpireTimestamp { get; set; }
                     }
 
-                    public class MediaFile
+                    public abstract class __zz__MediaFile
+                    {
+                        /// <summary>
+                        /// 获取或设置媒体文件类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频时长（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("video_play_length")]
+                        [System.Text.Json.Serialization.JsonPropertyName("video_play_length")]
+                        public int? VideoPlayLength { get; set; }
+                    }
+
+                    public class MediaFile : __zz__MediaFile
                     {
                         public static class Types
                         {
@@ -665,13 +682,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         }
 
                         /// <summary>
-                        /// 获取或设置媒体文件类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public int Type { get; set; }
-
-                        /// <summary>
                         /// 获取或设置图片信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("picture")]
@@ -684,13 +694,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("video")]
                         [System.Text.Json.Serialization.JsonPropertyName("video")]
                         public Types.Video? Video { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置视频时长（单位：秒）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("video_play_length")]
-                        [System.Text.Json.Serialization.JsonPropertyName("video_play_length")]
-                        public int? VideoPlayLength { get; set; }
                     }
                 }
 

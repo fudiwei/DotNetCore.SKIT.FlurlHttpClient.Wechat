@@ -281,14 +281,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("new_identify_proof_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("new_identify_proof_pic_list")]
-                        public List<MediaFile>? NewIdentifyProofPictureMediaList { get; set; }
+                        public List<MediaFile>? NewIdentifyProofMediaList { get; set; }
 
                         /// <summary>
                         /// 获取或设置费用凭证列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("new_fee_proof_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("new_fee_proof_pic_list")]
-                        public List<MediaFile>? NewFeeProofPictureMediaList { get; set; }
+                        public List<MediaFile>? NewFeeProofMediaList { get; set; }
                     }
 
                     public abstract class __zz__BadPayInfo
@@ -411,7 +411,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("new_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("new_pic_list")]
-                        public List<MediaFile>? NewPictureMediaList { get; set; }
+                        public List<MediaFile>? NewPictureList { get; set; }
 
                         /// <summary>
                         /// 获取或设置凭证图片列表。
@@ -421,45 +421,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<Types.TitlePicture>? TitlePictureList { get; set; }
                     }
 
-                    public abstract class __zz__MediaFile
-                    {
-                        /// <summary>
-                        /// 获取或设置媒体文件类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public int Type { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置视频时长（单位：秒）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("video_play_length")]
-                        [System.Text.Json.Serialization.JsonPropertyName("video_play_length")]
-                        public int? VideoPlayLength { get; set; }
-                    }
-
-                    public class MediaFile : __zz__MediaFile
+                    public class MediaFile : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.__zz__MediaFile
                     {
                         public static class Types
                         {
-                            public class Picture
+                            public class Picture : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile.Types.Picture
                             {
-                                /// <summary>
-                                /// 获取或设置图片临时 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("ticket_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
-                                public string? TicketUrl { get; set; }
                             }
 
-                            public class Video
+                            public class Video : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile.Types.Video
                             {
-                                /// <summary>
-                                /// 获取或设置视频临时 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("ticket_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
-                                public string? TicketUrl { get; set; }
                             }
                         }
 

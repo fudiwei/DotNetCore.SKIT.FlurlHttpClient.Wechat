@@ -4,8 +4,19 @@
     "reject_reason": "买家寄回商品影响二次销售",
     "reject_reason_type": 46,
     "merchant_text": "补充说明",
-    "reject_confirm_exchange": [
-        "media_id_1",
-        "media_id_2"
+    "media_files": [
+        {
+            "type": 1,
+            "picture": {
+                "c2c_url": "https://170.wxapp.tc.qq.com/170/20304/snscosdownload/..."
+            }
+        },
+        {
+            "type": 2,
+            "video": {
+                "c2c_url": "https://173.wxapp.tc.qq.com/173/20302/snssvpdownload/..."
+            },
+            "video_play_length": 15
+        }
     ]
 }

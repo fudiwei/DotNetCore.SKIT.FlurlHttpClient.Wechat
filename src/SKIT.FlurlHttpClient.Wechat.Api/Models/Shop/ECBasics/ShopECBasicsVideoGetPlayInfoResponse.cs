@@ -10,11 +10,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Data
             {
                 /// <summary>
-                /// 获取或设置视频临时 URL。
+                /// 获取或设置视频 URL。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("url")]
                 [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string? TempVideoUrl { get; set; }
+                public string? VideoUrl { get; set; }
             }
         }
 

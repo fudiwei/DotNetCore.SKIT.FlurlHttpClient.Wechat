@@ -30,14 +30,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("new_identify_proof_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("new_identify_proof_pic_list")]
-                        public List<MediaFile>? NewIdentifyProofPictureMediaList { get; set; }
+                        public List<MediaFile>? NewIdentifyProofMediaList { get; set; }
 
                         /// <summary>
                         /// 获取或设置费用凭证列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("new_fee_proof_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("new_fee_proof_pic_list")]
-                        public List<MediaFile>? NewFeeProofPictureMediaList { get; set; }
+                        public List<MediaFile>? NewFeeProofMediaList { get; set; }
                     }
 
                     public class BadPayInfo : ChannelsECAftersaleSearchGuaranteeOrderResponse.Types.GuaranteeOrder.Types.__zz__BadPayInfo
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("new_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("new_pic_list")]
-                        public List<MediaFile>? NewPictureMediaList { get; set; }
+                        public List<MediaFile>? NewPictureList { get; set; }
 
                         /// <summary>
                         /// 获取或设置凭证图片列表。
@@ -70,15 +70,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public List<Types.TitlePicture>? TitlePictureList { get; set; }
                     }
 
-                    public class MediaFile : ChannelsECAftersaleSearchGuaranteeOrderResponse.Types.GuaranteeOrder.Types.__zz__MediaFile
+                    public class MediaFile : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.__zz__MediaFile
                     {
                         public static class Types
                         {
-                            public class Picture : ChannelsECAftersaleSearchGuaranteeOrderResponse.Types.GuaranteeOrder.Types.MediaFile.Types.Picture
+                            public class Picture : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile.Types.Picture
                             {
                             }
 
-                            public class Video : ChannelsECAftersaleSearchGuaranteeOrderResponse.Types.GuaranteeOrder.Types.MediaFile.Types.Video
+                            public class Video : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile.Types.Video
                             {
                             }
                         }

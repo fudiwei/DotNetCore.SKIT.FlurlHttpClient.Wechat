@@ -11,51 +11,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class MediaInfo
+                    public class MediaFile : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.__zz__MediaFile
                     {
                         public static class Types
                         {
-                            public class Picture
+                            public class Picture : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile.Types.Picture
                             {
-                                /// <summary>
-                                /// 获取或设置图片 MediaId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("media_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                                public string? MediaId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置图片临时 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("ticket_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
-                                public string? TicketUrl { get; set; }
                             }
 
-                            public class Video
+                            public class Video : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile.Types.Video
                             {
-                                /// <summary>
-                                /// 获取或设置视频 MediaId。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("media_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                                public string? MediaId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置视频临时 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("ticket_url")]
-                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
-                                public string? TicketUrl { get; set; }
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置媒体文件类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public int Type { get; set; }
 
                         /// <summary>
                         /// 获取或设置图片信息。
@@ -97,9 +64,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置图片 MediaId 列表。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2026-10-12 下线。")]
                 [Newtonsoft.Json.JsonProperty("media_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
                 public List<string>? MediaIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置媒体文件列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_list")]
+                public List<Types.MediaFile>? MediaFileList { get; set; }
 
                 /// <summary>
                 /// 获取或设置纠纷类型。
@@ -121,13 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("after_sale_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("after_sale_reason")]
                 public int? AftersaleReasonType { get; set; }
-
-                /// <summary>
-                /// 获取或设置媒体文件列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("media_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-                public List<Types.MediaInfo>? MediaList { get; set; }
             }
 
             public class VirualTelNumberInfo : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.VirualTelNumberInfo
