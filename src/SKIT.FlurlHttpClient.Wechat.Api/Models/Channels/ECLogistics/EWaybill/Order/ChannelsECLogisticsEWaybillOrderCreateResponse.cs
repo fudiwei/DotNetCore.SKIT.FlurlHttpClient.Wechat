@@ -77,28 +77,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public List<Types.Order>? OrderList { get; set; }
             }
 
-            public class ConsolidationWaybill
+            public class ConsolidationWaybill : ChannelsECLogisticsEWaybillOrderGetResponse.Types.EWaybillOrder.Types.ConsolidationWaybill
             {
-                /// <summary>
-                /// 获取或设置 B 段运单的快递公司 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("b_segment_delivery_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("b_segment_delivery_id")]
-                public string? BSegmentDeliveryId { get; set; }
-
-                /// <summary>
-                /// 获取或设置 B 段运单的电子面单 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("b_segment_ewaybill_order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("b_segment_ewaybill_order_id")]
-                public string? BSegmentEWaybillOrderId { get; set; }
-
-                /// <summary>
-                /// 获取或设置 B 段运单的快递单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("b_segment_waybill_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("b_segment_waybill_id")]
-                public string? BSegmentWaybillId { get; set; }
             }
         }
 
@@ -145,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public List<Types.Risk>? RiskList { get; set; }
 
         /// <summary>
-        /// 获取或设置补充物流列表。
+        /// 获取或设置集运运单信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("consolidation_waybill_info")]
         [System.Text.Json.Serialization.JsonPropertyName("consolidation_waybill_info")]

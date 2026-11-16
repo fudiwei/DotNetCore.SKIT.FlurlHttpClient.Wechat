@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class PathItem
+            public class Path
             {
                 /// <summary>
                 /// 获取或设置轨迹节点时间戳。
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path_item_list")]
         [System.Text.Json.Serialization.JsonPropertyName("path_item_list")]
-        public List<Types.PathItem>? PathItemList { get; set; }
+        public List<Types.Path>? PathList { get; set; }
 
         /// <summary>
         /// 获取或设置轨迹节点数量。

@@ -152,7 +152,56 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                         public long UpdateTimestamp { get; set; }
                     }
+
+                    public class OrderVas : ChannelsECLogisticsEWaybillOrderCreateRequest.Types.OrderVas
+                    {
+                    }
+
+                    public class EWaybillExtra : ChannelsECLogisticsEWaybillOrderCreateRequest.Types.EWaybillExtra
+                    {
+                    }
+
+                    public class LogisticsService
+                    {
+                        /// <summary>
+                        /// 获取或设置服务名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("service_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("service_name")]
+                        public string? ServiceName { get; set; }
+                    }
+
+                    public class ConsolidationWaybill
+                    {
+                        /// <summary>
+                        /// 获取或设置 B 段运单的快递公司 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("b_segment_delivery_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("b_segment_delivery_id")]
+                        public string? BSegmentDeliveryId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 B 段运单的电子面单 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("b_segment_ewaybill_order_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("b_segment_ewaybill_order_id")]
+                        public string? BSegmentEWaybillOrderId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 B 段运单的快递单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("b_segment_waybill_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("b_segment_waybill_id")]
+                        public string? BSegmentWaybillId { get; set; }
+                    }
                 }
+
+                /// <summary>
+                /// 获取或设置订单类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_type")]
+                public int OrderType { get; set; }
 
                 /// <summary>
                 /// 获取或设置快递公司 ID。
@@ -197,6 +246,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? EWaybillAccountId { get; set; }
 
                 /// <summary>
+                /// 获取或设置备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("remark")]
+                [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                public string? Remark { get; set; }
+
+                /// <summary>
                 /// 获取或设置寄件人信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sender")]
@@ -218,13 +274,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public List<Types.Order>? OrderList { get; set; }
 
                 /// <summary>
-                /// 获取或设置备注。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("remark")]
-                [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                public string? Remark { get; set; }
-
-                /// <summary>
                 /// 获取或设置面单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
@@ -237,6 +286,41 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("path_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("path_info")]
                 public List<Types.Path>? PathList { get; set; }
+
+                /// <summary>
+                /// 获取或设置月结账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("monthly_card")]
+                [System.Text.Json.Serialization.JsonPropertyName("monthly_card")]
+                public string? MonthlyCard { get; set; }
+
+                /// <summary>
+                /// 获取或设置增值服务列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_vas_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_vas_list")]
+                public List<Types.OrderVas>? OrderVasList { get; set; }
+
+                /// <summary>
+                /// 获取或设置面单补充信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ext_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
+                public Types.EWaybillExtra? EWaybillExtra { get; set; }
+
+                /// <summary>
+                /// 获取或设置物流服务列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("logistics_service_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("logistics_service_info")]
+                public List<Types.LogisticsService>? LogisticsServiceList { get; set; }
+
+                /// <summary>
+                /// 获取或设置集运运单信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("consolidation_waybill_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("consolidation_waybill_info")]
+                public Types.ConsolidationWaybill? ConsolidationWaybill { get; set; }
             }
         }
 
