@@ -136,6 +136,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public SKUDeliverInfo? SKUDeliverInfo { get; set; }
                     }
 
+                    public class FaceActivation : ChannelsECProductAddRequest.Types.FaceActivation
+                    {
+                    }
+
+                    public class ChannelInfo : ChannelsECProductAddRequest.Types.ChannelInfo
+                    {
+                    }
+
                     public class SupplySource : ChannelsECProductAddRequest.Types.SupplySource
                     {
                     }
@@ -384,6 +392,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("spu_deliver_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("spu_deliver_info")]
                 public Types.SPUDeliverInfo? SPUDeliverInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置当面激活服务设置信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("face_activation")]
+                [System.Text.Json.Serialization.JsonPropertyName("face_activation")]
+                public Types.FaceActivation? FaceActivation { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品渠道角色信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("channel_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("channel_info")]
+                public Types.ChannelInfo? ChannelInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置供货货品信息。

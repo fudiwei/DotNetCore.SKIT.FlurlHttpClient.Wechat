@@ -114,6 +114,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class TimingOnSale : ChannelsECProductAddRequest.Types.TimingOnSale
             {
             }
+
+            public class FaceActivation : ChannelsECProductAddRequest.Types.FaceActivation
+            {
+            }
         }
 
         /// <summary>
@@ -194,5 +198,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("spu_deliver_info")]
         [System.Text.Json.Serialization.JsonPropertyName("spu_deliver_info")]
         public Types.SPUDeliverInfo? SPUDeliverInfo { get; set; }
+
+        /// <summary>
+        /// 获取或设置当面激活服务设置信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("face_activation")]
+        [System.Text.Json.Serialization.JsonPropertyName("face_activation")]
+        public Types.FaceActivation? FaceActivation { get; set; }
     }
 }

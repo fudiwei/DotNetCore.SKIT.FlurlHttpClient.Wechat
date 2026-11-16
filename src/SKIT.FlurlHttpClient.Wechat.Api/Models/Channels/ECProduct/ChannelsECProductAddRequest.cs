@@ -297,6 +297,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("deliver_after_check")]
                 [System.Text.Json.Serialization.JsonPropertyName("deliver_after_check")]
                 public int? DeliverAfterCheck { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否支持上门安装。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("onsite_installation")]
+                [System.Text.Json.Serialization.JsonPropertyName("onsite_installation")]
+                public int? OnsiteInstallation { get; set; }
             }
 
             public class Aftersale
@@ -441,6 +448,44 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("is_hide_price")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool? IsHidePrice { get; set; }
+            }
+
+            public class FaceActivation
+            {
+                /// <summary>
+                /// 获取或设置是否开通。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_open")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_open")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
+                public bool IsOpen { get; set; }
+
+                /// <summary>
+                /// 获取或设置信息采集标准。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("collect_standard_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("collect_standard_id")]
+                public int? CollectStandardId { get; set; }
+            }
+
+            public class ChannelInfo
+            {
+                /// <summary>
+                /// 获取或设置商品渠道角色。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("channel_role")]
+                [System.Text.Json.Serialization.JsonPropertyName("channel_role")]
+                public int? ChannelRole { get; set; }
+
+                /// <summary>
+                /// 获取或设置主品商品 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("master_product_id")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("master_product_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
+                public long? MasterProductId { get; set; }
             }
 
             public class SupplySource
@@ -663,6 +708,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("spu_deliver_info")]
         [System.Text.Json.Serialization.JsonPropertyName("spu_deliver_info")]
         public Types.SPUDeliverInfo? SPUDeliverInfo { get; set; }
+
+        /// <summary>
+        /// 获取或设置当面激活服务设置信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("face_activation")]
+        [System.Text.Json.Serialization.JsonPropertyName("face_activation")]
+        public Types.FaceActivation? FaceActivation { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品渠道角色信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("channel_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("channel_info")]
+        public Types.ChannelInfo? ChannelInfo { get; set; }
 
         /// <summary>
         /// 获取或设置供货货品信息。
