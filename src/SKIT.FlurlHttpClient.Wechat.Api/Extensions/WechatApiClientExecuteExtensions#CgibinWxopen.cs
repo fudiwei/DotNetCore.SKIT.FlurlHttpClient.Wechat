@@ -265,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region WeappSupportVersion
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/wxopen/getweappsupportversion 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/wxopen/getweappsupportversion 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/code-management/api_getsupportversion.html ]]>
@@ -281,7 +281,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "wxopen", "getweappsupportversion")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wxopen", "getweappsupportversion")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWxopenGetWeappSupportVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

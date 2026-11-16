@@ -4,5 +4,8 @@
     "auditid": "1234567",
     "status": 1,
     "reason": "帐号信息不合规范",
-    "ScreenShot": "xx|yy|zz"
+    "screenshot": "xx|yy|zz",
+    "user_version": "V1.5",
+    "user_desc": "test",
+    "submit_audit_time": 1640763673
 }

@@ -37,6 +37,43 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
                 public string? DetailAddress { get; set; }
             }
+
+            public class ProductInfo
+            {
+                public static class Types
+                {
+                    public class Goods
+                    {
+                        /// <summary>
+                        /// 获取或设置投保商品名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置投保商品图片 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                        public string? ImageUrl { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置投保订单的小程序页面路径。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_path")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_path")]
+                public string? OrderPagePath { get; set; }
+
+                /// <summary>
+                /// 获取或设置投保商品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_list")]
+                public List<Types.Goods>? GoodsList { get; set; }
+            }
         }
 
         /// <summary>
@@ -87,5 +124,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("receipt_place")]
         [System.Text.Json.Serialization.JsonPropertyName("receipt_place")]
         public Types.Address? ReceiptAddress { get; set; }
+
+        /// <summary>
+        /// 获取或设置投保商品信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_info")]
+        public Types.ProductInfo? ProductInfo { get; set; }
     }
 }

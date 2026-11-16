@@ -29,8 +29,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置截图 MediaId 列表，使用竖线分隔。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ScreenShot")]
-        [System.Text.Json.Serialization.JsonPropertyName("ScreenShot")]
+        [Newtonsoft.Json.JsonProperty("screenshot")]
+        [System.Text.Json.Serialization.JsonPropertyName("screenshot")]
         public string? ScreenshotMediaIds { get; set; }
+
+        /// <summary>
+        /// 获取或设置审核版本。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_version")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_version")]
+        public string? UserVersion { get; set; }
+
+        /// <summary>
+        /// 获取或设置审核版本描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_desc")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_desc")]
+        public string? UserDescription { get; set; }
+
+        /// <summary>
+        /// 获取或设置提交审核时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("submit_audit_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("submit_audit_time")]
+        public long SubmitAuditTimestamp { get; set; }
     }
 }
