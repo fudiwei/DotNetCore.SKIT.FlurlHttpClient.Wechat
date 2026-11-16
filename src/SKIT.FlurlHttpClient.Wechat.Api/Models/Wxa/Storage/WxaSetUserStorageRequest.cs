@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class KeyValue
             {
                 /// <summary>
-                /// 获取或设置数据的 Key。
+                /// 获取或设置数据键。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("key")]
                 [System.Text.Json.Serialization.JsonPropertyName("key")]
                 public string? Key { get; set; }
 
                 /// <summary>
-                /// 获取或设置数据的值。
+                /// 获取或设置数据值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]

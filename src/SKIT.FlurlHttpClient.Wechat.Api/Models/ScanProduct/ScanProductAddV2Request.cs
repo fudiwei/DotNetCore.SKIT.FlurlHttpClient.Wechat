@@ -122,14 +122,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class AttributeItem
                     {
                         /// <summary>
-                        /// 获取或设置属性的 Key。
+                        /// 获取或设置属性键。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("attribute_key")]
                         [System.Text.Json.Serialization.JsonPropertyName("attribute_key")]
                         public string? Key { get; set; }
 
                         /// <summary>
-                        /// 获取或设置属性的值。
+                        /// 获取或设置属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("attribute_value")]
                         [System.Text.Json.Serialization.JsonPropertyName("attribute_value")]
@@ -149,14 +149,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class CustomItem
                     {
                         /// <summary>
-                        /// 获取或设置自定义属性的 Key。
+                        /// 获取或设置自定义属性键。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("key")]
                         [System.Text.Json.Serialization.JsonPropertyName("key")]
                         public string? Key { get; set; }
 
                         /// <summary>
-                        /// 获取或设置自定义属性的值。
+                        /// 获取或设置自定义属性值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]

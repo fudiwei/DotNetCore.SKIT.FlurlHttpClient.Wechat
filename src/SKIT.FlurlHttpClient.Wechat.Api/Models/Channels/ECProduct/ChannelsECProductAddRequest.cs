@@ -48,14 +48,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Attribute
             {
                 /// <summary>
-                /// 获取或设置属性的 Key。
+                /// 获取或设置属性键。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attr_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("attr_key")]
                 public string? Key { get; set; }
 
                 /// <summary>
-                /// 获取或设置属性的值。
+                /// 获取或设置属性值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attr_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("attr_value")]
