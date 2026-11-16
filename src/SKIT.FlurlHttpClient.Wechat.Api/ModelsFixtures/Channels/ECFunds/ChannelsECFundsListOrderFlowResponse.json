@@ -1,0 +1,67 @@
+{
+    "total_count": 1,
+    "data_list": [
+        {
+            "supplier_commission_settle_state": 2,
+            "expense_amount": 5994,
+            "buyer_paid_amount": 299700,
+            "original_platform_commission_amount": 5994,
+            "score_discount_amount": 0,
+            "promoter_discount_refund_amount": 0,
+            "mch_settle_amount": 293706,
+            "post_settlement_expense": {
+                "promoter_refund_amount": 0,
+                "buyer_refund_amount": 0,
+                "platform_discount_refund_amount": 0
+            },
+            "buyer_refund_amount": 0,
+            "freight_insurance_settle_state": 2,
+            "change_down_price": 0,
+            "order_type": 0,
+            "pre_freight_refund_amount": 0,
+            "other_expense_amount": 0,
+            "platform_discount_amount": 0,
+            "mch_received_amount": 299700,
+            "promoter_discount_amount": 0,
+            "order_paid_time": 1762854428,
+            "refund_before_settlement": 0,
+            "freight_amount": 0,
+            "freight_insurance_make_up_settle_state": 2,
+            "platform_commission_settle_state": 1,
+            "promoter_commission_settle_state": 2,
+            "order_create_time": 1762854411,
+            "platform_commission_settle_time": 0,
+            "order_id": "37000000000000000000",
+            "product_total_amount": 299700,
+            "order_settle_state": 1,
+            "national_subsidy_discount_amount": 0,
+            "order_state": 30,
+            "cross_shop_discount_amount": 0,
+            "platform_discount_refund_amount": 0,
+            "mch_settle_time": 0,
+            "freight_make_up_amount": 0,
+            "product_list": [
+                {
+                    "count": 1,
+                    "is_gift": false,
+                    "product_id": 1647017194,
+                    "param_list": [
+                        {
+                            "value": "规格名称1",
+                            "key": "规格值1"
+                        },
+                        {
+                            "value": "规格名称2",
+                            "key": "规格值2"
+                        }
+                    ],
+                    "sale_price": 299700,
+                    "product_name": "商品名称"
+                }
+            ],
+            "order_pay_method": 1,
+            "mch_discount_amount": 0,
+            "platform_commission_amount": 5994
+        }
+    ]
+}
