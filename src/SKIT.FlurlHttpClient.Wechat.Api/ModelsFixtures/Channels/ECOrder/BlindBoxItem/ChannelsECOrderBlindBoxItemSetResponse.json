@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "fail_item_list": [
+        {
+            "product_id": "10000180000000",
+            "sku_id": "2916000000",
+            "item_unique_id": "6636395085116662345_001_1",
+            "errcode": 6060510,
+            "errmsg": "当前item_unique_id已经设置过款式"
+        }
+    ]
+}

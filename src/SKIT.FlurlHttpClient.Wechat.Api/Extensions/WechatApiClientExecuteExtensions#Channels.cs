@@ -4412,6 +4412,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECOrder/BlindBox
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/blindboxitem/set 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_setblindboxitem.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderBlindBoxItemSetResponse> ExecuteChannelsECOrderBlindBoxItemSetAsync(this WechatApiClient client, Models.ChannelsECOrderBlindBoxItemSetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "blindboxitem", "set")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderBlindBoxItemSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region ECOrder/Delivery
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/deliveryinfo/update 接口。</para>

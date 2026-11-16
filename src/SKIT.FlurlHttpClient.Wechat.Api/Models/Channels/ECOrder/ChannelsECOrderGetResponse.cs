@@ -254,7 +254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public string? ItemUniqueId { get; set; }
 
                                         /// <summary>
-                                        /// 获取或设置潮玩拆盒信息。
+                                        /// 获取或设置盲盒信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("blind_box_info")]
                                         [System.Text.Json.Serialization.JsonPropertyName("blind_box_info")]
