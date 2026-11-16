@@ -31,12 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Models
 
             public class Feedback : CgibinAIBotTopicSendPostRequest.Types.Feedback
             {
-                /// <summary>
-                /// 获取或设置反馈 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("id")]
-                [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public string? Id { get; set; }
             }
         }
 
