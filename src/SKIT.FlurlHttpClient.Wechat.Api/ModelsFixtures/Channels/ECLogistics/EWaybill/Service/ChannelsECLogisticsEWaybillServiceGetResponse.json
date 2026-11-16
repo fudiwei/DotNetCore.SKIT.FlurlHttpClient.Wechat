@@ -1,0 +1,19 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "service_list": [
+        {
+            "service_type": "device_activation",
+            "service_name": "当面激活",
+            "service_value": "{\"sn\":\"1231231\"}",
+            "service_status": 1,
+            "attach_list": [
+                {
+                    "url": "https://mmbiz.qpic.cn/xxx",
+                    "type": 1,
+                    "create_time": 1700000000
+                }
+            ]
+        }
+    ]
+}
