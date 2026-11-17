@@ -67,199 +67,103 @@
 
 <summary>[展开查看]</summary>
 
--   支付产品
-
-    -   付款码支付：
-
-        -   付款码支付：`CreatePayMicroPay`
-
-        -   查询订单：`GetPayOrder`
-
-        -   撤销订单：`ReversePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   付款码查询 OpenID：`ToolsAuthCodeToOpenId`
-
-        -   拉取订单评价数据：`BatchQueryBillComment`
-
-    -   JSAPI 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   拉取订单评价数据：`BatchQueryBillComment`
-
-    -   Native 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   转换短链接：`ToolsShortUrl`
-
-        -   拉取订单评价数据：`BatchQueryBillComment`
-
-    -   APP 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   拉取订单评价数据：`BatchQueryBillComment`
-
-    -   H5 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   拉取订单评价数据：`BatchQueryBillComment`
-
-    -   小程序支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   拉取订单评价数据：`BatchQueryBillComment`
-
--   支付工具：
-
-    -   现金红包：
-
-        -   发放红包：`SendPayMarketingTransfersRedPack`
-
-        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
-
-    -   小程序红包：
-
-        -   发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
-
-        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
-
-    -   付款到银行卡：
-
-        -   付款到银行卡：`CreatePayServicePartnerTransfersPayToBank`
-
-        -   查询付款银行卡：`GetPayServicePartnerTransfersPayToBankInfo`
-
-        -   获取 RSA 加密公钥：`GetRiskPublicKey`
-
-    -   付款到零钱：
-
-        -   付款：`CreatePayMarketingTransfersPromotionTransfer`
-
-        -   查询付款：`GetPayMarketingTransfersTransferInfo`
-
-    -   扣款服务：
-
-        -   APP 纯签约：`CreatePAPPayPreEntrustWeb`
-
-        -   H5 纯签约：`CreatePAPPayH5EntrustWeb`
-
-        -   支付中签约：`CreateContractOrder`
-
-        -   申请扣款：`ApplyPAPPay`
-
-        -   申请解约：`DeletePAPPayContract`
-
-        -   查询订单：`GetPayOrder`
-
-        -   查询签约关系：`GetPAPPayContract`
-
-    -   车主平台：
-
-        -   用户入场通知：`NotifyVehiclePay`
-
-        -   申请扣款：`ApplyVehiclePay`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   查询订单：`GetTransitOrder`
-
-        -   用户状态查询：`GetVehiclePayState`
-
--   清关报关：
-
-    -   订单附加信息提交接口：`CreateMerchantCustomsCustomDeclaration`
-
-    -   订单附加信息查询接口：`QueryMerchantCustomsCustomDeclaration`
-
-    -   订单附加信息重推接口：`RedeclareMerchantCustomsCustomDeclaration`
+- 支付产品
+    - 付款码支付：
+        - 付款码支付：`CreatePayMicroPay`
+        - 查询订单：`GetPayOrder`
+        - 撤销订单：`ReversePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 付款码查询 OpenID：`ToolsAuthCodeToOpenId`
+        - 拉取订单评价数据：`BatchQueryBillComment`
+    - JSAPI 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 拉取订单评价数据：`BatchQueryBillComment`
+    - Native 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 转换短链接：`ToolsShortUrl`
+        - 拉取订单评价数据：`BatchQueryBillComment`
+    - APP 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 拉取订单评价数据：`BatchQueryBillComment`
+    - H5 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 拉取订单评价数据：`BatchQueryBillComment`
+    - 小程序支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 拉取订单评价数据：`BatchQueryBillComment`
+- 支付工具：
+    - 现金红包：
+        - 发放红包：`SendPayMarketingTransfersRedPack`
+        - 查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+    - 小程序红包：
+        - 发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
+        - 查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+    - 付款到银行卡：
+        - 付款到银行卡：`CreatePayServicePartnerTransfersPayToBank`
+        - 查询付款银行卡：`GetPayServicePartnerTransfersPayToBankInfo`
+        - 获取 RSA 加密公钥：`GetRiskPublicKey`
+    - 付款到零钱：
+        - 付款：`CreatePayMarketingTransfersPromotionTransfer`
+        - 查询付款：`GetPayMarketingTransfersTransferInfo`
+    - 扣款服务：
+        - APP 纯签约：`CreatePAPPayPreEntrustWeb`
+        - H5 纯签约：`CreatePAPPayH5EntrustWeb`
+        - 支付中签约：`CreateContractOrder`
+        - 申请扣款：`ApplyPAPPay`
+        - 申请解约：`DeletePAPPayContract`
+        - 查询订单：`GetPayOrder`
+        - 查询签约关系：`GetPAPPayContract`
+    - 车主平台：
+        - 用户入场通知：`NotifyVehiclePay`
+        - 申请扣款：`ApplyVehiclePay`
+        - 下载交易账单：`DownloadPayBill`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 查询订单：`GetTransitOrder`
+        - 用户状态查询：`GetVehiclePayState`
+- 清关报关：
+    - 订单附加信息提交接口：`CreateMerchantCustomsCustomDeclaration`
+    - 订单附加信息查询接口：`QueryMerchantCustomsCustomDeclaration`
+    - 订单附加信息重推接口：`RedeclareMerchantCustomsCustomDeclaration`
 
 </details>
 
@@ -273,197 +177,102 @@
 
 <summary>[展开查看]</summary>
 
--   支付产品
-
-    -   付款码支付：
-
-        -   付款码支付：`CreatePayMicroPay`
-
-        -   查询订单：`GetPayOrder`
-
-        -   撤销订单：`ReversePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   付款码查询 OpenID：`ToolsAuthCodeToOpenId`
-
-    -   JSAPI 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-    -   Native 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-        -   转换短链接：`ToolsShortUrl`
-
-    -   APP 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-    -   H5 支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
-    -   小程序支付：
-
-        -   统一下单：`CreatePayUnifiedOrder`
-
-        -   查询订单：`GetPayOrder`
-
-        -   关闭订单：`ClosePayOrder`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   下载资金账单：`DownloadPayFundFlow`
-
-        -   交易保障：`SubmitPayITILReport`
-
--   支付工具：
-
-    -   现金红包：
-
-        -   发放红包：`SendPayMarketingTransfersRedPack`
-
-        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
-
-    -   小程序红包：
-
-        -   发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
-
-        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
-
-    -   扣款服务：
-
-        -   APP 纯签约：`CreatePAPPayPartnerPreEntrustWeb`
-
-        -   H5 纯签约：`CreatePAPPayPartnerH5EntrustWeb`
-
-        -   申请扣款：`ApplyPAPPayPartner`
-
-        -   申请解约：`DeletePAPPayContract`
-
-        -   查询订单：`GetPayOrder`
-
-        -   查询签约关系：`GetPAPPayPartnerContract`
-
-    -   酒店押金：
-
-        -   支付押金（JSAPI / APP）：`CreateDepositUnifiedOrder`
-
-        -   支付押金（人脸）：`CreateDepositFacePay`
-
-        -   支付押金（付款码）：`CreateDepositMicroPay`
-
-        -   查询订单：`GetDepositOrder`
-
-        -   撤销订单：`ReverseDepositOrder`
-
-        -   消费押金：`ConsumeDeposit`
-
-        -   申请退款：`CreateDepositRefund`
-
-        -   查询退款：`GetDepositRefund`
-
-    -   车主平台：
-
-        -   用户入场通知：`NotifyVehiclePartnerPay`
-
-        -   申请扣款：`ApplyVehiclePartnerPay`
-
-        -   下载交易账单：`DownloadPayBill`
-
-        -   申请退款：`CreatePayRefund`
-
-        -   查询退款：`GetPayRefund`
-
-        -   查询订单：`GetTransitPartnerOrder`
-
-        -   用户状态查询：`GetVehiclePartnerPayState`
-
--   小微商户：
-
-    -   查询提现状态：`GetFundAutoWithdrawByDate`
-
-    -   修改结算银行卡：`ModifyMicroMerchantArchives`
-
-    -   修改联系信息：`ModifyMicroMerchantContactInfo`
-
-    -   关注配置：`AddMarketingRecommendConfig`
-
-    -   支付目录配置：`AddSubMerchantDevelopConfig`
-
-    -   绑定 AppID 配置：`AddSubMerchantDevelopConfig`
-
-    -   配置查询：`GetSubMerchantDevelopConfig`
+- 支付产品
+    - 付款码支付：
+        - 付款码支付：`CreatePayMicroPay`
+        - 查询订单：`GetPayOrder`
+        - 撤销订单：`ReversePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 付款码查询 OpenID：`ToolsAuthCodeToOpenId`
+    - JSAPI 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+    - Native 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+        - 转换短链接：`ToolsShortUrl`
+    - APP 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+    - H5 支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+    - 小程序支付：
+        - 统一下单：`CreatePayUnifiedOrder`
+        - 查询订单：`GetPayOrder`
+        - 关闭订单：`ClosePayOrder`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 下载交易账单：`DownloadPayBill`
+        - 下载资金账单：`DownloadPayFundFlow`
+        - 交易保障：`SubmitPayITILReport`
+- 支付工具：
+    - 现金红包：
+        - 发放红包：`SendPayMarketingTransfersRedPack`
+        - 查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+    - 小程序红包：
+        - 发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
+        - 查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+    - 扣款服务：
+        - APP 纯签约：`CreatePAPPayPartnerPreEntrustWeb`
+        - H5 纯签约：`CreatePAPPayPartnerH5EntrustWeb`
+        - 申请扣款：`ApplyPAPPayPartner`
+        - 申请解约：`DeletePAPPayContract`
+        - 查询订单：`GetPayOrder`
+        - 查询签约关系：`GetPAPPayPartnerContract`
+    - 酒店押金：
+        - 支付押金（JSAPI / APP）：`CreateDepositUnifiedOrder`
+        - 支付押金（人脸）：`CreateDepositFacePay`
+        - 支付押金（付款码）：`CreateDepositMicroPay`
+        - 查询订单：`GetDepositOrder`
+        - 撤销订单：`ReverseDepositOrder`
+        - 消费押金：`ConsumeDeposit`
+        - 申请退款：`CreateDepositRefund`
+        - 查询退款：`GetDepositRefund`
+    - 车主平台：
+        - 用户入场通知：`NotifyVehiclePartnerPay`
+        - 申请扣款：`ApplyVehiclePartnerPay`
+        - 下载交易账单：`DownloadPayBill`
+        - 申请退款：`CreatePayRefund`
+        - 查询退款：`GetPayRefund`
+        - 查询订单：`GetTransitPartnerOrder`
+        - 用户状态查询：`GetVehiclePartnerPayState`
+- 小微商户：
+    - 查询提现状态：`GetFundAutoWithdrawByDate`
+    - 修改结算银行卡：`ModifyMicroMerchantArchives`
+    - 修改联系信息：`ModifyMicroMerchantContactInfo`
+    - 关注配置：`AddMarketingRecommendConfig`
+    - 支付目录配置：`AddSubMerchantDevelopConfig`
+    - 绑定 AppID 配置：`AddSubMerchantDevelopConfig`
+    - 配置查询：`GetSubMerchantDevelopConfig`
 
 </details>
 
@@ -477,17 +286,12 @@
 
 <summary>[展开查看]</summary>
 
--   特约商户配置：
-
-    -   支付目录配置：`AddSubMerchantDevelopConfig`
-
-    -   绑定 AppID 配置：`AddSubMerchantDevelopConfig`
-
-    -   配置查询：`GetSubMerchantDevelopConfig`
-
--   风控数据同步：
-
-    -   违规记录查询：`QueryRiskViolation`
+- 特约商户配置：
+    - 支付目录配置：`AddSubMerchantDevelopConfig`
+    - 绑定 AppID 配置：`AddSubMerchantDevelopConfig`
+    - 配置查询：`GetSubMerchantDevelopConfig`
+- 风控数据同步：
+    - 违规记录查询：`QueryRiskViolation`
 
 </details>
 
@@ -501,141 +305,74 @@
 
 <summary>[展开查看]</summary>
 
--   Overseas Payment：
-
-    -   Quick Pay：
-
-        -   Submit Quick Pay：`CreatePayMicroPay`
-
-        -   Query Order：`GetPayOrder`
-
-        -   Submit Refund：`CreatePayRefund`
-
-        -   Query Refund：`GetPayRefund`
-
-        -   Revoke Order：`ReversePayOrder`
-
-        -   Download Reconciliation File：`DownloadPayBill`
-
-        -   Report Speed Testing：`SubmitPayITILReport`
-
-        -   Query Settled Funds：`GetPaySettlement`
-
-        -   Query Exchange Rate：`GetPayExchangeRate`
-
-    -   QR Code Payment：
-
-        -   Unified Order：`CreatePayUnifiedOrder`
-
-        -   Query Order：`GetPayOrder`
-
-        -   Close Order：`ClosePayOrder`
-
-        -   Submit Refund：`CreatePayRefund`
-
-        -   Query Refund：`GetPayRefund`
-
-        -   Download Reconciliation File：`DownloadPayBill`
-
-        -   Report Speed Testing：`SubmitPayITILReport`
-
-        -   Query Settled Funds：`GetPaySettlement`
-
-        -   Query Exchange Rate：`GetPayExchangeRate`
-
-    -   Mini-Program Payment：
-
-        -   Unified Order：`CreatePayUnifiedOrder`
-
-        -   Query Order：`GetPayOrder`
-
-        -   Close Order：`ClosePayOrder`
-
-        -   Submit Refund：`CreatePayRefund`
-
-        -   Query Refund：`GetPayRefund`
-
-        -   Download Reconciliation File：`DownloadPayBill`
-
-        -   Report Speed Testing：`SubmitPayITILReport`
-
-        -   Query Settled Funds：`GetPaySettlement`
-
-        -   Query Exchange Rate：`GetPayExchangeRate`
-
-    -   Official Account Payment：
-
-        -   Unified Order：`CreatePayUnifiedOrder`
-
-        -   Query Order：`GetPayOrder`
-
-        -   Close Order：`ClosePayOrder`
-
-        -   Submit Refund：`CreatePayRefund`
-
-        -   Query Refund：`GetPayRefund`
-
-        -   Download Reconciliation File：`DownloadPayBill`
-
-        -   Report Speed Testing：`SubmitPayITILReport`
-
-        -   Query Settled Funds：`GetPaySettlement`
-
-        -   Query Exchange Rate：`GetPayExchangeRate`
-
-    -   In-App Payment：
-
-        -   Unified Order：`CreatePayUnifiedOrder`
-
-        -   Query Order：`GetPayOrder`
-
-        -   Close Order：`ClosePayOrder`
-
-        -   Submit Refund：`CreatePayRefund`
-
-        -   Query Refund：`GetPayRefund`
-
-        -   Download Reconciliation File：`DownloadPayBill`
-
-        -   Report Speed Testing：`SubmitPayITILReport`
-
-        -   Query Settled Funds：`GetPaySettlement`
-
-        -   Query Exchange Rate：`GetPayExchangeRate`
-
-    -   H5 Payment：
-
-        -   Unified Order：`CreatePayUnifiedOrder`
-
-        -   Query Order：`GetPayOrder`
-
-        -   Close Order：`ClosePayOrder`
-
-        -   Submit Refund：`CreatePayRefund`
-
-        -   Query Refund：`GetPayRefund`
-
-        -   Download Reconciliation File：`DownloadPayBill`
-
-        -   Report Speed Testing：`SubmitPayITILReport`
-
-        -   Query Settled Funds：`GetPaySettlement`
-
-        -   Query Exchange Rate：`GetPayExchangeRate`
-
--   Onboarding Sub Merchant：
-
-    -   Onboarding Sub Merchant API：
-
-        -   Sub Merchant Onboarding：`AddSubMerchantInstitution`
-
-        -   Sub Merchant Query：`GetSubMerchantInstitution`
-
-        -   Sub Merchant Modifying：`ModifySubMerchantInstitution`
-
--   Functional APIs：
-
-    -   Uploading Image： `UploadMerchantMedia`
+- Overseas Payment：
+    - Quick Pay：
+        - Submit Quick Pay：`CreatePayMicroPay`
+        - Query Order：`GetPayOrder`
+        - Submit Refund：`CreatePayRefund`
+        - Query Refund：`GetPayRefund`
+        - Revoke Order：`ReversePayOrder`
+        - Download Reconciliation File：`DownloadPayBill`
+        - Report Speed Testing：`SubmitPayITILReport`
+        - Query Settled Funds：`GetPaySettlement`
+        - Query Exchange Rate：`GetPayExchangeRate`
+    - QR Code Payment：
+        - Unified Order：`CreatePayUnifiedOrder`
+        - Query Order：`GetPayOrder`
+        - Close Order：`ClosePayOrder`
+        - Submit Refund：`CreatePayRefund`
+        - Query Refund：`GetPayRefund`
+        - Download Reconciliation File：`DownloadPayBill`
+        - Report Speed Testing：`SubmitPayITILReport`
+        - Query Settled Funds：`GetPaySettlement`
+        - Query Exchange Rate：`GetPayExchangeRate`
+    - Mini-Program Payment：
+        - Unified Order：`CreatePayUnifiedOrder`
+        - Query Order：`GetPayOrder`
+        - Close Order：`ClosePayOrder`
+        - Submit Refund：`CreatePayRefund`
+        - Query Refund：`GetPayRefund`
+        - Download Reconciliation File：`DownloadPayBill`
+        - Report Speed Testing：`SubmitPayITILReport`
+        - Query Settled Funds：`GetPaySettlement`
+        - Query Exchange Rate：`GetPayExchangeRate`
+    - Official Account Payment：
+        - Unified Order：`CreatePayUnifiedOrder`
+        - Query Order：`GetPayOrder`
+        - Close Order：`ClosePayOrder`
+        - Submit Refund：`CreatePayRefund`
+        - Query Refund：`GetPayRefund`
+        - Download Reconciliation File：`DownloadPayBill`
+        - Report Speed Testing：`SubmitPayITILReport`
+        - Query Settled Funds：`GetPaySettlement`
+        - Query Exchange Rate：`GetPayExchangeRate`
+    - In-App Payment：
+        - Unified Order：`CreatePayUnifiedOrder`
+        - Query Order：`GetPayOrder`
+        - Close Order：`ClosePayOrder`
+        - Submit Refund：`CreatePayRefund`
+        - Query Refund：`GetPayRefund`
+        - Download Reconciliation File：`DownloadPayBill`
+        - Report Speed Testing：`SubmitPayITILReport`
+        - Query Settled Funds：`GetPaySettlement`
+        - Query Exchange Rate：`GetPayExchangeRate`
+    - H5 Payment：
+        - Unified Order：`CreatePayUnifiedOrder`
+        - Query Order：`GetPayOrder`
+        - Close Order：`ClosePayOrder`
+        - Submit Refund：`CreatePayRefund`
+        - Query Refund：`GetPayRefund`
+        - Download Reconciliation File：`DownloadPayBill`
+        - Report Speed Testing：`SubmitPayITILReport`
+        - Query Settled Funds：`GetPaySettlement`
+        - Query Exchange Rate：`GetPayExchangeRate`
+- Onboarding Sub Merchant：
+    - Onboarding Sub Merchant API：
+        - Sub Merchant Onboarding：`AddSubMerchantInstitution`
+        - Sub Merchant Query：`GetSubMerchantInstitution`
+        - Sub Merchant Modifying：`ModifySubMerchantInstitution`
+- Functional APIs：
+    - Uploading Image： `UploadMerchantMedia`
 
 </details>
 
@@ -647,14 +384,11 @@
 
 <summary>[展开查看]</summary>
 
--   企业红包：
+- 企业红包：
+    - 发放企业红包：`SendPayMarketingTransfersWeWorkRedPack`
+    - 查询红包记录：`GetPayMarketingTransfersWeWorkRedPack`
+- 向员工付款：
+    - 向员工付款：`CreatePayMarketingTransfersPromotionWeWorkTransfer`
+    - 查询付款记录：`GetPayMarketingTransfersPromotionWeWorkTransfers`
 
-    -   发放企业红包：`SendPayMarketingTransfersWeWorkRedPack`
-
-    -   查询红包记录：`GetPayMarketingTransfersWeWorkRedPack`
-
--   向员工付款：
-
-    -   向员工付款：`CreatePayMarketingTransfersPromotionWeWorkTransfer`
-
-    -   查询付款记录：`GetPayMarketingTransfersPromotionWeWorkTransfers`
+</details>
