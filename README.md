@@ -7,7 +7,7 @@
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=fudiwei.DotNetCore.SKIT.FlurlHttpClient.Wechat&title=Visitors)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?label=License)](https://mit-license.org/)
 
-基于 `Flurl.Http` 的微信 HTTP API SDK，目前已包含公众平台、开放平台、商户平台、企业微信、广告平台、对话开放平台等模块。
+基于 `Flurl.Http` 的微信 API 客户端 SDK，目前已包含公众平台、开放平台、商户平台、企业微信、广告平台、对话开放平台等模块。
 
 > 更多 SKIT.FlurlHttpClient 系列开发工具包请[点此查看](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient)。
 
