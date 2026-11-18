@@ -187,7 +187,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("auth_type", authType)
                 .SetQueryParam("biz_appid", businessAppId)
-                .SetQueryParam("category_id_list", categoryIdList is null ? null : string.Join("|", categoryIdList))
+                .SetQueryParam("category_id_list", categoryIdList is not null ? string.Join("|", categoryIdList) : null)
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
@@ -215,7 +215,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("auth_type", authType)
                 .SetQueryParam("biz_appid", businessAppId)
-                .SetQueryParam("category_id_list", categoryIdList is null ? null : string.Join("|", categoryIdList))
+                .SetQueryParam("category_id_list", categoryIdList is not null ? string.Join("|", categoryIdList) : null)
                 .ToString();
         }
     }

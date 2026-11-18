@@ -1114,7 +1114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "newtmpl", "getpubtemplatetitles")
                 .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("ids", request.CategoryIdList is null ? null : string.Join(",", request.CategoryIdList))
+                .SetQueryParam("ids", request.CategoryIdList is not null ? string.Join(",", request.CategoryIdList) : null)
                 .SetQueryParam("start", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
