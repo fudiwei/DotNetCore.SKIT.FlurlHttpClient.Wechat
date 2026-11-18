@@ -2,6 +2,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
 {
     using SKIT.FlurlHttpClient.Internal;
 
+    /// <summary>
+    /// 
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/token.html ]]>
+    /// </para>
+    /// </summary>
     internal class WechatOpenAIRequestSigningInterceptor : HttpInterceptor
     {
         private readonly string _token;

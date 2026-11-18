@@ -73,8 +73,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            // REF: https://pay.weixin.qq.com/doc/v3/merchant/4012076194
                             // 由于 SM4 密钥长度的限制，密钥由 APIv3 密钥通过国密 SM3 Hash 计算生成。SM4 密钥取其摘要（256bit）的前 128bit。
+                            // 请参考 https://pay.weixin.qq.com/doc/v3/merchant/4012076194
                             byte[] secretBytes = Utilities.SM3Utility.Hash(EncodedString.FromLiteralString(client.Credentials.MerchantV3Secret));
                             byte[] keyBytes = new byte[16];
                             Array.Copy(secretBytes, keyBytes, keyBytes.Length);

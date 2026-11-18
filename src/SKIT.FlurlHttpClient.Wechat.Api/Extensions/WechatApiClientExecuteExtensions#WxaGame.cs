@@ -51,6 +51,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
 
         #region Payment
+        /// <summary>
+        ///
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/guide/open-ability/virtual-payment/signature ]]>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         private static T PreprocessRequestForWxaGamePayment<T>(WechatApiClient client, ref T request)
             where T : Models.WxaGamePaymentRequestBase, new()
         {

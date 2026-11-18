@@ -4,6 +4,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
     using SKIT.FlurlHttpClient.Primitives;
     using SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Constants;
 
+    /// <summary>
+    /// 
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api_rules/rules.html ]]>
+    /// </para>
+    /// </summary>
     internal class WechatTenpayBusinessRequestSigningInterceptor : HttpInterceptor
     {
         private const string HTTP_HEADER_PLATFORM_AUTHORIZATION = HttpHeaders.Authorization;

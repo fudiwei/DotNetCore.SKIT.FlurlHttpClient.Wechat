@@ -3,12 +3,15 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
     using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Primitives;
 
+    /// <summary>
+    /// 
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/token.html ]]>
+    /// </para>
+    /// </summary>
     internal class WechatOpenAIRequestEncryptionInterceptor : HttpInterceptor
     {
-        /**
-         * REF:
-         *   https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/token.html
-         */
         private static readonly ISet<string> ENCRYPT_REQUIRED_URLS = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             "/v2/bot/query"

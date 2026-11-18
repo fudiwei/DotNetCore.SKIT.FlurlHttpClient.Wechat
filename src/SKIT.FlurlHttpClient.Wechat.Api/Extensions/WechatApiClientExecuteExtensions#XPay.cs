@@ -2,6 +2,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static partial class WechatApiClientExecuteExtensions
     {
+        /// <summary>
+        /// 
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/virtual-payment.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/virtual-payment/person.html ]]>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         private static T PreprocessRequestForXPay<T>(WechatApiClient client, ref T request)
             where T : Models.XPayRequestBase, new()
         {

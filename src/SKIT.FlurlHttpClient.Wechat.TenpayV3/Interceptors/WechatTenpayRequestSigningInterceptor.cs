@@ -3,6 +3,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
     using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
 
+    /// <summary>
+    /// 
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012365342 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012365870 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v3/en/4012357147 ]]>
+    /// </para>
+    /// </summary>
     internal class WechatTenpayRequestSigningInterceptor : HttpInterceptor
     {
         private readonly string _scheme;

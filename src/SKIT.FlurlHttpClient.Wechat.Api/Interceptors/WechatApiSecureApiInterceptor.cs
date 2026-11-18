@@ -7,15 +7,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
     using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Wechat.Api.Constants;
 
+    /// <summary>
+    /// 
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/getting_started/api_signature.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/community/develop/article/doc/00028ca675c708b23f100b8e161013 ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/community/develop/article/doc/000e68b8038ed8796f00f6c2f68c13 ]]> <br/>
+    /// <![CDATA[ https://wxaintpcos.wxqcloud.qq.com.cn/public/tmp/apitool.py ]]>
+    /// </para>
+    /// </summary>
     internal class WechatApiSecureApiInterceptor : HttpInterceptor
     {
-        /**
-         * REF:
-         *   https://developers.weixin.qq.com/miniprogram/dev/server/getting_started/api_signature.html
-         *   https://developers.weixin.qq.com/community/develop/article/doc/00028ca675c708b23f100b8e161013
-         *   https://developers.weixin.qq.com/community/develop/article/doc/000e68b8038ed8796f00f6c2f68c13
-         *   https://wxaintpcos.wxqcloud.qq.com.cn/public/tmp/apitool.py
-         */
         private static readonly ISet<string> SIGN_REQUIRED_URLS = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             "/cgi-bin/clear_quota",

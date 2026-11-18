@@ -53,6 +53,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #endregion
 
         #region Order
+        /// <summary>
+        /// 
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98768 ]]>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         private static T PreprocessRequestForCgibinPayToolOrder<T>(WechatWorkClient client, ref T request)
             where T : Models.CgibinPayToolOrderRequestBase, new()
         {
