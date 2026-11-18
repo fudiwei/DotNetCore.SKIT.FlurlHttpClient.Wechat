@@ -183,13 +183,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? TrademarkExistsType { get; set; }
 
                 /// <summary>
-                /// 获取或设置无商标额外证明材料 MediaId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("no_trademark_addition_prove")]
-                [System.Text.Json.Serialization.JsonPropertyName("no_trademark_addition_prove")]
-                public string? NoTrademarkAdditionalProveMediaId { get; set; }
-
-                /// <summary>
                 /// 获取或设置商标注册证。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trademark_registration_certificate")]
@@ -204,13 +197,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public Types.TrademarkRegistrationCertificate? LogoTrademarkRegistrationCertificate { get; set; }
 
                 /// <summary>
+                /// 获取或设置无商标额外证明材料 MediaId。
+                /// </summary>
+                [Obsolete("相关接口或字段于 2026-11-01 下线。")]
+                [Newtonsoft.Json.JsonProperty("no_trademark_addition_prove")]
+                [System.Text.Json.Serialization.JsonPropertyName("no_trademark_addition_prove")]
+                public string? NoTrademarkAdditionalProveMediaId { get; set; }
+
+                /// <summary>
                 /// 获取或设置无商标额外证明材料 MediaId 列表。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2026-11-01 下线。")]
                 [Newtonsoft.Json.JsonProperty("no_trademark_addition_prove_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("no_trademark_addition_prove_list")]
                 public List<string>? NoTrademarkAdditionalProveMediaIdList { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户业务申请单号。
