@@ -1790,6 +1790,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public string? StaffId { get; set; }
 
                                         /// <summary>
+                                        /// 获取或设置视频号昵称。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("finder_nickname")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("finder_nickname")]
+                                        public string? FinderNickname { get; set; }
+
+                                        /// <summary>
                                         /// 获取或设置分享时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("share_time")]
