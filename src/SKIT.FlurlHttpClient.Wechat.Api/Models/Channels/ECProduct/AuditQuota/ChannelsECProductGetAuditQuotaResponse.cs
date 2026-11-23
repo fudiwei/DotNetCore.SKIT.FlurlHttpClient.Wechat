@@ -68,6 +68,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("new_product_remaining")]
                 [System.Text.Json.Serialization.JsonPropertyName("new_product_remaining")]
                 public int NewProductRemainingQuota { get; set; }
+
+                /// <summary>
+                /// 获取或设置同一主体开设的店铺新增商品时提审限额是否生效。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("entity_policy_active")]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("entity_policy_active")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
+                public bool IsEntityPolicyActive { get; set; }
+
+                /// <summary>
+                /// 获取或设置同一主体开设的店铺新增商品时提审总配额。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("entity_pool_total_quota")]
+                [System.Text.Json.Serialization.JsonPropertyName("entity_pool_total_quota")]
+                public int EntityPoolTotalQuota { get; set; }
+
+                /// <summary>
+                /// 获取或设置同一主体开设的店铺新增商品时提审剩余配额。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("entity_pool_remaining")]
+                [System.Text.Json.Serialization.JsonPropertyName("entity_pool_remaining")]
+                public int EntityPoolRemainingQuota { get; set; }
             }
         }
 
