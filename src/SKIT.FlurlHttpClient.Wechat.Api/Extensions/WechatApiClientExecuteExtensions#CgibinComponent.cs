@@ -207,7 +207,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/component/api_get_authorizer_option 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/component/get_authorizer_option 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/authorization-management/api_getauthorizeroptioninfo.html ]]>
@@ -217,20 +217,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinComponentApiGetAuthorizerOptionResponse> ExecuteCgibinComponentApiGetAuthorizerOptionAsync(this WechatApiClient client, Models.CgibinComponentApiGetAuthorizerOptionRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinComponentGetAuthorizerOptionResponse> ExecuteCgibinComponentGetAuthorizerOptionAsync(this WechatApiClient client, Models.CgibinComponentGetAuthorizerOptionRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_option")
-                .SetQueryParam("access_token", request.AccessToken);
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "get_authorizer_option")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinComponentApiGetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinComponentGetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/component/api_set_authorizer_option 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/component/set_authorizer_option 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/authorization-management/api_setauthorizeroptioninfo.html ]]>
@@ -240,16 +240,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinComponentApiSetAuthorizerOptionResponse> ExecuteCgibinComponentApiSetAuthorizerOptionAsync(this WechatApiClient client, Models.CgibinComponentApiSetAuthorizerOptionRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinComponentSetAuthorizerOptionResponse> ExecuteCgibinComponentSetAuthorizerOptionAsync(this WechatApiClient client, Models.CgibinComponentSetAuthorizerOptionRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_set_authorizer_option")
-                .SetQueryParam("access_token", request.AccessToken);
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "set_authorizer_option")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinComponentApiSetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinComponentSetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

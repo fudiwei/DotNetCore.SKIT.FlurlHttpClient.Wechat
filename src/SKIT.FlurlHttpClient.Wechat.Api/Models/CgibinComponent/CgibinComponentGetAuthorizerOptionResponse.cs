@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/component/api_set_authorizer_option 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/component/get_authorizer_option 接口的响应。</para>
     /// </summary>
-    public class CgibinComponentApiSetAuthorizerOptionRequest : WechatApiRequest, IInferable<CgibinComponentApiSetAuthorizerOptionRequest, CgibinComponentApiSetAuthorizerOptionResponse>
+    public class CgibinComponentGetAuthorizerOptionResponse : WechatApiResponse
     {
         /// <summary>
         /// 获取或设置选项名称。
@@ -17,6 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("option_value")]
         [System.Text.Json.Serialization.JsonPropertyName("option_value")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
         public string? OptionValue { get; set; }
     }
 }
