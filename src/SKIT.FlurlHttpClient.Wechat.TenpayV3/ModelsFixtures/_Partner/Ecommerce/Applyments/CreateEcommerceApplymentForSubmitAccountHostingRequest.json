@@ -9,7 +9,7 @@
         "merchant_name": "腾讯科技有限公司",
         "legal_person": "张三",
         "company_address": "深圳南山区科苑路",
-        "business_time": "[\\\"2014-01-01\\\",\\\"长期\\\"]"
+        "business_time": "[\"2014-01-01\",\"长期\"]"
     },
     "finance_institution_info": {
         "finance_type": "BANK_AGENT",
@@ -20,6 +20,7 @@
     "id_holder_type": "LEGAL",
     "id_doc_type": "IDENTIFICATION_TYPE_MACAO",
     "authorize_letter_copy": "47ZC6GC-vnrbEny_Ie_An5-tCpqxucuxi-vByf3Gjm7KEIUv0OF4wFNIO4kqg05InE4d2I6_H7I4",
+    "id_card_complete_statement": "example_id_card_complete_statement",
     "id_card_info": {
         "id_card_copy": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
         "id_card_national": "47ZC6GC-vnrbEny__Ie_An5-tCpqxucuxi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4",
@@ -78,8 +79,8 @@
         "qualification_type": "零售批发/生活娱乐/其他"
     },
     "merchant_shortname": "腾讯",
-    "qualifications": [ "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ", "47ZC6GC-vnrbEny__Ie_An5-tCpqxucuxi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4" ],
-    "business_addition_pics": [ "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ", "47ZC6GC-vnrbEny__Ie_An5-tCpqxucuxi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4" ],
+    "qualifications": "[\"jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ\",\"47ZC6GC-vnrbEny__Ie_An5-tCpqxucuxi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4\"]",
+    "business_addition_pics": "[\"jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ\",\"47ZC6GC-vnrbEny__Ie_An5-tCpqxucuxi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4\"]",
     "business_addition_desc": "特殊情况，说明原因",
     "proxy_sign_verify_mode": true
 }
