@@ -113,7 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "servicemarket", "get_paid_order_list")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaServiceMarketGetPaidOrderListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -136,9 +136,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "servicemarket", "service", "login_auth")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaServiceMarketServiceLoginAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/servicemarket/getwxaqrcode 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/partner/service_market/interface/value_added/get_service_code.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaServiceMarketGetWxaQrcodeResponse> ExecuteWxaServiceMarketGetWxaQrcodeAsync(this WechatApiClient client, Models.WxaServiceMarketGetWxaQrcodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "servicemarket", "getwxaqrcode")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaServiceMarketGetWxaQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

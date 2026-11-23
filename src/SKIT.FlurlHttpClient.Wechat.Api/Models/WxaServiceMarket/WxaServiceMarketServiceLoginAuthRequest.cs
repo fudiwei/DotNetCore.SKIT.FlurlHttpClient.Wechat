@@ -6,13 +6,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class WxaServiceMarketServiceLoginAuthRequest : WechatApiRequest, IInferable<WxaServiceMarketServiceLoginAuthRequest, WxaServiceMarketServiceLoginAuthResponse>
     {
         /// <summary>
-        /// 获取或设置第三方平台 AccessToken。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? ComponentAccessToken { get; set; }
-
-        /// <summary>
         /// 获取或设置登录 Code。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code")]

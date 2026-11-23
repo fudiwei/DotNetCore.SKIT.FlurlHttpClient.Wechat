@@ -6,13 +6,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class WxaServiceMarketGetPaidOrderListRequest : WechatApiRequest, IInferable<WxaServiceMarketGetPaidOrderListRequest, WxaServiceMarketGetPaidOrderListResponse>
     {
         /// <summary>
-        /// 获取或设置第三方平台 AccessToken。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? ComponentAccessToken { get; set; }
-
-        /// <summary>
         /// 获取或设置小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
