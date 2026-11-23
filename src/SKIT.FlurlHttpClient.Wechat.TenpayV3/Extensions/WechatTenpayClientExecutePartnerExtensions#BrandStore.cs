@@ -108,6 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2026-11-01 下线。")]
         public static async Task<Models.BindBrandPartnerStoreRecipientResponse> ExecuteBindBrandPartnerStoreRecipientAsync(this WechatTenpayClient client, Models.BindBrandPartnerStoreRecipientRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -132,6 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2026-11-01 下线。")]
         public static async Task<Models.UnbindBrandPartnerStoreRecipientResponse> ExecuteUnbindBrandPartnerStoreRecipientAsync(this WechatTenpayClient client, Models.UnbindBrandPartnerStoreRecipientRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));

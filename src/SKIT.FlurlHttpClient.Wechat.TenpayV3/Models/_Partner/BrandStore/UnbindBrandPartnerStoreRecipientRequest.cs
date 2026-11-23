@@ -3,6 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /brand/partner/store/brandstores/{store_id}/unbindrecipient 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2026-11-01 下线。")]
     public class UnbindBrandPartnerStoreRecipientRequest : WechatTenpayRequest
     {
         /// <summary>
