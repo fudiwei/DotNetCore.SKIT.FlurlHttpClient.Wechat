@@ -19,10 +19,9 @@
     <ItemGroup>
         <None Include="../../LOGO.png" Pack="true" PackagePath="/" />
         <None Include="README.md" Pack="true" PackagePath="/" />
-        <None Include="ModelsFixtures/**/*.json" />
-        <None Include="EventsFixtures/**/*.json" />
-        <None Include="EventsFixtures/**/*.xml" />
-	</ItemGroup>
+        <None Include="EventsFixtures/**/*.*" />
+        <None Include="ModelsFixtures/**/*.*" />
+    </ItemGroup>
 
 	<ItemGroup>
         <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />

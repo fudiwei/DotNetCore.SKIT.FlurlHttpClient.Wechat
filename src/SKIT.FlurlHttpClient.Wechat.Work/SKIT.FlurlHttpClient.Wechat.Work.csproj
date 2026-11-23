@@ -19,10 +19,10 @@
 	<ItemGroup>
 		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
 		<None Include="README.md" Pack="true" PackagePath="/" />
-        <None Include="ModelFixtures/**/*.json" />
-        <None Include="EventsFixtures/**/*.xml" />
-        <None Include="ExtendedSDK/AIBot/ModelFixtures/**/*.json" />
-        <None Include="ExtendedSDK/AIBot/EventsFixtures/**/*.json" />
+        <None Include="EventsFixtures/**/*.*" />
+        <None Include="ModelsFixtures/**/*.*" />
+        <None Include="ExtendedSDK/**/EventsFixtures/**/*.*" />
+        <None Include="ExtendedSDK/**/ModelsFixtures/**/*.*" />
     </ItemGroup>
 
     <ItemGroup>
