@@ -97,6 +97,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/batchunshareenv 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/cloudbase-batch/env-mgnt/api_unsharecloudbaseenv.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBBatchUnshareEnvironmentResponse> ExecuteComponentTCBBatchUnshareEnvironmentAsync(this WechatApiClient client, Models.ComponentTCBBatchUnshareEnvironmentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchunshareenv")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUnshareEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /componenttcb/batchgetenvid 接口。</para>
         /// <para>
         /// REF: <br/>

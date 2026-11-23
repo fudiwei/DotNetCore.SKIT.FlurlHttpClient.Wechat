@@ -18,5 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("alias")]
         [System.Text.Json.Serialization.JsonPropertyName("alias")]
         public string? Alias { get; set; }
+
+        /// <summary>
+        /// 获取或设置环境类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("EnvType")]
+        [System.Text.Json.Serialization.JsonPropertyName("EnvType")]
+        public string? Type { get; set; }
     }
 }
