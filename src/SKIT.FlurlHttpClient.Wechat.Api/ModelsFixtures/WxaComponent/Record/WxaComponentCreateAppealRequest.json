@@ -1,0 +1,9 @@
+{
+    "illegal_record_id": "3_24911818",
+    "appeal_materials": [
+        {
+            "reason": "申诉理由说明",
+            "proof_material_ids": ["MEDIA_ID_1", "MEDIA_ID_2"]
+        }
+    ]
+}

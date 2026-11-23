@@ -1739,6 +1739,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region Record
         /// <summary>
+        /// <para>异步调用 [POST] /wxa/component/createappeal 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/record-management/api_createappeal.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaComponentCreateAppealResponse> ExecuteWxaComponentCreateAppealAsync(this WechatApiClient client, Models.WxaComponentCreateAppealRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "component", "createappeal")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaComponentCreateAppealResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /wxa/getillegalrecords 接口。</para>
         /// <para>
         /// REF: <br/>
