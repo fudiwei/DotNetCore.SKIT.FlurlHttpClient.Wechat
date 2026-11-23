@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     public class Time
                                     {
                                         /// <summary>
-                                        /// 获取或设置次卡 ID。
+                                        /// 获取或设置次卡某次 ID。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("serial_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("serial_id")]
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int Amount { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置券退款金额（单位：分）。
+                                /// 获取或设置券退款次卡列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("times_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("times_list")]
@@ -426,6 +426,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("media_files")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_files")]
                         public List<MediaFile>? MediaFileList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置协商前售后原因 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("old_reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("old_reason")]
+                        public string? OldReasonId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置协商前售后原因文案。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("old_reason_text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("old_reason_text")]
+                        public string? OldReasonText { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置协商后售后原因 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_reason")]
+                        public string? NewReasonId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置协商后售后原因文案。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_reason_text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_reason_text")]
+                        public string? NewReasonText { get; set; }
                     }
 
                     public class RefundResultInfo
@@ -763,11 +791,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? PresentGiverUnionId { get; set; }
 
                 /// <summary>
-                /// 获取或设置售后原因。
+                /// 获取或设置售后原因 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                public string? Reason { get; set; }
+                public string? ReasonId { get; set; }
+
+                /// <summary>
+                /// 获取或设置售后原因文案。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("reason_text")]
+                [System.Text.Json.Serialization.JsonPropertyName("reason_text")]
+                public string? ReasonText { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品信息。
@@ -810,6 +845,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("merchant_update_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_update_detail")]
                 public Types.MerchantUpdateDetail? MerchantUpdateDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置纠纷单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("complaint_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
+                public string? ComplaintId { get; set; }
 
                 /// <summary>
                 /// 获取或设置退款结果信息。

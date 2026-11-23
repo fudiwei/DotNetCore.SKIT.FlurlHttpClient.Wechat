@@ -122,5 +122,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("product_cnt")]
         [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
         public int? ProductCount { get; set; }
+
+        /// <summary>
+        /// 获取或设置协商修改售后原因 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("reason")]
+        [System.Text.Json.Serialization.JsonPropertyName("reason")]
+        public string? ReasonId { get; set; }
     }
 }

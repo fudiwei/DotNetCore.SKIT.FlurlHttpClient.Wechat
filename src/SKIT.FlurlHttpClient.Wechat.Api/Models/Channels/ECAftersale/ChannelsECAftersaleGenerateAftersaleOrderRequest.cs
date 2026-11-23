@@ -18,6 +18,59 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
                 public long NewSKUId { get; set; }
             }
+
+            public class Voucher
+            {
+                public static class Types
+                {
+                    public class Time
+                    {
+                        /// <summary>
+                        /// 获取或设置次卡某次 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("serial_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("serial_id")]
+                        public string? SerialId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置退卡金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                        public int Amount { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置团购优惠券码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("voucher_code")]
+                [System.Text.Json.Serialization.JsonPropertyName("voucher_code")]
+                public string? VoucherCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置 SKU ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sku_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long SKUId { get; set; }
+
+                /// <summary>
+                /// 获取或设置券退款金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                public int Amount { get; set; }
+
+                /// <summary>
+                /// 获取或设置券退款次卡列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("times_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("times_list")]
+                public List<Types.Time>? TimeList { get; set; }
+            }
+
         }
 
         /// <summary>
@@ -67,11 +120,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int Amount { get; set; }
 
         /// <summary>
-        /// 获取或设置售后原因。
+        /// 获取或设置售后原因 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reason")]
         [System.Text.Json.Serialization.JsonPropertyName("reason")]
-        public string? Reason { get; set; }
+        public string? ReasonId { get; set; }
 
         /// <summary>
         /// 获取或设置售后类型。
@@ -100,5 +153,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("exchange_sku_info")]
         [System.Text.Json.Serialization.JsonPropertyName("exchange_sku_info")]
         public Types.ExchangeSKUInfo? ExchangeSKUInfo { get; set; }
+
+        /// <summary>
+        /// 获取或设置团购优惠券列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("voucher_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
+        public List<Types.Voucher>? VoucherList { get; set; }
     }
 }

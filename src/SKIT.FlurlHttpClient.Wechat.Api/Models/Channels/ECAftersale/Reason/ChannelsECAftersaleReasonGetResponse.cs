@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Reason
             {
                 /// <summary>
-                /// 获取或设置售后原因。
+                /// 获取或设置售后原因 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                public string? ReasonType { get; set; }
+                public string? ReasonId { get; set; }
 
                 /// <summary>
-                /// 获取或设置售后原因说明。
+                /// 获取或设置售后原因文案。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason_text")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason_text")]

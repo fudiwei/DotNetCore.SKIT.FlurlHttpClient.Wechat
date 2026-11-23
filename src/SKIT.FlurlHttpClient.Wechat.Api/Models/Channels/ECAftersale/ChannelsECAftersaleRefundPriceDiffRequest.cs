@@ -45,11 +45,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int Amount { get; set; }
 
         /// <summary>
-        /// 获取或设置售后原因。
+        /// 获取或设置售后原因 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reason")]
         [System.Text.Json.Serialization.JsonPropertyName("reason")]
-        public string? ReasonType { get; set; }
+        public string? ReasonId { get; set; }
 
         /// <summary>
         /// 获取或设置代发起售后补充说明。
