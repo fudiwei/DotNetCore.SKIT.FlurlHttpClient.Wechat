@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "EVENT.wxa_category_audit" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/category-management/addCategory.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/category-management/api_addcategory.html ]]>
     /// </para>
     /// </summary>
     public class WxaCategoryAuditEvent : WechatApiEvent

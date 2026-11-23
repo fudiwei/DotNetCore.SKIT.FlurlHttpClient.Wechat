@@ -1881,6 +1881,102 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /wxa/component/fastregistertransactionweapp?action=create 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-registration-ind/api_fastregistertransactionweapp.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaComponentFastRegisterTransactionWeappCreateResponse> ExecuteWxaComponentFastRegisterTransactionWeappCreateAsync(this WechatApiClient client, Models.WxaComponentFastRegisterTransactionWeappCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "component", "fastregistertransactionweapp")
+                .SetQueryParam("action", "create")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaComponentFastRegisterTransactionWeappCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/component/fastregistertransactionweapp?action=query 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-registration-ind/api_fastregistertransactionweapp.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaComponentFastRegisterTransactionWeappQueryResponse> ExecuteWxaComponentFastRegisterTransactionWeappQueryAsync(this WechatApiClient client, Models.WxaComponentFastRegisterTransactionWeappQueryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "component", "fastregistertransactionweapp")
+                .SetQueryParam("action", "query")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaComponentFastRegisterTransactionWeappQueryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/component/fastnormalizebetaweapp?action=createtask 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-regist-beta/api_fastnormalizebetaweapp ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaComponentFastNormalizeBetaWeappCreateTaskResponse> ExecuteWxaComponentFastNormalizeBetaWeappCreateTaskAsync(this WechatApiClient client, Models.WxaComponentFastNormalizeBetaWeappCreateTaskRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "component", "fastnormalizebetaweapp")
+                .SetQueryParam("action", "createtask")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaComponentFastNormalizeBetaWeappCreateTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/component/fastnormalizebetaweapp?action=query 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-regist-beta/api_fastnormalizebetaweapp ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaComponentFastNormalizeBetaWeappQueryResponse> ExecuteWxaComponentFastNormalizeBetaWeappQueryAsync(this WechatApiClient client, Models.WxaComponentFastNormalizeBetaWeappQueryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "component", "fastnormalizebetaweapp")
+                .SetQueryParam("action", "query")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaComponentFastNormalizeBetaWeappQueryResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /wxa/verifybetaweapp 接口。</para>
         /// <para>
         /// REF: <br/>

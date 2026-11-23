@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "INFO.notify_third_fastverifybetaapp" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-regist-beta/verfifyBetaMiniprogram.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-regist-beta/api_verfifybetaminiprogram.html ]]>
     /// </para>
     /// </summary>
     public class NotifyThirdFastVerifyBetaAppEvent : WechatApiEvent

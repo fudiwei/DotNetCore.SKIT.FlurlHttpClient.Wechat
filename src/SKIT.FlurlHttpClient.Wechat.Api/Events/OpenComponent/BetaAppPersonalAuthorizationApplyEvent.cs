@@ -1,13 +1,13 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 "EVENT.betaapp_authorization_apply_event" 回调通知事件的数据。</para>
+    /// <para>表示 "EVENT.betaapp_personal_authorization_apply_event" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/verify_beta_Mini_Programs/getmpadminauth.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-regist-beta/api_fastnormalizebetaweapp.html ]]>
     /// </para>
     /// </summary>
-    public class BetaAppAuthorizationApplyEvent : WechatApiEvent
+    public class BetaAppPersonalAuthorizationApplyEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -20,14 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
                 [System.Xml.Serialization.XmlElement("appid")]
                 public string? MiniProgramAppId { get; set; }
-
-                /// <summary>
-                /// 获取或设置公众号 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("mp_appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]
-                [System.Xml.Serialization.XmlElement("mp_appid")]
-                public string? MediaPlatformAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作时间字符串（格式：yyyy-MM-dd HH:mm）。
@@ -52,23 +44,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Text.Json.Serialization.JsonPropertyName("msg")]
                 [System.Xml.Serialization.XmlElement("msg", IsNullable = true)]
                 public string? ErrorMessage { get; set; }
-
-                /// <summary>
-                /// 获取或设置授权成功后生成的 Ticket。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ticket")]
-                [System.Text.Json.Serialization.JsonPropertyName("ticket")]
-                [System.Xml.Serialization.XmlElement("ticket", IsNullable = true)]
-                public string? Ticket { get; set; }
             }
         }
 
         /// <summary>
         /// 获取或设置事件数据。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ApplyAuthorizationInfoNoitfy")]
-        [System.Text.Json.Serialization.JsonPropertyName("ApplyAuthorizationInfoNoitfy")]
-        [System.Xml.Serialization.XmlElement("ApplyAuthorizationInfoNoitfy")]
+        [Newtonsoft.Json.JsonProperty("ApplyPersonalAuthorizationInfoNotify")]
+        [System.Text.Json.Serialization.JsonPropertyName("ApplyPersonalAuthorizationInfoNotify")]
+        [System.Xml.Serialization.XmlElement("ApplyPersonalAuthorizationInfoNotify")]
         public Types.EventData? EventData { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "INFO.notify_3rd_wxa_auth" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/weapp-wxverify/secwxaapi_wxaauth.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/weapp-wxverify/api_secwxaapi_wxaauth.html ]]>
     /// </para>
     /// </summary>
     public class NotifyThirdPartyWxaAuthEvent : WechatApiEvent

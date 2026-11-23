@@ -3,12 +3,11 @@
     <FromUserName><![CDATA[fromUser]]></FromUserName>
     <CreateTime>1234567890</CreateTime>
     <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[betaapp_verify_event]]></Event>
-    <ApplyAuthorizationInfoNoitfy>
+    <Event><![CDATA[betaapp_personal_authorization_apply_event]]></Event>
+    <ApplyPersonalAuthorizationInfoNotify>
         <appid><![CDATA[小程序appid]]></appid>
-        <mp_appid><![CDATA[公众号appid]]></mp_appid>
         <status><![CDATA[0]]></status>
         <msg><![CDATA[ok]]></msg>
-        <operation_time><![CDATA[操作的时间]]></operation_time>
-    </ApplyAuthorizationInfoNoitfy>
+        <operation_time><![CDATA[2026-01-02 13:14:15]]></operation_time>
+    </ApplyPersonalAuthorizationInfoNotify>
 </xml>

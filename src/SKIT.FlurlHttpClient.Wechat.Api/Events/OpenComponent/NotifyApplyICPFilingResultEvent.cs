@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "INFO.notify_apply_icpfiling_result" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/record/applyIcpFiling.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/record/api_applyicpfiling.html ]]>
     /// </para>
     /// </summary>
     public class NotifyApplyICPFilingResultEvent : WechatApiEvent

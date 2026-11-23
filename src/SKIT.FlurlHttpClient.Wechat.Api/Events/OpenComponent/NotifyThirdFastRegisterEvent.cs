@@ -4,8 +4,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 "INFO.notify_third_fasteregister" 回调通知事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-registration-ent/registerMiniprogram.html ]]> <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-registration-ind/fastRegisterPersonalMp.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-registration-ent/api_registerminiprogram.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-registration-ind/api_fastregisterpersonalmp.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/register-management/fast-registration-ind/api_fastregistertransactionweapp.html ]]>
     /// </para>
     /// </summary>
     public class NotifyThirdFastRegisterEvent : WechatApiEvent
