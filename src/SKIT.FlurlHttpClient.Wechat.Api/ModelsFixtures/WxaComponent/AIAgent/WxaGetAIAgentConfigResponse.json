@@ -1,0 +1,7 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "ai_gui_switch": "AI_GUI_SWITCH_OPEN",
+    "self_access_switch": "SELF_ACCESS_SWITCH_OPEN",
+    "auto_mcp_switch": "AUTO_MCP_SWITCH_OPEN"
+}

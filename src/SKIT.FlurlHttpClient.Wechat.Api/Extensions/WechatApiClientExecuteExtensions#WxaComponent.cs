@@ -4,6 +4,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
     public static partial class WechatApiClientExecuteExtensions
     {
+        #region AIAgent
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/setaiagentconfig 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/ai_config/api_setaiagentconfig.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSetAIAgentConfigResponse> ExecuteWxaSetAIAgentConfigAsync(this WechatApiClient client, Models.WxaSetAIAgentConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "setaiagentconfig")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSetAIAgentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/getaiagentconfig 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/ai_config/api_getaiagentconfig.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetAIAgentConfigResponse> ExecuteWxaGetAIAgentConfigAsync(this WechatApiClient client, Models.WxaGetAIAgentConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "getaiagentconfig")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetAIAgentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region AMS
         #region AMS/Percentage
         /// <summary>
