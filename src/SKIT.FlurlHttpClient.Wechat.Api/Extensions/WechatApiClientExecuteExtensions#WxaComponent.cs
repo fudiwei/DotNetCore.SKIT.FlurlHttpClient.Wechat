@@ -1434,6 +1434,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [GET] /wxa/icp/get_icp_media 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/miniprogram-management/record/api_geticpmedia.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaICPGetICPMediaResponse> ExecuteWxaICPGetICPMediaAsync(this WechatApiClient client, Models.WxaICPGetICPMediaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "icp", "get_icp_media")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("media_id", request.MediaId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaICPGetICPMediaResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /wxa/icp/apply_icp_filing 接口。</para>
         /// <para>
         /// REF: <br/>
