@@ -1,7 +1,7 @@
 {
     "errcode": "0",
     "errmsg": "ok",
-    "product": {
+    "item": {
         "shop_appid": "test",
         "product_id": 12345,
         "product_info": {

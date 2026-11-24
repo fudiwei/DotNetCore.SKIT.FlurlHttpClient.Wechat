@@ -492,8 +492,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置商品信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("product")]
-        [System.Text.Json.Serialization.JsonPropertyName("product")]
+        [Newtonsoft.Json.JsonProperty("item")]
+        [System.Text.Json.Serialization.JsonPropertyName("item")]
         public Types.Product? Product { get; set; }
     }
 }
