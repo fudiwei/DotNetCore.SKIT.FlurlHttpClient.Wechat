@@ -4,5 +4,12 @@
     "transaction_id": "4208450740201411110007820472",
     "refund_id": "3008450740201411110007820472",
     "amount": 10,
-    "description": "测试备注"
+    "description": "测试备注",
+    "subsidy_id": "3008450740201411110007820472",
+    "from": [
+        {
+            "account": "AVAILABLE",
+            "amount": 10
+        }
+    ]
 }

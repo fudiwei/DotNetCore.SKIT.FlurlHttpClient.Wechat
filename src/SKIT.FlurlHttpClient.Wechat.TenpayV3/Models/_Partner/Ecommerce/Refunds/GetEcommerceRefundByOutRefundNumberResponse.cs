@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class From : GetRefundDomesticRefundByOutRefundNumberResponse.Types.Amount.Types.From
+                    public class From : CreateRefundDomesticRefundRequest.Types.Amount.Types.From
                     {
                     }
                 }

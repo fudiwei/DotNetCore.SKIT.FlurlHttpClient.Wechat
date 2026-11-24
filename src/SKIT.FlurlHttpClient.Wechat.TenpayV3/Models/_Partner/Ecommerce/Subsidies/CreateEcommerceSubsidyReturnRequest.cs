@@ -5,6 +5,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// </summary>
     public class CreateEcommerceSubsidyReturnRequest : WechatTenpayRequest
     {
+        public static class Types
+        {
+            public class From : CreateRefundDomesticRefundRequest.Types.Amount.Types.From
+            {
+            }
+        }
+
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
@@ -46,5 +53,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
         public int Amount { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信补差单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("subsidy_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("subsidy_id")]
+        public string? SubsidyId { get; set; }
+
+        /// <summary>
+        /// 获取或设置退款出资账户及金额信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("from")]
+        [System.Text.Json.Serialization.JsonPropertyName("from")]
+        public List<Types.From>? From { get; set; }
     }
 }

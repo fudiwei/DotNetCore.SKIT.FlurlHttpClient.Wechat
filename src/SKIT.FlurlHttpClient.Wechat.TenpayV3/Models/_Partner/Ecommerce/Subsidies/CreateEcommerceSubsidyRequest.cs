@@ -20,13 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? TransactionId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信支付退款单号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("refund_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
-        public string? RefundId { get; set; }
-
-        /// <summary>
         /// 获取或设置商户补差单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_subsidy_no")]
