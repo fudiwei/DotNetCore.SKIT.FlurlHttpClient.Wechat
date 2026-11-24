@@ -34,6 +34,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OpenId { get; set; }
 
         /// <summary>
+        /// 获取或设置积分类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("point_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("point_type")]
+        public string? PointType { get; set; }
+
+        /// <summary>
         /// 获取或设置是否获得积分。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("earn_points")]
@@ -69,5 +76,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("total_points")]
         [System.Text.Json.Serialization.JsonPropertyName("total_points")]
         public int? TotalPoints { get; set; }
+
+        /// <summary>
+        /// 获取或设置门店名称。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("shop_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("shop_name")]
+        public string? ShopName { get; set; }
+
+        /// <summary>
+        /// 获取或设置门店编号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("shop_number")]
+        [System.Text.Json.Serialization.JsonPropertyName("shop_number")]
+        public string? ShopNumber { get; set; }
     }
 }

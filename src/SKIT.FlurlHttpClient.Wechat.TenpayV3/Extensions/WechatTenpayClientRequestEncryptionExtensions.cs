@@ -3,7 +3,6 @@ using System.Reflection;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities;
 
