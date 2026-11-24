@@ -70,8 +70,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
             ImmeDeliveryAppKey = options.ImmeDeliveryAppKey;
             ImmeDeliveryAppSecret = options.ImmeDeliveryAppSecret;
             VirtualPaymentAppKey = options.VirtualPaymentAppKey;
+#pragma warning disable CS0618
             MidasAppKey = options.MidasAppKey;
             MidasOfferId = options.MidasOfferId;
+#pragma warning restore CS0618
             MidasAppKeyV2 = options.MidasAppKeyV2;
             MidasOfferIdV2 = options.MidasOfferIdV2;
         }

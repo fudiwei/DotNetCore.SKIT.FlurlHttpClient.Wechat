@@ -8,12 +8,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         //   如果在 Visual Studio 打开时遇到 “缺少 SKIT.FlurlHttpClient.Tools.CodeAnalyzer 包” 的错误，
         //   请参考此 Issue：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/issues/8
 
+#if XUNIT3_OR_HIGHER
         private readonly ITestOutputHelper _outputHelper;
 
         public CodeAnalysis(ITestOutputHelper outputHelper)
         {
             _outputHelper = outputHelper;
         }
+#endif
 
         [Fact(DisplayName = "代码分析：类型声明")]
         public void CodeAnalysis_TypeDeclaration()
@@ -29,12 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
                 var issues = analyzer.Analyze();
 #if DEBUG
-                if (issues.Count > 0)
+                foreach (var issue in issues)
                 {
-                    foreach (var issue in issues)
-                        _outputHelper.WriteLine(issue.ToString());
+#if XUNIT3_OR_HIGHER
+                    _outputHelper.WriteLine(issue.ToString());
+#endif
                 }
 #endif
+
                 Assert.Empty(issues);
             });
 
@@ -49,12 +53,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
                 var issues = analyzer.Analyze();
 #if DEBUG
-                if (issues.Count > 0)
+                foreach (var issue in issues)
                 {
-                    foreach (var issue in issues)
-                        _outputHelper.WriteLine(issue.ToString());
+#if XUNIT3_OR_HIGHER
+                    _outputHelper.WriteLine(issue.ToString());
+#endif
                 }
 #endif
+
                 Assert.Empty(issues);
             });
         }
@@ -79,12 +85,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
                 var issues = analyzer.Analyze();
 #if DEBUG
-                if (issues.Count > 0)
+                foreach (var issue in issues)
                 {
-                    foreach (var issue in issues)
-                        _outputHelper.WriteLine(issue.ToString());
+#if XUNIT3_OR_HIGHER
+                    _outputHelper.WriteLine(issue.ToString());
+#endif
                 }
 #endif
+
                 Assert.Empty(issues);
             });
 
@@ -105,12 +113,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
                 var issues = analyzer.Analyze();
 #if DEBUG
-                if (issues.Count > 0)
+                foreach (var issue in issues)
                 {
-                    foreach (var issue in issues)
-                        _outputHelper.WriteLine(issue.ToString());
+#if XUNIT3_OR_HIGHER
+                    _outputHelper.WriteLine(issue.ToString());
+#endif
                 }
 #endif
+
                 Assert.Empty(issues);
             });
         }

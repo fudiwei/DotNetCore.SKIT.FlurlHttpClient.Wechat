@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
             }, new MockHttpClient(), false);
 
             // 简单数据结构
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 var request = new Models.CgibinPayToolCloseOrderRequest()
                 {
@@ -24,13 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     NonceString = "129031823",
                     Timestamp = 1548302135
                 };
-                _ = await mockClient.ExecuteCgibinPayToolCloseOrderAsync(request, TestContext.Current.CancellationToken);
+                _ = await mockClient.ExecuteCgibinPayToolCloseOrderAsync(request, CompactTestContext.Current.CancellationToken);
 
                 Assert.Equal("jzjAGcoLbquKfNVlpqzBJDSdUASP8J7PebdFB6CUnRg=", request.Signature);
             });
 
             // 复杂数据结构
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 var request = new Models.CgibinPayToolOpenOrderRequest()
                 {
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     NonceString = "129031823",
                     Timestamp = 1548302135
                 };
-                _ = await mockClient.ExecuteCgibinPayToolOpenOrderAsync(request, TestContext.Current.CancellationToken);
+                _ = await mockClient.ExecuteCgibinPayToolOpenOrderAsync(request, CompactTestContext.Current.CancellationToken);
 
                 Assert.Equal("5c6ZV2YFUWSA+2t4i92wUi4INQPYj3m6DArzLXkwxxk=", request.Signature);
             });

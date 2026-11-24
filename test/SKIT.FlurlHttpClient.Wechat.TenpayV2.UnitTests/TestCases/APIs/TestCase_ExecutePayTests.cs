@@ -5,10 +5,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[POST] /pay/unifiedorder）")]
         public async Task TestCase_ApiExecuteCreatePayUnifiedOrderTests()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_AppId, "【已跳过】未配置 \"Fixtures.AppId\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_AppId, "【已跳过】未配置 \"Fixtures.AppId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CreatePayUnifiedOrderRequest()
@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.APIs
                 TradeType = "JSAPI",
                 NotifyUrl = "https://example.com"
             };
-            var response = await client.ExecuteCreatePayUnifiedOrderAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCreatePayUnifiedOrderAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.PrepayId);
@@ -31,8 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[POST] /pay/micropay）")]
         public async Task TestCase_ApiExecuteCreatePayMicroPayTests()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CreatePayMicroPayRequest()
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.APIs
                 ClientIp = "127.0.0.7",
                 AuthCode = "TEST_AUTH_CODE"
             };
-            var response = await client.ExecuteCreatePayMicroPayAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCreatePayMicroPayAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.TransactionId);
@@ -52,9 +52,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[POST] /secapi/pay/refund）")]
         public async Task TestCase_ApiExecuteCreatePayRefundTests()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
-            Assert.SkipWhen(0 == ITConfigs.Credentials_MerchantCertificateBytes.Length, "【已跳过】未配置 \"Credentials.MerchantCertificateBase64String\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
+            CompactAssert.SkipWhen(0 == ITConfigs.Credentials_MerchantCertificateBytes.Length, "【已跳过】未配置 \"Credentials.MerchantCertificateBase64String\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CreatePayRefundRequest()
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests.TestCases.APIs
                 RefundFee = 1,
                 Description = "TEST_DESC"
             };
-            var response = await client.ExecuteCreatePayRefundAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCreatePayRefundAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
         }

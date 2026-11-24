@@ -10,10 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
         [Fact(DisplayName = "测试用例：会话内容存档 SDK")]
         public async Task TestFinanceSDK()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_CorpId, "【已跳过】未配置 \"Credentials.CorpId\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_FinanceSecretKey, "【已跳过】未配置 \"Credentials.FinanceSecretKey\"。");
-            Assert.SkipWhen(0 == ITConfigs.Credentials_FinanceEncryptionVersion, "【已跳过】未配置 \"Credentials.FinanceEncryptionVersion\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_FinanceEncryptionPrivateKey, "【已跳过】未配置 \"Credentials.FinanceEncryptionPrivateKey\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_CorpId, "【已跳过】未配置 \"Credentials.CorpId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_FinanceSecretKey, "【已跳过】未配置 \"Credentials.FinanceSecretKey\"。");
+            CompactAssert.SkipWhen(0 == ITConfigs.Credentials_FinanceEncryptionVersion, "【已跳过】未配置 \"Credentials.FinanceEncryptionVersion\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_FinanceEncryptionPrivateKey, "【已跳过】未配置 \"Credentials.FinanceEncryptionPrivateKey\"。");
 
             var options = new WechatWorkFinanceClientOptions()
             {
@@ -24,9 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
             using var client = new WechatWorkFinanceClient(options);
 
             var reqGetChatRecords = new GetChatRecordsRequest();
-            var resGetChatRecords = await client.ExecuteGetChatRecordsAsync(reqGetChatRecords, TestContext.Current.CancellationToken);
+            var resGetChatRecords = await client.ExecuteGetChatRecordsAsync(reqGetChatRecords, CompactTestContext.Current.CancellationToken);
 
             Assert.True(resGetChatRecords.IsSuccessful());
+            Assert.NotNull(resGetChatRecords.RecordList);
             Assert.NotEmpty(resGetChatRecords.RecordList);
 
             foreach (var record in resGetChatRecords.RecordList)
@@ -37,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     EncryptedRandomKey = record.EncryptedRandomKey,
                     EncryptedChatMessage = record.EncryptedChatMessage
                 };
-                var resDecryptChatRecord = await client.ExecuteDecryptChatRecordAsync(reqDecryptChatRecord, TestContext.Current.CancellationToken);
+                var resDecryptChatRecord = await client.ExecuteDecryptChatRecordAsync(reqDecryptChatRecord, CompactTestContext.Current.CancellationToken);
 
                 Assert.True(resDecryptChatRecord.IsSuccessful());
                 Assert.NotNull(resDecryptChatRecord.MessageId);
@@ -53,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                             {
                                 FileId = resDecryptChatRecord.MessageContentAsImage!.FileId
                             };
-                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, TestContext.Current.CancellationToken);
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, CompactTestContext.Current.CancellationToken);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
                             Assert.Equal(resDecryptChatRecord.MessageContentAsImage!.FileSize, resGetMediaFile.FileBytes.Length);
@@ -66,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                             {
                                 FileId = resDecryptChatRecord.MessageContentAsVoice!.FileId
                             };
-                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, TestContext.Current.CancellationToken);
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, CompactTestContext.Current.CancellationToken);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
                             Assert.Equal(resDecryptChatRecord.MessageContentAsVoice!.FileSize, resGetMediaFile.FileBytes.Length);
@@ -79,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                             {
                                 FileId = resDecryptChatRecord.MessageContentAsVideo!.FileId
                             };
-                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, TestContext.Current.CancellationToken);
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, CompactTestContext.Current.CancellationToken);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
                             Assert.Equal(resDecryptChatRecord.MessageContentAsVideo!.FileSize, resGetMediaFile.FileBytes.Length);
@@ -92,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                             {
                                 FileId = resDecryptChatRecord.MessageContentAsFile!.FileId
                             };
-                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, TestContext.Current.CancellationToken);
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile, CompactTestContext.Current.CancellationToken);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
                             Assert.Equal(resDecryptChatRecord.MessageContentAsFile!.FileSize, resGetMediaFile.FileBytes.Length);
@@ -125,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     }";
 
                     var model = serializer.Deserialize<GetChatRecordsResponse>(json);
-                    Assert.Equal(196ul, model.RecordList[0]!.Sequence);
+                    Assert.Equal(196ul, model.RecordList![0]!.Sequence);
                     Assert.Equal("CAQQ2fbb4QUY0On2rYSAgAMgip/yzgs=", model.RecordList[0]!.MessageId);
                     Assert.Equal(3, model.RecordList[0]!.PublicKeyVersion);
                     Assert.Equal("ftJ+uz3n/z1DsxlkwxNgE+mL38H42/KCvN8T60gbbtPD+Rta1hKTuQPzUzO6Hzne97MgKs7FfdDxDck/v8cDT6gUVjA2tZ/M7euSD0L66opJ/IUeBtpAtvgVSD5qhlaQjvfKJc/zPMGNK2xCLFYqwmQBZXbNT7uA69Fflm512nZKW/piK2RKdYJhRyvQnA1ISxK097sp9WlEgDg250fM5tgwMjujdzr7ehK6gtVBUFldNSJS7ndtIf6aSBfaLktZgwHZ57ONewWq8GJe7WwQf1hwcDbCh7YMG8nsweEwhDfUz+u8rz9an+0lgrYMZFRHnmzjgmLwrR7B/32Qxqd79A==", model.RecordList[0]!.EncryptedRandomKey);
@@ -570,9 +571,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("chatrecord", model.MessageType);
                     Assert.Equal("群聊", model.MessageContentAsChatRecord!.Title);
-                    Assert.Equal("ChatRecordText", model.MessageContentAsChatRecord!.RecordList[0]!.MessageType);
-                    Assert.Equal("{\"content\":\"test\"}", model.MessageContentAsChatRecord!.RecordList[0]!.MessageContentJson);
-                    Assert.Equal(1603875610, model.MessageContentAsChatRecord!.RecordList[0]!.MessageTimestamp);
+                    Assert.Equal("ChatRecordText", model.MessageContentAsChatRecord!.RecordList![0]!.MessageType);
+                    Assert.Equal("{\"content\":\"test\"}", model.MessageContentAsChatRecord!.RecordList![0]!.MessageContentJson);
+                    Assert.Equal(1603875610, model.MessageContentAsChatRecord!.RecordList![0]!.MessageTimestamp);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -634,7 +635,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     Assert.Equal(101, model.MessageContentAsVote!.Type);
                     Assert.Equal("1603875610", model.MessageContentAsVote!.VoteId);
                     Assert.Equal("投票主题", model.MessageContentAsVote!.Title);
-                    Assert.Equal("投票选项", model.MessageContentAsVote!.Options[0]!);
+                    Assert.Equal("投票选项", model.MessageContentAsVote!.Options![0]!);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -685,9 +686,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     Assert.Equal("nick", model.MessageContentAsCollect!.CreatorName);
                     Assert.Equal("2019-12-11 11:21:22", model.MessageContentAsCollect!.CreateTimeString);
                     Assert.Equal("这是填表title", model.MessageContentAsCollect!.Title);
-                    Assert.Equal("1", model.MessageContentAsCollect!.DetailList[0]!.ID);
-                    Assert.Equal("Text", model.MessageContentAsCollect!.DetailList[0]!.Type);
-                    Assert.Equal("表项1，文本", model.MessageContentAsCollect!.DetailList[0]!.Question);
+                    Assert.Equal("1", model.MessageContentAsCollect!.DetailList![0]!.ID);
+                    Assert.Equal("Text", model.MessageContentAsCollect!.DetailList![0]!.Type);
+                    Assert.Equal("表项1，文本", model.MessageContentAsCollect!.DetailList![0]!.Question);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -875,7 +876,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
                     Assert.Equal("calendar", model.MessageType);
                     Assert.Equal("xxx业绩复盘会", model.MessageContentAsCalendar!.Title);
                     Assert.Equal("test", model.MessageContentAsCalendar!.CreatorName);
-                    Assert.Equal("aaa", model.MessageContentAsCalendar!.AttendeeNameList[0]);
+                    Assert.Equal("aaa", model.MessageContentAsCalendar!.AttendeeNameList![0]);
                     Assert.Equal(1603882800, model.MessageContentAsCalendar!.StartTimestamp);
                     Assert.Equal(1603886400, model.MessageContentAsCalendar!.EndTimestamp);
                     Assert.Equal("地点", model.MessageContentAsCalendar!.Place);
@@ -912,7 +913,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests.TestCases
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("mixed", model.MessageType);
-                    Assert.Equal("text", model.MessageContentAsMixed!.MessageList[0]!.Type);
+                    Assert.Equal("text", model.MessageContentAsMixed!.MessageList![0]!.Type);
                     Assert.Equal("{\"content\":\"你好[微笑]\\n\"}", model.MessageContentAsMixed!.MessageList[0]!.ContentJson);
                 }
 

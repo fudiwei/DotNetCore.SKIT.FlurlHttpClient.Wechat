@@ -1,25 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFrameworks>net472; net10.0</TargetFrameworks>
-        <IsPackable>false</IsPackable>
-        <OutputType>Exe</OutputType>
-    </PropertyGroup>
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Test.props', '$(MSBuildThisFileDirectory)../'))" />
 
     <ItemGroup>
-        <None Remove=".gitignore" />
-        <None Update="appsettings.json">
+        <None Include=".gitignore" />
+        <None Include="appsettings.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
+        <None Include="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
-        <PackageReference Include="xunit.v3" Version="4.0.3" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="4.0.1" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
     </ItemGroup>
 
     <ItemGroup>

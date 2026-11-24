@@ -5,15 +5,15 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[POST] /v2/token）")]
         public async Task TestExecuteTokenV2()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AppId, "【已跳过】未配置 \"Credentials.AppId\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_AccountId, "【已跳过】未配置 \"Fixtures.AccountId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AppId, "【已跳过】未配置 \"Credentials.AppId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_AccountId, "【已跳过】未配置 \"Fixtures.AccountId\"。");
 
             using var client = ITClients.CreateOpenAIInstance();
             var request = new Models.TokenV2Request()
             {
                 AccountId = ITConfigs.Fixtures_AccountId
             };
-            var response = await client.ExecuteTokenV2Async(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteTokenV2Async(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.Data);

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[POST] /cgi-bin/qrcode/create）")]
         public async Task TestExecuteCgibinQrcodeCreate()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CgibinQrcodeCreateRequest()
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
                     }
                 }
             };
-            var response = await client.ExecuteCgibinQrcodeCreateAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCgibinQrcodeCreateAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.Ticket);

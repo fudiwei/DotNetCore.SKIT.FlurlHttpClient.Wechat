@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.Contact!.Email!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain, Utilities.RSAUtility.PADDING_MODE_PKCS1)!;
 
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClient(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new GetSubMerchantRequest() { SubMerchantId = "TEST" };
-                    var response = await client.ExecuteGetSubMerchantAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetSubMerchantAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });

@@ -30,7 +30,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases
                 ClientIp = "127.0.0.1",
                 AccessToken = "ACCESS_TOKEN"
             };
-            var response = await mockClient.ExecuteWxaGetUserRiskRankAsync(request, TestContext.Current.CancellationToken);
+#if XUNIT2
+            var response = await mockClient.ExecuteWxaGetUserRiskRankAsync(request);
+#else
+            var response = await mockClient.ExecuteWxaGetUserRiskRankAsync(request, CompactTestContext.Current.CancellationToken);
+#endif
 
             Assert.True(bool.TrueString == response.GetRawHeaders().GetFirstValueOrEmpty(MOCK_RESP_HEADER_RESULT));
             Assert.Equal(0, response.ErrorCode);

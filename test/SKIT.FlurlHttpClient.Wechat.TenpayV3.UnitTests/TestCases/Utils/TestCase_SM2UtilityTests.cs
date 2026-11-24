@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases.Utils
         private const string SM2_PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQg3WePog9R4UV/EVlk\nCw8YHu+rXC/imiB89jFmaAPeXz6gCgYIKoEcz1UBgi2hRANCAATFz9YWXNswc63k\nTWYDkfYZJRNNbcNdEQ1H49e+hF3FaFTryEzBDSdx0RELQz5Tn8/ItUlwkBMHJWMs\nSNinE3Sq\n-----END PRIVATE KEY-----";
         private const string SM2_EC_PUBLIC_KEY = "04c5cfd6165cdb3073ade44d660391f61925134d6dc35d110d47e3d7be845dc56854ebc84cc10d2771d1110b433e539fcfc8b5497090130725632c48d8a71374aa";
         private const string SM2_EC_PRIVATE_KEY = "dd678fa20f51e1457f1159640b0f181eefab5c2fe29a207cf631666803de5f3e";
-        
+
         [Fact(DisplayName = "测试用例：工具类 `SM2Utility.ExportPublicKeyFromCertificate`")]
         public void TestSM2ExportPublicKeyFromCertificate()
         {

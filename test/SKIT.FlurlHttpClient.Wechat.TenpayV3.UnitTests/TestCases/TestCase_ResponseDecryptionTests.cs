@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.BillList![0].EncryptKey!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -53,12 +53,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetBillSubMerchantFundflowBillRequest();
-                    var response = await client.ExecuteGetBillSubMerchantFundflowBillAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetBillSubMerchantFundflowBillAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetBillSubMerchantFundflowBillRequest();
-                    var response = await client.ExecuteGetBillSubMerchantFundflowBillAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetBillSubMerchantFundflowBillAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserCardList![0].UserInfo!.CustomFieldList![0].Values![0]);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -133,12 +133,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.QueryBrandPartnerCardMemberUserCardsRequest();
-                    var response = await client.ExecuteQueryBrandPartnerCardMemberUserCardsAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteQueryBrandPartnerCardMemberUserCardsAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -152,7 +152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.QueryBrandPartnerCardMemberUserCardsRequest();
-                    var response = await client.ExecuteQueryBrandPartnerCardMemberUserCardsAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteQueryBrandPartnerCardMemberUserCardsAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -193,7 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserInfo!.CustomFieldList![0].Values![0]);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -207,12 +207,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeRequest() { UserCardCode = "TEST" };
-                    var response = await client.ExecuteGetBrandPartnerCardMemberUserCardByUserCardCodeAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetBrandPartnerCardMemberUserCardByUserCardCodeAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -226,7 +226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeRequest() { UserCardCode = "TEST" };
-                    var response = await client.ExecuteGetBrandPartnerCardMemberUserCardByUserCardCodeAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetBrandPartnerCardMemberUserCardByUserCardCodeAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -254,7 +254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.AccountValidation!.AccountNumber!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -268,12 +268,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceApplymentByOutRequestNumberRequest() { OutRequestNumber = "TEST" };
-                    var response = await client.ExecuteGetEcommerceApplymentByOutRequestNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceApplymentByOutRequestNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -287,7 +287,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceApplymentByOutRequestNumberRequest() { OutRequestNumber = "TEST" };
-                    var response = await client.ExecuteGetEcommerceApplymentByOutRequestNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceApplymentByOutRequestNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -315,7 +315,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.BillList![0].EncryptKey!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -329,12 +329,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceBillFundflowBillRequest();
-                    var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -348,7 +348,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceBillFundflowBillRequest();
-                    var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -370,7 +370,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -384,12 +384,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceMerchantTransferBillByOutBillNumberRequest() { OutBillNumber = "TEST" };
-                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByOutBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByOutBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -403,7 +403,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceMerchantTransferBillByOutBillNumberRequest() { OutBillNumber = "TEST" };
-                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByOutBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByOutBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -425,7 +425,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -439,12 +439,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.CreateFundAppMerchantTransferBillTransferRequest();
-                    var response = await client.ExecuteCreateFundAppMerchantTransferBillTransferAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteCreateFundAppMerchantTransferBillTransferAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -458,7 +458,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.CreateFundAppMerchantTransferBillTransferRequest();
-                    var response = await client.ExecuteCreateFundAppMerchantTransferBillTransferAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteCreateFundAppMerchantTransferBillTransferAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -480,7 +480,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -494,12 +494,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceMerchantTransferBillByTransferBillNumberRequest() { TransferBillNumber = "TEST" };
-                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByTransferBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByTransferBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -513,7 +513,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetEcommerceMerchantTransferBillByTransferBillNumberRequest() { TransferBillNumber = "TEST" };
-                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByTransferBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByTransferBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -535,7 +535,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -549,12 +549,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetFundAppMerchantTransferBillByOutBillNumberRequest() { OutBillNumber = "TEST" };
-                    var response = await client.ExecuteGetFundAppMerchantTransferBillByOutBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetFundAppMerchantTransferBillByOutBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -568,7 +568,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetFundAppMerchantTransferBillByOutBillNumberRequest() { OutBillNumber = "TEST" };
-                    var response = await client.ExecuteGetFundAppMerchantTransferBillByOutBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetFundAppMerchantTransferBillByOutBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -590,7 +590,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -604,12 +604,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberRequest() { OutBillNumber = "TEST" };
-                    var response = await client.ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -623,7 +623,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberRequest() { OutBillNumber = "TEST" };
-                    var response = await client.ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -645,7 +645,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -659,12 +659,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -678,7 +678,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -706,7 +706,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.Receipt!.MerchantContactInformation!.ConsultationPhoneNumber!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -720,12 +720,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.UploadMarketingShoppingReceiptRequest();
-                    var response = await client.ExecuteUploadMarketingShoppingReceiptAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteUploadMarketingShoppingReceiptAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -739,7 +739,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.UploadMarketingShoppingReceiptRequest();
-                    var response = await client.ExecuteUploadMarketingShoppingReceiptAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteUploadMarketingShoppingReceiptAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -767,7 +767,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.ComplaintList![0].PayerPhone!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -781,12 +781,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.QueryMerchantServiceComplaintsRequest();
-                    var response = await client.ExecuteQueryMerchantServiceComplaintsAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteQueryMerchantServiceComplaintsAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -800,7 +800,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.QueryMerchantServiceComplaintsRequest();
-                    var response = await client.ExecuteQueryMerchantServiceComplaintsAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteQueryMerchantServiceComplaintsAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -822,7 +822,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.PayerPhone!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -836,12 +836,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetMerchantServiceComplaintByComplaintIdRequest() { ComplaintId = "TEST" };
-                    var response = await client.ExecuteGetMerchantServiceComplaintByComplaintIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetMerchantServiceComplaintByComplaintIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -855,7 +855,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetMerchantServiceComplaintByComplaintIdRequest() { ComplaintId = "TEST" };
-                    var response = await client.ExecuteGetMerchantServiceComplaintByComplaintIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetMerchantServiceComplaintByComplaintIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -888,7 +888,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList![0]!.Buyer!.UserEmail!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -902,12 +902,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest() { FapiaoApplyId = "TEST" };
-                    var response = await client.ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -921,7 +921,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest() { FapiaoApplyId = "TEST" };
-                    var response = await client.ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -945,7 +945,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserEmail!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -959,12 +959,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetNewTaxControlFapiaoUserTitleRequest();
-                    var response = await client.ExecuteGetNewTaxControlFapiaoUserTitleAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetNewTaxControlFapiaoUserTitleAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -978,7 +978,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetNewTaxControlFapiaoUserTitleRequest();
-                    var response = await client.ExecuteGetNewTaxControlFapiaoUserTitleAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetNewTaxControlFapiaoUserTitleAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1000,7 +1000,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1014,12 +1014,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPartnerTransferBatchDetailByDetailIdRequest() { BatchId = "TEST", DetailId = "TEST" };
-                    var response = await client.ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1033,7 +1033,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPartnerTransferBatchDetailByDetailIdRequest() { BatchId = "TEST", DetailId = "TEST" };
-                    var response = await client.ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1055,7 +1055,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1069,12 +1069,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPartnerTransferBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1088,7 +1088,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPartnerTransferBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1116,7 +1116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.BillList![0].EncryptKey!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1130,12 +1130,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPayScoreMerchantBillRequest();
-                    var response = await client.ExecuteGetPayScoreMerchantBillAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPayScoreMerchantBillAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1149,7 +1149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPayScoreMerchantBillRequest();
-                    var response = await client.ExecuteGetPayScoreMerchantBillAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPayScoreMerchantBillAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1171,7 +1171,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1185,12 +1185,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdRequest() { BatchId = "TEST", DetailId = "TEST" };
-                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1204,7 +1204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdRequest() { BatchId = "TEST", DetailId = "TEST" };
-                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1226,7 +1226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1240,12 +1240,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1259,7 +1259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1289,7 +1289,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.GuideList![0].UserMobileNumber!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1303,12 +1303,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.QuerySmartGuidesRequest();
-                    var response = await client.ExecuteQuerySmartGuidesAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteQuerySmartGuidesAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1322,7 +1322,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.QuerySmartGuidesRequest();
-                    var response = await client.ExecuteQuerySmartGuidesAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteQuerySmartGuidesAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1344,7 +1344,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1358,12 +1358,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetTransferBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetTransferBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetTransferBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1377,7 +1377,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetTransferBatchDetailByOutDetailNumberRequest() { OutBatchNumber = "TEST", OutDetailNumber = "TEST" };
-                    var response = await client.ExecuteGetTransferBatchDetailByOutDetailNumberAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetTransferBatchDetailByOutDetailNumberAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
@@ -1399,7 +1399,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_CERTIFICATE, plain)!;
 
@@ -1413,12 +1413,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseRSA(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetTransferBatchDetailByDetailIdRequest() { BatchId = "TEST", DetailId = "TEST" };
-                    var response = await client.ExecuteGetTransferBatchDetailByDetailIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetTransferBatchDetailByDetailIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> encryptor = (plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_CERTIFICATE, plain)!;
 
@@ -1432,7 +1432,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 using (var client = CreateMockClientUseSM2(autoDecrypt: true, mockResponseContent: JsonSerializer.Serialize(GenerateMockResponseModel(encryptor))))
                 {
                     var request = new Models.GetTransferBatchDetailByDetailIdRequest() { BatchId = "TEST", DetailId = "TEST" };
-                    var response = await client.ExecuteGetTransferBatchDetailByDetailIdAsync(request, TestContext.Current.CancellationToken);
+                    var response = await client.ExecuteGetTransferBatchDetailByDetailIdAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockResponseModel(response);
                 }
             });

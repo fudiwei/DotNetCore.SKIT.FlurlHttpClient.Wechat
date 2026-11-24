@@ -36,21 +36,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher, Utilities.RSAUtility.PADDING_MODE_PKCS1)!;
 
                 using (var client = CreateMockClient(autoEncrypt: false))
                 {
                     var request = GenerateMockRequestModel();
-                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    await client.EncryptRequestSensitivePropertyAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockRequestModel(request, decryptor);
                 }
 
                 using (var client = CreateMockClient(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
-                    await client.ExecuteVerifyCustomsCertificateAsync(request, TestContext.Current.CancellationToken);
+                    await client.ExecuteVerifyCustomsCertificateAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockRequestModel(request, decryptor);
                 }
             });
@@ -83,21 +83,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
-            await Assert.MultipleAsync(async () =>
+            Assert.Multiple(async () =>
             {
                 Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher, Utilities.RSAUtility.PADDING_MODE_PKCS1)!;
 
                 using (var client = CreateMockClient(autoEncrypt: false))
                 {
                     var request = GenerateMockRequestModel();
-                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    await client.EncryptRequestSensitivePropertyAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockRequestModel(request, decryptor);
                 }
 
                 using (var client = CreateMockClient(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
-                    await client.ExecuteAddSubMerchantAsync(request, TestContext.Current.CancellationToken);
+                    await client.ExecuteAddSubMerchantAsync(request, CompactTestContext.Current.CancellationToken);
                     AssertMockRequestModel(request, decryptor);
                 }
             });

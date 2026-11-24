@@ -5,10 +5,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
         [Fact(DisplayName = "测试用例：验证响应签名（基于 RSA）")]
         public async Task TestVerifyResponseSignatureUseRSA()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantRSACertificateSerialNumber, "【已跳过】未配置 \"Credentials.MerchantRSACertificateSerialNumber\" 或 \"Credentials.MerchantSM2CertificateSerialNumber\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantRSACertificatePrivateKey, "【已跳过】未配置 \"Credentials.MerchantRSACertificatePrivateKey\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantRSACertificateSerialNumber, "【已跳过】未配置 \"Credentials.MerchantRSACertificateSerialNumber\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantRSACertificatePrivateKey, "【已跳过】未配置 \"Credentials.MerchantRSACertificatePrivateKey\"。");
 
             using var client = new WechatTenpayClient(new WechatTenpayClientOptions()
             {
@@ -21,8 +21,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             });
 
             var request = new Models.QueryCertificatesRequest() { AlgorithmType = "RSA" };
-            var response = await client.ExecuteQueryCertificatesAsync(request, TestContext.Current.CancellationToken);
-            foreach (var certificate in response.CertificateList)
+            var response = await client.ExecuteQueryCertificatesAsync(request, CompactTestContext.Current.CancellationToken);
+            foreach (var certificate in response.CertificateList!)
             {
                 client.PlatformCertificateManager.AddEntry(Settings.CertificateEntry.Parse(certificate));
             }
@@ -33,16 +33,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             Assert.NotNull(response.WechatpaySignature);
             Assert.NotNull(response.WechatpaySignatureType);
             Assert.NotNull(response.WechatpaySerialNumber);
+
             Assert.True(client.VerifyResponseSignature(response));
+            Assert.True(await client.VerifyResponseSignatureAsync(response, CompactTestContext.Current.CancellationToken));
         }
 
         [Fact(DisplayName = "测试用例：验证响应签名（基于 SM2）")]
         public async Task TestVerifyResponseSignatureUseSM2()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSM2CertificateSerialNumber, "【已跳过】未配置 \"Credentials.MerchantSM2CertificateSerialNumber\"。");
-            Assert.SkipWhen("" == ITConfigs.Credentials_MerchantSM2CertificatePrivateKey, "【已跳过】未配置 \"Credentials.MerchantSM2CertificatePrivateKey\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantId, "【已跳过】未配置 \"Credentials.MerchantId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSecret, "【已跳过】未配置 \"Credentials.MerchantSecret\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSM2CertificateSerialNumber, "【已跳过】未配置 \"Credentials.MerchantSM2CertificateSerialNumber\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_MerchantSM2CertificatePrivateKey, "【已跳过】未配置 \"Credentials.MerchantSM2CertificatePrivateKey\"。");
 
             using var client = new WechatTenpayClient(new WechatTenpayClientOptions()
             {
@@ -56,8 +58,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             });
 
             var request = new Models.QueryCertificatesRequest() { AlgorithmType = "SM2" };
-            var response = await client.ExecuteQueryCertificatesAsync(request, TestContext.Current.CancellationToken);
-            foreach (var certificate in response.CertificateList)
+            var response = await client.ExecuteQueryCertificatesAsync(request, CompactTestContext.Current.CancellationToken);
+            foreach (var certificate in response.CertificateList!)
             {
                 client.PlatformCertificateManager.AddEntry(Settings.CertificateEntry.Parse(certificate));
             }
@@ -68,7 +70,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             Assert.NotNull(response.WechatpaySignature);
             Assert.NotNull(response.WechatpaySignatureType);
             Assert.NotNull(response.WechatpaySerialNumber);
+
             Assert.True(client.VerifyResponseSignature(response));
+            Assert.True(await client.VerifyResponseSignatureAsync(response, CompactTestContext.Current.CancellationToken));
         }
     }
 }

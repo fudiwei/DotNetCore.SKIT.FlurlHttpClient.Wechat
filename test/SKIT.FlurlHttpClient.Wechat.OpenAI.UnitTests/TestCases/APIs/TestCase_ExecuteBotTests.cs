@@ -5,9 +5,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[POST] /v2/bot/query）")]
         public async Task TestExecuteTokenV2()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_UserId, "【已跳过】未配置 \"Fixtures.UserId\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_UserName, "【已跳过】未配置 \"Fixtures.UserName\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_UserId, "【已跳过】未配置 \"Fixtures.UserId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_UserName, "【已跳过】未配置 \"Fixtures.UserName\"。");
 
             using var client = ITClients.CreateOpenAIInstance();
             var request = new Models.BotQueryV2Request()
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests.TestCases.APIs
                 UserName = ITConfigs.Fixtures_UserName,
                 AccessToken = ITConfigs.Credentials_AccessToken
             };
-            var response = await client.ExecuteBotQueryV2Async(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteBotQueryV2Async(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.Data);

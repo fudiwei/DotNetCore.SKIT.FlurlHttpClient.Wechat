@@ -22,7 +22,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases
             {
                 ShopOrderId = "test_shop_order_id"
             };
-            _ = await mockClient.ExecuteCgibinExpressLocalBusinessTestUpdateOrderAsync(request, TestContext.Current.CancellationToken);
+#if XUNIT2
+            _ = await mockClient.ExecuteCgibinExpressLocalBusinessTestUpdateOrderAsync(request);
+#else
+            _ = await mockClient.ExecuteCgibinExpressLocalBusinessTestUpdateOrderAsync(request, CompactTestContext.Current.CancellationToken);
+#endif
 
             Assert.Equal("a93d8d6bae9a9483c1b1d4e8670e7f6226ec94cb", request.DeliverySignature, ignoreCase: true);
         }
@@ -53,12 +57,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases
                 UserIp = "127.0.0.1",
                 SessionKey = "9hAb/NEYUlkaMBEsmFgzig=="
             };
-            _ = await mockClient.ExecuteXPayQueryUserBalanceAsync(request, TestContext.Current.CancellationToken);
+#if XUNIT2
+            _ = await mockClient.ExecuteXPayQueryUserBalanceAsync(request);
+#else
+            _ = await mockClient.ExecuteXPayQueryUserBalanceAsync(request, CompactTestContext.Current.CancellationToken);
+#endif
 
             Assert.Equal("e690cc22b6378ca9d70fe61727fabf65f0273d436813447816951989867a134c", request.Signature, ignoreCase: true);
             Assert.Equal("fb4703e6b7da545a7f43428f02f2a9fa42e895704c6319d01a0aa859cf63253c", request.PaySign, ignoreCase: true);
         }
 
+#pragma warning disable CS0618
         [Fact(DisplayName = "测试用例：米大师 1.0 相关接口请求签名")]
         public async Task TestMidasRequestSigning()
         {
@@ -78,10 +87,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases
                 Platform = "android",
                 Timestamp = 1507530737
             };
-            _ = await mockClient.ExecuteCgibinMidasGetBalanceAsync(request, TestContext.Current.CancellationToken);
+#if XUNIT2
+            _ = await mockClient.ExecuteCgibinMidasGetBalanceAsync(request);
+#else
+            _ = await mockClient.ExecuteCgibinMidasGetBalanceAsync(request, CompactTestContext.Current.CancellationToken);
+#endif
 
             Assert.Equal("1ad64e8dcb2ec1dc486b7fdf01f4a15159fc623dc3422470e51cf6870734726b", request.Signature, ignoreCase: true);
         }
+#pragma warning restore CS0618
 
         [Fact(DisplayName = "测试用例：米大师 2.0 相关接口请求签名")]
         public async Task TestMidasV2RequestSigning()
@@ -112,7 +126,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases
                 Timestamp = 1668136271,
                 SessionKey = "9hAb/NEYUlkaMBEsmFgzig=="
             };
-            _ = await mockClient.ExecuteWxaGameGetBalanceAsync(request, TestContext.Current.CancellationToken);
+#if XUNIT2
+            _ = await mockClient.ExecuteWxaGameGetBalanceAsync(request);
+#else
+            _ = await mockClient.ExecuteWxaGameGetBalanceAsync(request, CompactTestContext.Current.CancellationToken);
+#endif
 
             Assert.Equal("7ec6d737f118b0c898de39ef1b6b199c48290e699495364fe9d069597a7da125", request.Signature, ignoreCase: true);
             Assert.Equal("5fc5460b23b2589efb8adbc2cf08d7a9cd8892b33e084249a26455b7880741a8", request.PaySign, ignoreCase: true);

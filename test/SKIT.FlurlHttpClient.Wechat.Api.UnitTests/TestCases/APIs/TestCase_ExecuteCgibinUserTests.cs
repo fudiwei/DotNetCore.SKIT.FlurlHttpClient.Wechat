@@ -5,8 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[GET] /cgi-bin/user/info）")]
         public async Task TestExecuteCgibinUserInfo()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CgibinUserInfoRequest()
@@ -14,17 +14,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
                 AccessToken = ITConfigs.Credentials_AccessToken,
                 OpenId = ITConfigs.Fixtures_OpenId
             };
-            var response = await client.ExecuteCgibinUserInfoAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCgibinUserInfoAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
-            Assert.NotEmpty(response.OpenId);
+            Assert.NotNull(response.OpenId);
         }
 
         [Fact(DisplayName = "测试用例：调用 API（[POST] /cgi-bin/user/info/batchget）")]
         public async Task TestExecuteCgibinUserInfoBatchGet()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CgibinUserInfoBatchGetRequest()
@@ -38,19 +38,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
                     }
                 }
             };
-            var response = await client.ExecuteCgibinUserInfoBatchGetAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCgibinUserInfoBatchGetAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
+            Assert.NotNull(response.UserList);
             Assert.NotEmpty(response.UserList);
-            Assert.NotEmpty(response.UserList.First().OpenId);
+            Assert.NotNull(response.UserList.First().OpenId);
             Assert.True(response.UserList.First().IsSubscribed);
         }
 
         [Fact(DisplayName = "测试用例：调用 API（[POST] /cgi-bin/user/info/updateremark）")]
         public async Task TestExecuteCgibinUserInfoUpdateRemark()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
-            Assert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Fixtures_OpenId, "【已跳过】未配置 \"Fixtures.OpenId\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CgibinUserInfoUpdateRemarkRequest()
@@ -59,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
                 OpenId = ITConfigs.Fixtures_OpenId,
                 Remark = "FAKE_REMARK"
             };
-            var response = await client.ExecuteCgibinUserInfoUpdateRemarkAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCgibinUserInfoUpdateRemarkAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
         }
@@ -67,16 +68,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.APIs
         [Fact(DisplayName = "测试用例：调用 API（[GET] /cgi-bin/user/get）")]
         public async Task TestExecuteCgibinUserGet()
         {
-            Assert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
+            CompactAssert.SkipWhen("" == ITConfigs.Credentials_AccessToken, "【已跳过】未配置 \"Credentials.AccessToken\"。");
 
             using var client = ITClients.CreateInstance();
             var request = new Models.CgibinUserGetRequest()
             {
                 AccessToken = ITConfigs.Credentials_AccessToken
             };
-            var response = await client.ExecuteCgibinUserGetAsync(request, TestContext.Current.CancellationToken);
+            var response = await client.ExecuteCgibinUserGetAsync(request, CompactTestContext.Current.CancellationToken);
 
             Assert.True(response.IsSuccessful());
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.OpenIdList);
             Assert.NotEmpty(response.Data.OpenIdList);
             Assert.True(response.Total > 0);
             Assert.True(response.Count > 0);
