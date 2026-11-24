@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public Types.Settlement? Settlement { get; set; }
             }
 
-            public abstract class __zz__Payer : CreatePayTransactionAppRequest.Types.Payer
+            public abstract class __zz__Payer : CreatePayTransactionAppRequest.Types.__zz__Payer
             {
                 /// <summary>
                 /// 获取或设置子商户用户 OpenId。

@@ -7,11 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : CreatePayPartnerTransactionAppRequest.Types.Amount
+            public class Payer : CreatePayTransactionCodePayRequest.Types.Payer
             {
             }
 
-            public class Payer : CreatePayTransactionCodePayRequest.Types.Payer
+            public class Amount : CreatePayPartnerTransactionAppRequest.Types.Amount
             {
             }
 

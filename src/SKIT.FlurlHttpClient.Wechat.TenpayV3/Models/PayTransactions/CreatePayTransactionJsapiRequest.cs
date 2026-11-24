@@ -3,12 +3,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /pay/transactions/jsapi 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreatePayTransactionJsapiRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class Payer : CreatePayTransactionAppRequest.Types.Payer
+            public class Payer : CreatePayTransactionAppRequest.Types.__zz__Payer
             {
+                public static class Types
+                {
+                    public class Identity : CreatePayTransactionAppRequest.Types.Payer.Types.Identity
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置实名支付信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("identity")]
+                [System.Text.Json.Serialization.JsonPropertyName("identity")]
+                public Types.Identity? Identity { get; set; }
             }
 
             public class Amount : CreatePayTransactionAppRequest.Types.Amount

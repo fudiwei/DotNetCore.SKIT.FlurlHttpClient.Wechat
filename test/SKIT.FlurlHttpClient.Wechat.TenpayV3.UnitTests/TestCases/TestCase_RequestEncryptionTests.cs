@@ -774,6 +774,336 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             });
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /combine-transactions/app）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateCombineTransactionAppRequest()
+        {
+            static Models.CreateCombineTransactionAppRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateCombineTransactionAppRequest()
+                {
+                    CombinePayer = new Models.CreateCombineTransactionAppRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreateCombineTransactionAppRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateCombineTransactionAppRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionAppAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionAppAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /combine-transactions/h5）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateCombineTransactionH5Request()
+        {
+            static Models.CreateCombineTransactionH5Request GenerateMockRequestModel()
+            {
+                return new Models.CreateCombineTransactionH5Request()
+                {
+                    CombinePayer = new Models.CreateCombineTransactionH5Request.Types.Payer()
+                    {
+                        Identity = new Models.CreateCombineTransactionH5Request.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateCombineTransactionH5Request request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionH5Async(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionH5Async(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /combine-transactions/jsapi）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateCombineTransactionJsapiRequest()
+        {
+            static Models.CreateCombineTransactionJsapiRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateCombineTransactionJsapiRequest()
+                {
+                    CombinePayer = new Models.CreateCombineTransactionJsapiRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreateCombineTransactionJsapiRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateCombineTransactionJsapiRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionJsapiAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionJsapiAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /combine-transactions/miniprogram）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateCombineTransactionMiniProgramRequest()
+        {
+            static Models.CreateCombineTransactionMiniProgramRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateCombineTransactionMiniProgramRequest()
+                {
+                    CombinePayer = new Models.CreateCombineTransactionMiniProgramRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreateCombineTransactionMiniProgramRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateCombineTransactionMiniProgramRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionMiniProgramAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionMiniProgramAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /combine-transactions/native）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateCombineTransactionNativeRequest()
+        {
+            static Models.CreateCombineTransactionNativeRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateCombineTransactionNativeRequest()
+                {
+                    CombinePayer = new Models.CreateCombineTransactionNativeRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreateCombineTransactionNativeRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateCombineTransactionNativeRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CombinePayer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CombinePayer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionNativeAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateCombineTransactionNativeAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /ecommerce/account/apply-cancel-withdraw）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateEcommerceAccountCancelWithdrawApplicationRequest()
         {
@@ -2592,6 +2922,534 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreatePartnerTransferBatchAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/partner/transactions/app）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayPartnerTransactionAppRequest()
+        {
+            static Models.CreatePayPartnerTransactionAppRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayPartnerTransactionAppRequest()
+                {
+                    Payer = new Models.CreatePayPartnerTransactionAppRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayPartnerTransactionAppRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayPartnerTransactionAppRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionAppAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionAppAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/partner/transactions/h5）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayPartnerTransactionH5Request()
+        {
+            static Models.CreatePayPartnerTransactionH5Request GenerateMockRequestModel()
+            {
+                return new Models.CreatePayPartnerTransactionH5Request()
+                {
+                    Payer = new Models.CreatePayPartnerTransactionH5Request.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayPartnerTransactionH5Request.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayPartnerTransactionH5Request request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionH5Async(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionH5Async(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/partner/transactions/jsapi）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayPartnerTransactionJsapiRequest()
+        {
+            static Models.CreatePayPartnerTransactionJsapiRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayPartnerTransactionJsapiRequest()
+                {
+                    Payer = new Models.CreatePayPartnerTransactionJsapiRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayPartnerTransactionJsapiRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayPartnerTransactionJsapiRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionJsapiAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionJsapiAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/partner/transactions/native）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayPartnerTransactionNativeRequest()
+        {
+            static Models.CreatePayPartnerTransactionNativeRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayPartnerTransactionNativeRequest()
+                {
+                    Payer = new Models.CreatePayPartnerTransactionNativeRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayPartnerTransactionNativeRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayPartnerTransactionNativeRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionNativeAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayPartnerTransactionNativeAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/transactions/app）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayTransactionAppRequest()
+        {
+            static Models.CreatePayTransactionAppRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayTransactionAppRequest()
+                {
+                    Payer = new Models.CreatePayTransactionAppRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayTransactionAppRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayTransactionAppRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionAppAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionAppAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/transactions/h5）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayTransactionH5Request()
+        {
+            static Models.CreatePayTransactionH5Request GenerateMockRequestModel()
+            {
+                return new Models.CreatePayTransactionH5Request()
+                {
+                    Payer = new Models.CreatePayTransactionH5Request.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayTransactionH5Request.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayTransactionH5Request request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionH5Async(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionH5Async(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/transactions/jsapi）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayTransactionJsapiRequest()
+        {
+            static Models.CreatePayTransactionJsapiRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayTransactionJsapiRequest()
+                {
+                    Payer = new Models.CreatePayTransactionJsapiRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayTransactionJsapiRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayTransactionJsapiRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionJsapiAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionJsapiAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /pay/transactions/native）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayTransactionNativeRequest()
+        {
+            static Models.CreatePayTransactionNativeRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayTransactionNativeRequest()
+                {
+                    Payer = new Models.CreatePayTransactionNativeRequest.Types.Payer()
+                    {
+                        Identity = new Models.CreatePayTransactionNativeRequest.Types.Payer.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayTransactionNativeRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payer!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payer!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionNativeAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreatePayTransactionNativeAsync(request, TestContext.Current.CancellationToken);
                     AssertMockRequestModel(request, decryptor);
                 }
             });

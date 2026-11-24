@@ -3,11 +3,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /pay/transactions/app 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreatePayTransactionAppRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class Payer
+            public abstract class __zz__Payer
             {
                 /// <summary>
                 /// 获取或设置用户 OpenId。
@@ -15,6 +16,61 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 public string? OpenId { get; set; }
+            }
+
+            public class Payer : __zz__Payer
+            {
+                public static class Types
+                {
+                    public class Identity
+                    {
+                        /// <summary>
+                        /// 获取或设置证件类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public string? IdentityType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置证件姓名。
+                        /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                        /// </remarks>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
+                        public string? IdName { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置证件号码。
+                        /// </summary>
+                        /// <remarks>
+                        /// 该属性是敏感数据字段，需要使用平台公钥或证书加密。
+                        /// </remarks>
+                        [Newtonsoft.Json.JsonProperty("number")]
+                        [System.Text.Json.Serialization.JsonPropertyName("number")]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
+                        public string? IdNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否加密证件信息。
+                        /// <para>默认值：true</para>
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_encrypted")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_encrypted")]
+                        public bool? IsEncrypted { get; set; } = true;
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置实名支付信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("identity")]
+                [System.Text.Json.Serialization.JsonPropertyName("identity")]
+                public Types.Identity? Identity { get; set; }
             }
 
             public class Amount

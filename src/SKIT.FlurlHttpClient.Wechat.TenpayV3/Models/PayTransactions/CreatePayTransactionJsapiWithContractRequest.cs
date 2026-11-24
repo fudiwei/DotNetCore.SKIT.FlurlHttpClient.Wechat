@@ -1,0 +1,181 @@
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+{
+    /// <summary>
+    /// <para>表示 [POST] /pay/transactions/jsapi-with-contract 接口的请求。</para>
+    /// </summary>
+    public class CreatePayTransactionJsapiWithContractRequest : WechatTenpayRequest
+    {
+        public static class Types
+        {
+            public class Payer : CreatePayTransactionAppRequest.Types.__zz__Payer
+            {
+            }
+
+            public class Amount : CreatePayTransactionAppRequest.Types.Amount
+            {
+            }
+
+            public class Detail : CreatePayTransactionAppRequest.Types.__zz__Detail
+            {
+                public static class Types
+                {
+                    public class GoodsDetail : CreatePayTransactionAppRequest.Types.Detail.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
+            }
+
+            public class Scene : CreatePayTransactionAppRequest.Types.__zz__Scene
+            {
+                public static class Types
+                {
+                    public class Store : CreatePayTransactionAppRequest.Types.Scene.Types.Store
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置商户门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
+            }
+
+            public class Settlement : CreatePayTransactionAppRequest.Types.Settlement
+            {
+            }
+
+            public class Contract
+            {
+                /// <summary>
+                /// 获取或设置免密协议 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("password_free_contract_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("password_free_contract_id")]
+                public string? PasswordFreeContractId { get; set; }
+
+                /// <summary>
+                /// 获取或设置扣费服务预授权 Token。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("token")]
+                [System.Text.Json.Serialization.JsonPropertyName("token")]
+                public string? Token { get; set; }
+            }
+        }
+
+        /// <summary>
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("mchid")]
+        public string? MerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description")]
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
+        public string? OutTradeNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置交易结束时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("time_expire")]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("time_expire")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.RFC3339DateTimeOffsetConverter))]
+        public DateTimeOffset? ExpireTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置附加数据。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attach")]
+        [System.Text.Json.Serialization.JsonPropertyName("attach")]
+        public string? Attachment { get; set; }
+
+        /// <summary>
+        /// 获取或设置回调通知地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("notify_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
+        public string? NotifyUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置订单优惠标记。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("goods_tag")]
+        [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
+        public string? GoodsTag { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否支持开票。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("support_fapiao")]
+        [System.Text.Json.Serialization.JsonPropertyName("support_fapiao")]
+        public bool? IsSupportFapiao { get; set; }
+
+        /// <summary>
+        /// 获取或设置金额信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+        public Types.Amount? Amount { get; set; }
+
+        /// <summary>
+        /// 获取或设置支付者信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("payer")]
+        [System.Text.Json.Serialization.JsonPropertyName("payer")]
+        public Types.Payer? Payer { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("detail")]
+        [System.Text.Json.Serialization.JsonPropertyName("detail")]
+        public Types.Detail? Detail { get; set; }
+
+        /// <summary>
+        /// 获取或设置场景信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("scene_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
+        public Types.Scene? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置结算信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("settle_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
+        public Types.Settlement? Settlement { get; set; }
+
+        /// <summary>
+        /// 获取或设置签约授权信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contract_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("contract_info")]
+        public Types.Contract? Contract { get; set; }
+    }
+}

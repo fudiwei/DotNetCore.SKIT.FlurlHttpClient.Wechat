@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Payer : CreatePayTransactionAppRequest.Types.Payer
+            public class Payer : CreatePayTransactionAppRequest.Types.__zz__Payer
             {
             }
 

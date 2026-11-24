@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /pay/partner/transactions/app 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012523526 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012714669 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080231 ]]>
         /// </para>
@@ -34,6 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /pay/partner/transactions/jsapi 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012523579 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012523593 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012714911 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012738519 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012759974 ]]> <br/>
@@ -61,9 +64,37 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /pay/partner/transactions/jsapi-with-contract 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012526951 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayPartnerTransactionJsapiWithContractResponse> ExecuteCreatePayPartnerTransactionJsapiWithContractAsync(this WechatTenpayClient client, Models.CreatePayPartnerTransactionJsapiWithContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId is null)
+            {
+                request.MerchantId = client.Credentials.MerchantId;
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "jsapi-with-contract");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayPartnerTransactionJsapiWithContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /pay/partner/transactions/h5 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012523544 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012714759 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012738604 ]]>
         /// </para>
@@ -92,6 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /pay/partner/transactions/native 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012523551 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012714902 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012738659 ]]>
         /// </para>
@@ -174,6 +206,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /pay/partner/transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012526944 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012739008 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012759661 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012759714 ]]> <br/>
@@ -210,6 +243,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /pay/partner/transactions/id/{transaction_id} 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012526943 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012738964 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012738969 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012738971 ]]> <br/>
@@ -246,6 +280,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /pay/partner/transactions/out-trade-no/{out_trade_no}/close 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012526949 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012739019 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012759669 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012759725 ]]> <br/>
