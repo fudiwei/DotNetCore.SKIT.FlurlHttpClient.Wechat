@@ -97,6 +97,7 @@
 |  √  |        其他：银行定向促活         | 直连商户 & 合作伙伴 |                   |
 |  √  |       其他：银行提现免费券        |      合作伙伴       |                   |
 |  √  |         其他：银行周周惠          |      合作伙伴       |                   |
+|  √  |     其他：银行积分兑换立减金      |      合作伙伴       |                   |
 |  √  |        其他：优惠费率活动         |      合作伙伴       |                   |
 |  √  |           其他：爱心餐            |      直连商户       |                   |
 |  ×  |     <del>其他：清关报关</del>     |      直连商户       | 官方未提供 v3 API |
@@ -1141,6 +1142,11 @@
         - 高速场景商户扣款：`CreateVehicleETCTransactionHighway`
         - 查询 ETC 签约状态：`GetVehicleETCContractByOpenId` / `GetVehicleETCContractByContractId`
         - 查询订单：`GetVehicleETCTransactionByOutTradeNumber` / `GetVehicleETCTransactionByTransactionId`
+    - 银行积分兑换立减金
+        - 自定义号码包定向用户投放
+            - 查询上传任务列表：`QueryMarketingBankPackagesTasks`
+            - 创建快捷交易协议号上传任务：`UploadMarketingBankPackagesTasks`
+        - 移除活动目标人群接口：`RemoveMarketingBankPointsActivityUsers`
 
 </details>
 
