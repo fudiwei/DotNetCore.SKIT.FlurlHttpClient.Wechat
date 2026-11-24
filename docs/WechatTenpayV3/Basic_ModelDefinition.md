@@ -118,6 +118,8 @@
 <summary>[展开查看]</summary>
 
 - 安全工具
+    - 微信支付公钥
+        - 商户签名验签/加解密测试：`CreateSecurityEcho`
     - 平台证书
         - 获取平台证书列表：`QueryCertificates`
 - 支付产品
@@ -868,6 +870,8 @@
             - 小票机打印：`CreatePayDevicePrinterPrintOrder`
             - 查询订单：`GetPayDevicePrinterPrintOrderByPrintOrderNumber`
 - 安全工具
+    - 微信支付公钥
+        - 商户签名验签/加解密测试：`CreateSecurityEcho`
     - 平台证书
         - 获取平台证书列表：`QueryCertificates`
 - 子商户管理

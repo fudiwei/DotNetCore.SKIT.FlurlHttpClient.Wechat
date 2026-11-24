@@ -3074,6 +3074,63 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases
             });
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /security/echo）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateSecurityEchoRequest()
+        {
+            static Models.CreateSecurityEchoRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateSecurityEchoRequest()
+                {
+                    EncryptedEchoMessage = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateSecurityEchoRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.EncryptedEchoMessage!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.EncryptedEchoMessage!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateSecurityEchoAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+
+            await Assert.MultipleAsync(async () =>
+            {
+                Func<string, string> decryptor = (cipher) => Utilities.SM2Utility.Decrypt(SM2_PRIVATE_KEY, (EncodedString)cipher)!;
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.EncryptRequestSensitivePropertyAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateSecurityEchoAsync(request, TestContext.Current.CancellationToken);
+                    AssertMockRequestModel(request, decryptor);
+                }
+            });
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /smartguide/guides）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateSmartGuideRequest()
         {
