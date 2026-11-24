@@ -2,6 +2,7 @@
     "product_coupon_id": "1000000013",
     "scope": "ALL",
     "type": "DISCOUNT",
+    "business_mode": "FREE",
     "usage_mode": "SINGLE",
     "single_usage_info": {
         "discount_coupon": {

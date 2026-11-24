@@ -2,6 +2,7 @@
     "product_coupon_id": "1002323",
     "scope": "ALL",
     "type": "NORMAL",
+    "business_mode": "FREE",
     "usage_mode": "SEQUENTIAL",
     "single_usage_info": {
         "normal_coupon": {

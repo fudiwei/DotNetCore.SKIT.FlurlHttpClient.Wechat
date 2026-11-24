@@ -263,6 +263,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? Type { get; set; }
 
         /// <summary>
+        /// 获取或设置业务模式。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("business_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("business_mode")]
+        public string? BusinessMode { get; set; }
+
+        /// <summary>
         /// 获取或设置使用模式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("usage_mode")]

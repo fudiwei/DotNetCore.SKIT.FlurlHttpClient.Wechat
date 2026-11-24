@@ -1,6 +1,7 @@
 {
     "out_product_no": "Product_1234567890",
     "scope": "ALL",
+    "business_mode": "FREE",
     "usage_mode": "SINGLE",
     "display_info": {
         "name": "全场满100立打8折",
