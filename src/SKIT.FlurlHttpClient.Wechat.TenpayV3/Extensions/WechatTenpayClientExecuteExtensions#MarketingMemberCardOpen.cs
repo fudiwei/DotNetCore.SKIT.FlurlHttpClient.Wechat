@@ -232,7 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.SetMarketingMemberCardOpenCardCodeUnavailableResponse> ExecuteSetMarketingMemberCardOpenCardCodeUnavailableAsync(this WechatTenpayClient client, Models.SetMarketingMemberCardOpenCardCodeUnavailableRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.UnavailableMarketingMemberCardOpenCardCodeResponse> ExecuteUnavailableMarketingMemberCardOpenCardCodeAsync(this WechatTenpayClient client, Models.UnavailableMarketingMemberCardOpenCardCodeRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -243,7 +243,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "unavailable");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.SetMarketingMemberCardOpenCardCodeUnavailableResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnavailableMarketingMemberCardOpenCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -320,6 +320,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingMemberCardOpenCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/confirm 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4024293873 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ConfirmMarketingMemberCardOpenCardCodeResponse> ExecuteConfirmMarketingMemberCardOpenCardCodeAsync(this WechatTenpayClient client, Models.ConfirmMarketingMemberCardOpenCardCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.CardId, "card_id");
+            Utilities.HttpRequestGuard.AgainstEmptyPathVariable(request.Code, "code");
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId!, "codes", request.Code!, "confirm");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ConfirmMarketingMemberCardOpenCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 

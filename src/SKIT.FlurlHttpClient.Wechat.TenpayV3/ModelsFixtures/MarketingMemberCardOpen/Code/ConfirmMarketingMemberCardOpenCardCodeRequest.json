@@ -1,0 +1,4 @@
+{
+    "fail_reason": "开卡信息校验失败",
+    "user_card_confirm_state": "CREATE_CARD_SUCCESS"
+}
