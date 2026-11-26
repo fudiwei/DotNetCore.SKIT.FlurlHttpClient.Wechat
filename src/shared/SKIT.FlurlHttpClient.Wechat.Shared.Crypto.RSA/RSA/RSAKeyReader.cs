@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA
                         return rsa.ExportPkcs8PrivateKey();
 #else
                         byte[] version = DerEncoder.EncodeInteger(new byte[] { 0 });
-                        byte[] algorithmId = DerEncoder.EncodeSequence(DerEncoder.EncodeObjectIdentifier(DerOID.RSA_ENCRYPTION_OID), DerEncoder.EncodeNull());
+                        byte[] algorithmId = DerEncoder.EncodeSequence(DerEncoder.EncodeObjectIdentifier(DerOID.RSA_ENCRYPTION_OID_RAW), DerEncoder.EncodeNull());
                         byte[] privateKeyInfo = DerEncoder.EncodeOctetString(pkcs1Der);
 
                         byte[] pkcs8Der = DerEncoder.EncodeSequence(version, algorithmId, privateKeyInfo);
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA
                         rsa.ImportRSAPublicKey(pkcs1Der, out _);
                         return rsa.ExportSubjectPublicKeyInfo();
 #else
-                        byte[] algorithmId = DerEncoder.EncodeSequence(DerEncoder.EncodeObjectIdentifier(DerOID.RSA_ENCRYPTION_OID), DerEncoder.EncodeNull());
+                        byte[] algorithmId = DerEncoder.EncodeSequence(DerEncoder.EncodeObjectIdentifier(DerOID.RSA_ENCRYPTION_OID_RAW), DerEncoder.EncodeNull());
                         byte[] subjectPublicKeyInfo = DerEncoder.EncodeBitString(pkcs1Der);
 
                         byte[] spkiDer = DerEncoder.EncodeSequence(algorithmId, subjectPublicKeyInfo);
@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA
 
         private static void ReadAsnAsRsaAlgorithm(AsnReader reader)
         {
-            if (reader.ReadObjectIdentifier() != DerOID.RSA_ENCRYPTION_OID_STRING)
+            if (reader.ReadObjectIdentifier() != DerOID.RSA_ENCRYPTION_OID)
                 throw new CryptographicException("Invalid RSA algorithm identifier.");
             if (reader.HasData)
                 reader.ReadNull();

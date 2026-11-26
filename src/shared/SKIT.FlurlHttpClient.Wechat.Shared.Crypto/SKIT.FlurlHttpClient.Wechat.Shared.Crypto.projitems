@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DerEncoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DerOID.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PemReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PemWriter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)X509Loader.cs" />

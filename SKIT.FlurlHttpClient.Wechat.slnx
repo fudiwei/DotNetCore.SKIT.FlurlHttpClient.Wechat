@@ -5,11 +5,11 @@
     <Project Path="samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_NetFramework48/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_NetFramework48.csproj" Id="dfa229ff-0a4b-411e-9a11-681ba55dfbae" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/shared/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA.shproj" Id="46a01239-278b-4ce3-bf7d-cdca0f3b3b7c" />
     <Project Path="src/shared/SKIT.FlurlHttpClient.Wechat.Shared.Crypto/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.shproj" Id="bd14ff6a-d195-44c7-8084-7e72a8f8cf19" />
+    <Project Path="src/shared/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA.shproj" Id="46a01239-278b-4ce3-bf7d-cdca0f3b3b7c" />
+    <Project Path="src/shared/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.SM/SKIT.FlurlHttpClient.Wechat.Shared.Crypto.SM.shproj" Id="35a6ebdf-24ff-434a-ae02-6b831220dd9f" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.Api/SKIT.FlurlHttpClient.Wechat.Api.csproj" />
-    <Project Path="src/SKIT.FlurlHttpClient.Wechat.OpenAI/SKIT.FlurlHttpClient.Wechat.OpenAI.csproj" />
-    <Project Path="src/SKIT.FlurlHttpClient.Wechat.TenpayBusiness/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.csproj" />
+    <Project Path="src/SKIT.FlurlHttpClient.Wechat.OpenAI/SKIT.FlurlHttpClient.Wechat.OpenAI.csproj" />    <Project Path="src/SKIT.FlurlHttpClient.Wechat.TenpayBusiness/SKIT.FlurlHttpClient.Wechat.TenpayBusiness.csproj" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.TenpayV2/SKIT.FlurlHttpClient.Wechat.TenpayV2.csproj" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.TenpayV3/SKIT.FlurlHttpClient.Wechat.TenpayV3.csproj" />
     <Project Path="src/SKIT.FlurlHttpClient.Wechat.Work/SKIT.FlurlHttpClient.Wechat.Work.csproj" />

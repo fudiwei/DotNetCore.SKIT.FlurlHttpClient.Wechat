@@ -27,21 +27,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithGCM(byte[] keyBytes, byte[] nonceBytes, byte[]? associatedDataBytes, byte[] cipherBytes, string paddingMode = PADDING_MODE_NOPADDING)
         {
-            const int KEY_LENGTH_BYTE = 16;
-            const int NONCE_LENGTH_BYTE = 12;
-            const int TAG_LENGTH_BYTE = 16;
+            const int KEY_BYTE_SIZE = 16;
+            const int NONCE_BYTE_SIZE = 12;
+            const int TAG_BYTE_SIZE = 16;
 
             if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
-            if (keyBytes.Length != KEY_LENGTH_BYTE) throw new ArgumentException($"Invalid key byte length (expected: {KEY_LENGTH_BYTE}, actual: {keyBytes.Length}).", nameof(keyBytes));
+            if (keyBytes.Length != KEY_BYTE_SIZE) throw new ArgumentException($"Invalid key byte size (expected: {KEY_BYTE_SIZE}, actual: {keyBytes.Length}).", nameof(keyBytes));
             if (nonceBytes is null) throw new ArgumentNullException(nameof(nonceBytes));
-            if (nonceBytes.Length != NONCE_LENGTH_BYTE) throw new ArgumentException($"Invalid nonce byte length (expected: {NONCE_LENGTH_BYTE}, actual: {nonceBytes.Length}).", nameof(nonceBytes));
+            if (nonceBytes.Length != NONCE_BYTE_SIZE) throw new ArgumentException($"Invalid nonce byte size (expected: {NONCE_BYTE_SIZE}, actual: {nonceBytes.Length}).", nameof(nonceBytes));
             if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
-            if (cipherBytes.Length < TAG_LENGTH_BYTE) throw new ArgumentException($"Invalid cipher byte length (expected: more than {TAG_LENGTH_BYTE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
+            if (cipherBytes.Length < TAG_BYTE_SIZE) throw new ArgumentException($"Invalid cipher byte size (expected: more than {TAG_BYTE_SIZE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
 
             IBufferedCipher cipher = CipherUtilities.GetCipher($"SM4/GCM/{paddingMode}");
             ICipherParameters cipherParams = new AeadParameters(
                 new KeyParameter(keyBytes),
-                TAG_LENGTH_BYTE * 8,
+                TAG_BYTE_SIZE * 8,
                 nonceBytes,
                 associatedDataBytes
             );
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>加密后的数据字节数组。</returns>
         public static byte[] EncryptWithGCM(byte[] keyBytes, byte[] nonceBytes, byte[]? associatedDataBytes, byte[] plainBytes, string paddingMode = PADDING_MODE_NOPADDING)
         {
-            const int TAG_LENGTH_BYTE = 16;
+            const int TAG_BYTE_SIZE = 16;
 
             if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
             if (nonceBytes is null) throw new ArgumentNullException(nameof(nonceBytes));
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             IBufferedCipher cipher = CipherUtilities.GetCipher($"SM4/GCM/{paddingMode}");
             ICipherParameters cipherParams = new AeadParameters(
                 new KeyParameter(keyBytes),
-                TAG_LENGTH_BYTE * 8,
+                TAG_BYTE_SIZE * 8,
                 nonceBytes,
                 associatedDataBytes
             );

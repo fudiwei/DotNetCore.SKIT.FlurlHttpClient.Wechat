@@ -18,12 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Shared.Crypto
 
             using var rsa = x509.GetRSAPublicKey();
             if (rsa is null)
-                throw new InvalidOperationException("The certificate does not contain a valid RSA public key.");
+                throw new InvalidOperationException("The certificate does not contain a RSA public key.");
 
-            byte[] rsaPubkey = x509.PublicKey.EncodedKeyValue.RawData;
-            byte[] algorithmId = DerEncoder.EncodeSequence(DerEncoder.EncodeObjectIdentifier(DerOID.RSA_ENCRYPTION_OID), DerEncoder.EncodeNull());
+            byte[] publicKey = x509.PublicKey.EncodedKeyValue.RawData;
+            byte[] algorithmId = DerEncoder.EncodeSequence(DerEncoder.EncodeObjectIdentifier(DerOID.RSA_ENCRYPTION_OID_RAW), DerEncoder.EncodeNull());
 
-            byte[] spkiDer = DerEncoder.EncodeSequence(algorithmId, DerEncoder.EncodeBitString(rsaPubkey));
+            byte[] spkiDer = DerEncoder.EncodeSequence(algorithmId, DerEncoder.EncodeBitString(publicKey));
             return spkiDer;
         }
     }

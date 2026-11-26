@@ -24,14 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases.Utils
             Assert.Equal(expectedPublicKey, actualPublicKey);
         }
 
-        [Fact(DisplayName = "测试用例：工具类 `SM2Utility.ExportECPublicKeyFromCertificate`")]
-        public void TestSM2ExportECPublicKeyFromCertificate()
-        {
-            string expectedECPublicKey = SM2_EC_PUBLIC_KEY;
-            string actualECPublicKey = Utilities.SM2Utility.ExportECPublicKeyFromCertificate(CERTIFICATE);
-            Assert.Equal(expectedECPublicKey, actualECPublicKey, ignoreCase: true);
-        }
-
         [Fact(DisplayName = "测试用例：工具类 `SM2Utility.ExportSerialNumberFromCertificate`")]
         public void TestSM2ExportSerialNumberFromCertificate()
         {
@@ -54,6 +46,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases.Utils
             DateTimeOffset expectedNotAfter = DateTimeOffset.Parse(CERTIFICATE_NOT_AFTER);
             DateTimeOffset actualNotAfter = Utilities.SM2Utility.ExportValidToDateFromCertificate(CERTIFICATE);
             Assert.Equal(expectedNotAfter, actualNotAfter);
+        }
+
+        [Fact(DisplayName = "测试用例：工具类 `SM2Utility.ExportECPublicKeyFromCertificate`")]
+        public void TestSM2ExportECPublicKeyFromCertificate()
+        {
+            string expectedECPublicKey = SM2_EC_PUBLIC_KEY;
+            string actualECPublicKey = Utilities.SM2Utility.ExportECPublicKeyFromCertificate(CERTIFICATE);
+            Assert.Equal(expectedECPublicKey, actualECPublicKey, ignoreCase: true);
         }
 
         [Fact(DisplayName = "测试用例：工具类 `SM2Utility.ExportECPublicKeyFromPublicKey`")]
@@ -89,6 +89,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases.Utils
                 string signature = Convert.ToBase64String(Utilities.SM2Utility.SignWithSM3ByECPrivateKey((EncodedString)SM2_EC_PRIVATE_KEY, Encoding.UTF8.GetBytes(plainText)));
                 Assert.NotNull(signature);
                 Assert.True(Utilities.SM2Utility.VerifyWithSM3(SM2_PUBLIC_KEY, plainText, (EncodedString)signature));
+            });
+
+            Assert.Multiple(() =>
+            {
+                byte[] signBytes = Utilities.SM2Utility.SignWithSM3ByECPrivateKey((EncodedString)SM2_EC_PRIVATE_KEY,Encoding.UTF8.GetBytes(plainText), false);
+                Assert.NotNull(signBytes);
+                Assert.Equal(64, signBytes.Length);
+                Assert.True(Utilities.SM2Utility.VerifyWithSM3ByECPublicKey((EncodedString)SM2_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(plainText), signBytes, false));
             });
         }
 

@@ -40,5 +40,6 @@
 
     <Import Project="..\shared\SKIT.FlurlHttpClient.Wechat.Shared.Crypto\SKIT.FlurlHttpClient.Wechat.Shared.Crypto.projitems" Label="Shared" />
     <Import Project="..\shared\SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA\SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA.projitems" Label="Shared" />
+    <Import Project="..\shared\SKIT.FlurlHttpClient.Wechat.Shared.Crypto.SM\SKIT.FlurlHttpClient.Wechat.Shared.Crypto.SM.projitems" Label="Shared" />
 
 </Project>
