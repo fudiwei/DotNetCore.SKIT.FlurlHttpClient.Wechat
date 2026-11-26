@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects); $(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>46a01239-278b-4ce3-bf7d-cdca0f3b3b7c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <RootNamespace>SKIT.FlurlHttpClient.Wechat.Shared.Crypto</RootNamespace>
+    <Import_RootNamespace>SKIT.FlurlHttpClient.Wechat.Shared.Crypto.RSA</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DerOID.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)X509Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RSA\RSAKeyReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RSA\RSAKeySniffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RSA\RSAKeyFormat.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)RSA\" />
+  </ItemGroup>
+</Project>

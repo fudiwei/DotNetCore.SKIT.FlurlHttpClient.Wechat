@@ -1,8 +1,15 @@
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Digests;
+using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Crypto.Signers;
+using Org.BouncyCastle.Security;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.Utils
 {
     using SKIT.FlurlHttpClient.Primitives;
 
-    public class TestCase_RSAUtilityTests
+    public partial class TestCase_RSAUtilityTests
     {
         // 此处的 RSA 证书/公钥/私钥是自签名生成的，仅供执行相关单元测试，不能用于调用微信 API。
         private const string RSA_PUBLIC_KEY_PKCS1 = "-----BEGIN RSA PUBLIC KEY-----\nMIICCgKCAgEA52DszUZzPKPo1d9Hi5Hjlu7OINwADaeXifA4rvmJJaA+jm4DCMwr\nAMzyS12EiW31xCAF8LZ/xkrFHO5CZgvK87Y+kY9DmhvNX6FVYsn4ay7KER0zo87z\nqQjC+njUu1rYuKnio7MYb354PitwQ3SWNv2qTCbCNCXTN9pJXNhlCudWCEWrNrYc\n4/hKz3bqu1DjpY0oHuuKPk/iRr2TTUIAwahNkNQheQNB2a8hL7L2OG1Sn1vaDWe+\n5RJYlMRZ3NgYDTqoy8GMs+6q091MQMDlQ90jtW/JEoM5DUyI8zfQfDLGnU7FuY0r\nrZ/+6OQT/o7ISf0OR5TISS0lqnDN3vVaph0ftDGRdGqJk2SJAHIoxp5gt410rfWS\n9kpSDFJs3Pvt4rtNZBYvkGD8obSm91brAkoX4+u1Y4p1qZpWJ4LIKw8oyeieqlLZ\ntF/VGKOtKxe/IKn8GwoQJLx4dUGFOqM7HPwR9cyjMaC1o3V1NQG+1wD9TLtGh3WX\nUFJRYDmePaSp39GFPupTMlPRbD0RK80B6xv2rYTyYyd8s2LN6P6Hh/nFIkc1rekI\nf9JhPy0WKzrXdmnfjSHKPxmz0WSYN8FxKasqcJhncOdhLTzzVEhj9xHSI8ejP2fJ\n4v+ARoD3GURPD9H7KMa7xmzRSAZ8A8LM3uvdJNhbKBwWqvo45ncz+7cCAwEAAQ==\n-----END RSA PUBLIC KEY-----\r\n";
@@ -13,40 +20,60 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.Utils
         [Fact(DisplayName = "测试用例：工具类 `RSAUtility.SignWithSHA256PSS`")]
         public void TestRSASignWithSHA256PSS()
         {
-            string plainText = "SHA256WithRSASignTest";
-
-            Assert.Multiple(() =>
+            static void AssertStubs(Func<string, string, EncodedString> signer, Func<string, string, EncodedString, bool> verifier)
             {
-                string signature = Utilities.RSAUtility.SignWithSHA256PSS(RSA_PRIVATE_KEY_PKCS1, plainText)!;
-                Assert.False(string.IsNullOrEmpty(signature));
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256PSS(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)signature));
-            });
+                string plainText = "SHA256WithRSASignTest";
 
-            Assert.Multiple(() =>
-            {
-                string signature = Utilities.RSAUtility.SignWithSHA256PSS(RSA_PRIVATE_KEY_PKCS8, plainText)!;
-                Assert.False(string.IsNullOrEmpty(signature));
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256PSS(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)signature));
-            });
+                Assert.Multiple(() =>
+                {
+                    EncodedString signature = signer.Invoke(RSA_PRIVATE_KEY_PKCS1, plainText);
+                    Assert.NotNull(signature.Value);
+                    Assert.NotEmpty(signature.Value);
+
+                    bool valid = verifier.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, signature);
+                    Assert.True(valid);
+                });
+
+                Assert.Multiple(() =>
+                {
+                    EncodedString signature = signer.Invoke(RSA_PRIVATE_KEY_PKCS8, plainText);
+                    Assert.NotNull(signature.Value);
+                    Assert.NotEmpty(signature.Value);
+
+                    bool valid = verifier.Invoke(RSA_PUBLIC_KEY_PKCS8, plainText, signature);
+                    Assert.True(valid);
+                });
+            }
+
+            AssertStubs(MockRSAUtility.SignWithSHA256PSS, MockRSAUtility.VerifyWithSHA256PSS);
+            AssertStubs(MockRSAUtility.SignWithSHA256PSS, Utilities.RSAUtility.VerifyWithSHA256PSS);
+            AssertStubs(Utilities.RSAUtility.SignWithSHA256PSS, MockRSAUtility.VerifyWithSHA256PSS);
+            AssertStubs(Utilities.RSAUtility.SignWithSHA256PSS, Utilities.RSAUtility.VerifyWithSHA256PSS);
         }
 
         [Fact(DisplayName = "测试用例：工具类 `RSAUtility.VerifyWithSHA256PSS`")]
         public void TestRSAVerifyWithSHA256PSS()
         {
-            const string plainText = "SHA256WithRSAVerifyTest";
-            const string signature = "xK9mJSuEfR4nHTBlTiBL3mLYZKZU8sXMiYkmvE1nNWdTfaEoWJ98i9uglFvE3U/dS8SsoHuZ3UNX8SL7v9Jpu4pK5opuqbH2hxMDOrEt+KDUxlZb6NDPCkWAQJoTtAgLHcKXrH9u3DiV18OcbjaWuAC8kWZqmxmkmx9Hzbl/L/CR0C1tj/2ujn8IElH0iKaxB3fR3oYFxwv0v2pgk0gv/AxeynrZD51wx3SfEAWggs8vdVvUHAYXJwg8A9dCK9bRPChFjJEQTdvhXv9lKYf3UHwEQOUtK83yE0FXn6JZuBYdRB0E9Am5Un5gu0DuyxV1a4OUTepimV519rFBDoN6qIsRSItns4G56T/6mHos5Z8Qu3OYcJhI6nw0gYzK7cdTZIm88QvB+e8/+qdqq5tcQ4hhrzznhfc0onXkKDuPGNoGHKTWCdU4gjc0qabFPovD+wsLb97pTM/IXbUa0XywjNrvrM6bUIBlLgeUajbQfKxDgPn1oJVUJHJO7Se+l5XnxY6IA/ntUpuI260ZTh5E9cfa6LRIHIaFVOORwEBIZYXfVfj0Nbk6N4uiqktswxBpyuHO3UG7xRuUOcB8bZSUuuySNjVzAfX2sgGnM8liNlBi5qUBH+a1tUraYtkIg/SWm4QtbPKQCwP4TaQv5Y6+rufqZv2vTq07+KanwnCMHbM=";
-
-            Assert.Multiple(() =>
+            static void AssertStubs(Func<string, string, EncodedString, bool> verifier)
             {
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256PSS(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)signature));
-                Assert.False(Utilities.RSAUtility.VerifyWithSHA256PSS(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)"FAKE SIGN"));
-            });
+                const string plainText = "SHA256WithRSAVerifyTest";
+                const string signature = "xK9mJSuEfR4nHTBlTiBL3mLYZKZU8sXMiYkmvE1nNWdTfaEoWJ98i9uglFvE3U/dS8SsoHuZ3UNX8SL7v9Jpu4pK5opuqbH2hxMDOrEt+KDUxlZb6NDPCkWAQJoTtAgLHcKXrH9u3DiV18OcbjaWuAC8kWZqmxmkmx9Hzbl/L/CR0C1tj/2ujn8IElH0iKaxB3fR3oYFxwv0v2pgk0gv/AxeynrZD51wx3SfEAWggs8vdVvUHAYXJwg8A9dCK9bRPChFjJEQTdvhXv9lKYf3UHwEQOUtK83yE0FXn6JZuBYdRB0E9Am5Un5gu0DuyxV1a4OUTepimV519rFBDoN6qIsRSItns4G56T/6mHos5Z8Qu3OYcJhI6nw0gYzK7cdTZIm88QvB+e8/+qdqq5tcQ4hhrzznhfc0onXkKDuPGNoGHKTWCdU4gjc0qabFPovD+wsLb97pTM/IXbUa0XywjNrvrM6bUIBlLgeUajbQfKxDgPn1oJVUJHJO7Se+l5XnxY6IA/ntUpuI260ZTh5E9cfa6LRIHIaFVOORwEBIZYXfVfj0Nbk6N4uiqktswxBpyuHO3UG7xRuUOcB8bZSUuuySNjVzAfX2sgGnM8liNlBi5qUBH+a1tUraYtkIg/SWm4QtbPKQCwP4TaQv5Y6+rufqZv2vTq07+KanwnCMHbM=";
 
-            Assert.Multiple(() =>
-            {
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256PSS(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)signature));
-                Assert.False(Utilities.RSAUtility.VerifyWithSHA256PSS(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)"FAKE SIGN"));
-            });
+                Assert.Multiple(() =>
+                {
+                    Assert.True(verifier.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)signature));
+                    Assert.False(verifier.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)"FAKE SIGN"));
+                });
+
+                Assert.Multiple(() =>
+                {
+                    Assert.True(verifier.Invoke(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)signature));
+                    Assert.False(verifier.Invoke(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)"FAKE SIGN"));
+                });
+            }
+
+            AssertStubs(MockRSAUtility.VerifyWithSHA256PSS);
+            AssertStubs(Utilities.RSAUtility.VerifyWithSHA256PSS);
 
             // 以下是根据微信官方文档提供的示例数据的测试用例
             Assert.Multiple(() =>
@@ -56,6 +83,74 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests.TestCases.Utils
                 const string signature = "Ht0VfQkkEweJ4hU266C14Aj64H9AXfkwNi5zxUZETCvR2svU1ZYdosDhFX/voLj1TyszqKsVxAlENGt7PPZZ8RQX7jnA4SKhiPUhW4LTbyTenisHJ+ohSfDjYnXavjQsBHspFS+BlPHuSSJ2xyQzw1+HuC6nid09ZL4FnGSYo4OI5MJrSb9xLzIVZMIDuUQchGKi/KaB1KzxECLEZcfjqbAgmxC7qOmuBLyO1WkHYDM95NJrHJWba5xv4wrwPru9yYTJSNRnlM+zrW5w9pOubC4Jtj3szTAEuOz9AcqUmgaAvMLNAIa8hfODLRe3n/cu4SgYlN/ZkNRU4QXVNbPGMg==";
                 Assert.True(Utilities.RSAUtility.VerifyWithSHA256PSSByCertificate(certificate, plainText, new EncodedString(signature, EncodingKinds.Base64)));
             });
+        }
+
+        [Fact(DisplayName = "测试用例：工具类 `RSAUtility.ExportPublicKeyFromCertificate`")]
+        public void TestRSAExportPublicKey()
+        {
+            const string certificate = "-----BEGIN CERTIFICATE-----\nMIID0jCCArqgAwIBAgIUeE+Yy7vM/o+eHHsfM+1bGJJEZTQwDQYJKoZIhvcNAQEL\nBQAwXjELMAkGA1UEBhMCQ04xEzARBgNVBAoTClRlbnBheS5jb20xHTAbBgNVBAsT\nFFRlbnBheS5jb20gQ0EgQ2VudGVyMRswGQYDVQQDExJUZW5wYXkuY29tIFJvb3Qg\nQ0EwHhcNMjIwOTA1MDgzOTIyWhcNMjcwOTA0MDgzOTIyWjBkMRswGQYDVQQDDBJ3\neGQ5MzBlYTVkNWEyNThmNGYxFTATBgNVBAoMDFRlbmNlbnQgSW5jLjEOMAwGA1UE\nCwwFV3hnTXAxCzAJBgNVBAYMAkNOMREwDwYDVQQHDAhTaGVuWmhlbjCCASIwDQYJ\nKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM5D9qlkCmk1kr3FpF0e9pc3kGsvz5RA\n0/YRny9xPKIyV2UVMDZvRQ+mDHsiQQFE6etg457KFYSxTDKtItbdl6hJQVGeAvg0\nmqPYE9SkHRGTfL/AnXRbKBG2GC2OcaPSAprsLOersjay2me+9pF8VHybV8aox78A\nNsU75G/OO3V1iEE0s5Pmglqk8DEiw9gB/dGJzsNfXwzvyJyiUP9ZujYexyjsS+/Z\nGdSOUkqL/th+16yHj8alcdyga6YGfWEDyWkt/i/B28cwx4nzwk8xgrurifPaLuMk\n0+9wJQLCfAn/f7zyHrC8PcD1XvvRt9VBNMBASXs3710ODyyVf2lkMgkCAwEAAaOB\ngTB/MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgTwMGUGA1UdHwReMFwwWqBYoFaGVGh0\ndHA6Ly9ldmNhLml0cnVzLmNvbS5jbi9wdWJsaWMvaXRydXNjcmw/Q0E9MUJENDIy\nMEU1MERCQzA0QjA2QUQzOTc1NDk4NDZDMDFDM0U4RUJEMjANBgkqhkiG9w0BAQsF\nAAOCAQEAL2MK9tYu+ljLVBlSbfEeaKyF07TN+G31Ya5NBzeS1ZCx4joUEIyACWmG\nfUkKNKiKV+EMzxeEhKRso1Qif3E7Ipl+PQBoQw6OSR/jFHciYurnGR9CLkL03Zo1\nqw1Xetv9OipsvlpA0SOWc207e/XpGdm8C7FMXM6bzvVp8I/STTjC1vqjIZu9WavI\nRgGM4jyAPz2XogUq0BNijef8BXbbav9fAsXjHSwn5BQv4iLms3fiLm/eoyQ6dZ2R\noTudrlcyr1bG4vwETLmHF+3yfVp9dpvJ+lyfiviwDwyfa8t2WlJm27DuF4vWoxir\nmjgj9tDutIFqxLIovLyg3uiAYtSQ/Q==\n-----END CERTIFICATE-----";
+
+            string expectedPublicKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzkP2qWQKaTWSvcWkXR72lzeQay/PlEDT9hGfL3E8ojJXZRUwNm9FD6YMeyJBAUTp62DjnsoVhLFMMq0i1t2XqElBUZ4C+DSao9gT1KQdEZN8v8CddFsoEbYYLY5xo9ICmuws56uyNrLaZ772kXxUfJtXxqjHvwA2xTvkb847dXWIQTSzk+aCWqTwMSLD2AH90YnOw19fDO/InKJQ/1m6Nh7HKOxL79kZ1I5SSov+2H7XrIePxqVx3KBrpgZ9YQPJaS3+L8HbxzDHifPCTzGCu6uJ89ou4yTT73AlAsJ8Cf9/vPIesLw9wPVe+9G31UE0wEBJezfvXQ4PLJV/aWQyCQIDAQAB-----END PUBLIC KEY-----";
+            string actualPublicKey = Utilities.RSAUtility.ExportPublicKeyFromCertificate(certificate).Replace("\r", "").Replace("\n", "").Trim();
+            Assert.Equal(expectedPublicKey, actualPublicKey);
+        }
+    }
+
+    partial class TestCase_RSAUtilityTests
+    {
+        /// <summary>
+        /// 基于 BouncyCastle.Cryptography 实现的 RSA 算法工具类。
+        /// 关键方法签名与 `RSAUtility` 完全一致，作为基线检测使用。
+        /// </summary>
+        private static class MockRSAUtility
+        {
+            public static byte[] SignWithSHA256PSS(byte[] privateKeyBytes, byte[] messageBytes)
+            {
+                if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+                if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
+
+                RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+                ISigner signer = new PssSigner(new RsaEngine(), new Sha256Digest());
+                signer.Init(true, rsaPrivateKeyParams);
+                signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
+                return signer.GenerateSignature();
+            }
+
+            public static EncodedString SignWithSHA256PSS(string privateKeyPem, string messageData)
+            {
+                if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
+                if (messageData is null) throw new ArgumentNullException(nameof(messageData));
+
+                byte[] privateKeyBytes = Shared.Crypto.RSA.RSAKeyReader.ReadPrivateKeyBytes(privateKeyPem);
+                byte[] messageBytes = EncodedString.FromLiteralString(messageData);
+                byte[] signBytes = SignWithSHA256PSS(privateKeyBytes, messageBytes);
+                return EncodedString.ToBase64String(signBytes);
+            }
+
+            public static bool VerifyWithSHA256PSS(byte[] publicKeyBytes, byte[] messageBytes, byte[] signBytes)
+            {
+                if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+                if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
+                if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
+
+                RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
+                ISigner signer = new PssSigner(new RsaEngine(), new Sha256Digest());
+                signer.Init(false, rsaPublicKeyParams);
+                signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
+                return signer.VerifySignature(signBytes);
+            }
+
+            public static bool VerifyWithSHA256PSS(string publicKeyPem, string messageData, EncodedString encodingSignature)
+            {
+                if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
+                if (messageData is null) throw new ArgumentNullException(nameof(messageData));
+                if (encodingSignature.Value is null) throw new ArgumentNullException(nameof(encodingSignature));
+
+                byte[] publicKeyBytes = Shared.Crypto.RSA.RSAKeyReader.ReadPublicKeyBytes(publicKeyPem);
+                byte[] messageBytes = EncodedString.FromLiteralString(messageData);
+                byte[] signBytes = EncodedString.FromString(encodingSignature, fallbackEncodingKind: EncodingKinds.Base64);
+                return VerifyWithSHA256PSS(publicKeyBytes, messageBytes, signBytes);
+            }
         }
     }
 }

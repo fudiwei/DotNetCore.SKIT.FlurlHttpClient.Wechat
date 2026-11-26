@@ -1,8 +1,12 @@
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Security;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases.Utils
 {
     using SKIT.FlurlHttpClient.Primitives;
 
-    public class TestCase_RSAUtilityTests
+    public partial class TestCase_RSAUtilityTests
     {
         // 此处的 RSA 证书/公钥/私钥是自签名生成的，仅供执行相关单元测试，不能用于调用微信 API。
         private const string CERTIFICATE_SN = "3050f72e2dce03e7efe49557dd231d176649afbd";
@@ -49,86 +53,260 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.TestCases.Utils
         [Fact(DisplayName = "测试用例：工具类 `RSAUtility.SignWithSHA256`")]
         public void TestRSASignWithSHA256()
         {
-            const string plainText = "SHA256WithRSASignTest";
-
-            string expectedSignature = "EzeVEIoBhzOhXpwbXdJjIuGIGRc6ArKO7sVo2fuAdzYTDgorAEufEnw7lPPXV1GTfFcHOnsAJH9kGJmg7Orwlkh7x7TyOGrkMEhWGulA9SIdmou4iBsHpIZ/TERSgGt/VTmqmfpkzJqrvbQWIQENwo7Lr6uJSJBND0YT3nIBP8TzbO3cHnQb6chHIBHrDF5vOO7HHu+Cga2MZnAtRizhO8BhK0jOmyro32CgIML3EVX8yuPy0kOk6aN1R8xFblZUD4NU2M6zzQpydmxaHr9B1WNFoMwmpoAS5BuKJMYOHO5cc6DhB+0fAGxaWtKp6759KhKCf8M65zh3WKS4l262SGuWq4qG1+AKf2DOgCon769+A4z8flOmvl0iIwoH9FThGJoP156rpAJW7v/bWputSeC6WToUTBRmGWdwWySVwW5AZ26OAFFWs1CmrGp3jF5E2oUy1mQwgfM0QN6DW+wD769ggIYH9HLHqDHbF5UyF7eNh3s8Qy23xXEKZWNMAJ0IdtdMQ7FRRgLFSCai7HELLlBJSCz7P5WTeYZGQpbvnUShkRvzujjO6XlGiKKI0EwKb121z8N6KRpvs4SnRztWBGoXbzHZgnXKXU/BWWADemqB2cvaT3Bj0k3/N3sea0dAEtlNEklRWoyyNUUlscK9zg4LBlHrhbbFo66uuub8ySo=";
-
-            Assert.Multiple(() =>
+            static void AssertStubs(Func<string, string, EncodedString> signer, Func<string, string, EncodedString, bool> verifier)
             {
-                string actualSignature = Utilities.RSAUtility.SignWithSHA256(RSA_PRIVATE_KEY_PKCS1, plainText)!;
-                Assert.Equal(expectedSignature, actualSignature);
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)actualSignature));
-            });
+                const string plainText = "SHA256WithRSASignTest";
 
-            Assert.Multiple(() =>
-            {
-                string actualSignature = Utilities.RSAUtility.SignWithSHA256(RSA_PRIVATE_KEY_PKCS8, plainText)!;
-                Assert.Equal(expectedSignature, actualSignature);
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)actualSignature));
-            });
+                Assert.Multiple(() =>
+                {
+                    string expectedSignature = "EzeVEIoBhzOhXpwbXdJjIuGIGRc6ArKO7sVo2fuAdzYTDgorAEufEnw7lPPXV1GTfFcHOnsAJH9kGJmg7Orwlkh7x7TyOGrkMEhWGulA9SIdmou4iBsHpIZ/TERSgGt/VTmqmfpkzJqrvbQWIQENwo7Lr6uJSJBND0YT3nIBP8TzbO3cHnQb6chHIBHrDF5vOO7HHu+Cga2MZnAtRizhO8BhK0jOmyro32CgIML3EVX8yuPy0kOk6aN1R8xFblZUD4NU2M6zzQpydmxaHr9B1WNFoMwmpoAS5BuKJMYOHO5cc6DhB+0fAGxaWtKp6759KhKCf8M65zh3WKS4l262SGuWq4qG1+AKf2DOgCon769+A4z8flOmvl0iIwoH9FThGJoP156rpAJW7v/bWputSeC6WToUTBRmGWdwWySVwW5AZ26OAFFWs1CmrGp3jF5E2oUy1mQwgfM0QN6DW+wD769ggIYH9HLHqDHbF5UyF7eNh3s8Qy23xXEKZWNMAJ0IdtdMQ7FRRgLFSCai7HELLlBJSCz7P5WTeYZGQpbvnUShkRvzujjO6XlGiKKI0EwKb121z8N6KRpvs4SnRztWBGoXbzHZgnXKXU/BWWADemqB2cvaT3Bj0k3/N3sea0dAEtlNEklRWoyyNUUlscK9zg4LBlHrhbbFo66uuub8ySo=";
+                    EncodedString actualSignature = signer.Invoke(RSA_PRIVATE_KEY_PKCS1, plainText);
+                    Assert.Equal(expectedSignature, (string)actualSignature!);
+
+                    bool valid = verifier.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, actualSignature);
+                    Assert.True(valid);
+                });
+
+                Assert.Multiple(() =>
+                {
+                    string expectedSignature = "EzeVEIoBhzOhXpwbXdJjIuGIGRc6ArKO7sVo2fuAdzYTDgorAEufEnw7lPPXV1GTfFcHOnsAJH9kGJmg7Orwlkh7x7TyOGrkMEhWGulA9SIdmou4iBsHpIZ/TERSgGt/VTmqmfpkzJqrvbQWIQENwo7Lr6uJSJBND0YT3nIBP8TzbO3cHnQb6chHIBHrDF5vOO7HHu+Cga2MZnAtRizhO8BhK0jOmyro32CgIML3EVX8yuPy0kOk6aN1R8xFblZUD4NU2M6zzQpydmxaHr9B1WNFoMwmpoAS5BuKJMYOHO5cc6DhB+0fAGxaWtKp6759KhKCf8M65zh3WKS4l262SGuWq4qG1+AKf2DOgCon769+A4z8flOmvl0iIwoH9FThGJoP156rpAJW7v/bWputSeC6WToUTBRmGWdwWySVwW5AZ26OAFFWs1CmrGp3jF5E2oUy1mQwgfM0QN6DW+wD769ggIYH9HLHqDHbF5UyF7eNh3s8Qy23xXEKZWNMAJ0IdtdMQ7FRRgLFSCai7HELLlBJSCz7P5WTeYZGQpbvnUShkRvzujjO6XlGiKKI0EwKb121z8N6KRpvs4SnRztWBGoXbzHZgnXKXU/BWWADemqB2cvaT3Bj0k3/N3sea0dAEtlNEklRWoyyNUUlscK9zg4LBlHrhbbFo66uuub8ySo=";
+                    EncodedString actualSignature = signer.Invoke(RSA_PRIVATE_KEY_PKCS8, plainText);
+                    Assert.Equal(expectedSignature, (string)actualSignature!);
+
+                    bool valid = verifier.Invoke(RSA_PUBLIC_KEY_PKCS8, plainText, actualSignature);
+                    Assert.True(valid);
+                });
+            }
+
+            AssertStubs(MockRSAUtility.SignWithSHA256, MockRSAUtility.VerifyWithSHA256);
+            AssertStubs(MockRSAUtility.SignWithSHA256, Utilities.RSAUtility.VerifyWithSHA256);
+            AssertStubs(Utilities.RSAUtility.SignWithSHA256, MockRSAUtility.VerifyWithSHA256);
+            AssertStubs(Utilities.RSAUtility.SignWithSHA256, Utilities.RSAUtility.VerifyWithSHA256);
         }
 
         [Fact(DisplayName = "测试用例：工具类 `RSAUtility.VerifyWithSHA256`")]
         public void TestRSAVerifyWithSHA256()
         {
+            static void AssertStubs(Func<string, string, EncodedString, bool> verifier)
+            {
+                const string plainText = "SHA256WithRSAVerifyTest";
+                const string signature = "aHX+MrmZHDEraMKBEPV2Vnps1B9b25lGbv/rdppx/S7+oaXtjKJprzCq5H7RCpvrKS3xYIeTEPwQGC3Vots7dCdLi8v8ew1vvtXf8qNAnd7CTMHqu3wSohXzgyASTmNbXE2ml9LbWYPPYMvPJXROQbGVjoOrsErWBPPJYXuO3lIckIfwI05OTdl4H3+BvpD/ZoljRp8Qgo9+paGvarBc++TaAh0FXnQf0TGNFUIeHHiAKBee5oCBTuZZM9J5RPw0oIq/g7Wun+e/zWiwVBPHltOgZrV46uagSAE6nBDHk+hlNxDivCxkJdBVCSIYFFmBXIcnGZ/u4ZfBui/k1jGoKibyvPK4z2+6GSlj41Yo81kuSBfzLiSsx33EPR1eIJJkwDTsvap0ymL9pfIqMiLuiteH5kGmL/dyONy9oAJywLEeITfoVyElM/CY6Dc+xDhRnjN7Hu54meYyXRZrnCtQ3YhzEr1immNBn6npgA/qi9aHsuWFOw8b8aSwOHDHTDmjmvV+axI8CVMrR0MjB9QNCWrKLq2B9iQX9MtLgcUyDsQvzAsxUJm/OEfzUjs9SHvmgmyAvzNAuTdO7wLQ+ZmKg0yZne6nvcrJVvfh3lD5ZPt7NY57Y6OIJluqKUT5H+a3H6W9Q1Z+cBMnHGYaaK7Tv8IcDdEYqTIG8hc5BqjFOzE=";
+
+                Assert.Multiple(() =>
+                {
+                    Assert.True(verifier.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)signature));
+                    Assert.False(verifier.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)"FAKE SIGN"));
+                });
+
+                Assert.Multiple(() =>
+                {
+                    Assert.True(verifier.Invoke(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)signature));
+                    Assert.False(verifier.Invoke(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)"FAKE SIGN"));
+                });
+            }
+
+            AssertStubs(MockRSAUtility.VerifyWithSHA256);
+            AssertStubs(Utilities.RSAUtility.VerifyWithSHA256);
+        }
+
+        [Fact(DisplayName = "测试用例：工具类 `RSAUtility.VerifyWithSHA256ByCertificate`")]
+        public void TestRSAVerifyWithSHA256ByCertificate()
+        {
             const string plainText = "SHA256WithRSAVerifyTest";
             const string signature = "aHX+MrmZHDEraMKBEPV2Vnps1B9b25lGbv/rdppx/S7+oaXtjKJprzCq5H7RCpvrKS3xYIeTEPwQGC3Vots7dCdLi8v8ew1vvtXf8qNAnd7CTMHqu3wSohXzgyASTmNbXE2ml9LbWYPPYMvPJXROQbGVjoOrsErWBPPJYXuO3lIckIfwI05OTdl4H3+BvpD/ZoljRp8Qgo9+paGvarBc++TaAh0FXnQf0TGNFUIeHHiAKBee5oCBTuZZM9J5RPw0oIq/g7Wun+e/zWiwVBPHltOgZrV46uagSAE6nBDHk+hlNxDivCxkJdBVCSIYFFmBXIcnGZ/u4ZfBui/k1jGoKibyvPK4z2+6GSlj41Yo81kuSBfzLiSsx33EPR1eIJJkwDTsvap0ymL9pfIqMiLuiteH5kGmL/dyONy9oAJywLEeITfoVyElM/CY6Dc+xDhRnjN7Hu54meYyXRZrnCtQ3YhzEr1immNBn6npgA/qi9aHsuWFOw8b8aSwOHDHTDmjmvV+axI8CVMrR0MjB9QNCWrKLq2B9iQX9MtLgcUyDsQvzAsxUJm/OEfzUjs9SHvmgmyAvzNAuTdO7wLQ+ZmKg0yZne6nvcrJVvfh3lD5ZPt7NY57Y6OIJluqKUT5H+a3H6W9Q1Z+cBMnHGYaaK7Tv8IcDdEYqTIG8hc5BqjFOzE=";
 
-            Assert.Multiple(() =>
-            {
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)signature));
-                Assert.False(Utilities.RSAUtility.VerifyWithSHA256(RSA_PUBLIC_KEY_PKCS1, plainText, (EncodedString)"FAKE SIGN"));
-            });
-
-            Assert.Multiple(() =>
-            {
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)signature));
-                Assert.False(Utilities.RSAUtility.VerifyWithSHA256(RSA_PUBLIC_KEY_PKCS8, plainText, (EncodedString)"FAKE SIGN"));
-            });
-
-            Assert.Multiple(() =>
-            {
-                Assert.True(Utilities.RSAUtility.VerifyWithSHA256ByCertificate(CERTIFICATE, plainText, (EncodedString)signature));
-                Assert.False(Utilities.RSAUtility.VerifyWithSHA256ByCertificate(CERTIFICATE, plainText, (EncodedString)"FAKE SIGN"));
-            });
+            Assert.True(Utilities.RSAUtility.VerifyWithSHA256ByCertificate(CERTIFICATE, plainText, (EncodedString)signature));
+            Assert.False(Utilities.RSAUtility.VerifyWithSHA256ByCertificate(CERTIFICATE, plainText, (EncodedString)"FAKE SIGN"));
         }
 
         [Fact(DisplayName = "测试用例：工具类 `RSAUtility.EncryptWithECB`")]
         public void TestRSAEncryptWithECB()
         {
-            const string plainText = "RsaEncryptTest";
-
-            Assert.Multiple(() =>
+            static void AssertStubs(Func<string, string, string, EncodedString> encryptor, Func<string, EncodedString, string, EncodedString> decryptor)
             {
-                string actualCipherText = Utilities.RSAUtility.EncryptWithECB(RSA_PUBLIC_KEY_PKCS1, plainText)!;
-                Assert.NotNull(actualCipherText);
-                Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS1, (EncodedString)actualCipherText));
-            });
+                Assert.Multiple(() =>
+                {
+                    const string plainText = "RsaEncryptTest";
 
-            Assert.Multiple(() =>
-            {
-                string actualCipherText = Utilities.RSAUtility.EncryptWithECB(RSA_PUBLIC_KEY_PKCS8, plainText)!;
-                Assert.NotNull(actualCipherText);
-                Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS8, (EncodedString)actualCipherText));
-            });
+                    EncodedString cipherText = encryptor.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, Utilities.RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1)!;
+                    Assert.NotNull(cipherText.Value);
+                    Assert.Equal(plainText, decryptor.Invoke(RSA_PRIVATE_KEY_PKCS8, cipherText, Utilities.RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1));
+                });
 
-            Assert.Multiple(() =>
-            {
-                string actualCipherText = Utilities.RSAUtility.EncryptWithECBByCertificate(CERTIFICATE, plainText)!;
-                Assert.NotNull(actualCipherText);
-                Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS8, (EncodedString)actualCipherText));
-                Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS1, (EncodedString)actualCipherText));
-            });
+                Assert.Multiple(() =>
+                {
+                    const string plainText = "RsaEncryptTest";
+
+                    EncodedString cipherText = encryptor.Invoke(RSA_PUBLIC_KEY_PKCS1, plainText, Utilities.RSAUtility.PADDING_MODE_PKCS1)!;
+                    Assert.NotNull(cipherText.Value);
+                    Assert.Equal(plainText, decryptor.Invoke(RSA_PRIVATE_KEY_PKCS8, cipherText, Utilities.RSAUtility.PADDING_MODE_PKCS1));
+                });
+            }
+
+            AssertStubs(MockRSAUtility.EncryptWithECB, MockRSAUtility.DecryptWithECB);
+            AssertStubs(MockRSAUtility.EncryptWithECB, Utilities.RSAUtility.DecryptWithECB);
+            AssertStubs(Utilities.RSAUtility.EncryptWithECB, MockRSAUtility.DecryptWithECB);
+            AssertStubs(Utilities.RSAUtility.EncryptWithECB, Utilities.RSAUtility.DecryptWithECB);
+
+        }
+
+        [Fact(DisplayName = "测试用例：工具类 `RSAUtility.EncryptWithECBByCertificate`")]
+        public void TestRSAEncryptWithECBByCertificate()
+        {
+            const string plainText = "RsaEncryptByCertificateTest";
+
+            string cipherText = Utilities.RSAUtility.EncryptWithECBByCertificate(CERTIFICATE, plainText)!;
+            Assert.NotNull(cipherText);
+            Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS1, (EncodedString)cipherText));
+            Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS8, (EncodedString)cipherText));
         }
 
         [Fact(DisplayName = "测试用例：工具类 `RSAUtility.DecryptWithECB`")]
         public void TestRSADecryptWithECB()
         {
-            const string cipherText = "LXwSqg4jqIv1X8Jx7RAbKw+mc/2SqAfdO4Ytqu09kytzCiDFdIZuJkdo2BQQOoyn/FtCyvn9Loip3VocOuATtsUDo6BmeMJcapl0HfXkyxsYnVRawsq01SPIRz8c83u+K38ZDVjNxEwcwcxH86wMm3PMzLZqISIVrD9sD3an5TfGuS+y/RN8y6W/P7BD/Rpxh0qLJl5B2oPYHOeKK0tdv6GlouUClzxB5tmdK5EKKw0j4WD5qIEwRm8Xzh/V27bt2autzRBbJT47eNypMR5wT7wWm/YwjyDoLLUmuCBaXbWZuqkB0pGS53y3Rdk64LVZ52567hBuQ/JdqMJdCecfy85x+ygnOtCM7bRl/fspU8U5SmwAKohYMc8VH4kRKhxoh8wX9wXCwbngLQ+S50TB3UziY1FmAmWFAI2/fpiyzGJZAVA+mYRCoQAFOksVEuud3ngGkfx2SafJ589IX9z0dnaz1AElaH84LhrOjJyU7dV6E9Su45IegNNai2O8bwN8dliVMPlXZuUAGaZpPLPOxq+hE7GpgNHaVFNye52b7dG3n3mt3hhSwb9AxAyAbSXktBSS/PMOAAS1TxwQ9C/0bKhApUDpjTG8oZBRBVTUHmsX+6/k5+6KSqfOrD88cBDPIhumY6V1h78GtXkFX2lQu9lT2J/fHCrDx39CiRnFAfI=";
+            static void AssertStubs(Func<string, EncodedString, string, EncodedString> decryptor)
+            {
+                Assert.Multiple(() =>
+                {
+                    const string cipherText = "LXwSqg4jqIv1X8Jx7RAbKw+mc/2SqAfdO4Ytqu09kytzCiDFdIZuJkdo2BQQOoyn/FtCyvn9Loip3VocOuATtsUDo6BmeMJcapl0HfXkyxsYnVRawsq01SPIRz8c83u+K38ZDVjNxEwcwcxH86wMm3PMzLZqISIVrD9sD3an5TfGuS+y/RN8y6W/P7BD/Rpxh0qLJl5B2oPYHOeKK0tdv6GlouUClzxB5tmdK5EKKw0j4WD5qIEwRm8Xzh/V27bt2autzRBbJT47eNypMR5wT7wWm/YwjyDoLLUmuCBaXbWZuqkB0pGS53y3Rdk64LVZ52567hBuQ/JdqMJdCecfy85x+ygnOtCM7bRl/fspU8U5SmwAKohYMc8VH4kRKhxoh8wX9wXCwbngLQ+S50TB3UziY1FmAmWFAI2/fpiyzGJZAVA+mYRCoQAFOksVEuud3ngGkfx2SafJ589IX9z0dnaz1AElaH84LhrOjJyU7dV6E9Su45IegNNai2O8bwN8dliVMPlXZuUAGaZpPLPOxq+hE7GpgNHaVFNye52b7dG3n3mt3hhSwb9AxAyAbSXktBSS/PMOAAS1TxwQ9C/0bKhApUDpjTG8oZBRBVTUHmsX+6/k5+6KSqfOrD88cBDPIhumY6V1h78GtXkFX2lQu9lT2J/fHCrDx39CiRnFAfI=";
 
-            string expectedPlainText = "RsaDecryptTest";
-            string actualPlainText = Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY_PKCS8, (EncodedString)cipherText)!;
-            Assert.Equal(expectedPlainText, actualPlainText);
+                    string expectedPlainText = "RsaDecryptTest";
+                    string actualPlainText = decryptor.Invoke(RSA_PRIVATE_KEY_PKCS1, (EncodedString)cipherText, Utilities.RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1)!;
+                    Assert.Equal(expectedPlainText, actualPlainText);
+                });
+
+                Assert.Multiple(() =>
+                {
+                    const string cipherText = "LXwSqg4jqIv1X8Jx7RAbKw+mc/2SqAfdO4Ytqu09kytzCiDFdIZuJkdo2BQQOoyn/FtCyvn9Loip3VocOuATtsUDo6BmeMJcapl0HfXkyxsYnVRawsq01SPIRz8c83u+K38ZDVjNxEwcwcxH86wMm3PMzLZqISIVrD9sD3an5TfGuS+y/RN8y6W/P7BD/Rpxh0qLJl5B2oPYHOeKK0tdv6GlouUClzxB5tmdK5EKKw0j4WD5qIEwRm8Xzh/V27bt2autzRBbJT47eNypMR5wT7wWm/YwjyDoLLUmuCBaXbWZuqkB0pGS53y3Rdk64LVZ52567hBuQ/JdqMJdCecfy85x+ygnOtCM7bRl/fspU8U5SmwAKohYMc8VH4kRKhxoh8wX9wXCwbngLQ+S50TB3UziY1FmAmWFAI2/fpiyzGJZAVA+mYRCoQAFOksVEuud3ngGkfx2SafJ589IX9z0dnaz1AElaH84LhrOjJyU7dV6E9Su45IegNNai2O8bwN8dliVMPlXZuUAGaZpPLPOxq+hE7GpgNHaVFNye52b7dG3n3mt3hhSwb9AxAyAbSXktBSS/PMOAAS1TxwQ9C/0bKhApUDpjTG8oZBRBVTUHmsX+6/k5+6KSqfOrD88cBDPIhumY6V1h78GtXkFX2lQu9lT2J/fHCrDx39CiRnFAfI=";
+
+                    string expectedPlainText = "RsaDecryptTest";
+                    string actualPlainText = decryptor.Invoke(RSA_PRIVATE_KEY_PKCS8, (EncodedString)cipherText, Utilities.RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1)!;
+                    Assert.Equal(expectedPlainText, actualPlainText);
+                });
+
+                Assert.Multiple(() =>
+                {
+                    const string cipherText = "cu79qctP+9vK5fUPlOvQlBs36kZ7C6VehepR2f0PLTK41kjX1UopXyW3xFuEWnsWU2STmg/UbabWreYDt3scVP+GDI/TMWHEVcERKgQ3sld3sH4CPwvoize2HOGXJN9rTDtfaIVlwuXw8fl3J/1aBeiI6DIcXirMx2LuJrFz9yPTQ2j6jJUQq3cgE28BoGVaVCcQIE05jAqbuBRw1qKw1/bgMb71ZnVk+IQsKWOojCZt2Lj1y54XIqWf1wOFdnCojjnrDdUXYYrxyFVJUuw6jT39bq3JPLEWH1UJ4IpegtSMtHtKML8at6+oWGozQWd44W6Q2V1X7XRlClgUsjYLh0oVYNnlhs2EY/hOH5kXtXKYUc3W+KDFAXu4HU4ow+YlGxwqmCSU/r9HDbOgyEtgvcP8PCt0sC0wQYbmTW3wPDGiT7OcWuTatKZ24fJVd1cAnOcFVR1sSRePl5CJIGPD7UpWPfcgAVf13DwqQvA1WN3RKUTK4/F+x+k3WsxJbN/fwE/2oVFUwfcSDpRYgQ91l2yjcjpqit1cxsYFJQVTtlaleCjc08DOHvICRyMgVja2XQ++zNc77SWWjZWXlcm0kFMcKR7b4bmqzmzsAKiXvpZsI5zmAvc06I6hgdAQGtygxYU6zpxX2ZTVosdbYB1Wj6sZs+9ZiCqx2c/4BGjpVVA=";
+
+                    string expectedPlainText = "RsaDecryptTest";
+                    string actualPlainText = decryptor.Invoke(RSA_PRIVATE_KEY_PKCS1, (EncodedString)cipherText, Utilities.RSAUtility.PADDING_MODE_PKCS1)!;
+                    Assert.Equal(expectedPlainText, actualPlainText);
+                });
+
+                Assert.Multiple(() =>
+                {
+                    const string cipherText = "cu79qctP+9vK5fUPlOvQlBs36kZ7C6VehepR2f0PLTK41kjX1UopXyW3xFuEWnsWU2STmg/UbabWreYDt3scVP+GDI/TMWHEVcERKgQ3sld3sH4CPwvoize2HOGXJN9rTDtfaIVlwuXw8fl3J/1aBeiI6DIcXirMx2LuJrFz9yPTQ2j6jJUQq3cgE28BoGVaVCcQIE05jAqbuBRw1qKw1/bgMb71ZnVk+IQsKWOojCZt2Lj1y54XIqWf1wOFdnCojjnrDdUXYYrxyFVJUuw6jT39bq3JPLEWH1UJ4IpegtSMtHtKML8at6+oWGozQWd44W6Q2V1X7XRlClgUsjYLh0oVYNnlhs2EY/hOH5kXtXKYUc3W+KDFAXu4HU4ow+YlGxwqmCSU/r9HDbOgyEtgvcP8PCt0sC0wQYbmTW3wPDGiT7OcWuTatKZ24fJVd1cAnOcFVR1sSRePl5CJIGPD7UpWPfcgAVf13DwqQvA1WN3RKUTK4/F+x+k3WsxJbN/fwE/2oVFUwfcSDpRYgQ91l2yjcjpqit1cxsYFJQVTtlaleCjc08DOHvICRyMgVja2XQ++zNc77SWWjZWXlcm0kFMcKR7b4bmqzmzsAKiXvpZsI5zmAvc06I6hgdAQGtygxYU6zpxX2ZTVosdbYB1Wj6sZs+9ZiCqx2c/4BGjpVVA=";
+
+                    string expectedPlainText = "RsaDecryptTest";
+                    string actualPlainText = decryptor.Invoke(RSA_PRIVATE_KEY_PKCS8, (EncodedString)cipherText, Utilities.RSAUtility.PADDING_MODE_PKCS1)!;
+                    Assert.Equal(expectedPlainText, actualPlainText);
+                });
+            }
+
+            AssertStubs(MockRSAUtility.DecryptWithECB);
+            AssertStubs(Utilities.RSAUtility.DecryptWithECB);
+        }
+    }
+
+    partial class TestCase_RSAUtilityTests
+    {
+        /// <summary>
+        /// 基于 BouncyCastle.Cryptography 实现的 RSA 算法工具类。
+        /// 关键方法签名与 `RSAUtility` 完全一致，作为基线检测使用。
+        /// </summary>
+        private static class MockRSAUtility
+        {
+            public static byte[] SignWithSHA256(byte[] privateKeyBytes, byte[] messageBytes)
+            {
+                if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+                if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
+
+                RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+                ISigner signer = SignerUtilities.GetSigner("SHA-256withRSA");
+                signer.Init(true, rsaPrivateKeyParams);
+                signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
+                return signer.GenerateSignature();
+            }
+
+            public static EncodedString SignWithSHA256(string privateKeyPem, string messageData)
+            {
+                if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
+                if (messageData is null) throw new ArgumentNullException(nameof(messageData));
+
+                byte[] privateKeyBytes = Shared.Crypto.RSA.RSAKeyReader.ReadPrivateKeyBytes(privateKeyPem);
+                byte[] messageBytes = EncodedString.FromLiteralString(messageData);
+                byte[] signBytes = SignWithSHA256(privateKeyBytes, messageBytes);
+                return EncodedString.ToBase64String(signBytes);
+            }
+
+            public static bool VerifyWithSHA256(byte[] publicKeyBytes, byte[] messageBytes, byte[] signBytes)
+            {
+                if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+                if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
+                if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
+
+                RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
+                ISigner signer = SignerUtilities.GetSigner("SHA-256withRSA");
+                signer.Init(false, rsaPublicKeyParams);
+                signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
+                return signer.VerifySignature(signBytes);
+            }
+
+            public static bool VerifyWithSHA256(string publicKeyPem, string messageData, EncodedString encodingSignature)
+            {
+                if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
+                if (messageData is null) throw new ArgumentNullException(nameof(messageData));
+                if (encodingSignature.Value is null) throw new ArgumentNullException(nameof(encodingSignature));
+
+                byte[] publicKeyBytes = Shared.Crypto.RSA.RSAKeyReader.ReadPublicKeyBytes(publicKeyPem);
+                byte[] messageBytes = EncodedString.FromLiteralString(messageData);
+                byte[] signBytes = EncodedString.FromString(encodingSignature, fallbackEncodingKind: EncodingKinds.Base64);
+                return VerifyWithSHA256(publicKeyBytes, messageBytes, signBytes);
+            }
+
+            public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode)
+            {
+                if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+                if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
+
+                RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+                IBufferedCipher cipher = CipherUtilities.GetCipher($"RSA/ECB/{paddingMode}");
+                cipher.Init(false, rsaPrivateKeyParams);
+                return cipher.DoFinal(cipherBytes);
+            }
+
+            public static EncodedString DecryptWithECB(string privateKeyPem, EncodedString encodingCipher, string paddingMode)
+            {
+                if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
+                if (encodingCipher.Value is null) throw new ArgumentNullException(nameof(encodingCipher));
+
+                byte[] privateKeyBytes = Shared.Crypto.RSA.RSAKeyReader.ReadPrivateKeyBytes(privateKeyPem);
+                byte[] cipherBytes = EncodedString.FromString(encodingCipher, fallbackEncodingKind: EncodingKinds.Base64);
+                byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingMode);
+                return EncodedString.ToLiteralString(plainBytes);
+            }
+
+            public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingMode)
+            {
+                if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+                if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
+
+                RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
+                IBufferedCipher cipher = CipherUtilities.GetCipher($"RSA/ECB/{paddingMode}");
+                cipher.Init(true, rsaPublicKeyParams);
+                return cipher.DoFinal(plainBytes);
+            }
+
+            public static EncodedString EncryptWithECB(string publicKeyPem, string plainData, string paddingMode)
+            {
+                if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
+                if (plainData is null) throw new ArgumentNullException(nameof(plainData));
+
+                byte[] publicKeyBytes = Shared.Crypto.RSA.RSAKeyReader.ReadPublicKeyBytes(publicKeyPem);
+                byte[] plainBytes = EncodedString.FromLiteralString(plainData);
+                byte[] cipherBytes = EncryptWithECB(publicKeyBytes, plainBytes, paddingMode);
+                return EncodedString.ToBase64String(cipherBytes);
+            }
         }
     }
 }

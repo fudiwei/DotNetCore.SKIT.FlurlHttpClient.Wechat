@@ -23,14 +23,14 @@
         <None Include="ModelsFixtures/**/*.*" />
 	</ItemGroup>
 
-	<ItemGroup>
-        <Reference Include="System.Net.Http.WebRequest" Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'" />
-    </ItemGroup>
-
     <ItemGroup>
         <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="4.0.1" />
         <PackageReference Include="SKIT.JsonConv.NewtonsoftJson" Version="0.1.2" />
         <PackageReference Include="SKIT.JsonConv.SystemTextJson" Version="0.1.2" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <Reference Include="System.Net.Http.WebRequest" />
     </ItemGroup>
 
 </Project>

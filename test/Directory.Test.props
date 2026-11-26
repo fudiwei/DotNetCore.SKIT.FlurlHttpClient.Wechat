@@ -24,6 +24,10 @@
         <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
     </ItemGroup>
 
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3" PrivateAssets="All" />
+    </ItemGroup>
+
     <ItemGroup Condition="'$(TargetFramework)' != 'net462'">
         <PackageReference Include="xunit.v3" Version="4.0.3" />
         <PackageReference Include="xunit.runner.visualstudio" Version="4.0.1" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />

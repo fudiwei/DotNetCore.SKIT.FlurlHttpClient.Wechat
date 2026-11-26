@@ -13,6 +13,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat.TenpayBusiness\SKIT.FlurlHttpClient.Wechat.TenpayBusiness.csproj" />
 	</ItemGroup>
 
