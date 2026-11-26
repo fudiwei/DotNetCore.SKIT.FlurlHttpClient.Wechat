@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     break;
 
                 default:
-                    throw new NotSupportedException();
+                    throw new NotSupportedException($"Unsupported signing method: \"{signMethod}\".");
             }
         }
     }

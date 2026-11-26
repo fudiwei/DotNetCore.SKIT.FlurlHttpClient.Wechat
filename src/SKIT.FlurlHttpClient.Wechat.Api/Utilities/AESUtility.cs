@@ -1,7 +1,4 @@
 using System.Security.Cryptography;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Security;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
@@ -74,54 +71,71 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithGCM(byte[] keyBytes, byte[] nonceBytes, byte[]? associatedDataBytes, byte[] cipherBytes, string paddingMode = PADDING_MODE_NOPADDING)
         {
-            const int KEY_LENGTH_BYTE = 32;
-            const int NONCE_LENGTH_BYTE = 12;
-            const int TAG_LENGTH_BYTE = 16;
+            const int KEY_BYTE_SIZE = 32;
+            const int NONCE_BYTE_SIZE = 12;
+            const int TAG_BYTE_SIZE = 16;
 
             if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
-            if (keyBytes.Length != KEY_LENGTH_BYTE) throw new ArgumentException($"Invalid key byte length (expected: {KEY_LENGTH_BYTE}, actual: {keyBytes.Length}).", nameof(keyBytes));
+            if (keyBytes.Length != KEY_BYTE_SIZE) throw new ArgumentException($"Invalid key byte size (expected: {KEY_BYTE_SIZE}, actual: {keyBytes.Length}).", nameof(keyBytes));
             if (nonceBytes is null) throw new ArgumentNullException(nameof(nonceBytes));
-            if (nonceBytes.Length != NONCE_LENGTH_BYTE) throw new ArgumentException($"Invalid nonce byte length (expected: {NONCE_LENGTH_BYTE}, actual: {nonceBytes.Length}).", nameof(nonceBytes));
+            if (nonceBytes.Length != NONCE_BYTE_SIZE) throw new ArgumentException($"Invalid nonce byte size (expected: {NONCE_BYTE_SIZE}, actual: {nonceBytes.Length}).", nameof(nonceBytes));
             if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
-            if (cipherBytes.Length < TAG_LENGTH_BYTE) throw new ArgumentException($"Invalid cipher byte length (expected: more than {TAG_LENGTH_BYTE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
+            if (cipherBytes.Length < TAG_BYTE_SIZE) throw new ArgumentException($"Invalid cipher byte size (expected: more than {TAG_BYTE_SIZE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
 
-#if NET5_0_OR_GREATER
-            if (AesGcm.IsSupported)
-            {
-                if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
-                    throw new NotSupportedException();
+#if NETFRAMEWORK || NETCOREAPP3_0_OR_GREATER || NET5_0_OR_GREATER
+            if (!AesGcm.IsSupported)
+                throw new PlatformNotSupportedException();
 
-#if NET8_0_OR_GREATER
-                using (AesGcm aes = new AesGcm(keyBytes, TAG_LENGTH_BYTE))
+#if NETFRAMEWORK || NET8_0_OR_GREATER
+            using var aes = new AesGcm(keyBytes, TAG_BYTE_SIZE);
 #else
-                using (AesGcm aes = new AesGcm(keyBytes))
+            using var aes = new AesGcm(keyBytes);
 #endif
-                {
-                    byte[] cipherWithoutTagBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
-                    byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
-                    Buffer.BlockCopy(cipherBytes, 0, cipherWithoutTagBytes, 0, cipherWithoutTagBytes.Length);
-                    Buffer.BlockCopy(cipherBytes, cipherWithoutTagBytes.Length, tagBytes, 0, tagBytes.Length);
 
-                    byte[] plainBytes = new byte[cipherWithoutTagBytes.Length];
-                    aes.Decrypt(nonceBytes, cipherWithoutTagBytes, tagBytes, plainBytes, associatedDataBytes);
-                    return plainBytes;
-                }
-            }
-#endif
+            switch (paddingMode)
             {
-                IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
-                ICipherParameters cipherParams = new AeadParameters(
-                    new KeyParameter(keyBytes),
-                    TAG_LENGTH_BYTE * 8,
-                    nonceBytes,
-                    associatedDataBytes
-                );
-                cipher.Init(false, cipherParams);
-                byte[] plainBytes = new byte[cipher.GetOutputSize(cipherBytes.Length)];
-                int len = cipher.ProcessBytes(cipherBytes, 0, cipherBytes.Length, plainBytes, 0);
-                cipher.DoFinal(plainBytes, len);
-                return plainBytes;
+                case var s when string.Equals(s, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase):
+                    {
+                        int cipherLength = cipherBytes.Length - TAG_BYTE_SIZE;
+                        byte[] plainBytes = new byte[cipherLength];
+                        aes.Decrypt(
+                            nonceBytes,
+                            cipherBytes.AsSpan(0, cipherLength),
+                            cipherBytes.AsSpan(cipherLength, TAG_BYTE_SIZE),
+                            plainBytes,
+                            associatedDataBytes
+                        );
+                        return plainBytes;
+                    }
+
+                default:
+                    throw new NotSupportedException($"Unsupported AES encryption padding mode: \"{paddingMode}\".");
             }
+#else
+            Org.BouncyCastle.Crypto.IBufferedCipher cipher;
+            switch (paddingMode)
+            {
+                case var s when string.Equals(s, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase):
+                    cipher = Org.BouncyCastle.Security.CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
+                    break;
+
+                default:
+                    throw new NotSupportedException($"Unsupported AES encryption padding mode: \"{paddingMode}\".");
+            }
+
+            Org.BouncyCastle.Crypto.ICipherParameters cipherParams = new Org.BouncyCastle.Crypto.Parameters.AeadParameters(
+                new Org.BouncyCastle.Crypto.Parameters.KeyParameter(keyBytes),
+                TAG_BYTE_SIZE * 8,
+                nonceBytes,
+                associatedDataBytes
+            );
+            cipher.Init(false, cipherParams);
+
+            byte[] plainBytes = new byte[cipher.GetOutputSize(cipherBytes.Length)];
+            int len = cipher.ProcessBytes(cipherBytes, 0, cipherBytes.Length, plainBytes, 0);
+            cipher.DoFinal(plainBytes, len);
+            return plainBytes;
+#endif
         }
 
         /// <summary>
@@ -206,49 +220,64 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>加密后的数据字节数组。</returns>
         public static byte[] EncryptWithGCM(byte[] keyBytes, byte[] nonceBytes, byte[]? associatedDataBytes, byte[] plainBytes, string paddingMode = PADDING_MODE_NOPADDING)
         {
-            const int TAG_LENGTH_BYTE = 16;
+            const int TAG_BYTE_SIZE = 16;
 
             if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
             if (nonceBytes is null) throw new ArgumentNullException(nameof(nonceBytes));
             if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
-#if NET5_0_OR_GREATER
-            if (AesGcm.IsSupported)
-            {
-                if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
-                    throw new NotSupportedException();
+#if NETFRAMEWORK || NETCOREAPP3_0_OR_GREATER || NET5_0_OR_GREATER
+            if (!AesGcm.IsSupported)
+                throw new PlatformNotSupportedException();
 
-#if NET8_0_OR_GREATER
-                using (AesGcm aes = new AesGcm(keyBytes, TAG_LENGTH_BYTE))
+#if NETFRAMEWORK || NET8_0_OR_GREATER
+            using var aes = new AesGcm(keyBytes, TAG_BYTE_SIZE);
 #else
-                using (AesGcm aes = new AesGcm(keyBytes))
+            using var aes = new AesGcm(keyBytes);
 #endif
-                {
-                    byte[] cipherBytes = new byte[plainBytes.Length];
-                    byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
-                    aes.Encrypt(nonceBytes, plainBytes, cipherBytes, tagBytes, associatedDataBytes);
 
-                    byte[] cipherWithTagBytes = new byte[cipherBytes.Length + tagBytes.Length];
-                    Buffer.BlockCopy(cipherBytes, 0, cipherWithTagBytes, 0, cipherBytes.Length);
-                    Buffer.BlockCopy(tagBytes, 0, cipherWithTagBytes, cipherBytes.Length, tagBytes.Length);
-                    return cipherWithTagBytes;
-                }
-            }
-#endif
+            switch (paddingMode)
             {
-                IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
-                ICipherParameters cipherParams = new AeadParameters(
-                    new KeyParameter(keyBytes),
-                    TAG_LENGTH_BYTE * 8,
-                    nonceBytes,
-                    associatedDataBytes
-                );
-                cipher.Init(true, cipherParams);
-                byte[] cipherBytes = new byte[cipher.GetOutputSize(plainBytes.Length)];
-                int len = cipher.ProcessBytes(plainBytes, 0, plainBytes.Length, cipherBytes, 0);
-                cipher.DoFinal(cipherBytes, len);
-                return cipherBytes;
+                case var s when string.Equals(s, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase):
+                    {
+                        byte[] cipherBytes = new byte[plainBytes.Length];
+                        byte[] tagBytes = new byte[TAG_BYTE_SIZE];
+                        aes.Encrypt(nonceBytes, plainBytes, cipherBytes, tagBytes, associatedDataBytes);
+
+                        byte[] cipherWithTagBytes = new byte[cipherBytes.Length + tagBytes.Length];
+                        Buffer.BlockCopy(cipherBytes, 0, cipherWithTagBytes, 0, cipherBytes.Length);
+                        Buffer.BlockCopy(tagBytes, 0, cipherWithTagBytes, cipherBytes.Length, tagBytes.Length);
+                        return cipherWithTagBytes;
+                    }
+
+                default:
+                    throw new NotSupportedException($"Unsupported AES encryption padding mode: \"{paddingMode}\".");
             }
+#else
+            Org.BouncyCastle.Crypto.IBufferedCipher cipher;
+            switch (paddingMode)
+            {
+                case var s when string.Equals(s, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase):
+                    cipher = Org.BouncyCastle.Security.CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
+                    break;
+
+                default:
+                    throw new NotSupportedException($"Unsupported AES encryption padding mode: \"{paddingMode}\".");
+            }
+
+            Org.BouncyCastle.Crypto.ICipherParameters cipherParams = new Org.BouncyCastle.Crypto.Parameters.AeadParameters(
+                new Org.BouncyCastle.Crypto.Parameters.KeyParameter(keyBytes),
+                TAG_BYTE_SIZE * 8,
+                nonceBytes,
+                associatedDataBytes
+            );
+            cipher.Init(true, cipherParams);
+
+            byte[] cipherBytes = new byte[cipher.GetOutputSize(plainBytes.Length)];
+            int len = cipher.ProcessBytes(plainBytes, 0, plainBytes.Length, cipherBytes, 0);
+            cipher.DoFinal(cipherBytes, len);
+            return cipherBytes;
+#endif
         }
 
         /// <summary>

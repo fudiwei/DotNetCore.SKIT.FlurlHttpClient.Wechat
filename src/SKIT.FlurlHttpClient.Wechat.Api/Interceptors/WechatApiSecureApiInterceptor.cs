@@ -169,15 +169,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                         {
                             try
                             {
-                                const int TAG_LENGTH_BYTE = 16;
+                                const int TAG_BYTE_SIZE = 16;
                                 byte[] cipherBytes = Utilities.AESUtility.EncryptWithGCM(
                                     keyBytes: Convert.FromBase64String(_symmetricEncodingKey),
                                     nonceBytes: Convert.FromBase64String(nonce),
                                     associatedDataBytes: Encoding.UTF8.GetBytes(associatedData),
                                     plainBytes: Encoding.UTF8.GetBytes(plainData)
                                 )!;
-                                byte[] encdataBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
-                                byte[] authtagBytes = new byte[TAG_LENGTH_BYTE];
+                                byte[] encdataBytes = new byte[cipherBytes.Length - TAG_BYTE_SIZE];
+                                byte[] authtagBytes = new byte[TAG_BYTE_SIZE];
                                 Buffer.BlockCopy(cipherBytes, 0, encdataBytes, 0, encdataBytes.Length);
                                 Buffer.BlockCopy(cipherBytes, encdataBytes.Length, authtagBytes, 0, authtagBytes.Length);
 
@@ -196,15 +196,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                         {
                             try
                             {
-                                const int TAG_LENGTH_BYTE = 16;
+                                const int TAG_BYTE_SIZE = 16;
                                 byte[] cipherBytes = Utilities.SM4Utility.EncryptWithGCM(
                                     keyBytes: Convert.FromBase64String(_symmetricEncodingKey),
                                     nonceBytes: Convert.FromBase64String(nonce),
                                     associatedDataBytes: Encoding.UTF8.GetBytes(associatedData),
                                     plainBytes: Encoding.UTF8.GetBytes(plainData)
                                 )!;
-                                byte[] encdataBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
-                                byte[] authtagBytes = new byte[TAG_LENGTH_BYTE];
+                                byte[] encdataBytes = new byte[cipherBytes.Length - TAG_BYTE_SIZE];
+                                byte[] authtagBytes = new byte[TAG_BYTE_SIZE];
                                 Buffer.BlockCopy(cipherBytes, 0, encdataBytes, 0, encdataBytes.Length);
                                 Buffer.BlockCopy(cipherBytes, encdataBytes.Length, authtagBytes, 0, authtagBytes.Length);
 
@@ -406,9 +406,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             }
         }
 
-        private string GenerateSymmetricEncryptionNonce(int byteLength)
+        private string GenerateSymmetricEncryptionNonce(int byteSize)
         {
-            byte[] bytes = new byte[byteLength];
+            byte[] bytes = new byte[byteSize];
             new Random().NextBytes(bytes);
             return Convert.ToBase64String(bytes);
         }

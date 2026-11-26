@@ -33,6 +33,10 @@
         <PackageReference Include="SKIT.JsonConv.SystemTextJson" Version="0.1.2" />
     </ItemGroup>
 
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.Bcl.Cryptography" Version="10.0.15" />
+    </ItemGroup>
+
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net' Or '$(TargetFramework.TrimEnd(`0123456789.`))' == 'netstandard'">
         <PackageReference Include="System.Formats.Asn1" Version="10.0.15" />
     </ItemGroup>

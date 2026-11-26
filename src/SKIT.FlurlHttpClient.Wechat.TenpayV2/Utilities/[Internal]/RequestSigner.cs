@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                     }
 
                 default:
-                    throw new NotSupportedException("Unsupported sign type.");
+                    throw new NotSupportedException($"Unsupported signing type: \"{signType}\".");
             }
         }
     }
